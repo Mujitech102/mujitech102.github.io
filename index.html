@@ -1,171 +1,682 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mujitech – Reparaturservice</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mujitech – Reparaturservice Schweiz</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #111;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+      color: #111111;
+    }
 
-header {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
+    header {
+      background: linear-gradient(to bottom, #ffffff, #efefef);
+      border-bottom: 1px solid #dcdcdc;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      padding: 20px 20px 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.logo {
-    max-width: 180px;
-}
+    .topbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    text-align: center;
-}
+    .logo {
+      width: 140px;
+      display: block;
+      margin: 0 auto;
+    }
 
-h1 {
-    font-size: 32px;
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
 
-h3 {
-    margin-top: 30px;
-}
+    nav a {
+      text-decoration: none;
+      color: #111111;
+      font-weight: bold;
+      font-size: 15px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: linear-gradient(to bottom, #ffffff, #dcdcdc);
+      border: 1px solid #cfcfcf;
+      box-shadow:
+        0 6px 14px rgba(0,0,0,0.10),
+        inset 0 2px 0 rgba(255,255,255,0.95),
+        inset 0 -2px 4px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
 
-.services {
-    text-align: left;
-    max-width: 400px;
-    margin: auto;
-}
+    nav a:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.14),
+        inset 0 2px 0 rgba(255,255,255,1);
+    }
 
-.button {
-    display: block;
-    margin: 15px auto;
-    padding: 15px;
-    width: 80%;
-    max-width: 300px;
-    text-decoration: none;
-    color: #111;
-    font-weight: bold;
-    border-radius: 12px;
-    background: linear-gradient(145deg, #ffffff, #dcdcdc);
-    box-shadow: 
-        0 6px 15px rgba(0,0,0,0.15),
-        inset 0 2px 5px rgba(255,255,255,0.9);
-    transition: 0.2s;
-}
+    .hero {
+      max-width: 1200px;
+      margin: 40px auto 25px auto;
+      padding: 30px 20px;
+    }
 
-.button:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 10px 20px rgba(0,0,0,0.2),
-        inset 0 2px 5px rgba(255,255,255,1);
-}
+    .hero-box {
+      background: linear-gradient(to bottom, #ffffff, #f3f3f3);
+      border-radius: 28px;
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.10),
+        inset 0 1px 0 rgba(255,255,255,1);
+      padding: 50px 30px;
+      text-align: center;
+    }
 
-.footer {
-    margin-top: 40px;
-    font-size: 13px;
-}
+    h1 {
+      margin: 0 0 15px 0;
+      font-size: 44px;
+      line-height: 1.15;
+    }
 
-.footer a {
-    color: black;
-    text-decoration: underline;
-}
+    .subtitle {
+      font-size: 20px;
+      color: #333333;
+      max-width: 850px;
+      margin: 0 auto 20px auto;
+      line-height: 1.6;
+    }
 
-/* Cookie Banner */
-.cookie {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #111;
-    color: white;
-    padding: 15px;
-    text-align: center;
-}
+    .info-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
 
-.cookie button {
-    margin-left: 10px;
-    padding: 8px 15px;
-    border: none;
-    background: white;
-    cursor: pointer;
-}
-</style>
+    .info-card {
+      background: linear-gradient(to bottom, #ffffff, #e9e9e9);
+      border: 1px solid #d8d8d8;
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow:
+        0 10px 24px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,1);
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section-box {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      box-shadow:
+        0 18px 36px rgba(0,0,0,0.09),
+        inset 0 1px 0 rgba(255,255,255,0.9);
+      padding: 40px 28px;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 34px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #222222;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    .service-card {
+      background: linear-gradient(to bottom, #ffffff, #ededed);
+      border: 1px solid #d7d7d7;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow:
+        0 10px 22px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,1);
+    }
+
+    .service-card ul {
+      padding-left: 18px;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .service-card li {
+      margin-bottom: 4px;
+      color: #222222;
+    }
+
+    .notice-box {
+      background: linear-gradient(to bottom, #ffffff, #ececec);
+      border-left: 5px solid #9a9a9a;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 24px;
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.06),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: block;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: #111111;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 16px;
+      background: linear-gradient(to bottom, #ffffff, #d9d9d9);
+      border: 1px solid #c9c9c9;
+      box-shadow:
+        0 8px 18px rgba(0,0,0,0.14),
+        inset 0 2px 0 rgba(255,255,255,0.96),
+        inset 0 -2px 6px rgba(0,0,0,0.06);
+      transition: all 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        0 12px 24px rgba(0,0,0,0.18),
+        inset 0 2px 0 rgba(255,255,255,1);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .gallery-item {
+      background: linear-gradient(to bottom, #ffffff, #eeeeee);
+      border: 1px solid #d9d9d9;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow:
+        0 12px 24px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 14px;
+      font-size: 15px;
+      color: #333333;
+      text-align: center;
+    }
+
+    .legal-section h3 {
+      margin-top: 30px;
+    }
+
+    .legal-section p,
+    .legal-section li {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .legal-section ul {
+      padding-left: 20px;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 0 auto 40px auto;
+      padding: 0 20px;
+    }
+
+    .footer-box {
+      background: linear-gradient(to bottom, #ffffff, #ececec);
+      border-radius: 24px;
+      box-shadow:
+        0 12px 28px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,1);
+      padding: 28px;
+      text-align: center;
+      color: #444444;
+      font-size: 15px;
+    }
+
+    .footer-links {
+      margin-top: 12px;
+    }
+
+    .footer-links a {
+      color: #111111;
+      margin: 0 8px;
+      text-decoration: underline;
+    }
+
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(17,17,17,0.96);
+      color: white;
+      padding: 16px;
+      text-align: center;
+      z-index: 9999;
+      box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+    }
+
+    .cookie-banner button {
+      margin-left: 10px;
+      margin-top: 8px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      background: white;
+      color: #111111;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .hero-box,
+      .section-box,
+      .footer-box {
+        padding: 28px 18px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      nav {
+        gap: 8px;
+      }
+
+      nav a {
+        font-size: 14px;
+        padding: 9px 12px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-<img src="logo.png" class="logo" style="width: 150px;">
-</header>
+  <header>
+    <div class="topbar">
+      <img src="logo.png" class="logo" alt="Mujitech Logo">
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#bilder">Beispielbilder</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#agb">AGB</a>
+        <a href="#datenschutz">Datenschutz</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
+  <section class="hero">
+    <div class="hero-box">
+      <h1>Mujitech Reparaturservice Schweiz</h1>
+      <p class="subtitle">
+        Professionelle Reparaturen für Handys, Tablets, Laptops und Desktop PCs in der ganzen Schweiz.
+        Abgabe nur nach Terminvereinbarung oder Einsendung nach Absprache.
+        Es gibt kein Ladenlokal.
+      </p>
 
-<h1>Mujitech Reparaturservice</h1>
-<p>Schnell, professionell & zuverlässig in der Schweiz</p>
+      <div class="button-grid">
+        <a class="button" href="https://wa.me/41767209832" target="_blank">WhatsApp schreiben</a>
+        <a class="button" href="tel:+41767209832">Jetzt anrufen</a>
+        <a class="button" href="https://www.instagram.com/mujitech.ch/" target="_blank">Instagram</a>
+        <a class="button" href="https://www.tiktok.com/@muji.tech" target="_blank">TikTok</a>
+      </div>
 
-<h3>Unsere Services</h3>
-<div class="services">
-✔ Display Reparatur<br>
-✔ Akku Austausch<br>
-✔ Software Probleme<br>
-✔ Reinigung & Diagnose
-</div>
+      <div class="info-strip">
+        <div class="info-card">
+          <strong>Schweizweiter Service</strong><br>
+          Reparaturannahme in der ganzen Schweiz per Termin oder Einsendung nach Absprache.
+        </div>
+        <div class="info-card">
+          <strong>Keine Preisangaben auf der Website</strong><br>
+          Preise sind nicht öffentlich ersichtlich und werden auf Anfrage mitgeteilt.
+        </div>
+        <div class="info-card">
+          <strong>6 Monate Garantie</strong><br>
+          Auf technisch einwandfreie Reparaturprodukte, sofern kein Bruch, Riss oder Wasserschaden vorliegt.
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h3>Kontakt</h3>
+  <section id="services">
+    <div class="section-box">
+      <h2>Unsere Services</h2>
 
-<a class="button" href="https://wa.me/41767209832">WhatsApp schreiben</a>
-<a class="button" href="tel:+41767209832">Jetzt anrufen</a>
-<a class="button" href="https://instagram.com/mujitech.schweiz">Instagram</a>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Handys</h3>
+          <p>Reparaturen ausschliesslich für Apple und Samsung.</p>
+          <ul>
+            <li>Display-Reparaturen</li>
+            <li>Akku-Austausch</li>
+            <li>Ladeprobleme</li>
+            <li>Kamera-Probleme</li>
+            <li>Lautsprecher und Mikrofon</li>
+            <li>Backcover und Gehäuseteile</li>
+            <li>Software- und Systemprobleme</li>
+          </ul>
+        </div>
 
-<div class="footer">
-<p>© Mujitech Schweiz</p>
+        <div class="service-card">
+          <h3>Tablets</h3>
+          <p>Reparaturen ausschliesslich für Apple und Samsung.</p>
+          <ul>
+            <li>Display und Glas</li>
+            <li>Akku-Austausch</li>
+            <li>Ladebuchse</li>
+            <li>Tasten und Lautsprecher</li>
+            <li>Kamera-Probleme</li>
+            <li>Software-Probleme</li>
+            <li>Diagnose und Fehlerprüfung</li>
+          </ul>
+        </div>
 
-<a href="#datenschutz">Datenschutz</a> |
-<a href="#agb">AGB</a> |
-<a href="#impressum">Impressum</a>
+        <div class="service-card">
+          <h3>Laptops</h3>
+          <ul>
+            <li>Display-Reparaturen</li>
+            <li>Akku-Austausch</li>
+            <li>Tastatur-Reparaturen</li>
+            <li>Ladebuchsen und Stromprobleme</li>
+            <li>Lüfterreinigung und Wartung</li>
+            <li>SSD- und RAM-Upgrades</li>
+            <li>Windows- und Software-Probleme</li>
+            <li>Datenrettung nach Möglichkeit</li>
+          </ul>
+        </div>
 
-<div id="datenschutz">
-<h3>Datenschutz</h3>
-<p>Ihre Daten werden vertraulich behandelt. Es erfolgt keine Weitergabe an Dritte.</p>
-</div>
+        <div class="service-card">
+          <h3>Desktop PCs</h3>
+          <ul>
+            <li>Fehlerdiagnose</li>
+            <li>Aufrüstung und Austausch von Komponenten</li>
+            <li>SSD- und RAM-Upgrades</li>
+            <li>Kühlung und Lüfterservice</li>
+            <li>Software- und Systemprobleme</li>
+            <li>Neuinstallation und Einrichtung</li>
+            <li>Leistungsoptimierung</li>
+          </ul>
+        </div>
+      </div>
 
-<div id="agb">
-<h3>AGB</h3>
-<p>Alle Reparaturen erfolgen ohne Garantie auf Wasserschäden. Preise können je nach Gerät variieren.</p>
-</div>
+      <div class="notice-box">
+        <strong>Preise auf Anfrage:</strong><br>
+        Da sich Reparaturaufwand und Teile je nach Gerät und Schaden unterscheiden, werden Preise individuell auf Anfrage mitgeteilt.
+      </div>
+    </div>
+  </section>
 
-<div id="impressum">
-<h3>Impressum</h3>
-<p>Mujitech Schweiz<br>Telefon: +41 76 720 98 32</p>
-</div>
+  <section id="ablauf">
+    <div class="section-box">
+      <h2>Ablauf</h2>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>1. Anfrage</h3>
+          <p>Du schreibst uns per WhatsApp, Instagram, TikTok oder telefonisch und beschreibst dein Gerät sowie den Schaden.</p>
+        </div>
+        <div class="service-card">
+          <h3>2. Abklärung</h3>
+          <p>Wir prüfen den Fall und geben dir Auskunft zu Vorgehen, Verfügbarkeit und Preis auf Anfrage.</p>
+        </div>
+        <div class="service-card">
+          <h3>3. Abgabe oder Einsendung</h3>
+          <p>Geräte können nur nach Terminvereinbarung vorbeigebracht oder nach Absprache eingesendet werden. Es gibt kein Ladenlokal.</p>
+        </div>
+        <div class="service-card">
+          <h3>4. Reparatur und Rückgabe</h3>
+          <p>Nach erfolgreicher Reparatur wird dein Gerät sauber geprüft und an dich zurückgegeben oder zurückgesendet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section id="bilder">
+    <div class="section-box">
+      <h2>Beispielbilder von Reparaturaufträgen</h2>
+      <p style="text-align:center; max-width: 850px; margin: 0 auto 20px auto;">
+        Hier kannst du später deine KI-Bilder oder echte Beispielbilder von Reparaturaufträgen einfügen.
+        Ersetze einfach die Platzhalterbilder unten durch deine eigenen Dateien.
+      </p>
 
-</div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/600x400?text=Reparaturbild+1" alt="Reparaturauftrag 1">
+          <div class="gallery-caption">Beispielbild 1 – Reparaturauftrag</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/600x400?text=Reparaturbild+2" alt="Reparaturauftrag 2">
+          <div class="gallery-caption">Beispielbild 2 – Reparaturauftrag</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://via.placeholder.com/600x400?text=Reparaturbild+3" alt="Reparaturauftrag 3">
+          <div class="gallery-caption">Beispielbild 3 – Reparaturauftrag</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Cookie Banner -->
-<div class="cookie" id="cookie">
-Diese Website verwendet Cookies.
-<button onclick="acceptCookies()">OK</button>
-</div>
+  <section id="kontakt">
+    <div class="section-box">
+      <h2>Kontakt</h2>
+      <p style="text-align:center; max-width: 800px; margin: 0 auto 25px auto;">
+        Für Anfragen, Terminvereinbarungen oder Einsendungen kontaktiere uns direkt. Wir antworten dir so schnell wie möglich.
+      </p>
 
-<script>
-function acceptCookies() {
-    document.getElementById("cookie").style.display = "none";
-}
-</script>
+      <div class="button-grid">
+        <a class="button" href="https://wa.me/41767209832" target="_blank">WhatsApp schreiben</a>
+        <a class="button" href="tel:+41767209832">Anrufen</a>
+        <a class="button" href="https://www.instagram.com/mujitech.ch/" target="_blank">Instagram öffnen</a>
+        <a class="button" href="https://www.tiktok.com/@muji.tech" target="_blank">TikTok öffnen</a>
+      </div>
+
+      <div class="notice-box">
+        <strong>Wichtiger Hinweis:</strong><br>
+        Kein Ladenlokal. Persönliche Übergabe nur nach vorgängiger Terminvereinbarung. Einsendung nur nach Absprache.
+      </div>
+    </div>
+  </section>
+
+  <section id="agb">
+    <div class="section-box legal-section">
+      <h2>AGB</h2>
+
+      <h3>1. Geltungsbereich</h3>
+      <p>
+        Diese Allgemeinen Geschäftsbedingungen gelten für alle Dienstleistungen und Reparaturarbeiten von Mujitech im Bereich Handy-, Tablet-, Laptop- und Desktop-PC-Reparaturen in der Schweiz.
+      </p>
+
+      <h3>2. Angebot und Preise</h3>
+      <p>
+        Preise sind auf der Website nicht ersichtlich. Preisangaben erfolgen individuell auf Anfrage und beziehen sich auf das konkret gemeldete Gerät sowie den beschriebenen Schaden. Zusätzliche Defekte oder nicht gemeldete Schäden können zu einer Anpassung des Aufwands führen.
+      </p>
+
+      <h3>3. Geräteannahme</h3>
+      <p>
+        Es besteht kein Ladenlokal. Geräte werden ausschliesslich nach Terminvereinbarung persönlich entgegengenommen oder nach vorgängiger Absprache eingesendet. Der Kunde ist verpflichtet, alle bekannten Schäden, Mängel und Besonderheiten vorab mitzuteilen.
+      </p>
+
+      <h3>4. Reparaturumfang</h3>
+      <p>
+        Mujitech führt Reparaturen nach bestem Wissen und Gewissen aus. Reparaturen beziehen sich grundsätzlich nur auf den vereinbarten Schaden oder auf die ausdrücklich besprochenen Arbeiten. Eine vollständige Wiederherstellung aller Funktionen kann nicht in jedem Fall garantiert werden, insbesondere bei bereits vorbestehenden Vorschäden.
+      </p>
+
+      <h3>5. Garantie</h3>
+      <p>
+        Auf Reparaturprodukte und technisch ausgeführte Reparaturarbeiten gewährt Mujitech eine Garantie von 6 Monaten, sofern das Gerät oder das reparierte Bauteil nach der Reparatur keinen Bruch, keinen Riss und keinen Wasserschaden aufweist.
+      </p>
+      <p>
+        Die Garantie gilt nur für technische Mängel am reparierten Teil oder an der ausgeführten Reparaturleistung. Von der Garantie ausgeschlossen sind insbesondere:
+      </p>
+      <ul>
+        <li>Bruch- oder Fallschäden</li>
+        <li>Risse im Glas, Display oder Gehäuse</li>
+        <li>Wasserschäden oder Feuchtigkeitsschäden</li>
+        <li>unsachgemässe Behandlung</li>
+        <li>Schäden durch Drittpersonen oder Fremdreparaturen</li>
+        <li>normale Abnutzung</li>
+      </ul>
+
+      <h3>6. Haftung</h3>
+      <p>
+        Mujitech haftet nicht für bereits bestehende Schäden, versteckte Mängel oder Folgeschäden, die vor der Reparatur bestanden oder durch den ursprünglichen Defekt verursacht wurden. Für Datenverlust wird keine Haftung übernommen. Der Kunde ist selbst dafür verantwortlich, vor der Abgabe des Geräts eine Datensicherung vorzunehmen.
+      </p>
+
+      <h3>7. Erfolgsabhängigkeit</h3>
+      <p>
+        Bei gewissen Geräten oder Schäden kann eine Reparatur technisch eingeschränkt oder nicht möglich sein. Mujitech übernimmt keine Garantie dafür, dass jede Reparatur in jedem Fall vollständig erfolgreich abgeschlossen werden kann, insbesondere bei schweren Vorschäden, Platinenfehlern oder Flüssigkeitsschäden.
+      </p>
+
+      <h3>8. Rückgabe und Prüfung</h3>
+      <p>
+        Der Kunde hat das Gerät nach Erhalt oder Rückgabe zeitnah zu prüfen und allfällige Beanstandungen innert angemessener Frist mitzuteilen. Spätere Beanstandungen können nur berücksichtigt werden, soweit sie unter die Garantiebedingungen fallen.
+      </p>
+
+      <h3>9. Versand und Einsendung</h3>
+      <p>
+        Einsendungen erfolgen nach Absprache. Für Transportschäden während des Versands haftet grundsätzlich das jeweilige Versandunternehmen, sofern nicht gesetzlich zwingend etwas anderes vorgesehen ist. Eine sichere Verpackung liegt in der Verantwortung des Absenders.
+      </p>
+
+      <h3>10. Schlussbestimmungen</h3>
+      <p>
+        Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Es gilt Schweizer Recht.
+      </p>
+    </div>
+  </section>
+
+  <section id="datenschutz">
+    <div class="section-box legal-section">
+      <h2>Datenschutz</h2>
+      <p>
+        Mujitech behandelt personenbezogene Daten vertraulich und zweckgebunden. Daten, die du uns im Rahmen einer Anfrage oder Reparatur übermittelst, werden ausschliesslich zur Bearbeitung deiner Anfrage, zur Kommunikation und zur Durchführung der Dienstleistung verwendet.
+      </p>
+      <p>
+        Es erfolgt keine unnötige Weitergabe an Dritte. Eine Weitergabe kann nur erfolgen, wenn dies für die Abwicklung notwendig ist oder eine gesetzliche Pflicht besteht.
+      </p>
+      <p>
+        Bitte übermittle keine unnötig sensiblen Daten über offene Kanäle. Für deine Gerätdaten und persönlichen Daten empfehlen wir vor jeder Reparatur eine eigene Datensicherung.
+      </p>
+      <p>
+        Diese Website kann technisch notwendige Cookies verwenden, um die Funktionalität und Darstellung der Seite zu ermöglichen.
+      </p>
+    </div>
+  </section>
+
+  <section id="impressum">
+    <div class="section-box legal-section">
+      <h2>Impressum</h2>
+      <p>
+        <strong>Mujitech</strong><br>
+        Reparaturservice Schweiz
+      </p>
+      <p>
+        Telefon / WhatsApp: +41 76 720 98 32<br>
+        Instagram: mujitech.ch<br>
+        TikTok: muji.tech
+      </p>
+      <p>
+        Persönliche Übergabe nur nach Terminvereinbarung.<br>
+        Einsendungen nur nach Absprache.<br>
+        Kein Ladenlokal.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-box">
+      <div>© Mujitech Schweiz – Alle Rechte vorbehalten</div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#agb">AGB</a>
+        <a href="#datenschutz">Datenschutz</a>
+        <a href="#impressum">Impressum</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie-banner" id="cookieBanner">
+    Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.
+    <button onclick="acceptCookies()">Verstanden</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      document.getElementById("cookieBanner").style.display = "none";
+      localStorage.setItem("cookiesAccepted", "yes");
+    }
+
+    window.onload = function() {
+      if (localStorage.getItem("cookiesAccepted") === "yes") {
+        document.getElementById("cookieBanner").style.display = "none";
+      }
+    };
+  </script>
 
 </body>
 </html>
