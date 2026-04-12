@@ -4,707 +4,712 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mujitech – Reparaturservice Schweiz</title>
-  <meta name="description" content="Mujitech Reparaturservice Schweiz für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs. Kontakt per WhatsApp, Telefon, Instagram oder TikTok." />
+  <meta name="description" content="Mujitech Reparaturservice Schweiz für Apple und Samsung Handys und Tablets sowie Laptops und Desktop PCs. Übergabe nach Terminvereinbarung oder Einsendung nach Absprache." />
   <style>
-    :root {
-      --bg: #f3f3f5;
-      --white: #ffffff;
-      --text: #111111;
-      --muted: #555555;
-      --line: rgba(0,0,0,0.08);
-      --shadow-sm: 0 10px 24px rgba(0,0,0,0.08);
-      --shadow-md: 0 18px 40px rgba(0,0,0,0.10);
-      --shadow-lg: 0 28px 70px rgba(0,0,0,0.14);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --transition: 0.35s ease;
+    :root{
+      --bg:#f3f3f5;
+      --white:#ffffff;
+      --text:#111111;
+      --muted:#4f4f57;
+      --line:rgba(0,0,0,0.08);
+      --shadow-sm:0 10px 24px rgba(0,0,0,0.08);
+      --shadow-md:0 18px 40px rgba(0,0,0,0.10);
+      --shadow-lg:0 28px 60px rgba(0,0,0,0.14);
+      --radius-xl:30px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --transition:0.35s ease;
     }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+    *{
+      box-sizing:border-box;
+      scroll-behavior:smooth;
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      color: var(--text);
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:Arial,sans-serif;
+      color:var(--text);
       background:
         radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 30%),
-        linear-gradient(to bottom, #ffffff 0%, #f4f4f5 40%, #efeff1 100%);
-      overflow-x: hidden;
+        linear-gradient(to bottom, #ffffff 0%, #f4f4f5 42%, #efeff1 100%);
+      overflow-x:hidden;
     }
 
-    body {
-      position: relative;
+    body{
+      position:relative;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    img{
+      max-width:100%;
+      display:block;
     }
 
-    a {
-      color: inherit;
+    a{
+      color:inherit;
     }
 
-    .page-glow {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
+    .page-glow{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
       background:
-        radial-gradient(circle at 8% 5%, rgba(255,255,255,0.85), transparent 25%),
-        radial-gradient(circle at 92% 0%, rgba(255,255,255,0.52), transparent 22%),
-        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.36), transparent 28%);
+        radial-gradient(circle at 15% 5%, rgba(255,255,255,0.8), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(255,255,255,0.55), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.3), transparent 28%);
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1200;
-      background: rgba(255,255,255,0.74);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+    header{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      backdrop-filter:blur(18px);
+      background:rgba(255,255,255,0.75);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 8px 22px rgba(0,0,0,0.05);
     }
 
-    .nav-wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+    .nav-wrap{
+      max-width:1280px;
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
     }
 
-    .logo {
-      width: 74px;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.10));
-      transition: transform var(--transition);
+    .logo{
+      width:72px;
+      filter:drop-shadow(0 8px 16px rgba(0,0,0,0.10));
+      transition:transform var(--transition);
     }
 
-    .logo:hover {
-      transform: translateY(-2px) scale(1.03);
+    .logo:hover{
+      transform:translateY(-2px) scale(1.03);
     }
 
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
     }
 
-    .brand-title {
-      font-size: 21px;
-      font-weight: 700;
+    .brand-title{
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:0.2px;
     }
 
-    .brand-sub {
-      font-size: 13px;
-      color: var(--muted);
+    .brand-sub{
+      font-size:13px;
+      color:var(--muted);
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: flex-end;
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:10px;
     }
 
     nav a,
     .btn,
-    .floating-contact a {
-      position: relative;
-      overflow: hidden;
+    .floating-contact a{
+      position:relative;
+      overflow:hidden;
     }
 
-    nav a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      color: #151515;
-      padding: 11px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.84);
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(226,226,229,0.97));
+    nav a{
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      color:#161616;
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.85);
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(226,226,229,0.97));
       box-shadow:
         0 8px 16px rgba(0,0,0,0.08),
         inset 0 2px 0 rgba(255,255,255,0.96),
         inset 0 -2px 5px rgba(0,0,0,0.04);
-      transition: transform var(--transition), box-shadow var(--transition);
+      transition:transform var(--transition), box-shadow var(--transition);
     }
 
     nav a::before,
     .btn::before,
-    .floating-contact a::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -140%;
-      width: 75%;
-      height: 100%;
-      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent);
-      transform: skewX(-18deg);
-      transition: left 0.75s ease;
+    .floating-contact a::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-140%;
+      width:75%;
+      height:100%;
+      background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent);
+      transform:skewX(-18deg);
+      transition:left 0.75s ease;
     }
 
     nav a:hover::before,
     .btn:hover::before,
-    .floating-contact a:hover::before {
-      left: 160%;
+    .floating-contact a:hover::before{
+      left:160%;
     }
 
-    nav a:hover {
-      transform: translateY(-2px);
+    nav a:hover{
+      transform:translateY(-2px);
       box-shadow:
         0 12px 24px rgba(0,0,0,0.12),
         inset 0 2px 0 rgba(255,255,255,1);
     }
 
-    main {
-      position: relative;
-      z-index: 1;
+    main{
+      position:relative;
+      z-index:1;
     }
 
-    .banner {
-      max-width: 1380px;
-      margin: 18px auto 0 auto;
-      padding: 0 18px;
-      animation: fadeDown 0.9s ease both;
+    .banner{
+      max-width:1380px;
+      margin:18px auto 0 auto;
+      padding:0 18px;
+      animation:fadeDown 0.9s ease both;
     }
 
-    .banner-frame {
-      overflow: hidden;
-      border-radius: 34px;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(255,255,255,0.86);
-      background: white;
-      position: relative;
+    .banner-frame{
+      overflow:hidden;
+      border-radius:34px;
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,0.85);
+      background:white;
+      position:relative;
     }
 
-    .banner-frame::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.10), transparent 35%);
-      pointer-events: none;
+    .banner-frame::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.12), transparent 35%);
+      pointer-events:none;
     }
 
-    .banner img {
-      width: 100%;
-      max-height: 520px;
-      object-fit: cover;
-      transform: scale(1.01);
-      transition: transform 0.85s ease;
+    .banner img{
+      width:100%;
+      max-height:520px;
+      object-fit:cover;
+      transform:scale(1.01);
+      transition:transform 0.85s ease;
     }
 
-    .banner-frame:hover img {
-      transform: scale(1.04);
+    .banner-frame:hover img{
+      transform:scale(1.04);
     }
 
-    .section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 28px 18px;
+    .section{
+      max-width:1280px;
+      margin:0 auto;
+      padding:28px 18px;
     }
 
-    .card,
-    .mini-card,
-    .service-card,
-    .step-card,
-    .gallery-card,
-    .review-card,
-    .footer-card {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(236,236,239,0.92));
-      border: 1px solid rgba(255,255,255,0.84);
+    .box-bg{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .box-bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(28,28,34,0.58), rgba(28,28,34,0.58)),
+        url("Hintergrund Mujitech.png") center/cover no-repeat;
+      opacity:0.35;
+      pointer-events:none;
+    }
+
+    .box-bg > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.93), rgba(238,238,241,0.92));
+      border:1px solid rgba(255,255,255,0.85);
+      border-radius:var(--radius-xl);
       box-shadow:
         0 18px 42px rgba(0,0,0,0.09),
-        inset 0 1px 0 rgba(255,255,255,0.95);
-      backdrop-filter: blur(16px);
+        inset 0 1px 0 rgba(255,255,255,0.94);
+      backdrop-filter:blur(16px);
+      padding:36px 28px;
     }
 
-    .card,
-    .footer-card {
-      border-radius: var(--radius-xl);
-      padding: 36px 28px;
+    .hero-contact{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:22px;
+      align-items:stretch;
     }
 
-    .mini-card,
-    .service-card,
-    .step-card,
-    .gallery-card,
-    .review-card {
-      border-radius: var(--radius-lg);
-      padding: 24px 22px;
-      transition: transform var(--transition), box-shadow var(--transition);
+    .hero-copy h1{
+      margin:0 0 14px 0;
+      font-size:50px;
+      line-height:1.08;
+      letter-spacing:-0.8px;
     }
 
-    .mini-card:hover,
-    .service-card:hover,
-    .step-card:hover,
-    .gallery-card:hover,
-    .review-card:hover {
-      transform: translateY(-6px);
-      box-shadow:
-        0 22px 34px rgba(0,0,0,0.10),
-        inset 0 1px 0 rgba(255,255,255,0.96);
+    .hero-copy p{
+      margin:0 0 15px 0;
+      font-size:18px;
+      line-height:1.8;
+      color:#2f2f2f;
+      max-width:760px;
     }
 
-    .with-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(rgba(28,28,32,0.58), rgba(28,28,32,0.58)),
-        url("Hintergrund Mujitech.png") center/cover no-repeat;
-      opacity: 0.22;
-      pointer-events: none;
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:18px;
     }
 
-    .with-bg > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-contact {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .hero-copy h1 {
-      margin: 0 0 14px 0;
-      font-size: 50px;
-      line-height: 1.08;
-      letter-spacing: -0.8px;
-    }
-
-    .hero-copy p {
-      margin: 0 0 15px 0;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #2f2f2f;
-      max-width: 760px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .pill {
-      padding: 12px 16px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 700;
-      color: #1a1a1a;
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(227,227,229,0.96));
-      border: 1px solid rgba(255,255,255,0.82);
+    .pill{
+      padding:12px 16px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      color:#1a1a1a;
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(227,227,229,0.96));
+      border:1px solid rgba(255,255,255,0.82);
       box-shadow:
         0 8px 16px rgba(0,0,0,0.07),
         inset 0 2px 0 rgba(255,255,255,0.95);
-      transition: transform var(--transition);
+      transition:transform var(--transition);
     }
 
-    .pill:hover {
-      transform: translateY(-2px);
+    .pill:hover{
+      transform:translateY(-2px);
     }
 
-    .contact-panel h2,
-    .title {
-      margin: 0 0 18px 0;
-      font-size: 32px;
+    .title{
+      margin:0 0 18px 0;
+      font-size:32px;
+      letter-spacing:-0.4px;
     }
 
-    .contact-intro {
-      color: #414141;
-      line-height: 1.75;
-      margin-bottom: 18px;
-      font-size: 16px;
+    .contact-intro{
+      color:#414141;
+      line-height:1.75;
+      margin-bottom:18px;
+      font-size:16px;
     }
 
-    .btn-grid {
-      display: grid;
-      gap: 14px;
+    .btn-grid{
+      display:grid;
+      gap:14px;
     }
 
-    .btn {
-      display: block;
-      text-decoration: none;
-      text-align: center;
-      font-size: 17px;
-      font-weight: 700;
-      padding: 17px 18px;
-      border-radius: 18px;
-      color: #111;
-      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(220,220,223,0.98));
-      border: 1px solid rgba(255,255,255,0.85);
+    .btn{
+      display:block;
+      text-decoration:none;
+      text-align:center;
+      font-size:17px;
+      font-weight:700;
+      padding:17px 18px;
+      border-radius:18px;
+      color:#111;
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(220,220,223,0.98));
+      border:1px solid rgba(255,255,255,0.85);
       box-shadow:
         0 12px 24px rgba(0,0,0,0.13),
         inset 0 2px 0 rgba(255,255,255,0.98),
         inset 0 -3px 8px rgba(0,0,0,0.05);
-      transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+      transition:transform var(--transition), box-shadow var(--transition), filter var(--transition);
     }
 
-    .btn:hover {
-      transform: translateY(-3px) scale(1.01);
-      filter: brightness(1.02);
+    .btn:hover{
+      transform:translateY(-3px) scale(1.01);
+      filter:brightness(1.02);
       box-shadow:
         0 18px 32px rgba(0,0,0,0.15),
         inset 0 2px 0 rgba(255,255,255,1),
         inset 0 -3px 8px rgba(0,0,0,0.05);
     }
 
-    .micro-note {
-      margin-top: 15px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
+    .micro-note{
+      margin-top:15px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
     }
 
     .grid-4,
     .grid-3,
-    .grid-2 {
-      display: grid;
-      gap: 20px;
+    .grid-2{
+      display:grid;
+      gap:20px;
     }
 
-    .grid-4 {
-      grid-template-columns: repeat(4, 1fr);
+    .grid-4{ grid-template-columns:repeat(4, 1fr); }
+    .grid-3{ grid-template-columns:repeat(3, 1fr); }
+    .grid-2{ grid-template-columns:repeat(2, 1fr); }
+
+    .mini-card,
+    .service-card,
+    .review-card,
+    .gallery-card,
+    .step-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(235,235,238,0.93));
+      border:1px solid rgba(255,255,255,0.82);
+      border-radius:var(--radius-lg);
+      padding:24px 22px;
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+      transition:transform var(--transition), box-shadow var(--transition);
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, 1fr);
+    .mini-card:hover,
+    .service-card:hover,
+    .review-card:hover,
+    .gallery-card:hover,
+    .step-card:hover{
+      transform:translateY(-6px);
+      box-shadow:
+        0 22px 34px rgba(0,0,0,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.96);
     }
 
     .mini-card h3,
     .service-card h3,
     .step-card h3,
-    .review-card h3 {
-      margin: 0 0 12px 0;
-      font-size: 23px;
+    .gallery-card h3,
+    .review-card h3{
+      margin:0 0 12px 0;
+      font-size:23px;
+      letter-spacing:-0.2px;
     }
 
     .mini-card p,
     .service-card p,
     .step-card p,
+    .gallery-card p,
     .review-card p,
     .legal p,
-    .legal li {
-      margin: 0;
-      color: #333333;
-      line-height: 1.8;
-      font-size: 16px;
+    .legal li{
+      margin:0;
+      color:#333333;
+      line-height:1.8;
+      font-size:16px;
     }
 
     .service-card ul,
-    .legal ul {
-      margin: 12px 0 0 0;
-      padding-left: 18px;
-      line-height: 1.8;
-      color: #303030;
+    .legal ul{
+      margin:12px 0 0 0;
+      padding-left:18px;
+      line-height:1.8;
+      color:#303030;
     }
 
     .service-card li,
-    .legal li {
-      margin-bottom: 4px;
+    .legal li{
+      margin-bottom:4px;
     }
 
-    .section-head {
-      text-align: center;
-      margin-bottom: 26px;
+    .section-head{
+      text-align:center;
+      margin-bottom:26px;
     }
 
-    .section-head h2 {
-      margin: 0 0 10px 0;
-      font-size: 40px;
-      letter-spacing: -0.6px;
+    .section-head h2{
+      margin:0 0 10px 0;
+      font-size:40px;
+      letter-spacing:-0.6px;
     }
 
-    .section-head p {
-      margin: 0 auto;
-      max-width: 860px;
-      color: #4b4b4b;
-      line-height: 1.8;
-      font-size: 17px;
+    .section-head p{
+      margin:0 auto;
+      max-width:860px;
+      color:#4b4b4b;
+      line-height:1.8;
+      font-size:17px;
     }
 
-    .gallery-card {
-      padding: 14px;
+    .gallery-card{
+      padding:14px;
+      overflow:hidden;
     }
 
-    .gallery-card img {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 10px 18px rgba(0,0,0,0.10);
-      transition: transform 0.55s ease;
+    .gallery-card img{
+      width:100%;
+      aspect-ratio:1 / 1;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 10px 18px rgba(0,0,0,0.10);
+      transition:transform 0.55s ease;
     }
 
-    .gallery-card:hover img {
-      transform: scale(1.035);
+    .gallery-card:hover img{
+      transform:scale(1.035);
     }
 
-    .gallery-card .caption {
-      padding: 14px 8px 6px 8px;
-      text-align: center;
-      color: #444444;
-      line-height: 1.7;
+    .gallery-card .caption{
+      padding:14px 8px 6px 8px;
+      text-align:center;
+      color:#444444;
+      line-height:1.7;
     }
 
-    .review-card .stars {
-      font-size: 20px;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
+    .review-card .stars{
+      font-size:20px;
+      letter-spacing:2px;
+      margin-bottom:14px;
     }
 
-    .review-card .name {
-      margin-top: 14px;
-      font-weight: 700;
-      color: #111111;
+    .review-card .name{
+      margin-top:14px;
+      font-weight:700;
+      color:#111111;
     }
 
-    .legal h3 {
-      font-size: 24px;
-      margin: 24px 0 10px 0;
+    .legal h3{
+      font-size:24px;
+      margin:24px 0 10px 0;
     }
 
-    .legal h3:first-child {
-      margin-top: 0;
+    .legal h3:first-child{
+      margin-top:0;
     }
 
-    footer {
-      padding: 10px 18px 40px 18px;
+    footer{
+      padding:10px 18px 40px 18px;
     }
 
-    .footer-card {
-      max-width: 1280px;
-      margin: 0 auto;
-      text-align: center;
+    .footer-card{
+      max-width:1280px;
+      margin:0 auto;
+      text-align:center;
+      background:linear-gradient(180deg, rgba(255,255,255,0.93), rgba(235,235,238,0.92));
+      border-radius:26px;
+      border:1px solid rgba(255,255,255,0.82);
+      box-shadow:0 16px 32px rgba(0,0,0,0.08);
+      padding:28px 22px;
     }
 
-    .footer-card p {
-      margin: 0;
-      color: #4a4a4a;
-      line-height: 1.8;
+    .footer-card p{
+      margin:0;
+      color:#4a4a4a;
+      line-height:1.8;
     }
 
-    .footer-links {
-      margin-top: 14px;
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
+    .footer-links{
+      margin-top:14px;
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
     }
 
-    .footer-links a {
-      font-weight: 700;
-      color: #111111;
+    .footer-links a{
+      font-weight:700;
+      color:#111111;
     }
 
-    .floating-contact {
-      position: fixed;
-      right: 18px;
-      bottom: 110px;
-      z-index: 1600;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      animation: fadeUp 0.85s ease both;
+    .cookie-banner{
+      position:fixed;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      z-index:2000;
+      background:rgba(17,17,17,0.96);
+      color:white;
+      border-radius:22px;
+      box-shadow:0 18px 30px rgba(0,0,0,0.22);
+      padding:18px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      animation:fadeUp 0.8s ease both;
     }
 
-    .floating-contact a {
-      min-width: 185px;
-      text-align: center;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      color: #111111;
-      padding: 15px 16px;
-      border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.86);
+    .cookie-banner p{
+      margin:0;
+      line-height:1.7;
+      font-size:14px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .cookie-banner button{
+      border:none;
+      border-radius:14px;
+      padding:12px 18px;
+      font-weight:700;
+      cursor:pointer;
+      color:#111;
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(224,224,224,1));
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.18),
+        inset 0 2px 0 rgba(255,255,255,0.98);
+      transition:transform var(--transition);
+    }
+
+    .cookie-banner button:hover{
+      transform:translateY(-2px);
+    }
+
+    .floating-contact{
+      position:fixed;
+      right:18px;
+      bottom:110px;
+      z-index:1600;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      animation:fadeUp 0.85s ease both;
+    }
+
+    .floating-contact a{
+      min-width:185px;
+      text-align:center;
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      color:#111111;
+      padding:15px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.86);
       box-shadow:
         0 14px 28px rgba(0,0,0,0.16),
         inset 0 2px 0 rgba(255,255,255,0.98),
         inset 0 -3px 8px rgba(0,0,0,0.05);
-      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-      backdrop-filter: blur(10px);
+      transition:transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      backdrop-filter:blur(10px);
     }
 
-    .floating-contact a:hover {
-      transform: translateY(-3px);
-      filter: brightness(1.02);
+    .floating-contact a:hover{
+      transform:translateY(-3px);
+      filter:brightness(1.02);
       box-shadow:
         0 18px 34px rgba(0,0,0,0.18),
         inset 0 2px 0 rgba(255,255,255,1);
     }
 
-    .floating-contact .whatsapp-btn {
-      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(218,242,224,0.98));
+    .floating-contact .whatsapp-btn{
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(218,242,224,0.98));
     }
 
-    .floating-contact .call-btn {
-      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(230,230,233,0.98));
+    .floating-contact .call-btn{
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(230,230,233,0.98));
     }
 
-    .cookie-banner {
-      position: fixed;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      z-index: 2000;
-      background: rgba(17,17,17,0.96);
-      color: white;
-      border-radius: 22px;
-      box-shadow: 0 18px 30px rgba(0,0,0,0.22);
-      padding: 18px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      animation: fadeUp 0.8s ease both;
+    .reveal{
+      opacity:0;
+      transform:translateY(32px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
     }
 
-    .cookie-banner p {
-      margin: 0;
-      line-height: 1.7;
-      font-size: 14px;
-      color: rgba(255,255,255,0.92);
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
     }
 
-    .cookie-banner button {
-      border: none;
-      border-radius: 14px;
-      padding: 12px 18px;
-      font-weight: 700;
-      cursor: pointer;
-      color: #111;
-      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(224,224,224,1));
-      box-shadow:
-        0 10px 18px rgba(0,0,0,0.18),
-        inset 0 2px 0 rgba(255,255,255,0.98);
-      transition: transform var(--transition);
+    @keyframes fadeDown{
+      from{ opacity:0; transform:translateY(-20px); }
+      to{ opacity:1; transform:translateY(0); }
     }
 
-    .cookie-banner button:hover {
-      transform: translateY(-2px);
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(24px); }
+      to{ opacity:1; transform:translateY(0); }
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 1100px) {
+    @media (max-width:1100px){
       .hero-contact,
       .grid-4,
       .grid-3,
-      .grid-2 {
-        grid-template-columns: 1fr 1fr;
+      .grid-2{
+        grid-template-columns:1fr 1fr;
       }
 
-      .hero-copy h1 {
-        font-size: 42px;
+      .hero-copy h1{
+        font-size:42px;
       }
     }
 
-    @media (max-width: 780px) {
-      .nav-wrap {
-        flex-direction: column;
-        align-items: stretch;
+    @media (max-width:780px){
+      .nav-wrap{
+        flex-direction:column;
+        align-items:stretch;
       }
 
-      .brand {
-        justify-content: center;
+      .brand{
+        justify-content:center;
       }
 
-      nav {
-        justify-content: center;
+      nav{
+        justify-content:center;
       }
 
       .hero-contact,
       .grid-4,
       .grid-3,
-      .grid-2 {
-        grid-template-columns: 1fr;
+      .grid-2{
+        grid-template-columns:1fr;
       }
 
-      .hero-copy h1 {
-        font-size: 34px;
+      .hero-copy h1{
+        font-size:34px;
       }
 
-      .section-head h2 {
-        font-size: 31px;
+      .section-head h2{
+        font-size:31px;
       }
 
       .card,
-      .footer-card {
-        padding: 28px 18px;
+      .mini-card,
+      .service-card,
+      .review-card,
+      .gallery-card,
+      .step-card{
+        padding-left:18px;
+        padding-right:18px;
       }
 
-      .banner {
-        margin-top: 10px;
+      .banner{
+        margin-top:10px;
       }
 
-      .banner-frame {
-        border-radius: 24px;
+      .banner-frame{
+        border-radius:24px;
       }
 
-      .cookie-banner {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
+      .cookie-banner{
+        left:10px;
+        right:10px;
+        bottom:10px;
       }
 
-      .floating-contact {
-        right: 10px;
-        left: 10px;
-        bottom: 90px;
-        gap: 10px;
+      .floating-contact{
+        right:10px;
+        left:10px;
+        bottom:90px;
+        gap:10px;
       }
 
-      .floating-contact a {
-        min-width: unset;
-        width: 100%;
-        font-size: 15px;
-        padding: 13px 14px;
+      .floating-contact a{
+        min-width:unset;
+        width:100%;
+        font-size:15px;
+        padding:13px 14px;
       }
     }
   </style>
@@ -741,7 +746,7 @@
     </section>
 
     <section class="section reveal" id="kontakt">
-      <div class="card with-bg hero-contact">
+      <div class="card box-bg hero-contact">
         <div class="hero-copy">
           <h1>Mujitech Reparaturservice für die ganze Schweiz</h1>
           <p>
@@ -763,7 +768,7 @@
         </div>
 
         <div class="contact-panel">
-          <h2>Kontakt direkt</h2>
+          <h2 class="title">Kontakt direkt</h2>
           <div class="contact-intro">
             Für Anfragen, Terminvereinbarungen oder Einsendungen kannst du uns direkt über die folgenden Kanäle kontaktieren.
           </div>
@@ -784,21 +789,21 @@
 
     <section class="section reveal">
       <div class="grid-3">
-        <div class="mini-card with-bg">
+        <div class="mini-card box-bg">
           <h3>Garantie</h3>
           <p>
             Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.
           </p>
         </div>
 
-        <div class="mini-card with-bg">
+        <div class="mini-card box-bg">
           <h3>Preise</h3>
           <p>
             Preise werden nicht öffentlich angezeigt. Jede Reparatur wird individuell beurteilt und auf Anfrage besprochen.
           </p>
         </div>
 
-        <div class="mini-card with-bg">
+        <div class="mini-card box-bg">
           <h3>Servicegebiet</h3>
           <p>
             Reparaturservice in der ganzen Schweiz. Persönliche Übergabe nur nach Termin oder Einsendung nach Absprache.
@@ -808,17 +813,16 @@
     </section>
 
     <section class="section reveal" id="services">
-      <div class="card with-bg">
+      <div class="card box-bg">
         <div class="section-head">
           <h2>Unsere Services</h2>
           <p>
-            Wir reparieren verschiedene Gerätetypen und teilen unsere Dienstleistungen übersichtlich nach Kategorie auf.
-            Preise auf Anfrage, abhängig vom Gerät und Schaden.
+            Wir reparieren verschiedene Gerätetypen und teilen unsere Dienstleistungen übersichtlich nach Kategorie auf. Preise auf Anfrage, abhängig vom Gerät und Schaden.
           </p>
         </div>
 
         <div class="grid-2">
-          <div class="service-card with-bg">
+          <div class="service-card box-bg">
             <h3>Handys</h3>
             <p>Reparaturen ausschliesslich für Apple oder Samsung.</p>
             <ul>
@@ -832,7 +836,7 @@
             </ul>
           </div>
 
-          <div class="service-card with-bg">
+          <div class="service-card box-bg">
             <h3>Tablets</h3>
             <p>Reparaturen ausschliesslich für Apple oder Samsung.</p>
             <ul>
@@ -845,7 +849,7 @@
             </ul>
           </div>
 
-          <div class="service-card with-bg">
+          <div class="service-card box-bg">
             <h3>Laptops</h3>
             <ul>
               <li>Display-Reparaturen</li>
@@ -859,7 +863,7 @@
             </ul>
           </div>
 
-          <div class="service-card with-bg">
+          <div class="service-card box-bg">
             <h3>Desktop PCs</h3>
             <ul>
               <li>Fehlerdiagnose</li>
@@ -876,62 +880,235 @@
     </section>
 
     <section class="section reveal" id="ablauf">
-      <div class="card with-bg">
+      <div class="card box-bg">
         <div class="section-head">
           <h2>Ablauf</h2>
-          <p>
-            So läuft eine Anfrage oder Reparatur bei Mujitech normalerweise ab.
-          </p>
+          <p>So läuft eine Anfrage oder Reparatur bei Mujitech normalerweise ab.</p>
         </div>
 
         <div class="grid-4">
-          <div class="step-card with-bg">
+          <div class="step-card box-bg">
             <h3>1. Anfrage</h3>
-            <p>
-              Du kontaktierst uns per WhatsApp, Instagram, TikTok oder telefonisch und beschreibst Gerät und Schaden.
-            </p>
+            <p>Du kontaktierst uns per WhatsApp, Instagram, TikTok oder telefonisch und beschreibst Gerät und Schaden.</p>
           </div>
 
-          <div class="step-card with-bg">
+          <div class="step-card box-bg">
             <h3>2. Abklärung</h3>
-            <p>
-              Wir prüfen den Fall und geben dir Rückmeldung zum Vorgehen sowie zum Preis auf Anfrage.
-            </p>
+            <p>Wir prüfen den Fall und geben dir Rückmeldung zum Vorgehen sowie zum Preis auf Anfrage.</p>
           </div>
 
-          <div class="step-card with-bg">
+          <div class="step-card box-bg">
             <h3>3. Übergabe</h3>
-            <p>
-              Persönliche Übergabe nur nach Terminvereinbarung oder Einsendung nach vorgängiger Absprache.
-            </p>
+            <p>Persönliche Übergabe nur nach Terminvereinbarung oder Einsendung nach vorgängiger Absprache.</p>
           </div>
 
-          <div class="step-card with-bg">
+          <div class="step-card box-bg">
             <h3>4. Rückgabe</h3>
-            <p>
-              Nach erfolgreicher Reparatur wird das Gerät geprüft und sauber an dich zurückgegeben oder zurückgesendet.
-            </p>
+            <p>Nach erfolgreicher Reparatur wird das Gerät geprüft und sauber an dich zurückgegeben oder zurückgesendet.</p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="section reveal" id="bilder">
-      <div class="card with-bg">
+      <div class="card box-bg">
         <div class="section-head">
           <h2>Beispielbilder von Reparaturaufträgen</h2>
-          <p>
-            Hier siehst du Beispielbilder aus verschiedenen Reparaturbereichen von Mujitech.
-          </p>
+          <p>Hier siehst du Beispielbilder aus verschiedenen Reparaturbereichen von Mujitech.</p>
         </div>
 
         <div class="grid-3">
-          <div class="gallery-card with-bg">
+          <div class="gallery-card box-bg">
             <img src="pc.png" alt="PC Reparatur Beispiel" />
             <div class="caption">PC Reparatur Beispiel</div>
           </div>
 
-          <div class="gallery-card with-bg">
+          <div class="gallery-card box-bg">
             <img src="Laptop.png" alt="Laptop Reparatur Beispiel" />
             <div class="caption">Laptop Reparatur Beispiel</div>
           </div>
+
+          <div class="gallery-card box-bg">
+            <img src="Handy.png" alt="Handy Reparatur Beispiel" />
+            <div class="caption">Handy Reparatur Beispiel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="agb">
+      <div class="card legal box-bg">
+        <div class="section-head">
+          <h2>AGB</h2>
+          <p>Die folgenden Bedingungen gelten für Reparaturdienstleistungen von Mujitech in der Schweiz.</p>
+        </div>
+
+        <h3>1. Geltungsbereich</h3>
+        <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Dienstleistungen und Reparaturarbeiten von Mujitech im Bereich Handy-, Tablet-, Laptop- und Desktop-PC-Reparaturen.</p>
+
+        <h3>2. Angebot und Preise</h3>
+        <p>Preise sind auf der Website nicht ersichtlich. Preisangaben erfolgen individuell auf Anfrage und beziehen sich auf das konkret gemeldete Gerät sowie den beschriebenen Schaden. Zusätzliche Defekte oder nicht gemeldete Schäden können zu einer Anpassung führen.</p>
+
+        <h3>3. Geräteannahme</h3>
+        <p>Es besteht kein Ladenlokal. Geräte werden ausschliesslich nach Terminvereinbarung persönlich entgegengenommen oder nach vorgängiger Absprache eingesendet. Der Kunde ist verpflichtet, bekannte Schäden und Besonderheiten vorab mitzuteilen.</p>
+
+        <h3>4. Reparaturumfang</h3>
+        <p>Mujitech führt Reparaturen nach bestem Wissen und Gewissen aus. Reparaturen beziehen sich grundsätzlich auf den vereinbarten Schaden oder auf die ausdrücklich besprochenen Arbeiten.</p>
+
+        <h3>5. Garantie</h3>
+        <p>Auf Reparaturprodukte und technisch ausgeführte Reparaturarbeiten gewährt Mujitech eine Garantie von 6 Monaten, sofern das Gerät oder das reparierte Bauteil nach der Reparatur keinen Bruch, keinen Riss und keinen Wasserschaden aufweist.</p>
+        <p>Von der Garantie ausgeschlossen sind insbesondere:</p>
+        <ul>
+          <li>Bruch- oder Fallschäden</li>
+          <li>Risse im Glas, Display oder Gehäuse</li>
+          <li>Wasserschäden oder Feuchtigkeitsschäden</li>
+          <li>unsachgemässe Behandlung</li>
+          <li>Schäden durch Drittpersonen oder Fremdreparaturen</li>
+          <li>normale Abnutzung</li>
+        </ul>
+
+        <h3>6. Haftung</h3>
+        <p>Mujitech haftet nicht für bereits bestehende Schäden, versteckte Mängel oder Folgeschäden, die vor der Reparatur bestanden oder durch den ursprünglichen Defekt verursacht wurden. Für Datenverlust wird keine Haftung übernommen. Vor jeder Reparatur wird eine Datensicherung empfohlen.</p>
+
+        <h3>7. Erfolgsabhängigkeit</h3>
+        <p>Bei gewissen Geräten oder Schäden kann eine Reparatur technisch eingeschränkt oder nicht möglich sein. Insbesondere bei schweren Vorschäden oder Flüssigkeitsschäden kann kein vollständiger Erfolg garantiert werden.</p>
+
+        <h3>8. Versand und Einsendung</h3>
+        <p>Einsendungen erfolgen nach Absprache. Für Transportschäden während des Versands haftet grundsätzlich das jeweilige Versandunternehmen. Eine sichere Verpackung liegt in der Verantwortung des Absenders.</p>
+
+        <h3>9. Schlussbestimmungen</h3>
+        <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Es gilt Schweizer Recht.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="datenschutz">
+      <div class="card legal box-bg">
+        <div class="section-head">
+          <h2>Datenschutz</h2>
+          <p>Wir behandeln personenbezogene Daten vertraulich und zweckgebunden.</p>
+        </div>
+
+        <p>Daten, die du uns im Rahmen einer Anfrage oder Reparatur übermittelst, werden ausschliesslich zur Bearbeitung deiner Anfrage, zur Kommunikation und zur Durchführung der Dienstleistung verwendet.</p>
+        <p>Es erfolgt keine unnötige Weitergabe an Dritte. Eine Weitergabe kann nur erfolgen, wenn dies für die Abwicklung notwendig ist oder eine gesetzliche Pflicht besteht.</p>
+        <p>Bitte übermittle keine unnötig sensiblen Daten über offene Kanäle. Vor jeder Reparatur empfehlen wir eine vollständige Datensicherung.</p>
+        <p>Diese Website kann technisch notwendige Cookies verwenden, um die Funktionalität und Darstellung der Seite sicherzustellen.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="bewertungen">
+      <div class="card box-bg">
+        <div class="section-head">
+          <h2>Google Rezensionen</h2>
+          <p>Hier kannst du deine Google Bewertungen sauber und übersichtlich darstellen.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="review-card box-bg">
+            <div class="stars">★★★★★</div>
+            <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
+            <div class="name">Kunde 1</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="stars">★★★★★</div>
+            <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
+            <div class="name">Kunde 2</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="stars">★★★★★</div>
+            <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
+            <div class="name">Kunde 3</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="stars">★★★★★</div>
+            <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
+            <div class="name">Kunde 4</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="stars">★★★★★</div>
+            <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
+            <div class="name">Kunde 5</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="stars">★★★★★</div>
+            <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
+            <div class="name">Kunde 6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="impressum">
+      <div class="card legal box-bg">
+        <div class="section-head">
+          <h2>Impressum</h2>
+          <p>Kontakt und Informationen zu Mujitech.</p>
+        </div>
+
+        <p><strong>Mujitech</strong><br>Reparaturservice Schweiz</p>
+        <p>
+          Telefon / WhatsApp: +41 76 720 98 32<br>
+          Instagram: mujitech.ch<br>
+          TikTok: muji.tech
+        </p>
+        <p>
+          Kein Ladenlokal.<br>
+          Persönliche Übergabe nur nach Terminvereinbarung.<br>
+          Einsendungen nur nach Absprache.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-card box-bg">
+      <p>© Mujitech Schweiz – Alle Rechte vorbehalten</p>
+      <div class="footer-links">
+        <a href="#kontakt">Kontakt</a>
+        <a href="#services">Services</a>
+        <a href="#bilder">Beispielbilder</a>
+        <a href="#agb">AGB</a>
+        <a href="#datenschutz">Datenschutz</a>
+        <a href="#bewertungen">Google Rezensionen</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-contact">
+    <a class="whatsapp-btn" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">WhatsApp schreiben</a>
+    <a class="call-btn" href="tel:+41767209832">Jetzt anrufen</a>
+  </div>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
+    <button onclick="acceptCookies()">Verstanden</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      document.getElementById("cookieBanner").style.display = "none";
+      localStorage.setItem("mujitechCookiesAccepted", "yes");
+    }
+
+    window.addEventListener("load", function () {
+      if (localStorage.getItem("mujitechCookiesAccepted") === "yes") {
+        document.getElementById("cookieBanner").style.display = "none";
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
