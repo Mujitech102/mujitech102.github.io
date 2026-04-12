@@ -40,6 +40,16 @@
       --radius-md:16px;
       --transition:0.35s ease;
       --gold:#c8a85d;
+      --wa:#25D366;
+      --call:#1e6fff;
+      --insta1:#feda75;
+      --insta2:#fa7e1e;
+      --insta3:#d62976;
+      --insta4:#962fbf;
+      --insta5:#4f5bd5;
+      --tiktok1:#25F4EE;
+      --tiktok2:#FE2C55;
+      --tiktok3:#111111;
     }
 
     *{
@@ -62,7 +72,7 @@
       position:relative;
     }
 
-    img{
+    img, video{
       max-width:100%;
       display:block;
     }
@@ -145,7 +155,8 @@
 
     nav a,
     .btn,
-    .floating-contact a{
+    .floating-contact a,
+    .hero-mini-btn{
       position:relative;
       overflow:hidden;
     }
@@ -168,7 +179,8 @@
 
     nav a::before,
     .btn::before,
-    .floating-contact a::before{
+    .floating-contact a::before,
+    .hero-mini-btn::before{
       content:"";
       position:absolute;
       top:0;
@@ -182,7 +194,8 @@
 
     nav a:hover::before,
     .btn:hover::before,
-    .floating-contact a:hover::before{
+    .floating-contact a:hover::before,
+    .hero-mini-btn:hover::before{
       left:160%;
     }
 
@@ -387,7 +400,6 @@
       padding:17px 18px;
       border-radius:18px;
       color:#111;
-      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(220,220,223,0.98));
       border:1px solid rgba(255,255,255,0.85);
       box-shadow:
         0 12px 24px rgba(0,0,0,0.13),
@@ -398,11 +410,31 @@
 
     .btn:hover{
       transform:translateY(-3px) scale(1.01);
-      filter:brightness(1.02);
+      filter:brightness(1.03);
       box-shadow:
         0 18px 32px rgba(0,0,0,0.15),
         inset 0 2px 0 rgba(255,255,255,1),
         inset 0 -3px 8px rgba(0,0,0,0.05);
+    }
+
+    .btn.whatsapp{
+      background:linear-gradient(180deg, #4df18b, #25D366);
+      color:#0b2514;
+    }
+
+    .btn.call{
+      background:linear-gradient(180deg, #69a6ff, #1e6fff);
+      color:#ffffff;
+    }
+
+    .btn.instagram{
+      background:linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5));
+      color:#ffffff;
+    }
+
+    .btn.tiktok{
+      background:linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2));
+      color:#ffffff;
     }
 
     .micro-note{
@@ -456,7 +488,8 @@
     .step-card h3,
     .gallery-card h3,
     .review-card h3,
-    .faq-card h3{
+    .faq-card h3,
+    .video-card h3{
       margin:0 0 12px 0;
       font-size:23px;
       letter-spacing:-0.2px;
@@ -468,6 +501,7 @@
     .gallery-card p,
     .review-card p,
     .faq-card p,
+    .video-card p,
     .legal p,
     .legal li{
       margin:0;
@@ -506,6 +540,70 @@
       color:#4b4b4b;
       line-height:1.85;
       font-size:17px;
+    }
+
+    .video-card{
+      max-width:980px;
+      margin:0 auto;
+    }
+
+    .video-frame{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      padding:10px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.95), rgba(224,224,228,0.95));
+      box-shadow:
+        0 24px 50px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+      border:1px solid rgba(255,255,255,0.92);
+    }
+
+    .video-frame::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,0.20), transparent 35%, transparent 70%, rgba(255,255,255,0.14));
+      pointer-events:none;
+      z-index:1;
+    }
+
+    .video-inner{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      background:#0f0f12;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    .video-inner video{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .video-label{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .video-chip{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      color:#ffffff;
+      backdrop-filter:blur(10px);
+      font-size:14px;
+      font-weight:700;
+      box-shadow:0 10px 18px rgba(0,0,0,0.25);
     }
 
     .gallery-card{
@@ -692,7 +790,6 @@
       text-decoration:none;
       font-weight:700;
       font-size:16px;
-      color:#111111;
       padding:15px 16px;
       border-radius:18px;
       border:1px solid rgba(255,255,255,0.86);
@@ -717,11 +814,13 @@
     }
 
     .floating-contact .whatsapp-btn{
-      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(218,242,224,0.98));
+      background:linear-gradient(180deg, #4df18b, #25D366);
+      color:#0b2514;
     }
 
     .floating-contact .call-btn{
-      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(230,230,233,0.98));
+      background:linear-gradient(180deg, #69a6ff, #1e6fff);
+      color:#ffffff;
     }
 
     .reveal{
@@ -829,6 +928,12 @@
         font-size:15px;
         padding:13px 14px;
       }
+
+      .video-label{
+        left:12px;
+        right:12px;
+        bottom:12px;
+      }
     }
   </style>
 
@@ -911,7 +1016,7 @@
       <nav>
         <a href="#kontakt">Kontakt</a>
         <a href="#services">Services</a>
-        <a href="#ablauf">Ablauf</a>
+        <a href="#video">Video</a>
         <a href="#bilder">Beispielbilder</a>
         <a href="#faq">FAQ</a>
         <a href="#bewertungen">Google Rezensionen</a>
@@ -958,7 +1063,10 @@
             </div>
             <div class="trust-item">
               <div class="icon-line">
-                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 3a15 15 0 010 18M12 3a15 15 0 000 18" stroke="currentColor" stroke-width="1.8"/></svg>
+                <svg class="icon" viewBox="0 0 24 24" aria-label="Schweizer Flagge" fill="none">
+                  <rect x="3" y="4" width="18" height="16" rx="2.5" fill="#D52B1E"/>
+                  <path d="M12 7.5v9M7.5 12h9" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
                 <div><strong>Schweizweit</strong><br>Einsendung nach Absprache</div>
               </div>
             </div>
@@ -972,19 +1080,19 @@
           </div>
 
           <div class="btn-grid">
-            <a class="btn" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">
+            <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">
               <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
               WhatsApp schreiben
             </a>
-            <a class="btn" href="tel:+41767209832">
+            <a class="btn call" href="tel:+41767209832">
               <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
               Jetzt anrufen
             </a>
-            <a class="btn" href="https://www.instagram.com/mujitech.ch/" target="_blank" rel="noopener noreferrer">
+            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/" target="_blank" rel="noopener noreferrer">
               <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
               Instagram öffnen
             </a>
-            <a class="btn" href="https://www.tiktok.com/@muji.tech" target="_blank" rel="noopener noreferrer">
+            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech" target="_blank" rel="noopener noreferrer">
               <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M14 4c.4 1.6 1.6 3 3 3.7.8.4 1.6.5 2 .5v3.2c-1.6 0-3.5-.5-5-1.7v5.7a5 5 0 11-5-5c.3 0 .5 0 .8.1v3.2a2 2 0 10 1.2 1.8V4h3z" fill="currentColor"/></svg>
               TikTok öffnen
             </a>
@@ -1089,32 +1197,23 @@
       </div>
     </section>
 
-    <section class="section reveal" id="ablauf">
-      <div class="card box-bg">
+    <section class="section reveal" id="video">
+      <div class="card box-bg video-card">
         <div class="section-head">
-          <h2>Ablauf einer Reparatur</h2>
-          <p>So läuft eine Anfrage oder Reparatur bei Mujitech normalerweise ab.</p>
+          <h2>Vorher / Nachher – Displaywechsel iPhone</h2>
+          <p>Ein echter Einblick in unsere Arbeit mit schönem Rahmen und professioneller Darstellung.</p>
         </div>
 
-        <div class="grid-4">
-          <div class="step-card box-bg">
-            <h3>1. Anfrage</h3>
-            <p>Du kontaktierst uns per WhatsApp, Instagram, TikTok oder telefonisch und beschreibst Gerät und Schaden.</p>
-          </div>
+        <div class="video-frame">
+          <div class="video-inner">
+            <video autoplay muted loop playsinline>
+              <source src="iphone-reparatur.mp4" type="video/mp4">
+            </video>
 
-          <div class="step-card box-bg">
-            <h3>2. Abklärung</h3>
-            <p>Wir prüfen den Fall und geben dir Rückmeldung zum Vorgehen sowie zum Preis auf Anfrage.</p>
-          </div>
-
-          <div class="step-card box-bg">
-            <h3>3. Übergabe</h3>
-            <p>Persönliche Übergabe nur nach Terminvereinbarung oder Einsendung nach vorgängiger Absprache.</p>
-          </div>
-
-          <div class="step-card box-bg">
-            <h3>4. Rückgabe</h3>
-            <p>Nach erfolgreicher Reparatur wird das Gerät geprüft und sauber an dich zurückgegeben oder zurückgesendet.</p>
+            <div class="video-label">
+              <div class="video-chip">Vorher / Nachher Unterschied</div>
+              <div class="video-chip">Displaywechsel iPhone</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1332,8 +1431,8 @@
           <div class="footer-links">
             <a href="#kontakt">Kontakt</a>
             <a href="#services">Services</a>
+            <a href="#video">Video</a>
             <a href="#bilder">Beispielbilder</a>
-            <a href="#faq">FAQ</a>
           </div>
         </div>
 
