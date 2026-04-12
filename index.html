@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mujitech Reparaturservice Schweiz</title>
-  <meta name="description" content="Mujitech Reparaturservice Schweiz für Apple und Samsung Handys und Tablets sowie Laptops und Desktop PCs. Übergabe nach Termin oder Einsendung nach Absprache." />
+  <meta name="description" content="Mujitech Reparaturservice Schweiz für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs. Übergabe nach Terminvereinbarung oder Einsendung nach Absprache." />
   <style>
     :root {
-      --bg: #f4f4f5;
-      --bg-soft: #fafafa;
-      --card: rgba(255,255,255,0.82);
+      --bg: #f3f3f4;
+      --white: #ffffff;
+      --soft: #f8f8f9;
+      --soft-2: #ececef;
       --line: rgba(0,0,0,0.08);
       --text: #111111;
       --muted: #555555;
-      --shadow-1: 0 10px 30px rgba(0,0,0,0.08);
-      --shadow-2: 0 20px 45px rgba(0,0,0,0.10);
-      --radius-xl: 28px;
+      --shadow-sm: 0 10px 24px rgba(0,0,0,0.08);
+      --shadow-md: 0 18px 40px rgba(0,0,0,0.10);
+      --shadow-lg: 0 24px 60px rgba(0,0,0,0.12);
+      --radius-xl: 30px;
       --radius-lg: 22px;
       --radius-md: 16px;
       --transition: 0.35s ease;
@@ -26,14 +28,19 @@
       scroll-behavior: smooth;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.95), rgba(244,244,245,1) 35%),
-        linear-gradient(to bottom, #ffffff, #efefef 45%, #f6f6f7 100%);
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 30%),
+        linear-gradient(to bottom, #ffffff 0%, #f4f4f5 40%, #efeff1 100%);
       overflow-x: hidden;
+    }
+
+    body {
+      position: relative;
     }
 
     a {
@@ -51,24 +58,24 @@
       pointer-events: none;
       z-index: 0;
       background:
-        radial-gradient(circle at 20% 10%, rgba(255,255,255,0.9), transparent 35%),
-        radial-gradient(circle at 80% 0%, rgba(255,255,255,0.6), transparent 30%),
-        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.45), transparent 35%);
-      opacity: 0.9;
+        radial-gradient(circle at 10% 5%, rgba(255,255,255,0.85), transparent 28%),
+        radial-gradient(circle at 90% 0%, rgba(255,255,255,0.55), transparent 22%),
+        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.35), transparent 28%);
+      opacity: 0.95;
     }
 
     header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 1200;
       backdrop-filter: blur(18px);
       background: rgba(255,255,255,0.72);
       border-bottom: 1px solid var(--line);
-      box-shadow: 0 6px 22px rgba(0,0,0,0.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
     }
 
     .nav-wrap {
-      max-width: 1260px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 14px 18px;
       display: flex;
@@ -86,12 +93,12 @@
 
     .logo {
       width: 72px;
-      filter: drop-shadow(0 8px 14px rgba(0,0,0,0.10));
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.10));
       transition: transform var(--transition);
     }
 
     .logo:hover {
-      transform: translateY(-2px) scale(1.02);
+      transform: translateY(-2px) scale(1.03);
     }
 
     .brand-text {
@@ -119,38 +126,40 @@
     }
 
     nav a {
+      position: relative;
+      overflow: hidden;
       text-decoration: none;
       font-size: 14px;
       font-weight: 700;
-      color: #1a1a1a;
+      color: #151515;
       padding: 11px 16px;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.8);
-      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(227,227,229,0.96));
+      border: 1px solid rgba(255,255,255,0.82);
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(226,226,229,0.97));
       box-shadow:
         0 8px 16px rgba(0,0,0,0.08),
-        inset 0 2px 0 rgba(255,255,255,0.95),
-        inset 0 -2px 6px rgba(0,0,0,0.04);
-      position: relative;
-      overflow: hidden;
+        inset 0 2px 0 rgba(255,255,255,0.96),
+        inset 0 -2px 5px rgba(0,0,0,0.04);
       transition: transform var(--transition), box-shadow var(--transition);
     }
 
     nav a::before,
-    .btn::before {
+    .btn::before,
+    .floating-contact a::before {
       content: "";
       position: absolute;
       top: 0;
       left: -140%;
-      width: 80%;
+      width: 75%;
       height: 100%;
-      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.85), transparent);
+      background: linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent);
       transform: skewX(-18deg);
-      transition: left 0.7s ease;
+      transition: left 0.75s ease;
     }
 
     nav a:hover::before,
-    .btn:hover::before {
+    .btn:hover::before,
+    .floating-contact a:hover::before {
       left: 160%;
     }
 
@@ -158,8 +167,7 @@
       transform: translateY(-2px);
       box-shadow:
         0 12px 24px rgba(0,0,0,0.12),
-        inset 0 2px 0 rgba(255,255,255,1),
-        inset 0 -2px 6px rgba(0,0,0,0.05);
+        inset 0 2px 0 rgba(255,255,255,1);
     }
 
     main {
@@ -177,10 +185,10 @@
     .banner-frame {
       overflow: hidden;
       border-radius: 34px;
-      box-shadow: var(--shadow-2);
-      border: 1px solid rgba(255,255,255,0.8);
-      position: relative;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.85);
       background: white;
+      position: relative;
     }
 
     .banner-frame::after {
@@ -193,10 +201,10 @@
 
     .banner img {
       width: 100%;
-      max-height: 500px;
+      max-height: 520px;
       object-fit: cover;
       transform: scale(1.01);
-      transition: transform 0.8s ease;
+      transition: transform 0.85s ease;
     }
 
     .banner-frame:hover img {
@@ -204,51 +212,51 @@
     }
 
     .section {
-      max-width: 1260px;
+      max-width: 1280px;
       margin: 0 auto;
       padding: 28px 18px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(240,240,242,0.92));
-      border: 1px solid rgba(255,255,255,0.85);
-      backdrop-filter: blur(16px);
-      border-radius: var(--radius-xl);
-      box-shadow:
-        0 18px 40px rgba(0,0,0,0.08),
-        inset 0 1px 0 rgba(255,255,255,0.92);
-      padding: 34px 28px;
       position: relative;
       overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,0.93), rgba(238,238,241,0.92));
+      border: 1px solid rgba(255,255,255,0.85);
+      border-radius: var(--radius-xl);
+      box-shadow:
+        0 18px 42px rgba(0,0,0,0.09),
+        inset 0 1px 0 rgba(255,255,255,0.94);
+      backdrop-filter: blur(16px);
+      padding: 36px 28px;
     }
 
     .card::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.35), transparent 35%, transparent 60%, rgba(255,255,255,0.16));
+      background: linear-gradient(135deg, rgba(255,255,255,0.34), transparent 35%, transparent 65%, rgba(255,255,255,0.14));
       pointer-events: none;
     }
 
     .hero-contact {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 22px;
       align-items: stretch;
     }
 
     .hero-copy h1 {
+      margin: 0 0 14px 0;
       font-size: 50px;
       line-height: 1.08;
-      margin: 0 0 14px 0;
       letter-spacing: -0.8px;
     }
 
     .hero-copy p {
+      margin: 0 0 15px 0;
       font-size: 18px;
       line-height: 1.8;
-      color: #303030;
-      margin: 0 0 16px 0;
+      color: #2f2f2f;
       max-width: 760px;
     }
 
@@ -264,12 +272,17 @@
       border-radius: 999px;
       font-size: 14px;
       font-weight: 700;
-      color: #1b1b1b;
-      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(227,227,229,0.96));
+      color: #1a1a1a;
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(227,227,229,0.96));
+      border: 1px solid rgba(255,255,255,0.82);
       box-shadow:
         0 8px 16px rgba(0,0,0,0.07),
         inset 0 2px 0 rgba(255,255,255,0.95);
-      border: 1px solid rgba(255,255,255,0.82);
+      transition: transform var(--transition);
+    }
+
+    .pill:hover {
+      transform: translateY(-2px);
     }
 
     .contact-panel h2,
@@ -281,7 +294,7 @@
 
     .contact-intro {
       color: #414141;
-      line-height: 1.7;
+      line-height: 1.75;
       margin-bottom: 18px;
       font-size: 16px;
     }
@@ -303,9 +316,9 @@
       border-radius: 18px;
       color: #111;
       background: linear-gradient(180deg, rgba(255,255,255,1), rgba(220,220,223,0.98));
-      border: 1px solid rgba(255,255,255,0.82);
+      border: 1px solid rgba(255,255,255,0.85);
       box-shadow:
-        0 12px 24px rgba(0,0,0,0.12),
+        0 12px 24px rgba(0,0,0,0.13),
         inset 0 2px 0 rgba(255,255,255,0.98),
         inset 0 -3px 8px rgba(0,0,0,0.05);
       transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
@@ -315,7 +328,7 @@
       transform: translateY(-3px) scale(1.01);
       filter: brightness(1.02);
       box-shadow:
-        0 18px 32px rgba(0,0,0,0.14),
+        0 18px 32px rgba(0,0,0,0.15),
         inset 0 2px 0 rgba(255,255,255,1),
         inset 0 -3px 8px rgba(0,0,0,0.05);
     }
@@ -355,13 +368,13 @@
     .review-card,
     .gallery-card,
     .step-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(235,235,238,0.92));
-      border: 1px solid rgba(255,255,255,0.8);
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(235,235,238,0.93));
+      border: 1px solid rgba(255,255,255,0.82);
       border-radius: var(--radius-lg);
       padding: 24px 22px;
       box-shadow:
         0 14px 28px rgba(0,0,0,0.08),
-        inset 0 1px 0 rgba(255,255,255,0.94);
+        inset 0 1px 0 rgba(255,255,255,0.95);
       transition: transform var(--transition), box-shadow var(--transition);
     }
 
@@ -394,7 +407,7 @@
     .legal p,
     .legal li {
       margin: 0;
-      color: #333;
+      color: #333333;
       line-height: 1.8;
       font-size: 16px;
     }
@@ -431,12 +444,6 @@
       font-size: 17px;
     }
 
-    .split-box {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 22px;
-    }
-
     .gallery-card {
       padding: 14px;
       overflow: hidden;
@@ -458,7 +465,7 @@
     .gallery-card .caption {
       padding: 14px 8px 6px 8px;
       text-align: center;
-      color: #444;
+      color: #444444;
       line-height: 1.7;
     }
 
@@ -471,7 +478,7 @@
     .review-card .name {
       margin-top: 14px;
       font-weight: 700;
-      color: #111;
+      color: #111111;
     }
 
     .legal h3 {
@@ -488,12 +495,12 @@
     }
 
     .footer-card {
-      max-width: 1260px;
+      max-width: 1280px;
       margin: 0 auto;
       text-align: center;
-      background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(235,235,238,0.92));
+      background: linear-gradient(180deg, rgba(255,255,255,0.93), rgba(235,235,238,0.92));
       border-radius: 26px;
-      border: 1px solid rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.82);
       box-shadow: 0 16px 32px rgba(0,0,0,0.08);
       padding: 28px 22px;
     }
@@ -514,7 +521,7 @@
 
     .footer-links a {
       font-weight: 700;
-      color: #111;
+      color: #111111;
     }
 
     .cookie-banner {
@@ -554,6 +561,58 @@
       box-shadow:
         0 10px 18px rgba(0,0,0,0.18),
         inset 0 2px 0 rgba(255,255,255,0.98);
+      transition: transform var(--transition);
+    }
+
+    .cookie-banner button:hover {
+      transform: translateY(-2px);
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: 18px;
+      bottom: 110px;
+      z-index: 1600;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      animation: fadeUp 0.85s ease both;
+    }
+
+    .floating-contact a {
+      position: relative;
+      overflow: hidden;
+      min-width: 185px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      color: #111111;
+      padding: 15px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.86);
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.16),
+        inset 0 2px 0 rgba(255,255,255,0.98),
+        inset 0 -3px 8px rgba(0,0,0,0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .floating-contact a:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.02);
+      box-shadow:
+        0 18px 34px rgba(0,0,0,0.18),
+        inset 0 2px 0 rgba(255,255,255,1);
+    }
+
+    .floating-contact .whatsapp-btn {
+      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(218,242,224,0.98));
+    }
+
+    .floating-contact .call-btn {
+      background: linear-gradient(180deg, rgba(255,255,255,1), rgba(230,230,233,0.98));
     }
 
     .reveal {
@@ -591,7 +650,6 @@
 
     @media (max-width: 1100px) {
       .hero-contact,
-      .split-box,
       .grid-4,
       .grid-3,
       .grid-2 {
@@ -618,7 +676,6 @@
       }
 
       .hero-contact,
-      .split-box,
       .grid-4,
       .grid-3,
       .grid-2 {
@@ -655,6 +712,20 @@
         left: 10px;
         right: 10px;
         bottom: 10px;
+      }
+
+      .floating-contact {
+        right: 10px;
+        left: 10px;
+        bottom: 90px;
+        gap: 10px;
+      }
+
+      .floating-contact a {
+        min-width: unset;
+        width: 100%;
+        font-size: 15px;
+        padding: 13px 14px;
       }
     }
   </style>
@@ -879,23 +950,17 @@
         <div class="grid-3">
           <div class="gallery-card">
             <img src="pc.png" alt="PC Reparatur Beispiel" />
-            <div class="caption">
-              PC Reparatur Beispiel
-            </div>
+            <div class="caption">PC Reparatur Beispiel</div>
           </div>
 
           <div class="gallery-card">
             <img src="Laptop.png" alt="Laptop Reparatur Beispiel" />
-            <div class="caption">
-              Laptop Reparatur Beispiel
-            </div>
+            <div class="caption">Laptop Reparatur Beispiel</div>
           </div>
 
           <div class="gallery-card">
             <img src="Handy.png" alt="Handy Reparatur Beispiel" />
-            <div class="caption">
-              Handy Reparatur Beispiel
-            </div>
+            <div class="caption">Handy Reparatur Beispiel</div>
           </div>
         </div>
       </div>
@@ -995,6 +1060,7 @@
         <div class="section-head">
           <h2>Google Rezensionen</h2>
           <p>
+            Hier kannst du deine Google Bewertungen sauber und übersichtlich darstellen.
           </p>
         </div>
 
@@ -1087,6 +1153,11 @@
       </div>
     </div>
   </footer>
+
+  <div class="floating-contact">
+    <a class="whatsapp-btn" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">WhatsApp schreiben</a>
+    <a class="call-btn" href="tel:+41767209832">Jetzt anrufen</a>
+  </div>
 
   <div class="cookie-banner" id="cookieBanner">
     <p>
