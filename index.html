@@ -1,149 +1,1505 @@
 <!DOCTYPE html>
 <html lang="de-CH">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Mujitech | Reparaturservice Schweiz</title>
+  <title>Mujitech | Reparaturservice Schweiz</title>
+  <meta name="description" content="Mujitech bietet professionelle Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der Schweiz. Apple und Samsung Reparaturen, Einsendung nach Absprache oder Übergabe mit Terminvereinbarung." />
+  <meta name="keywords" content="Handy Reparatur Schweiz, iPhone Reparatur Schweiz, Samsung Reparatur Schweiz, Tablet Reparatur Schweiz, Laptop Reparatur Schweiz, PC Reparatur Schweiz, Mujitech" />
+  <meta name="author" content="Mujitech" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="de-CH" />
+  <link rel="canonical" href="https://mujitech.ch/" />
 
-<!-- FAVICON -->
-<link rel="icon" type="image/png" href="favicon.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mujitech | Reparaturservice Schweiz" />
+  <meta property="og:description" content="Professionelle Reparaturen für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs in der Schweiz." />
+  <meta property="og:url" content="https://mujitech.ch/" />
+  <meta property="og:site_name" content="Mujitech" />
+  <meta property="og:locale" content="de_CH" />
+  <meta property="og:image" content="https://mujitech.ch/logo.png" />
 
-<style>
-body{
-margin:0;
-font-family:Arial;
-background:#0f0f0f;
-color:white;
-}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mujitech | Reparaturservice Schweiz" />
+  <meta name="twitter:description" content="Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der Schweiz." />
+  <meta name="twitter:image" content="https://mujitech.ch/logo.png" />
 
-/* BANNER VIDEO */
-.banner video{
-width:100%;
-height:70vh;
-object-fit:cover;
-}
+  <style>
+    :root{
+      --white:#ffffff;
+      --text:#111111;
+      --muted:#51515a;
+      --line:rgba(0,0,0,0.08);
+      --shadow-sm:0 10px 24px rgba(0,0,0,0.08);
+      --shadow-md:0 18px 40px rgba(0,0,0,0.10);
+      --shadow-lg:0 28px 60px rgba(0,0,0,0.14);
+      --radius-xl:32px;
+      --radius-lg:24px;
+      --radius-md:16px;
+      --transition:0.35s ease;
+      --gold:#c8a85d;
+      --wa:#25D366;
+      --call:#1e6fff;
+      --insta1:#feda75;
+      --insta2:#fa7e1e;
+      --insta3:#d62976;
+      --insta4:#962fbf;
+      --insta5:#4f5bd5;
+      --tiktok1:#25F4EE;
+      --tiktok2:#FE2C55;
+      --tiktok3:#111111;
+    }
 
-/* NEON BOX */
-.box{
-background:#1a1a1a;
-margin:20px;
-padding:20px;
-border-radius:15px;
-position:relative;
-overflow:hidden;
-box-shadow:0 0 20px rgba(0,255,255,0.2);
-}
+    *{
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
 
-/* STROM EFFEKT */
-.box::before{
-content:"";
-position:absolute;
-width:200%;
-height:100%;
-top:0;
-left:-100%;
-background:linear-gradient(120deg, transparent, #00ffff, transparent);
-animation:flow 3s linear infinite;
-opacity:0.3;
-}
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.95), transparent 30%),
+        linear-gradient(to bottom, #ffffff 0%, #f4f4f5 42%, #efeff1 100%);
+      overflow-x:hidden;
+    }
 
-@keyframes flow{
-0%{left:-100%;}
-100%{left:100%;}
-}
+    body{
+      position:relative;
+    }
 
-/* BUTTONS */
-.buttons{
-position:fixed;
-right:20px;
-bottom:20px;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
+    img, video{
+      max-width:100%;
+      display:block;
+    }
 
-.btn{
-padding:14px;
-border-radius:10px;
-color:white;
-text-decoration:none;
-font-weight:bold;
-text-align:center;
-}
+    a{
+      color:inherit;
+    }
 
-.whatsapp{background:#25D366;}
-.call{background:#007BFF;}
-.instagram{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);}
-.tiktok{background:black;}
+    .page-glow{
+      position:fixed;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 15% 5%, rgba(255,255,255,0.8), transparent 28%),
+        radial-gradient(circle at 85% 0%, rgba(255,255,255,0.55), transparent 24%),
+        radial-gradient(circle at 50% 100%, rgba(255,255,255,0.3), transparent 28%);
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:20px;
-}
-</style>
+    header{
+      position:sticky;
+      top:0;
+      z-index:1200;
+      backdrop-filter:blur(18px);
+      background:rgba(255,255,255,0.78);
+      border-bottom:1px solid var(--line);
+      box-shadow:0 8px 24px rgba(0,0,0,0.05);
+    }
+
+    .nav-wrap{
+      max-width:1280px;
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      min-width:0;
+    }
+
+    .logo{
+      width:72px;
+      filter:drop-shadow(0 8px 16px rgba(0,0,0,0.10));
+      transition:transform var(--transition);
+    }
+
+    .logo:hover{
+      transform:translateY(-2px) scale(1.03);
+    }
+
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .brand-title{
+      font-size:20px;
+      font-weight:700;
+      letter-spacing:0.2px;
+    }
+
+    .brand-sub{
+      font-size:13px;
+      color:var(--muted);
+    }
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+      gap:10px;
+    }
+
+    nav a,
+    .btn,
+    .floating-contact a,
+    .hero-mini-btn{
+      position:relative;
+      overflow:hidden;
+    }
+
+    nav a{
+      text-decoration:none;
+      font-size:14px;
+      font-weight:700;
+      color:#161616;
+      padding:11px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.85);
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(226,226,229,0.97));
+      box-shadow:
+        0 8px 16px rgba(0,0,0,0.08),
+        inset 0 2px 0 rgba(255,255,255,0.96),
+        inset 0 -2px 5px rgba(0,0,0,0.04);
+      transition:transform var(--transition), box-shadow var(--transition), color var(--transition);
+    }
+
+    nav a::before,
+    .btn::before,
+    .floating-contact a::before,
+    .hero-mini-btn::before{
+      content:"";
+      position:absolute;
+      top:0;
+      left:-140%;
+      width:75%;
+      height:100%;
+      background:linear-gradient(100deg, transparent, rgba(255,255,255,0.9), transparent);
+      transform:skewX(-18deg);
+      transition:left 0.75s ease;
+    }
+
+    nav a:hover::before,
+    .btn:hover::before,
+    .floating-contact a:hover::before,
+    .hero-mini-btn:hover::before{
+      left:160%;
+    }
+
+    nav a:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 12px 24px rgba(0,0,0,0.12),
+        inset 0 2px 0 rgba(255,255,255,1);
+      color:#000;
+    }
+
+    main{
+      position:relative;
+      z-index:1;
+    }
+
+    .banner{
+      max-width:1380px;
+      margin:18px auto 0 auto;
+      padding:0 18px;
+      animation:fadeDown 0.9s ease both;
+    }
+
+    .banner-frame{
+      overflow:hidden;
+      border-radius:34px;
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(255,255,255,0.85);
+      background:white;
+      position:relative;
+    }
+
+    .banner-video-wrap{
+      position:relative;
+      overflow:hidden;
+      min-height:320px;
+      max-height:540px;
+      background:#111;
+    }
+
+    .banner-video-wrap::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.15), transparent 55%);
+      pointer-events:none;
+      z-index:1;
+    }
+
+    .banner-video-wrap video{
+      width:100%;
+      height:100%;
+      min-height:320px;
+      max-height:540px;
+      object-fit:cover;
+      transform:scale(1.02);
+    }
+
+    .section{
+      max-width:1280px;
+      margin:0 auto;
+      padding:30px 18px;
+    }
+
+    .box-bg{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .box-bg::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(rgba(28,28,34,0.60), rgba(28,28,34,0.60)),
+        url("Hintergrund Mujitech.png") center/cover no-repeat;
+      opacity:0.36;
+      pointer-events:none;
+    }
+
+    .box-bg > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(238,238,241,0.93));
+      border:1px solid rgba(255,255,255,0.88);
+      border-radius:var(--radius-xl);
+      box-shadow:
+        0 18px 42px rgba(0,0,0,0.09),
+        inset 0 1px 0 rgba(255,255,255,0.94);
+      backdrop-filter:blur(16px);
+      padding:38px 30px;
+    }
+
+    .hero-contact{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:22px;
+      align-items:stretch;
+    }
+
+    .hero-copy h1{
+      margin:0 0 14px 0;
+      font-size:44px;
+      line-height:1.08;
+      letter-spacing:-0.8px;
+    }
+
+    .hero-copy p{
+      margin:0 0 16px 0;
+      font-size:18px;
+      line-height:1.85;
+      color:#2f2f2f;
+      max-width:760px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:22px;
+      margin-bottom:22px;
+    }
+
+    .hero-mini-btn{
+      text-decoration:none;
+      font-weight:700;
+      padding:14px 18px;
+      border-radius:999px;
+      color:#111;
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(225,225,228,0.98));
+      border:1px solid rgba(255,255,255,0.85);
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.09),
+        inset 0 2px 0 rgba(255,255,255,0.98);
+      transition:transform var(--transition), box-shadow var(--transition);
+    }
+
+    .hero-mini-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:
+        0 14px 24px rgba(0,0,0,0.11),
+        inset 0 2px 0 rgba(255,255,255,1);
+    }
+
+    .trust-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .trust-item{
+      padding:16px 16px;
+      border-radius:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(232,232,236,0.96));
+      border:1px solid rgba(255,255,255,0.84);
+      box-shadow:
+        0 10px 20px rgba(0,0,0,0.07),
+        inset 0 2px 0 rgba(255,255,255,0.96);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .icon-line{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+    }
+
+    .icon{
+      width:18px;
+      height:18px;
+      flex:0 0 18px;
+      margin-top:2px;
+      color:currentColor;
+    }
+
+    .title{
+      margin:0 0 18px 0;
+      font-size:32px;
+      letter-spacing:-0.4px;
+    }
+
+    .contact-intro{
+      color:#414141;
+      line-height:1.75;
+      margin-bottom:18px;
+      font-size:16px;
+    }
+
+    .btn-grid{
+      display:grid;
+      gap:14px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      text-align:center;
+      font-size:17px;
+      font-weight:700;
+      padding:17px 18px;
+      border-radius:18px;
+      color:#111;
+      border:1px solid rgba(255,255,255,0.85);
+      box-shadow:
+        0 12px 24px rgba(0,0,0,0.13),
+        inset 0 2px 0 rgba(255,255,255,0.98),
+        inset 0 -3px 8px rgba(0,0,0,0.05);
+      transition:transform var(--transition), box-shadow var(--transition), filter var(--transition);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px) scale(1.01);
+      filter:brightness(1.03);
+      box-shadow:
+        0 18px 32px rgba(0,0,0,0.15),
+        inset 0 2px 0 rgba(255,255,255,1),
+        inset 0 -3px 8px rgba(0,0,0,0.05);
+    }
+
+    .btn.whatsapp{
+      background:linear-gradient(180deg, #4df18b, #25D366);
+      color:#0b2514;
+    }
+
+    .btn.call{
+      background:linear-gradient(180deg, #69a6ff, #1e6fff);
+      color:#ffffff;
+    }
+
+    .btn.instagram{
+      background:linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5));
+      color:#ffffff;
+    }
+
+    .btn.tiktok{
+      background:linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2));
+      color:#ffffff;
+    }
+
+    .micro-note{
+      margin-top:15px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.7;
+    }
+
+    .grid-4,
+    .grid-3,
+    .grid-2{
+      display:grid;
+      gap:20px;
+    }
+
+    .grid-4{ grid-template-columns:repeat(4, 1fr); }
+    .grid-3{ grid-template-columns:repeat(3, 1fr); }
+    .grid-2{ grid-template-columns:repeat(2, 1fr); }
+
+    .mini-card,
+    .service-card,
+    .review-card,
+    .gallery-card,
+    .step-card,
+    .faq-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.96), rgba(235,235,238,0.94));
+      border:1px solid rgba(255,255,255,0.84);
+      border-radius:var(--radius-lg);
+      padding:24px 22px;
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.08),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+      transition:transform var(--transition), box-shadow var(--transition);
+    }
+
+    .mini-card:hover,
+    .service-card:hover,
+    .review-card:hover,
+    .gallery-card:hover,
+    .step-card:hover,
+    .faq-card:hover{
+      transform:translateY(-6px);
+      box-shadow:
+        0 22px 34px rgba(0,0,0,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.96);
+    }
+
+    .mini-card h3,
+    .service-card h3,
+    .step-card h3,
+    .gallery-card h3,
+    .review-card h3,
+    .faq-card h3,
+    .video-card h3{
+      margin:0 0 12px 0;
+      font-size:23px;
+      letter-spacing:-0.2px;
+    }
+
+    .mini-card p,
+    .service-card p,
+    .step-card p,
+    .gallery-card p,
+    .review-card p,
+    .faq-card p,
+    .video-card p,
+    .legal p,
+    .legal li{
+      margin:0;
+      color:#333333;
+      line-height:1.82;
+      font-size:16px;
+    }
+
+    .service-card ul,
+    .legal ul{
+      margin:12px 0 0 0;
+      padding-left:18px;
+      line-height:1.8;
+      color:#303030;
+    }
+
+    .service-card li,
+    .legal li{
+      margin-bottom:4px;
+    }
+
+    .section-head{
+      text-align:center;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      margin:0 0 10px 0;
+      font-size:40px;
+      letter-spacing:-0.6px;
+    }
+
+    .section-head p{
+      margin:0 auto;
+      max-width:860px;
+      color:#4b4b4b;
+      line-height:1.85;
+      font-size:17px;
+    }
+
+    .video-card{
+      max-width:980px;
+      margin:0 auto;
+    }
+
+    .video-frame{
+      position:relative;
+      overflow:hidden;
+      border-radius:28px;
+      padding:10px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.95), rgba(224,224,228,0.95));
+      box-shadow:
+        0 24px 50px rgba(0,0,0,0.18),
+        inset 0 1px 0 rgba(255,255,255,0.95);
+      border:1px solid rgba(255,255,255,0.92);
+    }
+
+    .video-frame::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(135deg, rgba(255,255,255,0.20), transparent 35%, transparent 70%, rgba(255,255,255,0.14));
+      pointer-events:none;
+      z-index:1;
+    }
+
+    .video-inner{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      background:#0f0f12;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08);
+    }
+
+    .video-inner video{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    .video-label{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .video-chip{
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(0,0,0,0.55);
+      color:#ffffff;
+      backdrop-filter:blur(10px);
+      font-size:14px;
+      font-weight:700;
+      box-shadow:0 10px 18px rgba(0,0,0,0.25);
+    }
+
+    .gallery-card{
+      padding:14px;
+      overflow:hidden;
+    }
+
+    .gallery-card img{
+      width:100%;
+      aspect-ratio:1 / 1;
+      object-fit:cover;
+      border-radius:18px;
+      box-shadow:0 10px 18px rgba(0,0,0,0.10);
+      transition:transform 0.55s ease;
+    }
+
+    .gallery-card:hover img{
+      transform:scale(1.035);
+    }
+
+    .gallery-card .caption{
+      padding:14px 8px 6px 8px;
+      text-align:center;
+      color:#444444;
+      line-height:1.7;
+      font-weight:700;
+    }
+
+    .review-card .stars{
+      font-size:20px;
+      letter-spacing:2px;
+      margin-bottom:14px;
+      color:var(--gold);
+    }
+
+    .review-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+
+    .review-badge{
+      font-size:12px;
+      font-weight:700;
+      padding:8px 10px;
+      border-radius:999px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.98), rgba(228,228,232,0.98));
+      box-shadow:0 8px 16px rgba(0,0,0,0.06);
+    }
+
+    .review-card .name{
+      margin-top:14px;
+      font-weight:700;
+      color:#111111;
+    }
+
+    .legal h3{
+      font-size:24px;
+      margin:24px 0 10px 0;
+    }
+
+    .legal h3:first-child{
+      margin-top:0;
+    }
+
+    footer{
+      padding:10px 18px 40px 18px;
+    }
+
+    .footer-card{
+      max-width:1280px;
+      margin:0 auto;
+      background:linear-gradient(180deg, rgba(255,255,255,0.94), rgba(235,235,238,0.93));
+      border-radius:28px;
+      border:1px solid rgba(255,255,255,0.84);
+      box-shadow:0 16px 32px rgba(0,0,0,0.08);
+      padding:30px 24px;
+    }
+
+    .footer-top{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr 0.9fr;
+      gap:20px;
+      align-items:start;
+    }
+
+    .footer-title{
+      font-size:20px;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .footer-card p{
+      margin:0;
+      color:#4a4a4a;
+      line-height:1.8;
+    }
+
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .footer-links a{
+      font-weight:700;
+      color:#111111;
+      text-decoration:none;
+    }
+
+    .footer-links a:hover{
+      text-decoration:underline;
+    }
+
+    .footer-bottom{
+      margin-top:20px;
+      padding-top:16px;
+      border-top:1px solid rgba(0,0,0,0.08);
+      text-align:center;
+      color:#4a4a4a;
+      font-size:14px;
+    }
+
+    .cookie-banner{
+      position:fixed;
+      left:16px;
+      right:16px;
+      bottom:16px;
+      z-index:2000;
+      background:rgba(17,17,17,0.96);
+      color:white;
+      border-radius:22px;
+      box-shadow:0 18px 30px rgba(0,0,0,0.22);
+      padding:18px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+      animation:fadeUp 0.8s ease both;
+    }
+
+    .cookie-banner p{
+      margin:0;
+      line-height:1.7;
+      font-size:14px;
+      color:rgba(255,255,255,0.92);
+    }
+
+    .cookie-banner button{
+      border:none;
+      border-radius:14px;
+      padding:12px 18px;
+      font-weight:700;
+      cursor:pointer;
+      color:#111;
+      background:linear-gradient(180deg, rgba(255,255,255,1), rgba(224,224,224,1));
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.18),
+        inset 0 2px 0 rgba(255,255,255,0.98);
+      transition:transform var(--transition);
+    }
+
+    .cookie-banner button:hover{
+      transform:translateY(-2px);
+    }
+
+    .floating-contact{
+      position:fixed;
+      right:18px;
+      bottom:110px;
+      z-index:1600;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      animation:fadeUp 0.85s ease both;
+    }
+
+    .floating-contact a{
+      min-width:195px;
+      text-align:center;
+      text-decoration:none;
+      font-weight:700;
+      font-size:16px;
+      padding:15px 16px;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.86);
+      box-shadow:
+        0 14px 28px rgba(0,0,0,0.16),
+        inset 0 2px 0 rgba(255,255,255,0.98),
+        inset 0 -3px 8px rgba(0,0,0,0.05);
+      transition:transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      backdrop-filter:blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+
+    .floating-contact a:hover{
+      transform:translateY(-3px);
+      filter:brightness(1.02);
+      box-shadow:
+        0 18px 34px rgba(0,0,0,0.18),
+        inset 0 2px 0 rgba(255,255,255,1);
+    }
+
+    .floating-contact .whatsapp-btn{
+      background:linear-gradient(180deg, #4df18b, #25D366);
+      color:#0b2514;
+    }
+
+    .floating-contact .call-btn{
+      background:linear-gradient(180deg, #69a6ff, #1e6fff);
+      color:#ffffff;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(32px);
+      transition:opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @keyframes fadeDown{
+      from{ opacity:0; transform:translateY(-20px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    @keyframes fadeUp{
+      from{ opacity:0; transform:translateY(24px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    @media (max-width:1100px){
+      .hero-contact,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .trust-grid,
+      .footer-top{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .hero-copy h1{
+        font-size:38px;
+      }
+    }
+
+    @media (max-width:780px){
+      .nav-wrap{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .brand{
+        justify-content:center;
+      }
+
+      nav{
+        justify-content:center;
+      }
+
+      .hero-contact,
+      .grid-4,
+      .grid-3,
+      .grid-2,
+      .trust-grid,
+      .footer-top{
+        grid-template-columns:1fr;
+      }
+
+      .hero-copy h1{
+        font-size:32px;
+      }
+
+      .section-head h2{
+        font-size:31px;
+      }
+
+      .card,
+      .mini-card,
+      .service-card,
+      .review-card,
+      .gallery-card,
+      .step-card,
+      .faq-card{
+        padding-left:18px;
+        padding-right:18px;
+      }
+
+      .banner{
+        margin-top:10px;
+      }
+
+      .banner-frame{
+        border-radius:24px;
+      }
+
+      .cookie-banner{
+        left:10px;
+        right:10px;
+        bottom:10px;
+      }
+
+      .floating-contact{
+        right:10px;
+        left:10px;
+        bottom:90px;
+        gap:10px;
+      }
+
+      .floating-contact a{
+        min-width:unset;
+        width:100%;
+        font-size:15px;
+        padding:13px 14px;
+      }
+
+      .video-label{
+        left:12px;
+        right:12px;
+        bottom:12px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Mujitech",
+    "url":"https://mujitech.ch/",
+    "logo":"https://mujitech.ch/logo.png",
+    "image":"https://mujitech.ch/logo.png",
+    "description":"Reparaturservice in der Schweiz für Apple und Samsung Handys und Tablets sowie Laptops und Desktop PCs.",
+    "telephone":"+41 76 720 98 32",
+    "areaServed":"Schweiz",
+    "sameAs":[
+      "https://www.instagram.com/mujitech.ch/",
+      "https://www.tiktok.com/@muji.tech"
+    ],
+    "address":{
+      "@type":"PostalAddress",
+      "addressCountry":"CH"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Welche Geräte repariert Mujitech?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Mujitech repariert Apple und Samsung Handys und Tablets sowie Laptops und Desktop PCs."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Hat Mujitech ein Ladenlokal?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Nein. Es gibt kein Ladenlokal. Übergaben erfolgen nur nach Terminvereinbarung oder Einsendung nach Absprache."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Gibt es eine Garantie auf Reparaturen?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Ja. Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Sind Preise auf der Website sichtbar?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Nein. Preise werden individuell auf Anfrage mitgeteilt."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
-
 <body>
+  <div class="page-glow"></div>
 
-<!-- VIDEO -->
-<div class="banner">
-<video autoplay muted loop>
-<source src="banner-mujitech.mp4" type="video/mp4">
-</video>
-</div>
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <img src="logo.png" class="logo" alt="Mujitech Logo Reparaturservice Schweiz" />
+        <div class="brand-text">
+          <div class="brand-title">Mujitech</div>
+          <div class="brand-sub">Reparaturservice Schweiz</div>
+        </div>
+      </div>
 
-<!-- BUTTONS -->
-<div class="buttons">
-<a href="https://wa.me/41767209832" class="btn whatsapp">WhatsApp</a>
-<a href="tel:+41767209832" class="btn call">Anrufen</a>
-<a href="https://instagram.com/mujitech.ch" class="btn instagram">Instagram</a>
-<a href="https://tiktok.com/@muji.tech" class="btn tiktok">TikTok</a>
-</div>
+      <nav>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#services">Services</a>
+        <a href="#video">Video</a>
+        <a href="#bilder">Beispielbilder</a>
+        <a href="#faq">FAQ</a>
+        <a href="#bewertungen">Google Rezensionen</a>
+      </nav>
+    </div>
+  </header>
 
-<div class="container">
+  <main>
+    <section class="banner">
+      <div class="banner-frame">
+        <div class="banner-video-wrap">
+          <video autoplay muted loop playsinline>
+            <source src="banner-mujitech.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </section>
 
-<h1>Mujitech 🇨🇭</h1>
-<p>Schweizweiter Reparaturservice</p>
+    <section class="section reveal" id="kontakt">
+      <div class="card box-bg hero-contact">
+        <div class="hero-copy">
+          <h1>Professionelle Reparaturen für Handy, Tablet, Laptop und PC in der Schweiz</h1>
+          <p>
+            Mujitech bietet professionelle Reparaturen für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs in der ganzen Schweiz.
+            Persönliche Übergabe nur nach Terminvereinbarung oder Einsendung nach Absprache.
+          </p>
+          <p>
+            Es gibt kein Ladenlokal. Preise sind auf der Website nicht ersichtlich und werden individuell auf Anfrage mitgeteilt.
+          </p>
 
-<div class="box">
-<h2>📱 Handy & Tablet</h2>
-<p>Apple & Samsung Reparaturen</p>
-</div>
+          <div class="hero-actions">
+            <a class="hero-mini-btn" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">Schnell via WhatsApp anfragen</a>
+            <a class="hero-mini-btn" href="#services">Services ansehen</a>
+          </div>
 
-<div class="box">
-<h2>💻 Laptop</h2>
-<p>Reparaturen & Upgrades</p>
-</div>
+          <div class="trust-grid">
+            <div class="trust-item">
+              <div class="icon-line">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="1.8"/><path d="M9.5 12.5l1.8 1.8 3.7-4.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div><strong>6 Monate Garantie</strong><br>auf technische Reparaturen</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon-line">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="1.8"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="1.8"/><path d="M9 12h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <div><strong>Kein Ladenlokal</strong><br>Übergabe nur mit Termin</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon-line">
+                <svg class="icon" viewBox="0 0 24 24" aria-label="Schweizer Flagge" fill="none">
+                  <rect x="3" y="4" width="18" height="16" rx="2.5" fill="#D52B1E"/>
+                  <path d="M12 7.5v9M7.5 12h9" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+                <div><strong>Schweizweit</strong><br>Einsendung nach Absprache</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<div class="box">
-<h2>🖥️ PC</h2>
-<p>Desktop Reparatur & Gaming PCs</p>
-</div>
+        <div class="contact-panel">
+          <h2 class="title">Kontakt direkt</h2>
+          <div class="contact-intro">
+            Für Anfragen, Terminvereinbarungen oder Einsendungen erreichst du uns direkt über WhatsApp, Telefon oder Social Media.
+          </div>
 
-<div class="box">
-<h2>🎬 Display Reparatur Beispiel</h2>
-<video autoplay muted loop width="100%">
-<source src="iphone-reparatur.mp4">
-</video>
-</div>
+          <div class="btn-grid">
+            <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
+              WhatsApp schreiben
+            </a>
+            <a class="btn call" href="tel:+41767209832">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              Jetzt anrufen
+            </a>
+            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+              Instagram öffnen
+            </a>
+            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M14 4c.4 1.6 1.6 3 3 3.7.8.4 1.6.5 2 .5v3.2c-1.6 0-3.5-.5-5-1.7v5.7a5 5 0 11-5-5c.3 0 .5 0 .8.1v3.2a2 2 0 10 1.2 1.8V4h3z" fill="currentColor"/></svg>
+              TikTok öffnen
+            </a>
+          </div>
 
-<div class="box">
-<h2>⭐ Google Bewertungen</h2>
+          <div class="micro-note">
+            Übergabe nur nach Terminvereinbarung. Einsendung nur nach vorgängiger Absprache. Reparaturservice für die gesamte Schweiz.
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- HIER SPÄTER GOOGLE EINBETTEN -->
-<p>★★★★★ Sehr gut!</p>
-<p>★★★★★ Top Service!</p>
+    <section class="section reveal">
+      <div class="grid-3">
+        <div class="mini-card box-bg">
+          <h3>Garantie</h3>
+          <p>
+            Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.
+          </p>
+        </div>
 
-</div>
+        <div class="mini-card box-bg">
+          <h3>Preise</h3>
+          <p>
+            Preise werden nicht öffentlich angezeigt. Jede Reparatur wird individuell beurteilt und auf Anfrage besprochen.
+          </p>
+        </div>
 
-<div class="box">
-<h2>🛡️ Garantie</h2>
-<p>6 Monate Garantie solange kein Bruch oder Wasserschaden vorliegt.</p>
-</div>
+        <div class="mini-card box-bg">
+          <h3>Servicegebiet</h3>
+          <p>
+            Mujitech bietet Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der ganzen Schweiz.
+          </p>
+        </div>
+      </div>
+    </section>
 
-</div>
+    <section class="section reveal" id="services">
+      <div class="card box-bg">
+        <div class="section-head">
+          <h2>Unsere Reparatur-Services</h2>
+          <p>
+            Wir reparieren verschiedene Gerätetypen und teilen unsere Dienstleistungen übersichtlich nach Kategorie auf.
+          </p>
+        </div>
 
+        <div class="grid-2">
+          <div class="service-card box-bg">
+            <h3>Handy Reparatur</h3>
+            <p>Reparaturen ausschliesslich für Apple oder Samsung.</p>
+            <ul>
+              <li>Display-Reparaturen</li>
+              <li>Akku-Austausch</li>
+              <li>Ladeprobleme und Ladebuchsen</li>
+              <li>Kamera, Lautsprecher und Mikrofon</li>
+              <li>Backcover und Gehäuseteile</li>
+              <li>Software- und Systemprobleme</li>
+              <li>Fehlerdiagnose</li>
+            </ul>
+          </div>
+
+          <div class="service-card box-bg">
+            <h3>Tablet Reparatur</h3>
+            <p>Reparaturen ausschliesslich für Apple oder Samsung.</p>
+            <ul>
+              <li>Display und Glas</li>
+              <li>Akku-Austausch</li>
+              <li>Ladebuchse</li>
+              <li>Tasten, Lautsprecher und Kamera</li>
+              <li>Software-Probleme</li>
+              <li>Diagnose und technische Prüfung</li>
+            </ul>
+          </div>
+
+          <div class="service-card box-bg">
+            <h3>Laptop Reparatur</h3>
+            <ul>
+              <li>Display-Reparaturen</li>
+              <li>Akku-Austausch</li>
+              <li>Tastatur- und Scharnierreparaturen</li>
+              <li>Ladebuchsen und Stromprobleme</li>
+              <li>Lüfterreinigung und Wartung</li>
+              <li>SSD- und RAM-Upgrades</li>
+              <li>Windows- und Software-Probleme</li>
+              <li>Datenrettung nach Möglichkeit</li>
+            </ul>
+          </div>
+
+          <div class="service-card box-bg">
+            <h3>PC Reparatur / Desktop PCs</h3>
+            <ul>
+              <li>Fehlerdiagnose</li>
+              <li>Austausch oder Aufrüstung von Komponenten</li>
+              <li>SSD- und RAM-Upgrades</li>
+              <li>Kühlung und Lüfterservice</li>
+              <li>Software- und Systemprobleme</li>
+              <li>Neuinstallation und Einrichtung</li>
+              <li>Optimierung und Wartung</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="video">
+      <div class="card box-bg video-card">
+        <div class="section-head">
+          <h2>Vorher / Nachher – Displaywechsel iPhone</h2>
+          <p>Ein echter Einblick in unsere Arbeit mit schönem Rahmen und professioneller Darstellung.</p>
+        </div>
+
+        <div class="video-frame">
+          <div class="video-inner">
+            <video autoplay muted loop playsinline>
+              <source src="iphone-reparatur.mp4" type="video/mp4">
+            </video>
+
+            <div class="video-label">
+              <div class="video-chip">Vorher / Nachher Unterschied</div>
+              <div class="video-chip">Displaywechsel iPhone</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="bilder">
+      <div class="card box-bg">
+        <div class="section-head">
+          <h2>Beispielbilder von Reparaturaufträgen</h2>
+          <p>Hier siehst du Beispielbilder aus verschiedenen Reparaturbereichen von Mujitech.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="gallery-card box-bg">
+            <img src="pc.png" alt="PC Reparatur Beispiel Schweiz" />
+            <div class="caption">PC Reparatur Beispiel</div>
+          </div>
+
+          <div class="gallery-card box-bg">
+            <img src="Laptop.png" alt="Laptop Reparatur Beispiel Schweiz" />
+            <div class="caption">Laptop Reparatur Beispiel</div>
+          </div>
+
+          <div class="gallery-card box-bg">
+            <img src="Handy.png" alt="Handy Reparatur Beispiel Apple Samsung Schweiz" />
+            <div class="caption">Handy Reparatur Beispiel</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="faq">
+      <div class="card box-bg">
+        <div class="section-head">
+          <h2>Häufige Fragen</h2>
+          <p>Wichtige Antworten rund um Reparatur, Garantie und Ablauf.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="faq-card box-bg">
+            <h3>Welche Geräte repariert Mujitech?</h3>
+            <p>Mujitech repariert Apple und Samsung Handys und Tablets sowie Laptops und Desktop PCs.</p>
+          </div>
+          <div class="faq-card box-bg">
+            <h3>Hat Mujitech ein Ladenlokal?</h3>
+            <p>Nein. Es gibt kein Ladenlokal. Übergaben erfolgen nur nach Terminvereinbarung oder Einsendung nach Absprache.</p>
+          </div>
+          <div class="faq-card box-bg">
+            <h3>Gibt es eine Garantie auf Reparaturen?</h3>
+            <p>Ja. Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.</p>
+          </div>
+          <div class="faq-card box-bg">
+            <h3>Sind Preise auf der Website sichtbar?</h3>
+            <p>Nein. Preise werden individuell auf Anfrage mitgeteilt.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="agb">
+      <div class="card legal box-bg">
+        <div class="section-head">
+          <h2>AGB</h2>
+          <p>Die folgenden Bedingungen gelten für Reparaturdienstleistungen von Mujitech in der Schweiz.</p>
+        </div>
+
+        <h3>1. Geltungsbereich</h3>
+        <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Dienstleistungen und Reparaturarbeiten von Mujitech im Bereich Handy-, Tablet-, Laptop- und Desktop-PC-Reparaturen.</p>
+
+        <h3>2. Angebot und Preise</h3>
+        <p>Preise sind auf der Website nicht ersichtlich. Preisangaben erfolgen individuell auf Anfrage und beziehen sich auf das konkret gemeldete Gerät sowie den beschriebenen Schaden. Zusätzliche Defekte oder nicht gemeldete Schäden können zu einer Anpassung führen.</p>
+
+        <h3>3. Geräteannahme</h3>
+        <p>Es besteht kein Ladenlokal. Geräte werden ausschliesslich nach Terminvereinbarung persönlich entgegengenommen oder nach vorgängiger Absprache eingesendet.</p>
+
+        <h3>4. Reparaturumfang</h3>
+        <p>Mujitech führt Reparaturen nach bestem Wissen und Gewissen aus. Reparaturen beziehen sich grundsätzlich auf den vereinbarten Schaden oder auf die ausdrücklich besprochenen Arbeiten.</p>
+
+        <h3>5. Garantie</h3>
+        <p>Auf Reparaturprodukte und technisch ausgeführte Reparaturarbeiten gewährt Mujitech eine Garantie von 6 Monaten, sofern das Gerät oder das reparierte Bauteil nach der Reparatur keinen Bruch, keinen Riss und keinen Wasserschaden aufweist.</p>
+        <p>Von der Garantie ausgeschlossen sind insbesondere:</p>
+        <ul>
+          <li>Bruch- oder Fallschäden</li>
+          <li>Risse im Glas, Display oder Gehäuse</li>
+          <li>Wasserschäden oder Feuchtigkeitsschäden</li>
+          <li>Unsachgemässe Behandlung</li>
+          <li>Schäden durch Drittpersonen oder Fremdreparaturen</li>
+          <li>Normale Abnutzung</li>
+        </ul>
+
+        <h3>6. Haftung</h3>
+        <p>Mujitech haftet nicht für bereits bestehende Schäden, versteckte Mängel oder Folgeschäden. Für Datenverlust wird keine Haftung übernommen. Vor jeder Reparatur wird eine Datensicherung empfohlen.</p>
+
+        <h3>7. Versand und Einsendung</h3>
+        <p>Einsendungen erfolgen nach Absprache. Für Transportschäden während des Versands haftet grundsätzlich das jeweilige Versandunternehmen.</p>
+
+        <h3>8. Schlussbestimmungen</h3>
+        <p>Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Es gilt Schweizer Recht.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="datenschutz">
+      <div class="card legal box-bg">
+        <div class="section-head">
+          <h2>Datenschutz</h2>
+          <p>Wir behandeln personenbezogene Daten vertraulich und zweckgebunden.</p>
+        </div>
+
+        <p>Daten, die du uns im Rahmen einer Anfrage oder Reparatur übermittelst, werden ausschliesslich zur Bearbeitung deiner Anfrage, zur Kommunikation und zur Durchführung der Dienstleistung verwendet.</p>
+        <p>Es erfolgt keine unnötige Weitergabe an Dritte. Eine Weitergabe kann nur erfolgen, wenn dies für die Abwicklung notwendig ist oder eine gesetzliche Pflicht besteht.</p>
+        <p>Vor jeder Reparatur empfehlen wir eine vollständige Datensicherung.</p>
+        <p>Diese Website kann technisch notwendige Cookies verwenden, um die Funktionalität und Darstellung der Seite sicherzustellen.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="bewertungen">
+      <div class="card box-bg">
+        <div class="section-head">
+          <h2>Google Rezensionen</h2>
+          <p>Hier kannst du deine Google Bewertungen sauber, vertrauenswürdig und übersichtlich darstellen.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="review-card box-bg">
+            <div class="review-head">
+              <div class="stars">★★★★★</div>
+              <div class="review-badge">Google</div>
+            </div>
+            <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
+            <div class="name">Kunde 1</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-head">
+              <div class="stars">★★★★★</div>
+              <div class="review-badge">Google</div>
+            </div>
+            <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
+            <div class="name">Kunde 2</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-head">
+              <div class="stars">★★★★★</div>
+              <div class="review-badge">Google</div>
+            </div>
+            <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
+            <div class="name">Kunde 3</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-head">
+              <div class="stars">★★★★★</div>
+              <div class="review-badge">Google</div>
+            </div>
+            <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
+            <div class="name">Kunde 4</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-head">
+              <div class="stars">★★★★★</div>
+              <div class="review-badge">Google</div>
+            </div>
+            <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
+            <div class="name">Kunde 5</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-head">
+              <div class="stars">★★★★★</div>
+              <div class="review-badge">Google</div>
+            </div>
+            <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
+            <div class="name">Kunde 6</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="impressum">
+      <div class="card legal box-bg">
+        <div class="section-head">
+          <h2>Impressum</h2>
+          <p>Kontakt und Informationen zu Mujitech.</p>
+        </div>
+
+        <p><strong>Mujitech</strong><br>Reparaturservice Schweiz</p>
+        <p>
+          Telefon / WhatsApp: +41 76 720 98 32<br>
+          Instagram: mujitech.ch<br>
+          TikTok: muji.tech
+        </p>
+        <p>
+          Kein Ladenlokal.<br>
+          Persönliche Übergabe nur nach Terminvereinbarung.<br>
+          Einsendungen nur nach Absprache.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-card box-bg">
+      <div class="footer-top">
+        <div>
+          <div class="footer-title">Mujitech</div>
+          <p>
+            Reparaturservice für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs in der Schweiz.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Navigation</div>
+          <div class="footer-links">
+            <a href="#kontakt">Kontakt</a>
+            <a href="#services">Services</a>
+            <a href="#video">Video</a>
+            <a href="#bilder">Beispielbilder</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-title">Rechtliches</div>
+          <div class="footer-links">
+            <a href="#agb">AGB</a>
+            <a href="#datenschutz">Datenschutz</a>
+            <a href="#bewertungen">Google Rezensionen</a>
+            <a href="#impressum">Impressum</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © Mujitech Schweiz – Alle Rechte vorbehalten
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-contact">
+    <a class="whatsapp-btn" href="https://wa.me/41767209832" target="_blank" rel="noopener noreferrer">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="1.8"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
+      WhatsApp schreiben
+    </a>
+    <a class="call-btn" href="tel:+41767209832">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      Jetzt anrufen
+    </a>
+  </div>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
+    <button onclick="acceptCookies()">Verstanden</button>
+  </div>
+
+  <script>
+    function acceptCookies() {
+      document.getElementById("cookieBanner").style.display = "none";
+      localStorage.setItem("mujitechCookiesAccepted", "yes");
+    }
+
+    window.addEventListener("load", function () {
+      if (localStorage.getItem("mujitechCookiesAccepted") === "yes") {
+        document.getElementById("cookieBanner").style.display = "none";
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
