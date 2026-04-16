@@ -451,7 +451,7 @@
     
     .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #ffffff; line-height: 1.7; font-weight: 800; font-size: 18px;}
 
-    /* Slide-Show für Rezensionen (Marquee) - iOS Stabilisiert */
+    /* Slide-Show für Rezensionen (Marquee) */
     .reviews-slider-container {
       overflow: hidden;
       width: 100%;
@@ -507,7 +507,7 @@
 
     .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #777; font-size: 14px; font-weight: 600;}
 
-    /* iOS 3D Reveal Animationen (Abgespeckt für Mobile-Performance) */
+    /* iOS 3D Reveal Animationen */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -525,6 +525,7 @@
       transform: perspective(1000px) translateY(0) rotateX(0deg) scale(1);
     }
 
+    /* Verbessertes Cookie-Banner */
     .cookie-banner {
       position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 2000;
       background: rgba(20, 20, 25, 0.95); color: white; border-radius: 20px;
@@ -532,17 +533,39 @@
       padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
-      transform: translateY(150%); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      
+      /* Animation und Sichtbarkeit sicher steuern */
+      opacity: 0;
+      pointer-events: none; /* Blockiert keine Klicks, wenn unsichtbar */
+      transform: translateY(150%); 
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s;
       -webkit-transform: translateZ(0);
     }
-    .cookie-banner.show { transform: translateY(0); }
-    .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; }
-    .cookie-banner button {
-      border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer;
-      color: #fff; background: rgba(255,255,255,0.1);
+    
+    .cookie-banner.show { 
+      transform: translateY(0); 
+      opacity: 1;
+      pointer-events: auto; /* Aktiviert Klicks wieder */
+    }
+    
+    .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; flex: 1; min-width: 200px;}
+    
+    .cookie-buttons { display: flex; gap: 12px; }
+    
+    .cookie-banner .btn-accept {
+      border: 1px solid rgba(255,255,255,0.8); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer;
+      color: #000; background: #fff;
       transition: transform var(--transition), background var(--transition);
     }
-    .cookie-banner button:hover { transform: translateY(-2px) scale(1.05); background: rgba(255,255,255,0.2); }
+    .cookie-banner .btn-accept:hover { transform: translateY(-2px) scale(1.05); background: #e0e0e0; }
+
+    .cookie-banner .btn-decline {
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer;
+      color: #fff; background: rgba(255,255,255,0.05);
+      transition: transform var(--transition), background var(--transition);
+    }
+    .cookie-banner .btn-decline:hover { transform: translateY(-2px) scale(1.05); background: rgba(255,255,255,0.1); }
+
 
     .floating-contact {
       position: fixed; right: 20px; bottom: 120px; z-index: 1600;
@@ -575,7 +598,6 @@
       .card, .mini-card, .service-card, .review-card, .gallery-card, .faq-card { padding: 25px 20px; }
       .video-card { max-width: 100%; }
       
-      /* Entfernt Hover-Levitation auf Mobile, die oft stört */
       .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
       .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
       
@@ -998,7 +1020,7 @@
     <section class="section reveal" id="agb">
       <div class="card legal box-bg tilt-effect">
         <div class="card-content">
-          <div class="section-head">
+          <div class="section-head" style="transform: translateZ(0);">
             <h2>Rechtliches: AGB & Datenschutz</h2>
           </div>
           <h3>1. Geltungsbereich (AGB)</h3>
@@ -1077,18 +1099,29 @@
 
   <div class="cookie-banner" id="cookieBanner">
     <p>Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
-    <button onclick="acceptCookies()">Verstanden, danke</button>
+    <div class="cookie-buttons">
+      <button class="btn-decline" onclick="handleCookies('declined')">Ablehnen</button>
+      <button class="btn-accept" onclick="handleCookies('accepted')">Akzeptieren</button>
+    </div>
   </div>
 
   <script>
-    // --- 1. COOKIE BANNER ---
-    function acceptCookies() {
-      document.getElementById("cookieBanner").classList.remove("show");
-      localStorage.setItem("mujitechCookiesAccepted", "yes");
+    // --- 1. VERBESSERTES COOKIE BANNER SCRIPT ---
+    function handleCookies(choice) {
+      const banner = document.getElementById("cookieBanner");
+      
+      // Zustand speichern
+      localStorage.setItem("mujitechCookies", choice);
+      
+      // CSS Klasse entfernen zum Ausblenden
+      banner.classList.remove("show");
     }
 
     window.addEventListener("load", function () {
-      if (localStorage.getItem("mujitechCookiesAccepted") !== "yes") {
+      const cookieStatus = localStorage.getItem("mujitechCookies");
+      
+      // Nur anzeigen, wenn noch keine Auswahl getroffen wurde
+      if (!cookieStatus) {
         setTimeout(() => {
           document.getElementById("cookieBanner").classList.add("show");
         }, 1000);
