@@ -27,12 +27,9 @@
   <style>
     :root {
       --white: #ffffff;
-      --text: #111111;
-      --muted: #51515a;
-      --line: rgba(0,0,0,0.08);
-      --shadow-sm: 0 10px 24px rgba(0,0,0,0.08);
-      --shadow-md: 0 18px 40px rgba(0,0,0,0.12);
-      --shadow-lg: 0 30px 60px rgba(0,0,0,0.2);
+      --text: #e0e0e0;
+      --muted: #888890;
+      --line: rgba(255,255,255,0.1);
       --radius-xl: 32px;
       --radius-lg: 24px;
       --radius-md: 16px;
@@ -62,7 +59,7 @@
       padding: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       color: var(--text);
-      background: #0a0a0c; /* Dunkler Basis-Hintergrund für geilen Kontrast */
+      background: #060608; /* Sehr dunkler Hintergrund passend zum Screenshot */
       overflow-x: hidden;
     }
 
@@ -78,9 +75,9 @@
     }
 
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.6); }
-      100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.3); }
+      0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
+      50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); }
+      100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
     }
 
     @keyframes animatedBackground {
@@ -89,9 +86,10 @@
       100% { background-position: 0% 50%; }
     }
 
-    @keyframes spinSlow {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    /* Slider Animation für Rezensionen */
+    @keyframes scrollReviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 10px)); }
     }
 
     /* Background Layering */
@@ -101,8 +99,8 @@
       z-index: 0;
       pointer-events: none;
       background: 
-        radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.15), transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.1), transparent 40%);
+        radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%);
       animation: pulseGlow 10s infinite alternate;
     }
 
@@ -114,7 +112,7 @@
       height: 100vh;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     img, video {
@@ -129,9 +127,9 @@
       top: 0;
       z-index: 1200;
       backdrop-filter: blur(25px);
-      background: rgba(255, 255, 255, 0.85);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      background: rgba(10, 10, 12, 0.85);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: all var(--transition);
     }
 
@@ -154,7 +152,7 @@
 
     .logo {
       width: 72px;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
@@ -163,7 +161,7 @@
     }
 
     .brand-text { display: flex; flex-direction: column; gap: 2px; }
-    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; background: linear-gradient(90deg, #111, #1e6fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
     .brand-sub { font-size: 13px; font-weight: 600; color: var(--muted); }
 
     nav {
@@ -183,12 +181,12 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 700;
-      color: #161616;
+      color: #ffffff;
       padding: 11px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,240,245,0.9));
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       transition: all var(--transition);
     }
 
@@ -199,7 +197,7 @@
       left: -150%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.8), transparent);
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
       transform: skewX(-25deg);
       transition: left 0.8s ease;
       z-index: 1;
@@ -211,9 +209,10 @@
 
     nav a:hover {
       transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(30, 111, 255, 0.2);
-      color: var(--brand-blue);
+      box-shadow: 0 12px 24px rgba(30, 111, 255, 0.3);
+      color: var(--brand-cyan);
       border-color: var(--brand-blue);
+      background: rgba(30, 111, 255, 0.1);
     }
 
     main {
@@ -221,90 +220,41 @@
       z-index: 2;
     }
 
-    .banner {
-      max-width: 1380px;
-      margin: 30px auto 0 auto;
-      padding: 0 18px;
-      animation: floatLevitation 6s ease-in-out infinite;
-    }
-
-    .banner-frame {
-      overflow: hidden;
-      border-radius: 40px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 0 0 2px rgba(255,255,255,0.2);
-      background: #000;
-      position: relative;
-      transform-style: preserve-3d;
-    }
-
-    .banner-video-wrap {
-      position: relative;
-      overflow: hidden;
-      min-height: 380px;
-      max-height: 600px;
-    }
-
-    .banner-video-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent 55%),
-                  radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.4));
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .banner-video-wrap video {
-      width: 100%;
-      height: 100%;
-      min-height: 380px;
-      max-height: 600px;
-      object-fit: cover;
-      transform: scale(1.05);
-      transition: transform 10s ease;
-    }
-    
-    .banner-frame:hover video {
-      transform: scale(1.1);
-    }
-
     .section {
       max-width: 1280px;
       margin: 0 auto;
       padding: 40px 18px;
-      perspective: 1500px; /* Für krasse 3D Effekte */
+      perspective: 1500px;
     }
 
-    /* NEU: Stärkere, animierte Box-Backgrounds */
+    /* NEU: Dark Glass Box Backgrounds (Passend zum dunklen Design) */
     .box-bg {
       position: relative;
-      background: rgba(255, 255, 255, 0.85); /* Frost Glass Base */
+      background: rgba(25, 25, 30, 0.7); /* Dunkles Glas */
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-xl);
       overflow: hidden;
       transform-style: preserve-3d;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.8);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
     }
 
-    /* Der animierte Hologramm-Effekt im Hintergrund der Karten */
     .box-bg::before {
       content: "";
       position: absolute;
       inset: -50%;
-      background: linear-gradient(45deg, rgba(30, 111, 255, 0.05), rgba(37, 244, 238, 0.05), rgba(200, 168, 93, 0.05), transparent);
+      background: linear-gradient(45deg, rgba(30, 111, 255, 0.03), rgba(37, 244, 238, 0.03), rgba(200, 168, 93, 0.02), transparent);
       background-size: 200% 200%;
-      animation: animatedBackground 8s ease infinite;
+      animation: animatedBackground 10s ease infinite;
       pointer-events: none;
       z-index: 0;
       transform: translateZ(-10px);
     }
 
-    /* Container für den Parallax-Inhalt */
     .card-content {
       position: relative;
       z-index: 2;
-      transform: translateZ(40px); /* Der Inhalt ploppt in 3D heraus! */
+      transform: translateZ(30px);
       transition: transform var(--transition);
     }
 
@@ -315,22 +265,23 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 30px;
       align-items: stretch;
+      margin-top: 30px;
     }
 
     .hero-copy h1 {
       margin: 0 0 18px 0;
-      font-size: 48px;
-      line-height: 1.1;
-      letter-spacing: -1px;
+      font-size: 44px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
       font-weight: 800;
-      text-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      color: #ffffff;
     }
 
     .hero-copy p {
       margin: 0 0 20px 0;
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.8;
-      color: #333;
+      color: #b0b0b0;
       max-width: 760px;
     }
 
@@ -343,17 +294,18 @@
       border-radius: 999px;
       color: #fff;
       background: linear-gradient(135deg, var(--brand-blue), #0d4bb5);
-      box-shadow: 0 10px 20px rgba(30, 111, 255, 0.4), inset 0 2px 0 rgba(255,255,255,0.3);
+      box-shadow: 0 10px 20px rgba(30, 111, 255, 0.3);
       transition: all var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
     }
     .hero-mini-btn:nth-child(2) {
-      background: linear-gradient(135deg, #222, #000);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
     .hero-mini-btn:hover {
       transform: translateY(-4px) scale(1.05) translateZ(20px);
-      box-shadow: 0 15px 30px rgba(30, 111, 255, 0.6);
+      box-shadow: 0 15px 30px rgba(30, 111, 255, 0.4);
     }
 
     .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
@@ -361,42 +313,45 @@
     .trust-item {
       padding: 18px;
       border-radius: 20px;
-      background: rgba(255,255,255,0.6);
-      border: 1px solid rgba(255,255,255,0.9);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       font-size: 14px;
       line-height: 1.6;
+      color: #b0b0b0;
       transform-style: preserve-3d;
       transition: all 0.3s;
     }
     
     .trust-item:hover {
-      transform: translateZ(30px) translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-      background: rgba(255,255,255,0.9);
+      transform: translateZ(20px) translateY(-5px);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.2);
     }
 
-    .icon-line { display: flex; align-items: flex-start; gap: 12px; }
-    .icon { width: 22px; height: 22px; flex: 0 0 22px; color: var(--brand-blue); filter: drop-shadow(0 2px 4px rgba(30,111,255,0.4)); }
+    .trust-item strong { color: #ffffff; }
 
-    .title { margin: 0 0 20px 0; font-size: 36px; letter-spacing: -0.5px; font-weight: 800; }
-    .contact-intro { color: #444; line-height: 1.8; margin-bottom: 24px; font-size: 17px; }
+    .icon-line { display: flex; align-items: flex-start; gap: 12px; }
+    .icon { width: 22px; height: 22px; flex: 0 0 22px; color: var(--brand-cyan); }
+
+    .title { margin: 0 0 20px 0; font-size: 32px; letter-spacing: -0.5px; font-weight: 800; color: #fff; }
+    .contact-intro { color: #b0b0b0; line-height: 1.8; margin-bottom: 24px; font-size: 17px; }
 
     .btn-grid { display: grid; gap: 16px; }
 
     .btn {
       display: flex; align-items: center; justify-content: center; gap: 12px;
-      text-decoration: none; text-align: center; font-size: 18px; font-weight: 800;
-      padding: 18px; border-radius: 20px; border: none;
-      box-shadow: 0 12px 25px rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.4);
+      text-decoration: none; text-align: center; font-size: 17px; font-weight: 800;
+      padding: 16px; border-radius: 20px; border: none;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
       transition: all var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .btn:hover {
       transform: translateY(-5px) scale(1.03) translateZ(30px);
       filter: brightness(1.1);
-      box-shadow: 0 20px 35px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.6);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     }
 
     .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
@@ -416,90 +371,110 @@
     }
 
     .mini-card h3, .service-card h3, .gallery-card h3, .review-card h3, .faq-card h3 {
-      margin: 0 0 15px 0; font-size: 24px; letter-spacing: -0.3px; color: #111;
+      margin: 0 0 15px 0; font-size: 24px; letter-spacing: -0.3px; color: #ffffff;
     }
 
     .mini-card p, .service-card p, .gallery-card p, .review-card p, .faq-card p, .legal p, .legal li {
-      margin: 0; color: #333; line-height: 1.8; font-size: 16px;
+      margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 16px;
     }
 
-    .service-card ul, .legal ul { margin: 15px 0 0 0; padding-left: 20px; line-height: 1.8; color: #333; }
+    .service-card ul, .legal ul { margin: 15px 0 0 0; padding-left: 20px; line-height: 1.8; color: #b0b0b0; }
     .service-card li, .legal li { margin-bottom: 8px; }
 
-    .section-head { text-align: center; margin-bottom: 40px; transform: translateZ(50px); }
-    .section-head h2 { margin: 0 0 12px 0; font-size: 44px; letter-spacing: -0.8px; color: #fff; text-shadow: 0 10px 20px rgba(0,0,0,0.5);}
-    .section-head p { margin: 0 auto; max-width: 860px; color: #ddd; line-height: 1.8; font-size: 19px; }
+    .section-head { text-align: center; margin-bottom: 40px; transform: translateZ(40px); }
+    .section-head h2 { margin: 0 0 12px 0; font-size: 40px; letter-spacing: -0.5px; color: #fff; }
+    .section-head p { margin: 0 auto; max-width: 860px; color: #b0b0b0; line-height: 1.8; font-size: 18px; }
 
-    /* Video Section mit krassen Effekten */
-    .video-card { max-width: 1000px; margin: 0 auto; background: rgba(20,20,25,0.8) !important; color: white !important;}
-    .video-card h2 {color: white; text-shadow: none;}
-    .video-card p {color: #aaa;}
+    /* Video Section - Video verkleinert und zentriert */
+    .video-card { max-width: 600px; margin: 0 auto; }
     
     .video-frame {
-      position: relative; overflow: hidden; border-radius: 30px; padding: 12px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
-      box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4);
-      animation: pulseGlow 4s infinite alternate;
+      position: relative; overflow: hidden; border-radius: 24px; padding: 10px;
+      background: rgba(255,255,255,0.05);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .video-inner { position: relative; overflow: hidden; border-radius: 24px; background: #000; }
+    .video-inner { position: relative; overflow: hidden; border-radius: 16px; background: #000; }
     .video-inner video { width: 100%; display: block; object-fit: cover; }
 
     .video-label {
-      position: absolute; left: 20px; right: 20px; bottom: 20px; z-index: 2;
-      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      position: absolute; left: 15px; right: 15px; bottom: 15px; z-index: 2;
+      display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
     }
 
     .video-chip {
-      padding: 12px 18px; border-radius: 999px; background: rgba(0,0,0,0.7); color: #fff;
-      backdrop-filter: blur(15px); font-size: 15px; font-weight: 800; box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 12px; border-radius: 999px; background: rgba(0,0,0,0.8); color: #fff;
+      backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* Galerie mit Platzhaltern (High Quality) */
+    /* Galerie */
     .gallery-card { padding: 16px; overflow: hidden; }
     .gallery-card img {
       width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
     .box-bg:hover .gallery-card img { transform: scale(1.1) translateZ(30px); }
-    .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #111; line-height: 1.7; font-weight: 800; font-size: 18px;}
+    .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #ffffff; line-height: 1.7; font-weight: 800; font-size: 18px;}
 
-    .review-card .stars { font-size: 24px; letter-spacing: 3px; margin-bottom: 16px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(200, 168, 93, 0.4));}
+    /* Slide-Show für Rezensionen (Marquee) */
+    .reviews-slider-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      padding: 10px 0 30px 0;
+    }
+
+    .reviews-slider-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      animation: scrollReviews 35s linear infinite;
+    }
+    
+    .reviews-slider-track:hover {
+      animation-play-state: paused;
+    }
+
+    .review-card {
+      width: 350px;
+      flex-shrink: 0;
+      white-space: normal;
+    }
+
+    .review-card .stars { font-size: 22px; letter-spacing: 2px; margin-bottom: 16px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(200, 168, 93, 0.3));}
     .review-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
     .review-badge {
-      font-size: 13px; font-weight: 800; padding: 8px 14px; border-radius: 999px;
-      background: linear-gradient(180deg, #fff, #f0f0f0); box-shadow: 0 8px 16px rgba(0,0,0,0.1); border: 1px solid #ddd;
+      font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px;
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #fff;
     }
-    .review-card .name { margin-top: 18px; font-weight: 800; color: #000; font-size: 17px;}
+    .review-card .name { margin-top: 18px; font-weight: 800; color: #ffffff; font-size: 16px;}
 
-    .legal h3 { font-size: 26px; margin: 30px 0 12px 0; }
+    .legal h3 { font-size: 24px; margin: 30px 0 12px 0; color: #fff;}
     .legal h3:first-child { margin-top: 0; }
+    .legal hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
 
     footer { padding: 20px 18px 60px 18px; position: relative; z-index: 2;}
 
     .footer-card {
       max-width: 1280px; margin: 0 auto;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 32px; border: 1px solid rgba(255,255,255,0.4);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.3); padding: 50px 40px;
-      backdrop-filter: blur(20px);
+      padding: 50px 40px;
     }
 
     .footer-top { display: grid; grid-template-columns: 1.2fr 0.9fr 0.9fr; gap: 30px; align-items: start; }
-    .footer-title { font-size: 22px; font-weight: 800; margin-bottom: 15px; color: #111;}
-    .footer-card p { margin: 0; color: #444; line-height: 1.8; font-size: 16px;}
+    .footer-title { font-size: 20px; font-weight: 800; margin-bottom: 15px; color: #fff;}
+    .footer-card p { margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 15px;}
     .footer-links { display: flex; flex-direction: column; gap: 12px; }
-    .footer-links a { font-weight: 700; color: #333; text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--brand-blue); transform: translateX(5px); }
+    .footer-links a { font-weight: 600; color: #b0b0b0; text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--brand-cyan); transform: translateX(5px); }
 
-    .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.1); text-align: center; color: #555; font-size: 15px; font-weight: 600;}
+    .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #777; font-size: 14px; font-weight: 600;}
 
     /* Krasse 3D Reveal Animationen */
     .reveal {
       opacity: 0;
-      transform: perspective(1000px) translateY(80px) rotateX(-20deg) scale(0.9);
-      transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+      transform: perspective(1000px) translateY(60px) rotateX(-15deg) scale(0.95);
+      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
     .reveal.visible {
@@ -509,20 +484,20 @@
 
     .cookie-banner {
       position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 2000;
-      background: rgba(10, 10, 12, 0.95); color: white; border-radius: 24px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.1);
+      background: rgba(20, 20, 25, 0.95); color: white; border-radius: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.1);
       padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
       backdrop-filter: blur(20px);
       transform: translateY(150%); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .cookie-banner.show { transform: translateY(0); }
-    .cookie-banner p { margin: 0; line-height: 1.7; font-size: 15px; color: #ccc; }
+    .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; }
     .cookie-banner button {
-      border: none; border-radius: 16px; padding: 14px 24px; font-weight: 800; cursor: pointer;
-      color: #000; background: linear-gradient(135deg, #fff, #ddd);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: transform var(--transition);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer;
+      color: #fff; background: rgba(255,255,255,0.1);
+      transition: transform var(--transition), background var(--transition);
     }
-    .cookie-banner button:hover { transform: translateY(-3px) scale(1.05); }
+    .cookie-banner button:hover { transform: translateY(-2px) scale(1.05); background: rgba(255,255,255,0.2); }
 
     .floating-contact {
       position: fixed; right: 20px; bottom: 120px; z-index: 1600;
@@ -530,31 +505,31 @@
       animation: floatLevitation 4s ease-in-out infinite;
     }
     .floating-contact a {
-      min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; font-size: 17px;
-      padding: 18px 20px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.4);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.5);
-      backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 12px;
+      min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; font-size: 16px;
+      padding: 16px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 10px;
     }
-    .floating-contact a:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 25px 40px rgba(0,0,0,0.4); }
-    .floating-contact .whatsapp-btn { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
-    .floating-contact .call-btn { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; }
+    .floating-contact a:hover { transform: translateY(-5px) scale(1.05); }
+    .floating-contact .whatsapp-btn { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; border:none;}
+    .floating-contact .call-btn { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; border:none;}
 
     @media (max-width: 1100px) {
       .hero-contact, .grid-4, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr 1fr; }
-      .hero-copy h1 { font-size: 40px; }
+      .hero-copy h1 { font-size: 38px; }
     }
 
     @media (max-width: 780px) {
       .nav-wrap { flex-direction: column; align-items: stretch; }
       .brand, nav { justify-content: center; }
       .hero-contact, .grid-4, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr; }
-      .hero-copy h1 { font-size: 34px; }
-      .section-head h2 { font-size: 34px; }
+      .hero-copy h1 { font-size: 32px; }
+      .section-head h2 { font-size: 30px; }
       .card, .mini-card, .service-card, .review-card, .gallery-card, .faq-card { padding: 25px 20px; }
-      .banner { margin-top: 15px; }
-      .banner-frame { border-radius: 24px; }
-      .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 12px; animation: none;}
-      .floating-contact a { min-width: unset; width: 100%; font-size: 16px; padding: 15px; }
+      .video-card { max-width: 100%; }
+      .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none;}
+      .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
+      .review-card { width: 300px; }
     }
   </style>
 
@@ -569,7 +544,7 @@
       <div class="brand">
         <img src="logo.png" class="logo" alt="Mujitech Logo Reparaturservice Schweiz" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
         <div class="brand-text">
-          <div class="brand-title">Mujitech</div>
+          <div class="brand-title">Mujitech.</div>
           <div class="brand-sub">Reparaturservice Schweiz</div>
         </div>
       </div>
@@ -586,16 +561,6 @@
   </header>
 
   <main>
-    <section class="banner">
-      <div class="banner-frame tilt-effect">
-        <div class="banner-video-wrap card-content">
-          <video autoplay muted loop playsinline>
-            <source src="banner-mujitech.mp4" type="video/mp4">
-            </video>
-        </div>
-      </div>
-    </section>
-
     <section class="section reveal" id="kontakt">
       <div class="card box-bg hero-contact tilt-effect">
         <div class="hero-copy card-content">
@@ -646,19 +611,19 @@
 
           <div class="btn-grid">
             <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="2"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#0b2514;"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="2"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
               WhatsApp schreiben
             </a>
             <a class="btn call" href="tel:+41767209832">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
               Jetzt anrufen
             </a>
             <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/" target="_blank">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
               Instagram öffnen
             </a>
             <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech" target="_blank">
-              <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M14 4c.4 1.6 1.6 3 3 3.7.8.4 1.6.5 2 .5v3.2c-1.6 0-3.5-.5-5-1.7v5.7a5 5 0 11-5-5c.3 0 .5 0 .8.1v3.2a2 2 0 10 1.2 1.8V4h3z" fill="currentColor"/></svg>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><path d="M14 4c.4 1.6 1.6 3 3 3.7.8.4 1.6.5 2 .5v3.2c-1.6 0-3.5-.5-5-1.7v5.7a5 5 0 11-5-5c.3 0 .5 0 .8.1v3.2a2 2 0 10 1.2 1.8V4h3z" fill="currentColor"/></svg>
               TikTok öffnen
             </a>
           </div>
@@ -764,9 +729,9 @@
     <section class="section reveal" id="video">
       <div class="card box-bg video-card tilt-effect">
         <div class="card-content">
-          <div class="section-head" style="transform: translateZ(0);">
-            <h2>Vorher / Nachher – Displaywechsel iPhone</h2>
-            <p>Ein echter Einblick in unsere Arbeit mit schönem Rahmen und professioneller Darstellung.</p>
+          <div class="section-head" style="transform: translateZ(0); margin-bottom:20px;">
+            <h2 style="font-size:28px;">Vorher / Nachher</h2>
+            <p style="font-size:15px;">Displaywechsel iPhone Reparatur</p>
           </div>
 
           <div class="video-frame">
@@ -775,8 +740,8 @@
                 <source src="iphone-reparatur.mp4" type="video/mp4">
               </video>
               <div class="video-label">
-                <div class="video-chip">Vorher / Nachher Unterschied</div>
-                <div class="video-chip">Displaywechsel iPhone</div>
+                <div class="video-chip">Vorher / Nachher</div>
+                <div class="video-chip">iPhone Reparatur</div>
               </div>
             </div>
           </div>
@@ -793,21 +758,21 @@
       <div class="grid-3">
         <div class="gallery-card box-bg tilt-effect">
           <div class="card-content">
-            <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=600&q=80&fit=crop" alt="PC Reparatur Beispiel Schweiz" />
+            <img src="pc.png" alt="PC Reparatur Beispiel Schweiz" />
             <div class="caption">PC Reparatur Beispiel</div>
           </div>
         </div>
 
         <div class="gallery-card box-bg tilt-effect">
           <div class="card-content">
-            <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&q=80&fit=crop" alt="Laptop Reparatur Beispiel Schweiz" />
+            <img src="laptop.png" alt="Laptop Reparatur Beispiel Schweiz" />
             <div class="caption">Laptop Reparatur Beispiel</div>
           </div>
         </div>
 
         <div class="gallery-card box-bg tilt-effect">
           <div class="card-content">
-            <img src="https://images.unsplash.com/photo-1512499617640-c74ae3a79d37?w=600&q=80&fit=crop" alt="Handy Reparatur Beispiel Apple Samsung Schweiz" />
+            <img src="handy.png" alt="Handy Reparatur Beispiel Apple Samsung Schweiz" />
             <div class="caption">Handy Reparatur Beispiel</div>
           </div>
         </div>
@@ -848,71 +813,133 @@
       </div>
     </section>
 
-    <section class="section reveal" id="bewertungen">
+    <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
       <div class="section-head">
         <h2>Google Rezensionen</h2>
-        <p>Hier kannst du deine Google Bewertungen sauber, vertrauenswürdig und übersichtlich darstellen.</p>
+        <p>Erfahrungen von unseren Kunden – Vertrauenswürdig und übersichtlich.</p>
       </div>
 
-      <div class="grid-3">
-        <div class="review-card box-bg tilt-effect">
-          <div class="card-content">
-            <div class="review-head">
-              <div class="stars">★★★★★</div>
-              <div class="review-badge">Google</div>
+      <div class="reviews-slider-container">
+        <div class="reviews-slider-track">
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
+              <div class="name">Kunde 1</div>
             </div>
-            <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
-            <div class="name">Kunde 1</div>
           </div>
-        </div>
-        <div class="review-card box-bg tilt-effect">
-          <div class="card-content">
-            <div class="review-head">
-              <div class="stars">★★★★★</div>
-              <div class="review-badge">Google</div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
+              <div class="name">Kunde 2</div>
             </div>
-            <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
-            <div class="name">Kunde 2</div>
           </div>
-        </div>
-        <div class="review-card box-bg tilt-effect">
-          <div class="card-content">
-            <div class="review-head">
-              <div class="stars">★★★★★</div>
-              <div class="review-badge">Google</div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
+              <div class="name">Kunde 3</div>
             </div>
-            <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
-            <div class="name">Kunde 3</div>
           </div>
-        </div>
-        <div class="review-card box-bg tilt-effect">
-          <div class="card-content">
-            <div class="review-head">
-              <div class="stars">★★★★★</div>
-              <div class="review-badge">Google</div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
+              <div class="name">Kunde 4</div>
             </div>
-            <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
-            <div class="name">Kunde 4</div>
           </div>
-        </div>
-        <div class="review-card box-bg tilt-effect">
-          <div class="card-content">
-            <div class="review-head">
-              <div class="stars">★★★★★</div>
-              <div class="review-badge">Google</div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
+              <div class="name">Kunde 5</div>
             </div>
-            <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
-            <div class="name">Kunde 5</div>
           </div>
-        </div>
-        <div class="review-card box-bg tilt-effect">
-          <div class="card-content">
-            <div class="review-head">
-              <div class="stars">★★★★★</div>
-              <div class="review-badge">Google</div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
+              <div class="name">Kunde 6</div>
             </div>
-            <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
-            <div class="name">Kunde 6</div>
+          </div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
+              <div class="name">Kunde 1</div>
+            </div>
+          </div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
+              <div class="name">Kunde 2</div>
+            </div>
+          </div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
+              <div class="name">Kunde 3</div>
+            </div>
+          </div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
+              <div class="name">Kunde 4</div>
+            </div>
+          </div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
+              <div class="name">Kunde 5</div>
+            </div>
+          </div>
+          <div class="review-card box-bg tilt-effect">
+            <div class="card-content">
+              <div class="review-head">
+                <div class="stars">★★★★★</div>
+                <div class="review-badge">Google</div>
+              </div>
+              <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
+              <div class="name">Kunde 6</div>
+            </div>
           </div>
         </div>
       </div>
@@ -939,12 +966,12 @@
           <h3>6. Haftung, 7. Versand & 8. Schlussbestimmungen</h3>
           <p>Mujitech haftet nicht für bereits bestehende Schäden, versteckte Mängel oder Folgeschäden. Für Datenverlust wird keine Haftung übernommen. Einsendungen erfolgen nach Absprache. Es gilt Schweizer Recht.</p>
 
-          <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 30px 0;">
+          <hr>
 
           <h3>Datenschutz</h3>
           <p>Daten, die du uns im Rahmen einer Anfrage oder Reparatur übermittelst, werden ausschliesslich zur Bearbeitung deiner Anfrage, zur Kommunikation und zur Durchführung der Dienstleistung verwendet. Es erfolgt keine unnötige Weitergabe an Dritte. Vor jeder Reparatur empfehlen wir eine vollständige Datensicherung. Diese Website kann technisch notwendige Cookies verwenden.</p>
 
-          <hr style="border: 0; border-top: 1px solid rgba(0,0,0,0.1); margin: 30px 0;">
+          <hr>
 
           <h3>Impressum</h3>
           <p><strong>Mujitech</strong> | Reparaturservice Schweiz<br>
@@ -1039,13 +1066,13 @@
         const centerY = rect.height / 2;
         
         // Dynamische Rotation je nach Mausposition
-        const rotateX = ((y - centerY) / centerY) * -8; // Krassere Neigung
-        const rotateY = ((x - centerX) / centerX) * 8;
+        const rotateX = ((y - centerY) / centerY) * -6;
+        const rotateY = ((x - centerX) / centerX) * 6;
         
-        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`;
+        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
         
         // Leuchtender Spotlight-Effekt der Maus folgt
-        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.95), rgba(255,255,255,0.7) 40%)`;
+        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08), rgba(25, 25, 30, 0.7) 50%)`;
       });
       
       card.addEventListener('mouseleave', () => {
@@ -1094,16 +1121,18 @@
         if (this.y < 0 || this.y > canvasHeight) this.vy = -this.vy;
 
         // Maus-Interaktion: Partikel weichen minimal aus
-        let dx = mouse.x - this.x;
-        let dy = mouse.y - this.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        
-        if (distance < mouse.radius) {
-          const forceDirectionX = dx / distance;
-          const forceDirectionY = dy / distance;
-          const force = (mouse.radius - distance) / mouse.radius;
-          this.x -= forceDirectionX * force * 3;
-          this.y -= forceDirectionY * force * 3;
+        if(mouse.x != null && mouse.y != null) {
+            let dx = mouse.x - this.x;
+            let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < mouse.radius) {
+              const forceDirectionX = dx / distance;
+              const forceDirectionY = dy / distance;
+              const force = (mouse.radius - distance) / mouse.radius;
+              this.x -= forceDirectionX * force * 3;
+              this.y -= forceDirectionY * force * 3;
+            }
         }
       }
       
