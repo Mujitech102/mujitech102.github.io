@@ -941,6 +941,28 @@
         bottom:12px;
       }
     }
+
+    /* === NEU HINZUGEFÜGTE STYLES FÜR 3D & STROM-ANIMATION === */
+    #strom-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35; /* Subtil gehalten, damit es elegant wirkt */
+    }
+
+    /* 3D Transform für die Elemente beim Mouse Hover (JS gesteuert) */
+    .card, .mini-card, .service-card, .review-card, .gallery-card, .faq-card {
+      transform-style: preserve-3d;
+      transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.25s ease;
+    }
+    
+    .card:hover, .mini-card:hover, .service-card:hover, .review-card:hover, .gallery-card:hover, .faq-card:hover {
+      z-index: 10; /* Karte beim Hover in den Vordergrund heben */
+    }
   </style>
 
   <script type="application/ld+json">
@@ -1008,6 +1030,8 @@
 </head>
 <body>
   <div class="page-glow"></div>
+  
+  <canvas id="strom-canvas"></canvas>
 
   <header>
     <div class="nav-wrap">
@@ -1500,6 +1524,120 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    /* === NEU HINZUGEFÜGTE SCRIPTE FÜR 3D & STROM-ANIMATION === */
+    
+    // 1. Interaktiver 3D Tilt-Effekt (Parallax) für die Karten
+    const cards3D = document.querySelectorAll('.card, .mini-card, .service-card, .review-card, .gallery-card, .faq-card');
+    cards3D.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Berechnung der Rotation (max. ca 3-5 Grad je nach Größe für edlen Effekt)
+        const rotateX = ((y - centerY) / centerY) * -3; 
+        const rotateY = ((x - centerX) / centerX) * 3;
+        
+        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      });
+    });
+
+    // 2. Technische Stromfluss Animation (Circuit Board Style)
+    const canvas = document.getElementById('strom-canvas');
+    const ctx = canvas.getContext('2d');
+    
+    let canvasWidth = window.innerWidth;
+    let canvasHeight = window.innerHeight;
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    window.addEventListener('resize', () => {
+      canvasWidth = window.innerWidth;
+      canvasHeight = window.innerHeight;
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
+    });
+
+    class Electron {
+      constructor() {
+        this.reset();
+      }
+      
+      reset() {
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
+        this.speed = Math.random() * 1.5 + 0.5;
+        this.dir = Math.floor(Math.random() * 4); // 0: oben, 1: rechts, 2: unten, 3: links
+        this.history = [];
+        this.maxHistory = Math.floor(Math.random() * 15 + 10);
+        this.life = Math.random() * 180 + 50;
+        this.color = Math.random() > 0.4 ? '#1e6fff' : '#25F4EE'; // Blau (#1e6fff) oder Cyan
+      }
+      
+      update() {
+        this.history.push({x: this.x, y: this.y});
+        if(this.history.length > this.maxHistory) {
+          this.history.shift();
+        }
+
+        if(this.dir === 0) this.y -= this.speed;
+        if(this.dir === 1) this.x += this.speed;
+        if(this.dir === 2) this.y += this.speed;
+        if(this.dir === 3) this.x -= this.speed;
+
+        this.life--;
+
+        // Zufälliges Abbiegen um 90 Grad (simuliert Leiterbahnen)
+        if(Math.random() < 0.02) {
+          this.dir = (this.dir + (Math.random() > 0.5 ? 1 : 3)) % 4;
+        }
+
+        if(this.life <= 0 || this.x < 0 || this.x > canvasWidth || this.y < 0 || this.y > canvasHeight) {
+          this.reset();
+        }
+      }
+      
+      draw() {
+        if(this.history.length < 2) return;
+        ctx.beginPath();
+        ctx.moveTo(this.history[0].x, this.history[0].y);
+        for(let i = 1; i < this.history.length; i++) {
+          ctx.lineTo(this.history[i].x, this.history[i].y);
+        }
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 1.5;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = this.color;
+        ctx.stroke();
+
+        // Leuchtender Punkt an der Spitze
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
+        ctx.fill();
+      }
+    }
+
+    const electrons = Array.from({length: 45}, () => new Electron());
+
+    function animateElectricity() {
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+      electrons.forEach(e => {
+        e.update();
+        e.draw();
+      });
+      requestAnimationFrame(animateElectricity);
+    }
+    
+    // Starte Animation
+    animateElectricity();
   </script>
 </body>
 </html>
