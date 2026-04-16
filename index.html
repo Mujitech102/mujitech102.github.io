@@ -2,7 +2,7 @@
 <html lang="de-CH">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
   <title>Mujitech | Reparaturservice Schweiz</title>
   <meta name="description" content="Mujitech bietet professionelle Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der Schweiz. Apple und Samsung Reparaturen, Einsendung nach Absprache oder Übergabe mit Terminvereinbarung." />
@@ -59,8 +59,9 @@
       padding: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
       color: var(--text);
-      background: #060608; /* Sehr dunkler Hintergrund passend zum Screenshot */
+      background: #060608;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
     }
 
     body {
@@ -89,7 +90,7 @@
     /* Slider Animation für Rezensionen */
     @keyframes scrollReviews {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-50% - 10px)); }
+      100% { transform: translateX(calc(-50% - 12px)); } /* -12px wegen gap */
     }
 
     /* Background Layering */
@@ -126,11 +127,13 @@
       position: sticky;
       top: 0;
       z-index: 1200;
+      -webkit-backdrop-filter: blur(25px); /* iOS Fix */
       backdrop-filter: blur(25px);
       background: rgba(10, 10, 12, 0.85);
       border-bottom: 1px solid var(--line);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: all var(--transition);
+      -webkit-transform: translateZ(0); /* iOS Hardware Accel */
     }
 
     .nav-wrap {
@@ -224,19 +227,25 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 40px 18px;
-      perspective: 1500px;
     }
 
-    /* NEU: Dark Glass Box Backgrounds (Passend zum dunklen Design) */
+    /* Box Backgrounds mit iOS Fixes */
     .box-bg {
       position: relative;
-      background: rgba(25, 25, 30, 0.7); /* Dunkles Glas */
+      background: rgba(25, 25, 30, 0.7);
+      -webkit-backdrop-filter: blur(20px); /* iOS Fix */
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      transform-style: preserve-3d;
       box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+      -webkit-transform: translateZ(0); /* iOS Hardware Accel Fix für Glitches */
+      transform: translateZ(0);
+    }
+
+    /* Auf Hover 3D Style (Wird von JS gesteuert) */
+    .box-bg.tilt-effect {
+      will-change: transform;
     }
 
     .box-bg::before {
@@ -248,14 +257,22 @@
       animation: animatedBackground 10s ease infinite;
       pointer-events: none;
       z-index: 0;
-      transform: translateZ(-10px);
     }
 
     .card-content {
       position: relative;
       z-index: 2;
-      transform: translateZ(30px);
       transition: transform var(--transition);
+    }
+
+    /* 3D Popout Effekt nur auf Geräten, die Hover unterstützen */
+    @media (hover: hover) {
+      .tilt-effect .card-content {
+        transform: translateZ(30px);
+      }
+      .box-bg {
+        transform-style: preserve-3d;
+      }
     }
 
     .card { padding: 45px 35px; }
@@ -304,8 +321,12 @@
     }
 
     .hero-mini-btn:hover {
-      transform: translateY(-4px) scale(1.05) translateZ(20px);
+      transform: translateY(-4px) scale(1.05);
       box-shadow: 0 15px 30px rgba(30, 111, 255, 0.4);
+    }
+
+    @media (hover: hover) {
+      .hero-mini-btn:hover { transform: translateY(-4px) scale(1.05) translateZ(20px); }
     }
 
     .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
@@ -319,14 +340,18 @@
       font-size: 14px;
       line-height: 1.6;
       color: #b0b0b0;
-      transform-style: preserve-3d;
       transition: all 0.3s;
     }
     
     .trust-item:hover {
-      transform: translateZ(20px) translateY(-5px);
+      transform: translateY(-5px);
       background: rgba(255,255,255,0.05);
       border-color: rgba(255,255,255,0.2);
+    }
+
+    @media (hover: hover) {
+      .trust-item { transform-style: preserve-3d; }
+      .trust-item:hover { transform: translateZ(20px) translateY(-5px); }
     }
 
     .trust-item strong { color: #ffffff; }
@@ -349,9 +374,13 @@
     }
 
     .btn:hover {
-      transform: translateY(-5px) scale(1.03) translateZ(30px);
+      transform: translateY(-5px) scale(1.03);
       filter: brightness(1.1);
       box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+
+    @media (hover: hover) {
+      .btn:hover { transform: translateY(-5px) scale(1.03) translateZ(30px); }
     }
 
     .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
@@ -381,7 +410,9 @@
     .service-card ul, .legal ul { margin: 15px 0 0 0; padding-left: 20px; line-height: 1.8; color: #b0b0b0; }
     .service-card li, .legal li { margin-bottom: 8px; }
 
-    .section-head { text-align: center; margin-bottom: 40px; transform: translateZ(40px); }
+    .section-head { text-align: center; margin-bottom: 40px; }
+    @media (hover: hover) { .section-head { transform: translateZ(40px); } }
+    
     .section-head h2 { margin: 0 0 12px 0; font-size: 40px; letter-spacing: -0.5px; color: #fff; }
     .section-head p { margin: 0 auto; max-width: 860px; color: #b0b0b0; line-height: 1.8; font-size: 18px; }
 
@@ -393,9 +424,10 @@
       background: rgba(255,255,255,0.05);
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       border: 1px solid rgba(255,255,255,0.1);
+      -webkit-transform: translateZ(0); /* iOS Video Fix */
     }
 
-    .video-inner { position: relative; overflow: hidden; border-radius: 16px; background: #000; }
+    .video-inner { position: relative; overflow: hidden; border-radius: 16px; background: #000; -webkit-transform: translateZ(0); }
     .video-inner video { width: 100%; display: block; object-fit: cover; }
 
     .video-label {
@@ -405,7 +437,7 @@
 
     .video-chip {
       padding: 8px 12px; border-radius: 999px; background: rgba(0,0,0,0.8); color: #fff;
-      backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
+      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
     }
 
     /* Galerie */
@@ -414,10 +446,12 @@
       width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px;
       box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
-    .box-bg:hover .gallery-card img { transform: scale(1.1) translateZ(30px); }
+    .box-bg:hover .gallery-card img { transform: scale(1.05); }
+    @media (hover: hover) { .box-bg:hover .gallery-card img { transform: scale(1.05) translateZ(30px); } }
+    
     .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #ffffff; line-height: 1.7; font-weight: 800; font-size: 18px;}
 
-    /* Slide-Show für Rezensionen (Marquee) */
+    /* Slide-Show für Rezensionen (Marquee) - iOS Stabilisiert */
     .reviews-slider-container {
       overflow: hidden;
       width: 100%;
@@ -429,10 +463,12 @@
       display: flex;
       gap: 24px;
       width: max-content;
+      -webkit-animation: scrollReviews 35s linear infinite;
       animation: scrollReviews 35s linear infinite;
     }
     
     .reviews-slider-track:hover {
+      -webkit-animation-play-state: paused;
       animation-play-state: paused;
     }
 
@@ -459,6 +495,7 @@
     .footer-card {
       max-width: 1280px; margin: 0 auto;
       padding: 50px 40px;
+      -webkit-transform: translateZ(0);
     }
 
     .footer-top { display: grid; grid-template-columns: 1.2fr 0.9fr 0.9fr; gap: 30px; align-items: start; }
@@ -470,11 +507,17 @@
 
     .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #777; font-size: 14px; font-weight: 600;}
 
-    /* Krasse 3D Reveal Animationen */
+    /* iOS 3D Reveal Animationen (Abgespeckt für Mobile-Performance) */
     .reveal {
       opacity: 0;
-      transform: perspective(1000px) translateY(60px) rotateX(-15deg) scale(0.95);
+      transform: translateY(40px);
       transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    @media (hover: hover) {
+      .reveal {
+        transform: perspective(1000px) translateY(60px) rotateX(-15deg) scale(0.95);
+      }
     }
 
     .reveal.visible {
@@ -487,8 +530,10 @@
       background: rgba(20, 20, 25, 0.95); color: white; border-radius: 20px;
       box-shadow: 0 25px 50px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.1);
       padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
+      -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       transform: translateY(150%); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+      -webkit-transform: translateZ(0);
     }
     .cookie-banner.show { transform: translateY(0); }
     .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; }
@@ -503,11 +548,13 @@
       position: fixed; right: 20px; bottom: 120px; z-index: 1600;
       display: flex; flex-direction: column; gap: 16px;
       animation: floatLevitation 4s ease-in-out infinite;
+      -webkit-transform: translateZ(0); /* iOS Overlay Fix */
     }
     .floating-contact a {
       min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; font-size: 16px;
       padding: 16px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);
       box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+      -webkit-backdrop-filter: blur(15px);
       backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 10px;
     }
     .floating-contact a:hover { transform: translateY(-5px) scale(1.05); }
@@ -527,8 +574,11 @@
       .section-head h2 { font-size: 30px; }
       .card, .mini-card, .service-card, .review-card, .gallery-card, .faq-card { padding: 25px 20px; }
       .video-card { max-width: 100%; }
-      .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none;}
+      
+      /* Entfernt Hover-Levitation auf Mobile, die oft stört */
+      .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
       .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
+      
       .review-card { width: 300px; }
     }
   </style>
@@ -729,7 +779,7 @@
     <section class="section reveal" id="video">
       <div class="card box-bg video-card tilt-effect">
         <div class="card-content">
-          <div class="section-head" style="transform: translateZ(0); margin-bottom:20px;">
+          <div class="section-head" style="margin-bottom:20px;">
             <h2 style="font-size:28px;">Vorher / Nachher</h2>
             <p style="font-size:15px;">Displaywechsel iPhone Reparatur</p>
           </div>
@@ -948,7 +998,7 @@
     <section class="section reveal" id="agb">
       <div class="card legal box-bg tilt-effect">
         <div class="card-content">
-          <div class="section-head" style="transform: translateZ(0);">
+          <div class="section-head">
             <h2>Rechtliches: AGB & Datenschutz</h2>
           </div>
           <h3>1. Geltungsbereich (AGB)</h3>
@@ -1055,33 +1105,33 @@
     }, { threshold: 0.1 });
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-    // --- 3. EXTREMER 3D TILT EFFEKT (Parallax Pop-Out) ---
-    const cards3D = document.querySelectorAll('.tilt-effect');
-    cards3D.forEach(card => {
-      card.addEventListener('mousemove', e => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+    // --- 3. EXTREMER 3D TILT EFFEKT (NUR FÜR PC/MAUS AKTIVIERT) ---
+    // iOS Fix: Der Tilt-Effekt auf Smartphones sorgt für massive Lags beim Scrollen, daher wird er hier für Touchscreens geblockt.
+    if (window.matchMedia("(hover: hover)").matches) {
+      const cards3D = document.querySelectorAll('.tilt-effect');
+      cards3D.forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = ((y - centerY) / centerY) * -6;
+          const rotateY = ((x - centerX) / centerX) * 6;
+          
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08), rgba(25, 25, 30, 0.7) 50%)`;
+        });
         
-        // Dynamische Rotation je nach Mausposition
-        const rotateX = ((y - centerY) / centerY) * -6;
-        const rotateY = ((x - centerX) / centerX) * 6;
-        
-        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-        
-        // Leuchtender Spotlight-Effekt der Maus folgt
-        card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08), rgba(25, 25, 30, 0.7) 50%)`;
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+          card.style.background = ''; 
+        });
       });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-        card.style.background = ''; // Setzt den Background auf CSS Basis zurück
-      });
-    });
+    }
 
-    // --- 4. INTERAKTIVES HIGH-TECH CANVAS NETZWERK (Plexus/Leiterplatten-Mix) ---
+    // --- 4. INTERAKTIVES HIGH-TECH CANVAS NETZWERK ---
     const canvas = document.getElementById('strom-canvas');
     const ctx = canvas.getContext('2d');
     
@@ -1089,17 +1139,32 @@
     let mouse = { x: null, y: null, radius: 150 };
 
     function initCanvasSize() {
-      canvasWidth = window.innerWidth;
-      canvasHeight = window.innerHeight;
+      // iOS 100vh Bug umgehen, indem wir reale Pixel-Maße nehmen
+      canvasWidth = document.documentElement.clientWidth;
+      canvasHeight = document.documentElement.clientHeight;
       canvas.width = canvasWidth;
       canvas.height = canvasHeight;
     }
     initCanvasSize();
     window.addEventListener('resize', initCanvasSize);
 
+    // Maus am PC
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.x;
       mouse.y = e.y;
+    });
+
+    // Wischen auf dem Smartphone (iOS Support)
+    window.addEventListener('touchmove', (e) => {
+      if(e.touches.length > 0) {
+        mouse.x = e.touches[0].clientX;
+        mouse.y = e.touches[0].clientY;
+      }
+    }, {passive: true}); // passive: true sorgt für flüssiges Scrollen am iPhone
+
+    window.addEventListener('touchend', () => {
+      mouse.x = null;
+      mouse.y = null;
     });
 
     class Particle {
@@ -1116,11 +1181,9 @@
         this.x += this.vx;
         this.y += this.vy;
 
-        // Bounce an Rändern
         if (this.x < 0 || this.x > canvasWidth) this.vx = -this.vx;
         if (this.y < 0 || this.y > canvasHeight) this.vy = -this.vy;
 
-        // Maus-Interaktion: Partikel weichen minimal aus
         if(mouse.x != null && mouse.y != null) {
             let dx = mouse.x - this.x;
             let dy = mouse.y - this.y;
@@ -1143,11 +1206,14 @@
         ctx.shadowBlur = 10;
         ctx.shadowColor = this.color;
         ctx.fill();
-        ctx.shadowBlur = 0; // Reset
+        ctx.shadowBlur = 0; 
       }
     }
 
-    const particleArray = Array.from({ length: 80 }, () => new Particle());
+    // Für Smartphones (Performance) weniger Partikel generieren
+    const isMobile = window.innerWidth <= 780;
+    const particleCount = isMobile ? 40 : 80;
+    const particleArray = Array.from({ length: particleCount }, () => new Particle());
 
     function animateNetwork() {
       ctx.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -1156,7 +1222,6 @@
         particleArray[i].update();
         particleArray[i].draw();
         
-        // Linien ziehen, wenn nahe beieinander
         for (let j = i; j < particleArray.length; j++) {
           let dx = particleArray[i].x - particleArray[j].x;
           let dy = particleArray[i].y - particleArray[j].y;
