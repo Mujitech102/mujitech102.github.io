@@ -430,11 +430,10 @@
       background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
       color: #fff; font-family: inherit; font-size: 16px;
       transition: all var(--transition);
-      -webkit-appearance: none; /* Wichtig für iOS Design */
+      -webkit-appearance: none; 
       appearance: none;
     }
     
-    /* Custom Pfeil für Select-Felder (Da wir das native Design deaktivieren) */
     .contact-form select {
       background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
       background-repeat: no-repeat; background-position: right 16px top 50%; background-size: 12px auto;
@@ -447,7 +446,7 @@
       box-shadow: 0 0 15px rgba(37, 244, 238, 0.3);
     }
     
-    .contact-form option { background: #111; color: #fff; } /* Dropdown Farbe */
+    .contact-form option { background: #111; color: #fff; } 
     
     .contact-form .submit-btn {
       background: linear-gradient(135deg, var(--brand-blue), #0d4bb5); color: #fff;
@@ -477,10 +476,9 @@
       -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* Neue 3D Bildergalerie (Marquee) */
+    /* 3D Bildergalerie (Marquee) */
     .gallery-slider-container {
       overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0;
-      /* Leichtes 3D-Kippen für iOS kompatiblen Depth-Effekt */
       transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
     }
 
@@ -615,7 +613,6 @@
     }
     .cookie-banner .btn-decline:hover { transform: translateY(-2px) scale(1.05); background: rgba(255,255,255,0.1); }
 
-
     .floating-contact {
       position: fixed; right: 20px; bottom: 120px; z-index: 1600;
       display: flex; flex-direction: column; gap: 16px;
@@ -646,7 +643,7 @@
       .section-head h2 { font-size: 30px; }
       .card, .mini-card, .service-card, .review-card, .faq-card { padding: 25px 20px; }
       .video-card { max-width: 100%; }
-      .gallery-item { width: 220px; } /* Bilder auf Mobile kleiner machen */
+      .gallery-item { width: 220px; } 
       
       .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
       .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
@@ -666,8 +663,7 @@
       <div class="brand">
         <img src="logo.png" class="logo" alt="Mujitech Logo Reparaturservice Schweiz" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
         <div class="brand-text">
-          <div class="brand-title">Mujitech.</div>
-          <div class="brand-sub">Reparaturservice Schweiz</div>
+          <div class="brand-title">Mujitech</div> <div class="brand-sub">Reparaturservice Schweiz</div>
         </div>
       </div>
 
@@ -753,6 +749,29 @@
       </div>
     </section>
 
+    <section class="section reveal">
+      <div class="grid-3">
+        <div class="mini-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Garantie</h3>
+            <p>Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.</p>
+          </div>
+        </div>
+        <div class="mini-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Preise</h3>
+            <p>Preise werden nicht öffentlich angezeigt. Jede Reparatur wird individuell beurteilt und auf Anfrage besprochen.</p>
+          </div>
+        </div>
+        <div class="mini-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Servicegebiet</h3>
+            <p>Mujitech bietet Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der ganzen Schweiz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section reveal" id="services">
       <div class="section-head">
         <h2>Unsere Reparatur-Services</h2>
@@ -832,7 +851,11 @@
             <p>Sende uns direkt die wichtigsten Infos zu deinem defekten Gerät.</p>
           </div>
           
-          <form class="contact-form" action="#" method="POST">
+          <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
+            
+            <input type="hidden" name="_subject" value="Neue Reparaturanfrage über die Website">
+            <input type="text" name="_honey" style="display:none">
+            
             <div class="form-group">
               <label for="name">Vor- & Nachname</label>
               <input type="text" id="name" name="name" required />
