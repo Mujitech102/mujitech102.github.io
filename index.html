@@ -87,10 +87,14 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Slider Animation für Rezensionen */
     @keyframes scrollReviews {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-50% - 12px)); } /* -12px wegen gap */
+      100% { transform: translateX(calc(-50% - 12px)); } 
+    }
+
+    @keyframes scrollGallery {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 12px)); }
     }
 
     /* Background Layering */
@@ -127,13 +131,13 @@
       position: sticky;
       top: 0;
       z-index: 1200;
-      -webkit-backdrop-filter: blur(25px); /* iOS Fix */
+      -webkit-backdrop-filter: blur(25px); 
       backdrop-filter: blur(25px);
       background: rgba(10, 10, 12, 0.85);
       border-bottom: 1px solid var(--line);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: all var(--transition);
-      -webkit-transform: translateZ(0); /* iOS Hardware Accel */
+      -webkit-transform: translateZ(0); 
     }
 
     .nav-wrap {
@@ -229,21 +233,19 @@
       padding: 40px 18px;
     }
 
-    /* Box Backgrounds mit iOS Fixes */
     .box-bg {
       position: relative;
       background: rgba(25, 25, 30, 0.7);
-      -webkit-backdrop-filter: blur(20px); /* iOS Fix */
+      -webkit-backdrop-filter: blur(20px); 
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-xl);
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-      -webkit-transform: translateZ(0); /* iOS Hardware Accel Fix für Glitches */
+      -webkit-transform: translateZ(0); 
       transform: translateZ(0);
     }
 
-    /* Auf Hover 3D Style (Wird von JS gesteuert) */
     .box-bg.tilt-effect {
       will-change: transform;
     }
@@ -265,7 +267,6 @@
       transition: transform var(--transition);
     }
 
-    /* 3D Popout Effekt nur auf Geräten, die Hover unterstützen */
     @media (hover: hover) {
       .tilt-effect .card-content {
         transform: translateZ(30px);
@@ -395,15 +396,15 @@
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-    .mini-card, .service-card, .review-card, .gallery-card, .faq-card {
+    .mini-card, .service-card, .review-card, .faq-card {
       padding: 30px 25px;
     }
 
-    .mini-card h3, .service-card h3, .gallery-card h3, .review-card h3, .faq-card h3 {
+    .mini-card h3, .service-card h3, .review-card h3, .faq-card h3 {
       margin: 0 0 15px 0; font-size: 24px; letter-spacing: -0.3px; color: #ffffff;
     }
 
-    .mini-card p, .service-card p, .gallery-card p, .review-card p, .faq-card p, .legal p, .legal li {
+    .mini-card p, .service-card p, .review-card p, .faq-card p, .legal p, .legal li {
       margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 16px;
     }
 
@@ -416,15 +417,51 @@
     .section-head h2 { margin: 0 0 12px 0; font-size: 40px; letter-spacing: -0.5px; color: #fff; }
     .section-head p { margin: 0 auto; max-width: 860px; color: #b0b0b0; line-height: 1.8; font-size: 18px; }
 
-    /* Video Section - Video verkleinert und zentriert */
-    .video-card { max-width: 600px; margin: 0 auto; }
+    /* --- KONTAKTFORMULAR STYLING --- */
+    .form-container { max-width: 800px; margin: 0 auto; }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+    .form-group label { font-weight: 700; font-size: 15px; color: #fff; }
     
+    .contact-form input, 
+    .contact-form select, 
+    .contact-form textarea {
+      width: 100%; padding: 16px; border-radius: 16px;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-family: inherit; font-size: 16px;
+      transition: all var(--transition);
+      -webkit-appearance: none; /* Wichtig für iOS Design */
+      appearance: none;
+    }
+    
+    /* Custom Pfeil für Select-Felder (Da wir das native Design deaktivieren) */
+    .contact-form select {
+      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+      background-repeat: no-repeat; background-position: right 16px top 50%; background-size: 12px auto;
+    }
+
+    .contact-form input:focus, 
+    .contact-form select:focus, 
+    .contact-form textarea:focus {
+      outline: none; border-color: var(--brand-cyan); background: rgba(255,255,255,0.1);
+      box-shadow: 0 0 15px rgba(37, 244, 238, 0.3);
+    }
+    
+    .contact-form option { background: #111; color: #fff; } /* Dropdown Farbe */
+    
+    .contact-form .submit-btn {
+      background: linear-gradient(135deg, var(--brand-blue), #0d4bb5); color: #fff;
+      border: none; cursor: pointer; margin-top: 10px; width: 100%;
+    }
+
+    /* Video Section */
+    .video-card { max-width: 600px; margin: 0 auto; }
     .video-frame {
       position: relative; overflow: hidden; border-radius: 24px; padding: 10px;
       background: rgba(255,255,255,0.05);
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
       border: 1px solid rgba(255,255,255,0.1);
-      -webkit-transform: translateZ(0); /* iOS Video Fix */
+      -webkit-transform: translateZ(0); 
     }
 
     .video-inner { position: relative; overflow: hidden; border-radius: 16px; background: #000; -webkit-transform: translateZ(0); }
@@ -440,29 +477,47 @@
       -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* Galerie */
-    .gallery-card { padding: 16px; overflow: hidden; }
-    .gallery-card img {
-      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Neue 3D Bildergalerie (Marquee) */
+    .gallery-slider-container {
+      overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0;
+      /* Leichtes 3D-Kippen für iOS kompatiblen Depth-Effekt */
+      transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
     }
-    .box-bg:hover .gallery-card img { transform: scale(1.05); }
-    @media (hover: hover) { .box-bg:hover .gallery-card img { transform: scale(1.05) translateZ(30px); } }
-    
-    .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #ffffff; line-height: 1.7; font-weight: 800; font-size: 18px;}
 
-    /* Slide-Show für Rezensionen (Marquee) */
+    .gallery-slider-track {
+      display: flex; gap: 24px; width: max-content;
+      -webkit-animation: scrollGallery 45s linear infinite;
+      animation: scrollGallery 45s linear infinite;
+    }
+    
+    .gallery-slider-track:hover {
+      -webkit-animation-play-state: paused;
+      animation-play-state: paused;
+    }
+
+    .gallery-item {
+      width: 280px; flex-shrink: 0; padding: 16px; border-radius: 24px;
+      background: rgba(25, 25, 30, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      transition: transform 0.5s ease;
+      -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px);
+    }
+    
+    .gallery-item:hover { transform: scale(1.05) translateY(-10px); }
+
+    .gallery-item img {
+      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+    }
+
+    /* Slide-Show für Rezensionen */
     .reviews-slider-container {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-      padding: 10px 0 30px 0;
+      overflow: hidden; width: 100%; position: relative; padding: 10px 0 30px 0;
     }
 
     .reviews-slider-track {
-      display: flex;
-      gap: 24px;
-      width: max-content;
+      display: flex; gap: 24px; width: max-content;
       -webkit-animation: scrollReviews 35s linear infinite;
       animation: scrollReviews 35s linear infinite;
     }
@@ -472,12 +527,7 @@
       animation-play-state: paused;
     }
 
-    .review-card {
-      width: 350px;
-      flex-shrink: 0;
-      white-space: normal;
-    }
-
+    .review-card { width: 350px; flex-shrink: 0; white-space: normal; padding: 30px 25px; }
     .review-card .stars { font-size: 22px; letter-spacing: 2px; margin-bottom: 16px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(200, 168, 93, 0.3));}
     .review-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
     .review-badge {
@@ -534,9 +584,8 @@
       -webkit-backdrop-filter: blur(20px);
       backdrop-filter: blur(20px);
       
-      /* Animation und Sichtbarkeit sicher steuern */
       opacity: 0;
-      pointer-events: none; /* Blockiert keine Klicks, wenn unsichtbar */
+      pointer-events: none; 
       transform: translateY(150%); 
       transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s;
       -webkit-transform: translateZ(0);
@@ -545,7 +594,7 @@
     .cookie-banner.show { 
       transform: translateY(0); 
       opacity: 1;
-      pointer-events: auto; /* Aktiviert Klicks wieder */
+      pointer-events: auto; 
     }
     
     .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; flex: 1; min-width: 200px;}
@@ -571,7 +620,7 @@
       position: fixed; right: 20px; bottom: 120px; z-index: 1600;
       display: flex; flex-direction: column; gap: 16px;
       animation: floatLevitation 4s ease-in-out infinite;
-      -webkit-transform: translateZ(0); /* iOS Overlay Fix */
+      -webkit-transform: translateZ(0); 
     }
     .floating-contact a {
       min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; font-size: 16px;
@@ -595,8 +644,9 @@
       .hero-contact, .grid-4, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr; }
       .hero-copy h1 { font-size: 32px; }
       .section-head h2 { font-size: 30px; }
-      .card, .mini-card, .service-card, .review-card, .gallery-card, .faq-card { padding: 25px 20px; }
+      .card, .mini-card, .service-card, .review-card, .faq-card { padding: 25px 20px; }
       .video-card { max-width: 100%; }
+      .gallery-item { width: 220px; } /* Bilder auf Mobile kleiner machen */
       
       .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
       .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
@@ -624,10 +674,9 @@
       <nav>
         <a href="#kontakt">Kontakt</a>
         <a href="#services">Services</a>
-        <a href="#video">Video</a>
+        <a href="#anfrage">Anfrage</a>
         <a href="#bilder">Galerie</a>
         <a href="#faq">FAQ</a>
-        <a href="#bewertungen">Bewertungen</a>
       </nav>
     </div>
   </header>
@@ -646,8 +695,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="hero-mini-btn" href="https://wa.me/41767209832" target="_blank">Schnell via WhatsApp anfragen</a>
-            <a class="hero-mini-btn" href="#services">Services ansehen</a>
+            <a class="hero-mini-btn" href="#anfrage">Reparaturanfrage senden</a>
+            <a class="hero-mini-btn" href="https://wa.me/41767209832" target="_blank">Schnell via WhatsApp</a>
           </div>
 
           <div class="trust-grid">
@@ -700,29 +749,6 @@
             </a>
           </div>
           <div class="micro-note">Übergabe nur nach Terminvereinbarung. Einsendung nur nach vorgängiger Absprache. Reparaturservice für die gesamte Schweiz.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="grid-3">
-        <div class="mini-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Garantie</h3>
-            <p>Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.</p>
-          </div>
-        </div>
-        <div class="mini-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Preise</h3>
-            <p>Preise werden nicht öffentlich angezeigt. Jede Reparatur wird individuell beurteilt und auf Anfrage besprochen.</p>
-          </div>
-        </div>
-        <div class="mini-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Servicegebiet</h3>
-            <p>Mujitech bietet Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der ganzen Schweiz.</p>
-          </div>
         </div>
       </div>
     </section>
@@ -798,6 +824,102 @@
       </div>
     </section>
 
+    <section class="section reveal" id="anfrage">
+      <div class="card box-bg tilt-effect form-container">
+        <div class="card-content">
+          <div class="section-head" style="margin-bottom: 25px;">
+            <h2>Reparaturanfrage senden</h2>
+            <p>Sende uns direkt die wichtigsten Infos zu deinem defekten Gerät.</p>
+          </div>
+          
+          <form class="contact-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Vor- & Nachname</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-Mail Adresse</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefon">Telefonnummer</label>
+              <input type="tel" id="telefon" name="telefon" required />
+            </div>
+
+            <div class="form-group">
+              <label for="geraet">Welches Gerät ist es?</label>
+              <select id="geraet" name="geraet" required>
+                <option value="" disabled selected>Bitte auswählen...</option>
+                <option value="Handy">Handy</option>
+                <option value="Laptop">Laptop</option>
+                <option value="PC">PC</option>
+                <option value="Tablet">Tablet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="modell">Welches Modell ist es genau? (In den Einstellungen ersichtlich)</label>
+              <input type="text" id="modell" name="modell" placeholder="z.B. iPhone 13 Pro, Samsung S22..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="problem">Was für ein Problem hat das Gerät?</label>
+              <textarea id="problem" name="problem" rows="4" placeholder="Bitte beschreibe das Problem / den Defekt kurz..." required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="kontaktweg">Wie sollen wir uns gerne bei dir melden?</label>
+              <select id="kontaktweg" name="kontaktweg" required>
+                <option value="" disabled selected>Bitte auswählen...</option>
+                <option value="Telefon">Telefonanruf</option>
+                <option value="Whatsapp">WhatsApp</option>
+                <option value="Mail">E-Mail</option>
+                <option value="SMS">SMS</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn submit-btn">Anfrage jetzt absenden</button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="bilder" style="padding-left:0; padding-right:0; overflow:hidden;">
+      <div class="section-head">
+        <h2>Reparatur Galerie</h2>
+        <p>Ein Einblick in unsere täglichen Reparaturarbeiten.</p>
+      </div>
+
+      <div class="gallery-slider-container">
+        <div class="gallery-slider-track">
+          <div class="gallery-item"><img src="galerie1.png" alt="Reparatur Bild 1" /></div>
+          <div class="gallery-item"><img src="galerie2.png" alt="Reparatur Bild 2" /></div>
+          <div class="gallery-item"><img src="galerie3.png" alt="Reparatur Bild 3" /></div>
+          <div class="gallery-item"><img src="galerie4.png" alt="Reparatur Bild 4" /></div>
+          <div class="gallery-item"><img src="galerie5.png" alt="Reparatur Bild 5" /></div>
+          <div class="gallery-item"><img src="galerie6.png" alt="Reparatur Bild 6" /></div>
+          <div class="gallery-item"><img src="galerie7.png" alt="Reparatur Bild 7" /></div>
+          <div class="gallery-item"><img src="galerie8.png" alt="Reparatur Bild 8" /></div>
+          <div class="gallery-item"><img src="galerie9.png" alt="Reparatur Bild 9" /></div>
+          <div class="gallery-item"><img src="galerie10.png" alt="Reparatur Bild 10" /></div>
+          
+          <div class="gallery-item"><img src="galerie1.png" alt="Reparatur Bild 1" /></div>
+          <div class="gallery-item"><img src="galerie2.png" alt="Reparatur Bild 2" /></div>
+          <div class="gallery-item"><img src="galerie3.png" alt="Reparatur Bild 3" /></div>
+          <div class="gallery-item"><img src="galerie4.png" alt="Reparatur Bild 4" /></div>
+          <div class="gallery-item"><img src="galerie5.png" alt="Reparatur Bild 5" /></div>
+          <div class="gallery-item"><img src="galerie6.png" alt="Reparatur Bild 6" /></div>
+          <div class="gallery-item"><img src="galerie7.png" alt="Reparatur Bild 7" /></div>
+          <div class="gallery-item"><img src="galerie8.png" alt="Reparatur Bild 8" /></div>
+          <div class="gallery-item"><img src="galerie9.png" alt="Reparatur Bild 9" /></div>
+          <div class="gallery-item"><img src="galerie10.png" alt="Reparatur Bild 10" /></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section reveal" id="video">
       <div class="card box-bg video-card tilt-effect">
         <div class="card-content">
@@ -816,36 +938,6 @@
                 <div class="video-chip">iPhone Reparatur</div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="bilder">
-      <div class="section-head">
-        <h2>Beispielbilder von Reparaturaufträgen</h2>
-        <p>Hier siehst du Beispielbilder aus verschiedenen Reparaturbereichen von Mujitech.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="gallery-card box-bg tilt-effect">
-          <div class="card-content">
-            <img src="pc.png" alt="PC Reparatur Beispiel Schweiz" />
-            <div class="caption">PC Reparatur Beispiel</div>
-          </div>
-        </div>
-
-        <div class="gallery-card box-bg tilt-effect">
-          <div class="card-content">
-            <img src="Laptop.png" alt="Laptop Reparatur Beispiel Schweiz" />
-            <div class="caption">Laptop Reparatur Beispiel</div>
-          </div>
-        </div>
-
-        <div class="gallery-card box-bg tilt-effect">
-          <div class="card-content">
-            <img src="Handy.png" alt="Handy Reparatur Beispiel Apple Samsung Schweiz" />
-            <div class="caption">Handy Reparatur Beispiel</div>
           </div>
         </div>
       </div>
@@ -1068,7 +1160,7 @@
           <div class="footer-links">
             <a href="#kontakt">Kontakt</a>
             <a href="#services">Services</a>
-            <a href="#video">Video</a>
+            <a href="#anfrage">Anfrage senden</a>
             <a href="#bilder">Galerie</a>
           </div>
         </div>
@@ -1109,18 +1201,12 @@
     // --- 1. VERBESSERTES COOKIE BANNER SCRIPT ---
     function handleCookies(choice) {
       const banner = document.getElementById("cookieBanner");
-      
-      // Zustand speichern
       localStorage.setItem("mujitechCookies", choice);
-      
-      // CSS Klasse entfernen zum Ausblenden
       banner.classList.remove("show");
     }
 
     window.addEventListener("load", function () {
       const cookieStatus = localStorage.getItem("mujitechCookies");
-      
-      // Nur anzeigen, wenn noch keine Auswahl getroffen wurde
       if (!cookieStatus) {
         setTimeout(() => {
           document.getElementById("cookieBanner").classList.add("show");
@@ -1139,7 +1225,6 @@
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
     // --- 3. EXTREMER 3D TILT EFFEKT (NUR FÜR PC/MAUS AKTIVIERT) ---
-    // iOS Fix: Der Tilt-Effekt auf Smartphones sorgt für massive Lags beim Scrollen, daher wird er hier für Touchscreens geblockt.
     if (window.matchMedia("(hover: hover)").matches) {
       const cards3D = document.querySelectorAll('.tilt-effect');
       cards3D.forEach(card => {
@@ -1172,7 +1257,6 @@
     let mouse = { x: null, y: null, radius: 150 };
 
     function initCanvasSize() {
-      // iOS 100vh Bug umgehen, indem wir reale Pixel-Maße nehmen
       canvasWidth = document.documentElement.clientWidth;
       canvasHeight = document.documentElement.clientHeight;
       canvas.width = canvasWidth;
@@ -1181,19 +1265,17 @@
     initCanvasSize();
     window.addEventListener('resize', initCanvasSize);
 
-    // Maus am PC
     window.addEventListener('mousemove', (e) => {
       mouse.x = e.x;
       mouse.y = e.y;
     });
 
-    // Wischen auf dem Smartphone (iOS Support)
     window.addEventListener('touchmove', (e) => {
       if(e.touches.length > 0) {
         mouse.x = e.touches[0].clientX;
         mouse.y = e.touches[0].clientY;
       }
-    }, {passive: true}); // passive: true sorgt für flüssiges Scrollen am iPhone
+    }, {passive: true}); 
 
     window.addEventListener('touchend', () => {
       mouse.x = null;
@@ -1243,7 +1325,6 @@
       }
     }
 
-    // Für Smartphones (Performance) weniger Partikel generieren
     const isMobile = window.innerWidth <= 780;
     const particleCount = isMobile ? 40 : 80;
     const particleArray = Array.from({ length: particleCount }, () => new Particle());
