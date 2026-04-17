@@ -34,7 +34,7 @@
       --radius-lg: 24px;
       --radius-md: 16px;
       --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      --gold: #c8a85d;
+      --gold: #fbbc04; /* Google Star Gold */
       --brand-blue: #1e6fff;
       --brand-cyan: #25F4EE;
       --wa: #25D366;
@@ -87,14 +87,10 @@
       100% { background-position: 0% 50%; }
     }
 
+    /* Slider Animation für Rezensionen */
     @keyframes scrollReviews {
       0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-50% - 12px)); } 
-    }
-
-    @keyframes scrollGallery {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-50% - 12px)); }
+      100% { transform: translateX(calc(-50% - 12px)); } /* -12px wegen gap */
     }
 
     /* Background Layering */
@@ -131,13 +127,13 @@
       position: sticky;
       top: 0;
       z-index: 1200;
-      -webkit-backdrop-filter: blur(25px); 
+      -webkit-backdrop-filter: blur(25px); /* iOS Fix */
       backdrop-filter: blur(25px);
       background: rgba(10, 10, 12, 0.85);
       border-bottom: 1px solid var(--line);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       transition: all var(--transition);
-      -webkit-transform: translateZ(0); 
+      -webkit-transform: translateZ(0); /* iOS Hardware Accel */
     }
 
     .nav-wrap {
@@ -233,19 +229,21 @@
       padding: 40px 18px;
     }
 
+    /* Box Backgrounds mit iOS Fixes */
     .box-bg {
       position: relative;
       background: rgba(25, 25, 30, 0.7);
-      -webkit-backdrop-filter: blur(20px); 
+      -webkit-backdrop-filter: blur(20px); /* iOS Fix */
       backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-xl);
       overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-      -webkit-transform: translateZ(0); 
+      -webkit-transform: translateZ(0); /* iOS Hardware Accel Fix für Glitches */
       transform: translateZ(0);
     }
 
+    /* Auf Hover 3D Style (Wird von JS gesteuert) */
     .box-bg.tilt-effect {
       will-change: transform;
     }
@@ -267,6 +265,7 @@
       transition: transform var(--transition);
     }
 
+    /* 3D Popout Effekt nur auf Geräten, die Hover unterstützen */
     @media (hover: hover) {
       .tilt-effect .card-content {
         transform: translateZ(30px);
@@ -396,15 +395,15 @@
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-    .mini-card, .service-card, .review-card, .faq-card {
+    .mini-card, .service-card, .faq-card {
       padding: 30px 25px;
     }
 
-    .mini-card h3, .service-card h3, .review-card h3, .faq-card h3 {
+    .mini-card h3, .service-card h3, .faq-card h3 {
       margin: 0 0 15px 0; font-size: 24px; letter-spacing: -0.3px; color: #ffffff;
     }
 
-    .mini-card p, .service-card p, .review-card p, .faq-card p, .legal p, .legal li {
+    .mini-card p, .service-card p, .faq-card p, .legal p, .legal li {
       margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 16px;
     }
 
@@ -476,48 +475,28 @@
       -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
     }
 
-    /* 3D Bildergalerie (Marquee) */
-    .gallery-slider-container {
-      overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0;
-      transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
+    /* Bilder Galerie */
+    .gallery-card { padding: 16px; overflow: hidden; }
+    .gallery-card img {
+      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     }
-
-    .gallery-slider-track {
-      display: flex; gap: 24px; width: max-content;
-      -webkit-animation: scrollGallery 45s linear infinite;
-      animation: scrollGallery 45s linear infinite;
-    }
+    .box-bg:hover .gallery-card img { transform: scale(1.05); }
+    @media (hover: hover) { .box-bg:hover .gallery-card img { transform: scale(1.05) translateZ(30px); } }
     
-    .gallery-slider-track:hover {
-      -webkit-animation-play-state: paused;
-      animation-play-state: paused;
-    }
+    .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #ffffff; line-height: 1.7; font-weight: 800; font-size: 18px;}
 
-    .gallery-item {
-      width: 280px; flex-shrink: 0; padding: 16px; border-radius: 24px;
-      background: rgba(25, 25, 30, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-      transition: transform 0.5s ease;
-      -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px);
-    }
-    
-    .gallery-item:hover { transform: scale(1.05) translateY(-10px); }
-
-    .gallery-item img {
-      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 16px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
-    }
-
-    /* Slide-Show für Rezensionen */
+    /* --- KRASSE GOOGLE REZENSIONEN STYLING --- */
     .reviews-slider-container {
-      overflow: hidden; width: 100%; position: relative; padding: 10px 0 30px 0;
+      overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0;
+      /* 3D Container-Tiefenwirkung für die Marquee */
+      transform: perspective(1500px) rotateY(-2deg) rotateX(1deg);
     }
 
     .reviews-slider-track {
       display: flex; gap: 24px; width: max-content;
-      -webkit-animation: scrollReviews 35s linear infinite;
-      animation: scrollReviews 35s linear infinite;
+      -webkit-animation: scrollReviews 45s linear infinite;
+      animation: scrollReviews 45s linear infinite;
     }
     
     .reviews-slider-track:hover {
@@ -525,14 +504,60 @@
       animation-play-state: paused;
     }
 
-    .review-card { width: 350px; flex-shrink: 0; white-space: normal; padding: 30px 25px; }
-    .review-card .stars { font-size: 22px; letter-spacing: 2px; margin-bottom: 16px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(200, 168, 93, 0.3));}
-    .review-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 16px; }
-    .review-badge {
-      font-size: 12px; font-weight: 800; padding: 6px 12px; border-radius: 999px;
-      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #fff;
+    .review-card { 
+      width: 380px; height: 320px; flex-shrink: 0; white-space: normal; padding: 25px; 
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
     }
-    .review-card .name { margin-top: 18px; font-weight: 800; color: #ffffff; font-size: 16px;}
+
+    .review-card::after {
+      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
+      transform: rotate(30deg) translateY(-100%); transition: transform 0.6s ease; pointer-events: none;
+    }
+
+    .review-card:hover {
+      transform: scale(1.03) translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
+      border-color: rgba(30, 111, 255, 0.4);
+    }
+
+    .review-card:hover::after { transform: rotate(30deg) translateY(100%); }
+
+    /* Header in der Bewertung */
+    .review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 15px; }
+    
+    .review-avatar {
+      width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 800; color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      flex-shrink: 0;
+    }
+    
+    .review-user-info { flex-grow: 1; }
+    .review-name { font-weight: 800; color: #ffffff; font-size: 16px; margin-bottom: 3px; }
+    .review-meta { font-size: 12px; color: #999; }
+    
+    .google-icon { width: 24px; height: 24px; flex-shrink: 0; }
+
+    /* Sterne & Zeit */
+    .review-rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .review-card .stars { font-size: 18px; letter-spacing: 2px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(251, 188, 4, 0.3));}
+    .review-time { font-size: 13px; color: #aaa; display: flex; align-items: center; gap: 8px;}
+    .badge-neu { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 800; color: #fff; }
+
+    /* Text Scrollbar für extrem lange Texte (Patryk) */
+    .review-text {
+      flex-grow: 1; font-size: 15px; line-height: 1.6; color: #e0e0e0;
+      overflow-y: auto; padding-right: 5px; text-align: justify;
+    }
+    
+    /* Edler Scrollbar */
+    .review-text::-webkit-scrollbar { width: 4px; }
+    .review-text::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 10px; }
+    .review-text::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
+    .review-text::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
+
 
     .legal h3 { font-size: 24px; margin: 30px 0 12px 0; color: #fff;}
     .legal h3:first-child { margin-top: 0; }
@@ -643,7 +668,6 @@
       .section-head h2 { font-size: 30px; }
       .card, .mini-card, .service-card, .review-card, .faq-card { padding: 25px 20px; }
       .video-card { max-width: 100%; }
-      .gallery-item { width: 220px; } 
       
       .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
       .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
@@ -663,7 +687,8 @@
       <div class="brand">
         <img src="logo.png" class="logo" alt="Mujitech Logo Reparaturservice Schweiz" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
         <div class="brand-text">
-          <div class="brand-title">Mujitech</div> <div class="brand-sub">Reparaturservice Schweiz</div>
+          <div class="brand-title">Mujitech</div>
+          <div class="brand-sub">Reparaturservice Schweiz</div>
         </div>
       </div>
 
@@ -671,8 +696,9 @@
         <a href="#kontakt">Kontakt</a>
         <a href="#services">Services</a>
         <a href="#anfrage">Anfrage</a>
-        <a href="#bilder">Galerie</a>
+        <a href="#bilder">Beispielbilder</a>
         <a href="#faq">FAQ</a>
+        <a href="#bewertungen">Bewertungen</a>
       </nav>
     </div>
   </header>
@@ -910,35 +936,32 @@
       </div>
     </section>
 
-    <section class="section reveal" id="bilder" style="padding-left:0; padding-right:0; overflow:hidden;">
+    <section class="section reveal" id="bilder">
       <div class="section-head">
-        <h2>Reparatur Galerie</h2>
-        <p>Ein Einblick in unsere täglichen Reparaturarbeiten.</p>
+        <h2>Beispielbilder von Reparaturaufträgen</h2>
+        <p>Hier siehst du Beispielbilder aus verschiedenen Reparaturbereichen von Mujitech.</p>
       </div>
 
-      <div class="gallery-slider-container">
-        <div class="gallery-slider-track">
-          <div class="gallery-item"><img src="galerie1.png" alt="Reparatur Bild 1" /></div>
-          <div class="gallery-item"><img src="galerie2.png" alt="Reparatur Bild 2" /></div>
-          <div class="gallery-item"><img src="galerie3.png" alt="Reparatur Bild 3" /></div>
-          <div class="gallery-item"><img src="galerie4.png" alt="Reparatur Bild 4" /></div>
-          <div class="gallery-item"><img src="galerie5.png" alt="Reparatur Bild 5" /></div>
-          <div class="gallery-item"><img src="galerie6.png" alt="Reparatur Bild 6" /></div>
-          <div class="gallery-item"><img src="galerie7.png" alt="Reparatur Bild 7" /></div>
-          <div class="gallery-item"><img src="galerie8.png" alt="Reparatur Bild 8" /></div>
-          <div class="gallery-item"><img src="galerie9.png" alt="Reparatur Bild 9" /></div>
-          <div class="gallery-item"><img src="galerie10.png" alt="Reparatur Bild 10" /></div>
-          
-          <div class="gallery-item"><img src="galerie1.png" alt="Reparatur Bild 1" /></div>
-          <div class="gallery-item"><img src="galerie2.png" alt="Reparatur Bild 2" /></div>
-          <div class="gallery-item"><img src="galerie3.png" alt="Reparatur Bild 3" /></div>
-          <div class="gallery-item"><img src="galerie4.png" alt="Reparatur Bild 4" /></div>
-          <div class="gallery-item"><img src="galerie5.png" alt="Reparatur Bild 5" /></div>
-          <div class="gallery-item"><img src="galerie6.png" alt="Reparatur Bild 6" /></div>
-          <div class="gallery-item"><img src="galerie7.png" alt="Reparatur Bild 7" /></div>
-          <div class="gallery-item"><img src="galerie8.png" alt="Reparatur Bild 8" /></div>
-          <div class="gallery-item"><img src="galerie9.png" alt="Reparatur Bild 9" /></div>
-          <div class="gallery-item"><img src="galerie10.png" alt="Reparatur Bild 10" /></div>
+      <div class="grid-3">
+        <div class="gallery-card box-bg tilt-effect">
+          <div class="card-content">
+            <img src="pc.png" alt="PC Reparatur Beispiel Schweiz" />
+            <div class="caption">PC Reparatur Beispiel</div>
+          </div>
+        </div>
+
+        <div class="gallery-card box-bg tilt-effect">
+          <div class="card-content">
+            <img src="Laptop.png" alt="Laptop Reparatur Beispiel Schweiz" />
+            <div class="caption">Laptop Reparatur Beispiel</div>
+          </div>
+        </div>
+
+        <div class="gallery-card box-bg tilt-effect">
+          <div class="card-content">
+            <img src="Handy.png" alt="Handy Reparatur Beispiel Apple Samsung Schweiz" />
+            <div class="caption">Handy Reparatur Beispiel</div>
+          </div>
         </div>
       </div>
     </section>
@@ -1003,131 +1026,372 @@
     <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
       <div class="section-head">
         <h2>Google Rezensionen</h2>
-        <p>Erfahrungen von unseren Kunden – Vertrauenswürdig und übersichtlich.</p>
+        <p>Erfahrungen von unseren Kunden – Vertrauenswürdig und echt.</p>
       </div>
 
       <div class="reviews-slider-container">
         <div class="reviews-slider-track">
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
+              <div class="review-user-info">
+                <div class="review-name">Gabi Sutter</div>
+                <div class="review-meta">0 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
-              <div class="name">Kunde 1</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 10 Stunden <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Super arbeit!!
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
+              <div class="review-user-info">
+                <div class="review-name">Patryk Basztabin</div>
+                <div class="review-meta">5 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
-              <div class="name">Kunde 2</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.<br><br>
+              Zusätzlich hat der Techniker meinen Laptop gereinigt und kleinere, zukünftige Probleme direkt mit behoben. Dabei hatte ich jederzeit die Möglichkeit, alles wieder so zurückzubekommen, wie ich es wollte. Probleme wurden eigenständig erkannt und professionell gelöst – sehr kompetent und vorausschauend.<br><br>
+              Top-Qualität – diesen Service kann ich jedem empfehlen. Ich habe zuvor zwei bis drei andere Läden kontaktiert, leider ohne Erfolg. Hier hat alles wunderbar funktioniert.<br><br>
+              Ich bin wirklich froh, auf ihn gestoßen zu sein, da ich nun einen verlässlichen Ansprechpartner für alle zukünftigen Computerangelegenheiten habe. Kann ich jedem nur wärmstens empfehlen.
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #5c6bc0, #3f51b5);">I</div>
+              <div class="review-user-info">
+                <div class="review-name">Irene Küng</div>
+                <div class="review-meta">2 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
-              <div class="name">Kunde 3</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Vielen Dank. War voll umfänglich zufrieden mit neuer Kamera und neuer Batterie. Hab sie schon weiter empfohlen.<br>Gruss
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #455a64, #263238);">S</div>
+              <div class="review-user-info">
+                <div class="review-name">Srish</div>
+                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
-              <div class="name">Kunde 4</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 3 Wochen <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert. Vor der Reparatur wurde mir ein Video geschickt, das den Zustand im Inneren gezeigt hat, und danach ein weiteres – der Unterschied war deutlich sichtbar. Alles sah viel sauberer und gepflegter aus.<br>
+              Die Probleme sind jetzt komplett behoben und das Handy funktioniert wieder einwandfrei. Besonders positiv fand ich, dass keine Kosten für die Problemdiagnose verlangt wurden, was heutzutage nicht selbstverständlich ist.<br>
+              Ich kann Mujitech definitiv weiterempfehlen
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff;">A</div>
+              <div class="review-user-info">
+                <div class="review-name">Alina Brüllhardt</div>
+                <div class="review-meta">1 Rezension • 0 Fotos</div>
               </div>
-              <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
-              <div class="name">Kunde 5</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 10 Wochen</div>
+            </div>
+            <div class="review-text">
+              Habe vor zwei Wochen einen PC + Gaming Monitor von Mujitech gekauft, und diese am selben Tag noch erhalten. Service war sehr freundlich und hilfsbereit, mir wurde beim Gerätetesten geholfen und alles funktioniert einwandfrei.
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #78909c, #546e7a);">C</div>
+              <div class="review-user-info">
+                <div class="review-name">C O</div>
+                <div class="review-meta">4 Rezensionen • 2 Fotos</div>
               </div>
-              <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
-              <div class="name">Kunde 6</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 10 Wochen</div>
+            </div>
+            <div class="review-text">
+              Sehr zufrieden mit der Reparatur meines iPhone-Displays. Der Inhaber ist extrem nett und freundlich und hat sich viel Mühe gegeben mir alle Info zu geben – sogar mit einem Video vom Reparaturprozess! Gerne wieder und werde den Service jederzeit weiterempfehlen!
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">N</div>
+              <div class="review-user-info">
+                <div class="review-name">Natascha Biell</div>
+                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Sehr schneller Service und gute Kommunikation. Reparatur sauber erledigt und alles hat einwandfrei funktioniert.</p>
-              <div class="name">Kunde 1</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 11 Wochen</div>
+            </div>
+            <div class="review-text">
+              Super Service, schnell gut zuverlässig, Freundlich.
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">W</div>
+              <div class="review-user-info">
+                <div class="review-name">Wei W</div>
+                <div class="review-meta">Local Guide • 42 Rezensionen • 36 Fotos</div>
               </div>
-              <p>Freundlich, zuverlässig und professionell. Ich war sehr zufrieden mit der Reparatur und dem Ablauf.</p>
-              <div class="name">Kunde 2</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 11 Wochen</div>
+            </div>
+            <div class="review-text">
+              Nice place and good people
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ff5722, #e64a19);">s</div>
+              <div class="review-user-info">
+                <div class="review-name">shehryaar ali</div>
+                <div class="review-meta">3 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Schnelle Rückmeldung, transparente Infos und saubere Arbeit. Kann ich klar weiterempfehlen.</p>
-              <div class="name">Kunde 3</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 23 Wochen</div>
+            </div>
+            <div class="review-text">
+              Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen, alles verständlich erklärt und die Probleme effizient gelöst. Die Zusammenarbeit war immer angenehm, er war erreichbar und zuverlässig, auch ausserhalb der normalen Arbeitszeiten. Ich kann ihn jedem weiterempfehlen, der jemanden sucht, der sich wirklich kümmert und die Arbeit sauber erledigt.
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #d32f2f, #c62828);">D</div>
+              <div class="review-user-info">
+                <div class="review-name">Dampfglanzservice- Ademi</div>
+                <div class="review-meta">1 Rezension • 0 Fotos</div>
               </div>
-              <p>Top Service und angenehmer Kontakt. Gerät wurde fachgerecht repariert und pünktlich zurückgegeben.</p>
-              <div class="name">Kunde 4</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 24 Wochen</div>
+            </div>
+            <div class="review-text">
+              Ich habe den Display von meinem Iphone 11pro reparieren lassen. Super Beratung & herzlich empfangen. Top Arbeit!
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
+              <div class="review-user-info">
+                <div class="review-name">Gabi Sutter</div>
+                <div class="review-meta">0 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Sehr professionell und hilfsbereit. Die Reparatur war sauber und das Ergebnis hat überzeugt.</p>
-              <div class="name">Kunde 5</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 10 Stunden <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Super arbeit!!
             </div>
           </div>
-          <div class="review-card box-bg tilt-effect">
-            <div class="card-content">
-              <div class="review-head">
-                <div class="stars">★★★★★</div>
-                <div class="review-badge">Google</div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
+              <div class="review-user-info">
+                <div class="review-name">Patryk Basztabin</div>
+                <div class="review-meta">5 Rezensionen • 0 Fotos</div>
               </div>
-              <p>Ehrliche Beratung, schneller Ablauf und gute Qualität. Ich würde den Service wieder nutzen.</p>
-              <div class="name">Kunde 6</div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.<br><br>
+              Zusätzlich hat der Techniker meinen Laptop gereinigt und kleinere, zukünftige Probleme direkt mit behoben. Dabei hatte ich jederzeit die Möglichkeit, alles wieder so zurückzubekommen, wie ich es wollte. Probleme wurden eigenständig erkannt und professionell gelöst – sehr kompetent und vorausschauend.<br><br>
+              Top-Qualität – diesen Service kann ich jedem empfehlen. Ich habe zuvor zwei bis drei andere Läden kontaktiert, leider ohne Erfolg. Hier hat alles wunderbar funktioniert.<br><br>
+              Ich bin wirklich froh, auf ihn gestoßen zu sein, da ich nun einen verlässlichen Ansprechpartner für alle zukünftigen Computerangelegenheiten habe. Kann ich jedem nur wärmstens empfehlen.
             </div>
           </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #5c6bc0, #3f51b5);">I</div>
+              <div class="review-user-info">
+                <div class="review-name">Irene Küng</div>
+                <div class="review-meta">2 Rezensionen • 0 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Vielen Dank. War voll umfänglich zufrieden mit neuer Kamera und neuer Batterie. Hab sie schon weiter empfohlen.<br>Gruss
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #455a64, #263238);">S</div>
+              <div class="review-user-info">
+                <div class="review-name">Srish</div>
+                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 3 Wochen <span class="badge-neu">NEU</span></div>
+            </div>
+            <div class="review-text">
+              Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert. Vor der Reparatur wurde mir ein Video geschickt, das den Zustand im Inneren gezeigt hat, und danach ein weiteres – der Unterschied war deutlich sichtbar. Alles sah viel sauberer und gepflegter aus.<br>
+              Die Probleme sind jetzt komplett behoben und das Handy funktioniert wieder einwandfrei. Besonders positiv fand ich, dass keine Kosten für die Problemdiagnose verlangt wurden, was heutzutage nicht selbstverständlich ist.<br>
+              Ich kann Mujitech definitiv weiterempfehlen
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff;">A</div>
+              <div class="review-user-info">
+                <div class="review-name">Alina Brüllhardt</div>
+                <div class="review-meta">1 Rezension • 0 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 10 Wochen</div>
+            </div>
+            <div class="review-text">
+              Habe vor zwei Wochen einen PC + Gaming Monitor von Mujitech gekauft, und diese am selben Tag noch erhalten. Service war sehr freundlich und hilfsbereit, mir wurde beim Gerätetesten geholfen und alles funktioniert einwandfrei.
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #78909c, #546e7a);">C</div>
+              <div class="review-user-info">
+                <div class="review-name">C O</div>
+                <div class="review-meta">4 Rezensionen • 2 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 10 Wochen</div>
+            </div>
+            <div class="review-text">
+              Sehr zufrieden mit der Reparatur meines iPhone-Displays. Der Inhaber ist extrem nett und freundlich und hat sich viel Mühe gegeben mir alle Info zu geben – sogar mit einem Video vom Reparaturprozess! Gerne wieder und werde den Service jederzeit weiterempfehlen!
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">N</div>
+              <div class="review-user-info">
+                <div class="review-name">Natascha Biell</div>
+                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 11 Wochen</div>
+            </div>
+            <div class="review-text">
+              Super Service, schnell gut zuverlässig, Freundlich.
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">W</div>
+              <div class="review-user-info">
+                <div class="review-name">Wei W</div>
+                <div class="review-meta">Local Guide • 42 Rezensionen • 36 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 11 Wochen</div>
+            </div>
+            <div class="review-text">
+              Nice place and good people
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ff5722, #e64a19);">s</div>
+              <div class="review-user-info">
+                <div class="review-name">shehryaar ali</div>
+                <div class="review-meta">3 Rezensionen • 0 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 23 Wochen</div>
+            </div>
+            <div class="review-text">
+              Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen, alles verständlich erklärt und die Probleme effizient gelöst. Die Zusammenarbeit war immer angenehm, er war erreichbar und zuverlässig, auch ausserhalb der normalen Arbeitszeiten. Ich kann ihn jedem weiterempfehlen, der jemanden sucht, der sich wirklich kümmert und die Arbeit sauber erledigt.
+            </div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #d32f2f, #c62828);">D</div>
+              <div class="review-user-info">
+                <div class="review-name">Dampfglanzservice- Ademi</div>
+                <div class="review-meta">1 Rezension • 0 Fotos</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row">
+              <div class="stars">★★★★★</div>
+              <div class="review-time">Vor 24 Wochen</div>
+            </div>
+            <div class="review-text">
+              Ich habe den Display von meinem Iphone 11pro reparieren lassen. Super Beratung & herzlich empfangen. Top Arbeit!
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -1184,7 +1448,7 @@
             <a href="#kontakt">Kontakt</a>
             <a href="#services">Services</a>
             <a href="#anfrage">Anfrage senden</a>
-            <a href="#bilder">Galerie</a>
+            <a href="#bilder">Beispielbilder</a>
           </div>
         </div>
         <div>
