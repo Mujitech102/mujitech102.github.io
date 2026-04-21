@@ -4,25 +4,55 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-  <title>Mujitech | Reparaturservice Schweiz</title>
-  <meta name="description" content="Mujitech bietet professionelle Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der Schweiz. Apple und Samsung Reparaturen, Einsendung nach Absprache oder Übergabe mit Terminvereinbarung." />
-  <meta name="keywords" content="Handy Reparatur Schweiz, iPhone Reparatur Schweiz, Samsung Reparatur Schweiz, Tablet Reparatur Schweiz, Laptop Reparatur Schweiz, PC Reparatur Schweiz, Mujitech" />
+  <title>Handy, Laptop & PC Reparatur Abtwil St. Gallen | Mujitech</title>
+  <meta name="description" content="Mujitech bietet professionelle Handy Reparatur, Laptop Service & PC Reparatur in Abtwil (St. Gallen). Apple & Samsung Spezialist. Schneller Displaytausch & Akkuwechsel. Jetzt anfragen!" />
+  <meta name="keywords" content="Handy Reparatur Abtwil, Laptop Reparatur St. Gallen, iPhone Reparatur Abtwil, PC Reparatur St. Gallen, Display Reparatur Schweiz, Mujitech Abtwil" />
   <meta name="author" content="Mujitech" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="de-CH" />
   <link rel="canonical" href="https://mujitech.ch/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Mujitech | Reparaturservice Schweiz" />
-  <meta property="og:description" content="Professionelle Reparaturen für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs in der Schweiz." />
+  <meta property="og:title" content="Handy & Laptop Reparatur in Abtwil St. Gallen | Mujitech" />
+  <meta property="og:description" content="Professioneller Reparaturservice für Smartphones, Tablets und Computer in der Region St. Gallen. Schneller Hardware-Service bei Mujitech." />
   <meta property="og:url" content="https://mujitech.ch/" />
   <meta property="og:site_name" content="Mujitech" />
   <meta property="og:locale" content="de_CH" />
   <meta property="og:image" content="https://mujitech.ch/logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mujitech | Reparaturservice Schweiz" />
-  <meta name="twitter:description" content="Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der Schweiz." />
-  <meta name="twitter:image" content="https://mujitech.ch/logo.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mujitech Reparaturservice",
+    "image": "https://mujitech.ch/logo.png",
+    "@id": "https://mujitech.ch",
+    "url": "https://mujitech.ch",
+    "telephone": "+41767209832",
+    "priceRange": "CHF",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Abtwil",
+      "addressLocality": "Gaiserwald",
+      "postalCode": "9030",
+      "addressRegion": "St. Gallen",
+      "addressCountry": "CH"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.4167,
+      "longitude": 9.3167
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "19:00"
+    },
+    "areaServed": "St. Gallen",
+    "description": "Professioneller Reparaturservice für Handys, Laptops und PCs in Abtwil SG."
+  }
+  </script>
 
   <style>
     :root {
@@ -34,1614 +64,256 @@
       --radius-lg: 24px;
       --radius-md: 16px;
       --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      --gold: #fbbc04; /* Google Star Gold */
+      --gold: #fbbc04;
       --brand-blue: #1e6fff;
       --brand-cyan: #25F4EE;
       --wa: #25D366;
-      --call: #1e6fff;
-      --insta1: #feda75;
-      --insta2: #fa7e1e;
-      --insta3: #d62976;
-      --insta4: #962fbf;
-      --insta5: #4f5bd5;
-      --tiktok1: #25F4EE;
-      --tiktok2: #FE2C55;
-      --tiktok3: #111111;
     }
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    html, body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: #060608; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      color: var(--text);
-      background: #060608;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
+    /* Animationen */
+    @keyframes floatLevitation { 0% { transform: translateY(0px); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0px); } }
+    @keyframes pulseGlow { 0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); } 50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); } 100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); } }
+    @keyframes scrollReviews { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 12px)); } }
 
-    body {
-      position: relative;
-    }
+    .page-glow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%), radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%); animation: pulseGlow 10s infinite alternate; }
+    #strom-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; opacity: 0.5; }
 
-    /* --- GLOBALE ANIMATIONEN --- */
-    @keyframes floatLevitation {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
-    }
-
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
-      50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); }
-      100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
-    }
-
-    @keyframes animatedBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* Slider Animation für Rezensionen */
-    @keyframes scrollReviews {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(calc(-50% - 12px)); } /* -12px wegen gap */
-    }
-
-    /* Background Layering */
-    .page-glow {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-      background: 
-        radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%);
-      animation: pulseGlow 10s infinite alternate;
-    }
-
-    #strom-canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 1;
-      opacity: 0.5;
-    }
-
-    img, video {
-      max-width: 100%;
-      display: block;
-    }
-
-    a { color: inherit; }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1200;
-      -webkit-backdrop-filter: blur(25px); /* iOS Fix */
-      backdrop-filter: blur(25px);
-      background: rgba(10, 10, 12, 0.85);
-      border-bottom: 1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      transition: all var(--transition);
-      -webkit-transform: translateZ(0); /* iOS Hardware Accel */
-    }
-
-    .nav-wrap {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      min-width: 0;
-    }
-
-    .logo {
-      width: 72px;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
-      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .logo:hover {
-      transform: translateY(-5px) scale(1.1) rotate(5deg);
-    }
-
-    .brand-text { display: flex; flex-direction: column; gap: 2px; }
-    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
+    header { position: sticky; top: 0; z-index: 1200; backdrop-filter: blur(25px); background: rgba(10, 10, 12, 0.85); border-bottom: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+    .nav-wrap { max-width: 1280px; margin: 0 auto; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .logo { width: 72px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3)); transition: transform 0.5s; }
+    .logo:hover { transform: scale(1.1) rotate(5deg); }
+    .brand-title { font-size: 22px; font-weight: 800; color: #ffffff; }
     .brand-sub { font-size: 13px; font-weight: 600; color: var(--muted); }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 12px;
-    }
+    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    nav a { text-decoration: none; font-size: 14px; font-weight: 700; color: #ffffff; padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.05); transition: all var(--transition); }
+    nav a:hover { transform: translateY(-3px); color: var(--brand-cyan); border-color: var(--brand-blue); background: rgba(30, 111, 255, 0.1); }
 
-    nav a, .btn, .floating-contact a, .hero-mini-btn {
-      position: relative;
-      overflow: hidden;
-      transform-style: preserve-3d;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 700;
-      color: #ffffff;
-      padding: 11px 18px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      transition: all var(--transition);
-    }
-
-    nav a::before, .btn::before, .floating-contact a::before, .hero-mini-btn::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -150%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-      transform: skewX(-25deg);
-      transition: left 0.8s ease;
-      z-index: 1;
-    }
-
-    nav a:hover::before, .btn:hover::before, .floating-contact a:hover::before, .hero-mini-btn:hover::before {
-      left: 150%;
-    }
-
-    nav a:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(30, 111, 255, 0.3);
-      color: var(--brand-cyan);
-      border-color: var(--brand-blue);
-      background: rgba(30, 111, 255, 0.1);
-    }
-
-    main {
-      position: relative;
-      z-index: 2;
-    }
-
-    .section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 40px 18px;
-    }
-
-    /* Box Backgrounds mit iOS Fixes */
-    .box-bg {
-      position: relative;
-      background: rgba(25, 25, 30, 0.7);
-      -webkit-backdrop-filter: blur(20px); /* iOS Fix */
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
-      -webkit-transform: translateZ(0); /* iOS Hardware Accel Fix für Glitches */
-      transform: translateZ(0);
-    }
-
-    /* Auf Hover 3D Style (Wird von JS gesteuert) */
-    .box-bg.tilt-effect {
-      will-change: transform;
-    }
-
-    .box-bg::before {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background: linear-gradient(45deg, rgba(30, 111, 255, 0.03), rgba(37, 244, 238, 0.03), rgba(200, 168, 93, 0.02), transparent);
-      background-size: 200% 200%;
-      animation: animatedBackground 10s ease infinite;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .card-content {
-      position: relative;
-      z-index: 2;
-      transition: transform var(--transition);
-    }
-
-    /* 3D Popout Effekt nur auf Geräten, die Hover unterstützen */
-    @media (hover: hover) {
-      .tilt-effect .card-content {
-        transform: translateZ(30px);
-      }
-      .box-bg {
-        transform-style: preserve-3d;
-      }
-    }
-
+    .section { max-width: 1280px; margin: 0 auto; padding: 40px 18px; position: relative; z-index: 2; }
+    .box-bg { position: relative; background: rgba(25, 25, 30, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
     .card { padding: 45px 35px; }
 
-    .hero-contact {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 30px;
-      align-items: stretch;
-      margin-top: 30px;
-    }
-
-    .hero-copy h1 {
-      margin: 0 0 18px 0;
-      font-size: 44px;
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-      font-weight: 800;
-      color: #ffffff;
-    }
-
-    .hero-copy p {
-      margin: 0 0 20px 0;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #b0b0b0;
-      max-width: 760px;
-    }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0; }
-
-    .hero-mini-btn {
-      text-decoration: none;
-      font-weight: 800;
-      padding: 16px 24px;
-      border-radius: 999px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--brand-blue), #0d4bb5);
-      box-shadow: 0 10px 20px rgba(30, 111, 255, 0.3);
-      transition: all var(--transition);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .hero-mini-btn:nth-child(2) {
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    }
-
-    .hero-mini-btn:hover {
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 0 15px 30px rgba(30, 111, 255, 0.4);
-    }
-
-    @media (hover: hover) {
-      .hero-mini-btn:hover { transform: translateY(-4px) scale(1.05) translateZ(20px); }
-    }
-
-    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
-
-    .trust-item {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(255,255,255,0.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      font-size: 14px;
-      line-height: 1.6;
-      color: #b0b0b0;
-      transition: all 0.3s;
-    }
-    
-    .trust-item:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.2);
-    }
-
-    @media (hover: hover) {
-      .trust-item { transform-style: preserve-3d; }
-      .trust-item:hover { transform: translateZ(20px) translateY(-5px); }
-    }
-
-    .trust-item strong { color: #ffffff; }
-
-    .icon-line { display: flex; align-items: flex-start; gap: 12px; }
-    .icon { width: 22px; height: 22px; flex: 0 0 22px; color: var(--brand-cyan); }
-
-    .title { margin: 0 0 20px 0; font-size: 32px; letter-spacing: -0.5px; font-weight: 800; color: #fff; }
-    .contact-intro { color: #b0b0b0; line-height: 1.8; margin-bottom: 24px; font-size: 17px; }
+    .hero-contact { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: stretch; margin-top: 30px; }
+    .hero-copy h1 { font-size: 44px; line-height: 1.15; font-weight: 800; color: #ffffff; margin-bottom: 18px; }
+    .hero-copy p { font-size: 18px; line-height: 1.8; color: #b0b0b0; max-width: 760px; margin-bottom: 20px; }
 
     .btn-grid { display: grid; gap: 16px; }
-
-    .btn {
-      display: flex; align-items: center; justify-content: center; gap: 12px;
-      text-decoration: none; text-align: center; font-size: 17px; font-weight: 800;
-      padding: 16px; border-radius: 20px; border: none;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-      transition: all var(--transition);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .btn:hover {
-      transform: translateY(-5px) scale(1.03);
-      filter: brightness(1.1);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-    }
-
-    @media (hover: hover) {
-      .btn:hover { transform: translateY(-5px) scale(1.03) translateZ(30px); }
-    }
-
+    .btn { display: flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; font-size: 17px; font-weight: 800; padding: 16px; border-radius: 20px; transition: all var(--transition); border: 1px solid rgba(255,255,255,0.1); }
+    .btn:hover { transform: translateY(-5px) scale(1.03); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
     .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
     .btn.call { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; }
-    .btn.instagram { background: linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5)); color: #ffffff; }
-    .btn.tiktok { background: linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2)); color: #ffffff; }
 
-    .micro-note { margin-top: 18px; color: var(--muted); font-size: 14px; line-height: 1.7; font-weight: 600;}
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
-    .grid-4, .grid-3, .grid-2 { display: grid; gap: 24px; }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .service-card h3 { font-size: 24px; color: #ffffff; margin-bottom: 15px; }
+    .service-card ul { padding-left: 20px; color: #b0b0b0; line-height: 1.8; }
 
-    .mini-card, .service-card, .faq-card {
-      padding: 30px 25px;
-    }
+    .reviews-slider-container { overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0; }
+    .reviews-slider-track { display: flex; gap: 24px; width: max-content; animation: scrollReviews 45s linear infinite; }
+    .review-card { width: 380px; padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.02); }
+    .review-text { font-size: 15px; line-height: 1.6; color: #e0e0e0; }
 
-    .mini-card h3, .service-card h3, .faq-card h3 {
-      margin: 0 0 15px 0; font-size: 24px; letter-spacing: -0.3px; color: #ffffff;
-    }
+    .floating-contact { position: fixed; right: 20px; bottom: 120px; z-index: 1600; display: flex; flex-direction: column; gap: 16px; animation: floatLevitation 4s ease-in-out infinite; }
+    .floating-contact a { min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; padding: 16px 20px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.5); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 10px; }
 
-    .mini-card p, .service-card p, .faq-card p, .legal p, .legal li {
-      margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 16px;
-    }
-
-    .service-card ul, .legal ul { margin: 15px 0 0 0; padding-left: 20px; line-height: 1.8; color: #b0b0b0; }
-    .service-card li, .legal li { margin-bottom: 8px; }
-
-    .section-head { text-align: center; margin-bottom: 40px; }
-    @media (hover: hover) { .section-head { transform: translateZ(40px); } }
-    
-    .section-head h2 { margin: 0 0 12px 0; font-size: 40px; letter-spacing: -0.5px; color: #fff; }
-    .section-head p { margin: 0 auto; max-width: 860px; color: #b0b0b0; line-height: 1.8; font-size: 18px; }
-
-    /* --- KONTAKTFORMULAR STYLING --- */
-    .form-container { max-width: 800px; margin: 0 auto; }
-    .contact-form { display: flex; flex-direction: column; gap: 20px; }
-    .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
-    .form-group label { font-weight: 700; font-size: 15px; color: #fff; }
-    
-    .contact-form input, 
-    .contact-form select, 
-    .contact-form textarea {
-      width: 100%; padding: 16px; border-radius: 16px;
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15);
-      color: #fff; font-family: inherit; font-size: 16px;
-      transition: all var(--transition);
-      -webkit-appearance: none; 
-      appearance: none;
-    }
-    
-    .contact-form select {
-      background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
-      background-repeat: no-repeat; background-position: right 16px top 50%; background-size: 12px auto;
-    }
-
-    .contact-form input:focus, 
-    .contact-form select:focus, 
-    .contact-form textarea:focus {
-      outline: none; border-color: var(--brand-cyan); background: rgba(255,255,255,0.1);
-      box-shadow: 0 0 15px rgba(37, 244, 238, 0.3);
-    }
-    
-    .contact-form option { background: #111; color: #fff; } 
-    
-    .contact-form .submit-btn {
-      background: linear-gradient(135deg, var(--brand-blue), #0d4bb5); color: #fff;
-      border: none; cursor: pointer; margin-top: 10px; width: 100%;
-    }
-
-    /* Video Section */
-    .video-card { max-width: 600px; margin: 0 auto; }
-    .video-frame {
-      position: relative; overflow: hidden; border-radius: 24px; padding: 10px;
-      background: rgba(255,255,255,0.05);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      border: 1px solid rgba(255,255,255,0.1);
-      -webkit-transform: translateZ(0); 
-    }
-
-    .video-inner { position: relative; overflow: hidden; border-radius: 16px; background: #000; -webkit-transform: translateZ(0); }
-    .video-inner video { width: 100%; display: block; object-fit: cover; }
-
-    .video-label {
-      position: absolute; left: 15px; right: 15px; bottom: 15px; z-index: 2;
-      display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap;
-    }
-
-    .video-chip {
-      padding: 8px 12px; border-radius: 999px; background: rgba(0,0,0,0.8); color: #fff;
-      -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); font-size: 13px; font-weight: 700; border: 1px solid rgba(255,255,255,0.2);
-    }
-
-    /* Bilder Galerie */
-    .gallery-card { padding: 16px; overflow: hidden; }
-    .gallery-card img {
-      width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 20px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.4); transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .box-bg:hover .gallery-card img { transform: scale(1.05); }
-    @media (hover: hover) { .box-bg:hover .gallery-card img { transform: scale(1.05) translateZ(30px); } }
-    
-    .gallery-card .caption { padding: 18px 10px 8px 10px; text-align: center; color: #ffffff; line-height: 1.7; font-weight: 800; font-size: 18px;}
-
-    /* --- KRASSE GOOGLE REZENSIONEN STYLING --- */
-    .reviews-slider-container {
-      overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0;
-      /* 3D Container-Tiefenwirkung für die Marquee */
-      transform: perspective(1500px) rotateY(-2deg) rotateX(1deg);
-    }
-
-    .reviews-slider-track {
-      display: flex; gap: 24px; width: max-content;
-      -webkit-animation: scrollReviews 45s linear infinite;
-      animation: scrollReviews 45s linear infinite;
-    }
-    
-    .reviews-slider-track:hover {
-      -webkit-animation-play-state: paused;
-      animation-play-state: paused;
-    }
-
-    .review-card { 
-      width: 380px; height: 320px; flex-shrink: 0; white-space: normal; padding: 25px; 
-      display: flex; flex-direction: column;
-      position: relative; overflow: hidden;
-      transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease;
-    }
-
-    .review-card::after {
-      content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-      background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%);
-      transform: rotate(30deg) translateY(-100%); transition: transform 0.6s ease; pointer-events: none;
-    }
-
-    .review-card:hover {
-      transform: scale(1.03) translateY(-5px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2);
-      border-color: rgba(30, 111, 255, 0.4);
-    }
-
-    .review-card:hover::after { transform: rotate(30deg) translateY(100%); }
-
-    /* Header in der Bewertung */
-    .review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 15px; }
-    
-    .review-avatar {
-      width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 20px; font-weight: 800; color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      flex-shrink: 0;
-    }
-    
-    .review-user-info { flex-grow: 1; }
-    .review-name { font-weight: 800; color: #ffffff; font-size: 16px; margin-bottom: 3px; }
-    .review-meta { font-size: 12px; color: #999; }
-    
-    .google-icon { width: 24px; height: 24px; flex-shrink: 0; }
-
-    /* Sterne & Zeit */
-    .review-rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .review-card .stars { font-size: 18px; letter-spacing: 2px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(251, 188, 4, 0.3));}
-    .review-time { font-size: 13px; color: #aaa; display: flex; align-items: center; gap: 8px;}
-    .badge-neu { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 800; color: #fff; }
-
-    /* Text Scrollbar für extrem lange Texte (Patryk) */
-    .review-text {
-      flex-grow: 1; font-size: 15px; line-height: 1.6; color: #e0e0e0;
-      overflow-y: auto; padding-right: 5px; text-align: justify;
-    }
-    
-    /* Edler Scrollbar */
-    .review-text::-webkit-scrollbar { width: 4px; }
-    .review-text::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 10px; }
-    .review-text::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
-    .review-text::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.3); }
-
-
-    .legal h3 { font-size: 24px; margin: 30px 0 12px 0; color: #fff;}
-    .legal h3:first-child { margin-top: 0; }
-    .legal hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; }
-
-    footer { padding: 20px 18px 60px 18px; position: relative; z-index: 2;}
-
-    .footer-card {
-      max-width: 1280px; margin: 0 auto;
-      padding: 50px 40px;
-      -webkit-transform: translateZ(0);
-    }
-
-    .footer-top { display: grid; grid-template-columns: 1.2fr 0.9fr 0.9fr; gap: 30px; align-items: start; }
-    .footer-title { font-size: 20px; font-weight: 800; margin-bottom: 15px; color: #fff;}
-    .footer-card p { margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 15px;}
-    .footer-links { display: flex; flex-direction: column; gap: 12px; }
-    .footer-links a { font-weight: 600; color: #b0b0b0; text-decoration: none; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--brand-cyan); transform: translateX(5px); }
-
-    .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #777; font-size: 14px; font-weight: 600;}
-
-    /* iOS 3D Reveal Animationen */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-
-    @media (hover: hover) {
-      .reveal {
-        transform: perspective(1000px) translateY(60px) rotateX(-15deg) scale(0.95);
-      }
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: perspective(1000px) translateY(0) rotateX(0deg) scale(1);
-    }
-
-    /* Verbessertes Cookie-Banner */
-    .cookie-banner {
-      position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 2000;
-      background: rgba(20, 20, 25, 0.95); color: white; border-radius: 20px;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.1);
-      padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
-      
-      opacity: 0;
-      pointer-events: none; 
-      transform: translateY(150%); 
-      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s;
-      -webkit-transform: translateZ(0);
-    }
-    
-    .cookie-banner.show { 
-      transform: translateY(0); 
-      opacity: 1;
-      pointer-events: auto; 
-    }
-    
-    .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; flex: 1; min-width: 200px;}
-    
-    .cookie-buttons { display: flex; gap: 12px; }
-    
-    .cookie-banner .btn-accept {
-      border: 1px solid rgba(255,255,255,0.8); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer;
-      color: #000; background: #fff;
-      transition: transform var(--transition), background var(--transition);
-    }
-    .cookie-banner .btn-accept:hover { transform: translateY(-2px) scale(1.05); background: #e0e0e0; }
-
-    .cookie-banner .btn-decline {
-      border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer;
-      color: #fff; background: rgba(255,255,255,0.05);
-      transition: transform var(--transition), background var(--transition);
-    }
-    .cookie-banner .btn-decline:hover { transform: translateY(-2px) scale(1.05); background: rgba(255,255,255,0.1); }
-
-    .floating-contact {
-      position: fixed; right: 20px; bottom: 120px; z-index: 1600;
-      display: flex; flex-direction: column; gap: 16px;
-      animation: floatLevitation 4s ease-in-out infinite;
-      -webkit-transform: translateZ(0); 
-    }
-    .floating-contact a {
-      min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; font-size: 16px;
-      padding: 16px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-      -webkit-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 10px;
-    }
-    .floating-contact a:hover { transform: translateY(-5px) scale(1.05); }
-    .floating-contact .whatsapp-btn { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; border:none;}
-    .floating-contact .call-btn { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; border:none;}
-
-    @media (max-width: 1100px) {
-      .hero-contact, .grid-4, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr 1fr; }
-      .hero-copy h1 { font-size: 38px; }
-    }
-
-    @media (max-width: 780px) {
-      .nav-wrap { flex-direction: column; align-items: stretch; }
-      .brand, nav { justify-content: center; }
-      .hero-contact, .grid-4, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr; }
+    @media (max-width: 900px) {
+      .hero-contact, .grid-3, .grid-2 { grid-template-columns: 1fr; }
       .hero-copy h1 { font-size: 32px; }
-      .section-head h2 { font-size: 30px; }
-      .card, .mini-card, .service-card, .review-card, .faq-card { padding: 25px 20px; }
-      .video-card { max-width: 100%; }
-      
-      .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
-      .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
-      
-      .review-card { width: 300px; }
+      .floating-contact { right: 15px; left: 15px; bottom: 100px; animation: none; }
+      .floating-contact a { width: 100%; }
     }
   </style>
-
 </head>
 <body>
   <div class="page-glow"></div>
-  
   <canvas id="strom-canvas"></canvas>
 
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <img src="logo.png" class="logo" alt="Mujitech Logo Reparaturservice Schweiz" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
+        <img src="logo.png" class="logo" alt="Mujitech Logo - Reparatur Abtwil SG" />
         <div class="brand-text">
-          <div class="brand-title">Mujitech</div>
-          <div class="brand-sub">Reparaturservice Schweiz</div>
+          <div class="brand-title">Mujitech Abtwil</div>
+          <div class="brand-sub">Handy & PC Service St. Gallen</div>
         </div>
       </div>
-
       <nav>
-        <a href="#kontakt">Kontakt</a>
         <a href="#services">Services</a>
         <a href="#anfrage">Anfrage</a>
-        <a href="#bilder">Beispielbilder</a>
-        <a href="#faq">FAQ</a>
-        <a href="#bewertungen">Bewertungen</a>
+        <a href="#bewertungen">Rezensionen</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="section reveal" id="kontakt">
-      <div class="card box-bg hero-contact tilt-effect">
-        <div class="hero-copy card-content">
-          <h1>Professionelle Reparaturen für Handy, Tablet, Laptop und PC in der Schweiz</h1>
+    <section class="section">
+      <div class="card box-bg hero-contact">
+        <div class="hero-copy">
+          <h1>Professionelle Handy, Laptop & PC Reparatur in Abtwil (St. Gallen)</h1>
           <p>
-            Mujitech bietet professionelle Reparaturen für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs in der ganzen Schweiz.
-            Persönliche Übergabe nur nach Terminvereinbarung oder Einsendung nach Absprache.
+            Mujitech ist Ihre erste Adresse für fachgerechte Hardware-Reparaturen in der Region St. Gallen. Wir spezialisieren uns auf den Displaytausch, Akkuwechsel und die Instandsetzung von Apple- und Samsung-Geräten sowie Computern aller Marken.
           </p>
-          <p>
-            Es gibt kein Ladenlokal. Preise sind auf der Website nicht ersichtlich und werden individuell auf Anfrage mitgeteilt.
-          </p>
+          <p><strong>Standort Abtwil SG:</strong> Kein Ladenlokal. Übergabe nur nach Terminvereinbarung oder bequeme Einsendung aus der ganzen Schweiz.</p>
 
-          <div class="hero-actions">
-            <a class="hero-mini-btn" href="#anfrage">Reparaturanfrage senden</a>
-            <a class="hero-mini-btn" href="https://wa.me/41767209832" target="_blank">Schnell via WhatsApp</a>
-          </div>
-
-          <div class="trust-grid">
-            <div class="trust-item">
-              <div class="icon-line">
-                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="2"/><path d="M9.5 12.5l1.8 1.8 3.7-4.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                <div><strong>6 Monate Garantie</strong><br>auf technische Reparaturen</div>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div class="icon-line">
-                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="2"/><path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                <div><strong>Kein Ladenlokal</strong><br>Übergabe nur mit Termin</div>
-              </div>
-            </div>
-            <div class="trust-item">
-              <div class="icon-line">
-                <svg class="icon" viewBox="0 0 24 24" fill="none">
-                  <rect x="3" y="4" width="18" height="16" rx="2.5" fill="#D52B1E"/>
-                  <path d="M12 7.5v9M7.5 12h9" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
-                </svg>
-                <div><strong>Schweizweit</strong><br>Einsendung nach Absprache</div>
-              </div>
-            </div>
+          <div class="btn-grid" style="grid-template-columns: 1fr 1fr;">
+            <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank">WhatsApp Chat</a>
+            <a class="btn call" href="tel:+41767209832">Jetzt anrufen</a>
           </div>
         </div>
 
-        <div class="contact-panel card-content">
-          <h2 class="title">Kontakt direkt</h2>
-          <div class="contact-intro">
-            Für Anfragen, Terminvereinbarungen oder Einsendungen erreichst du uns direkt über WhatsApp, Telefon oder Social Media.
-          </div>
-
-          <div class="btn-grid">
-            <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#0b2514;"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="2"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
-              WhatsApp schreiben
-            </a>
-            <a class="btn call" href="tel:+41767209832">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-              Jetzt anrufen
-            </a>
-            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/" target="_blank">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
-              Instagram öffnen
-            </a>
-            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech" target="_blank">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><path d="M14 4c.4 1.6 1.6 3 3 3.7.8.4 1.6.5 2 .5v3.2c-1.6 0-3.5-.5-5-1.7v5.7a5 5 0 11-5-5c.3 0 .5 0 .8.1v3.2a2 2 0 10 1.2 1.8V4h3z" fill="currentColor"/></svg>
-              TikTok öffnen
-            </a>
-          </div>
-          <div class="micro-note">Übergabe nur nach Terminvereinbarung. Einsendung nur nach vorgängiger Absprache. Reparaturservice für die gesamte Schweiz.</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal">
-      <div class="grid-3">
-        <div class="mini-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Garantie</h3>
-            <p>Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.</p>
-          </div>
-        </div>
-        <div class="mini-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Preise</h3>
-            <p>Preise werden nicht öffentlich angezeigt. Jede Reparatur wird individuell beurteilt und auf Anfrage besprochen.</p>
-          </div>
-        </div>
-        <div class="mini-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Servicegebiet</h3>
-            <p>Mujitech bietet Handy Reparatur, Tablet Reparatur, Laptop Reparatur und PC Reparatur in der ganzen Schweiz.</p>
+        <div class="contact-panel">
+          <div class="box-bg card" style="background: rgba(0,0,0,0.3);">
+            <h3>Warum Mujitech?</h3>
+            <ul style="color: #b0b0b0; line-height: 2;">
+              <li>📍 Lokaler Partner in Abtwil St. Gallen</li>
+              <li>🛡️ 6 Monate Garantie auf Hardware</li>
+              <li>🚀 Schneller Display- & Akkuservice</li>
+              <li>📦 Schweizweiter Einsendeservice</li>
+              <li>⭐ Exzellente Google-Rezensionen</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="services">
-      <div class="section-head">
-        <h2>Unsere Reparatur-Services</h2>
-        <p>Wir reparieren verschiedene Gerätetypen und teilen unsere Dienstleistungen übersichtlich nach Kategorie auf.</p>
+    <section class="section" id="services">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2>Unsere Hardware-Reparaturleistungen</h2>
+        <p>Spezialisierte Technik-Services für Handys, Tablets und Computer.</p>
       </div>
 
       <div class="grid-2">
-        <div class="service-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Handy Reparatur</h3>
-            <p>Reparaturen ausschliesslich für Apple oder Samsung.</p>
-            <ul>
-              <li>Display-Reparaturen</li>
-              <li>Akku-Austausch</li>
-              <li>Ladeprobleme und Ladebuchsen</li>
-              <li>Kamera, Lautsprecher und Mikrofon</li>
-              <li>Backcover und Gehäuseteile</li>
-              <li>Hardware-Diagnose und Prüfung</li>
-              <li>Fehlerdiagnose der Komponenten</li>
-            </ul>
-          </div>
+        <div class="service-card box-bg card">
+          <h3>Handy & Tablet Reparatur</h3>
+          <p>Spezialisiert auf Hardware-Defekte bei Apple iPhone & Samsung:</p>
+          <ul>
+            <li>Display-Reparatur (Glas & Panel)</li>
+            <li>Akku-Austausch (Original-Qualität)</li>
+            <li>Austausch defekter Ladebuchsen</li>
+            <li>Kamera- und Sensoraustausch</li>
+            <li>Backcover- & Gehäusereparatur</li>
+            <li>Umfassende Hardware-Diagnose</li>
+          </ul>
         </div>
 
-        <div class="service-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Tablet Reparatur</h3>
-            <p>Reparaturen ausschliesslich für Apple oder Samsung.</p>
-            <ul>
-              <li>Display und Glas</li>
-              <li>Akku-Austausch</li>
-              <li>Ladebuchse</li>
-              <li>Tasten, Lautsprecher und Kamera</li>
-              <li>Hardware-Defekte beheben</li>
-              <li>Diagnose und technische Prüfung</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Laptop Reparatur</h3>
-            <ul>
-              <li>Display-Reparaturen</li>
-              <li>Akku-Austausch</li>
-              <li>Tastatur- und Scharnierreparaturen</li>
-              <li>Ladebuchsen und Stromprobleme</li>
-              <li>Lüfterreinigung und Wartung</li>
-              <li>SSD- und RAM-Upgrades</li>
-              <li>Austausch von Festplatten und Laufwerken</li>
-              <li>Überprüfung der Hardwarekomponenten</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="service-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>PC Reparatur / Desktop PCs</h3>
-            <ul>
-              <li>Fehlerdiagnose</li>
-              <li>Austausch oder Aufrüstung von Komponenten</li>
-              <li>SSD- und RAM-Upgrades</li>
-              <li>Kühlung und Lüfterservice</li>
-              <li>Hardware-Einbau und Montage</li>
-              <li>Kühlsystem-Optimierung</li>
-              <li>Reinigung und Hardware-Wartung</li>
-            </ul>
-          </div>
+        <div class="service-card box-bg card">
+          <h3>Laptop & PC Reparatur</h3>
+          <p>Mechanische Reparaturen und Upgrades für Windows & Mac:</p>
+          <ul>
+            <li>Display-Austausch bei Laptops</li>
+            <li>Reinigung des Kühlsystems & Wärmeleitpaste</li>
+            <li>SSD- & RAM-Upgrades für mehr Speed</li>
+            <li>Tastatur- & Scharnier-Instandsetzung</li>
+            <li>Hardware-Wartung für Desktop PCs</li>
+            <li>Reparatur von Stromversorgungsproblemen</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="section reveal" id="anfrage">
-      <div class="card box-bg tilt-effect form-container">
-        <div class="card-content">
-          <div class="section-head" style="margin-bottom: 25px;">
-            <h2>Reparaturanfrage senden</h2>
-            <p>Sende uns direkt die wichtigsten Infos zu deinem defekten Gerät.</p>
-          </div>
-          
-          <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
-            
-            <input type="hidden" name="_subject" value="Neue Reparaturanfrage über die Website">
-            <input type="text" name="_honey" style="display:none">
-            
-            <div class="form-group">
-              <label for="name">Vor- & Nachname</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            
-            <div class="form-group">
-              <label for="email">E-Mail Adresse</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="telefon">Telefonnummer</label>
-              <input type="tel" id="telefon" name="telefon" required />
-            </div>
-
-            <div class="form-group">
-              <label for="geraet">Welches Gerät ist es?</label>
-              <select id="geraet" name="geraet" required>
-                <option value="" disabled selected>Bitte auswählen...</option>
-                <option value="Handy">Handy</option>
-                <option value="Laptop">Laptop</option>
-                <option value="PC">PC</option>
-                <option value="Tablet">Tablet</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="modell">Welches Modell ist es genau? (In den Einstellungen ersichtlich)</label>
-              <input type="text" id="modell" name="modell" placeholder="z.B. iPhone 13 Pro, Samsung S22..." required />
-            </div>
-
-            <div class="form-group">
-              <label for="problem">Was für ein Problem hat das Gerät?</label>
-              <textarea id="problem" name="problem" rows="4" placeholder="Bitte beschreibe das Problem / den Defekt kurz..." required></textarea>
-            </div>
-
-            <div class="form-group">
-              <label for="kontaktweg">Wie sollen wir uns gerne bei dir melden?</label>
-              <select id="kontaktweg" name="kontaktweg" required>
-                <option value="" disabled selected>Bitte auswählen...</option>
-                <option value="Telefon">Telefonanruf</option>
-                <option value="Whatsapp">WhatsApp</option>
-                <option value="Mail">E-Mail</option>
-                <option value="SMS">SMS</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn submit-btn">Anfrage jetzt absenden</button>
-          </form>
-
-        </div>
+    <section class="section" id="anfrage">
+      <div class="card box-bg" style="max-width: 800px; margin: 0 auto;">
+        <h2 style="text-align: center;">Reparaturanfrage senden</h2>
+        <p style="text-align: center; color: #b0b0b0;">Wir melden uns umgehend mit einem unverbindlichen Kostenvoranschlag.</p>
+        <form action="https://formsubmit.co/info@mujitech.ch" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+          <input type="text" name="name" placeholder="Ihr Name" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;">
+          <input type="email" name="email" placeholder="Ihre E-Mail" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;">
+          <input type="text" name="modell" placeholder="Welches Gerät? (z.B. iPhone 13, MacBook Air)" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;">
+          <textarea name="defekt" placeholder="Was ist defekt? (z.B. Bildschirm gerissen, Akku lädt nicht)" rows="4" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;"></textarea>
+          <button type="submit" class="btn call" style="border:none; cursor:pointer;">Anfrage jetzt absenden</button>
+        </form>
       </div>
     </section>
 
-    <section class="section reveal" id="bilder">
-      <div class="section-head">
-        <h2>Beispielbilder von Reparaturaufträgen</h2>
-        <p>Hier siehst du Beispielbilder aus verschiedenen Reparaturbereichen von Mujitech.</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="gallery-card box-bg tilt-effect">
-          <div class="card-content">
-            <img src="pc.png" alt="PC Reparatur Beispiel Schweiz" />
-            <div class="caption">PC Reparatur Beispiel</div>
-          </div>
-        </div>
-
-        <div class="gallery-card box-bg tilt-effect">
-          <div class="card-content">
-            <img src="Laptop.png" alt="Laptop Reparatur Beispiel Schweiz" />
-            <div class="caption">Laptop Reparatur Beispiel</div>
-          </div>
-        </div>
-
-        <div class="gallery-card box-bg tilt-effect">
-          <div class="card-content">
-            <img src="Handy.png" alt="Handy Reparatur Beispiel Apple Samsung Schweiz" />
-            <div class="caption">Handy Reparatur Beispiel</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="video">
-      <div class="card box-bg video-card tilt-effect">
-        <div class="card-content">
-          <div class="section-head" style="margin-bottom:20px;">
-            <h2 style="font-size:28px;">Vorher / Nachher</h2>
-            <p style="font-size:15px;">Displaywechsel iPhone Reparatur</p>
-          </div>
-
-          <div class="video-frame">
-            <div class="video-inner">
-              <video autoplay muted loop playsinline>
-                <source src="iphone-reparatur.mp4" type="video/mp4">
-              </video>
-              <div class="video-label">
-                <div class="video-chip">Vorher / Nachher</div>
-                <div class="video-chip">iPhone Reparatur</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="faq">
-      <div class="section-head">
-        <h2>Häufige Fragen</h2>
-        <p>Wichtige Antworten rund um Reparatur, Garantie und Ablauf.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="faq-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Welche Geräte repariert Mujitech?</h3>
-            <p>Mujitech repariert Apple und Samsung Handys und Tablets sowie Laptops und Desktop PCs.</p>
-          </div>
-        </div>
-        <div class="faq-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Hat Mujitech ein Ladenlokal?</h3>
-            <p>Nein. Es gibt kein Ladenlokal. Übergaben erfolgen nur nach Terminvereinbarung oder Einsendung nach Absprache.</p>
-          </div>
-        </div>
-        <div class="faq-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Gibt es eine Garantie auf Reparaturen?</h3>
-            <p>Ja. Auf Reparaturprodukte und technisch ausgeführte Reparaturen gilt eine Garantie von 6 Monaten, solange kein Bruch, kein Riss und kein Wasserschaden vorliegt.</p>
-          </div>
-        </div>
-        <div class="faq-card box-bg tilt-effect">
-          <div class="card-content">
-            <h3>Sind Preise auf der Website sichtbar?</h3>
-            <p>Nein. Preise werden individuell auf Anfrage mitgeteilt.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
-      <div class="section-head">
-        <h2>Google Rezensionen</h2>
-        <p>Erfahrungen von unseren Kunden – Vertrauenswürdig und echt.</p>
-      </div>
-
+    <section class="section" id="bewertungen">
+      <h2 style="text-align: center;">Kundenmeinungen aus St. Gallen</h2>
       <div class="reviews-slider-container">
         <div class="reviews-slider-track">
           <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
-              <div class="review-user-info">
-                <div class="review-name">Gabi Sutter</div>
-                <div class="review-meta">0 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 10 Stunden <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Super arbeit!!
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
-              <div class="review-user-info">
-                <div class="review-name">Patryk Basztabin</div>
-                <div class="review-meta">5 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.<br><br>
-              Zusätzlich hat der Techniker meinen Laptop gereinigt und kleinere, zukünftige Probleme direkt mit behoben. Dabei hatte ich jederzeit die Möglichkeit, alles wieder so zurückzubekommen, wie ich es wollte. Probleme wurden eigenständig erkannt und professionell gelöst – sehr kompetent und vorausschauend.<br><br>
-              Top-Qualität – diesen Service kann ich jedem empfehlen. Ich habe zuvor zwei bis drei andere Läden kontaktiert, leider ohne Erfolg. Hier hat alles wunderbar funktioniert.<br><br>
-              Ich bin wirklich froh, auf ihn gestoßen zu sein, da ich nun einen verlässlichen Ansprechpartner für alle zukünftigen Computerangelegenheiten habe. Kann ich jedem nur wärmstens empfehlen.
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #5c6bc0, #3f51b5);">I</div>
-              <div class="review-user-info">
-                <div class="review-name">Irene Küng</div>
-                <div class="review-meta">2 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Vielen Dank. War voll umfänglich zufrieden mit neuer Kamera und neuer Batterie. Hab sie schon weiter empfohlen.<br>Gruss
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #455a64, #263238);">S</div>
-              <div class="review-user-info">
-                <div class="review-name">Srish</div>
-                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 3 Wochen <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert. Vor der Reparatur wurde mir ein Video geschickt, das den Zustand im Inneren gezeigt hat, und danach ein weiteres – der Unterschied war deutlich sichtbar. Alles sah viel sauberer und gepflegter aus.<br>
-              Die Probleme sind jetzt komplett behoben und das Handy funktioniert wieder einwandfrei. Besonders positiv fand ich, dass keine Kosten für die Problemdiagnose verlangt wurden, was heutzutage nicht selbstverständlich ist.<br>
-              Ich kann Mujitech definitiv weiterempfehlen
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff;">A</div>
-              <div class="review-user-info">
-                <div class="review-name">Alina Brüllhardt</div>
-                <div class="review-meta">1 Rezension • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 10 Wochen</div>
-            </div>
-            <div class="review-text">
-              Habe vor zwei Wochen einen PC + Gaming Monitor von Mujitech gekauft, und diese am selben Tag noch erhalten. Service war sehr freundlich und hilfsbereit, mir wurde beim Gerätetesten geholfen und alles funktioniert einwandfrei.
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #78909c, #546e7a);">C</div>
-              <div class="review-user-info">
-                <div class="review-name">C O</div>
-                <div class="review-meta">4 Rezensionen • 2 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 10 Wochen</div>
-            </div>
-            <div class="review-text">
-              Sehr zufrieden mit der Reparatur meines iPhone-Displays. Der Inhaber ist extrem nett und freundlich und hat sich viel Mühe gegeben mir alle Info zu geben – sogar mit einem Video vom Reparaturprozess! Gerne wieder und werde den Service jederzeit weiterempfehlen!
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">N</div>
-              <div class="review-user-info">
-                <div class="review-name">Natascha Biell</div>
-                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 11 Wochen</div>
-            </div>
-            <div class="review-text">
-              Super Service, schnell gut zuverlässig, Freundlich.
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">W</div>
-              <div class="review-user-info">
-                <div class="review-name">Wei W</div>
-                <div class="review-meta">Local Guide • 42 Rezensionen • 36 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 11 Wochen</div>
-            </div>
-            <div class="review-text">
-              Nice place and good people
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ff5722, #e64a19);">s</div>
-              <div class="review-user-info">
-                <div class="review-name">shehryaar ali</div>
-                <div class="review-meta">3 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 23 Wochen</div>
-            </div>
-            <div class="review-text">
-              Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen, alles verständlich erklärt und die Probleme effizient gelöst. Die Zusammenarbeit war immer angenehm, er war erreichbar und zuverlässig, auch ausserhalb der normalen Arbeitszeiten. Ich kann ihn jedem weiterempfehlen, der jemanden sucht, der sich wirklich kümmert und die Arbeit sauber erledigt.
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #d32f2f, #c62828);">D</div>
-              <div class="review-user-info">
-                <div class="review-name">Dampfglanzservice- Ademi</div>
-                <div class="review-meta">1 Rezension • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 24 Wochen</div>
-            </div>
-            <div class="review-text">
-              Ich habe den Display von meinem Iphone 11pro reparieren lassen. Super Beratung & herzlich empfangen. Top Arbeit!
-            </div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
-              <div class="review-user-info">
-                <div class="review-name">Gabi Sutter</div>
-                <div class="review-meta">0 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 10 Stunden <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Super arbeit!!
-            </div>
+            <div class="review-text">"Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen. Top-Qualität aus Abtwil!"</div>
+            <div style="margin-top:15px; font-weight:800;">- Patryk Basztabin</div>
+            <div style="color:var(--gold);">★★★★★</div>
           </div>
           <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
-              <div class="review-user-info">
-                <div class="review-name">Patryk Basztabin</div>
-                <div class="review-meta">5 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.<br><br>
-              Zusätzlich hat der Techniker meinen Laptop gereinigt und kleinere, zukünftige Probleme direkt mit behoben. Dabei hatte ich jederzeit die Möglichkeit, alles wieder so zurückzubekommen, wie ich es wollte. Probleme wurden eigenständig erkannt und professionell gelöst – sehr kompetent und vorausschauend.<br><br>
-              Top-Qualität – diesen Service kann ich jedem empfehlen. Ich habe zuvor zwei bis drei andere Läden kontaktiert, leider ohne Erfolg. Hier hat alles wunderbar funktioniert.<br><br>
-              Ich bin wirklich froh, auf ihn gestoßen zu sein, da ich nun einen verlässlichen Ansprechpartner für alle zukünftigen Computerangelegenheiten habe. Kann ich jedem nur wärmstens empfehlen.
-            </div>
+            <div class="review-text">"Habe meinen PC reparieren lassen. Alles funktioniert einwandfrei. Sehr freundlicher Service in der Region St. Gallen."</div>
+            <div style="margin-top:15px; font-weight:800;">- Alina Brüllhardt</div>
+            <div style="color:var(--gold);">★★★★★</div>
           </div>
           <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #5c6bc0, #3f51b5);">I</div>
-              <div class="review-user-info">
-                <div class="review-name">Irene Küng</div>
-                <div class="review-meta">2 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 1 Woche <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Vielen Dank. War voll umfänglich zufrieden mit neuer Kamera und neuer Batterie. Hab sie schon weiter empfohlen.<br>Gruss
-            </div>
+            <div class="review-text">"Super Arbeit beim Displaywechsel. Faire Preise und sehr zuverlässig. Empfehle Mujitech gerne weiter!"</div>
+            <div style="margin-top:15px; font-weight:800;">- Gabi Sutter</div>
+            <div style="color:var(--gold);">★★★★★</div>
           </div>
           <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #455a64, #263238);">S</div>
-              <div class="review-user-info">
-                <div class="review-name">Srish</div>
-                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 3 Wochen <span class="badge-neu">NEU</span></div>
-            </div>
-            <div class="review-text">
-              Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert. Vor der Reparatur wurde mir ein Video geschickt, das den Zustand im Inneren gezeigt hat, und danach ein weiteres – der Unterschied war deutlich sichtbar. Alles sah viel sauberer und gepflegter aus.<br>
-              Die Probleme sind jetzt komplett behoben und das Handy funktioniert wieder einwandfrei. Besonders positiv fand ich, dass keine Kosten für die Problemdiagnose verlangt wurden, was heutzutage nicht selbstverständlich ist.<br>
-              Ich kann Mujitech definitiv weiterempfehlen
-            </div>
+            <div class="review-text">"Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen. Top-Qualität aus Abtwil!"</div>
+            <div style="margin-top:15px; font-weight:800;">- Patryk Basztabin</div>
+            <div style="color:var(--gold);">★★★★★</div>
           </div>
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff;">A</div>
-              <div class="review-user-info">
-                <div class="review-name">Alina Brüllhardt</div>
-                <div class="review-meta">1 Rezension • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 10 Wochen</div>
-            </div>
-            <div class="review-text">
-              Habe vor zwei Wochen einen PC + Gaming Monitor von Mujitech gekauft, und diese am selben Tag noch erhalten. Service war sehr freundlich und hilfsbereit, mir wurde beim Gerätetesten geholfen und alles funktioniert einwandfrei.
-            </div>
-          </div>
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #78909c, #546e7a);">C</div>
-              <div class="review-user-info">
-                <div class="review-name">C O</div>
-                <div class="review-meta">4 Rezensionen • 2 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 10 Wochen</div>
-            </div>
-            <div class="review-text">
-              Sehr zufrieden mit der Reparatur meines iPhone-Displays. Der Inhaber ist extrem nett und freundlich und hat sich viel Mühe gegeben mir alle Info zu geben – sogar mit einem Video vom Reparaturprozess! Gerne wieder und werde den Service jederzeit weiterempfehlen!
-            </div>
-          </div>
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">N</div>
-              <div class="review-user-info">
-                <div class="review-name">Natascha Biell</div>
-                <div class="review-meta">4 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 11 Wochen</div>
-            </div>
-            <div class="review-text">
-              Super Service, schnell gut zuverlässig, Freundlich.
-            </div>
-          </div>
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">W</div>
-              <div class="review-user-info">
-                <div class="review-name">Wei W</div>
-                <div class="review-meta">Local Guide • 42 Rezensionen • 36 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 11 Wochen</div>
-            </div>
-            <div class="review-text">
-              Nice place and good people
-            </div>
-          </div>
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ff5722, #e64a19);">s</div>
-              <div class="review-user-info">
-                <div class="review-name">shehryaar ali</div>
-                <div class="review-meta">3 Rezensionen • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 23 Wochen</div>
-            </div>
-            <div class="review-text">
-              Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen, alles verständlich erklärt und die Probleme effizient gelöst. Die Zusammenarbeit war immer angenehm, er war erreichbar und zuverlässig, auch ausserhalb der normalen Arbeitszeiten. Ich kann ihn jedem weiterempfehlen, der jemanden sucht, der sich wirklich kümmert und die Arbeit sauber erledigt.
-            </div>
-          </div>
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #d32f2f, #c62828);">D</div>
-              <div class="review-user-info">
-                <div class="review-name">Dampfglanzservice- Ademi</div>
-                <div class="review-meta">1 Rezension • 0 Fotos</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row">
-              <div class="stars">★★★★★</div>
-              <div class="review-time">Vor 24 Wochen</div>
-            </div>
-            <div class="review-text">
-              Ich habe den Display von meinem Iphone 11pro reparieren lassen. Super Beratung & herzlich empfangen. Top Arbeit!
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
-
-    <section class="section reveal" id="agb">
-      <div class="card legal box-bg tilt-effect">
-        <div class="card-content">
-          <div class="section-head" style="transform: translateZ(0);">
-            <h2>Rechtliches: AGB & Datenschutz</h2>
-          </div>
-          <h3>1. Geltungsbereich (AGB)</h3>
-          <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Dienstleistungen und Reparaturarbeiten von Mujitech im Bereich Handy-, Tablet-, Laptop- und Desktop-PC-Reparaturen.</p>
-
-          <h3>2. Angebot und Preise</h3>
-          <p>Preise sind auf der Website nicht ersichtlich. Preisangaben erfolgen individuell auf Anfrage und beziehen sich auf das konkret gemeldete Gerät sowie den beschriebenen Schaden. Zusätzliche Defekte oder nicht gemeldete Schäden können zu einer Anpassung führen.</p>
-
-          <h3>3. Geräteannahme</h3>
-          <p>Es besteht kein Ladenlokal. Geräte werden ausschliesslich nach Terminvereinbarung persönlich entgegengenommen oder nach vorgängiger Absprache eingesendet.</p>
-
-          <h3>4. Reparaturumfang & 5. Garantie</h3>
-          <p>Mujitech führt Reparaturen nach bestem Wissen und Gewissen aus. Auf Reparaturprodukte und technisch ausgeführte Reparaturarbeiten gewährt Mujitech eine Garantie von 6 Monaten, sofern das Gerät oder das reparierte Bauteil nach der Reparatur keinen Bruch, keinen Riss und keinen Wasserschaden aufweist. Von der Garantie ausgeschlossen sind Bruch-/Fallschäden, Wasserschäden, Fremdeingriffe und normale Abnutzung.</p>
-
-          <h3>6. Haftung, 7. Versand & 8. Schlussbestimmungen</h3>
-          <p>Mujitech haftet nicht für bereits bestehende Schäden, versteckte Mängel oder Folgeschäden. Für Datenverlust wird keine Haftung übernommen. Einsendungen erfolgen nach Absprache. Es gilt Schweizer Recht.</p>
-
-          <hr>
-
-          <h3>Datenschutz</h3>
-          <p>Daten, die du uns im Rahmen einer Anfrage oder Reparatur übermittelst, werden ausschliesslich zur Bearbeitung deiner Anfrage, zur Kommunikation und zur Durchführung der Dienstleistung verwendet. Es erfolgt keine unnötige Weitergabe an Dritte. Vor jeder Reparatur empfehlen wir eine vollständige Datensicherung. Diese Website kann technisch notwendige Cookies verwenden.</p>
-
-          <hr>
-
-          <h3>Impressum</h3>
-          <p><strong>Mujitech</strong> | Reparaturservice Schweiz<br>
-          Telefon / WhatsApp: +41 76 720 98 32<br>
-          Instagram: mujitech.ch | TikTok: muji.tech<br>
-          Kein Ladenlokal. Persönliche Übergabe nur nach Terminvereinbarung. Einsendungen nur nach Absprache.</p>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <footer>
-    <div class="footer-card box-bg tilt-effect">
-      <div class="footer-top card-content">
-        <div>
-          <div class="footer-title">Mujitech</div>
-          <p>Reparaturservice für Apple und Samsung Handys und Tablets sowie für Laptops und Desktop PCs in der Schweiz.</p>
-        </div>
-        <div>
-          <div class="footer-title">Navigation</div>
-          <div class="footer-links">
-            <a href="#kontakt">Kontakt</a>
-            <a href="#services">Services</a>
-            <a href="#anfrage">Anfrage senden</a>
-            <a href="#bilder">Beispielbilder</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer-title">Rechtliches</div>
-          <div class="footer-links">
-            <a href="#agb">AGB & Datenschutz</a>
-            <a href="#bewertungen">Google Rezensionen</a>
-          </div>
-        </div>
+  <footer style="padding: 40px 18px; border-top: 1px solid var(--line);">
+    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div>
+        <div style="font-weight: 800; margin-bottom: 15px;">Mujitech Abtwil</div>
+        <p style="color: #777; font-size: 14px;">Reparaturservice für Handy, Tablet & Computer in Abtwil SG. Spezialisiert auf Hardware-Instandsetzung.</p>
       </div>
-      <div class="footer-bottom card-content">
-        © Mujitech Schweiz – Alle Rechte vorbehalten
+      <div>
+        <div style="font-weight: 800; margin-bottom: 15px;">Kontakt</div>
+        <p style="color: #777; font-size: 14px;">WhatsApp: +41 76 720 98 32<br>Standort: 9030 Abtwil SG</p>
+      </div>
+      <div>
+        <div style="font-weight: 800; margin-bottom: 15px;">Rechtliches</div>
+        <p style="color: #777; font-size: 14px;">6 Monate Garantie auf Hardware-Reparaturen. Kein Ladenlokal vor Ort.</p>
       </div>
     </div>
+    <div style="text-align: center; margin-top: 30px; color: #555; font-size: 12px;">© Mujitech Schweiz – Alle Rechte vorbehalten</div>
   </footer>
 
   <div class="floating-contact">
-    <a class="whatsapp-btn" href="https://wa.me/41767209832" target="_blank">
-      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="2"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
-      WhatsApp schreiben
-    </a>
-    <a class="call-btn" href="tel:+41767209832">
-      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-      Jetzt anrufen
-    </a>
-  </div>
-
-  <div class="cookie-banner" id="cookieBanner">
-    <p>Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
-    <div class="cookie-buttons">
-      <button class="btn-decline" onclick="handleCookies('declined')">Ablehnen</button>
-      <button class="btn-accept" onclick="handleCookies('accepted')">Akzeptieren</button>
-    </div>
+    <a style="background: var(--wa); color: #fff;" href="https://wa.me/41767209832" target="_blank">WhatsApp senden</a>
+    <a style="background: var(--brand-blue); color: #fff;" href="tel:+41767209832">Jetzt anrufen</a>
   </div>
 
   <script>
-    // --- 1. VERBESSERTES COOKIE BANNER SCRIPT ---
-    function handleCookies(choice) {
-      const banner = document.getElementById("cookieBanner");
-      localStorage.setItem("mujitechCookies", choice);
-      banner.classList.remove("show");
-    }
-
-    window.addEventListener("load", function () {
-      const cookieStatus = localStorage.getItem("mujitechCookies");
-      if (!cookieStatus) {
-        setTimeout(() => {
-          document.getElementById("cookieBanner").classList.add("show");
-        }, 1000);
-      }
-    });
-
-    // --- 2. 3D SCROLL REVEAL ---
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    // --- 3. EXTREMER 3D TILT EFFEKT (NUR FÜR PC/MAUS AKTIVIERT) ---
-    if (window.matchMedia("(hover: hover)").matches) {
-      const cards3D = document.querySelectorAll('.tilt-effect');
-      cards3D.forEach(card => {
-        card.addEventListener('mousemove', e => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          const rotateX = ((y - centerY) / centerY) * -6;
-          const rotateY = ((x - centerX) / centerX) * 6;
-          
-          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-          card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08), rgba(25, 25, 30, 0.7) 50%)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-          card.style.background = ''; 
-        });
-      });
-    }
-
-    // --- 4. INTERAKTIVES HIGH-TECH CANVAS NETZWERK ---
+    // Partikel-Hintergrund Script
     const canvas = document.getElementById('strom-canvas');
     const ctx = canvas.getContext('2d');
-    
-    let canvasWidth, canvasHeight;
-    let mouse = { x: null, y: null, radius: 150 };
-
-    function initCanvasSize() {
-      canvasWidth = document.documentElement.clientWidth;
-      canvasHeight = document.documentElement.clientHeight;
-      canvas.width = canvasWidth;
-      canvas.height = canvasHeight;
-    }
-    initCanvasSize();
-    window.addEventListener('resize', initCanvasSize);
-
-    window.addEventListener('mousemove', (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
-
-    window.addEventListener('touchmove', (e) => {
-      if(e.touches.length > 0) {
-        mouse.x = e.touches[0].clientX;
-        mouse.y = e.touches[0].clientY;
-      }
-    }, {passive: true}); 
-
-    window.addEventListener('touchend', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvasWidth;
-        this.y = Math.random() * canvasHeight;
-        this.vx = (Math.random() - 0.5) * 1.5;
-        this.vy = (Math.random() - 0.5) * 1.5;
-        this.size = Math.random() * 2 + 1;
-        this.color = Math.random() > 0.5 ? '#1e6fff' : '#25F4EE';
-      }
-      
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-
-        if (this.x < 0 || this.x > canvasWidth) this.vx = -this.vx;
-        if (this.y < 0 || this.y > canvasHeight) this.vy = -this.vy;
-
-        if(mouse.x != null && mouse.y != null) {
-            let dx = mouse.x - this.x;
-            let dy = mouse.y - this.y;
-            let distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance < mouse.radius) {
-              const forceDirectionX = dx / distance;
-              const forceDirectionY = dy / distance;
-              const force = (mouse.radius - distance) / mouse.radius;
-              this.x -= forceDirectionX * force * 3;
-              this.y -= forceDirectionY * force * 3;
-            }
-        }
-      }
-      
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = this.color;
-        ctx.fill();
-        ctx.shadowBlur = 0; 
+    let particles = [];
+    function init() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      particles = [];
+      for(let i=0; i<80; i++) {
+        particles.push({
+          x: Math.random()*canvas.width,
+          y: Math.random()*canvas.height,
+          vx: (Math.random()-0.5)*1.2,
+          vy: (Math.random()-0.5)*1.2,
+          size: Math.random()*2+1
+        });
       }
     }
-
-    const isMobile = window.innerWidth <= 780;
-    const particleCount = isMobile ? 40 : 80;
-    const particleArray = Array.from({ length: particleCount }, () => new Particle());
-
-    function animateNetwork() {
-      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
-      
-      for (let i = 0; i < particleArray.length; i++) {
-        particleArray[i].update();
-        particleArray[i].draw();
-        
-        for (let j = i; j < particleArray.length; j++) {
-          let dx = particleArray[i].x - particleArray[j].x;
-          let dy = particleArray[i].y - particleArray[j].y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < 120) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(30, 111, 255, ${1 - distance/120})`;
-            ctx.lineWidth = 1;
-            ctx.moveTo(particleArray[i].x, particleArray[i].y);
-            ctx.lineTo(particleArray[j].x, particleArray[j].y);
-            ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(animateNetwork);
+    function animate() {
+      ctx.clearRect(0,0,canvas.width, canvas.height);
+      ctx.fillStyle = "rgba(37, 244, 238, 0.4)";
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0 || p.x>canvas.width) p.vx*=-1;
+        if(p.y<0 || p.y>canvas.height) p.vy*=-1;
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+      });
+      requestAnimationFrame(animate);
     }
-    
-    animateNetwork();
+    init(); animate();
+    window.addEventListener('resize', init);
   </script>
 </body>
 </html>
