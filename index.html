@@ -6,15 +6,15 @@
 
   <title>Handy, Laptop & PC Reparatur Abtwil St. Gallen | Mujitech</title>
   <meta name="description" content="Mujitech bietet professionelle Handy Reparatur, Laptop Service & PC Reparatur in Abtwil (St. Gallen). Apple & Samsung Spezialist. Schneller Displaytausch & Akkuwechsel. Jetzt anfragen!" />
-  <meta name="keywords" content="Handy Reparatur Abtwil, Laptop Reparatur St. Gallen, iPhone Reparatur Abtwil, PC Reparatur St. Gallen, Display Reparatur Schweiz, Mujitech Abtwil" />
+  <meta name="keywords" content="Handy Reparatur Abtwil, Laptop Reparatur St. Gallen, iPhone Reparatur Abtwil, PC Reparatur St. Gallen, Display Reparatur Schweiz, Mujitech Abtwil, Handy Reparatur Gaiserwald" />
   <meta name="author" content="Mujitech" />
   <meta name="robots" content="index, follow" />
   <meta name="language" content="de-CH" />
   <link rel="canonical" href="https://mujitech.ch/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Handy & Laptop Reparatur in Abtwil St. Gallen | Mujitech" />
-  <meta property="og:description" content="Professioneller Reparaturservice für Smartphones, Tablets und Computer in der Region St. Gallen. Schneller Hardware-Service bei Mujitech." />
+  <meta property="og:title" content="Handy, Laptop & PC Reparatur in Abtwil St. Gallen | Mujitech" />
+  <meta property="og:description" content="Professionelle Hardware-Reparaturen für Smartphones, Tablets und Computer in der Region St. Gallen. Schneller Service bei Mujitech." />
   <meta property="og:url" content="https://mujitech.ch/" />
   <meta property="og:site_name" content="Mujitech" />
   <meta property="og:locale" content="de_CH" />
@@ -64,68 +64,331 @@
       --radius-lg: 24px;
       --radius-md: 16px;
       --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      --gold: #fbbc04;
+      --gold: #fbbc04; /* Google Star Gold */
       --brand-blue: #1e6fff;
       --brand-cyan: #25F4EE;
       --wa: #25D366;
+      --call: #1e6fff;
+      --insta1: #feda75;
+      --insta2: #fa7e1e;
+      --insta3: #d62976;
+      --insta4: #962fbf;
+      --insta5: #4f5bd5;
+      --tiktok1: #25F4EE;
+      --tiktok2: #FE2C55;
+      --tiktok3: #111111;
     }
 
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-    html, body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: #060608; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-    /* Animationen */
-    @keyframes floatLevitation { 0% { transform: translateY(0px); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0px); } }
-    @keyframes pulseGlow { 0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); } 50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); } 100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); } }
-    @keyframes scrollReviews { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 12px)); } }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+      background: #060608;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    .page-glow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%), radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%); animation: pulseGlow 10s infinite alternate; }
-    #strom-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; opacity: 0.5; }
+    body {
+      position: relative;
+    }
 
-    header { position: sticky; top: 0; z-index: 1200; backdrop-filter: blur(25px); background: rgba(10, 10, 12, 0.85); border-bottom: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-    .nav-wrap { max-width: 1280px; margin: 0 auto; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
-    .brand { display: flex; align-items: center; gap: 14px; }
-    .logo { width: 72px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3)); transition: transform 0.5s; }
-    .logo:hover { transform: scale(1.1) rotate(5deg); }
-    .brand-title { font-size: 22px; font-weight: 800; color: #ffffff; }
+    /* --- GLOBALE ANIMATIONEN --- */
+    @keyframes floatLevitation {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
+      50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); }
+      100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
+    }
+
+    @keyframes animatedBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes scrollReviews {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 12px)); }
+    }
+
+    .page-glow {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: 
+        radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%);
+      animation: pulseGlow 10s infinite alternate;
+    }
+
+    #strom-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.5;
+    }
+
+    img, video {
+      max-width: 100%;
+      display: block;
+    }
+
+    a { color: inherit; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      -webkit-backdrop-filter: blur(25px);
+      backdrop-filter: blur(25px);
+      background: rgba(10, 10, 12, 0.85);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: all var(--transition);
+      -webkit-transform: translateZ(0);
+    }
+
+    .nav-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo {
+      width: 72px;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .logo:hover {
+      transform: translateY(-5px) scale(1.1) rotate(5deg);
+    }
+
+    .brand-text { display: flex; flex-direction: column; gap: 2px; }
+    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
     .brand-sub { font-size: 13px; font-weight: 600; color: var(--muted); }
 
-    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
-    nav a { text-decoration: none; font-size: 14px; font-weight: 700; color: #ffffff; padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.05); transition: all var(--transition); }
-    nav a:hover { transform: translateY(-3px); color: var(--brand-cyan); border-color: var(--brand-blue); background: rgba(30, 111, 255, 0.1); }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 12px;
+    }
 
-    .section { max-width: 1280px; margin: 0 auto; padding: 40px 18px; position: relative; z-index: 2; }
-    .box-bg { position: relative; background: rgba(25, 25, 30, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+    nav a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      padding: 11px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      transition: all var(--transition);
+    }
+
+    nav a:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(30, 111, 255, 0.3);
+      color: var(--brand-cyan);
+      border-color: var(--brand-blue);
+      background: rgba(30, 111, 255, 0.1);
+    }
+
+    .section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 18px;
+    }
+
+    .box-bg {
+      position: relative;
+      background: rgba(25, 25, 30, 0.7);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+    }
+
+    .box-bg.tilt-effect {
+      will-change: transform;
+    }
+
+    .box-bg::before {
+      content: "";
+      position: absolute;
+      inset: -50%;
+      background: linear-gradient(45deg, rgba(30, 111, 255, 0.03), rgba(37, 244, 238, 0.03), rgba(200, 168, 93, 0.02), transparent);
+      background-size: 200% 200%;
+      animation: animatedBackground 10s ease infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+      transition: transform var(--transition);
+    }
+
+    @media (hover: hover) {
+      .tilt-effect .card-content {
+        transform: translateZ(30px);
+      }
+      .box-bg {
+        transform-style: preserve-3d;
+      }
+    }
+
     .card { padding: 45px 35px; }
 
-    .hero-contact { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: stretch; margin-top: 30px; }
-    .hero-copy h1 { font-size: 44px; line-height: 1.15; font-weight: 800; color: #ffffff; margin-bottom: 18px; }
-    .hero-copy p { font-size: 18px; line-height: 1.8; color: #b0b0b0; max-width: 760px; margin-bottom: 20px; }
+    .hero-contact {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+
+    .hero-copy h1 {
+      margin: 0 0 18px 0;
+      font-size: 44px;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .hero-copy p {
+      margin: 0 0 20px 0;
+      font-size: 18px;
+      line-height: 1.8;
+      color: #b0b0b0;
+      max-width: 760px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0; }
+
+    .hero-mini-btn {
+      text-decoration: none;
+      font-weight: 800;
+      padding: 16px 24px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--brand-blue), #0d4bb5);
+      box-shadow: 0 10px 20px rgba(30, 111, 255, 0.3);
+      transition: all var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
+
+    .trust-item {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      font-size: 14px;
+      line-height: 1.6;
+      color: #b0b0b0;
+      transition: all 0.3s;
+    }
+    
+    .trust-item:hover {
+      transform: translateY(-5px);
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .icon { width: 22px; height: 22px; flex: 0 0 22px; color: var(--brand-cyan); }
+
+    .title { margin: 0 0 20px 0; font-size: 32px; letter-spacing: -0.5px; font-weight: 800; color: #fff; }
 
     .btn-grid { display: grid; gap: 16px; }
-    .btn { display: flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; font-size: 17px; font-weight: 800; padding: 16px; border-radius: 20px; transition: all var(--transition); border: 1px solid rgba(255,255,255,0.1); }
-    .btn:hover { transform: translateY(-5px) scale(1.03); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+
+    .btn {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      text-decoration: none; text-align: center; font-size: 17px; font-weight: 800;
+      padding: 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+      transition: all var(--transition);
+    }
+
     .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
     .btn.call { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; }
+    .btn.instagram { background: linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5)); color: #ffffff; }
+    .btn.tiktok { background: linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2)); color: #ffffff; }
 
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .grid-4, .grid-3, .grid-2 { display: grid; gap: 24px; }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
 
-    .service-card h3 { font-size: 24px; color: #ffffff; margin-bottom: 15px; }
-    .service-card ul { padding-left: 20px; color: #b0b0b0; line-height: 1.8; }
+    .mini-card, .service-card, .faq-card { padding: 30px 25px; }
+    .mini-card h3, .service-card h3 { margin: 0 0 15px 0; font-size: 24px; color: #ffffff; }
 
+    /* Kontaktformular */
+    .form-container { max-width: 800px; margin: 0 auto; }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+    .form-group label { font-weight: 700; font-size: 15px; color: #fff; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff;
+    }
+
+    .video-card { max-width: 600px; margin: 0 auto; }
+    .video-frame { position: relative; overflow: hidden; border-radius: 24px; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
+    .video-inner video { width: 100%; display: block; object-fit: cover; border-radius: 16px; }
+
+    /* Rezensionen */
     .reviews-slider-container { overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0; }
     .reviews-slider-track { display: flex; gap: 24px; width: max-content; animation: scrollReviews 45s linear infinite; }
-    .review-card { width: 380px; padding: 25px; border-radius: 20px; background: rgba(255,255,255,0.02); }
-    .review-text { font-size: 15px; line-height: 1.6; color: #e0e0e0; }
+    .review-card { width: 380px; height: 320px; flex-shrink: 0; padding: 25px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.5s; }
+    .review-avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #fff; }
+    .stars { font-size: 18px; color: var(--gold); }
 
-    .floating-contact { position: fixed; right: 20px; bottom: 120px; z-index: 1600; display: flex; flex-direction: column; gap: 16px; animation: floatLevitation 4s ease-in-out infinite; }
-    .floating-contact a { min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; padding: 16px 20px; border-radius: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.5); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
+      .hero-contact, .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 780px) {
       .hero-contact, .grid-3, .grid-2 { grid-template-columns: 1fr; }
       .hero-copy h1 { font-size: 32px; }
       .floating-contact { right: 15px; left: 15px; bottom: 100px; animation: none; }
-      .floating-contact a { width: 100%; }
     }
   </style>
 </head>
@@ -136,179 +399,213 @@
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <img src="logo.png" class="logo" alt="Mujitech Logo - Reparatur Abtwil SG" />
+        <img src="logo.png" class="logo" alt="Mujitech Logo" />
         <div class="brand-text">
           <div class="brand-title">Mujitech Abtwil</div>
           <div class="brand-sub">Handy & PC Service St. Gallen</div>
         </div>
       </div>
       <nav>
+        <a href="#kontakt">Kontakt</a>
         <a href="#services">Services</a>
         <a href="#anfrage">Anfrage</a>
-        <a href="#bewertungen">Rezensionen</a>
+        <a href="#bewertungen">Bewertungen</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="section">
-      <div class="card box-bg hero-contact">
-        <div class="hero-copy">
+    <section class="section reveal" id="kontakt">
+      <div class="card box-bg hero-contact tilt-effect">
+        <div class="hero-copy card-content">
           <h1>Professionelle Handy, Laptop & PC Reparatur in Abtwil (St. Gallen)</h1>
           <p>
-            Mujitech ist Ihre erste Adresse für fachgerechte Hardware-Reparaturen in der Region St. Gallen. Wir spezialisieren uns auf den Displaytausch, Akkuwechsel und die Instandsetzung von Apple- und Samsung-Geräten sowie Computern aller Marken.
+            Mujitech ist Ihr lokaler Experte für Hardware-Reparaturen in der Region St. Gallen. Wir spezialisieren uns auf Displaytausch, Akkuwechsel und die Instandsetzung von Smartphones, Tablets und Computern.
           </p>
-          <p><strong>Standort Abtwil SG:</strong> Kein Ladenlokal. Übergabe nur nach Terminvereinbarung oder bequeme Einsendung aus der ganzen Schweiz.</p>
+          <p><strong>Standort Abtwil SG:</strong> Kein Ladenlokal. Persönliche Übergabe nur nach Terminvereinbarung oder bequeme Einsendung aus der ganzen Schweiz.</p>
 
-          <div class="btn-grid" style="grid-template-columns: 1fr 1fr;">
-            <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank">WhatsApp Chat</a>
-            <a class="btn call" href="tel:+41767209832">Jetzt anrufen</a>
+          <div class="hero-actions">
+            <a class="hero-mini-btn" href="#anfrage">Reparaturanfrage senden</a>
+            <a class="hero-mini-btn" href="https://wa.me/41767209832" style="background: rgba(255, 255, 255, 0.05);">WhatsApp Chat</a>
+          </div>
+
+          <div class="trust-grid">
+            <div class="trust-item"><strong>6 Monate Garantie</strong><br>auf Hardware</div>
+            <div class="trust-item"><strong>Abtwil SG</strong><br>Ihr lokaler Partner</div>
+            <div class="trust-item"><strong>Schweizweit</strong><br>Einsende-Service</div>
           </div>
         </div>
 
-        <div class="contact-panel">
-          <div class="box-bg card" style="background: rgba(0,0,0,0.3);">
-            <h3>Warum Mujitech?</h3>
-            <ul style="color: #b0b0b0; line-height: 2;">
-              <li>📍 Lokaler Partner in Abtwil St. Gallen</li>
-              <li>🛡️ 6 Monate Garantie auf Hardware</li>
-              <li>🚀 Schneller Display- & Akkuservice</li>
-              <li>📦 Schweizweiter Einsendeservice</li>
-              <li>⭐ Exzellente Google-Rezensionen</li>
+        <div class="contact-panel card-content">
+          <h2 class="title">Direkt-Kontakt</h2>
+          <div class="btn-grid">
+            <a class="btn whatsapp" href="https://wa.me/41767209832">WhatsApp schreiben</a>
+            <a class="btn call" href="tel:+41767209832">Jetzt anrufen</a>
+            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/">Instagram</a>
+            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech">TikTok</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="services">
+      <div class="section-head" style="text-align: center; margin-bottom: 40px;">
+        <h2>Unsere Reparatur-Services in St. Gallen</h2>
+        <p>Fachgerechte Hardware-Reparaturen für Apple, Samsung und Computer.</p>
+      </div>
+      <div class="grid-2">
+        <div class="service-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Handy & Tablet</h3>
+            <ul>
+              <li>Display-Reparatur Abtwil</li>
+              <li>Akku-Austausch (Original-Qualität)</li>
+              <li>Ladebuchsen & Hardware-Defekte</li>
+              <li>Kamera-Austausch St. Gallen</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Laptop & PC</h3>
+            <ul>
+              <li>Laptop Display-Wechsel</li>
+              <li>Reinigung & Hardware-Wartung</li>
+              <li>SSD- & RAM-Upgrades</li>
+              <li>Komponententausch St. Gallen</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="services">
-      <div style="text-align: center; margin-bottom: 40px;">
-        <h2>Unsere Hardware-Reparaturleistungen</h2>
-        <p>Spezialisierte Technik-Services für Handys, Tablets und Computer.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="service-card box-bg card">
-          <h3>Handy & Tablet Reparatur</h3>
-          <p>Spezialisiert auf Hardware-Defekte bei Apple iPhone & Samsung:</p>
-          <ul>
-            <li>Display-Reparatur (Glas & Panel)</li>
-            <li>Akku-Austausch (Original-Qualität)</li>
-            <li>Austausch defekter Ladebuchsen</li>
-            <li>Kamera- und Sensoraustausch</li>
-            <li>Backcover- & Gehäusereparatur</li>
-            <li>Umfassende Hardware-Diagnose</li>
-          </ul>
-        </div>
-
-        <div class="service-card box-bg card">
-          <h3>Laptop & PC Reparatur</h3>
-          <p>Mechanische Reparaturen und Upgrades für Windows & Mac:</p>
-          <ul>
-            <li>Display-Austausch bei Laptops</li>
-            <li>Reinigung des Kühlsystems & Wärmeleitpaste</li>
-            <li>SSD- & RAM-Upgrades für mehr Speed</li>
-            <li>Tastatur- & Scharnier-Instandsetzung</li>
-            <li>Hardware-Wartung für Desktop PCs</li>
-            <li>Reparatur von Stromversorgungsproblemen</li>
-          </ul>
+    <section class="section reveal" id="anfrage">
+      <div class="card box-bg tilt-effect form-container">
+        <div class="card-content">
+          <h2 style="text-align: center;">Anfrage für Abtwil SG senden</h2>
+          <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
+            <div class="form-group"><label>Name</label><input type="text" name="name" required /></div>
+            <div class="form-group"><label>E-Mail</label><input type="email" name="email" required /></div>
+            <div class="form-group"><label>Gerät & Modell</label><input type="text" name="modell" required /></div>
+            <div class="form-group"><label>Defektbeschreibung</label><textarea name="problem" rows="4" required></textarea></div>
+            <button type="submit" class="btn call" style="width: 100%; border: none; cursor: pointer;">Anfrage jetzt absenden</button>
+          </form>
         </div>
       </div>
     </section>
 
-    <section class="section" id="anfrage">
-      <div class="card box-bg" style="max-width: 800px; margin: 0 auto;">
-        <h2 style="text-align: center;">Reparaturanfrage senden</h2>
-        <p style="text-align: center; color: #b0b0b0;">Wir melden uns umgehend mit einem unverbindlichen Kostenvoranschlag.</p>
-        <form action="https://formsubmit.co/info@mujitech.ch" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-          <input type="text" name="name" placeholder="Ihr Name" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;">
-          <input type="email" name="email" placeholder="Ihre E-Mail" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;">
-          <input type="text" name="modell" placeholder="Welches Gerät? (z.B. iPhone 13, MacBook Air)" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;">
-          <textarea name="defekt" placeholder="Was ist defekt? (z.B. Bildschirm gerissen, Akku lädt nicht)" rows="4" required style="padding:15px; border-radius:10px; background:rgba(255,255,255,0.05); border:1px solid var(--line); color:#fff;"></textarea>
-          <button type="submit" class="btn call" style="border:none; cursor:pointer;">Anfrage jetzt absenden</button>
-        </form>
+    <section class="section reveal">
+      <div class="card box-bg video-card tilt-effect">
+        <div class="card-content">
+          <div class="video-frame">
+            <div class="video-inner">
+              <video autoplay muted loop playsinline><source src="iphone-reparatur.mp4" type="video/mp4"></video>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="bewertungen">
-      <h2 style="text-align: center;">Kundenmeinungen aus St. Gallen</h2>
+    <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
+      <h2 style="text-align: center;">Kundenmeinungen</h2>
       <div class="reviews-slider-container">
         <div class="reviews-slider-track">
           <div class="review-card box-bg">
-            <div class="review-text">"Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen. Top-Qualität aus Abtwil!"</div>
-            <div style="margin-top:15px; font-weight:800;">- Patryk Basztabin</div>
-            <div style="color:var(--gold);">★★★★★</div>
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
+              <div class="review-name">Patryk Basztabin</div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="review-text">Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen... Top-Qualität aus Abtwil!</div>
           </div>
           <div class="review-card box-bg">
-            <div class="review-text">"Habe meinen PC reparieren lassen. Alles funktioniert einwandfrei. Sehr freundlicher Service in der Region St. Gallen."</div>
-            <div style="margin-top:15px; font-weight:800;">- Alina Brüllhardt</div>
-            <div style="color:var(--gold);">★★★★★</div>
+            <div class="review-header">
+              <div class="review-avatar" style="background: #8e44ad;">G</div>
+              <div class="review-name">Gabi Sutter</div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="review-text">Super arbeit!!</div>
           </div>
           <div class="review-card box-bg">
-            <div class="review-text">"Super Arbeit beim Displaywechsel. Faire Preise und sehr zuverlässig. Empfehle Mujitech gerne weiter!"</div>
-            <div style="margin-top:15px; font-weight:800;">- Gabi Sutter</div>
-            <div style="color:var(--gold);">★★★★★</div>
+            <div class="review-header">
+              <div class="review-avatar" style="background: #f57f17;">A</div>
+              <div class="review-name">Alina Brüllhardt</div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="review-text">Habe vor zwei Wochen einen PC von Mujitech reparieren lassen. Alles funktioniert einwandfrei.</div>
           </div>
           <div class="review-card box-bg">
-            <div class="review-text">"Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen. Top-Qualität aus Abtwil!"</div>
-            <div style="margin-top:15px; font-weight:800;">- Patryk Basztabin</div>
-            <div style="color:var(--gold);">★★★★★</div>
+            <div class="review-header">
+              <div class="review-avatar" style="background: #263238;">S</div>
+              <div class="review-name">Srish</div>
+            </div>
+            <div class="stars">★★★★★</div>
+            <div class="review-text">Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme...</div>
+          </div>
+          <div class="review-card box-bg">
+            <div class="review-header"><div class="review-avatar" style="background: #e91e63;">P</div><div class="review-name">Patryk Basztabin</div></div>
+            <div class="stars">★★★★★</div>
+            <div class="review-text">Sehr kompetente, schnelle und reibungslose Reparatur in Abtwil St. Gallen.</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="card box-bg">
+        <h3>Impressum & Garantie</h3>
+        <p><strong>Mujitech</strong> | Reparatur Abtwil SG<br>WhatsApp: +41 76 720 98 32<br>6 Monate Garantie auf Hardware-Reparaturen. Kein Ladenlokal.</p>
       </div>
     </section>
   </main>
 
-  <footer style="padding: 40px 18px; border-top: 1px solid var(--line);">
-    <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-      <div>
-        <div style="font-weight: 800; margin-bottom: 15px;">Mujitech Abtwil</div>
-        <p style="color: #777; font-size: 14px;">Reparaturservice für Handy, Tablet & Computer in Abtwil SG. Spezialisiert auf Hardware-Instandsetzung.</p>
-      </div>
-      <div>
-        <div style="font-weight: 800; margin-bottom: 15px;">Kontakt</div>
-        <p style="color: #777; font-size: 14px;">WhatsApp: +41 76 720 98 32<br>Standort: 9030 Abtwil SG</p>
-      </div>
-      <div>
-        <div style="font-weight: 800; margin-bottom: 15px;">Rechtliches</div>
-        <p style="color: #777; font-size: 14px;">6 Monate Garantie auf Hardware-Reparaturen. Kein Ladenlokal vor Ort.</p>
-      </div>
-    </div>
-    <div style="text-align: center; margin-top: 30px; color: #555; font-size: 12px;">© Mujitech Schweiz – Alle Rechte vorbehalten</div>
-  </footer>
-
   <div class="floating-contact">
-    <a style="background: var(--wa); color: #fff;" href="https://wa.me/41767209832" target="_blank">WhatsApp senden</a>
-    <a style="background: var(--brand-blue); color: #fff;" href="tel:+41767209832">Jetzt anrufen</a>
+    <a style="background: var(--wa); color: #fff;" href="https://wa.me/41767209832" target="_blank">WhatsApp Chat</a>
+    <a style="background: var(--brand-blue); color: #fff;" href="tel:+41767209832">Anrufen</a>
   </div>
 
   <script>
-    // Partikel-Hintergrund Script
+    // 3D Tilt Effekt
+    if (window.matchMedia("(hover: hover)").matches) {
+      document.querySelectorAll('.tilt-effect').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const rotateX = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -6;
+          const rotateY = ((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 6;
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+      });
+    }
+
+    // Scroll Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("visible"); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // Strom-Canvas
     const canvas = document.getElementById('strom-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
     function init() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      particles = [];
-      for(let i=0; i<80; i++) {
-        particles.push({
-          x: Math.random()*canvas.width,
-          y: Math.random()*canvas.height,
-          vx: (Math.random()-0.5)*1.2,
-          vy: (Math.random()-0.5)*1.2,
-          size: Math.random()*2+1
-        });
-      }
+      particles = Array.from({length: 60}, () => ({
+        x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+        vx: (Math.random()-0.5)*1.5, vy: (Math.random()-0.5)*1.5
+      }));
     }
     function animate() {
       ctx.clearRect(0,0,canvas.width, canvas.height);
-      ctx.fillStyle = "rgba(37, 244, 238, 0.4)";
+      ctx.fillStyle = "#25F4EE";
       particles.forEach(p => {
         p.x += p.vx; p.y += p.vy;
         if(p.x<0 || p.x>canvas.width) p.vx*=-1;
         if(p.y<0 || p.y>canvas.height) p.vy*=-1;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(p.x, p.y, 2, 0, Math.PI*2); ctx.fill();
       });
       requestAnimationFrame(animate);
     }
