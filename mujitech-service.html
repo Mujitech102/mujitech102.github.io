@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+
+  <title>Mujitech | Fachbetrieb für Komponenten-Montage in Abtwil</title>
+  <meta name="description" content="Präziser Austausch elektronischer Bauteile und Hardware-Module in Abtwil SG. Erfahrene Werkstatt für fachgerechte Montage und Instandsetzung." />
+  <meta name="robots" content="noindex, nofollow" /> <meta name="language" content="de-CH" />
+
+  <style>
+    :root {
+      --white: #ffffff;
+      --text: #e0e0e0;
+      --muted: #888890;
+      --line: rgba(255,255,255,0.1);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+      --gold: #fbbc04;
+      --brand-blue: #1e6fff;
+      --brand-cyan: #25F4EE;
+      --wa: #25D366;
+      --call: #1e6fff;
+      --insta1: #feda75;
+      --insta2: #fa7e1e;
+      --insta3: #d62976;
+      --insta4: #962fbf;
+      --insta5: #4f5bd5;
+      --tiktok1: #25F4EE;
+      --tiktok2: #FE2C55;
+      --tiktok3: #111111;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    html, body { margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; color: var(--text); background: #060608; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+    @keyframes floatLevitation { 0% { transform: translateY(0px); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0px); } }
+    @keyframes pulseGlow { 0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); } 50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); } 100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); } }
+    @keyframes animatedBackground { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes scrollReviews { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-50% - 12px)); } }
+
+    .page-glow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%), radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%); animation: pulseGlow 10s infinite alternate; }
+    #strom-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 1; opacity: 0.5; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    header { position: sticky; top: 0; z-index: 1200; -webkit-backdrop-filter: blur(25px); backdrop-filter: blur(25px); background: rgba(10, 10, 12, 0.85); border-bottom: 1px solid var(--line); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all var(--transition); -webkit-transform: translateZ(0); }
+    .nav-wrap { max-width: 1280px; margin: 0 auto; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand { display: flex; align-items: center; gap: 14px; min-width: 0; }
+    .logo { width: 72px; filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3)); transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .logo:hover { transform: translateY(-5px) scale(1.1) rotate(5deg); }
+    .brand-text { display: flex; flex-direction: column; gap: 2px; }
+    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
+    .brand-sub { font-size: 13px; font-weight: 600; color: var(--muted); }
+
+    nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px; }
+    nav a, .btn, .floating-contact a, .hero-mini-btn { position: relative; overflow: hidden; transform-style: preserve-3d; }
+    nav a { text-decoration: none; font-size: 14px; font-weight: 700; color: #ffffff; padding: 11px 18px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.15); background: rgba(255, 255, 255, 0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: all var(--transition); }
+    nav a::before, .btn::before, .floating-contact a::before, .hero-mini-btn::before { content: ""; position: absolute; top: 0; left: -150%; width: 100%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent); transform: skewX(-25deg); transition: left 0.8s ease; z-index: 1; }
+    nav a:hover::before, .btn:hover::before, .floating-contact a:hover::before, .hero-mini-btn:hover::before { left: 150%; }
+    nav a:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 12px 24px rgba(30, 111, 255, 0.3); color: var(--brand-cyan); border-color: var(--brand-blue); background: rgba(30, 111, 255, 0.1); }
+
+    main { position: relative; z-index: 2; }
+    .section { max-width: 1280px; margin: 0 auto; padding: 40px 18px; }
+    
+    .box-bg { position: relative; background: rgba(25, 25, 30, 0.7); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1); -webkit-transform: translateZ(0); transform: translateZ(0); }
+    .box-bg.tilt-effect { will-change: transform; }
+    .box-bg::before { content: ""; position: absolute; inset: -50%; background: linear-gradient(45deg, rgba(30, 111, 255, 0.03), rgba(37, 244, 238, 0.03), rgba(200, 168, 93, 0.02), transparent); background-size: 200% 200%; animation: animatedBackground 10s ease infinite; pointer-events: none; z-index: 0; }
+    .card-content { position: relative; z-index: 2; transition: transform var(--transition); }
+    @media (hover: hover) { .tilt-effect .card-content { transform: translateZ(30px); } .box-bg { transform-style: preserve-3d; } }
+
+    .card { padding: 45px 35px; }
+    .hero-contact { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 30px; align-items: stretch; margin-top: 30px; }
+    .hero-copy h1 { margin: 0 0 18px 0; font-size: 44px; line-height: 1.15; letter-spacing: -0.5px; font-weight: 800; color: #ffffff; }
+    .hero-copy p { margin: 0 0 20px 0; font-size: 18px; line-height: 1.8; color: #b0b0b0; max-width: 760px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; margin: 28px 0; }
+    .hero-mini-btn { text-decoration: none; font-weight: 800; padding: 16px 24px; border-radius: 999px; color: #fff; background: linear-gradient(135deg, var(--brand-blue), #0d4bb5); box-shadow: 0 10px 20px rgba(30, 111, 255, 0.3); transition: all var(--transition); border: 1px solid rgba(255,255,255,0.1); }
+    .hero-mini-btn:nth-child(2) { background: rgba(255, 255, 255, 0.05); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+    .hero-mini-btn:hover { transform: translateY(-4px) scale(1.05); box-shadow: 0 15px 30px rgba(30, 111, 255, 0.4); }
+
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
+    .trust-item { padding: 18px; border-radius: 20px; background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 8px 20px rgba(0,0,0,0.2); font-size: 14px; line-height: 1.6; color: #b0b0b0; transition: all 0.3s; }
+    .trust-item:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+    .trust-item strong { color: #ffffff; }
+    .icon-line { display: flex; align-items: flex-start; gap: 12px; }
+    .icon { width: 22px; height: 22px; flex: 0 0 22px; color: var(--brand-cyan); }
+
+    .title { margin: 0 0 20px 0; font-size: 32px; letter-spacing: -0.5px; font-weight: 800; color: #fff; }
+    .contact-intro { color: #b0b0b0; line-height: 1.8; margin-bottom: 24px; font-size: 17px; }
+
+    .btn-grid { display: grid; gap: 16px; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 12px; text-decoration: none; text-align: center; font-size: 17px; font-weight: 800; padding: 16px; border-radius: 20px; border: none; box-shadow: 0 10px 20px rgba(0,0,0,0.3); transition: all var(--transition); border: 1px solid rgba(255,255,255,0.1); }
+    .btn:hover { transform: translateY(-5px) scale(1.03); filter: brightness(1.1); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+    .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
+    .btn.call { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; }
+    .btn.instagram { background: linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5)); color: #ffffff; }
+    .btn.tiktok { background: linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2)); color: #ffffff; }
+
+    .micro-note { margin-top: 18px; color: var(--muted); font-size: 14px; line-height: 1.7; font-weight: 600;}
+
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .process-step { text-align: center; padding: 25px 20px; border-radius: 20px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05); }
+    .step-icon { font-size: 40px; margin-bottom: 15px; display:inline-block; }
+    .step-title { font-weight: 800; color: #fff; margin-bottom: 10px; font-size: 20px;}
+    .step-desc { color: #b0b0b0; font-size: 15px; line-height: 1.6; }
+
+    .service-card { padding: 30px 25px; }
+    .service-card h3 { margin: 0 0 15px 0; font-size: 24px; letter-spacing: -0.3px; color: #ffffff; }
+    .service-card p { margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 16px; }
+    .service-card ul { margin: 15px 0 0 0; padding-left: 20px; line-height: 1.8; color: #b0b0b0; }
+    .service-card li { margin-bottom: 8px; }
+
+    .section-head { text-align: center; margin-bottom: 40px; }
+    @media (hover: hover) { .section-head { transform: translateZ(40px); } }
+    .section-head h2 { margin: 0 0 12px 0; font-size: 40px; letter-spacing: -0.5px; color: #fff; }
+    .section-head p { margin: 0 auto; max-width: 860px; color: #b0b0b0; line-height: 1.8; font-size: 18px; }
+
+    .form-container { max-width: 800px; margin: 0 auto; }
+    .contact-form { display: flex; flex-direction: column; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+    .form-group label { font-weight: 700; font-size: 15px; color: #fff; }
+    .contact-form input, .contact-form select, .contact-form textarea { width: 100%; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; font-family: inherit; font-size: 16px; transition: all var(--transition); -webkit-appearance: none; appearance: none; }
+    .contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--brand-cyan); background: rgba(255,255,255,0.1); box-shadow: 0 0 15px rgba(37, 244, 238, 0.3); }
+    .contact-form .submit-btn { background: linear-gradient(135deg, var(--brand-blue), #0d4bb5); color: #fff; border: none; cursor: pointer; margin-top: 10px; width: 100%; }
+
+    .reviews-slider-container { overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0; transform: perspective(1500px) rotateY(-2deg) rotateX(1deg); }
+    .reviews-slider-track { display: flex; gap: 24px; width: max-content; -webkit-animation: scrollReviews 45s linear infinite; animation: scrollReviews 45s linear infinite; }
+    .reviews-slider-track:hover { -webkit-animation-play-state: paused; animation-play-state: paused; }
+    .review-card { width: 380px; height: 320px; flex-shrink: 0; white-space: normal; padding: 25px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease; }
+    .review-card::after { content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 50%, rgba(255,255,255,0) 100%); transform: rotate(30deg) translateY(-100%); transition: transform 0.6s ease; pointer-events: none; }
+    .review-card:hover { transform: scale(1.03) translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.2); border-color: rgba(30, 111, 255, 0.4); }
+    .review-card:hover::after { transform: rotate(30deg) translateY(100%); }
+    .review-header { display: flex; align-items: center; gap: 14px; margin-bottom: 15px; }
+    .review-avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.3); flex-shrink: 0; }
+    .review-user-info { flex-grow: 1; }
+    .review-name { font-weight: 800; color: #ffffff; font-size: 16px; margin-bottom: 3px; }
+    .review-meta { font-size: 12px; color: #999; }
+    .google-icon { width: 24px; height: 24px; flex-shrink: 0; }
+    .review-rating-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .review-card .stars { font-size: 18px; letter-spacing: 2px; color: var(--gold); filter: drop-shadow(0 2px 4px rgba(251, 188, 4, 0.3));}
+    .review-text { flex-grow: 1; font-size: 15px; line-height: 1.6; color: #e0e0e0; overflow-y: auto; padding-right: 5px; text-align: justify; }
+    .review-text::-webkit-scrollbar { width: 4px; }
+    .review-text::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); border-radius: 10px; }
+    .review-text::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
+
+    footer { padding: 20px 18px 60px 18px; position: relative; z-index: 2;}
+    .footer-card { max-width: 1280px; margin: 0 auto; padding: 50px 40px; -webkit-transform: translateZ(0); }
+    .footer-top { display: grid; grid-template-columns: 1.2fr 0.9fr 0.9fr; gap: 30px; align-items: start; }
+    .footer-title { font-size: 20px; font-weight: 800; margin-bottom: 15px; color: #fff;}
+    .footer-card p { margin: 0; color: #b0b0b0; line-height: 1.8; font-size: 15px;}
+    .footer-links { display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-weight: 600; color: #b0b0b0; text-decoration: none; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--brand-cyan); transform: translateX(5px); }
+    .footer-bottom { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #777; font-size: 14px; font-weight: 600;}
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    @media (hover: hover) { .reveal { transform: perspective(1000px) translateY(60px) rotateX(-15deg) scale(0.95); } }
+    .reveal.visible { opacity: 1; transform: perspective(1000px) translateY(0) rotateX(0deg) scale(1); }
+
+    .cookie-banner { position: fixed; left: 20px; right: 20px; bottom: 20px; z-index: 2000; background: rgba(20, 20, 25, 0.95); color: white; border-radius: 20px; box-shadow: 0 25px 50px rgba(0,0,0,0.8), inset 0 0 0 1px rgba(255,255,255,0.1); padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); opacity: 0; pointer-events: none; transform: translateY(150%); transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.6s; -webkit-transform: translateZ(0); }
+    .cookie-banner.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .cookie-banner p { margin: 0; line-height: 1.7; font-size: 14px; color: #ccc; flex: 1; min-width: 200px;}
+    .cookie-buttons { display: flex; gap: 12px; }
+    .cookie-banner .btn-accept { border: 1px solid rgba(255,255,255,0.8); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer; color: #000; background: #fff; transition: transform var(--transition), background var(--transition); }
+    .cookie-banner .btn-accept:hover { transform: translateY(-2px) scale(1.05); background: #e0e0e0; }
+    .cookie-banner .btn-decline { border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 12px 20px; font-weight: 700; cursor: pointer; color: #fff; background: rgba(255,255,255,0.05); transition: transform var(--transition), background var(--transition); }
+    .cookie-banner .btn-decline:hover { transform: translateY(-2px) scale(1.05); background: rgba(255,255,255,0.1); }
+
+    .floating-contact { position: fixed; right: 20px; bottom: 120px; z-index: 1600; display: flex; flex-direction: column; gap: 16px; animation: floatLevitation 4s ease-in-out infinite; -webkit-transform: translateZ(0); }
+    .floating-contact a { min-width: 220px; text-align: center; text-decoration: none; font-weight: 800; font-size: 16px; padding: 16px 20px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2); box-shadow: 0 15px 30px rgba(0,0,0,0.5); -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); display: flex; align-items: center; justify-content: center; gap: 10px; transition: transform var(--transition); }
+    .floating-contact a:hover { transform: translateY(-5px) scale(1.05); }
+    .floating-contact .whatsapp-btn { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; border:none;}
+    .floating-contact .call-btn { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; border:none;}
+
+    @media (max-width: 1100px) { .hero-contact, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr 1fr; } .hero-copy h1 { font-size: 38px; } }
+    @media (max-width: 780px) {
+      .nav-wrap { flex-direction: column; align-items: stretch; }
+      .brand, nav { justify-content: center; }
+      .hero-contact, .grid-3, .grid-2, .trust-grid, .footer-top { grid-template-columns: 1fr; }
+      .hero-copy h1 { font-size: 32px; }
+      .section-head h2 { font-size: 30px; }
+      .card, .service-card, .review-card, .process-step { padding: 25px 20px; }
+      .floating-contact { right: 15px; left: 15px; bottom: 100px; gap: 10px; animation: none; }
+      .floating-contact a { min-width: unset; width: 100%; font-size: 15px; padding: 14px; }
+      .review-card { width: 300px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-glow"></div>
+  <canvas id="strom-canvas"></canvas>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <img src="logo.png" class="logo" alt="Mujitech Fachbetrieb" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
+        <div class="brand-text">
+          <div class="brand-title">Mujitech Abtwil</div>
+          <div class="brand-sub">Werkstatt für Hardware-Montage</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#prozess">Ablauf</a>
+        <a href="#services">Leistungen</a>
+        <a href="#anfrage">Anfrage</a>
+        <a href="#bewertungen">Bewertungen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section reveal" id="kontakt">
+      <div class="card box-bg hero-contact tilt-effect">
+        <div class="hero-copy card-content">
+          <h1>Fachbetrieb für Hardware-Montage & Komponententausch</h1>
+          <p>
+            Mujitech ist Ihre spezialisierte Werkstatt für den professionellen Einbau von Ersatzteilen. Wir tauschen Display-Einheiten, Akku-Zellen und Gehäuse-Module für mobile Endgeräte und moderne Rechnersysteme präzise aus.
+          </p>
+          <p>
+            Es gibt kein klassisches Ladengeschäft. Der Einbau-Service erfolgt ausschließlich nach Terminabsprache oder über unseren bequemen Post-Einsendeservice.
+          </p>
+
+          <div class="hero-actions">
+            <a class="hero-mini-btn" href="#anfrage">Montage anfragen</a>
+            <a class="hero-mini-btn" href="https://wa.me/41767209832" target="_blank">Termin per WhatsApp</a>
+          </div>
+
+          <div class="trust-grid">
+            <div class="trust-item">
+              <div class="icon-line">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l7 4v6c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-4z" stroke="currentColor" stroke-width="2"/><path d="M9.5 12.5l1.8 1.8 3.7-4.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div><strong>6 Monate Garantie</strong><br>auf verbaute Bauteile</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon-line">
+                <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M4 7h16v10H4z" stroke="currentColor" stroke-width="2"/><path d="M8 7V5h8v2" stroke="currentColor" stroke-width="2"/><path d="M9 12h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div><strong>Abtwil SG</strong><br>Lokale Fach-Werkstatt</div>
+              </div>
+            </div>
+            <div class="trust-item">
+              <div class="icon-line">
+                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="4" width="18" height="16" rx="2.5" fill="#D52B1E"/>
+                  <path d="M12 7.5v9M7.5 12h9" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round"/>
+                </svg>
+                <div><strong>Schweizweit</strong><br>Bequemer Einsendeservice</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-panel card-content">
+          <h2 class="title">Direkt anfragen</h2>
+          <div class="contact-intro">
+            Erreichen Sie unsere Werkstatt für Termine oder Versandanweisungen schnell und unkompliziert.
+          </div>
+
+          <div class="btn-grid">
+            <a class="btn whatsapp" href="https://wa.me/41767209832" target="_blank">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#0b2514;"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="2"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
+              WhatsApp schreiben
+            </a>
+            <a class="btn call" href="tel:+41767209832">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+              Jetzt anrufen
+            </a>
+            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/" target="_blank">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor"/></svg>
+              Instagram Profil
+            </a>
+            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech" target="_blank">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" style="color:#fff;"><path d="M14 4c.4 1.6 1.6 3 3 3.7.8.4 1.6.5 2 .5v3.2c-1.6 0-3.5-.5-5-1.7v5.7a5 5 0 11-5-5c.3 0 .5 0 .8.1v3.2a2 2 0 10 1.2 1.8V4h3z" fill="currentColor"/></svg>
+              TikTok Profil
+            </a>
+          </div>
+          <div class="micro-note">Hardware-Annahme nur nach vorheriger Absprache.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="prozess">
+      <div class="section-head">
+        <h2>Unser Montage-Prozess</h2>
+        <p>Präzision und Transparenz bei jedem Komponententausch.</p>
+      </div>
+      <div class="grid-3">
+        <div class="process-step box-bg tilt-effect">
+          <div class="card-content">
+            <div class="step-icon">📋</div>
+            <div class="step-title">1. Komponenten-Check</div>
+            <div class="step-desc">Wir prüfen die gelieferten Hardware-Teile vor dem Einbau auf volle Funktion.</div>
+          </div>
+        </div>
+        <div class="process-step box-bg tilt-effect">
+          <div class="card-content">
+            <div class="step-icon">🛠️</div>
+            <div class="step-title">2. Präzisions-Einbau</div>
+            <div class="step-desc">Der Tausch defekter Module erfolgt unter sauberen Bedingungen mit Fach-Werkzeug.</div>
+          </div>
+        </div>
+        <div class="process-step box-bg tilt-effect">
+          <div class="card-content">
+            <div class="step-icon">🛡️</div>
+            <div class="step-title">3. Qualitäts-Prüfung</div>
+            <div class="step-desc">Nach der Montage durchläuft die Hardware einen umfassenden Funktionstest.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="services">
+      <div class="section-head">
+        <h2>Einbau-Dienstleistungen</h2>
+        <p>Fachgerechte Instandsetzung elektronischer Hardware-Komponenten.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="service-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Mobile Endgeräte</h3>
+            <p>Austausch von Modulen bei elektronischen Begleitern:</p>
+            <ul>
+              <li>Wechsel von Display-Einheiten und Glas-Panels</li>
+              <li>Fachgerechter Einbau von Ersatz-Akkus</li>
+              <li>Montage von internen Anschlussmodulen</li>
+              <li>Ersatz von Kameras und Sensorik</li>
+              <li>Gehäuse-Austausch und mechanische Instandsetzung</li>
+              <li>Diagnose fehlerhafter Bauteile</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="service-card box-bg tilt-effect">
+          <div class="card-content">
+            <h3>Mobiles Arbeiten & Rechner</h3>
+            <p>Hardware-Service für elektronische Arbeitsgeräte:</p>
+            <ul>
+              <li>Einbau neuer Bildschirmpanels</li>
+              <li>Hardware-Wartung (Kühlung & Wärmeleitpaste)</li>
+              <li>Einbau von Festplatten- und Arbeitsspeicher</li>
+              <li>Montage von Ersatztastaturen und Scharnieren</li>
+              <li>Austausch defekter Strom-Anschlussbuchsen</li>
+              <li>Mechanische Gehäuserekonstruktion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="anfrage">
+      <div class="card box-bg tilt-effect form-container">
+        <div class="card-content">
+          <div class="section-head" style="margin-bottom: 25px;">
+            <h2>Anfrage für Ersatzteil-Montage</h2>
+            <p>Nennen Sie uns das genaue Modell und das betroffene Bauteil.</p>
+          </div>
+          
+          <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
+            <input type="hidden" name="_subject" value="Anfrage für Hardware-Montage (Landingpage)">
+            <input type="text" name="_honey" style="display:none">
+            
+            <div class="form-group">
+              <label for="name">Vor- & Nachname</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">E-Mail Adresse</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telefon">Telefonnummer</label>
+              <input type="tel" id="telefon" name="telefon" required />
+            </div>
+
+            <div class="form-group">
+              <label for="modell">Gerätebezeichnung (Exaktes Modell)</label>
+              <input type="text" id="modell" name="modell" placeholder="Welches Gerät besitzen Sie genau?" required />
+            </div>
+
+            <div class="form-group">
+              <label for="bauteil">Welches Hardware-Bauteil ist betroffen?</label>
+              <textarea id="bauteil" name="bauteil" rows="4" placeholder="Bitte beschreiben Sie das mechanische oder optische Problem..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn submit-btn">Kostenvoranschlag anfordern</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
+      <div class="section-head">
+        <h2>Google Rezensionen</h2>
+        <p>Erfahrungen unserer Montage-Kunden.</p>
+      </div>
+
+      <div class="reviews-slider-container">
+        <div class="reviews-slider-track">
+          
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
+              <div class="review-user-info">
+                <div class="review-name">Gabi Sutter</div>
+              </div>
+              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Super arbeit beim Austausch der Komponenten!!</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
+              <div class="review-user-info">
+                <div class="review-name">Patryk Basztabin</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Sehr kompetente, schnelle und reibungslose Abwicklung. Der Kontakt wurde unkompliziert aufgenommen... Zusätzlich wurde das Gerät gereinigt. Top-Qualität aus Abtwil!</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #5c6bc0, #3f51b5);">I</div>
+              <div class="review-user-info">
+                <div class="review-name">Irene Küng</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Vielen Dank. War voll umfänglich zufrieden mit dem Einbau des neuen Kamera-Moduls und der neuen Batterie. Hab die Werkstatt schon weiter empfohlen. Gruss</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #455a64, #263238);">S</div>
+              <div class="review-user-info">
+                <div class="review-name">Srish</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Ich bin wirklich sehr zufrieden! Mein Gerät hatte starke Energie-Probleme. Der Batterietausch ging schnell und sauber. Alles sah nach der Montage viel gepflegter aus.</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff;">A</div>
+              <div class="review-user-info">
+                <div class="review-name">Alina Brüllhardt</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Habe meine Hardware bearbeiten lassen. Sehr professioneller Service, schnelle Montage und alles funktioniert einwandfrei.</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #78909c, #546e7a);">C</div>
+              <div class="review-user-info">
+                <div class="review-name">C O</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Sehr zufrieden mit dem Austausch des Display-Panels. Der Inhaber ist extrem nett und freundlich und hat sich viel Mühe gegeben. Gerne wieder!</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">N</div>
+              <div class="review-user-info">
+                <div class="review-name">Natascha Biell</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Super Service, schnell gut zuverlässig, Freundlich.</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">W</div>
+              <div class="review-user-info">
+                <div class="review-name">Wei W</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Nice place and good people.</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #ff5722, #e64a19);">s</div>
+              <div class="review-user-info">
+                <div class="review-name">shehryaar ali</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Ich hatte mehrmals technische Anliegen mit meiner Hardware. Die Zusammenarbeit war immer angenehm und die Arbeit wurde sauber erledigt. Kann ich weiterempfehlen.</div>
+          </div>
+
+          <div class="review-card box-bg">
+            <div class="review-header">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #d32f2f, #c62828);">D</div>
+              <div class="review-user-info">
+                <div class="review-name">Dampfglanzservice- Ademi</div>
+              </div>
+            </div>
+            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
+            <div class="review-text">Ich habe das Display-Modul meines Geräts tauschen lassen. Super Beratung & herzlich empfangen. Top Arbeit!</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-card box-bg tilt-effect">
+      <div class="footer-top card-content">
+        <div>
+          <div class="footer-title">Mujitech Montage-Service</div>
+          <p>Spezialisierte Werkstatt für den professionellen Einbau und Tausch von Hardware-Komponenten und Ersatzteilen in Abtwil SG.</p>
+        </div>
+        <div>
+          <div class="footer-title">Navigation</div>
+          <div class="footer-links">
+            <a href="#kontakt">Kontakt</a>
+            <a href="#prozess">Ablauf</a>
+            <a href="#services">Leistungen</a>
+            <a href="#anfrage">Montage-Anfrage</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Rechtliches</div>
+          <div class="footer-links">
+            <a href="javascript:void(0);">AGB & Datenschutz</a>
+            <a href="#bewertungen">Google Rezensionen</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom card-content">
+        © Mujitech Schweiz – Werkstatt für Komponenten-Montage
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-contact">
+    <a class="whatsapp-btn" href="https://wa.me/41767209832" target="_blank">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 01-11.7 7.1L4 20l1.1-4.1A8 8 0 1120 12z" stroke="currentColor" stroke-width="2"/><path d="M9 9.5c.3-.8.8-.8 1.1-.8h.5c.2 0 .4.1.5.4l.8 1.9c.1.2.1.5-.1.7l-.6.7c.6 1.1 1.5 2 2.6 2.6l.7-.6c.2-.2.5-.2.7-.1l1.9.8c.3.1.4.3.4.5v.5c0 .3 0 .8-.8 1.1-.7.3-2.3.2-4.1-.7-1.8-.9-3.2-2.3-4.1-4.1-.9-1.8-1-3.4-.7-4.1z" fill="currentColor"/></svg>
+      WhatsApp schreiben
+    </a>
+    <a class="call-btn" href="tel:+41767209832">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15.3 15.3 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2a10.7 10.7 0 003.3 1c.4.1.7.4.7.8V20c0 .5-.4 1-.9 1C10.6 21 3 13.4 3 4.5c0-.5.4-.9.9-.9H7c.4 0 .7.3.8.7.2 1.1.5 2.2 1 3.3.1.3.1.7-.2 1l-2 2.2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Jetzt anrufen
+    </a>
+  </div>
+
+  <div class="cookie-banner" id="cookieBanner">
+    <p>Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
+    <div class="cookie-buttons">
+      <button class="btn-decline" onclick="handleCookies('declined')">Ablehnen</button>
+      <button class="btn-accept" onclick="handleCookies('accepted')">Akzeptieren</button>
+    </div>
+  </div>
+
+  <script>
+    // --- COOKIE BANNER ---
+    function handleCookies(choice) {
+      const banner = document.getElementById("cookieBanner");
+      localStorage.setItem("mujitechCookies", choice);
+      banner.classList.remove("show");
+    }
+    window.addEventListener("load", function () {
+      const cookieStatus = localStorage.getItem("mujitechCookies");
+      if (!cookieStatus) {
+        setTimeout(() => { document.getElementById("cookieBanner").classList.add("show"); }, 1000);
+      }
+    });
+
+    // --- SCROLL REVEAL ---
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add("visible"); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // --- 3D TILT EFFEKT ---
+    if (window.matchMedia("(hover: hover)").matches) {
+      const cards3D = document.querySelectorAll('.tilt-effect');
+      cards3D.forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
+          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08), rgba(25, 25, 30, 0.7) 50%)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+          card.style.background = ''; 
+        });
+      });
+    }
+
+    // --- CANVAS NETZWERK ---
+    const canvas = document.getElementById('strom-canvas');
+    const ctx = canvas.getContext('2d');
+    let canvasWidth, canvasHeight;
+    let mouse = { x: null, y: null, radius: 150 };
+
+    function initCanvasSize() {
+      canvasWidth = document.documentElement.clientWidth;
+      canvasHeight = document.documentElement.clientHeight;
+      canvas.width = canvasWidth;
+      canvas.height = canvasHeight;
+    }
+    initCanvasSize();
+    window.addEventListener('resize', initCanvasSize);
+    window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+    window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; } }, {passive: true}); 
+    window.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvasWidth;
+        this.y = Math.random() * canvasHeight;
+        this.vx = (Math.random() - 0.5) * 1.5;
+        this.vy = (Math.random() - 0.5) * 1.5;
+        this.size = Math.random() * 2 + 1;
+        this.color = Math.random() > 0.5 ? '#1e6fff' : '#25F4EE';
+      }
+      update() {
+        this.x += this.vx; this.y += this.vy;
+        if (this.x < 0 || this.x > canvasWidth) this.vx = -this.vx;
+        if (this.y < 0 || this.y > canvasHeight) this.vy = -this.vy;
+        if(mouse.x != null && mouse.y != null) {
+            let dx = mouse.x - this.x; let dy = mouse.y - this.y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < mouse.radius) {
+              const force = (mouse.radius - distance) / mouse.radius;
+              this.x -= (dx / distance) * force * 3; this.y -= (dy / distance) * force * 3;
+            }
+        }
+      }
+      draw() {
+        ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color; ctx.shadowBlur = 10; ctx.shadowColor = this.color;
+        ctx.fill(); ctx.shadowBlur = 0; 
+      }
+    }
+
+    const isMobile = window.innerWidth <= 780;
+    const particleCount = isMobile ? 40 : 80;
+    const particleArray = Array.from({ length: particleCount }, () => new Particle());
+
+    function animateNetwork() {
+      ctx.clearRect(0, 0, canvasWidth, canvasHeight);
+      for (let i = 0; i < particleArray.length; i++) {
+        particleArray[i].update(); particleArray[i].draw();
+        for (let j = i; j < particleArray.length; j++) {
+          let dx = particleArray[i].x - particleArray[j].x;
+          let dy = particleArray[i].y - particleArray[j].y;
+          let distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 120) {
+            ctx.beginPath(); ctx.strokeStyle = `rgba(30, 111, 255, ${1 - distance/120})`;
+            ctx.lineWidth = 1; ctx.moveTo(particleArray[i].x, particleArray[i].y);
+            ctx.lineTo(particleArray[j].x, particleArray[j].y); ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animateNetwork);
+    }
+    animateNetwork();
+  </script>
+</body>
+</html>
