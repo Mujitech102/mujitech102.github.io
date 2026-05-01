@@ -4,19 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 
-  <title>Handy, Laptop & PC Reparatur Abtwil St. Gallen | Mujitech</title>
-  <meta name="description" content="Mujitech bietet professionelle Handy Reparatur, Laptop Service & PC Reparatur in Abtwil (St. Gallen). Apple & Samsung Spezialist. Schneller Displaytausch & Akkuwechsel. Jetzt anfragen!" />
-  <meta name="keywords" content="Handy Reparatur Abtwil, Laptop Reparatur St. Gallen, iPhone Reparatur Abtwil, PC Reparatur St. Gallen, Display Reparatur Schweiz, Mujitech Abtwil, Handy Reparatur Gaiserwald" />
+  <title>Handy, Tablet, Laptop & PC Reparatur St. Gallen & Abtwil | Mujitech</title>
+  
+  <meta name="description" content="Mujitech ist Ihr Spezialist für Handy, Tablet, Laptop & PC Reparaturen in St. Gallen (Abtwil). Apple iPhone, iPad & Samsung Service. Schneller Displaytausch & Akkuwechsel!" />
+  
+  <meta name="keywords" content="Handy Reparatur St. Gallen, Tablet Reparatur, Laptop Reparatur, PC Reparatur, Smartphone Reparatur Abtwil, iPhone Reparatur, iPad Reparatur, Displaytausch, Akkuwechsel Schweiz, Mujitech, Computer Service" />
+  
   <meta name="author" content="Mujitech" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="language" content="de-CH" />
   <link rel="canonical" href="https://mujitech.ch/" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Handy, Laptop & PC Reparatur in Abtwil St. Gallen | Mujitech" />
-  <meta property="og:description" content="Professionelle Hardware-Reparaturen für Smartphones, Tablets und Computer in der Region St. Gallen. Schneller Service bei Mujitech." />
+  <meta property="og:title" content="Handy, Tablet, Laptop & PC Reparatur in St. Gallen (Abtwil) | Mujitech" />
+  <meta property="og:description" content="Professionelle Hardware-Reparaturen für Smartphones, Tablets und Computer in der Region St. Gallen. Schneller und lokaler Service bei Mujitech." />
   <meta property="og:url" content="https://mujitech.ch/" />
-  <meta property="og:site_name" content="Mujitech" />
+  <meta property="og:site_name" content="Mujitech Reparatur" />
   <meta property="og:locale" content="de_CH" />
   <meta property="og:image" content="https://mujitech.ch/logo.png" />
 
@@ -29,7 +32,7 @@
     "@id": "https://mujitech.ch",
     "url": "https://mujitech.ch",
     "telephone": "+41767209832",
-    "priceRange": "CHF",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Abtwil",
@@ -49,8 +52,17 @@
       "opens": "08:00",
       "closes": "19:00"
     },
-    "areaServed": "St. Gallen",
-    "description": "Professioneller Reparaturservice für Handys, Laptops und PCs in Abtwil SG."
+    "areaServed": {
+      "@type": "City",
+      "name": "St. Gallen"
+    },
+    "description": "Professioneller Reparaturservice für Handys, Tablets, Laptops und PCs in Abtwil und St. Gallen.",
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Handy Reparatur" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tablet Reparatur" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laptop Reparatur" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PC Reparatur" } }
+    ]
   }
   </script>
 
@@ -381,6 +393,38 @@
 
     .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    
+    /* Footer & Rechtliches */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 40px 18px;
+      margin-top: 60px;
+      text-align: center;
+      background: rgba(10, 10, 12, 0.6);
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition);
+    }
+    .footer-links a:hover {
+      color: var(--brand-cyan);
+    }
+    .legal-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
 
     @media (max-width: 1100px) {
       .hero-contact, .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
@@ -399,10 +443,10 @@
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <img src="logo.png" class="logo" alt="Mujitech Logo" />
+        <img src="logo.png" class="logo" alt="Mujitech Reparatur Logo" />
         <div class="brand-text">
           <div class="brand-title">Mujitech Abtwil</div>
-          <div class="brand-sub">Handy & PC Service St. Gallen</div>
+          <div class="brand-sub">Handy, Tablet & PC Service</div>
         </div>
       </div>
       <nav>
@@ -418,9 +462,9 @@
     <section class="section reveal" id="kontakt">
       <div class="card box-bg hero-contact tilt-effect">
         <div class="hero-copy card-content">
-          <h1>Professionelle Handy, Laptop & PC Reparatur in Abtwil (St. Gallen)</h1>
+          <h1>Professionelle Handy, Tablet, Laptop & PC Reparatur in St. Gallen (Abtwil)</h1>
           <p>
-            Mujitech ist Ihr lokaler Experte für Hardware-Reparaturen in der Region St. Gallen. Wir spezialisieren uns auf Displaytausch, Akkuwechsel und die Instandsetzung von Smartphones, Tablets und Computern.
+            Mujitech ist Ihr lokaler Experte für schnelle Hardware-Reparaturen in der Region St. Gallen. Wir spezialisieren uns auf den Displaytausch, Akkuwechsel und die Instandsetzung von Smartphones, iPads, Tablets und Computern (Apple & Samsung).
           </p>
           <p><strong>Standort Abtwil SG:</strong> Kein Ladenlokal. Persönliche Übergabe nur nach Terminvereinbarung oder bequeme Einsendung aus der ganzen Schweiz.</p>
 
@@ -451,15 +495,15 @@
     <section class="section reveal" id="services">
       <div class="section-head" style="text-align: center; margin-bottom: 40px;">
         <h2>Unsere Reparatur-Services in St. Gallen</h2>
-        <p>Fachgerechte Hardware-Reparaturen für Apple, Samsung und Computer.</p>
+        <p>Fachgerechte Hardware-Reparaturen für Apple, Samsung, Computer und Tablets.</p>
       </div>
       <div class="grid-2">
         <div class="service-card box-bg tilt-effect">
           <div class="card-content">
-            <h3>Handy & Tablet</h3>
+            <h3>Handy & Tablet Reparatur</h3>
             <ul>
-              <li>Display-Reparatur Abtwil</li>
-              <li>Akku-Austausch (Original-Qualität)</li>
+              <li>Display-Reparatur Abtwil (Smartphone & Tablet)</li>
+              <li>Akku-Austausch (Original-Qualität für iPhone & iPad)</li>
               <li>Ladebuchsen & Hardware-Defekte</li>
               <li>Kamera-Austausch St. Gallen</li>
             </ul>
@@ -467,12 +511,12 @@
         </div>
         <div class="service-card box-bg tilt-effect">
           <div class="card-content">
-            <h3>Laptop & PC</h3>
+            <h3>Laptop & PC Service</h3>
             <ul>
               <li>Laptop Display-Wechsel</li>
-              <li>Reinigung & Hardware-Wartung</li>
+              <li>Reinigung & Computer Hardware-Wartung</li>
               <li>SSD- & RAM-Upgrades</li>
-              <li>Komponententausch St. Gallen</li>
+              <li>Komponententausch PC St. Gallen</li>
             </ul>
           </div>
         </div>
@@ -482,11 +526,11 @@
     <section class="section reveal" id="anfrage">
       <div class="card box-bg tilt-effect form-container">
         <div class="card-content">
-          <h2 style="text-align: center;">Anfrage für Abtwil SG senden</h2>
+          <h2 style="text-align: center;">Reparaturanfrage für Abtwil SG senden</h2>
           <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
             <div class="form-group"><label>Name</label><input type="text" name="name" required /></div>
             <div class="form-group"><label>E-Mail</label><input type="email" name="email" required /></div>
-            <div class="form-group"><label>Gerät & Modell</label><input type="text" name="modell" required /></div>
+            <div class="form-group"><label>Gerät & Modell (z.B. iPhone, PC, Tablet)</label><input type="text" name="modell" required /></div>
             <div class="form-group"><label>Defektbeschreibung</label><textarea name="problem" rows="4" required></textarea></div>
             <button type="submit" class="btn call" style="width: 100%; border: none; cursor: pointer;">Anfrage jetzt absenden</button>
           </form>
@@ -551,13 +595,51 @@
       </div>
     </section>
 
-    <section class="section reveal">
+    <section class="section reveal" id="impressum">
       <div class="card box-bg">
-        <h3>Impressum & Garantie</h3>
-        <p><strong>Mujitech</strong> | Reparatur Abtwil SG<br>WhatsApp: +41 76 720 98 32<br>6 Monate Garantie auf Hardware-Reparaturen. Kein Ladenlokal.</p>
+        <h3>Impressum</h3>
+        <div class="legal-text">
+          <p><strong>Mujitech</strong><br>
+          Reparatur-Dienstleistungen Abtwil SG<br>
+          (Kein Ladenlokal - Übergabe nur nach Terminvereinbarung)</p>
+          <p><strong>Kontakt:</strong><br>
+          WhatsApp/Telefon: +41 76 720 98 32<br>
+          E-Mail: info@mujitech.ch</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="agb">
+      <div class="card box-bg">
+        <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
+        <div class="legal-text">
+          <p><strong>1. Geltungsbereich</strong><br>Diese AGB gelten für alle Reparaturaufträge für Handys, Tablets, Laptops und PCs bei Mujitech.</p>
+          <p><strong>2. Gewährleistung / Garantie</strong><br>Wir bieten 6 Monate Garantie auf ausgetauschte Hardware-Komponenten. Von der Garantie ausgeschlossen sind Eigenverschulden (z.B. neue Sturz- oder Wasserschäden).</p>
+          <p><em>(Bitte ergänze hier deine vollständigen, rechtlich geprüften AGB-Texte.)</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="datenschutz">
+      <div class="card box-bg">
+        <h3>Datenschutzerklärung</h3>
+        <div class="legal-text">
+          <p>Der Schutz Ihrer Daten ist uns wichtig. Alle Kundendaten, die über das Kontaktformular oder per WhatsApp übermittelt werden, werden vertraulich behandelt und ausschliesslich zur Abwicklung Ihres Reparaturauftrags verwendet. Wir geben keine Daten an Dritte weiter.</p>
+          <p>Bei der Reparatur von Geräten greifen wir nicht auf persönliche Daten (Fotos, Chats, etc.) zu. Wir empfehlen dennoch, vor der Abgabe des Geräts ein Backup durchzuführen.</p>
+          <p><em>(Bitte ergänze hier deine vollständige Datenschutzerklärung gemäss Schweizer Datenschutzgesetz / DSG.)</em></p>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="#impressum">Impressum</a>
+      <a href="#agb">AGB</a>
+      <a href="#datenschutz">Datenschutz</a>
+    </div>
+    <p style="color: var(--muted); font-size: 13px;">&copy; 2026 Mujitech - Handy, Laptop, PC & Tablet Reparatur St. Gallen. Alle Rechte vorbehalten.</p>
+  </footer>
 
   <div class="floating-contact">
     <a style="background: var(--wa); color: #fff;" href="https://wa.me/41767209832" target="_blank">WhatsApp Chat</a>
