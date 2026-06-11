@@ -15,6 +15,7 @@
   <meta name="language" content="de-CH" />
   <link rel="canonical" href="https://mujitech.ch/" />
 
+  <!-- Open Graph (Social Media & SEO) -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Handy, Tablet, Laptop & PC Reparatur in St. Gallen (Abtwil) | Mujitech" />
   <meta property="og:description" content="Professionelle Hardware-Reparaturen für Smartphones, Tablets und Computer in der Region St. Gallen. Schneller und lokaler Service bei Mujitech." />
@@ -23,6 +24,10 @@
   <meta property="og:locale" content="de_CH" />
   <meta property="og:image" content="https://mujitech.ch/logo.png" />
 
+  <!-- FontAwesome für Icons (Fixierte Buttons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- SEO Local Business Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -31,7 +36,7 @@
     "image": "https://mujitech.ch/logo.png",
     "@id": "https://mujitech.ch",
     "url": "https://mujitech.ch",
-    "telephone": "+41767209832",
+    "telephone": "+41768444673",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
@@ -68,17 +73,23 @@
 
   <style>
     :root {
+      /* Light Theme Colors */
+      --bg-main: #f8f9fa;
       --white: #ffffff;
-      --text: #e0e0e0;
-      --muted: #888890;
-      --line: rgba(255,255,255,0.1);
+      --text-main: #333333;
+      --text-heading: #111111;
+      --muted: #6c757d;
+      --line: rgba(0, 0, 0, 0.08);
+      --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      
       --radius-xl: 32px;
       --radius-lg: 24px;
       --radius-md: 16px;
       --transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-      --gold: #fbbc04; /* Google Star Gold */
+      
+      --gold: #fbbc04;
       --brand-blue: #1e6fff;
-      --brand-cyan: #25F4EE;
+      --brand-cyan: #0dcaf0;
       --wa: #25D366;
       --call: #1e6fff;
       --insta1: #feda75;
@@ -100,8 +111,8 @@
       margin: 0;
       padding: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      color: var(--text);
-      background: #060608;
+      color: var(--text-main);
+      background: var(--bg-main);
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
@@ -111,22 +122,10 @@
     }
 
     /* --- GLOBALE ANIMATIONEN --- */
-    @keyframes floatLevitation {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
-    }
-
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
-      50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.4); }
-      100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.2); }
-    }
-
-    @keyframes animatedBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.1); }
+      50% { box-shadow: 0 0 30px rgba(37, 244, 238, 0.2); }
+      100% { box-shadow: 0 0 15px rgba(30, 111, 255, 0.1); }
     }
 
     @keyframes scrollReviews {
@@ -140,9 +139,8 @@
       z-index: 0;
       pointer-events: none;
       background: 
-        radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.1), transparent 40%),
-        radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.08), transparent 40%);
-      animation: pulseGlow 10s infinite alternate;
+        radial-gradient(circle at 10% 10%, rgba(30, 111, 255, 0.03), transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(37, 244, 238, 0.03), transparent 40%);
     }
 
     #strom-canvas {
@@ -153,7 +151,7 @@
       height: 100vh;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.5;
+      opacity: 0.3;
     }
 
     img, video {
@@ -163,17 +161,17 @@
 
     a { color: inherit; }
 
+    /* HEADER */
     header {
       position: sticky;
       top: 0;
       z-index: 1200;
       -webkit-backdrop-filter: blur(25px);
       backdrop-filter: blur(25px);
-      background: rgba(10, 10, 12, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-bottom: 1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       transition: all var(--transition);
-      -webkit-transform: translateZ(0);
     }
 
     .nav-wrap {
@@ -195,16 +193,16 @@
 
     .logo {
       width: 72px;
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
       transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .logo:hover {
-      transform: translateY(-5px) scale(1.1) rotate(5deg);
+      transform: translateY(-3px) scale(1.05) rotate(5deg);
     }
 
     .brand-text { display: flex; flex-direction: column; gap: 2px; }
-    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: #ffffff; }
+    .brand-title { font-size: 22px; font-weight: 800; letter-spacing: 0.5px; color: var(--text-heading); }
     .brand-sub { font-size: 13px; font-weight: 600; color: var(--muted); }
 
     nav {
@@ -218,55 +216,44 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 700;
-      color: #ffffff;
+      color: var(--text-main);
       padding: 11px 18px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border: 1px solid var(--line);
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       transition: all var(--transition);
     }
 
     nav a:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 12px 24px rgba(30, 111, 255, 0.3);
-      color: var(--brand-cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(30, 111, 255, 0.15);
+      color: var(--brand-blue);
       border-color: var(--brand-blue);
-      background: rgba(30, 111, 255, 0.1);
     }
 
+    /* SECTIONS & CARDS */
     .section {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 40px 18px;
+      padding: 50px 18px;
+      position: relative;
+      z-index: 2;
     }
 
     .box-bg {
       position: relative;
-      background: rgba(25, 25, 30, 0.7);
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: var(--white);
+      border: 1px solid var(--line);
       border-radius: var(--radius-xl);
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+      box-shadow: var(--card-shadow);
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
     }
 
     .box-bg.tilt-effect {
       will-change: transform;
-    }
-
-    .box-bg::before {
-      content: "";
-      position: absolute;
-      inset: -50%;
-      background: linear-gradient(45deg, rgba(30, 111, 255, 0.03), rgba(37, 244, 238, 0.03), rgba(200, 168, 93, 0.02), transparent);
-      background-size: 200% 200%;
-      animation: animatedBackground 10s ease infinite;
-      pointer-events: none;
-      z-index: 0;
     }
 
     .card-content {
@@ -277,7 +264,7 @@
 
     @media (hover: hover) {
       .tilt-effect .card-content {
-        transform: translateZ(30px);
+        transform: translateZ(20px);
       }
       .box-bg {
         transform-style: preserve-3d;
@@ -286,28 +273,28 @@
 
     .card { padding: 45px 35px; }
 
+    /* HERO */
     .hero-contact {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 30px;
+      gap: 40px;
       align-items: stretch;
-      margin-top: 30px;
     }
 
     .hero-copy h1 {
       margin: 0 0 18px 0;
       font-size: 44px;
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.5px;
       font-weight: 800;
-      color: #ffffff;
+      color: var(--text-heading);
     }
 
     .hero-copy p {
       margin: 0 0 20px 0;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #b0b0b0;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--muted);
       max-width: 760px;
     }
 
@@ -315,94 +302,123 @@
 
     .hero-mini-btn {
       text-decoration: none;
-      font-weight: 800;
-      padding: 16px 24px;
+      font-weight: 700;
+      padding: 14px 24px;
       border-radius: 999px;
       color: #fff;
       background: linear-gradient(135deg, var(--brand-blue), #0d4bb5);
-      box-shadow: 0 10px 20px rgba(30, 111, 255, 0.3);
+      box-shadow: 0 8px 16px rgba(30, 111, 255, 0.2);
       transition: all var(--transition);
-      border: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .hero-mini-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(30, 111, 255, 0.3);
     }
 
-    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 10px; }
+    .hero-mini-btn.secondary {
+      background: var(--bg-main);
+      color: var(--text-heading);
+      border: 1px solid var(--line);
+      box-shadow: none;
+    }
+    
+    .hero-mini-btn.secondary:hover {
+      background: #e9ecef;
+    }
+
+    .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
 
     .trust-item {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(0,0,0,0.4);
-      border: 1px solid rgba(255,255,255,0.05);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 16px;
+      border-radius: 16px;
+      background: var(--bg-main);
+      border: 1px solid var(--line);
       font-size: 14px;
-      line-height: 1.6;
-      color: #b0b0b0;
+      line-height: 1.5;
+      color: var(--text-main);
       transition: all 0.3s;
+      text-align: center;
     }
+    
+    .trust-item strong { color: var(--text-heading); display: block; margin-bottom: 4px; }
     
     .trust-item:hover {
       transform: translateY(-5px);
-      background: rgba(255,255,255,0.05);
-      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      border-color: var(--brand-blue);
     }
 
-    .icon { width: 22px; height: 22px; flex: 0 0 22px; color: var(--brand-cyan); }
+    .title { margin: 0 0 20px 0; font-size: 30px; letter-spacing: -0.5px; font-weight: 800; color: var(--text-heading); }
 
-    .title { margin: 0 0 20px 0; font-size: 32px; letter-spacing: -0.5px; font-weight: 800; color: #fff; }
-
+    /* BUTTONS */
     .btn-grid { display: grid; gap: 16px; }
 
     .btn {
       display: flex; align-items: center; justify-content: center; gap: 12px;
-      text-decoration: none; text-align: center; font-size: 17px; font-weight: 800;
-      padding: 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+      text-decoration: none; text-align: center; font-size: 16px; font-weight: 700;
+      padding: 15px; border-radius: 16px; border: none;
       transition: all var(--transition);
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
+    
+    .btn i { font-size: 20px; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
 
-    .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #0b2514; }
-    .btn.call { background: linear-gradient(135deg, #69a6ff, #1e6fff); color: #ffffff; }
-    .btn.instagram { background: linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5)); color: #ffffff; }
-    .btn.tiktok { background: linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2)); color: #ffffff; }
+    .btn.whatsapp { background: linear-gradient(135deg, #4df18b, #25D366); color: #ffffff; }
+    .btn.call { background: linear-gradient(135deg, #69a6ff, #1e6fff); }
+    .btn.instagram { background: linear-gradient(135deg, var(--insta1), var(--insta2), var(--insta3), var(--insta4), var(--insta5)); }
+    .btn.tiktok { background: linear-gradient(135deg, var(--tiktok1), var(--tiktok3) 45%, var(--tiktok2)); }
 
-    .grid-4, .grid-3, .grid-2 { display: grid; gap: 24px; }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    /* GRIDS */
+    .grid-2 { display: grid; gap: 24px; grid-template-columns: repeat(2, 1fr); }
 
-    .mini-card, .service-card, .faq-card { padding: 30px 25px; }
-    .mini-card h3, .service-card h3 { margin: 0 0 15px 0; font-size: 24px; color: #ffffff; }
+    .service-card { padding: 35px; height: 100%; }
+    .service-card h3 { margin: 0 0 15px 0; font-size: 24px; color: var(--text-heading); }
+    .service-card ul { padding-left: 20px; color: var(--muted); line-height: 1.8; margin: 0; }
+    .service-card li { margin-bottom: 8px; }
 
-    /* Kontaktformular */
+    /* FORMULAR */
     .form-container { max-width: 800px; margin: 0 auto; }
     .contact-form { display: flex; flex-direction: column; gap: 20px; }
     .form-group { display: flex; flex-direction: column; gap: 8px; text-align: left; }
-    .form-group label { font-weight: 700; font-size: 15px; color: #fff; }
+    .form-group label { font-weight: 600; font-size: 14px; color: var(--text-heading); }
     .contact-form input, .contact-form select, .contact-form textarea {
-      width: 100%; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff;
+      width: 100%; padding: 15px; border-radius: 12px; background: var(--bg-main); 
+      border: 1px solid var(--line); color: var(--text-main); font-family: inherit;
+      transition: all 0.3s ease;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
+      outline: none; border-color: var(--brand-blue); box-shadow: 0 0 0 3px rgba(30, 111, 255, 0.1);
     }
 
+    /* VIDEO */
     .video-card { max-width: 600px; margin: 0 auto; }
-    .video-frame { position: relative; overflow: hidden; border-radius: 24px; padding: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); }
-    .video-inner video { width: 100%; display: block; object-fit: cover; border-radius: 16px; }
+    .video-frame { position: relative; overflow: hidden; border-radius: 20px; padding: 8px; background: var(--bg-main); border: 1px solid var(--line); }
+    .video-inner video { width: 100%; display: block; object-fit: cover; border-radius: 12px; }
 
-    /* Rezensionen */
+    /* REVIEWS */
     .reviews-slider-container { overflow: hidden; width: 100%; position: relative; padding: 20px 0 40px 0; }
     .reviews-slider-track { display: flex; gap: 24px; width: max-content; animation: scrollReviews 45s linear infinite; }
-    .review-card { width: 380px; height: 320px; flex-shrink: 0; padding: 25px; display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.5s; }
-    .review-avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; color: #fff; }
-    .stars { font-size: 18px; color: var(--gold); }
+    .review-card { width: 360px; flex-shrink: 0; padding: 30px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .review-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+    .review-avatar { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 800; color: #fff; }
+    .review-name { font-weight: 700; color: var(--text-heading); }
+    .stars { font-size: 18px; color: var(--gold); margin-bottom: 10px; }
+    .review-text { color: var(--muted); line-height: 1.6; font-size: 15px; }
 
-    .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+    /* REVEAL ANIMATION */
+    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     
-    /* Footer & Rechtliches */
+    /* FOOTER & RECHTLICHES */
     footer {
       border-top: 1px solid var(--line);
       padding: 40px 18px;
-      margin-top: 60px;
+      margin-top: 40px;
       text-align: center;
-      background: rgba(10, 10, 12, 0.6);
-      -webkit-backdrop-filter: blur(15px);
-      backdrop-filter: blur(15px);
+      background: var(--white);
     }
     .footer-links {
       display: flex;
@@ -412,27 +428,65 @@
       margin-bottom: 20px;
     }
     .footer-links a {
-      color: var(--muted);
+      color: var(--text-main);
       text-decoration: none;
       font-weight: 600;
       transition: color var(--transition);
     }
     .footer-links a:hover {
-      color: var(--brand-cyan);
+      color: var(--brand-blue);
     }
     .legal-text {
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.8;
       color: var(--muted);
     }
+    .legal-text strong { color: var(--text-heading); }
+    .legal-text p { margin-top: 0; margin-bottom: 15px; }
 
+    /* FIXIERTE KONTAKT-BUTTONS */
+    .floating-buttons {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 9999;
+    }
+
+    .float-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      text-decoration: none;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+      color: var(--white);
+    }
+
+    .float-wa { background-color: var(--wa); }
+    .float-call { background-color: var(--brand-blue); }
+
+    /* RESPONSIVE */
     @media (max-width: 1100px) {
-      .hero-contact, .grid-3, .grid-2 { grid-template-columns: 1fr 1fr; }
+      .hero-contact, .grid-2 { grid-template-columns: 1fr; }
     }
     @media (max-width: 780px) {
-      .hero-contact, .grid-3, .grid-2 { grid-template-columns: 1fr; }
       .hero-copy h1 { font-size: 32px; }
-      .floating-contact { right: 15px; left: 15px; bottom: 100px; animation: none; }
+      .trust-grid { grid-template-columns: 1fr; }
+      .floating-buttons { bottom: 20px; right: 20px; }
+      .float-btn { width: 50px; height: 50px; font-size: 24px; }
     }
   </style>
 </head>
@@ -470,23 +524,31 @@
 
           <div class="hero-actions">
             <a class="hero-mini-btn" href="#anfrage">Reparaturanfrage senden</a>
-            <a class="hero-mini-btn" href="https://wa.me/41767209832" style="background: rgba(255, 255, 255, 0.05);">WhatsApp Chat</a>
+            <a class="hero-mini-btn secondary" href="https://wa.me/41768444673">WhatsApp Chat</a>
           </div>
 
           <div class="trust-grid">
-            <div class="trust-item"><strong>6 Monate Garantie</strong><br>auf Hardware</div>
-            <div class="trust-item"><strong>Abtwil SG</strong><br>Ihr lokaler Partner</div>
-            <div class="trust-item"><strong>Schweizweit</strong><br>Einsende-Service</div>
+            <div class="trust-item"><strong>6 Monate Garantie</strong>auf Hardware</div>
+            <div class="trust-item"><strong>Abtwil SG</strong>Ihr lokaler Partner</div>
+            <div class="trust-item"><strong>Schweizweit</strong>Einsende-Service</div>
           </div>
         </div>
 
         <div class="contact-panel card-content">
           <h2 class="title">Direkt-Kontakt</h2>
           <div class="btn-grid">
-            <a class="btn whatsapp" href="https://wa.me/41767209832">WhatsApp schreiben</a>
-            <a class="btn call" href="tel:+41767209832">Jetzt anrufen</a>
-            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/">Instagram</a>
-            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech">TikTok</a>
+            <a class="btn whatsapp" href="https://wa.me/41768444673" target="_blank">
+              <i class="fab fa-whatsapp"></i> WhatsApp schreiben
+            </a>
+            <a class="btn call" href="tel:+41768444673">
+              <i class="fas fa-phone-alt"></i> Jetzt anrufen
+            </a>
+            <a class="btn instagram" href="https://www.instagram.com/mujitech.ch/" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+            <a class="btn tiktok" href="https://www.tiktok.com/@muji.tech" target="_blank">
+              <i class="fab fa-tiktok"></i> TikTok
+            </a>
           </div>
         </div>
       </div>
@@ -494,8 +556,8 @@
 
     <section class="section reveal" id="services">
       <div class="section-head" style="text-align: center; margin-bottom: 40px;">
-        <h2>Unsere Reparatur-Services in St. Gallen</h2>
-        <p>Fachgerechte Hardware-Reparaturen für Apple, Samsung, Computer und Tablets.</p>
+        <h2 class="title">Unsere Reparatur-Services in St. Gallen</h2>
+        <p style="color: var(--muted); font-size: 16px;">Fachgerechte Hardware-Reparaturen für Apple, Samsung, Computer und Tablets.</p>
       </div>
       <div class="grid-2">
         <div class="service-card box-bg tilt-effect">
@@ -526,7 +588,7 @@
     <section class="section reveal" id="anfrage">
       <div class="card box-bg tilt-effect form-container">
         <div class="card-content">
-          <h2 style="text-align: center;">Reparaturanfrage für Abtwil SG senden</h2>
+          <h2 class="title" style="text-align: center;">Reparaturanfrage für Abtwil SG senden</h2>
           <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
             <div class="form-group"><label>Name</label><input type="text" name="name" required /></div>
             <div class="form-group"><label>E-Mail</label><input type="email" name="email" required /></div>
@@ -551,7 +613,7 @@
     </section>
 
     <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
-      <h2 style="text-align: center;">Kundenmeinungen</h2>
+      <h2 class="title" style="text-align: center;">Kundenmeinungen</h2>
       <div class="reviews-slider-container">
         <div class="reviews-slider-track">
           <div class="review-card box-bg">
@@ -597,13 +659,13 @@
 
     <section class="section reveal" id="impressum">
       <div class="card box-bg">
-        <h3>Impressum</h3>
+        <h3 class="title" style="font-size: 24px;">Impressum</h3>
         <div class="legal-text">
           <p><strong>Mujitech</strong><br>
           Reparatur-Dienstleistungen Abtwil SG<br>
           (Kein Ladenlokal - Übergabe nur nach Terminvereinbarung)</p>
           <p><strong>Kontakt:</strong><br>
-          WhatsApp/Telefon: +41 76 720 98 32<br>
+          WhatsApp/Telefon: 076 844 46 73<br>
           E-Mail: info@mujitech.ch</p>
         </div>
       </div>
@@ -611,22 +673,20 @@
 
     <section class="section reveal" id="agb">
       <div class="card box-bg">
-        <h3>Allgemeine Geschäftsbedingungen (AGB)</h3>
+        <h3 class="title" style="font-size: 24px;">Allgemeine Geschäftsbedingungen (AGB)</h3>
         <div class="legal-text">
           <p><strong>1. Geltungsbereich</strong><br>Diese AGB gelten für alle Reparaturaufträge für Handys, Tablets, Laptops und PCs bei Mujitech.</p>
           <p><strong>2. Gewährleistung / Garantie</strong><br>Wir bieten 6 Monate Garantie auf ausgetauschte Hardware-Komponenten. Von der Garantie ausgeschlossen sind Eigenverschulden (z.B. neue Sturz- oder Wasserschäden).</p>
-          <p><em>(Bitte ergänze hier deine vollständigen, rechtlich geprüften AGB-Texte.)</em></p>
         </div>
       </div>
     </section>
 
     <section class="section reveal" id="datenschutz">
       <div class="card box-bg">
-        <h3>Datenschutzerklärung</h3>
+        <h3 class="title" style="font-size: 24px;">Datenschutzerklärung</h3>
         <div class="legal-text">
           <p>Der Schutz Ihrer Daten ist uns wichtig. Alle Kundendaten, die über das Kontaktformular oder per WhatsApp übermittelt werden, werden vertraulich behandelt und ausschliesslich zur Abwicklung Ihres Reparaturauftrags verwendet. Wir geben keine Daten an Dritte weiter.</p>
           <p>Bei der Reparatur von Geräten greifen wir nicht auf persönliche Daten (Fotos, Chats, etc.) zu. Wir empfehlen dennoch, vor der Abgabe des Geräts ein Backup durchzuführen.</p>
-          <p><em>(Bitte ergänze hier deine vollständige Datenschutzerklärung gemäss Schweizer Datenschutzgesetz / DSG.)</em></p>
         </div>
       </div>
     </section>
@@ -638,23 +698,28 @@
       <a href="#agb">AGB</a>
       <a href="#datenschutz">Datenschutz</a>
     </div>
-    <p style="color: var(--muted); font-size: 13px;">&copy; 2026 Mujitech - Handy, Laptop, PC & Tablet Reparatur St. Gallen. Alle Rechte vorbehalten.</p>
+    <p style="color: var(--muted); font-size: 14px;">&copy; 2026 Mujitech - Handy, Laptop, PC & Tablet Reparatur St. Gallen. Alle Rechte vorbehalten.</p>
   </footer>
 
-  <div class="floating-contact">
-    <a style="background: var(--wa); color: #fff;" href="https://wa.me/41767209832" target="_blank">WhatsApp Chat</a>
-    <a style="background: var(--brand-blue); color: #fff;" href="tel:+41767209832">Anrufen</a>
+  <!-- FIXIERTE BUTTONS UNTEN RECHTS -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/41768444673" class="float-btn float-wa" target="_blank" aria-label="WhatsApp Chat öffnen">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+41768444673" class="float-btn float-call" aria-label="Jetzt anrufen">
+      <i class="fas fa-phone-alt"></i>
+    </a>
   </div>
 
   <script>
-    // 3D Tilt Effekt
+    // 3D Tilt Effekt (Dezent für Professionalität)
     if (window.matchMedia("(hover: hover)").matches) {
       document.querySelectorAll('.tilt-effect').forEach(card => {
         card.addEventListener('mousemove', e => {
           const rect = card.getBoundingClientRect();
-          const rotateX = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -6;
-          const rotateY = ((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 6;
-          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          const rotateX = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -3;
+          const rotateY = ((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 3;
+          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
         });
         card.addEventListener('mouseleave', () => {
           card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
@@ -668,21 +733,21 @@
     }, { threshold: 0.1 });
     document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-    // Strom-Canvas
+    // Strom-Canvas (Farblich an den hellen Hintergrund angepasst)
     const canvas = document.getElementById('strom-canvas');
     const ctx = canvas.getContext('2d');
     let particles = [];
     function init() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      particles = Array.from({length: 60}, () => ({
+      particles = Array.from({length: 40}, () => ({
         x: Math.random()*canvas.width, y: Math.random()*canvas.height,
-        vx: (Math.random()-0.5)*1.5, vy: (Math.random()-0.5)*1.5
+        vx: (Math.random()-0.5)*1, vy: (Math.random()-0.5)*1
       }));
     }
     function animate() {
       ctx.clearRect(0,0,canvas.width, canvas.height);
-      ctx.fillStyle = "#25F4EE";
+      ctx.fillStyle = "#1e6fff"; /* Professional Blue */
       particles.forEach(p => {
         p.x += p.vx; p.y += p.vy;
         if(p.x<0 || p.x>canvas.width) p.vx*=-1;
