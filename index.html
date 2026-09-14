@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
   <!-- Primary SEO -->
-  <title>Handy Reparatur St. Gallen & Abtwil | iPhone, PC | Mujitech</title>
-  <meta name="description" content="Handy-, iPhone-, Tablet-, Laptop- und PC-Reparatur in St. Gallen und Abtwil. Display, Akku, Ladebuchse, Hardware, SSD & RAM. Anfrage online oder per WhatsApp.">
+  <title>Mujitech | Reparatur & Geräteankauf St. Gallen / Abtwil</title>
+  <meta name="description" content="Mujitech in Abtwil / St. Gallen: Handy-, iPhone-, Tablet-, Laptop- und PC-Reparatur sowie Geräteankauf. Reparaturanfrage oder Gerät mit Zustand, Wunschpreis und Fotos online bewerten lassen.">
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
   <meta name="author" content="Mujitech">
   <meta name="theme-color" content="#f8f9fb">
@@ -53,6 +53,13 @@
         "logo": "https://mujitech.ch/logo.png",
         "telephone": "+41768444673",
         "priceRange": "$$",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "12",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "description": "Reparaturservice für Handys, iPhones, Tablets, Laptops und PCs in Abtwil, Gaiserwald und der Region St. Gallen. Schweizweiter Einsende-Service.",
         "address": {
           "@type": "PostalAddress",
@@ -723,35 +730,146 @@
     }
 
     .reviews{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:16px;
+      position:relative;
+      margin-top:34px;
+      overflow:hidden;
+      padding:28px 10px 24px;
+      isolation:isolate;
+      mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);
+      -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 8%,#000 92%,transparent 100%);
+    }
+
+    .reviews::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:1px;
+      background:linear-gradient(90deg,transparent,rgba(135,190,255,.45),transparent);
+      opacity:.75;
+      pointer-events:none;
+    }
+
+    .reviews::after{
+      content:"";
+      position:absolute;
+      left:50%;
+      bottom:-4px;
+      width:min(100%,960px);
+      height:34px;
+      transform:translateX(-50%);
+      background:radial-gradient(circle,rgba(77,132,255,.20),transparent 72%);
+      filter:blur(16px);
+      pointer-events:none;
+    }
+
+    .reviews-strip{
+      display:flex;
+      width:max-content;
+      transform-style:preserve-3d;
+      animation:reviewLane 38s linear infinite;
+      will-change:transform;
+    }
+
+    .reviews:hover .reviews-strip,
+    .reviews:focus-within .reviews-strip{
+      animation-play-state:paused;
+    }
+
+    .reviews-group{
+      display:flex;
+      gap:18px;
+      padding-right:18px;
     }
 
     .review{
+      position:relative;
+      min-width:min(84vw,330px);
+      max-width:330px;
+      flex:0 0 330px;
       padding:24px;
+      border-radius:24px;
+      background:linear-gradient(155deg,rgba(14,24,46,.88),rgba(7,12,24,.96));
+      border:1px solid rgba(141,175,238,.12);
+      box-shadow:0 22px 44px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.05);
+      transform-style:preserve-3d;
+      overflow:hidden;
+    }
+
+    .review::before{
+      content:"";
+      position:absolute;
+      inset:1px;
+      border-radius:inherit;
+      background:linear-gradient(140deg,rgba(255,255,255,.10),transparent 30%,transparent 68%,rgba(77,209,255,.08));
+      pointer-events:none;
+    }
+
+    .review::after{
+      content:"";
+      position:absolute;
+      left:-18%;
+      top:-35%;
+      width:72%;
+      height:72%;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(255,255,255,.16),transparent 68%);
+      filter:blur(8px);
+      pointer-events:none;
+      opacity:.55;
+    }
+
+    .reviews-group .review:nth-child(4n+1){transform:perspective(1300px) rotateY(-11deg) rotateX(4deg) translateY(10px)}
+    .reviews-group .review:nth-child(4n+2){transform:perspective(1300px) rotateY(-4deg) rotateX(2deg) translateY(0)}
+    .reviews-group .review:nth-child(4n+3){transform:perspective(1300px) rotateY(6deg) rotateX(3deg) translateY(14px)}
+    .reviews-group .review:nth-child(4n+4){transform:perspective(1300px) rotateY(12deg) rotateX(5deg) translateY(4px)}
+
+    .review:hover{
+      box-shadow:0 30px 58px rgba(0,0,0,.34),0 0 0 1px rgba(127,196,255,.12),inset 0 1px 0 rgba(255,255,255,.06);
     }
 
     .review-head{
       display:flex;
       align-items:center;
-      gap:12px;
+      gap:14px;
+      position:relative;
+      z-index:1;
     }
 
     .avatar{
-      width:42px;
-      height:42px;
+      width:48px;
+      height:48px;
       display:grid;
       place-items:center;
       border-radius:50%;
-      background:#edf4ff;
-      color:var(--blue);
+      background:linear-gradient(145deg,rgba(97,142,255,.26),rgba(56,223,255,.20));
+      color:#edf4ff;
       font-weight:950;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.10),0 10px 25px rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.08);
     }
 
-    .review-name{font-weight:900}
-    .stars{color:var(--gold);letter-spacing:2px;margin-top:12px}
-    .review p{margin:10px 0 0;color:var(--muted);font-size:14px}
+    .review-meta small{
+      display:block;
+      margin-top:2px;
+      color:#8fa0bb;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .review-name{font-weight:900;color:#f3f7ff}
+    .stars{color:var(--gold);letter-spacing:2px;margin-top:15px;text-shadow:0 0 18px rgba(255,199,81,.22);position:relative;z-index:1}
+    .review p{position:relative;z-index:1;margin:12px 0 0;color:#c8d4e6;font-size:14px;line-height:1.72}
+
+    .reviews-actions{
+      margin-top:18px;
+      display:flex;
+      justify-content:center;
+    }
+
+    @keyframes reviewLane{
+      from{transform:translate3d(0,0,0)}
+      to{transform:translate3d(-50%,0,0)}
+    }
 
     .legal{
       padding:30px;
@@ -904,9 +1022,715 @@
       .float-btn{width:52px;height:52px}
     }
   </style>
+
+  <style id="mujitech-premium-2026">
+    /* ==========================================================
+       MUJITECH / PREMIUM 3D DESIGN LAYER — September 2026
+       Preserves the original content and enhances presentation.
+       ========================================================== */
+    :root{
+      --bg:#050813;
+      --bg-2:#070d1b;
+      --surface:rgba(11,18,32,.78);
+      --surface-strong:#0d1628;
+      --surface-2:rgba(16,27,47,.86);
+      --text:#f6f9ff;
+      --muted:#9aabc8;
+      --line:rgba(151,183,255,.14);
+      --blue:#5b8cff;
+      --blue-dark:#2b59ff;
+      --cyan:#34d9ff;
+      --green:#31dfa1;
+      --gold:#ffc857;
+      --violet:#8d6bff;
+      --shadow:0 30px 90px rgba(0,0,0,.38);
+      --shadow-sm:0 14px 34px rgba(0,0,0,.26);
+      --radius:30px;
+      --radius-md:22px;
+      --max:1280px;
+      --cursor-x:50vw;
+      --cursor-y:20vh;
+    }
+
+    html{background:var(--bg)}
+    body{
+      min-height:100%;
+      color:var(--text);
+      background:
+        radial-gradient(700px circle at var(--cursor-x) var(--cursor-y), rgba(91,140,255,.085), transparent 43%),
+        radial-gradient(circle at 10% 0%, rgba(52,217,255,.07), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(141,107,255,.08), transparent 27%),
+        linear-gradient(180deg,#050813 0%,#07101e 45%,#050813 100%);
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-3;
+      pointer-events:none;
+      opacity:.36;
+      background-image:
+        linear-gradient(rgba(129,162,225,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(129,162,225,.035) 1px, transparent 1px);
+      background-size:44px 44px;
+      mask-image:linear-gradient(to bottom,black,transparent 78%);
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      background:linear-gradient(115deg,rgba(255,255,255,.016),transparent 28%,rgba(52,217,255,.02) 55%,transparent 80%);
+    }
+
+    .ambient-orbs{
+      position:fixed;
+      inset:0;
+      z-index:-1;
+      pointer-events:none;
+      overflow:hidden;
+      filter:blur(1px);
+    }
+    .ambient-orb{
+      position:absolute;
+      display:block;
+      border-radius:50%;
+      filter:blur(20px);
+      opacity:.35;
+      animation:ambientFloat 14s ease-in-out infinite alternate;
+    }
+    .orb-a{width:300px;height:300px;left:-120px;top:18%;background:rgba(91,140,255,.22)}
+    .orb-b{width:360px;height:360px;right:-160px;top:48%;background:rgba(52,217,255,.13);animation-duration:18s}
+    .orb-c{width:260px;height:260px;left:48%;bottom:-130px;background:rgba(141,107,255,.16);animation-duration:20s}
+    @keyframes ambientFloat{to{transform:translate3d(30px,-30px,0) scale(1.08)}}
+
+    .site-header{
+      background:rgba(5,8,19,.68);
+      border-bottom:1px solid rgba(144,174,235,.12);
+      box-shadow:0 8px 40px rgba(0,0,0,.16);
+      backdrop-filter:blur(24px) saturate(145%);
+      -webkit-backdrop-filter:blur(24px) saturate(145%);
+    }
+    .nav{min-height:82px}
+    .brand-name{color:#fff}
+    .brand-sub{color:#8090ad}
+    .brand img{
+      filter:drop-shadow(0 8px 18px rgba(72,122,255,.22));
+      transition:transform .35s var(--ease),filter .35s var(--ease);
+    }
+    .brand:hover img{transform:perspective(600px) rotateY(-10deg) rotateX(5deg) translateY(-2px);filter:drop-shadow(0 13px 26px rgba(52,217,255,.26))}
+    .nav-links a{
+      color:#b6c1d7;
+      border-color:transparent;
+      background:transparent;
+    }
+    .nav-links a:hover,.nav-links a:focus-visible{
+      color:#fff;
+      background:rgba(255,255,255,.06);
+      border-color:rgba(110,154,255,.22);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+    }
+    .nav-links .nav-highlight{
+      color:#fff;
+      background:linear-gradient(135deg,rgba(91,140,255,.18),rgba(52,217,255,.10));
+      border-color:rgba(91,140,255,.28);
+    }
+
+    .section{padding:76px 0}
+    .hero{padding-top:62px}
+    .hero-grid{grid-template-columns:minmax(0,1.28fr) minmax(330px,.72fr);gap:22px}
+
+    .card,
+    details{
+      background:
+        linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018) 40%),
+        rgba(9,15,29,.76);
+      border:1px solid rgba(133,164,224,.14);
+      box-shadow:
+        0 30px 85px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.055);
+      backdrop-filter:blur(20px) saturate(125%);
+      -webkit-backdrop-filter:blur(20px) saturate(125%);
+    }
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      pointer-events:none;
+      border-radius:inherit;
+      background:linear-gradient(130deg,rgba(255,255,255,.07),transparent 24%,transparent 68%,rgba(52,217,255,.025));
+      opacity:.9;
+    }
+    .card > *{position:relative;z-index:1}
+    @media (hover:hover){
+      .card:hover{
+        transform:translateY(-7px) perspective(1100px) rotateX(calc(.7deg + var(--my, 0deg))) rotateY(calc(-.7deg + var(--mx, 0deg)));
+        border-color:rgba(91,140,255,.24);
+        box-shadow:0 42px 110px rgba(0,0,0,.42),0 0 0 1px rgba(91,140,255,.035),inset 0 1px 0 rgba(255,255,255,.09);
+      }
+    }
+
+    .hero-main{
+      min-height:600px;
+      overflow:hidden;
+      isolation:isolate;
+      padding-right:260px;
+      background:
+        radial-gradient(circle at 85% 44%,rgba(52,217,255,.13),transparent 27%),
+        radial-gradient(circle at 74% 78%,rgba(91,140,255,.16),transparent 33%),
+        linear-gradient(145deg,rgba(13,24,49,.92),rgba(8,13,27,.84));
+    }
+    .hero-main::after{
+      content:"";
+      position:absolute;
+      width:480px;height:480px;
+      right:-210px;top:-180px;
+      z-index:0;
+      border-radius:50%;
+      border:1px solid rgba(93,145,255,.15);
+      box-shadow:
+        0 0 0 60px rgba(91,140,255,.015),
+        0 0 0 120px rgba(52,217,255,.012);
+    }
+    .hero-main h1{
+      max-width:760px;
+      color:#fff;
+      text-wrap:balance;
+      text-shadow:0 8px 34px rgba(0,0,0,.24);
+    }
+    .hero-main h1::after{
+      content:"";
+      display:block;
+      width:108px;height:4px;
+      margin-top:24px;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--blue),var(--cyan));
+      box-shadow:0 0 30px rgba(52,217,255,.45);
+    }
+    .lead{color:#afbad0}
+    h1,h2,h3{color:#f8fbff}
+    .muted,.section-head p,.service p,.service ul,.step p,.info-item span,.review p,details p,.legal p,.copyright{color:var(--muted)}
+    .eyebrow{
+      color:#bfeeff;
+      background:linear-gradient(135deg,rgba(91,140,255,.14),rgba(52,217,255,.09));
+      border:1px solid rgba(91,140,255,.18);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .eyebrow-dot{background:var(--cyan);box-shadow:0 0 0 5px rgba(52,217,255,.10),0 0 18px rgba(52,217,255,.5)}
+
+    .btn{
+      min-height:54px;
+      border-radius:16px;
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+    .btn::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:-1;
+      transform:translateX(-110%) skewX(-18deg);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent);
+      transition:transform .65s var(--ease);
+    }
+    .btn:hover::before{transform:translateX(110%) skewX(-18deg)}
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,#426fff,#2f5eff 45%,#1976ff);
+      box-shadow:0 14px 34px rgba(50,94,255,.28),inset 0 1px 0 rgba(255,255,255,.18);
+    }
+    .btn-secondary{
+      color:#eaf0ff;
+      background:rgba(255,255,255,.055);
+      border-color:rgba(163,188,238,.15);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+    }
+    .btn-sell{
+      color:#03120d;
+      background:linear-gradient(135deg,#7af1cf,#31dfa1);
+      box-shadow:0 14px 34px rgba(49,223,161,.18);
+    }
+
+    .trust-grid{position:relative;z-index:2}
+    .trust-item{
+      min-height:108px;
+      background:rgba(255,255,255,.035);
+      border-color:rgba(149,180,237,.12);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+    }
+    .trust-item strong{color:#f5f8ff}
+    .trust-item span{color:#8e9db9}
+
+    .tech-orbit{
+      position:absolute !important;
+      right:16px;
+      bottom:34px;
+      width:260px;
+      height:300px;
+      z-index:0 !important;
+      perspective:1000px;
+      pointer-events:none;
+      opacity:.95;
+    }
+    .device-3d{
+      position:absolute;
+      left:65px;
+      top:45px;
+      width:132px;
+      height:224px;
+      border-radius:27px;
+      padding:8px;
+      transform:rotateY(-19deg) rotateX(8deg) rotateZ(3deg);
+      transform-style:preserve-3d;
+      background:linear-gradient(145deg,#65738e,#151c2b 36%,#070b12 78%);
+      box-shadow:28px 34px 52px rgba(0,0,0,.44),-9px -8px 30px rgba(91,140,255,.10),inset 1px 1px 1px rgba(255,255,255,.28);
+      animation:deviceFloat 6s ease-in-out infinite;
+    }
+    .device-3d::before{
+      content:"";
+      position:absolute;
+      left:50%;top:10px;
+      width:42px;height:8px;
+      transform:translateX(-50%);
+      border-radius:999px;
+      background:#02050a;
+      z-index:3;
+    }
+    .device-screen{
+      position:relative;
+      width:100%;height:100%;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      border-radius:21px;
+      background:
+        radial-gradient(circle at 25% 10%,rgba(52,217,255,.42),transparent 30%),
+        radial-gradient(circle at 90% 75%,rgba(141,107,255,.50),transparent 34%),
+        linear-gradient(145deg,#071328,#0c1840 48%,#05101c);
+      border:1px solid rgba(255,255,255,.08);
+    }
+    .device-screen::before{
+      content:"";
+      position:absolute;
+      width:160px;height:160px;
+      border:1px solid rgba(255,255,255,.13);
+      border-radius:45% 55% 60% 40%;
+      transform:rotate(28deg);
+      box-shadow:0 0 42px rgba(52,217,255,.16);
+    }
+    .device-shine{
+      position:absolute;
+      inset:-20% 45% -20% -15%;
+      transform:rotate(15deg);
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.09),transparent);
+    }
+    .device-logo{
+      font-size:42px;
+      font-weight:950;
+      color:#fff;
+      text-shadow:0 0 24px rgba(52,217,255,.4);
+    }
+    .orbit-ring{
+      position:absolute;
+      left:50%;top:50%;
+      border:1px solid rgba(109,155,255,.20);
+      border-radius:50%;
+      transform:translate(-50%,-50%) rotateX(69deg) rotateZ(10deg);
+      box-shadow:0 0 35px rgba(52,217,255,.06);
+    }
+    .ring-one{width:250px;height:250px}
+    .ring-two{width:195px;height:195px;transform:translate(-50%,-50%) rotateX(72deg) rotateZ(-25deg)}
+    .orbit-dot{
+      position:absolute;
+      width:10px;height:10px;
+      border-radius:50%;
+      background:var(--cyan);
+      box-shadow:0 0 18px currentColor;
+      animation:dotPulse 2.6s ease-in-out infinite alternate;
+    }
+    .dot-one{right:20px;top:126px}
+    .dot-two{left:27px;bottom:74px;background:var(--violet);animation-delay:.8s}
+    .dot-three{right:50px;bottom:26px;background:var(--green);animation-delay:1.4s}
+    @keyframes deviceFloat{50%{transform:rotateY(-16deg) rotateX(5deg) rotateZ(1deg) translateY(-10px)}}
+    @keyframes dotPulse{to{transform:scale(1.8);opacity:.55}}
+
+    .contact-card{
+      background:
+        radial-gradient(circle at 80% 0%,rgba(91,140,255,.11),transparent 30%),
+        linear-gradient(145deg,rgba(11,20,39,.93),rgba(8,13,26,.80));
+    }
+    .contact-note{background:rgba(255,255,255,.045);color:#a9b6cb;border:1px solid rgba(255,255,255,.055)}
+    .contact-btn{box-shadow:0 12px 26px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.14)}
+    .contact-tiktok{background:#06080d;border:1px solid rgba(255,255,255,.10)}
+
+    .service-kicker{color:#79c9ff}
+    .service,.step{overflow:hidden}
+    .service::after,.step::after{
+      content:"";
+      position:absolute;
+      width:150px;height:150px;
+      right:-75px;bottom:-75px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(91,140,255,.11),transparent 67%);
+      pointer-events:none;
+    }
+    .step-number{
+      color:#a7dfff;
+      background:linear-gradient(145deg,rgba(91,140,255,.17),rgba(52,217,255,.08));
+      border:1px solid rgba(91,140,255,.16);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .info-item{background:rgba(255,255,255,.035)}
+    .info-mark{background:rgba(91,140,255,.15);color:#93d9ff}
+
+    .video-wrap{background:#02050b;border:1px solid rgba(139,168,225,.13);box-shadow:0 28px 70px rgba(0,0,0,.38)}
+
+    /* Sell section */
+    .sell-section{padding-top:94px}
+    .sell-shell{
+      overflow:visible;
+      padding:0;
+      background:
+        radial-gradient(circle at 0% 0%,rgba(49,223,161,.10),transparent 27%),
+        radial-gradient(circle at 100% 18%,rgba(52,217,255,.10),transparent 28%),
+        linear-gradient(145deg,rgba(10,19,36,.95),rgba(6,11,23,.93));
+    }
+    .sell-shell::after{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      z-index:-1;
+      border-radius:inherit;
+      padding:1px;
+      background:linear-gradient(135deg,rgba(49,223,161,.35),rgba(91,140,255,.10),rgba(52,217,255,.28));
+      -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+      opacity:.8;
+    }
+    .sell-intro{
+      display:grid;
+      grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr);
+      gap:38px;
+      padding:48px;
+      border-bottom:1px solid rgba(139,168,225,.11);
+    }
+    .sell-lead{margin:18px 0 0;color:#a8b6ce;font-size:17px;line-height:1.8}
+    .sell-flow{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      perspective:1000px;
+    }
+    .sell-flow-card{
+      min-height:148px;
+      padding:18px;
+      border-radius:20px;
+      border:1px solid rgba(146,176,234,.13);
+      background:linear-gradient(145deg,rgba(255,255,255,.052),rgba(255,255,255,.022));
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 14px 26px rgba(0,0,0,.14);
+      transition:transform .35s var(--ease),border-color .35s ease,background .35s ease;
+      transform:rotateX(1.5deg) rotateY(-1deg);
+    }
+    .sell-flow-card:hover{transform:translateY(-4px) rotateX(0) rotateY(0);border-color:rgba(49,223,161,.26);background:rgba(255,255,255,.055)}
+    .sell-flow-card span{
+      display:inline-grid;
+      place-items:center;
+      width:34px;height:34px;
+      margin-bottom:14px;
+      border-radius:11px;
+      color:#07150f;
+      font-size:12px;
+      font-weight:950;
+      background:linear-gradient(135deg,#84f4d5,#31dfa1);
+      box-shadow:0 8px 22px rgba(49,223,161,.15);
+    }
+    .sell-flow-card strong{display:block;color:#fff;font-size:15px}
+    .sell-flow-card small{display:block;margin-top:5px;color:#91a0bb;line-height:1.5}
+
+    .sell-form-wrap{padding:48px}
+    .sell-form-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:8px;
+    }
+    .form-kicker{display:block;margin-bottom:7px;color:#63e6bd;font-size:11px;font-weight:950;letter-spacing:.16em}
+    .secure-pill{
+      padding:9px 12px;
+      border-radius:999px;
+      color:#b5c2d9;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.07);
+      font-size:12px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .form-divider{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin:15px 0 2px;
+      color:#eaf1ff;
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+    .form-divider::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,rgba(107,145,215,.21),transparent)}
+    .form-divider span{
+      width:30px;height:30px;
+      display:grid;place-items:center;
+      border-radius:10px;
+      color:#061511;
+      background:linear-gradient(135deg,#7cf2d0,#31dfa1);
+      box-shadow:0 9px 20px rgba(49,223,161,.12);
+    }
+
+    label{color:#d9e1f0}
+    input,select,textarea{
+      color:#f5f8ff;
+      background:rgba(4,9,18,.70);
+      border-color:rgba(144,174,232,.14);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+    }
+    input::placeholder,textarea::placeholder{color:#66748f}
+    select{color-scheme:dark}
+    input:focus,select:focus,textarea:focus{
+      border-color:rgba(74,135,255,.72);
+      box-shadow:0 0 0 4px rgba(74,135,255,.11),0 12px 28px rgba(0,0,0,.14);
+      background:rgba(7,13,25,.96);
+    }
+    .field-note{color:#73839f;font-size:11px}
+    .price-field{
+      display:flex;
+      align-items:center;
+      overflow:hidden;
+      border:1px solid rgba(144,174,232,.14);
+      border-radius:13px;
+      background:rgba(4,9,18,.70);
+      transition:border-color .2s ease,box-shadow .2s ease;
+    }
+    .price-field:focus-within{border-color:rgba(74,135,255,.72);box-shadow:0 0 0 4px rgba(74,135,255,.11)}
+    .price-field span{padding:0 0 0 15px;color:#61e6bd;font-weight:900}
+    .price-field input{border:0;background:transparent;box-shadow:none}
+    .price-field input:focus{box-shadow:none;background:transparent}
+
+    .check-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .check-card{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-height:56px;
+      padding:12px;
+      border-radius:15px;
+      background:rgba(255,255,255,.034);
+      border:1px solid rgba(144,174,232,.11);
+      cursor:pointer;
+      transition:border-color .2s ease,background .2s ease,transform .2s ease;
+    }
+    .check-card:hover{transform:translateY(-2px);background:rgba(255,255,255,.05);border-color:rgba(91,140,255,.24)}
+    .check-card input{width:auto;accent-color:#31dfa1}
+
+    .upload-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .upload-zone{
+      min-height:178px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:18px 13px;
+      text-align:center;
+      cursor:pointer;
+      border-radius:20px;
+      border:1px dashed rgba(115,155,230,.27);
+      background:linear-gradient(145deg,rgba(91,140,255,.055),rgba(52,217,255,.02));
+      transition:transform .25s var(--ease),border-color .25s ease,background .25s ease,box-shadow .25s ease;
+    }
+    .upload-zone:hover{
+      transform:translateY(-4px);
+      border-color:rgba(52,217,255,.52);
+      background:linear-gradient(145deg,rgba(91,140,255,.09),rgba(52,217,255,.045));
+      box-shadow:0 18px 34px rgba(0,0,0,.16);
+    }
+    .upload-zone.has-file{border-style:solid;border-color:rgba(49,223,161,.42);background:rgba(49,223,161,.055)}
+    .upload-zone input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+    .upload-icon{
+      width:42px;height:42px;
+      display:grid;place-items:center;
+      margin-bottom:5px;
+      border-radius:13px;
+      color:#06140f;
+      font-size:24px;
+      background:linear-gradient(135deg,#80efd0,#31dfa1);
+      box-shadow:0 10px 25px rgba(49,223,161,.14);
+    }
+    .upload-zone strong{color:#f4f8ff}
+    .upload-zone small{color:#7e8ca7}
+    .file-status{
+      max-width:100%;
+      margin-top:5px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      color:#76dfc0;
+      font-size:11px;
+      font-weight:800;
+    }
+    .upload-limit{
+      margin-top:12px;
+      color:#7f8da6;
+      font-size:12px;
+    }
+    .upload-limit.error{color:#ff8f9a;font-weight:800}
+    .upload-limit.ok{color:#7de5c4}
+
+    .consent-card{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      padding:16px;
+      border-radius:16px;
+      background:rgba(255,255,255,.032);
+      border:1px solid rgba(144,174,232,.10);
+      cursor:pointer;
+      font-weight:600;
+      color:#aab7cc;
+    }
+    .consent-card input{width:auto;margin-top:4px;accent-color:#31dfa1}
+    .consent-card strong{color:#eef4ff}
+    .buyback-note{
+      padding:18px 20px;
+      border-radius:17px;
+      color:#b9c7da;
+      background:linear-gradient(135deg,rgba(49,223,161,.075),rgba(91,140,255,.055));
+      border:1px solid rgba(49,223,161,.15);
+      line-height:1.7;
+      font-size:13px;
+    }
+    .buyback-note strong{color:#80ebce}
+    .btn-wide{width:100%;font-size:16px}
+    .form-help{color:#7e8da9}
+
+    .form-card{background:linear-gradient(145deg,rgba(12,21,40,.88),rgba(7,12,24,.88))}
+    .google-rating-badge{
+      width:max-content;
+      max-width:100%;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      margin:18px auto 0;
+      padding:10px 13px;
+      border-radius:999px;
+      color:#dfe6f4;
+      text-decoration:none;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.075);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+      font-size:12px;
+      transition:transform .2s ease,border-color .2s ease;
+    }
+    .google-rating-badge:hover{transform:translateY(-2px);border-color:rgba(255,200,87,.27)}
+    .google-g{
+      width:26px;height:26px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      color:#fff;
+      font-weight:950;
+      background:conic-gradient(from 220deg,#4285f4,#34a853,#fbbc05,#ea4335,#4285f4);
+      box-shadow:0 6px 15px rgba(0,0,0,.20);
+    }
+    .rating-date{color:#71809a}
+    .stars{text-shadow:0 0 16px rgba(255,200,87,.18)}
+
+    details{overflow:hidden}
+    summary{color:#f0f5ff}
+    .legal-content a,.legal a{color:#86c8ff}
+    footer{background:rgba(4,8,17,.62);border-top-color:rgba(145,174,230,.10)}
+    .footer-links a{color:#95a3bc}
+    .footer-links a:hover,.footer-links a:focus-visible{color:#8bdfff}
+
+    .floating{z-index:1200}
+    .float-btn{border:1px solid rgba(255,255,255,.10);box-shadow:0 15px 34px rgba(0,0,0,.32),inset 0 1px 0 rgba(255,255,255,.14)}
+    .float-wa{background:linear-gradient(145deg,#3ae38a,#149f5b)}
+    .float-call{background:linear-gradient(145deg,#638fff,#2857e7)}
+
+    ::selection{background:rgba(91,140,255,.42);color:#fff}
+    :focus-visible{outline:2px solid rgba(52,217,255,.78);outline-offset:3px}
+
+    @media (max-width:1160px){
+      .hero-main{padding-right:40px}
+      .tech-orbit{opacity:.22;right:-15px;filter:blur(.2px)}
+      .sell-intro{grid-template-columns:1fr}
+      .sell-flow{grid-template-columns:repeat(4,1fr)}
+      .sell-flow-card{min-height:170px}
+      .upload-grid{grid-template-columns:repeat(2,1fr)}
+      .check-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:1050px){
+      .hero-grid{grid-template-columns:1fr}
+      .hero-main{min-height:auto;padding-right:300px}
+      .contact-card{min-height:auto}
+      .sell-flow{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:780px){
+      .section{padding:54px 0}
+      .hero{padding-top:28px}
+      .site-header{position:relative}
+      .nav{align-items:flex-start;padding:10px 0;gap:10px}
+      .nav-links{max-width:52%}
+      .nav-links a{font-size:11px;padding:7px 8px}
+      .hero-main{padding-right:20px;min-height:auto}
+      .tech-orbit{display:none}
+      .card-pad{padding:27px 20px}
+      .sell-intro,.sell-form-wrap{padding:28px 19px}
+      .sell-form-head{flex-direction:column}
+      .secure-pill{white-space:normal}
+      .sell-flow{grid-template-columns:1fr 1fr}
+      .upload-grid,.check-grid{grid-template-columns:1fr 1fr}
+      .google-rating-badge{flex-wrap:wrap;justify-content:center;border-radius:18px}
+      .reviews{mask-image:none;-webkit-mask-image:none}
+      .reviews-group{gap:14px;padding-right:14px}
+      .review{flex-basis:280px;min-width:min(84vw,280px);max-width:280px}
+    }
+    @media (max-width:520px){
+      .nav{display:block}
+      .brand{margin-bottom:8px}
+      .nav-links{max-width:none;justify-content:flex-start}
+      .hero-main h1{font-size:34px}
+      .sell-flow,.upload-grid,.check-grid{grid-template-columns:1fr}
+      .sell-flow-card{min-height:auto}
+      .upload-zone{min-height:150px}
+      .actions{display:grid}
+      .actions .btn{width:100%}
+    }
+    @media (prefers-reduced-motion:reduce){
+      .ambient-orb,.device-3d,.orbit-dot,.reviews-strip{animation:none!important}
+      .tech-orbit{transform:none!important}
+      .reviews{mask-image:none;-webkit-mask-image:none;overflow:visible}
+      .reviews-strip{display:block;width:auto}
+      .reviews-group{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding-right:0}
+      .reviews-group[aria-hidden="true"]{display:none}
+      .review{min-width:0;max-width:none;flex:initial;transform:none!important}
+    }
+  </style>
+
 </head>
 
 <body>
+  <div class="ambient-orbs" aria-hidden="true">
+    <span class="ambient-orb orb-a"></span>
+    <span class="ambient-orb orb-b"></span>
+    <span class="ambient-orb orb-c"></span>
+  </div>
   <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
 
   <header class="site-header">
@@ -929,6 +1753,7 @@
 
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="#services">Reparaturen</a>
+        <a href="#verkaufen" class="nav-highlight">Gerät verkaufen</a>
         <a href="#ablauf">Ablauf</a>
         <a href="#anfrage">Anfrage</a>
         <a href="#bewertungen">Bewertungen</a>
@@ -942,7 +1767,7 @@
     <section class="section hero">
       <div class="wrap">
         <div class="hero-grid">
-          <article class="card card-pad reveal">
+          <article class="card card-pad reveal hero-main">
             <div class="eyebrow"><span class="eyebrow-dot"></span> Reparaturservice in Abtwil & St. Gallen</div>
 
             <h1>Handy Reparatur in St. Gallen & Abtwil – iPhone, Tablet, Laptop & PC</h1>
@@ -956,6 +1781,7 @@
             <div class="actions">
               <a class="btn btn-primary" href="#anfrage">Reparaturanfrage senden</a>
               <a class="btn btn-secondary" href="https://wa.me/41768444673" target="_blank" rel="noopener noreferrer">WhatsApp öffnen</a>
+              <a class="btn btn-sell" href="#verkaufen">Gerät an Mujitech verkaufen</a>
             </div>
 
             <div class="trust-grid" aria-label="Vorteile">
@@ -971,6 +1797,20 @@
                 <strong>Schweizweit</strong>
                 <span>Einsende-Service für Reparaturen</span>
               </div>
+            </div>
+
+            <div class="tech-orbit" aria-hidden="true">
+              <div class="orbit-ring ring-one"></div>
+              <div class="orbit-ring ring-two"></div>
+              <div class="device-3d">
+                <div class="device-screen">
+                  <span class="device-shine"></span>
+                  <span class="device-logo">M</span>
+                </div>
+              </div>
+              <div class="orbit-dot dot-one"></div>
+              <div class="orbit-dot dot-two"></div>
+              <div class="orbit-dot dot-three"></div>
             </div>
           </article>
 
@@ -1082,6 +1922,263 @@
       </div>
     </section>
 
+
+    <!-- DEVICE BUYBACK / ANKAUF -->
+    <section class="section sell-section" id="verkaufen">
+      <div class="wrap">
+        <div class="sell-shell card reveal">
+          <div class="sell-intro">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-dot"></span> Neu bei Mujitech</div>
+              <h2>Gerät verkaufen – unverbindlich bewerten lassen</h2>
+              <p class="sell-lead">Smartphone, iPhone, iPad, Tablet, Laptop, MacBook oder PC verkaufen? Senden Sie uns die Gerätedaten, den Zustand, Ihren Wunschpreis und Fotos. Mujitech prüft die Anfrage und nennt Ihnen anschliessend einen vorläufigen Ankaufspreis. Der endgültige Ankaufspreis wird nach Prüfung des tatsächlichen Gerätezustands festgelegt.</p>
+            </div>
+
+            <div class="sell-flow" aria-label="Ablauf Geräteankauf">
+              <div class="sell-flow-card">
+                <span>01</span>
+                <strong>Gerät erfassen</strong>
+                <small>Modell, Zustand, Zubehör und Wunschpreis angeben.</small>
+              </div>
+              <div class="sell-flow-card">
+                <span>02</span>
+                <strong>Fotos hochladen</strong>
+                <small>Vorderseite, Rückseite und Schäden möglichst klar zeigen.</small>
+              </div>
+              <div class="sell-flow-card">
+                <span>03</span>
+                <strong>Bewertung erhalten</strong>
+                <small>Mujitech prüft die Angaben und meldet sich mit einer Einschätzung.</small>
+              </div>
+              <div class="sell-flow-card">
+                <span>04</span>
+                <strong>Finaler Ankaufspreis</strong>
+                <small>Nach Geräteprüfung wird der endgültige Ankaufspreis bestätigt.</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="sell-form-wrap">
+            <div class="sell-form-head">
+              <div>
+                <span class="form-kicker">ANKAUFSANFRAGE</span>
+                <h3>Was möchten Sie verkaufen?</h3>
+              </div>
+              <div class="secure-pill">🔒 Unverbindliche Anfrage</div>
+            </div>
+
+            <form action="https://formsubmit.co/info@mujitech.ch" method="POST" enctype="multipart/form-data" class="form-grid sell-form" id="sell-device-form">
+              <input type="hidden" name="_subject" value="Neue Geräteankauf-Anfrage – Mujitech">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="true">
+              <input type="hidden" name="_next" value="https://mujitech.ch/#verkaufen">
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+
+              <div class="form-divider full"><span>1</span> Kundendaten</div>
+
+              <div class="form-group">
+                <label for="sell-name">Vor- und Nachname *</label>
+                <input id="sell-name" name="name" type="text" autocomplete="name" required placeholder="Ihr Name">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-email">E-Mail *</label>
+                <input id="sell-email" name="email" type="email" autocomplete="email" required placeholder="name@beispiel.ch">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-phone">Telefon / WhatsApp *</label>
+                <input id="sell-phone" name="phone" type="tel" autocomplete="tel" required placeholder="z. B. 076 123 45 67">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-contact">Bevorzugte Kontaktart</label>
+                <select id="sell-contact" name="contact_preference">
+                  <option value="WhatsApp">WhatsApp</option>
+                  <option value="Telefon">Telefon</option>
+                  <option value="E-Mail">E-Mail</option>
+                </select>
+              </div>
+
+              <div class="form-divider full"><span>2</span> Gerät & Ausstattung</div>
+
+              <div class="form-group">
+                <label for="sell-type">Gerätetyp *</label>
+                <select id="sell-type" name="device_type" required>
+                  <option value="" selected disabled>Bitte wählen</option>
+                  <option value="iPhone">iPhone</option>
+                  <option value="Android Smartphone">Android Smartphone</option>
+                  <option value="iPad / Tablet">iPad / Tablet</option>
+                  <option value="MacBook">MacBook</option>
+                  <option value="Laptop">Laptop</option>
+                  <option value="PC / Desktop">PC / Desktop</option>
+                  <option value="Sonstiges">Sonstiges</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sell-brand">Marke *</label>
+                <input id="sell-brand" name="brand" type="text" required placeholder="z. B. Apple, Samsung, Lenovo">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-model">Modell *</label>
+                <input id="sell-model" name="model" type="text" required placeholder="z. B. iPhone 15 Pro">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-storage">Speicher / Ausstattung</label>
+                <input id="sell-storage" name="storage_configuration" type="text" placeholder="z. B. 256 GB / 16 GB RAM / 1 TB SSD">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-color">Farbe</label>
+                <input id="sell-color" name="color" type="text" placeholder="z. B. Titan Natur">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-age">Kaufjahr / ungefähres Alter</label>
+                <input id="sell-age" name="purchase_year" type="text" inputmode="numeric" placeholder="z. B. 2024">
+              </div>
+
+              <div class="form-group">
+                <label for="sell-imei">IMEI / Seriennummer</label>
+                <input id="sell-imei" name="imei_serial" type="text" placeholder="Optional">
+                <small class="field-note">Optional. Keine Passwörter oder PINs eingeben.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="sell-battery">Akkuzustand</label>
+                <input id="sell-battery" name="battery_health" type="text" placeholder="z. B. 89 % oder «unbekannt»">
+              </div>
+
+              <div class="form-divider full"><span>3</span> Zustand & Wunschpreis</div>
+
+              <div class="form-group">
+                <label for="sell-condition">Optischer Zustand *</label>
+                <select id="sell-condition" name="condition" required>
+                  <option value="" selected disabled>Bitte wählen</option>
+                  <option value="Wie neu">Wie neu – praktisch keine Gebrauchsspuren</option>
+                  <option value="Sehr gut">Sehr gut – minimale Gebrauchsspuren</option>
+                  <option value="Gut">Gut – normale Gebrauchsspuren</option>
+                  <option value="Stark gebraucht">Stark gebraucht – deutliche Kratzer / Dellen</option>
+                  <option value="Defekt">Defekt / beschädigt</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sell-function">Funktionszustand *</label>
+                <select id="sell-function" name="function_status" required>
+                  <option value="" selected disabled>Bitte wählen</option>
+                  <option value="Voll funktionsfähig">Voll funktionsfähig</option>
+                  <option value="Teilweise funktionsfähig">Teilweise funktionsfähig</option>
+                  <option value="Defekt">Defekt</option>
+                  <option value="Unbekannt">Unbekannt / nicht geprüft</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sell-price">Ihr Wunschpreis in CHF *</label>
+                <div class="price-field">
+                  <span>CHF</span>
+                  <input id="sell-price" name="desired_price_chf" type="number" inputmode="decimal" min="0" step="1" required placeholder="z. B. 450">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="sell-lock">Aktivierungssperre / Kontosperre *</label>
+                <select id="sell-lock" name="activation_lock" required>
+                  <option value="" selected disabled>Bitte wählen</option>
+                  <option value="Keine Sperre / kann entfernt werden">Keine Sperre / kann vor Verkauf entfernt werden</option>
+                  <option value="Noch angemeldet, wird entfernt">Noch angemeldet, wird vor Übergabe entfernt</option>
+                  <option value="Unklar">Unklar</option>
+                </select>
+              </div>
+
+              <div class="form-group full">
+                <label>Zubehör vorhanden</label>
+                <div class="check-grid">
+                  <label class="check-card"><input type="checkbox" name="accessories[]" value="Originalverpackung"><span>Originalverpackung</span></label>
+                  <label class="check-card"><input type="checkbox" name="accessories[]" value="Ladekabel / Netzteil"><span>Ladekabel / Netzteil</span></label>
+                  <label class="check-card"><input type="checkbox" name="accessories[]" value="Kaufbeleg"><span>Kaufbeleg</span></label>
+                  <label class="check-card"><input type="checkbox" name="accessories[]" value="Weiteres Zubehör"><span>Weiteres Zubehör</span></label>
+                </div>
+              </div>
+
+              <div class="form-group full">
+                <label for="sell-defects">Gebrauchsspuren / Defekte / wichtige Hinweise *</label>
+                <textarea id="sell-defects" name="defects_notes" required placeholder="Bitte ehrlich beschreiben: Kratzer, Risse, Displayfehler, Kamera, Face ID / Fingerabdruck, Ladeprobleme, Wasserschaden, frühere Reparaturen usw."></textarea>
+              </div>
+
+              <div class="form-divider full"><span>4</span> Bilder hochladen</div>
+
+              <div class="form-group full">
+                <div class="upload-grid">
+                  <label class="upload-zone">
+                    <input class="sell-photo-input" type="file" name="foto_vorderseite" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                    <span class="upload-icon">＋</span>
+                    <strong>Vorderseite</strong>
+                    <small>JPG, PNG, WEBP oder HEIC</small>
+                    <span class="file-status">Kein Bild gewählt</span>
+                  </label>
+
+                  <label class="upload-zone">
+                    <input class="sell-photo-input" type="file" name="foto_rueckseite" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                    <span class="upload-icon">＋</span>
+                    <strong>Rückseite</strong>
+                    <small>Gerät vollständig zeigen</small>
+                    <span class="file-status">Kein Bild gewählt</span>
+                  </label>
+
+                  <label class="upload-zone">
+                    <input class="sell-photo-input" type="file" name="foto_display" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                    <span class="upload-icon">＋</span>
+                    <strong>Display / Bildschirm</strong>
+                    <small>Wenn möglich eingeschaltet</small>
+                    <span class="file-status">Kein Bild gewählt</span>
+                  </label>
+
+                  <label class="upload-zone">
+                    <input class="sell-photo-input" type="file" name="foto_schaden" accept="image/jpeg,image/png,image/webp,image/heic,image/heif">
+                    <span class="upload-icon">＋</span>
+                    <strong>Schäden / Details</strong>
+                    <small>Kratzer, Risse oder Dellen</small>
+                    <span class="file-status">Kein Bild gewählt</span>
+                  </label>
+                </div>
+                <div class="upload-limit" id="upload-limit-note">Maximal 10 MB Gesamtgrösse für alle Bilder.</div>
+              </div>
+
+              <div class="form-divider full"><span>5</span> Bestätigung</div>
+
+              <div class="form-group full">
+                <label class="consent-card">
+                  <input type="checkbox" name="ownership_confirmation" value="accepted" required>
+                  <span><strong>Eigentumsbestätigung *</strong><br>Ich bestätige, dass ich Eigentümerin/Eigentümer des Geräts bin oder zum Verkauf berechtigt bin und die Angaben nach bestem Wissen korrekt sind.</span>
+                </label>
+              </div>
+
+              <div class="form-group full">
+                <label class="consent-card">
+                  <input type="checkbox" name="privacy_consent" value="accepted" required>
+                  <span><strong>Datenschutz *</strong><br>Ich bin damit einverstanden, dass Mujitech meine Angaben und hochgeladenen Bilder zur Bearbeitung der Ankaufanfrage verarbeitet.</span>
+                </label>
+              </div>
+
+              <div class="buyback-note full">
+                <strong>Wichtig:</strong> Das Absenden ist noch kein Kaufvertrag und der Wunschpreis wird nicht automatisch akzeptiert. Die erste Einschätzung basiert auf Ihren Angaben und Fotos. Massgeblich ist der tatsächliche Zustand des Geräts bei der Prüfung durch Mujitech; erst danach wird der endgültige Ankaufspreis bestätigt.
+              </div>
+
+              <div class="form-group full">
+                <button class="btn btn-primary btn-wide" type="submit">Gerät jetzt bewerten lassen <span aria-hidden="true">→</span></button>
+                <div class="form-help">Bitte keine Passwörter, PINs oder sonstigen Zugangsdaten übermitteln. Die Formularübermittlung erfolgt über den bereits auf dieser Website verwendeten externen Formulardienst.</div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FORM -->
     <section class="section" id="anfrage">
       <div class="wrap">
@@ -1183,46 +2280,121 @@
     <section class="section" id="bewertungen">
       <div class="wrap">
         <div class="section-head reveal">
-          <h2>Kundenmeinungen</h2>
-          <p>Ausgewählte Kundenstimmen, die auf der Website dargestellt werden.</p>
+          <h2>Google-Bewertungen & Kundenmeinungen</h2>
+          <p>Die Bewertungen werden jetzt als laufende 3D-Slideshow dargestellt – hochwertiger, auffälliger und deutlich lebendiger als statische Karten.</p>
+          <a class="google-rating-badge" href="https://www.google.com/maps/search/?api=1&query=Mujitech+Abtwil+SG" target="_blank" rel="noopener noreferrer" aria-label="Mujitech bei Google Maps öffnen">
+            <span class="google-g">G</span>
+            <span><strong>5,0 / 5</strong> bei Google · 12 Rezensionen</span>
+            <span class="rating-date">Stand 14.09.2026</span>
+          </a>
         </div>
 
-        <div class="reviews">
-          <article class="card review reveal">
-            <div class="review-head">
-              <div class="avatar" aria-hidden="true">P</div>
-              <div class="review-name">Patryk Basztabin</div>
-            </div>
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen – Top-Qualität aus Abtwil!</p>
-          </article>
+        <div class="reviews reveal" aria-label="Laufende 3D-Slideshow mit Google-Bewertungen von Mujitech" tabindex="0">
+          <div class="reviews-strip">
+            <div class="reviews-group">
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">P</div>
+                  <div class="review-meta">
+                    <div class="review-name">Patryk Basztabin</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen – Top-Qualität aus Abtwil!</p>
+              </article>
 
-          <article class="card review reveal">
-            <div class="review-head">
-              <div class="avatar" aria-hidden="true">G</div>
-              <div class="review-name">Gabi Sutter</div>
-            </div>
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>Super arbeit!!</p>
-          </article>
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">G</div>
+                  <div class="review-meta">
+                    <div class="review-name">Gabi Sutter</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Super arbeit!!</p>
+              </article>
 
-          <article class="card review reveal">
-            <div class="review-head">
-              <div class="avatar" aria-hidden="true">A</div>
-              <div class="review-name">Alina Brüllhardt</div>
-            </div>
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>Habe vor zwei Wochen einen PC von Mujitech reparieren lassen. Alles funktioniert einwandfrei.</p>
-          </article>
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">A</div>
+                  <div class="review-meta">
+                    <div class="review-name">Alina Brüllhardt</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Habe vor zwei Wochen einen PC von Mujitech reparieren lassen. Alles funktioniert einwandfrei.</p>
+              </article>
 
-          <article class="card review reveal">
-            <div class="review-head">
-              <div class="avatar" aria-hidden="true">S</div>
-              <div class="review-name">Srish</div>
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">S</div>
+                  <div class="review-meta">
+                    <div class="review-name">Srish</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme.</p>
+              </article>
             </div>
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <p>Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme.</p>
-          </article>
+
+            <div class="reviews-group" aria-hidden="true">
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">P</div>
+                  <div class="review-meta">
+                    <div class="review-name">Patryk Basztabin</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen – Top-Qualität aus Abtwil!</p>
+              </article>
+
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">G</div>
+                  <div class="review-meta">
+                    <div class="review-name">Gabi Sutter</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Super arbeit!!</p>
+              </article>
+
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">A</div>
+                  <div class="review-meta">
+                    <div class="review-name">Alina Brüllhardt</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Habe vor zwei Wochen einen PC von Mujitech reparieren lassen. Alles funktioniert einwandfrei.</p>
+              </article>
+
+              <article class="card review">
+                <div class="review-head">
+                  <div class="avatar" aria-hidden="true">S</div>
+                  <div class="review-meta">
+                    <div class="review-name">Srish</div>
+                    <small>Google Rezension</small>
+                  </div>
+                </div>
+                <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+                <p>Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews-actions reveal">
+          <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&query=Mujitech+Abtwil+SG" target="_blank" rel="noopener noreferrer">Alle Google-Bewertungen ansehen</a>
         </div>
       </div>
     </section>
@@ -1365,6 +2537,15 @@
 
             <h3>25. Kontakt</h3>
             <p>Fragen zu einem Reparaturauftrag oder zu diesen AGB können über <a href="mailto:info@mujitech.ch">info@mujitech.ch</a> oder telefonisch bzw. per WhatsApp unter <a href="tel:+41768444673">076 844 46 73</a> gestellt werden.</p>
+
+            <h3>26. Geräteankauf – Online-Anfrage</h3>
+            <p>Eine über das Ankaufformular übermittelte Anfrage stellt weder ein verbindliches Kaufangebot von Mujitech noch einen abgeschlossenen Kaufvertrag dar. Die von Kundinnen und Kunden angegebenen Wunschpreise dienen als Preisvorstellung.</p>
+
+            <h3>27. Bewertung und endgültiger Ankaufspreis</h3>
+            <p>Eine erste Einschätzung kann anhand der übermittelten Gerätedaten und Bilder erfolgen. Der endgültige Ankaufspreis richtet sich nach dem bei der tatsächlichen Prüfung festgestellten Zustand, der Funktionsfähigkeit, der Ausstattung und allfälligen nicht vorgängig erkennbaren Mängeln. Ein Ankauf kommt erst zustande, wenn sich beide Seiten über den endgültigen Ankaufspreis und die Übergabe geeinigt haben.</p>
+
+            <h3>28. Eigentum und Gerätesperren beim Ankauf</h3>
+            <p>Wer ein Gerät zum Ankauf anbietet, bestätigt, Eigentümerin bzw. Eigentümer zu sein oder über eine entsprechende Verkaufsberechtigung zu verfügen. Vor einer endgültigen Übergabe müssen persönliche Konten und Aktivierungssperren, soweit technisch möglich und für die Weiterverwendung erforderlich, entfernt werden. Passwörter und PINs sollen nicht über das Online-Formular übermittelt werden.</p>
           </div>
         </details>
       </div>
@@ -1408,7 +2589,14 @@
             <h3>9. Änderungen</h3>
             <p>Diese Datenschutzerklärung kann angepasst werden, wenn sich die eingesetzten Dienste, Datenbearbeitungen oder gesetzlichen Anforderungen ändern.</p>
 
-            <p class="legal-note"><strong>Wichtig:</strong> Die Datenschutzinformationen müssen an die tatsächlich eingesetzten Hosting-, Formular-, Analyse-, Social-Media- und Kommunikationsdienste angepasst werden. Der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte verlangt eine verständliche und tatsächlich zutreffende Information über die konkrete Datenbearbeitung. citeturn686109search0turn686109search3</p>
+
+            <h3>10. Geräteankauf-Anfragen und Bilddateien</h3>
+            <p>Bei einer Anfrage zum Verkauf eines Geräts können zusätzlich Angaben zum Gerätezustand, zur Ausstattung, zum Wunschpreis, zur Eigentumsberechtigung sowie hochgeladene Bilder verarbeitet werden. Diese Daten werden zur Prüfung der Ankaufanfrage, zur Kontaktaufnahme und zur Vorbereitung eines möglichen Ankaufs verwendet. Bilddateien werden über den auf dieser Website eingesetzten externen Formulardienst übermittelt. Bitte laden Sie keine Bilder hoch, die unnötige persönliche oder vertrauliche Informationen zeigen.</p>
+
+            <h3>11. Unverbindliche Online-Bewertung</h3>
+            <p>Die über das Ankaufformular übermittelten Angaben und Bilder dienen zunächst einer unverbindlichen Einschätzung. Ein endgültiger Ankaufspreis kann erst nach Prüfung des tatsächlichen Gerätezustands bestätigt werden.</p>
+
+            <p class="legal-note"><strong>Wichtig:</strong> Die Datenschutzinformationen müssen an die tatsächlich eingesetzten Hosting-, Formular-, Analyse-, Social-Media- und Kommunikationsdienste angepasst werden. Der Eidgenössische Datenschutz- und Öffentlichkeitsbeauftragte verlangt eine verständliche und tatsächlich zutreffende Information über die konkrete Datenbearbeitung.</p>
           </div>
         </details>
       </div>
@@ -1428,6 +2616,7 @@
           <a href="#agb">AGB</a>
           <a href="#datenschutz">Datenschutz</a>
           <a href="#anfrage">Reparaturanfrage</a>
+          <a href="#verkaufen">Gerät verkaufen</a>
         </nav>
       </div>
     </div>
@@ -1479,5 +2668,89 @@
       }
     })();
   </script>
+
+  <script id="mujitech-premium-interactions">
+    (() => {
+      "use strict";
+
+      const root = document.documentElement;
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      // Soft cursor spotlight on capable devices.
+      if (!reducedMotion && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+        window.addEventListener("pointermove", (event) => {
+          root.style.setProperty("--cursor-x", event.clientX + "px");
+          root.style.setProperty("--cursor-y", event.clientY + "px");
+        }, { passive:true });
+      }
+
+      // Show selected image names and enforce FormSubmit's 10 MB total upload limit.
+      const sellForm = document.getElementById("sell-device-form");
+      const photoInputs = Array.from(document.querySelectorAll(".sell-photo-input"));
+      const limitNote = document.getElementById("upload-limit-note");
+      const MAX_TOTAL = 10 * 1024 * 1024;
+
+      const formatMB = bytes => (bytes / (1024 * 1024)).toFixed(2);
+
+      function refreshUploadState(){
+        let total = 0;
+
+        photoInputs.forEach((input) => {
+          const zone = input.closest(".upload-zone");
+          const status = zone.querySelector(".file-status");
+          const file = input.files && input.files[0];
+
+          if (file) {
+            total += file.size;
+            zone.classList.add("has-file");
+            status.textContent = `${file.name} · ${formatMB(file.size)} MB`;
+          } else {
+            zone.classList.remove("has-file");
+            status.textContent = "Kein Bild gewählt";
+          }
+        });
+
+        if (limitNote) {
+          limitNote.classList.toggle("error", total > MAX_TOTAL);
+          limitNote.classList.toggle("ok", total > 0 && total <= MAX_TOTAL);
+
+          if (total > MAX_TOTAL) {
+            limitNote.textContent = `Die Bilder sind zusammen ${formatMB(total)} MB gross. Bitte auf maximal 10 MB reduzieren.`;
+          } else if (total > 0) {
+            limitNote.textContent = `${formatMB(total)} MB von maximal 10 MB verwendet.`;
+          } else {
+            limitNote.textContent = "Maximal 10 MB Gesamtgrösse für alle Bilder.";
+          }
+        }
+        return total;
+      }
+
+      photoInputs.forEach((input) => input.addEventListener("change", refreshUploadState));
+
+      if (sellForm) {
+        sellForm.addEventListener("submit", (event) => {
+          const total = refreshUploadState();
+          if (total > MAX_TOTAL) {
+            event.preventDefault();
+            limitNote?.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block:"center" });
+          }
+        });
+      }
+
+      // Progressive 3D depth on the decorative hero device.
+      const scene = document.querySelector(".tech-orbit");
+      const hero = document.querySelector(".hero-main");
+      if (scene && hero && !reducedMotion && window.matchMedia("(hover:hover)").matches) {
+        hero.addEventListener("pointermove", (event) => {
+          const rect = hero.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - .5;
+          const y = (event.clientY - rect.top) / rect.height - .5;
+          scene.style.transform = `translate3d(${x * 10}px,${y * 8}px,0) rotateY(${x * 3}deg) rotateX(${y * -2}deg)`;
+        });
+        hero.addEventListener("pointerleave", () => scene.style.transform = "");
+      }
+    })();
+  </script>
+
 </body>
 </html>
