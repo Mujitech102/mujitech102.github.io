@@ -169,3 +169,83 @@ footer{padding:52px 0 34px;border-top:1px solid var(--line);margin-top:40px}
 }
 
 .site-logo{height:48px;width:auto;max-width:190px;object-fit:contain;display:block}
+
+
+/* === FINAL COMPACT HEADER / FOOTER OVERRIDES === */
+.topbar{
+  min-height:72px !important;
+  height:auto !important;
+  padding:0 !important;
+}
+.topbar .nav{
+  min-height:72px !important;
+  padding:8px 0 !important;
+  display:flex !important;
+  align-items:center !important;
+}
+.brand{
+  display:flex !important;
+  align-items:center !important;
+  flex:0 0 auto !important;
+}
+.site-logo,
+.brand img{
+  height:52px !important;
+  width:auto !important;
+  max-width:150px !important;
+  object-fit:contain !important;
+  display:block !important;
+}
+.navlinks{
+  align-items:center !important;
+}
+.navlinks > a,
+.navlinks > .dropdown > button{
+  white-space:nowrap !important;
+}
+.navlinks .cta{
+  white-space:nowrap !important;
+  padding:11px 15px !important;
+}
+
+/* Compact footer */
+footer,
+.footer{
+  padding:22px 0 !important;
+  min-height:0 !important;
+}
+footer .wrap,
+.footer .wrap{
+  padding-top:0 !important;
+  padding-bottom:0 !important;
+}
+footer .grid,
+.footer .grid{
+  gap:18px !important;
+  margin:0 !important;
+}
+footer p,
+.footer p{
+  margin-top:6px !important;
+  margin-bottom:6px !important;
+}
+
+/* Tablet/mobile */
+@media (max-width: 900px){
+  .topbar,
+  .topbar .nav{
+    min-height:64px !important;
+  }
+  .topbar .nav{
+    padding:6px 0 !important;
+  }
+  .site-logo,
+  .brand img{
+    height:44px !important;
+    max-width:125px !important;
+  }
+  footer,
+  .footer{
+    padding:18px 0 !important;
+  }
+}
