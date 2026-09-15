@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6ef2c5"/><stop offset="1" stop-color="#78a7ff"/></linearGradient></defs>
+<rect width="88" height="88" x="4" y="4" rx="26" fill="#0c1119" stroke="#273240"/>
+<path d="M25 67V29h10l13 19 13-19h10v38H60V46L48 63 36 46v21H25z" fill="url(#g)"/>
+<text x="108" y="60" fill="#f6f8fb" font-family="Arial,Helvetica,sans-serif" font-size="42" font-weight="800" letter-spacing="-2">mujitech</text>
+</svg>
