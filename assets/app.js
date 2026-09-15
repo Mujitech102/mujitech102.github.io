@@ -14,7 +14,7 @@ document.querySelectorAll('form[data-demo]').forEach(form=>{
     const action=form.getAttribute('action')||'';
     if(action.includes('FORM_ACTION_HIER_EINTRAGEN')){
       e.preventDefault();
-      alert('Formular ist gestaltet. Trage vor Veröffentlichung deinen bestehenden Formulardienst als action im HTML ein.');
+      alert('Vielen Dank. Das Online-Formular wird derzeit eingerichtet. Bitte kontaktieren Sie uns vorübergehend per E-Mail oder WhatsApp.');
     }
   });
 });

@@ -167,3 +167,5 @@ footer{padding:52px 0 34px;border-top:1px solid var(--line);margin-top:40px}
 @media(max-width:620px){
   h1{font-size:48px}.grid3,.grid2,.pricing,.steps,.footergrid,.form{grid-template-columns:1fr}.field.full{grid-column:auto}.hero-card{min-height:330px}.device{inset:62px 42px 45px}.floatcard.two{display:none}
 }
+
+.site-logo{height:48px;width:auto;max-width:190px;object-fit:contain;display:block}
