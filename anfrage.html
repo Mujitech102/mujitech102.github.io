@@ -3,24 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Anfrage starten | Mujitech</title>
-<meta name="description" content="Mujitech – Reparatur, Technik und IT-Lösungen in St. Gallen.">
+
+<meta name="description" content="Reparaturanfrage für Handy, Tablet, Laptop und PC bei Mujitech in St. Gallen und Abtwil.">
+
 <link rel="icon" type="image/png" href="logo.png?v=20260916-4">
 <link rel="stylesheet" href="assets/style.css?v=20260916-4">
 </head>
+
 <body>
 
 <header class="topbar">
   <div class="wrap nav">
+
     <a class="brand" href="index.html">
       <img src="logo.png" alt="Mujitech Logo" class="site-logo">
     </a>
+
     <button class="mobilebtn" aria-label="Menü">☰</button>
+
     <nav class="navlinks">
+
       <a href="reparaturen.html">Reparaturen</a>
       <a href="geraet-verkaufen.html">Gerät verkaufen</a>
+
       <div class="dropdown">
         <button class="dropbtn">Privatkunden ▾</button>
+
         <div class="menu">
           <a href="privatkunden.html#daten">Datenübertragung</a>
           <a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
@@ -28,8 +38,10 @@
           <a href="shop.html">Refurbished & Zubehör</a>
         </div>
       </div>
+
       <div class="dropdown">
         <button class="dropbtn">Unternehmen ▾</button>
+
         <div class="menu">
           <a href="unternehmen.html">IT für KMU</a>
           <a href="unternehmen.html#support">IT-Support & Betreuung</a>
@@ -39,60 +51,418 @@
           <a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
         </div>
       </div>
+
       <a href="bewertungen.html">Bewertungen</a>
       <a href="kontakt.html">Kontakt</a>
       <a class="cta" href="anfrage.html">Anfrage starten</a>
+
     </nav>
   </div>
 </header>
 
 
 <main>
-<div class="wrap breadcrumb"><a href="index.html">Start</a> / Anfrage</div>
-<section class="pagehero"><div class="wrap"><div class="eyebrow">Ein Einstiegspunkt</div><h1>Worum geht es?</h1><p class="lead">Wählen Sie Ihr Anliegen und gelangen Sie direkt zum passenden Bereich.</p></div></section>
-<section><div class="wrap grid2">
-<a class="card" href="reparaturen.html"><div class="icon">🛠</div><h3>Ich möchte etwas reparieren</h3><p>Handy, Tablet, Laptop oder PC.</p><span class="link">Reparatur →</span></a>
-<a class="card" href="geraet-verkaufen.html"><div class="icon">↗</div><h3>Ich möchte ein Gerät verkaufen</h3><p>Gerät online erfassen und unverbindlich bewerten lassen.</p><span class="link">Geräteankauf →</span></a>
-<a class="card" href="privatkunden.html"><div class="icon">⌁</div><h3>Ich brauche Technik-Hilfe</h3><p>Datenübertragung, PC-/Laptop-Optimierung oder WLAN.</p><span class="link">Privatkunden →</span></a>
-<a class="card" href="unternehmen.html"><div class="icon">▦</div><h3>Ich bin ein Unternehmen</h3><p>IT, Hardware, Firmenhandys, Telekom, Website oder Cloud.</p><span class="link">Business →</span></a>
-</div></section>
+
+<div class="wrap breadcrumb">
+  <a href="index.html">Start</a> / Anfrage
+</div>
+
+
+<section class="pagehero">
+  <div class="wrap">
+
+    <div class="eyebrow">Anfrage starten</div>
+
+    <h1>Worum geht es?</h1>
+
+    <p class="lead">
+      Wählen Sie Ihr Anliegen oder senden Sie direkt eine Reparaturanfrage.
+    </p>
+
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap grid2">
+
+    <a class="card" href="#reparatur">
+      <div class="icon">🛠</div>
+      <h3>Ich möchte etwas reparieren</h3>
+      <p>Handy, Tablet, Laptop oder PC.</p>
+      <span class="link">Reparatur starten →</span>
+    </a>
+
+    <a class="card" href="geraet-verkaufen.html">
+      <div class="icon">↗</div>
+      <h3>Ich möchte ein Gerät verkaufen</h3>
+      <p>Gerät online erfassen und unverbindlich bewerten lassen.</p>
+      <span class="link">Geräteankauf →</span>
+    </a>
+
+    <a class="card" href="privatkunden.html">
+      <div class="icon">⌁</div>
+      <h3>Ich brauche Technik-Hilfe</h3>
+      <p>Datenübertragung, PC-/Laptop-Optimierung oder WLAN.</p>
+      <span class="link">Privatkunden →</span>
+    </a>
+
+    <a class="card" href="unternehmen.html">
+      <div class="icon">▦</div>
+      <h3>Ich bin ein Unternehmen</h3>
+      <p>IT, Hardware, Firmenhandys, Telekom, Website oder Cloud.</p>
+      <span class="link">Business →</span>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- REPARATURFORMULAR -->
+
+<section id="reparatur">
+
+  <div class="wrap">
+
+    <div class="eyebrow">Reparaturanfrage</div>
+
+    <h2>Was können wir für Sie reparieren?</h2>
+
+    <p class="sectionlead">
+      Teilen Sie uns die wichtigsten Angaben zu Ihrem Gerät und dem Defekt mit.
+      Wir prüfen Ihre Anfrage und melden uns anschliessend bei Ihnen.
+    </p>
+
+
+    <div class="panel" style="margin-top:30px;">
+
+      <form
+        data-demo
+        action="FORM_ACTION_HIER_EINTRAGEN"
+        method="post"
+      >
+
+
+        <div class="grid2">
+
+          <div>
+            <label for="name">Vor- und Nachname *</label>
+
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Max Muster"
+              required
+            >
+          </div>
+
+
+          <div>
+            <label for="email">E-Mail *</label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="max@beispiel.ch"
+              required
+            >
+          </div>
+
+
+          <div>
+            <label for="telefon">Telefonnummer *</label>
+
+            <input
+              id="telefon"
+              name="telefon"
+              type="tel"
+              placeholder="079 123 45 67"
+              required
+            >
+          </div>
+
+
+          <div>
+            <label for="geraet">Geräteart *</label>
+
+            <select id="geraet" name="geraet" required>
+
+              <option value="">Bitte auswählen</option>
+              <option value="Smartphone">Smartphone / Handy</option>
+              <option value="Tablet">Tablet / iPad</option>
+              <option value="Laptop">Laptop / Notebook</option>
+              <option value="PC">PC / Computer</option>
+              <option value="Andere">Anderes Gerät</option>
+
+            </select>
+          </div>
+
+
+          <div>
+            <label for="hersteller">Hersteller</label>
+
+            <input
+              id="hersteller"
+              name="hersteller"
+              type="text"
+              placeholder="z.B. Apple, Samsung, Lenovo"
+            >
+          </div>
+
+
+          <div>
+            <label for="modell">Genaues Modell *</label>
+
+            <input
+              id="modell"
+              name="modell"
+              type="text"
+              placeholder="z.B. iPhone 14 Pro"
+              required
+            >
+          </div>
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+          <label for="defekt">Was ist defekt? *</label>
+
+          <select id="defekt" name="defekt" required>
+
+            <option value="">Bitte auswählen</option>
+
+            <option value="Display">
+              Display / Glas
+            </option>
+
+            <option value="Akku">
+              Akku
+            </option>
+
+            <option value="Ladeanschluss">
+              Ladeanschluss
+            </option>
+
+            <option value="Kamera">
+              Kamera
+            </option>
+
+            <option value="Startet nicht">
+              Gerät startet nicht
+            </option>
+
+            <option value="Software">
+              Software / System
+            </option>
+
+            <option value="Reinigung">
+              Reinigung / Wartung
+            </option>
+
+            <option value="Upgrade">
+              SSD / RAM / Hardware-Upgrade
+            </option>
+
+            <option value="Sonstiges">
+              Sonstiges
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+          <label for="beschreibung">
+            Fehler / Problem beschreiben *
+          </label>
+
+          <textarea
+            id="beschreibung"
+            name="beschreibung"
+            rows="7"
+            placeholder="Beschreiben Sie möglichst genau, was mit dem Gerät nicht funktioniert."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+          <label for="kontaktart">
+            Bevorzugte Kontaktaufnahme
+          </label>
+
+          <select id="kontaktart" name="kontaktart">
+
+            <option value="Telefon">Telefon</option>
+            <option value="WhatsApp">WhatsApp</option>
+            <option value="E-Mail">E-Mail</option>
+
+          </select>
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+          <label>
+
+            <input
+              type="checkbox"
+              name="datenschutz"
+              required
+            >
+
+            Ich habe die
+            <a href="rechtliches.html">Datenschutzerklärung</a>
+            gelesen und stimme der Verarbeitung meiner Angaben
+            zur Bearbeitung der Anfrage zu. *
+
+          </label>
+
+        </div>
+
+
+        <div style="margin-top:26px;">
+
+          <button class="cta" type="submit">
+            Reparaturanfrage absenden
+          </button>
+
+        </div>
+
+
+        <p class="sectionlead" style="margin-top:18px;">
+          Die Anfrage ist unverbindlich. Reparaturen werden erst nach
+          Absprache und Zustimmung ausgeführt.
+        </p>
+
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 </main>
 
 
 <footer>
+
   <div class="wrap">
+
     <div class="footergrid">
+
       <div>
-        <a class="brand" href="index.html"><img src="logo.png" alt="Mujitech Logo" class="site-logo"></a>
-        <p class="sectionlead" style="margin-top:14px">Technik, Reparatur und digitale Lösungen für Privatkunden und KMU in der Region St. Gallen – klar, persönlich und ohne unnötigen Aufwand.</p>
-        <div class="badge"><span>●</span><b>Abtwil SG</b> · kein öffentliches Ladenlokal · Termine nach Vereinbarung</div>
+
+        <a class="brand" href="index.html">
+
+          <img
+            src="logo.png"
+            alt="Mujitech Logo"
+            class="site-logo"
+          >
+
+        </a>
+
+        <p class="sectionlead" style="margin-top:14px">
+
+          Technik, Reparatur und digitale Lösungen für Privatkunden
+          und KMU in der Region St. Gallen – klar, persönlich
+          und ohne unnötigen Aufwand.
+
+        </p>
+
+        <div class="badge">
+
+          <span>●</span>
+
+          <b>Abtwil SG</b>
+          · kein öffentliches Ladenlokal
+          · Termine nach Vereinbarung
+
+        </div>
+
       </div>
+
+
       <div>
+
         <h4>Privatkunden</h4>
+
         <a href="reparaturen.html">Reparaturen</a>
         <a href="geraet-verkaufen.html">Gerät verkaufen</a>
         <a href="privatkunden.html">Technik-Services</a>
         <a href="shop.html">Refurbished & Zubehör</a>
+
       </div>
+
+
       <div>
+
         <h4>Unternehmen</h4>
+
         <a href="unternehmen.html">IT für KMU</a>
         <a href="websites.html">Websites</a>
         <a href="unternehmen.html#telekom">Telekom</a>
         <a href="unternehmen.html#cloud">Cloud & E-Mail</a>
+
       </div>
+
+
       <div>
+
         <h4>Kontakt</h4>
-        <a href="tel:+41768444673">076 844 46 73</a>
-        <a href="mailto:info@mujitech.ch">info@mujitech.ch</a>
-        <a href="https://wa.me/41768444673">WhatsApp</a>
-        <a href="rechtliches.html">Impressum · AGB · Datenschutz</a>
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+        <a href="https://wa.me/41768444673">
+          WhatsApp
+        </a>
+
+        <a href="rechtliches.html">
+          Impressum · AGB · Datenschutz
+        </a>
+
       </div>
+
     </div>
-    <div class="legal"><span>© 2026 Mujitech. Alle Rechte vorbehalten.</span><span>UID: CHE-480.937.625</span></div>
+
+
+    <div class="legal">
+
+      <span>
+        © 2026 Mujitech. Alle Rechte vorbehalten.
+      </span>
+
+      <span>
+        UID: CHE-480.937.625
+      </span>
+
+    </div>
+
   </div>
+
 </footer>
-<script src="assets/app.js"></script>
+
+
+<script src="assets/app.js?v=20260916-12"></script>
 
 </body>
 </html>
