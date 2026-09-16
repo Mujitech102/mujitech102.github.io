@@ -1,90 +1,82 @@
-document.querySelectorAll('.dropbtn').forEach(btn=>{
-  btn.addEventListener('click',e=>{
+document.querySelectorAll('.dropbtn').forEach(btn => {
+  btn.addEventListener('click', e => {
     e.stopPropagation();
     btn.closest('.dropdown').classList.toggle('open');
   });
 });
 
-document.addEventListener('click',()=>{
-  document.querySelectorAll('.dropdown').forEach(d=>d.classList.remove('open'));
+document.addEventListener('click', () => {
+  document.querySelectorAll('.dropdown').forEach(d => {
+    d.classList.remove('open');
+  });
 });
 
-const mb=document.querySelector('.mobilebtn');
+const mb = document.querySelector('.mobilebtn');
 
-if(mb){
-  mb.addEventListener('click',()=>{
+if (mb) {
+  mb.addEventListener('click', () => {
     document.querySelector('.navlinks')?.classList.toggle('mobileopen');
   });
 }
 
-document.querySelectorAll('form[data-demo]').forEach(form=>{
-  form.addEventListener('submit',e=>{
-    const action=form.getAttribute('action')||'';
+document.querySelectorAll('form[data-demo]').forEach(form => {
+  form.addEventListener('submit', e => {
+    const action = form.getAttribute('action') || '';
 
-    if(action.includes('FORM_ACTION_HIER_EINTRAGEN')){
+    if (action.includes('FORM_ACTION_HIER_EINTRAGEN')) {
       e.preventDefault();
-
-      alert(
-        'Vielen Dank. Das Online-Formular wird derzeit eingerichtet. ' +
-        'Bitte kontaktieren Sie uns vorübergehend per E-Mail oder WhatsApp.'
-      );
+      alert('Vielen Dank. Das Online-Formular wird derzeit eingerichtet. Bitte kontaktieren Sie uns vorübergehend per E-Mail oder WhatsApp.');
     }
   });
 });
 
 
-/* =========================================================
-   COOKIE-BANNER
-   ========================================================= */
+/* COOKIE-BANNER */
 
-(()=>{
-  const banner=document.getElementById('cookieBanner');
+document.addEventListener('DOMContentLoaded', () => {
 
-  if(!banner) return;
+  const banner = document.getElementById('cookieBanner');
+  const necessaryButton = document.getElementById('cookieNecessary');
+  const acceptButton = document.getElementById('cookieAccept');
 
-  const STORAGE_KEY='mujitech-cookie-consent';
-
-  let savedConsent=null;
-
-  try{
-    savedConsent=localStorage.getItem(STORAGE_KEY);
-  }catch(e){}
-
-  if(savedConsent){
-    banner.classList.add('is-hidden');
-    document.documentElement.dataset.cookieConsent=savedConsent;
+  if (!banner) {
     return;
   }
 
-  const saveConsent=value=>{
+  const STORAGE_KEY = 'mujitech-cookie-consent';
 
-    try{
-      localStorage.setItem(STORAGE_KEY,value);
-    }catch(e){}
+  try {
+    const savedConsent = localStorage.getItem(STORAGE_KEY);
 
-    document.documentElement.dataset.cookieConsent=value;
+    if (savedConsent) {
+      banner.classList.add('is-hidden');
+      return;
+    }
+  } catch (error) {
+    console.log('Cookie-Einstellung konnte nicht gelesen werden.');
+  }
+
+  function closeCookieBanner(choice) {
+
+    try {
+      localStorage.setItem(STORAGE_KEY, choice);
+    } catch (error) {
+      console.log('Cookie-Einstellung konnte nicht gespeichert werden.');
+    }
 
     banner.classList.add('is-hidden');
+  }
 
-    window.dispatchEvent(
-      new CustomEvent('mujitechCookieConsent',{
-        detail:{
-          consent:value
-        }
-      })
-    );
-  };
-
-  document
-    .getElementById('cookieNecessary')
-    ?.addEventListener('click',()=>{
-      saveConsent('necessary');
+  if (necessaryButton) {
+    necessaryButton.addEventListener('click', () => {
+      closeCookieBanner('necessary');
     });
+  }
 
-  document
-    .getElementById('cookieAccept')
-    ?.addEventListener('click',()=>{
-      saveConsent('all');
+  if (acceptButton) {
+    acceptButton.addEventListener('click', () => {
+      closeCookieBanner('all');
     });
+  }
 
-})();
+});
