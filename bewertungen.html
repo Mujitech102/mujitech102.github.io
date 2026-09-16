@@ -4,457 +4,424 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Mujitech | Reparatur, Technik & IT in St. Gallen</title>
-  <meta name="description" content="Mujitech – Reparatur, Technik und IT-Lösungen in St. Gallen.">
+  <title>Kundenbewertungen | Mujitech</title>
+  <meta name="description" content="Erfahrungen und Kundenbewertungen zu Mujitech – Reparaturen, Technik und IT in St. Gallen.">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="logo.png?v=20260916-6">
+  <link rel="icon" type="image/png" href="logo.png?v=20260916-7">
+  <link rel="stylesheet" href="assets/style.css?v=20260916-7">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/style.css?v=20260916-6">
+  <style>
+    /* =========================================================
+       MUJITECH – BEWERTUNGSSEITE
+       ========================================================= */
+
+    .reviews-hero {
+      padding: 75px 0 45px;
+    }
+
+    .reviews-hero-inner {
+      max-width: 820px;
+    }
+
+    .reviews-hero h1 {
+      font-size: clamp(46px, 7vw, 76px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin: 15px 0 22px;
+    }
+
+    .reviews-summary {
+      margin-top: 35px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 22px 25px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,.065),
+          rgba(255,255,255,.025)
+        );
+    }
+
+    .reviews-score {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .reviews-score strong {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+
+    .reviews-stars {
+      color: #ffd76b;
+      letter-spacing: 3px;
+      font-size: 18px;
+    }
+
+    .reviews-summary-text {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+
+    /* =========================================================
+       REVIEW GRID
+       ========================================================= */
+
+    .reviews-section {
+      padding: 35px 0 80px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      align-items: start;
+    }
+
+    .review-card {
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        linear-gradient(
+          150deg,
+          rgba(255,255,255,.055),
+          rgba(255,255,255,.022)
+        );
+      overflow: hidden;
+      transition:
+        border-color .25s ease,
+        transform .25s ease,
+        background .25s ease;
+    }
+
+    .review-card:hover {
+      border-color: rgba(110,242,197,.32);
+      transform: translateY(-2px);
+      background:
+        linear-gradient(
+          150deg,
+          rgba(110,242,197,.055),
+          rgba(255,255,255,.025)
+        );
+    }
+
+    .review-main {
+      padding: 23px 24px;
+    }
+
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .review-person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .review-avatar {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+
+      font-weight: 900;
+      font-size: 15px;
+
+      color: var(--accent);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(110,242,197,.14),
+          rgba(120,167,255,.10)
+        );
+
+      border: 1px solid rgba(110,242,197,.20);
+    }
+
+    .review-name {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 850;
+      line-height: 1.25;
+    }
+
+    .review-source {
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 3px;
+    }
+
+    .review-rating {
+      color: #ffd76b;
+      letter-spacing: 1px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .review-text {
+      color: #c5ceda;
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+
+    /* =========================================================
+       AUFKLAPPBARE BEWERTUNGEN
+       ========================================================= */
+
+    details.review-details {
+      border: 0;
+    }
+
+    details.review-details summary {
+      list-style: none;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      padding: 14px 24px;
+
+      border-top: 1px solid var(--line);
+
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 800;
+
+      transition: background .2s ease;
+    }
+
+    details.review-details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details.review-details summary:hover {
+      background: rgba(110,242,197,.045);
+    }
+
+    .summary-arrow {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+
+      display: grid;
+      place-items: center;
+
+      color: var(--accent);
+
+      border: 1px solid rgba(110,242,197,.20);
+      background: rgba(110,242,197,.07);
+
+      transition: transform .25s ease;
+    }
+
+    details[open] .summary-arrow {
+      transform: rotate(180deg);
+    }
+
+    .review-full {
+      padding: 3px 24px 24px;
+    }
+
+    .review-full p {
+      margin: 0;
+      color: #c5ceda;
+      font-size: 14px;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+
+    /* =========================================================
+       SIMPLE / KURZE BEWERTUNGEN
+       ========================================================= */
+
+    .review-card.simple .review-main {
+      min-height: 180px;
+    }
+
+
+    /* =========================================================
+       GOOGLE BADGE
+       ========================================================= */
+
+    .google-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      margin-top: 16px;
+
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .google-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+
+    /* =========================================================
+       BOTTOM CTA
+       ========================================================= */
+
+    .review-cta {
+      margin-top: 55px;
+      padding: 32px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+
+      border: 1px solid var(--line);
+      border-radius: 26px;
+
+      background:
+        radial-gradient(
+          500px 200px at 90% 0%,
+          rgba(110,242,197,.09),
+          transparent 65%
+        ),
+        rgba(255,255,255,.03);
+    }
+
+    .review-cta h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin-bottom: 8px;
+    }
+
+    .review-cta p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 850px) {
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review-cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .reviews-hero {
+        padding: 50px 0 25px;
+      }
+
+      .review-main {
+        padding: 20px;
+      }
+
+      details.review-details summary {
+        padding: 14px 20px;
+      }
+
+      .review-full {
+        padding: 3px 20px 21px;
+      }
+
+      .reviews-summary {
+        padding: 19px;
+      }
+
+      .review-top {
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="wrap nav">
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-      <a class="brand" href="index.html" aria-label="Mujitech Startseite">
-        <img
-          src="logo.png"
-          alt="Mujitech Logo"
-          class="site-logo"
-        >
+<header class="topbar">
+  <div class="wrap nav">
+
+    <a class="brand" href="index.html" aria-label="Mujitech Startseite">
+      <img
+        src="logo.png"
+        alt="Mujitech Logo"
+        class="site-logo"
+      >
+    </a>
+
+    <button
+      class="mobilebtn"
+      type="button"
+      aria-label="Menü"
+    >
+      ☰
+    </button>
+
+    <nav class="navlinks">
+
+      <a href="reparaturen.html">
+        Reparaturen
       </a>
 
-      <button
-        class="mobilebtn"
-        type="button"
-        aria-label="Menü öffnen"
-      >
-        ☰
-      </button>
-
-      <nav class="navlinks" aria-label="Hauptnavigation">
-
-        <a href="reparaturen.html">Reparaturen</a>
-
-        <a href="geraet-verkaufen.html">Gerät verkaufen</a>
-
-        <div class="dropdown">
-          <button class="dropbtn" type="button">
-            Privatkunden ▾
-          </button>
-
-          <div class="menu">
-            <a href="privatkunden.html#daten">Datenübertragung</a>
-            <a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
-            <a href="privatkunden.html#wlan">WLAN &amp; Internet-Hilfe</a>
-            <a href="shop.html">Refurbished &amp; Zubehör</a>
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <button class="dropbtn" type="button">
-            Unternehmen ▾
-          </button>
-
-          <div class="menu">
-            <a href="unternehmen.html">IT für KMU</a>
-            <a href="unternehmen.html#support">IT-Support &amp; Betreuung</a>
-            <a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
-            <a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
-            <a href="websites.html">Websites &amp; Wartung</a>
-            <a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
-          </div>
-        </div>
-
-        <a href="bewertungen.html">Bewertungen</a>
-        <a href="kontakt.html">Kontakt</a>
-        <a class="cta" href="anfrage.html">Anfrage starten</a>
-
-      </nav>
-    </div>
-  </header>
+      <a href="geraet-verkaufen.html">
+        Gerät verkaufen
+      </a>
 
 
-  <!-- MAIN -->
-  <main>
+      <div class="dropdown">
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
+        <button
+          class="dropbtn"
+          type="button"
+        >
+          Privatkunden ▾
+        </button>
 
-        <div>
-          <div class="kicker">
-            <span class="dot"></span>
-            Technik. Reparatur. Lösungen.
-          </div>
-
-          <h1>
-            Technik, die
-            <span class="gradient">einfach funktioniert.</span>
-          </h1>
-
-          <p class="lead">
-            Reparatur, Geräteankauf und Technik-Services für Privatkunden
-            sowie zuverlässige IT-Lösungen für kleine Unternehmen.
-          </p>
-
-          <div class="actions">
-            <a class="cta" href="anfrage.html">
-              Anfrage starten →
-            </a>
-
-            <a class="cta secondary" href="unternehmen.html">
-              Lösungen für Unternehmen
-            </a>
-          </div>
-
-          <div class="trust">
-            <span class="pill">
-              6 Monate Garantie auf ausgetauschte Hardware
-            </span>
-
-            <span class="pill">
-              Schweizweiter Einsende-Service
-            </span>
-
-            <span class="pill">
-              Abtwil SG · nach Termin
-            </span>
-          </div>
-        </div>
-
-
-        <div class="hero-card" aria-hidden="true">
-          <div class="orb a"></div>
-          <div class="orb b"></div>
-          <div class="device"></div>
-
-          <div class="floatcard one">
-            <strong>Privatkunden</strong>
-            Reparatur · Ankauf · Technik
-          </div>
-
-          <div class="floatcard two">
-            <strong>KMU</strong>
-            IT · Hardware · Websites · Telekom
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- BEREICHE -->
-    <section>
-      <div class="wrap">
-
-        <div class="eyebrow">Mujitech heute</div>
-
-        <h2>Vier klare Bereiche. Eine Marke.</h2>
-
-        <p class="sectionlead">
-          Reparatur, Geräteankauf, Technik-Services und IT-Lösungen –
-          übersichtlich nach Ihrem Anliegen gegliedert.
-        </p>
-
-        <div class="grid2">
-
-          <a class="card" href="reparaturen.html">
-            <div class="icon">🛠</div>
-
-            <h3>Reparaturen</h3>
-
-            <p>
-              Smartphones, iPhones, Tablets, Laptops und PCs –
-              vom Display und Akku bis zu Hardware-Defekten und Upgrades.
-            </p>
-
-            <span class="link">
-              Reparatur ansehen →
-            </span>
+        <div class="menu">
+          <a href="privatkunden.html#daten">
+            Datenübertragung
           </a>
 
-
-          <a class="card" href="geraet-verkaufen.html">
-            <div class="icon">↗</div>
-
-            <h3>Gerät verkaufen</h3>
-
-            <p>
-              Smartphone, Tablet, Laptop, MacBook oder PC unverbindlich
-              erfassen, Zustand und Wunschpreis angeben und bewerten lassen.
-            </p>
-
-            <span class="link">
-              Gerät erfassen →
-            </span>
+          <a href="privatkunden.html#optimierung">
+            PC-/Laptop-Optimierung
           </a>
 
-
-          <a class="card" href="privatkunden.html">
-            <div class="icon">⌁</div>
-
-            <h3>Technik für Privatkunden</h3>
-
-            <p>
-              Datenübertragung, PC-/Laptop-Optimierung sowie WLAN- und
-              Internet-Hilfe – ohne unnötige Zusatzleistungen.
-            </p>
-
-            <span class="link">
-              Services ansehen →
-            </span>
-          </a>
-
-
-          <a class="card" href="unternehmen.html">
-            <div class="icon">▦</div>
-
-            <h3>IT für Unternehmen</h3>
-
-            <p>
-              IT-Support, Hardware-Beschaffung, Firmenhandys,
-              Telekom-Anfragen, Websites, E-Mail und Cloud für kleine KMU.
-            </p>
-
-            <span class="link">
-              Business-Bereich →
-            </span>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- UNTERNEHMEN -->
-    <section>
-      <div class="wrap split">
-
-        <div>
-          <div class="eyebrow">Für Unternehmen</div>
-
-          <h2>
-            Ein Ansprechpartner für die Technik im Alltag.
-          </h2>
-
-          <p class="sectionlead">
-            Ein direkter Ansprechpartner für Hardware, IT-Support,
-            Internet, E-Mail, Cloud und Websites.
-          </p>
-
-          <div class="actions">
-            <a class="cta" href="unternehmen.html">
-              Business-Lösungen ansehen
-            </a>
-          </div>
-        </div>
-
-
-        <div class="panel">
-          <ul class="list">
-
-            <li>
-              <span class="check">✓</span>
-              <span>IT-Support und laufende Betreuung für KMU</span>
-            </li>
-
-            <li>
-              <span class="check">✓</span>
-              <span>Hardware-Beschaffung und Einrichtung von Firmenhandys</span>
-            </li>
-
-            <li>
-              <span class="check">✓</span>
-              <span>Websites, Wartung, Domain und Firmen-E-Mail</span>
-            </li>
-
-            <li>
-              <span class="check">✓</span>
-              <span>Microsoft 365 / Google Workspace Einrichtung</span>
-            </li>
-
-            <li>
-              <span class="check">✓</span>
-              <span>Telekom- und Internetlösungen für Unternehmen</span>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- BEWERTUNGEN -->
-    <div class="reviewstrip">
-      <div class="track">
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Patryk Basztabin</strong>
-          Sehr kompetente, schnelle und reibungslose Reparatur.
-        </div>
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Gabi Sutter</strong>
-          Super arbeit!!
-        </div>
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Alina Brüllhardt</strong>
-          PC reparieren lassen. Alles funktioniert einwandfrei.
-        </div>
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Srish</strong>
-          Sehr zufrieden mit dem Service und der Unterstützung beim Akku-Problem.
-        </div>
-
-
-        <!-- Wiederholung für Endlos-Animation -->
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Patryk Basztabin</strong>
-          Sehr kompetente, schnelle und reibungslose Reparatur.
-        </div>
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Gabi Sutter</strong>
-          Super arbeit!!
-        </div>
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Alina Brüllhardt</strong>
-          PC reparieren lassen. Alles funktioniert einwandfrei.
-        </div>
-
-        <div class="review">
-          <span class="stars">★★★★★</span>
-          <strong>Srish</strong>
-          Sehr zufrieden mit dem Service und der Unterstützung beim Akku-Problem.
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- STANDORT -->
-    <section>
-      <div class="wrap split">
-
-        <div class="panel">
-
-          <div class="eyebrow">
-            Standort &amp; Ablauf
-          </div>
-
-          <h3>
-            Abtwil SG – nach Terminvereinbarung
-          </h3>
-
-          <p class="sectionlead">
-            Kein öffentliches Ladenlokal. Persönliche Übergaben erfolgen
-            nach Terminvereinbarung. Vereinbarte Reparaturen können aus
-            der ganzen Schweiz eingesendet werden.
-          </p>
-
-          <a class="cta secondary" href="kontakt.html">
-            Kontakt
-          </a>
-
-        </div>
-
-
-        <div>
-
-          <div class="eyebrow">
-            Direkt starten
-          </div>
-
-          <h2>
-            Was können wir für Sie lösen?
-          </h2>
-
-          <p class="sectionlead">
-            Ein zentrales Anfrageformular führt Kunden direkt zum richtigen
-            Bereich – Reparatur, Geräteankauf, Privatkunden-Service oder
-            KMU-Anfrage.
-          </p>
-
-          <a class="cta" href="anfrage.html">
-            Anfrage auswählen →
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap">
-
-      <div class="footergrid">
-
-        <div>
-
-          <a
-            class="brand"
-            href="index.html"
-            aria-label="Mujitech Startseite"
-          >
-            <img
-              src="logo.png"
-              alt="Mujitech Logo"
-              class="site-logo"
-            >
-          </a>
-
-          <p
-            class="sectionlead"
-            style="margin-top:14px"
-          >
-            Technik, Reparatur und digitale Lösungen für Privatkunden und
-            KMU in der Region St. Gallen – klar, persönlich und ohne
-            unnötigen Aufwand.
-          </p>
-
-          <div class="badge">
-            <span>●</span>
-            <b>Abtwil SG</b>
-            · kein öffentliches Ladenlokal · Termine nach Vereinbarung
-          </div>
-
-        </div>
-
-
-        <div>
-          <h4>Privatkunden</h4>
-
-          <a href="reparaturen.html">
-            Reparaturen
-          </a>
-
-          <a href="geraet-verkaufen.html">
-            Gerät verkaufen
-          </a>
-
-          <a href="privatkunden.html">
-            Technik-Services
+          <a href="privatkunden.html#wlan">
+            WLAN &amp; Internet-Hilfe
           </a>
 
           <a href="shop.html">
@@ -462,71 +429,856 @@
           </a>
         </div>
 
+      </div>
 
-        <div>
-          <h4>Unternehmen</h4>
+
+      <div class="dropdown">
+
+        <button
+          class="dropbtn"
+          type="button"
+        >
+          Unternehmen ▾
+        </button>
+
+        <div class="menu">
 
           <a href="unternehmen.html">
             IT für KMU
           </a>
 
-          <a href="websites.html">
-            Websites
+          <a href="unternehmen.html#support">
+            IT-Support &amp; Betreuung
+          </a>
+
+          <a href="unternehmen.html#hardware">
+            Hardware-Beschaffung
           </a>
 
           <a href="unternehmen.html#telekom">
-            Telekom
+            Telekom-Vermittlung
+          </a>
+
+          <a href="websites.html">
+            Websites &amp; Wartung
           </a>
 
           <a href="unternehmen.html#cloud">
-            Cloud &amp; E-Mail
+            Microsoft 365 / Google Workspace
           </a>
+
+        </div>
+      </div>
+
+      <a href="bewertungen.html">
+        Bewertungen
+      </a>
+
+      <a href="kontakt.html">
+        Kontakt
+      </a>
+
+      <a
+        class="cta"
+        href="anfrage.html"
+      >
+        Anfrage starten
+      </a>
+
+    </nav>
+  </div>
+</header>
+
+
+<!-- =========================================================
+     MAIN
+     ========================================================= -->
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="reviews-hero">
+    <div class="wrap">
+
+      <div class="reviews-hero-inner">
+
+        <div class="eyebrow">
+          Kundenstimmen
         </div>
 
+        <h1>
+          Erfahrungen mit
+          <span class="gradient">Mujitech.</span>
+        </h1>
 
-        <div>
-          <h4>Kontakt</h4>
+        <p class="lead">
+          Echte Rückmeldungen von Kunden zu Reparaturen,
+          Geräten und unserem technischen Service.
+        </p>
 
-          <a href="tel:+41768444673">
-            076 844 46 73
-          </a>
 
-          <a href="mailto:info@mujitech.ch">
-            info@mujitech.ch
-          </a>
+        <div class="reviews-summary">
 
-          <a
-            href="https://wa.me/41768444673"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            WhatsApp
-          </a>
+          <div class="reviews-score">
+            <strong>5,0</strong>
+            <span class="reviews-stars">
+              ★★★★★
+            </span>
+          </div>
 
-          <a href="rechtliches.html">
-            Impressum · AGB · Datenschutz
-          </a>
+          <div class="reviews-summary-text">
+            Kundenbewertungen<br>
+            <strong style="color:#fff;">
+              Google Rezensionen
+            </strong>
+          </div>
+
         </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =======================================================
+       BEWERTUNGEN
+       ======================================================= -->
+
+  <section class="reviews-section">
+    <div class="wrap">
+
+      <div class="reviews-grid">
+
+
+        <!-- SAMIRA -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">SD</div>
+
+                <div>
+                  <div class="review-name">
+                    Samira Dörig
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              sehr schnelle und gute Reparatur! :)
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- LEONORA -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">LB</div>
+
+                <div>
+                  <div class="review-name">
+                    Leonora Beauty Academy
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              5-Sterne-Bewertung ohne zusätzlichen Kommentar.
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- GABI -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">GS</div>
+
+                <div>
+                  <div class="review-name">
+                    Gabi Sutter
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Super arbeit!!
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- PATRYK -->
+
+        <article class="review-card">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">PB</div>
+
+                <div>
+                  <div class="review-name">
+                    Patryk Basztabin
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Sehr kompetente, schnelle und reibungslose Reparatur.
+              Der Kontakt wurde unkompliziert aufgenommen, die Geräte
+              wurden sogar selbst abgeholt.
+            </p>
+
+          </div>
+
+
+          <details class="review-details">
+
+            <summary>
+              Vollständige Bewertung lesen
+
+              <span class="summary-arrow">
+                ↓
+              </span>
+            </summary>
+
+            <div class="review-full">
+
+              <p>Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.
+
+Zusätzlich hat der Techniker meinen Laptop gereinigt und kleinere, zukünftige Probleme direkt mit behoben. Dabei hatte ich jederzeit die Möglichkeit, alles wieder so zurückzubekommen, wie ich es wollte. Probleme wurden eigenständig erkannt und professionell gelöst – sehr kompetent und vorausschauend.
+
+Top-Qualität – diesen Service kann ich jedem empfehlen. Ich habe zuvor zwei bis drei andere Läden kontaktiert, leider ohne Erfolg. Hier hat alles wunderbar funktioniert.
+
+Ich bin wirklich froh, auf ihn gestoßen zu sein, da ich nun einen verlässlichen Ansprechpartner für alle zukünftigen Computerangelegenheiten habe. Kann ich jedem nur wärmstens empfehlen.</p>
+
+            </div>
+
+          </details>
+        </article>
+
+
+        <!-- IRENE -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">IK</div>
+
+                <div>
+                  <div class="review-name">
+                    Irene Küng
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Vielen Dank. War voll umfänglich zufrieden mit neuer
+              Kamera und neuer Batterie. Hab sie schon weiter empfohlen.
+              Gruss
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- SRISH -->
+
+        <article class="review-card">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">S</div>
+
+                <div>
+                  <div class="review-name">
+                    Srish
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Ich bin wirklich sehr zufrieden mit dem Service!
+              Mein Handy hatte starke Akku-Probleme und der Bildschirm
+              hat stark geflackert.
+            </p>
+
+          </div>
+
+
+          <details class="review-details">
+
+            <summary>
+              Vollständige Bewertung lesen
+
+              <span class="summary-arrow">
+                ↓
+              </span>
+            </summary>
+
+            <div class="review-full">
+
+              <p>Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert. Vor der Reparatur wurde mir ein Video geschickt, das den Zustand im Inneren gezeigt hat, und danach ein weiteres – der Unterschied war deutlich sichtbar. Alles sah viel sauberer und gepflegter aus.
+
+Die Probleme sind jetzt komplett behoben und das Handy funktioniert wieder einwandfrei. Besonders positiv fand ich, dass keine Kosten für die Problemdiagnose verlangt wurden, was heutzutage nicht selbstverständlich ist.
+
+Ich kann Mujitech definitiv weiterempfehlen</p>
+
+            </div>
+
+          </details>
+        </article>
+
+
+        <!-- ALINA -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">AB</div>
+
+                <div>
+                  <div class="review-name">
+                    Alina Brüllhardt
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Habe vor zwei Wochen einen PC + Gaming Monitor von
+              Mujitech gekauft, und diese am selben Tag noch erhalten.
+              Service war sehr freundlich und hilfsbereit, mir wurde
+              beim Gerätetesten geholfen und alles funktioniert
+              einwandfrei.
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- C O -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">CO</div>
+
+                <div>
+                  <div class="review-name">
+                    C O
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Sehr zufrieden mit der Reparatur meines iPhone-Displays.
+              Der Inhaber ist extrem nett und freundlich und hat sich
+              viel Mühe gegeben um alle Info zu geben - sogar mit einem
+              Video vom Reparaturprozess! Gerne wieder und werde den
+              Service jederzeit weiterempfehlen!
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- NATASCHA -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">NB</div>
+
+                <div>
+                  <div class="review-name">
+                    Natascha Biell
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Super Service, schnell gut zuverlässig, Freundlich.
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- WEI -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">WW</div>
+
+                <div>
+                  <div class="review-name">
+                    Wei W
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Nice place and good people
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
+
+
+        <!-- SHEHRYAAR -->
+
+        <article class="review-card">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">SA</div>
+
+                <div>
+                  <div class="review-name">
+                    shehryaar ali
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Ich hatte mehrmals technische Probleme mit meinem Handy
+              und Laptop. Er hat jedes Mal sehr schnell geholfen und
+              alles verständlich erklärt.
+            </p>
+
+          </div>
+
+
+          <details class="review-details">
+
+            <summary>
+              Vollständige Bewertung lesen
+
+              <span class="summary-arrow">
+                ↓
+              </span>
+            </summary>
+
+            <div class="review-full">
+
+              <p>Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen, alles verständlich erklärt und die Probleme effizient gelöst.
+
+Die Zusammenarbeit war immer angenehm, er war erreichbar und zuverlässig, auch ausserhalb der normalen Arbeitszeiten.
+
+Ich kann ihn jedem weiterempfehlen, der jemanden sucht, der sich wirklich kümmert und die Arbeit sauber erledigt.</p>
+
+            </div>
+
+          </details>
+        </article>
+
+
+        <!-- DAMPFGLANZSERVICE -->
+
+        <article class="review-card simple">
+
+          <div class="review-main">
+
+            <div class="review-top">
+
+              <div class="review-person">
+                <div class="review-avatar">DA</div>
+
+                <div>
+                  <div class="review-name">
+                    Dampflanzservice-Ademi
+                  </div>
+
+                  <div class="review-source">
+                    Google Rezension
+                  </div>
+                </div>
+              </div>
+
+              <div class="review-rating">
+                ★★★★★
+              </div>
+
+            </div>
+
+            <p class="review-text">
+              Ich habe den Display von meinem Iphone 11pro reparieren
+              lassen. Super Beratung &amp; herzlich empfangen.
+              Top Arbeit!
+            </p>
+
+            <div class="google-label">
+              <span class="google-dot"></span>
+              5-Sterne-Bewertung
+            </div>
+
+          </div>
+        </article>
 
       </div>
 
 
-      <div class="legal">
-        <span>
-          © 2026 Mujitech. Alle Rechte vorbehalten.
-        </span>
+      <!-- CTA -->
 
-        <span>
-          UID: CHE-480.937.625
-        </span>
+      <div class="review-cta">
+
+        <div>
+          <div class="eyebrow">
+            Ihr Gerät in guten Händen
+          </div>
+
+          <h2>
+            Technikproblem?
+          </h2>
+
+          <p>
+            Senden Sie uns Ihre Anfrage unverbindlich.
+          </p>
+        </div>
+
+        <a
+          class="cta"
+          href="anfrage.html"
+        >
+          Anfrage starten →
+        </a>
+
       </div>
 
     </div>
-  </footer>
+  </section>
+
+</main>
 
 
-  <!-- JAVASCRIPT -->
-  <script src="assets/app.js?v=20260916-6"></script>
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+  <div class="wrap">
+
+    <div class="footergrid">
+
+      <div>
+
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Mujitech Startseite"
+        >
+          <img
+            src="logo.png"
+            alt="Mujitech Logo"
+            class="site-logo"
+          >
+        </a>
+
+        <p
+          class="sectionlead"
+          style="margin-top:14px"
+        >
+          Technik, Reparatur und digitale Lösungen für Privatkunden
+          und KMU in der Region St. Gallen – klar, persönlich und
+          ohne unnötigen Aufwand.
+        </p>
+
+        <div class="badge">
+          <span>●</span>
+          <b>Abtwil SG</b>
+          · kein öffentliches Ladenlokal · Termine nach Vereinbarung
+        </div>
+
+      </div>
+
+
+      <div>
+        <h4>Privatkunden</h4>
+
+        <a href="reparaturen.html">
+          Reparaturen
+        </a>
+
+        <a href="geraet-verkaufen.html">
+          Gerät verkaufen
+        </a>
+
+        <a href="privatkunden.html">
+          Technik-Services
+        </a>
+
+        <a href="shop.html">
+          Refurbished &amp; Zubehör
+        </a>
+      </div>
+
+
+      <div>
+        <h4>Unternehmen</h4>
+
+        <a href="unternehmen.html">
+          IT für KMU
+        </a>
+
+        <a href="websites.html">
+          Websites
+        </a>
+
+        <a href="unternehmen.html#telekom">
+          Telekom
+        </a>
+
+        <a href="unternehmen.html#cloud">
+          Cloud &amp; E-Mail
+        </a>
+      </div>
+
+
+      <div>
+        <h4>Kontakt</h4>
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+        <a
+          href="https://wa.me/41768444673"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          WhatsApp
+        </a>
+
+        <a href="rechtliches.html">
+          Impressum · AGB · Datenschutz
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="legal">
+
+      <span>
+        © 2026 Mujitech. Alle Rechte vorbehalten.
+      </span>
+
+      <span>
+        UID: CHE-480.937.625
+      </span>
+
+    </div>
+
+  </div>
+</footer>
+
+
+<script src="assets/app.js?v=20260916-7"></script>
 
 </body>
 </html>
