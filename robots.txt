@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mujitech.ch/sitemap.xml
