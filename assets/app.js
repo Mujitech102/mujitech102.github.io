@@ -1,3 +1,6 @@
+
+/* NAVIGATION */
+
 document.querySelectorAll('.dropbtn').forEach(btn => {
   btn.addEventListener('click', e => {
     e.stopPropagation();
@@ -31,52 +34,82 @@ document.querySelectorAll('form[data-demo]').forEach(form => {
 });
 
 
+/* GOOGLE ANALYTICS */
+
+const GA_MEASUREMENT_ID = 'G-C2WKE7YV33';
+const COOKIE_STORAGE_KEY = 'mujitech-cookie-consent';
+
+let analyticsLoaded = false;
+
+function activateGoogleAnalytics() {
+  if (analyticsLoaded) return;
+
+  analyticsLoaded = true;
+
+  window.dataLayer = window.dataLayer || [];
+
+  window.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA_MEASUREMENT_ID);
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src =
+    'https://www.googletagmanager.com/gtag/js?id=' +
+    encodeURIComponent(GA_MEASUREMENT_ID);
+
+  document.head.appendChild(script);
+}
+
+
 /* COOKIE-BANNER */
 
 document.addEventListener('DOMContentLoaded', () => {
-
   const banner = document.getElementById('cookieBanner');
   const necessaryButton = document.getElementById('cookieNecessary');
   const acceptButton = document.getElementById('cookieAccept');
 
-  if (!banner) {
-    return;
-  }
-
-  const STORAGE_KEY = 'mujitech-cookie-consent';
+  let savedConsent = null;
 
   try {
-    const savedConsent = localStorage.getItem(STORAGE_KEY);
-
-    if (savedConsent) {
-      banner.classList.add('is-hidden');
-      return;
-    }
+    savedConsent = localStorage.getItem(COOKIE_STORAGE_KEY);
   } catch (error) {
     console.log('Cookie-Einstellung konnte nicht gelesen werden.');
   }
 
-  function closeCookieBanner(choice) {
+  if (savedConsent === 'all') {
+    activateGoogleAnalytics();
+  }
 
-    try {
-      localStorage.setItem(STORAGE_KEY, choice);
-    } catch (error) {
-      console.log('Cookie-Einstellung konnte nicht gespeichert werden.');
-    }
-
+  if (banner && (savedConsent === 'all' || savedConsent === 'necessary')) {
     banner.classList.add('is-hidden');
   }
 
   if (necessaryButton) {
     necessaryButton.addEventListener('click', () => {
-      closeCookieBanner('necessary');
+      try {
+        localStorage.setItem(COOKIE_STORAGE_KEY, 'necessary');
+      } catch (error) {
+        console.log('Cookie-Einstellung konnte nicht gespeichert werden.');
+      }
+
+      banner?.classList.add('is-hidden');
     });
   }
 
   if (acceptButton) {
     acceptButton.addEventListener('click', () => {
-      closeCookieBanner('all');
+      try {
+        localStorage.setItem(COOKIE_STORAGE_KEY, 'all');
+      } catch (error) {
+        console.log('Cookie-Einstellung konnte nicht gespeichert werden.');
+      }
+
+      activateGoogleAnalytics();
+      banner?.classList.add('is-hidden');
     });
   }
-
 });
