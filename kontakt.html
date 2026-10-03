@@ -1,504 +1,94 @@
 <!doctype html>
-<html lang="de">
+<html lang="de-CH">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<title>Kontakt | Mujitech</title>
-
-<meta name="description" content="Kontaktieren Sie Mujitech für Reparaturen, Technik-Service und IT-Lösungen für Privatkunden und Unternehmen in St. Gallen.">
-
-<link rel="icon" type="image/png" href="logo.png?v=20260916-4">
-<link rel="stylesheet" href="assets/style.css?v=20260916-4">
-<link rel="stylesheet" href="assets/mono.css?v=20261003-2">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kontakt Mujitech | iPhone-Reparatur & IT-Service St. Gallen</title>
+<meta name="description" content="Kontaktieren Sie Mujitech in Abtwil bei St. Gallen für iPhone- und Laptop-Reparaturen, Geräteankauf, PC-Service, Websites und IT-Support für KMU. Anfrage online senden.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://mujitech.ch/kontakt.html">
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="stylesheet" href="assets/style.css?v=20261003-12">
+<link rel="stylesheet" href="assets/mono.css?v=20261003-12">
+<meta property="og:type" content="website"><meta property="og:locale" content="de_CH">
+<meta property="og:title" content="Kontakt | Mujitech St. Gallen"><meta property="og:description" content="Reparatur, Technik-Service und IT für KMU: Jetzt Mujitech kontaktieren."><meta property="og:url" content="https://mujitech.ch/kontakt.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","name":"Mujitech kontaktieren","url":"https://mujitech.ch/kontakt.html","description":"Kontakt für Reparaturen, Technik-Service und IT-Lösungen in Abtwil und St. Gallen.","mainEntity":{"@type":"LocalBusiness","name":"Mujitech","url":"https://mujitech.ch","telephone":"+41768444673","email":"info@mujitech.ch","address":{"@type":"PostalAddress","addressLocality":"Abtwil","postalCode":"9030","addressRegion":"SG","addressCountry":"CH"},"areaServed":[{"@type":"Place","name":"St. Gallen"},{"@type":"Country","name":"Schweiz"}]}}</script>
+<style>
+/* Ausschliesslich diese Kontaktseite: schwarz-weiss, ohne globale Änderungen */
+.contact-page{color:#111;position:relative;isolation:isolate}
+.contact-page *{box-sizing:border-box}
+.contact-wrap{width:min(1160px,calc(100% - 36px));margin:auto}
+.contact-page .eyebrow{font-weight:850;letter-spacing:.14em;text-transform:uppercase;font-size:12px;color:#111}
+.contact-hero{padding:68px 0 38px}
+.contact-hero h1{font-size:clamp(39px,5.6vw,70px);line-height:1.06;letter-spacing:-.055em;max-width:930px;margin:16px 0 20px;color:#111}
+.contact-hero p{font-size:clamp(16px,1.8vw,19px);line-height:1.75;max-width:730px;color:#555;margin:0}
+.contact-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.contact-chip{border:1px solid #d9d9d9;background:#fff;border-radius:99px;padding:9px 13px;font-size:12px;color:#333;display:inline-flex;align-items:center;gap:8px}
+.contact-chip svg{width:16px;height:16px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;align-items:start;padding:24px 0 90px}
+.contact-left{display:grid;gap:20px}
+.contact-card,.contact-form-card{background:rgba(255,255,255,.97)!important;background-image:none!important;border:1px solid #dedede;border-radius:26px;box-shadow:0 12px 35px rgba(0,0,0,.045);color:#111;transition:transform .35s,box-shadow .35s}
+.contact-card{padding:28px}
+.contact-card h2,.contact-form-card h2{color:#111;letter-spacing:-.035em;line-height:1.15;margin:12px 0;font-size:clamp(23px,2.5vw,31px)}
+.contact-card p,.contact-form-card .form-intro{color:#555;line-height:1.75;font-size:14px;margin:0 0 18px}
+.contact-icon{display:inline-flex;align-items:center;justify-content:center;width:45px;height:45px;border:1px solid #111;border-radius:14px;background:#111;color:#fff}
+.contact-icon svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.contact-method{display:flex;gap:13px;align-items:center;padding:14px 0;border-top:1px solid #eee;text-decoration:none!important;color:#111!important}
+.contact-method .method-icon{width:39px;height:39px;border:1px solid #ddd;border-radius:12px;display:grid;place-items:center;flex-shrink:0;background:#fafafa;color:#111}
+.method-icon svg{width:19px;height:19px;stroke:currentColor;stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.contact-method strong{display:block;color:#111;font-size:14px}
+.contact-method small{display:block;color:#666;font-size:12px;margin-top:3px}
+.contact-note{font-size:12px!important;margin-top:14px!important}
+.contact-form-card{padding:clamp(23px,3vw,36px);scroll-margin-top:100px}
+.contact-form-card .form-heading{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+.contact-form-card .form-heading h2{margin:0}
+.contact-form-card form{display:block!important;border:0!important;background:transparent!important;box-shadow:none!important;padding:0!important;margin:24px 0 0!important}
+.contact-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px 15px}
+.contact-field{min-width:0}
+.contact-field.full{grid-column:1/-1}
+.contact-field label{display:block;color:#111;font-size:13px;font-weight:750;margin:0 0 9px}
+.contact-field input:not([type=checkbox]),.contact-field select,.contact-field textarea{display:block;width:100%;max-width:100%;min-height:51px;border:1px solid #c9c9c9!important;border-radius:12px!important;background:#fff!important;background-image:none!important;color:#111!important;-webkit-text-fill-color:#111;font:inherit;font-size:14px;padding:13px 14px;box-shadow:none!important;outline:none;transition:border-color .2s,box-shadow .2s}
+.contact-field textarea{min-height:170px;resize:vertical;line-height:1.6}
+.contact-field input:focus,.contact-field select:focus,.contact-field textarea:focus{border-color:#111!important;box-shadow:0 0 0 3px rgba(0,0,0,.07)!important}
+.contact-field input::placeholder,.contact-field textarea::placeholder{color:#777;-webkit-text-fill-color:#777}
+.contact-field select{appearance:auto;cursor:pointer}
+.contact-field select option{background:#fff;color:#111}
+.contact-privacy{display:flex;align-items:flex-start;gap:11px;color:#333;font-size:12px;line-height:1.65;cursor:pointer}
+.contact-privacy input{width:17px!important;height:17px!important;flex:0 0 17px;margin:2px 0 0!important;accent-color:#111}
+.contact-privacy a{color:#111!important;text-decoration:underline}
+.contact-submit,.contact-submit:visited{display:flex!important;justify-content:center;align-items:center;gap:10px;width:100%;min-height:54px;background:#111!important;background-image:none!important;color:#fff!important;-webkit-text-fill-color:#fff!important;border:1px solid #111!important;border-radius:12px!important;font-weight:850;font-size:15px;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.contact-submit:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0,0,0,.18)}
+.contact-fineprint{font-size:12px;color:#666;line-height:1.7;margin:0}
+.contact-bottom{padding:0 0 85px}
+.contact-next{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:#fff;border:1px solid #ddd;border-radius:23px;padding:25px 29px;box-shadow:0 10px 30px rgba(0,0,0,.035)}
+.contact-next h2{font-size:clamp(22px,3vw,31px);color:#111;margin:7px 0}
+.contact-next p{font-size:14px;color:#555;margin:0}
+.contact-next a{display:inline-flex;align-items:center;justify-content:center;background:#111!important;color:#fff!important;-webkit-text-fill-color:#fff!important;text-decoration:none;padding:13px 20px;border-radius:11px;font-weight:750}
+/* Navigation nur auf dieser Seite kontrastreich */
+body .topbar,body .nav,body .dropdown .menu{background:#fff!important;background-image:none!important}
+body .navlinks>a:not(.cta),body .dropbtn,body .dropdown .menu a{color:#111!important;-webkit-text-fill-color:#111!important}
+body .dropdown .menu{border:1px solid #ddd!important}
+body .dropdown .menu a:hover{background:#f3f3f3!important}
+body .navlinks>a.cta{background:#111!important;background-image:none!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+body .mobilebtn{color:#111!important;background:#fff!important}
+@media(hover:hover){.contact-card:hover,.contact-form-card:hover{transform:perspective(1100px) translateY(-4px) rotateX(.6deg);box-shadow:0 22px 48px rgba(0,0,0,.09)}.contact-method:hover .method-icon{background:#111;color:#fff}}
+@media(max-width:820px){.contact-grid{grid-template-columns:1fr}.contact-form-card{grid-row:1}.contact-hero{padding:46px 0 24px}}
+@media(max-width:540px){.contact-fields{grid-template-columns:1fr}.contact-card{padding:23px}.contact-grid{gap:18px;padding-bottom:65px}.contact-next{padding:23px}}
+@media(prefers-reduced-motion:reduce){.contact-card,.contact-form-card,.contact-submit{transition:none!important}.contact-card:hover,.contact-form-card:hover,.contact-submit:hover{transform:none!important}}
+</style>
 </head>
-
 <body>
-
-<header class="topbar">
-  <div class="wrap nav">
-
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Mujitech Logo" class="site-logo">
-    </a>
-
-    <button class="mobilebtn" aria-label="Menü">☰</button>
-
-    <nav class="navlinks">
-
-      <a href="reparaturen.html">Reparaturen</a>
-      <a href="geraet-verkaufen.html">Gerät verkaufen</a>
-
-      <div class="dropdown">
-        <button class="dropbtn">Privatkunden ▾</button>
-
-        <div class="menu">
-          <a href="privatkunden.html#daten">Datenübertragung</a>
-          <a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
-          <a href="privatkunden.html#wlan">WLAN & Internet-Hilfe</a>
-          <a href="shop.html">Refurbished & Zubehör</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <button class="dropbtn">Unternehmen ▾</button>
-
-        <div class="menu">
-          <a href="unternehmen.html">IT für KMU</a>
-          <a href="unternehmen.html#support">IT-Support & Betreuung</a>
-          <a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
-          <a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
-          <a href="websites.html">Websites & Wartung</a>
-          <a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
-        </div>
-      </div>
-
-      <a href="shop.html">Shop</a>
-      <a href="bewertungen.html">Bewertungen</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a class="cta" href="anfrage.html">Anfrage starten</a>
-
-    </nav>
-  </div>
-</header>
-
-
-<main>
-
-<div class="wrap breadcrumb">
-  <a href="index.html">Start</a> / Kontakt
-</div>
-
-
-<section class="pagehero">
-
-  <div class="wrap">
-
-    <div class="eyebrow">Kontakt</div>
-
-    <h1>Direkt zur richtigen Anfrage.</h1>
-
-    <p class="lead">
-      Privatkunde oder Unternehmen – kurz auswählen, worum es geht,
-      und die wichtigsten Angaben senden.
-    </p>
-
-  </div>
-
-</section>
-
-
-<section>
-
-  <div class="wrap split">
-
-
-    <!-- KONTAKTDATEN -->
-
-    <div class="panel">
-
-      <h3>Mujitech</h3>
-
-      <p class="sectionlead">
-        Abtwil SG, 9030 Gaiserwald, St. Gallen, Schweiz<br>
-        Kein öffentliches Ladenlokal – persönliche Übergabe nur nach Terminvereinbarung.
-      </p>
-
-      <ul class="list">
-
-        <li>
-          <span class="check">☎</span>
-          <span>
-            <a href="tel:+41768444673">
-              076 844 46 73
-            </a>
-          </span>
-        </li>
-
-        <li>
-          <span class="check">@</span>
-          <span>
-            <a href="mailto:info@mujitech.ch">
-              info@mujitech.ch
-            </a>
-          </span>
-        </li>
-
-        <li>
-          <span class="check">W</span>
-          <span>
-            <a href="https://wa.me/41768444673">
-              WhatsApp schreiben
-            </a>
-          </span>
-        </li>
-
-        <li>
-          <span class="check">#</span>
-          <span>
-            UID: CHE-480.937.625
-          </span>
-        </li>
-
-      </ul>
-
-    </div>
-
-
-    <!-- KONTAKTFORMULAR -->
-
-    <form
-      id="business"
-      class="form"
-      action="https://formsubmit.co/info@mujitech.ch"
-      method="post"
-    >
-
-      <!-- FORMULAR EINSTELLUNGEN -->
-
-      <input
-        type="hidden"
-        name="_subject"
-        value="Neue Kontaktanfrage über mujitech.ch"
-      >
-
-      <input
-        type="hidden"
-        name="_template"
-        value="table"
-      >
-
-      <input
-        type="hidden"
-        name="_next"
-        value="https://mujitech.ch/danke.html"
-      >
-
-      <input
-        type="hidden"
-        name="_url"
-        value="https://mujitech.ch/kontakt.html"
-      >
-
-
-      <!-- SPAM-SCHUTZ -->
-
-      <input
-        type="text"
-        name="_honey"
-        style="display:none"
-        tabindex="-1"
-        autocomplete="off"
-      >
-
-
-      <div class="field">
-
-        <label for="name">
-          Name / Firma *
-        </label>
-
-        <input
-          id="name"
-          required
-          type="text"
-          name="name"
-          autocomplete="name"
-          placeholder="Name oder Firmenname"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label for="email">
-          E-Mail *
-        </label>
-
-        <input
-          id="email"
-          required
-          type="email"
-          name="email"
-          autocomplete="email"
-          placeholder="name@beispiel.ch"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label for="telefon">
-          Telefon / WhatsApp
-        </label>
-
-        <input
-          id="telefon"
-          type="tel"
-          name="telefon"
-          autocomplete="tel"
-          placeholder="079 123 45 67"
-        >
-
-      </div>
-
-
-      <div class="field">
-
-        <label for="bereich">
-          Bereich *
-        </label>
-
-        <select
-          id="bereich"
-          required
-          name="bereich"
-        >
-
-          <option value="">
-            Bitte auswählen
-          </option>
-
-          <option value="Privatkunden-Service">
-            Privatkunden-Service
-          </option>
-
-          <option value="Reparatur">
-            Reparatur
-          </option>
-
-          <option value="Geräteankauf">
-            Geräteankauf
-          </option>
-
-          <option value="IT-Support KMU">
-            IT-Support KMU
-          </option>
-
-          <option value="Hardware-Beschaffung">
-            Hardware-Beschaffung
-          </option>
-
-          <option value="Firmenhandys">
-            Firmenhandys
-          </option>
-
-          <option value="Telekom-Anfrage">
-            Telekom-Anfrage
-          </option>
-
-          <option value="Website">
-            Website
-          </option>
-
-          <option value="Microsoft 365 / Google Workspace">
-            Microsoft 365 / Google Workspace
-          </option>
-
-          <option value="Sonstiges">
-            Sonstiges
-          </option>
-
-        </select>
-
-      </div>
-
-
-      <div class="field full">
-
-        <label for="nachricht">
-          Nachricht *
-        </label>
-
-        <textarea
-          id="nachricht"
-          required
-          name="nachricht"
-          rows="7"
-          placeholder="Beschreiben Sie kurz Ihr Anliegen."
-        ></textarea>
-
-      </div>
-
-
-      <div class="field full">
-
-        <label>
-
-          <input
-            type="checkbox"
-            name="datenschutz"
-            value="Zugestimmt"
-            required
-            style="width:auto;margin-right:8px"
-          >
-
-          Ich habe die
-          <a href="rechtliches.html">Datenschutzerklärung</a>
-          gelesen und stimme der Verarbeitung meiner Angaben
-          zur Bearbeitung der Anfrage zu. *
-
-        </label>
-
-      </div>
-
-
-      <div class="field full">
-
-        <button
-          class="cta"
-          type="submit"
-        >
-          Anfrage senden →
-        </button>
-
-      </div>
-
-
-      <div class="field full">
-
-        <p class="sectionlead">
-          Ihre Anfrage wird direkt an Mujitech übermittelt.
-          Wir melden uns anschliessend bei Ihnen.
-        </p>
-
-      </div>
-
-    </form>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-  <div class="wrap">
-
-    <div class="footergrid">
-
-      <div>
-
-        <a class="brand" href="index.html">
-
-          <img
-            src="logo.png"
-            alt="Mujitech Logo"
-            class="site-logo"
-          >
-
-        </a>
-
-        <p class="sectionlead" style="margin-top:14px">
-          Technik, Reparatur und digitale Lösungen für Privatkunden
-          und KMU in der Region St. Gallen – klar, persönlich
-          und ohne unnötigen Aufwand.
-        </p>
-
-        <div class="badge">
-          <span>●</span>
-          <b>Abtwil SG</b>
-          · kein öffentliches Ladenlokal
-          · Termine nach Vereinbarung
-        </div>
-
-      </div>
-
-
-      <div>
-
-        <h4>Privatkunden</h4>
-
-        <a href="reparaturen.html">
-          Reparaturen
-        </a>
-
-        <a href="geraet-verkaufen.html">
-          Gerät verkaufen
-        </a>
-
-        <a href="privatkunden.html">
-          Technik-Services
-        </a>
-
-        <a href="shop.html">
-          Refurbished & Zubehör
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h4>Unternehmen</h4>
-
-        <a href="unternehmen.html">
-          IT für KMU
-        </a>
-
-        <a href="websites.html">
-          Websites
-        </a>
-
-        <a href="unternehmen.html#telekom">
-          Telekom
-        </a>
-
-        <a href="unternehmen.html#cloud">
-          Cloud & E-Mail
-        </a>
-
-      </div>
-
-
-      <div>
-
-        <h4>Kontakt</h4>
-
-        <a href="tel:+41768444673">
-          076 844 46 73
-        </a>
-
-        <a href="mailto:info@mujitech.ch">
-          info@mujitech.ch
-        </a>
-
-        <a href="https://wa.me/41768444673">
-          WhatsApp
-        </a>
-
-        <a href="rechtliches.html">
-          Impressum · AGB · Datenschutz
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="legal">
-
-      <span>
-        © 2026 Mujitech. Alle Rechte vorbehalten.
-      </span>
-
-      <span>
-        UID: CHE-480.937.625
-      </span>
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<script src="assets/app.js?v=20260916-12"></script>
-
-<script defer src="assets/mono-electric.js?v=20261003-1"></script>
+<!-- Einmal definierte, schwarz-weisse SVG-Symbole -->
+<svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg"><symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.1 10a16 16 0 0 0 6 6l1.5-1.9a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.6 1.9Z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></symbol><symbol id="i-message" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5A8.5 8.5 0 1 1 21 11.5Z"/><path d="M9 9c1 3 3 5 6 6"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol></svg>
+<header class="topbar"><div class="wrap nav"><a class="brand" href="index.html" aria-label="Mujitech Startseite"><img src="logo.png" alt="Mujitech Logo" class="site-logo"></a><button class="mobilebtn" type="button" aria-label="Menü öffnen" aria-expanded="false">☰</button><nav class="navlinks" aria-label="Hauptnavigation"><a href="reparaturen.html">Reparaturen</a><a href="geraet-verkaufen.html">Gerät verkaufen</a><div class="dropdown"><button class="dropbtn" type="button">Privatkunden ▾</button><div class="menu"><a href="privatkunden.html#daten">Datenübertragung</a><a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a><a href="privatkunden.html#wlan">WLAN &amp; Internet-Hilfe</a><a href="shop.html">Refurbished &amp; Zubehör</a></div></div><div class="dropdown"><button class="dropbtn" type="button">Unternehmen ▾</button><div class="menu"><a href="unternehmen.html">IT für KMU</a><a href="unternehmen.html#support">IT-Support &amp; Betreuung</a><a href="unternehmen.html#hardware">Hardware-Beschaffung</a><a href="unternehmen.html#telekom">Telekom-Vermittlung</a><a href="websites.html">Websites &amp; Wartung</a><a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a></div></div><a href="shop.html">Shop</a><a href="bewertungen.html">Bewertungen</a><a href="kontakt.html" aria-current="page">Kontakt</a><a class="cta" href="anfrage.html">Anfrage starten</a></nav></div></header>
+<main class="contact-page"><div class="contact-wrap breadcrumb"><a href="index.html">Start</a> / Kontakt</div><section class="contact-hero"><div class="contact-wrap"><span class="eyebrow">Kontakt · Mujitech St. Gallen</span><h1>Technikproblem oder Projekt? Wir sind für Sie da.</h1><p>Ob iPhone-Reparatur, Laptop-Service, Website oder IT-Support für Ihr Unternehmen: Beschreiben Sie Ihr Anliegen und wir besprechen gemeinsam die nächsten Schritte.</p><div class="contact-chips"><span class="contact-chip"><svg viewBox="0 0 24 24"><use href="#i-pin"/></svg>Abtwil bei St. Gallen</span><span class="contact-chip"><svg viewBox="0 0 24 24"><use href="#i-clock"/></svg>Persönliche Übergabe nach Termin</span><span class="contact-chip"><svg viewBox="0 0 24 24"><use href="#i-send"/></svg>Reparaturen schweizweit einsenden</span></div></div></section>
+<section><div class="contact-wrap contact-grid"><div class="contact-left"><article class="contact-card"><span class="contact-icon"><svg><use href="#i-message"/></svg></span><h2>Direkt mit Mujitech sprechen</h2><p>Wählen Sie Ihren bevorzugten Kontaktweg. Für konkrete Anfragen können Sie auch das Formular verwenden.</p><a class="contact-method" href="tel:+41768444673"><span class="method-icon"><svg><use href="#i-phone"/></svg></span><span><strong>076 844 46 73</strong><small>Telefon</small></span></a><a class="contact-method" href="mailto:info@mujitech.ch"><span class="method-icon"><svg><use href="#i-mail"/></svg></span><span><strong>info@mujitech.ch</strong><small>E-Mail</small></span></a><a class="contact-method" href="https://wa.me/41768444673" target="_blank" rel="noopener noreferrer"><span class="method-icon"><svg><use href="#i-message"/></svg></span><span><strong>WhatsApp schreiben</strong><small>Nachricht direkt senden</small></span></a></article><article class="contact-card"><span class="contact-icon"><svg><use href="#i-pin"/></svg></span><h2>Standort &amp; Ablauf</h2><p><strong>Abtwil SG, 9030 Gaiserwald</strong><br>Region St. Gallen, Schweiz</p><p>Wir haben kein öffentliches Ladenlokal. Persönliche Geräteübergaben erfolgen ausschliesslich nach Terminvereinbarung. Vereinbarte Reparaturen können Sie aus der ganzen Schweiz einsenden.</p><p class="contact-note"><strong>Unternehmen:</strong> IT-Anfragen, Websites und weitere Technikprojekte besprechen wir gerne telefonisch oder nach Vereinbarung online.</p></article></div>
+<div class="contact-form-card" id="business"><div class="form-heading"><span class="contact-icon"><svg><use href="#i-send"/></svg></span><div><span class="eyebrow">Online-Anfrage</span><h2>Wie können wir helfen?</h2></div></div><p class="form-intro">Wählen Sie den passenden Bereich und beschreiben Sie Ihr Anliegen. Die mit * markierten Angaben sind erforderlich.</p>
+<form action="https://formsubmit.co/info@mujitech.ch" method="POST" id="kontaktformular"><input type="hidden" name="_subject" value="Neue Kontaktanfrage über mujitech.ch"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://mujitech.ch/danke.html"><input type="hidden" name="_url" value="https://mujitech.ch/kontakt.html"><input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true"><div class="contact-fields"><div class="contact-field"><label for="name">Name / Firma *</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Ihr Name oder Firmenname" required maxlength="120"></div><div class="contact-field"><label for="email">E-Mail *</label><input id="email" name="email" type="email" autocomplete="email" placeholder="name@beispiel.ch" required maxlength="150"></div><div class="contact-field"><label for="telefon">Telefon / WhatsApp</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" placeholder="076 123 45 67" maxlength="35"></div><div class="contact-field"><label for="bereich">Anfragebereich *</label><select id="bereich" name="bereich" required><option value="" disabled selected>Bitte auswählen</option><optgroup label="Privatkunden"><option value="Reparatur">Smartphone-, Tablet- oder PC-Reparatur</option><option value="Privatkunden-Service">Technik-Service für Privatkunden</option><option value="Geräteankauf">Gerät verkaufen</option><option value="Produktanfrage">Produkt / Shop</option></optgroup><optgroup label="Unternehmen"><option value="IT-Support KMU">IT-Support für KMU</option><option value="IT-Betreuung">Laufende IT-Betreuung</option><option value="Hardware-Beschaffung">Hardware-Beschaffung</option><option value="Firmenhandys">Firmenhandys</option><option value="Telekom-Anfrage">Telekom-Beratung</option><option value="Website">Website-Erstellung &amp; Wartung</option><option value="Microsoft 365 / Google Workspace">Microsoft 365 / Google Workspace</option></optgroup><option value="Sonstiges">Sonstiges</option></select></div><div class="contact-field full"><label for="nachricht">Ihre Nachricht *</label><textarea id="nachricht" name="nachricht" required minlength="10" maxlength="5000" placeholder="Welches Gerät oder Projekt betrifft Ihre Anfrage? Was genau benötigen Sie? Beschreiben Sie Ihr Anliegen möglichst konkret."></textarea></div><div class="contact-field full"><label class="contact-privacy" for="datenschutz"><input id="datenschutz" name="datenschutz" type="checkbox" value="Zugestimmt" required><span>Ich habe die <a href="rechtliches.html">Datenschutzerklärung</a> gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage einverstanden. *</span></label></div><div class="contact-field full"><button class="contact-submit" type="submit">Anfrage senden <span aria-hidden="true">→</span></button></div><div class="contact-field full"><p class="contact-fineprint">Ihre Anfrage wird über unseren Formularanbieter an Mujitech übermittelt. Wir kontaktieren Sie über Ihre angegebenen Kontaktdaten. Bitte senden Sie keine Passwörter oder besonders sensiblen Daten über dieses Formular.</p></div></div></form>
+</div></div></section><section class="contact-bottom"><div class="contact-wrap"><div class="contact-next"><div><span class="eyebrow">Mujitech</span><h2>Lieber direkt schreiben?</h2><p>Kontaktieren Sie uns unkompliziert über WhatsApp.</p></div><a href="https://wa.me/41768444673" target="_blank" rel="noopener noreferrer">WhatsApp öffnen →</a></div></div></section></main>
+<footer><div class="wrap"><div class="footergrid"><div><a class="brand" href="index.html"><img src="logo.png" alt="Mujitech Logo" class="site-logo"></a><p class="sectionlead" style="margin-top:14px">Technik, Reparatur und digitale Lösungen für Privatkunden und KMU in der Region St. Gallen – persönlich und unkompliziert.</p><div class="badge"><b>Abtwil SG</b> · Kein öffentliches Ladenlokal · Termine nach Vereinbarung</div></div><div><h4>Privatkunden</h4><a href="reparaturen.html">Reparaturen</a><a href="geraet-verkaufen.html">Gerät verkaufen</a><a href="privatkunden.html">Technik-Services</a><a href="shop.html">Refurbished &amp; Zubehör</a></div><div><h4>Unternehmen</h4><a href="unternehmen.html">IT für KMU</a><a href="websites.html">Websites</a><a href="unternehmen.html#telekom">Telekom</a><a href="unternehmen.html#cloud">Cloud &amp; E-Mail</a></div><div><h4>Kontakt</h4><a href="tel:+41768444673">076 844 46 73</a><a href="mailto:info@mujitech.ch">info@mujitech.ch</a><a href="https://wa.me/41768444673">WhatsApp</a><a href="rechtliches.html">Impressum · AGB · Datenschutz</a></div></div><div class="legal"><span>© 2026 Mujitech. Alle Rechte vorbehalten.</span><span>UID: CHE-480.937.625</span></div></div></footer>
+<script src="assets/app.js?v=20261003-12"></script><script defer src="assets/mono-electric.js?v=20261003-1"></script>
+<script>/* Links von anderen Seiten mit ?bereich=... automatisch vorauswählen */(function(){const value=new URLSearchParams(location.search).get('bereich');if(!value)return;const select=document.getElementById('bereich');const option=Array.from(select.options).find(o=>o.value.toLowerCase()===value.toLowerCase());if(option)select.value=option.value;})();</script>
 </body>
 </html>
