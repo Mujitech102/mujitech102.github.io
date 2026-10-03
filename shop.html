@@ -1,485 +1,828 @@
-<!doctype html>
-<html lang="de">
+
+<!DOCTYPE html>
+<html lang="de-CH">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Produkte | Mujitech</title>
+<title>Gebrauchte & geprüfte iPhones kaufen Schweiz | Mujitech</title>
+<meta name="description" content="Geprüfte und aufbereitete iPhones bei Mujitech kaufen. iPhone 17 Pro Max und iPhone 14 Pro Max mit 100 % Akku, 12 Monaten Mujitech Garantie und kostenlosem Versand innerhalb der Schweiz.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://mujitech.ch/shop.html">
+<link rel="icon" type="image/png" href="logo.png">
 
-<meta name="description" content="Aktuell verfügbare Smartphones, Computer und Technik-Produkte von Mujitech. Geprüfte Geräte mit transparenten Angaben und Garantie.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Mujitech">
+<meta property="og:title" content="Geprüfte iPhones kaufen | Mujitech">
+<meta property="og:description" content="Aufbereitete iPhones mit transparenten Angaben, 12 Monaten Mujitech Garantie und kostenlosem Versand innerhalb der Schweiz.">
+<meta property="og:url" content="https://mujitech.ch/shop.html">
+<meta property="og:image" content="https://mujitech.ch/logo.png">
 
-<link rel="icon" type="image/png" href="logo.png?v=20260916-4">
-<link rel="stylesheet" href="assets/style.css?v=20260916-4">
+<link rel="stylesheet" href="assets/style.css?v=20261003">
+<link rel="stylesheet" href="assets/mono.css?v=20261003-6">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@graph":[
+  {
+   "@type":"Organization",
+   "@id":"https://mujitech.ch/#organization",
+   "name":"Mujitech",
+   "url":"https://mujitech.ch/",
+   "logo":"https://mujitech.ch/logo.png",
+   "email":"info@mujitech.ch",
+   "telephone":"+41768444673"
+  },
+  {
+   "@type":"CollectionPage",
+   "name":"Geprüfte und aufbereitete iPhones",
+   "url":"https://mujitech.ch/shop.html",
+   "description":"Produktübersicht geprüfter und aufbereiteter Smartphones von Mujitech.",
+   "inLanguage":"de-CH",
+   "mainEntity":{
+    "@type":"ItemList",
+    "itemListElement":[
+     {
+      "@type":"ListItem",
+      "position":1,
+      "url":"https://mujitech.ch/iphone-17-pro-max.html",
+      "name":"Apple iPhone 17 Pro Max 512 GB Silber"
+     },
+     {
+      "@type":"ListItem",
+      "position":2,
+      "url":"https://mujitech.ch/iphone-14-pro-max.html",
+      "name":"Apple iPhone 14 Pro Max 256 GB Space Black"
+     }
+    ]
+   }
+  },
+  {
+   "@type":"BreadcrumbList",
+   "itemListElement":[
+    {
+     "@type":"ListItem",
+     "position":1,
+     "name":"Startseite",
+     "item":"https://mujitech.ch/"
+    },
+    {
+     "@type":"ListItem",
+     "position":2,
+     "name":"Shop",
+     "item":"https://mujitech.ch/shop.html"
+    }
+   ]
+  }
+ ]
+}
+</script>
 
 <style>
-/* PRODUKTKATALOG */
+/* MUJITECH SHOP – SCHWARZ & WEISS */
 
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px;
+.shop-page {
+  color:#111;
 }
 
-.product-card{
-  background:var(--panel,#0d1117);
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:22px;
-  overflow:hidden;
+.shop-page .shop-container {
+  width:min(1120px,calc(100% - 40px));
+  margin-inline:auto;
+}
+
+.shop-page .shop-section {
+  padding:50px 0 80px;
+}
+
+.shop-page .shop-label {
+  display:block;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:#111;
+  margin-bottom:16px;
+}
+
+.shop-page h1 {
+  font-size:clamp(36px,5vw,60px);
+  line-height:1.12;
+  letter-spacing:-.045em;
+  color:#111;
+  margin-bottom:20px;
+}
+
+.shop-page .shop-intro {
+  max-width:740px;
+  color:#555;
+  font-size:17px;
+  line-height:1.75;
+}
+
+.shop-page .shop-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:26px;
+  margin-top:42px;
+  align-items:stretch;
+}
+
+/* Einheitliche Produktkarten */
+
+.shop-page .shop-product {
+  min-width:0;
   display:flex;
   flex-direction:column;
-  transition:transform .2s ease,border-color .2s ease;
+  background:#fff !important;
+  border:1px solid #dedede;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 32px rgba(0,0,0,.035);
+  transition:transform .2s ease,box-shadow .2s ease;
 }
 
-.product-card:hover{
-  transform:translateY(-4px);
-  border-color:rgba(91,231,194,.35);
+.shop-page .shop-product:hover {
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,0,0,.075);
 }
 
-.product-image{
-  background:#fff;
-  aspect-ratio:1/1;
+/* Beide Bilder besitzen denselben Bildbereich */
+
+.shop-page .shop-image {
+  height:330px;
+  padding:24px;
+  box-sizing:border-box;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+  background:#fff !important;
+  border-bottom:1px solid #eee;
   overflow:hidden;
 }
 
-.product-image img{
+.shop-page .shop-image img {
+  display:block;
   width:100%;
   height:100%;
+  max-width:330px;
+  max-height:275px;
   object-fit:contain;
-  display:block;
+  transform:scale(var(--device-scale,1));
+  transform-origin:center;
 }
 
-.product-content{
-  padding:24px;
+/*
+  Individuelle Bildskalierung.
+  Falls die Originalbilder unterschiedlich
+  viel Leerraum enthalten, diese Werte
+  nach dem Veröffentlichen feinjustieren.
+*/
+
+.shop-page .device-17 {
+  --device-scale:1;
+}
+
+.shop-page .device-14 {
+  --device-scale:1;
+}
+
+/* Produktinformationen */
+
+.shop-page .shop-content {
   display:flex;
   flex-direction:column;
   flex:1;
+  padding:28px;
 }
 
-.product-status{
+.shop-page .shop-status {
   display:inline-flex;
   align-items:center;
-  gap:7px;
-  width:max-content;
-  font-size:12px;
-  font-weight:700;
+  gap:9px;
+  align-self:flex-start;
+  padding:7px 11px;
+  margin-bottom:17px;
+  border:1px solid #dedede;
+  border-radius:30px;
+  color:#111;
+  background:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.8px;
   text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-bottom:13px;
 }
 
-.product-status::before{
+.shop-page .shop-status::before {
   content:"";
   width:7px;
   height:7px;
+  background:#111;
   border-radius:50%;
-  background:#5be7c2;
-  box-shadow:0 0 12px rgba(91,231,194,.65);
 }
 
-.product-content h3{
+.shop-page .shop-content h2 {
+  font-size:clamp(23px,2.6vw,30px);
+  line-height:1.2;
+  letter-spacing:-.025em;
+  color:#111;
   margin:0 0 10px;
 }
 
-.product-price{
-  font-size:26px;
-  font-weight:800;
-  margin:4px 0 17px;
+.shop-page .shop-variant {
+  color:#555;
+  font-size:15px;
+  margin:0 0 18px;
 }
 
-.product-features{
-  list-style:none;
-  padding:0;
-  margin:0 0 24px;
-  display:grid;
-  gap:9px;
+.shop-page .shop-price {
+  color:#111;
+  font-size:clamp(27px,3vw,35px);
+  font-weight:850;
+  letter-spacing:-.035em;
+  margin-bottom:14px;
 }
 
-.product-features li{
-  opacity:.82;
+.shop-page .shop-description {
+  color:#555;
   font-size:14px;
+  line-height:1.75;
+  margin:0 0 24px;
 }
 
-.product-features li::before{
-  content:"✓";
-  margin-right:9px;
-  color:#5be7c2;
-  font-weight:700;
+/* Einheitliche technische Merkmale */
+
+.shop-page .shop-specs {
+  list-style:none;
+  margin:0 0 27px;
+  padding:0;
+  display:grid;
+  gap:14px;
 }
 
-.product-actions{
-  margin-top:auto;
+.shop-page .shop-specs li {
   display:flex;
-  gap:10px;
+  align-items:flex-start;
+  gap:12px;
+  color:#333;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.shop-page .shop-specs svg {
+  flex-shrink:0;
+  width:20px;
+  height:20px;
+  stroke:#111 !important;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.shop-page .shop-specs strong {
+  display:block;
+  color:#111;
+  font-weight:750;
+}
+
+/* Buttons */
+
+.shop-page .shop-actions {
+  display:flex;
   flex-wrap:wrap;
+  gap:10px;
+  margin-top:auto;
 }
 
-.product-note{
-  margin-top:28px;
+.shop-page a.shop-btn,
+.shop-page a.shop-btn:visited {
+  display:inline-flex !important;
+  justify-content:center;
+  align-items:center;
+  min-height:49px;
+  padding:12px 18px !important;
+  border:1px solid #111 !important;
+  border-radius:12px;
+  background:#111 !important;
+  background-image:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  text-decoration:none !important;
+  font-size:14px;
+  font-weight:750;
+  box-shadow:none !important;
 }
 
-@media(max-width:900px){
-  .product-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
+.shop-page a.shop-btn:hover {
+  background:#333 !important;
 }
 
-@media(max-width:650px){
-  .product-grid{
+.shop-page a.shop-btn.secondary,
+.shop-page a.shop-btn.secondary:visited {
+  background:#fff !important;
+  color:#111 !important;
+  -webkit-text-fill-color:#111 !important;
+}
+
+.shop-page a.shop-btn.secondary:hover {
+  background:#eee !important;
+}
+
+/* Hinweise */
+
+.shop-page .shop-note {
+  margin-top:32px;
+  padding:25px;
+  border:1px solid #dedede;
+  border-radius:18px;
+  background:rgba(255,255,255,.97);
+  color:#555;
+  line-height:1.75;
+}
+
+.shop-page .shop-note strong {
+  color:#111;
+}
+
+.shop-page .shop-note a {
+  color:#111;
+  text-decoration:underline;
+}
+
+/* Navigation */
+
+body .topbar,
+body .nav,
+body .navlinks,
+body .dropdown .menu {
+  background:#fff !important;
+  background-image:none !important;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color:#111 !important;
+  -webkit-text-fill-color:#111 !important;
+}
+
+body .dropdown .menu {
+  border:1px solid #ddd !important;
+}
+
+body .dropdown .menu a:hover {
+  background:#f2f2f2 !important;
+}
+
+body .navlinks > a.cta,
+body .navlinks > a.cta:visited {
+  background:#111 !important;
+  background-image:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border:1px solid #111 !important;
+}
+
+body .mobilebtn {
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* Tablet und Smartphone */
+
+@media(max-width:750px) {
+  .shop-page .shop-grid {
     grid-template-columns:1fr;
+    max-width:530px;
+    margin-inline:auto;
+    margin-top:35px;
   }
 
-  .product-content{
-    padding:20px;
+  .shop-page .shop-section {
+    padding:35px 0 60px;
+  }
+}
+
+@media(max-width:420px) {
+  .shop-page .shop-image {
+    height:280px;
+  }
+
+  .shop-page .shop-image img {
+    max-height:225px;
+  }
+
+  .shop-page .shop-content {
+    padding:22px;
+  }
+
+  .shop-page .shop-actions {
+    flex-direction:column;
+  }
+
+  .shop-page .shop-actions a {
+    width:100%;
   }
 }
 </style>
-
-<link rel="stylesheet" href="assets/mono.css?v=20261003-2">
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
 <header class="topbar">
-  <div class="wrap nav">
+<div class="wrap nav">
 
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Mujitech Logo" class="site-logo">
-    </a>
+<a class="brand" href="index.html" aria-label="Mujitech Startseite">
+<img src="logo.png" alt="Mujitech Logo" class="site-logo">
+</a>
 
-    <button class="mobilebtn" aria-label="Menü">☰</button>
+<button class="mobilebtn"
+type="button"
+aria-label="Menü öffnen"
+aria-expanded="false">☰</button>
 
-    <nav class="navlinks">
+<nav class="navlinks" aria-label="Hauptnavigation">
 
-      <a href="reparaturen.html">Reparaturen</a>
-      <a href="geraet-verkaufen.html">Gerät verkaufen</a>
+<a href="reparaturen.html">Reparaturen</a>
+<a href="geraet-verkaufen.html">Gerät verkaufen</a>
 
-      <div class="dropdown">
-        <button class="dropbtn">Privatkunden ▾</button>
+<div class="dropdown">
+<button class="dropbtn" type="button">Privatkunden ▾</button>
+<div class="menu">
+<a href="privatkunden.html#daten">Datenübertragung</a>
+<a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
+<a href="privatkunden.html#wlan">WLAN & Internet-Hilfe</a>
+<a href="shop.html">Refurbished & Zubehör</a>
+</div>
+</div>
 
-        <div class="menu">
-          <a href="privatkunden.html#daten">Datenübertragung</a>
-          <a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
-          <a href="privatkunden.html#wlan">WLAN & Internet-Hilfe</a>
-          <a href="shop.html">Refurbished & Zubehör</a>
-        </div>
-      </div>
+<div class="dropdown">
+<button class="dropbtn" type="button">Unternehmen ▾</button>
+<div class="menu">
+<a href="unternehmen.html">IT für KMU</a>
+<a href="unternehmen.html#support">IT-Support & Betreuung</a>
+<a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
+<a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
+<a href="websites.html">Websites & Wartung</a>
+<a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
+</div>
+</div>
 
-      <div class="dropdown">
-        <button class="dropbtn">Unternehmen ▾</button>
+<a href="shop.html" aria-current="page">Shop</a>
+<a href="bewertungen.html">Bewertungen</a>
+<a href="kontakt.html">Kontakt</a>
+<a class="cta" href="anfrage.html">Anfrage starten</a>
 
-        <div class="menu">
-          <a href="unternehmen.html">IT für KMU</a>
-          <a href="unternehmen.html#support">IT-Support & Betreuung</a>
-          <a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
-          <a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
-          <a href="websites.html">Websites & Wartung</a>
-          <a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
-        </div>
-      </div>
-
-      <a href="shop.html">Shop</a>
-      <a href="bewertungen.html">Bewertungen</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a class="cta" href="anfrage.html">Anfrage starten</a>
-
-    </nav>
-  </div>
+</nav>
+</div>
 </header>
 
 
-<main>
+<main class="shop-page">
 
 <div class="wrap breadcrumb">
-  <a href="index.html">Start</a> / Produkte
+<a href="index.html">Start</a> /
+<span aria-current="page">Shop</span>
+</div>
+
+<!-- EINLEITUNG -->
+
+<section class="shop-section">
+<div class="shop-container">
+
+<span class="shop-label">Mujitech · Geprüfte Geräte</span>
+
+<h1>Gebrauchte und aufbereitete iPhones kaufen.</h1>
+
+<p class="shop-intro">
+Entdecken Sie unsere geprüften Smartphones mit
+transparenten Angaben zu Ausstattung, Zustand
+und verbauten Ersatzteilen. Unsere angebotenen
+Geräte werden vor dem Versand nochmals kontrolliert.
+</p>
+
+<p class="shop-intro">
+12 Monate Mujitech Garantie auf die Gerätetechnik
+und kostenloser Versand innerhalb der Schweiz.
+Bestellung und Bezahlung erfolgen nach persönlicher
+Kontaktaufnahme.
+</p>
+
+
+<!-- PRODUKTKARTEN -->
+
+<div class="shop-grid">
+
+
+<!-- IPHONE 17 PRO MAX -->
+
+<article class="shop-product device-17">
+
+<a class="shop-image"
+href="iphone-17-pro-max.html"
+aria-label="Apple iPhone 17 Pro Max ansehen">
+
+<img
+src="iphone-17-pro-max-silber.png"
+alt="Apple iPhone 17 Pro Max 512 GB in Silber, Vorder- und Rückseite"
+loading="eager"
+fetchpriority="high"
+width="600"
+height="600">
+
+</a>
+
+<div class="shop-content">
+
+<span class="shop-status">Verfügbar</span>
+
+<h2>Apple iPhone 17 Pro Max</h2>
+
+<p class="shop-variant">
+512 GB · Silber · Gebraucht und geprüft
+</p>
+
+<div class="shop-price">
+CHF 1'000.–
+</div>
+
+<p class="shop-description">
+Leistungsstarkes iPhone mit 512 GB Speicher,
+100 % Akkukapazität und einem hochwertigen
+Soft-OLED-Ersatzdisplay mit 120 Hz.
+Von Mujitech technisch geprüft und aufbereitet.
+</p>
+
+<ul class="shop-specs">
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<rect x="5" y="2" width="14" height="20" rx="2"/>
+<path d="M10 5h4M10 19h4"/>
+</svg>
+<span><strong>Speicher</strong>512 GB</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<rect x="2" y="7" width="18" height="10" rx="2"/>
+<path d="M22 10v4M5 10h12v4H5z"/>
+</svg>
+<span><strong>Akku</strong>100 % Kapazität</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<rect x="5" y="2" width="14" height="20" rx="2"/>
+<path d="M9 8l3-3 3 3M12 5v12"/>
+</svg>
+<span><strong>Display</strong>Soft-OLED-Ersatzdisplay mit 120 Hz</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+<path d="M9 12l2 2 4-4"/>
+</svg>
+<span><strong>Garantie</strong>12 Monate Mujitech Garantie auf die Gerätetechnik</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M3 7h11v10H3zM14 10h4l3 4v3h-7z"/>
+<circle cx="7" cy="18" r="2"/>
+<circle cx="18" cy="18" r="2"/>
+</svg>
+<span><strong>Versand</strong>Kostenlos innerhalb der Schweiz</span>
+</li>
+
+</ul>
+
+<div class="shop-actions">
+
+<a class="shop-btn"
+href="iphone-17-pro-max.html">
+Produktdetails ansehen →
+</a>
+
+<a class="shop-btn secondary"
+href="https://wa.me/41768444673?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20iPhone%2017%20Pro%20Max%20512%20GB%20in%20Silber."
+target="_blank"
+rel="noopener noreferrer">
+WhatsApp
+</a>
+
+</div>
+</div>
+</article>
+
+
+<!-- IPHONE 14 PRO MAX -->
+
+<article class="shop-product device-14">
+
+<a class="shop-image"
+href="iphone-14-pro-max.html"
+aria-label="Apple iPhone 14 Pro Max ansehen">
+
+<img
+src="iphone-14-pro-max.jpg"
+alt="Apple iPhone 14 Pro Max 256 GB Space Black, Vorder- und Rückseite"
+loading="eager"
+width="600"
+height="600">
+
+</a>
+
+<div class="shop-content">
+
+<span class="shop-status">Verfügbar</span>
+
+<h2>Apple iPhone 14 Pro Max</h2>
+
+<p class="shop-variant">
+256 GB · Space Black · Aufbereitet
+</p>
+
+<div class="shop-price">
+CHF 460.–
+</div>
+
+<p class="shop-description">
+Professionell aufbereitetes iPhone mit
+256 GB Speicher und 100 % Akkukapazität.
+Display, Akku und Rückglas wurden ersetzt.
+Anschliessend wurde das Gerät technisch geprüft.
+</p>
+
+<ul class="shop-specs">
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<rect x="5" y="2" width="14" height="20" rx="2"/>
+<path d="M10 5h4M10 19h4"/>
+</svg>
+<span><strong>Speicher</strong>256 GB</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<rect x="2" y="7" width="18" height="10" rx="2"/>
+<path d="M22 10v4M5 10h12v4H5z"/>
+</svg>
+<span><strong>Akku</strong>100 % Kapazität</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<rect x="5" y="2" width="14" height="20" rx="2"/>
+<path d="M9 8l3-3 3 3M12 5v12"/>
+</svg>
+<span><strong>Display</strong>Soft-OLED-Ersatzdisplay mit 120 Hz</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+<path d="M9 12l2 2 4-4"/>
+</svg>
+<span><strong>Garantie</strong>12 Monate Mujitech Garantie auf die Gerätetechnik</span>
+</li>
+
+<li>
+<svg viewBox="0 0 24 24" aria-hidden="true">
+<path d="M3 7h11v10H3zM14 10h4l3 4v3h-7z"/>
+<circle cx="7" cy="18" r="2"/>
+<circle cx="18" cy="18" r="2"/>
+</svg>
+<span><strong>Versand</strong>Kostenlos innerhalb der Schweiz</span>
+</li>
+
+</ul>
+
+<div class="shop-actions">
+
+<a class="shop-btn"
+href="iphone-14-pro-max.html">
+Produktdetails ansehen →
+</a>
+
+<a class="shop-btn secondary"
+href="https://wa.me/41768444673?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20iPhone%2014%20Pro%20Max%20256%20GB%20in%20Space%20Black."
+target="_blank"
+rel="noopener noreferrer">
+WhatsApp
+</a>
+
+</div>
+</div>
+</article>
+
 </div>
 
 
-<section class="pagehero">
+<!-- BESTELLINFORMATIONEN -->
 
-  <div class="wrap">
+<div class="shop-note">
 
-    <div class="eyebrow">Mujitech Produkte</div>
+<strong>Informationen zur Bestellung</strong>
 
-    <h1>Aktuell verfügbare Geräte.</h1>
+<p>
+Unser Shop ist derzeit ein Produktkatalog ohne
+automatisiertes Zahlungssystem. Bitte kontaktieren
+Sie uns, um die aktuelle Verfügbarkeit zu bestätigen
+und Bestellung sowie Bezahlung zu vereinbaren.
+</p>
 
-    <p class="lead">
-      Geprüfte Technik mit transparenten Angaben zu Zustand,
-      Ausstattung und Garantie. Bestellung und Bezahlung erfolgen
-      nach persönlicher Kontaktaufnahme.
-    </p>
+<p>
+Die angebotenen Geräte sind gebraucht beziehungsweise
+aufbereitet. Bei verbauten Ersatzdisplays handelt
+es sich um Soft-OLED-Ersatzteile, nicht um originale
+Apple-Displays. Weitere Angaben finden Sie
+auf der jeweiligen Produktdetailseite.
+</p>
 
-  </div>
+<p>
+Die Bedingungen und Ausschlüsse unserer
+freiwilligen Garantie finden Sie unter
+<a href="rechtliches.html">AGB und Rechtliches</a>.
+</p>
 
+</div>
+
+</div>
 </section>
-
-
-<section>
-
-  <div class="wrap">
-
-    <div class="product-grid">
-
-
-      <!-- PRODUKT 1: IPHONE 17 PRO MAX -->
-
-      <article class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="iphone-17-pro-max-silber.png"
-            alt="Apple iPhone 17 Pro Max 512 GB Silber"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-content">
-
-          <div class="product-status">
-            Verfügbar
-          </div>
-
-          <h3>
-            Apple iPhone 17 Pro Max
-          </h3>
-
-          <p class="sectionlead">
-            512 GB · Silber
-          </p>
-
-          <div class="product-price">
-            CHF 1'000.–
-          </div>
-
-
-          <ul class="product-features">
-
-            <li>512 GB Speicher</li>
-            <li>100 % Akkukapazität</li>
-            <li>Soft-OLED Display mit 120 Hz</li>
-            <li>Technisch vollständig geprüft</li>
-            <li>12 Monate Mujitech Garantie</li>
-            <li>Kostenloser Versand innerhalb der Schweiz</li>
-
-          </ul>
-
-
-          <div class="product-actions">
-
-            <a
-              class="cta"
-              href="iphone-17-pro-max.html"
-            >
-              Produkt ansehen
-            </a>
-
-            <a
-              class="cta secondary"
-              href="https://wa.me/41768444673?text=Hallo%20Mujitech%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20iPhone%2017%20Pro%20Max%20512%20GB%20in%20Silber%20f%C3%BCr%20CHF%201%27000."
-              target="_blank"
-              rel="noopener"
-            >
-              WhatsApp
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUKT 2: IPHONE 14 PRO MAX -->
-
-      <article class="product-card">
-
-        <div class="product-image">
-
-          <img
-            src="iphone-14-pro-max.jpg"
-            alt="Apple iPhone 14 Pro Max 256 GB Space Black"
-            loading="lazy"
-          >
-
-        </div>
-
-
-        <div class="product-content">
-
-          <div class="product-status">
-            Verfügbar
-          </div>
-
-          <h3>
-            Apple iPhone 14 Pro Max
-          </h3>
-
-          <p class="sectionlead">
-            256 GB · Space Black
-          </p>
-
-          <div class="product-price">
-            CHF 460.–
-          </div>
-
-
-          <ul class="product-features">
-
-            <li>256 GB Speicher</li>
-            <li>100 % Akkukapazität</li>
-            <li>Soft-OLED Display mit 120 Hz</li>
-            <li>Professionell aufbereitet & geprüft</li>
-            <li>12 Monate Mujitech Garantie</li>
-            <li>Kostenloser Versand innerhalb der Schweiz</li>
-
-          </ul>
-
-
-          <div class="product-actions">
-
-            <a
-              class="cta"
-              href="iphone-14-pro-max.html"
-            >
-              Produkt ansehen
-            </a>
-
-            <a
-              class="cta secondary"
-              href="https://wa.me/41768444673?text=Hallo%20Mujitech%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20iPhone%2014%20Pro%20Max%20256%20GB%20in%20Space%20Black%20f%C3%BCr%20CHF%20460."
-              target="_blank"
-              rel="noopener"
-            >
-              WhatsApp
-            </a>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-    </div>
-
-
-    <div class="note product-note">
-
-      <strong>Hinweis:</strong>
-      Es handelt sich um einen Produktkatalog ohne direktes
-      Online-Zahlungssystem. Verfügbarkeit, Bestellung und Bezahlung
-      werden direkt mit Mujitech vereinbart.
-
-    </div>
-
-  </div>
-
-</section>
-
 </main>
 
 
+<!-- FOOTER -->
+
 <footer>
+<div class="wrap">
+<div class="footergrid">
 
-  <div class="wrap">
+<div>
+<a class="brand" href="index.html">
+<img src="logo.png"
+alt="Mujitech Logo"
+class="site-logo"
+loading="lazy">
+</a>
 
-    <div class="footergrid">
+<p class="sectionlead" style="margin-top:14px">
+Technik, Reparatur und digitale Lösungen
+für Privatkunden und KMU in der Region St. Gallen.
+</p>
 
-      <div>
+<div class="badge">
+<b>Abtwil SG</b> · Kein öffentliches Ladenlokal ·
+Termine nach Vereinbarung
+</div>
+</div>
 
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="Mujitech Logo" class="site-logo">
-        </a>
+<div>
+<h4>Privatkunden</h4>
+<a href="reparaturen.html">Reparaturen</a>
+<a href="geraet-verkaufen.html">Gerät verkaufen</a>
+<a href="privatkunden.html">Technik-Services</a>
+<a href="shop.html">Refurbished & Zubehör</a>
+</div>
 
-        <p class="sectionlead" style="margin-top:14px">
-          Technik, Reparatur und digitale Lösungen für Privatkunden
-          und KMU in der Region St. Gallen – klar, persönlich und
-          ohne unnötigen Aufwand.
-        </p>
+<div>
+<h4>Unternehmen</h4>
+<a href="unternehmen.html">IT für KMU</a>
+<a href="websites.html">Websites</a>
+<a href="unternehmen.html#telekom">Telekom</a>
+<a href="unternehmen.html#cloud">Cloud & E-Mail</a>
+</div>
 
-        <div class="badge">
-          <span>●</span>
-          <b>Abtwil SG</b>
-          · kein öffentliches Ladenlokal
-          · Termine nach Vereinbarung
-        </div>
+<div>
+<h4>Kontakt</h4>
+<a href="tel:+41768444673">076 844 46 73</a>
+<a href="mailto:info@mujitech.ch">info@mujitech.ch</a>
+<a href="https://wa.me/41768444673"
+target="_blank"
+rel="noopener noreferrer">WhatsApp</a>
+<a href="rechtliches.html">Impressum · AGB · Datenschutz</a>
+</div>
 
-      </div>
+</div>
 
+<div class="legal">
+<span>© 2026 Mujitech. Alle Rechte vorbehalten.</span>
+<span>UID: CHE-480.937.625</span>
+</div>
 
-      <div>
-
-        <h4>Privatkunden</h4>
-
-        <a href="reparaturen.html">Reparaturen</a>
-        <a href="geraet-verkaufen.html">Gerät verkaufen</a>
-        <a href="privatkunden.html">Technik-Services</a>
-        <a href="shop.html">Refurbished & Zubehör</a>
-
-      </div>
-
-
-      <div>
-
-        <h4>Unternehmen</h4>
-
-        <a href="unternehmen.html">IT für KMU</a>
-        <a href="websites.html">Websites</a>
-        <a href="unternehmen.html#telekom">Telekom</a>
-        <a href="unternehmen.html#cloud">Cloud & E-Mail</a>
-
-      </div>
-
-
-      <div>
-
-        <h4>Kontakt</h4>
-
-        <a href="tel:+41768444673">
-          076 844 46 73
-        </a>
-
-        <a href="mailto:info@mujitech.ch">
-          info@mujitech.ch
-        </a>
-
-        <a href="https://wa.me/41768444673">
-          WhatsApp
-        </a>
-
-        <a href="rechtliches.html">
-          Impressum · AGB · Datenschutz
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <div class="legal">
-
-      <span>
-        © 2026 Mujitech. Alle Rechte vorbehalten.
-      </span>
-
-      <span>
-        UID: CHE-480.937.625
-      </span>
-
-    </div>
-
-  </div>
-
+</div>
 </footer>
 
-
-<script src="assets/app.js?v=20260916-12"></script>
-
+<script src="assets/app.js"></script>
 <script defer src="assets/mono-electric.js?v=20261003-1"></script>
+
 </body>
 </html>
