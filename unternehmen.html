@@ -1,259 +1,1416 @@
-<!doctype html>
-<html lang="de">
+
+<!DOCTYPE html>
+<html lang="de-CH">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>IT für Unternehmen | Mujitech</title>
-<meta name="description" content="Mujitech – Reparatur, Technik und IT-Lösungen in St. Gallen.">
-<link rel="icon" type="image/png" href="logo.png?v=20260916-4">
-<link rel="stylesheet" href="assets/style.css?v=20260916-4">
-<link rel="stylesheet" href="assets/mono.css?v=20261003-2">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO -->
+<title>IT-Support & IT-Lösungen für KMU St. Gallen | Mujitech</title>
+
+<meta name="description"
+content="IT-Support für KMU in St. Gallen: IT-Betreuung, Hardware-Beschaffung, Firmenhandys, Microsoft 365, Google Workspace und Telekom-Beratung. Jetzt Mujitech kontaktieren.">
+
+<meta name="robots"
+content="index, follow, max-image-preview:large">
+
+<meta name="author" content="Mujitech">
+
+<link rel="canonical"
+href="https://mujitech.ch/unternehmen.html">
+
+<meta name="theme-color" content="#ffffff">
+
+<!-- Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Mujitech">
+<meta property="og:title"
+content="IT-Support und IT-Betreuung für KMU | Mujitech">
+<meta property="og:description"
+content="Persönliche IT-Dienstleistungen für kleine und mittlere Unternehmen in der Region St. Gallen.">
+<meta property="og:url"
+content="https://mujitech.ch/unternehmen.html">
+<meta property="og:image"
+content="https://mujitech.ch/logo.png">
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<!-- Bestehendes Design -->
+<link rel="stylesheet"
+href="assets/style.css?v=20261003">
+
+<link rel="stylesheet"
+href="assets/mono.css?v=20261003-5">
+
+<!-- Strukturierte SEO-Daten -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://mujitech.ch/#organization",
+      "name": "Mujitech",
+      "url": "https://mujitech.ch/",
+      "logo": "https://mujitech.ch/logo.png",
+      "email": "info@mujitech.ch",
+      "telephone": "+41768444673",
+      "identifier": "CHE-480.937.625"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://mujitech.ch/unternehmen.html#service",
+      "name": "IT-Support und IT-Dienstleistungen für KMU",
+      "serviceType": [
+        "IT-Support",
+        "IT-Betreuung",
+        "Hardware-Beschaffung",
+        "Einrichtung von Firmenhandys",
+        "Telekom-Beratung",
+        "Microsoft 365",
+        "Google Workspace"
+      ],
+      "description": "IT-Unterstützung, Hardware und digitale Lösungen für kleine und mittlere Unternehmen.",
+      "provider": {
+        "@id": "https://mujitech.ch/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "St. Gallen"
+        },
+        {
+          "@type": "Place",
+          "name": "Abtwil SG"
+        }
+      ],
+      "url": "https://mujitech.ch/unternehmen.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://mujitech.ch/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Unternehmen",
+          "item": "https://mujitech.ch/unternehmen.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+
+/* =========================================
+   MUJITECH – UNTERNEHMEN
+   BLACK & WHITE
+========================================= */
+
+.business-page {
+  color: #111;
+}
+
+.business-page .business-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.business-page .business-section {
+  padding: 65px 0;
+}
+
+.business-page .business-label {
+  display: block;
+  margin-bottom: 15px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.business-page h1 {
+  max-width: 900px;
+  color: #111;
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.business-page h2 {
+  color: #111;
+  font-size: clamp(30px, 3.5vw, 46px);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+.business-page h3 {
+  color: #111;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.business-page p {
+  color: #555;
+  line-height: 1.75;
+}
+
+.business-page .business-lead {
+  max-width: 780px;
+  margin: 20px 0 28px;
+  font-size: 18px;
+}
+
+/* Buttons */
+
+.business-page a.business-btn,
+.business-page a.business-btn:visited {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 49px;
+  padding: 13px 21px !important;
+
+  background: #111 !important;
+  background-image: none !important;
+
+  border: 1px solid #111 !important;
+  border-radius: 12px;
+
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+
+  font-size: 15px;
+  font-weight: 750;
+  text-decoration: none !important;
+
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.business-page a.business-btn:hover {
+  background: #333 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.business-page a.business-btn.secondary,
+.business-page a.business-btn.secondary:visited {
+  background: #fff !important;
+  background-image: none !important;
+
+  border: 1px solid #111 !important;
+
+  color: #111 !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+.business-page a.business-btn.secondary:hover {
+  background: #eee !important;
+}
+
+.business-page .business-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Dienstleistungskarten */
+
+.business-page .business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.business-page .business-card {
+  min-width: 0;
+  padding: 27px;
+
+  border: 1px solid #dedede;
+  border-radius: 22px;
+
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 10px 28px rgba(0,0,0,.035);
+
+  scroll-margin-top: 110px;
+}
+
+.business-page .business-card h3 {
+  margin: 0 0 12px;
+}
+
+.business-page .business-card p {
+  margin: 0;
+}
+
+/* Einheitliche Schwarz-Weiss-Icons */
+
+.business-page .business-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 21px;
+
+  background: #fff !important;
+  background-image: none !important;
+
+  border: 1px solid #dedede;
+  border-radius: 15px;
+
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+.business-page .business-icon svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  fill: none;
+  stroke: #111 !important;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Ablauf */
+
+.business-page .business-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 38px;
+}
+
+.business-page .business-panel {
+  padding: 32px;
+
+  border: 1px solid #dedede;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.97);
+}
+
+.business-page .business-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.business-page .business-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 22px;
+
+  color: #444;
+  line-height: 1.6;
+}
+
+.business-page .business-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.business-page .business-number {
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  background: #111;
+  color: #fff;
+
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Navigation */
+
+body .topbar,
+body .nav,
+body .navlinks,
+body .dropdown .menu {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color: #111 !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+body .dropdown .menu {
+  border: 1px solid #dedede !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+body .dropdown .menu a:hover {
+  background: #f2f2f2 !important;
+}
+
+body .navlinks > a.cta,
+body .navlinks > a.cta:visited {
+  background: #111 !important;
+  background-image: none !important;
+
+  border: 1px solid #111 !important;
+
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+body .mobilebtn {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+/* Responsive */
+
+@media(max-width: 900px) {
+
+  .business-page .business-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-page .business-split {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width: 600px) {
+
+  .business-page .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-page .business-section {
+    padding: 43px 0;
+  }
+
+  .business-page .business-card,
+  .business-page .business-panel {
+    padding: 23px;
+  }
+
+  .business-page .business-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .business-page .business-actions a {
+    width: 100%;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
 <header class="topbar">
+
   <div class="wrap nav">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Mujitech Logo" class="site-logo">
+
+    <a class="brand"
+       href="index.html"
+       aria-label="Mujitech Startseite">
+
+      <img
+        src="logo.png"
+        alt="Mujitech Logo"
+        class="site-logo">
+
     </a>
-    <button class="mobilebtn" aria-label="Menü">☰</button>
-    <nav class="navlinks">
-      <a href="reparaturen.html">Reparaturen</a>
-      <a href="geraet-verkaufen.html">Gerät verkaufen</a>
+
+    <button
+      class="mobilebtn"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="navlinks"
+         aria-label="Hauptnavigation">
+
+      <a href="reparaturen.html">
+        Reparaturen
+      </a>
+
+      <a href="geraet-verkaufen.html">
+        Gerät verkaufen
+      </a>
 
       <div class="dropdown">
-        <button class="dropbtn">Privatkunden ▾</button>
+
+        <button class="dropbtn" type="button">
+          Privatkunden ▾
+        </button>
+
         <div class="menu">
-          <a href="privatkunden.html#daten">Datenübertragung</a>
-          <a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
-          <a href="privatkunden.html#wlan">WLAN & Internet-Hilfe</a>
-          <a href="shop.html">Refurbished & Zubehör</a>
+
+          <a href="privatkunden.html#daten">
+            Datenübertragung
+          </a>
+
+          <a href="privatkunden.html#optimierung">
+            PC-/Laptop-Optimierung
+          </a>
+
+          <a href="privatkunden.html#wlan">
+            WLAN & Internet-Hilfe
+          </a>
+
+          <a href="shop.html">
+            Refurbished & Zubehör
+          </a>
+
         </div>
+
       </div>
 
+
       <div class="dropdown">
-        <button class="dropbtn">Unternehmen ▾</button>
+
+        <button class="dropbtn" type="button">
+          Unternehmen ▾
+        </button>
+
         <div class="menu">
-          <a href="unternehmen.html">IT für KMU</a>
-          <a href="unternehmen.html#support">IT-Support & Betreuung</a>
-          <a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
-          <a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
-          <a href="websites.html">Websites & Wartung</a>
-          <a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
+
+          <a href="unternehmen.html">
+            IT für KMU
+          </a>
+
+          <a href="unternehmen.html#support">
+            IT-Support & Betreuung
+          </a>
+
+          <a href="unternehmen.html#hardware">
+            Hardware-Beschaffung
+          </a>
+
+          <a href="unternehmen.html#telekom">
+            Telekom-Vermittlung
+          </a>
+
+          <a href="websites.html">
+            Websites & Wartung
+          </a>
+
+          <a href="unternehmen.html#cloud">
+            Microsoft 365 / Google Workspace
+          </a>
+
         </div>
+
       </div>
 
       <a href="shop.html">Shop</a>
-      <a href="bewertungen.html">Bewertungen</a>
-      <a href="kontakt.html">Kontakt</a>
-      <a class="cta" href="anfrage.html">Anfrage starten</a>
+
+      <a href="bewertungen.html">
+        Bewertungen
+      </a>
+
+      <a href="kontakt.html">
+        Kontakt
+      </a>
+
+      <a class="cta" href="anfrage.html">
+        Anfrage starten
+      </a>
+
     </nav>
+
   </div>
+
 </header>
 
 
-<main>
+<main class="business-page">
+
+<!-- BREADCRUMB -->
 
 <div class="wrap breadcrumb">
-  <a href="index.html">Start</a> / Unternehmen
+
+  <a href="index.html">
+    Start
+  </a>
+
+  /
+
+  <span aria-current="page">
+    Unternehmen
+  </span>
+
 </div>
 
-<section class="pagehero">
-  <div class="wrap">
-    <div class="eyebrow">Mujitech Business</div>
-    <h1>IT & Technik für kleine Unternehmen.</h1>
-    <p class="lead">
-      Hardware, IT-Support, Kommunikation und digitale Lösungen
-      für kleine und mittlere Unternehmen.
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="business-section">
+
+  <div class="business-container">
+
+    <span class="business-label">
+      Mujitech Business · St. Gallen
+    </span>
+
+    <h1>
+      IT-Support und IT-Lösungen
+      für KMU in St. Gallen.
+    </h1>
+
+    <p class="business-lead">
+
+      Persönliche IT-Unterstützung,
+      Hardware-Beschaffung,
+      Firmenhandys und digitale
+      Lösungen für kleine und
+      mittlere Unternehmen.
+
     </p>
 
-    <div class="actions">
-      <a class="cta" href="kontakt.html#business">Business-Anfrage</a>
-      <a class="cta secondary" href="websites.html">Websites ansehen</a>
-    </div>
-  </div>
-</section>
+    <p>
 
+      Mujitech unterstützt Unternehmen
+      aus der Region St. Gallen
+      bei alltäglichen Technikproblemen
+      und der Einrichtung moderner
+      IT-Lösungen.
 
-<section>
-  <div class="wrap grid3">
+    </p>
 
-    <div class="card" id="support">
-      <div class="icon">◎</div>
-      <h3>IT-Support für KMU</h3>
-      <p>
-        Unterstützung bei PCs, Laptops, Druckern, Benutzerkonten,
-        Software und typischen Technikproblemen im Betrieb.
-      </p>
-    </div>
+    <div class="business-actions">
 
-    <div class="card">
-      <div class="icon">↻</div>
-      <h3>IT-Betreuung / Abo</h3>
-      <p>
-        Wiederkehrende Betreuung nach klar vereinbartem Umfang –
-        für Betriebe, die nicht für jedes kleine Problem neu suchen wollen.
-      </p>
-    </div>
+      <a
+        class="business-btn"
+        href="kontakt.html#business">
 
-    <div class="card" id="hardware">
-      <div class="icon">▦</div>
-      <h3>Hardware-Beschaffung</h3>
-      <p>
-        Passende PCs, Laptops, Monitore und Smartphones auswählen,
-        beschaffen und für den Einsatz vorbereiten.
-      </p>
-    </div>
+        Business-Anfrage senden →
 
-    <div class="card">
-      <div class="icon">▣</div>
-      <h3>Firmenhandys einrichten</h3>
-      <p>
-        Geräte vorbereiten, geschäftliche Konten und benötigte Apps
-        einrichten und bestehende Daten übertragen.
-      </p>
-    </div>
+      </a>
 
-    <div class="card" id="telekom">
-      <div class="icon">⌁</div>
-      <h3>Telekom-Vermittlung</h3>
-      <p>
-        Unterstützung bei der Auswahl und Vermittlung passender Mobile-,
-        Internet- und Kommunikationslösungen.
-      </p>
-    </div>
+      <a
+        class="business-btn secondary"
+        href="websites.html">
 
-    <div class="card" id="cloud">
-      <div class="icon">☁</div>
-      <h3>Microsoft 365 / Google Workspace</h3>
-      <p>
-        Firmen-E-Mail, Benutzer, Kalender und Cloud-Dienste
-        strukturiert einrichten.
-      </p>
+        Website-Angebote ansehen
+
+      </a>
+
+      <a
+        class="business-btn secondary"
+        href="https://wa.me/41768444673?text=Guten%20Tag%2C%20ich%20interessiere%20mich%20f%C3%BCr%20Ihre%20IT-Dienstleistungen."
+        target="_blank"
+        rel="noopener noreferrer">
+
+        WhatsApp
+
+      </a>
+
     </div>
 
   </div>
+
 </section>
 
 
-<section>
-  <div class="wrap split">
+<!-- =========================================
+     DIENSTLEISTUNGEN
+========================================= -->
+
+<section class="business-section"
+         id="leistungen">
+
+  <div class="business-container">
+
+    <span class="business-label">
+      Unsere Dienstleistungen
+    </span>
+
+    <h2>
+      IT-Services für Ihr Unternehmen
+    </h2>
+
+    <p>
+
+      Von der Einrichtung einzelner
+      Arbeitsplätze bis zur laufenden
+      IT-Betreuung.
+
+    </p>
+
+
+    <div class="business-grid">
+
+      <!-- IT-SUPPORT -->
+
+      <article class="business-card"
+               id="support">
+
+        <div class="business-icon"
+             aria-hidden="true">
+
+          <!-- Computer mit Werkzeug -->
+
+          <svg viewBox="0 0 48 48">
+
+            <rect
+              x="5"
+              y="7"
+              width="38"
+              height="26"
+              rx="3">
+            </rect>
+
+            <path d="M24 33v7"></path>
+            <path d="M15 40h18"></path>
+
+            <path d="M21 16l-4 4 4 4"></path>
+            <path d="M27 16l4 4-4 4"></path>
+
+          </svg>
+
+        </div>
+
+        <h3>
+          IT-Support für KMU
+        </h3>
+
+        <p>
+
+          Unterstützung bei PCs,
+          Laptops, Druckern,
+          Benutzerkonten, Software
+          und typischen
+          Technikproblemen im Betrieb.
+
+        </p>
+
+      </article>
+
+
+      <!-- IT-BETREUUNG -->
+
+      <article class="business-card"
+               id="betreuung">
+
+        <div class="business-icon"
+             aria-hidden="true">
+
+          <!-- Monitor mit Zahnrad -->
+
+          <svg viewBox="0 0 48 48">
+
+            <rect
+              x="5"
+              y="7"
+              width="38"
+              height="26"
+              rx="3">
+            </rect>
+
+            <path d="M24 33v7"></path>
+            <path d="M15 40h18"></path>
+
+            <circle
+              cx="24"
+              cy="20"
+              r="6">
+            </circle>
+
+            <path d="M24 11v3"></path>
+            <path d="M24 26v3"></path>
+
+            <path d="M15 20h3"></path>
+            <path d="M30 20h3"></path>
+
+          </svg>
+
+        </div>
+
+        <h3>
+          IT-Betreuung / Abo
+        </h3>
+
+        <p>
+
+          Wiederkehrende Betreuung
+          nach klar vereinbartem
+          Umfang – für Betriebe,
+          die ihre IT langfristig
+          betreuen lassen möchten.
+
+        </p>
+
+      </article>
+
+
+      <!-- HARDWARE -->
+
+      <article class="business-card"
+               id="hardware">
+
+        <div class="business-icon"
+             aria-hidden="true">
+
+          <!-- Laptop und Smartphone -->
+
+          <svg viewBox="0 0 48 48">
+
+            <rect
+              x="3"
+              y="8"
+              width="30"
+              height="23"
+              rx="2">
+            </rect>
+
+            <path d="M2 36h33l-3-5H5z"></path>
+
+            <rect
+              x="35"
+              y="14"
+              width="10"
+              height="25"
+              rx="2">
+            </rect>
+
+            <path d="M39 35h2"></path>
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Hardware-Beschaffung
+        </h3>
+
+        <p>
+
+          Passende PCs, Laptops,
+          Monitore und Smartphones
+          auswählen, beschaffen
+          und für den Einsatz
+          im Unternehmen vorbereiten.
+
+        </p>
+
+      </article>
+
+
+      <!-- FIRMENHANDYS -->
+
+      <article class="business-card">
+
+        <div class="business-icon"
+             aria-hidden="true">
+
+          <!-- Smartphone mit geschäftlicher App -->
+
+          <svg viewBox="0 0 48 48">
+
+            <rect
+              x="12"
+              y="3"
+              width="24"
+              height="42"
+              rx="4">
+            </rect>
+
+            <path d="M21 8h6"></path>
+            <path d="M22 39h4"></path>
+
+            <rect
+              x="18"
+              y="17"
+              width="12"
+              height="11"
+              rx="1">
+            </rect>
+
+            <path d="M22 17v-3h4v3"></path>
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Firmenhandys einrichten
+        </h3>
+
+        <p>
+
+          Geschäftliche Smartphones
+          vorbereiten, Firmenkonten
+          und benötigte Apps
+          einrichten und bestehende
+          Daten übertragen.
+
+        </p>
+
+      </article>
+
+
+      <!-- TELEKOM -->
+
+      <article class="business-card"
+               id="telekom">
+
+        <div class="business-icon"
+             aria-hidden="true">
+
+          <!-- Funkmast / Kommunikation -->
+
+          <svg viewBox="0 0 48 48">
+
+            <circle
+              cx="24"
+              cy="15"
+              r="3">
+            </circle>
+
+            <path d="M24 18v23"></path>
+
+            <path d="M18 41h12"></path>
+
+            <path d="M19 22l-8 19"></path>
+            <path d="M29 22l8 19"></path>
+
+            <path d="M17 9c-4 3-4 9 0 12"></path>
+            <path d="M31 9c4 3 4 9 0 12"></path>
+
+            <path d="M12 4c-7 6-7 16 0 22"></path>
+            <path d="M36 4c7 6 7 16 0 22"></path>
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Telekom-Beratung
+        </h3>
+
+        <p>
+
+          Unterstützung bei der
+          Auswahl geeigneter
+          Mobilfunk-, Internet-
+          und Kommunikationslösungen
+          für Ihr Unternehmen.
+
+        </p>
+
+      </article>
+
+
+      <!-- CLOUD -->
+
+      <article class="business-card"
+               id="cloud">
+
+        <div class="business-icon"
+             aria-hidden="true">
+
+          <!-- Cloud mit verbundenen Geräten -->
+
+          <svg viewBox="0 0 48 48">
+
+            <path
+              d="M12 29
+                 C5 29 5 18 13 17
+                 C14 8 28 7 32 16
+                 C42 15 46 29 36 29
+                 Z">
+            </path>
+
+            <path d="M24 29v8"></path>
+
+            <path d="M15 37h18"></path>
+
+            <circle cx="15" cy="37" r="2"></circle>
+            <circle cx="24" cy="37" r="2"></circle>
+            <circle cx="33" cy="37" r="2"></circle>
+
+          </svg>
+
+        </div>
+
+        <h3>
+          Microsoft 365 / Google Workspace
+        </h3>
+
+        <p>
+
+          Firmen-E-Mail,
+          Benutzerkonten, Kalender
+          und Cloud-Dienste
+          strukturiert einrichten.
+
+        </p>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     ABLAUF
+========================================= -->
+
+<section class="business-section"
+         id="ablauf">
+
+  <div class="business-container business-split">
 
     <div>
-      <div class="eyebrow">So läuft eine B2B-Anfrage</div>
 
-      <h2>Bedarf zuerst. Produkt danach.</h2>
+      <span class="business-label">
+        So läuft eine B2B-Anfrage
+      </span>
 
-      <p class="sectionlead">
-        Der Kunde beschreibt kurz, was er braucht. Mujitech klärt die
-        Anforderungen, schlägt die passende Lösung vor und führt die eigene
-        Leistung aus oder bindet einen geeigneten Partner ein.
+      <h2>
+        Bedarf zuerst.
+        Produkt danach.
+      </h2>
+
+      <p>
+
+        Beschreiben Sie uns,
+        welche IT-Unterstützung
+        Ihr Unternehmen benötigt.
+
+        Wir klären Ihre Anforderungen,
+        besprechen mögliche Lösungen
+        und erstellen bei Bedarf
+        ein individuelles Angebot.
+
       </p>
+
+      <div class="business-actions">
+
+        <a
+          class="business-btn"
+          href="kontakt.html#business">
+
+          Jetzt Business-Anfrage senden →
+
+        </a>
+
+      </div>
+
     </div>
 
-    <div class="panel">
 
-      <ul class="list">
+    <div class="business-panel">
 
-        <li>
-          <span class="check">1</span>
-          <span>Kunde beschreibt Geräte, Problem oder Ziel.</span>
-        </li>
+      <ol class="business-steps">
 
         <li>
-          <span class="check">2</span>
-          <span>Mujitech klärt Umfang und Zuständigkeit.</span>
-        </li>
 
-        <li>
-          <span class="check">3</span>
-          <span>
-            Eigene Leistung oder Partnerlösung wird transparent angeboten.
+          <span class="business-number">
+            1
           </span>
+
+          <span>
+
+            Sie beschreiben Ihre
+            Geräte, Probleme
+            oder geschäftlichen Ziele.
+
+          </span>
+
         </li>
+
 
         <li>
-          <span class="check">4</span>
-          <span>
-            Erst nach Zustimmung erfolgt Auftrag bzw. Vermittlung.
+
+          <span class="business-number">
+            2
           </span>
+
+          <span>
+
+            Mujitech klärt den
+            Umfang und die
+            technischen Anforderungen.
+
+          </span>
+
         </li>
 
-      </ul>
+
+        <li>
+
+          <span class="business-number">
+            3
+          </span>
+
+          <span>
+
+            Wir erstellen ein
+            individuelles Angebot
+            für unsere Leistungen
+            oder eine geeignete
+            Partnerlösung.
+
+          </span>
+
+        </li>
+
+
+        <li>
+
+          <span class="business-number">
+            4
+          </span>
+
+          <span>
+
+            Erst nach Ihrer
+            Zustimmung erfolgt
+            die Auftragserteilung
+            beziehungsweise Vermittlung.
+
+          </span>
+
+        </li>
+
+      </ol>
 
     </div>
 
   </div>
+
+</section>
+
+
+<!-- =========================================
+     WEBSITE-ERSTELLUNG
+========================================= -->
+
+<section class="business-section">
+
+  <div class="business-container">
+
+    <div class="business-panel">
+
+      <span class="business-label">
+        Digitale Lösungen
+      </span>
+
+      <h2>
+        Professionelle Websites
+        für Unternehmen.
+      </h2>
+
+      <p>
+
+        Neben IT-Support und
+        Hardware-Beschaffung
+        bietet Mujitech auch
+        die Erstellung und
+        Betreuung professioneller
+        Unternehmenswebsites an.
+
+      </p>
+
+      <p>
+
+        Wählen Sie aus verschiedenen
+        Website-Paketen und optionalen
+        monatlichen Betreuungsangeboten.
+
+      </p>
+
+      <div class="business-actions">
+
+        <a
+          class="business-btn"
+          href="websites.html">
+
+          Website-Pakete und Preise ansehen →
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================
+     KONTAKT
+========================================= -->
+
+<section class="business-section"
+         id="kontakt">
+
+  <div class="business-container">
+
+    <div class="business-panel">
+
+      <span class="business-label">
+        Kontakt
+      </span>
+
+      <h2>
+        Lassen Sie uns über
+        Ihre IT-Anforderungen sprechen.
+      </h2>
+
+      <p>
+
+        Sie benötigen IT-Unterstützung,
+        neue Hardware oder Hilfe
+        bei der Einrichtung Ihrer
+        geschäftlichen IT?
+
+        Kontaktieren Sie Mujitech
+        für eine unverbindliche Anfrage.
+
+      </p>
+
+      <p>
+        <strong>Telefon:</strong>
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+      </p>
+
+      <p>
+        <strong>E-Mail:</strong>
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+      </p>
+
+      <div class="business-actions">
+
+        <a
+          class="business-btn"
+          href="kontakt.html#business">
+
+          Business-Anfrage →
+
+        </a>
+
+        <a
+          class="business-btn secondary"
+          href="https://wa.me/41768444673"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          WhatsApp
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 </main>
 
 
+<!-- =========================================
+     FOOTER
+========================================= -->
+
 <footer>
+
   <div class="wrap">
 
     <div class="footergrid">
 
       <div>
 
-        <a class="brand" href="index.html">
-          <img src="logo.png" alt="Mujitech Logo" class="site-logo">
+        <a class="brand"
+           href="index.html">
+
+          <img
+            src="logo.png"
+            alt="Mujitech Logo"
+            class="site-logo"
+            loading="lazy">
+
         </a>
 
-        <p class="sectionlead" style="margin-top:14px">
-          Technik, Reparatur und digitale Lösungen für Privatkunden
-          und KMU in der Region St. Gallen – klar, persönlich
-          und ohne unnötigen Aufwand.
+        <p class="sectionlead"
+           style="margin-top:14px">
+
+          Technik, Reparatur
+          und digitale Lösungen
+          für Privatkunden und KMU
+          in der Region St. Gallen.
+
         </p>
 
         <div class="badge">
+
           <span>●</span>
-          <b>Abtwil SG</b> · kein öffentliches Ladenlokal ·
-          Termine nach Vereinbarung
+
+          <b>Abtwil SG</b>
+
+          · Kein öffentliches Ladenlokal
+          · Termine nach Vereinbarung
+
         </div>
 
       </div>
 
 
       <div>
-        <h4>Privatkunden</h4>
-        <a href="reparaturen.html">Reparaturen</a>
-        <a href="geraet-verkaufen.html">Gerät verkaufen</a>
-        <a href="privatkunden.html">Technik-Services</a>
-        <a href="shop.html">Refurbished & Zubehör</a>
+
+        <h4>
+          Privatkunden
+        </h4>
+
+        <a href="reparaturen.html">
+          Reparaturen
+        </a>
+
+        <a href="geraet-verkaufen.html">
+          Gerät verkaufen
+        </a>
+
+        <a href="privatkunden.html">
+          Technik-Services
+        </a>
+
+        <a href="shop.html">
+          Refurbished & Zubehör
+        </a>
+
       </div>
 
 
       <div>
-        <h4>Unternehmen</h4>
-        <a href="unternehmen.html">IT für KMU</a>
-        <a href="websites.html">Websites</a>
-        <a href="unternehmen.html#telekom">Telekom</a>
-        <a href="unternehmen.html#cloud">Cloud & E-Mail</a>
+
+        <h4>
+          Unternehmen
+        </h4>
+
+        <a href="unternehmen.html">
+          IT für KMU
+        </a>
+
+        <a href="websites.html">
+          Websites
+        </a>
+
+        <a href="unternehmen.html#telekom">
+          Telekom
+        </a>
+
+        <a href="unternehmen.html#cloud">
+          Cloud & E-Mail
+        </a>
+
       </div>
 
 
       <div>
-        <h4>Kontakt</h4>
-        <a href="tel:+41768444673">076 844 46 73</a>
-        <a href="mailto:info@mujitech.ch">info@mujitech.ch</a>
-        <a href="https://wa.me/41768444673">WhatsApp</a>
-        <a href="rechtliches.html">Impressum · AGB · Datenschutz</a>
+
+        <h4>
+          Kontakt
+        </h4>
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+        <a
+          href="https://wa.me/41768444673"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          WhatsApp
+
+        </a>
+
+        <a href="rechtliches.html">
+          Impressum · AGB · Datenschutz
+        </a>
+
       </div>
 
     </div>
 
 
     <div class="legal">
-      <span>© 2026 Mujitech. Alle Rechte vorbehalten.</span>
-      <span>UID: CHE-480.937.625</span>
+
+      <span>
+        © 2026 Mujitech.
+        Alle Rechte vorbehalten.
+      </span>
+
+      <span>
+        UID: CHE-480.937.625
+      </span>
+
     </div>
 
   </div>
+
 </footer>
 
+
+<!-- Bestehende Website-Funktionen -->
 <script src="assets/app.js"></script>
 
-<script defer src="assets/mono-electric.js?v=20261003-1"></script>
+<!-- Bestehende Stromanimation -->
+<script
+  defer
+  src="assets/mono-electric.js?v=20261003-1">
+</script>
+
 </body>
 </html>
