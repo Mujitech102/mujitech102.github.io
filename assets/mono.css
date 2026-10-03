@@ -27,3 +27,39 @@ body :is(.w-card li::before){color:#111!important}
 body :is(.brand img,.logo img,.w-logo img,.service-banner img){filter:grayscale(1)!important}
 body :is(.w-logo span span,.brand-title span){color:#111!important;-webkit-text-fill-color:#111!important}
 body :is(.w-form label.w-option,.w-form label.w-option:has(input:checked)){color:#111!important}
+
+/* MUJITECH monochrome corrections: all navigation, CTA and dropdowns */
+:root { --accent:#111!important; --accent2:#111!important; }
+body .menu, body .dropdown .menu, body .dropdown.open .menu,
+body .dropdown-menu, body .dropdown-content {background:#fff!important;color:#111!important;border:1px solid #d5d5d5!important;box-shadow:0 12px 30px rgba(0,0,0,.12)!important;}
+body .menu a,body .menu a:visited,body .dropdown .menu a,
+body .dropdown-menu a,body .dropdown-content a {color:#111!important;background:#fff!important;-webkit-text-fill-color:#111!important;}
+body .menu a:hover,body .menu a:focus-visible,body .dropdown-menu a:hover {background:#f1f1f1!important;color:#000!important;}
+body .navlinks,body .navlinks > a:not(.cta),body .dropbtn,
+body .mobilebtn {background:transparent!important;color:#111!important;-webkit-text-fill-color:#111!important;}
+body .navlinks > a:not(.cta):hover,body .dropbtn:hover {background:#f2f2f2!important;color:#111!important;}
+body .cta,body a.cta,body .navlinks a.cta,
+body .btn,body a.btn,body .button,body a.button,
+body .w-btn:not(.secondary),body a.w-btn:not(.secondary),
+body .w-nav-cta,body .cookie-btn--primary,
+body button[type=submit],body input[type=submit] {
+ background:#111!important;background-image:none!important;color:#fff!important;
+ -webkit-text-fill-color:#fff!important;border:1px solid #111!important;
+ box-shadow:none!important;text-shadow:none!important;
+}
+body .cta:hover,body a.cta:hover,body .navlinks a.cta:hover,
+body .btn:hover,body a.btn:hover,body .button:hover,
+body .w-btn:not(.secondary):hover,body .w-nav-cta:hover,
+body button[type=submit]:hover {background:#333!important;background-image:none!important;color:#fff!important;-webkit-text-fill-color:#fff!important;}
+body .cta.secondary,body a.cta.secondary,body .w-btn.secondary,
+body .cookie-btn--secondary {background:#fff!important;background-image:none!important;color:#111!important;-webkit-text-fill-color:#111!important;border:1px solid #bbb!important;}
+body .cta.secondary:hover,body .w-btn.secondary:hover {background:#eee!important;color:#111!important;-webkit-text-fill-color:#111!important;}
+body .cookie-banner,body .cookie-banner__inner {background:#fff!important;color:#111!important;border-color:#ddd!important;}
+body .cookie-banner :is(p,strong,a){color:#111!important;}
+body .service-banner,body .service-banner__head,body .service-banner__brand,
+body .service-banner__sub,body .service-banner__badge,body .service-banner__bottom,
+body .service-banner__item,body .service-banner__item strong,
+body .service-banner__item small {color:#111!important;-webkit-text-fill-color:#111!important;}
+body .service-banner__badge {background:#fff!important;border-color:#ddd!important;}
+body :is(.w-form,.w-card,.w-aside,.w-addon) :is(button,a.w-btn) {background-image:none!important;}
+body a:focus-visible,body button:focus-visible {outline:2px solid #111!important;outline-offset:3px;}
