@@ -23,6 +23,7 @@
 .w-form .w-consent{display:flex!important;align-items:flex-start!important;gap:12px!important;white-space:normal!important}.w-form .w-consent input{flex:0 0 20px!important;width:20px!important;height:20px!important;min-width:20px!important;appearance:auto!important;-webkit-appearance:auto!important;accent-color:#70e2cb!important;margin:3px 0 0!important;position:static!important;opacity:1!important}
 @media(max-width:690px){.w-option-grid{grid-template-columns:1fr!important}.w-form fieldset.w-options{padding:14px!important}.w-form label.w-option{padding:14px!important}}
 </style>
+<link rel="stylesheet" href="assets/mono.css?v=20261003-1">
 </head>
 <body>
 <header class="w-header"><div class="w-wrap w-nav"><a class="w-logo" href="index.html"><img alt="Mujitech Logo" src="logo.png"/><span>MUJI<span>TECH</span></span></a><nav aria-label="Hauptnavigation" class="w-links"><a href="index.html">Startseite</a><a href="reparaturen.html">Reparaturen</a><a href="geraet-verkaufen.html">Gerät verkaufen</a><a href="privatkunden.html">Privatkunden</a><a href="unternehmen.html">Unternehmen</a><a href="shop.html">Shop</a><a href="bewertungen.html">Bewertungen</a><a href="kontakt.html">Kontakt</a><a class="w-nav-cta" href="#anfrage">Anfrage starten</a></nav></div></header>
@@ -53,4 +54,5 @@
 <script>
 document.querySelectorAll('.w-pick').forEach(function(link){link.addEventListener('click',function(){var name=this.dataset.package;var selector=name.includes('Basic')?'Basic':name.includes('Business')?'Business':'Premium';var input=Array.from(document.querySelectorAll('input[name="Website_Paket"]')).find(function(el){return el.value.startsWith(selector)});if(input)input.checked=true;});});
 </script>
+<script defer src="assets/mono-electric.js?v=20261003-1"></script>
 </body></html>

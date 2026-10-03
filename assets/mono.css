@@ -1,0 +1,29 @@
+/* MUJITECH MONO / global design */
+:root{--bg:#fff!important;--bg2:#fff!important;--panel:#fff!important;--panel2:#f6f6f6!important;--text:#111!important;--muted:#505050!important;--line:#d6d6d6!important;--accent:#111!important;--accent2:#111!important;--danger:#111!important;--shadow:0 12px 35px rgba(0,0,0,.065)!important;color-scheme:light!important}
+html{background:#fff!important}body{background:transparent!important;color:#111!important}body::before{content:'';position:fixed;inset:0;z-index:-3;background:#fff;pointer-events:none}
+#muji-electric-canvas{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;z-index:-1!important;pointer-events:none!important;opacity:.58!important}
+body :is(h1,h2,h3,h4,h5,h6,p,small,span,li,label,strong,em,legend){color:inherit}body :is(main,header,footer,section,article,form){color:#111}body :is(a,button){transition:background-color .2s,border-color .2s,color .2s,transform .2s}
+body :is(input,textarea,select){background:#fff!important;color:#111!important;border-color:#aaa!important}body :is(input,textarea)::placeholder{color:#666!important}body :is(input[type=checkbox],input[type=radio]){accent-color:#111!important}
+body :is(.topbar,.w-header,header){background:rgba(255,255,255,.94)!important;color:#111!important;border-color:#ddd!important;backdrop-filter:blur(16px)}
+body :is(.navlinks,.dropdown-menu,.dropdown-content,.w-links){color:#111!important}body :is(.navlinks a,.w-links a,.topbar a){color:#111!important}
+body :is(.card,.panel,.feature,.service-banner,.cookie-banner,.w-card,.w-form,.w-aside,.w-addon,.w-alt,.w-form fieldset.w-options,.w-form label.w-option,.w-header,.w-hero,.w-footer,.box-bg,.trust-item){background:rgba(255,255,255,.94)!important;color:#111!important;border-color:#d6d6d6!important;box-shadow:0 10px 32px rgba(0,0,0,.055)!important}
+body :is(.service-banner__glow,.service-banner::before,.box-bg::before){display:none!important}
+body :is(.btn,.button,.w-btn,.cookie-btn--primary,.w-nav-cta,button[type=submit]){background:#111!important;color:#fff!important;border:1px solid #111!important;box-shadow:none!important}
+body :is(.btn:hover,.button:hover,.w-btn:hover,.cookie-btn--primary:hover,.w-nav-cta:hover,button[type=submit]:hover){background:#333!important;color:#fff!important}
+body :is(.w-btn.secondary,.cookie-btn--secondary){background:#fff!important;color:#111!important;border:1px solid #111!important}
+body :is(.gradient,.service-banner__brand span:last-child,.service-banner__icon,.w-kicker,.w-tag,.w-price,.w-addon strong,.w-form legend,.w-option-price){background:none!important;-webkit-text-fill-color:#111!important;color:#111!important}
+body :is(.w-card p,.w-sub,.w-lead,.w-note,.w-aside p,.w-option-desc,.w-help,.w-footer,.service-banner__intro,.service-banner__item small){color:#444!important}
+body :is(.w-form label.w-option:has(input:checked),.w-card.featured){background:#f0f0f0!important;border-color:#111!important;box-shadow:inset 0 0 0 1px #111!important}
+body :is(.w-form label.w-option input,.w-form .w-consent input){accent-color:#111!important}
+body :is(.service-banner__item,.service-banner__icon){background:#fafafa!important;border-color:#ddd!important}
+body .service-banner__item strong{color:#111!important}
+body :is(.w-form fieldset.w-options legend,.w-option-name,.w-option-copy){color:#111!important}
+body :is(.w-hero,.w-alt){background:transparent!important}
+body :is(.w-form,.w-aside,.w-card,.service-banner){backdrop-filter:blur(10px)}
+body :is(.w-form input:focus,.w-form select:focus,.w-form textarea:focus){outline-color:#111!important}
+body :is(.w-card li::before){color:#111!important}
+@media(prefers-reduced-motion:reduce){#muji-electric-canvas{opacity:.25!important}*{scroll-behavior:auto!important}}
+
+body :is(.brand img,.logo img,.w-logo img,.service-banner img){filter:grayscale(1)!important}
+body :is(.w-logo span span,.brand-title span){color:#111!important;-webkit-text-fill-color:#111!important}
+body :is(.w-form label.w-option,.w-form label.w-option:has(input:checked)){color:#111!important}
