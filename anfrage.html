@@ -167,6 +167,26 @@
   color: #666;
 }
 
+/* Schwarz-weisse Icons der Auswahlkarten */
+
+.request-card .icon {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid #111 !important;
+  color: #111 !important;
+}
+
+.request-card .icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #111;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* Karten */
 
 .request-card {
@@ -452,8 +472,10 @@ body .mobilebtn {
         href="#reparatur"
       >
 
-        <div class="icon">
-          🛠
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4l-5 5a2.1 2.1 0 0 0 3 3l5-5a5 5 0 0 0 6.4-6.4l-3 3-3-3 3-3Z"/>
+          </svg>
         </div>
 
         <h3>
@@ -480,8 +502,11 @@ body .mobilebtn {
         href="geraet-verkaufen.html"
       >
 
-        <div class="icon">
-          ↗
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="3" y="2" width="11" height="20" rx="2"/>
+            <path d="M7 5h3M8 19h1M16 12l5-5M16 7h5v5"/>
+          </svg>
         </div>
 
         <h3>
@@ -509,8 +534,11 @@ body .mobilebtn {
         href="privatkunden.html"
       >
 
-        <div class="icon">
-          ⌁
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="4" y="3" width="16" height="12" rx="2"/>
+            <path d="m2 20 2-5h16l2 5H2ZM9 18h6"/>
+          </svg>
         </div>
 
         <h3>
@@ -538,8 +566,11 @@ body .mobilebtn {
         href="unternehmen.html"
       >
 
-        <div class="icon">
-          ▦
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 12a22 22 0 0 0 20 0M12 11v4"/>
+          </svg>
         </div>
 
         <h3>
