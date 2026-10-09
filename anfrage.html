@@ -80,11 +80,11 @@
 .repair-form input:focus,
 .repair-form select:focus,
 .repair-form textarea:focus {
-  outline: none;
+  outline: 2px solid #111;
+  outline-offset: 3px;
   border-color: #111 !important;
   box-shadow: 0 0 0 3px rgba(0,0,0,.07);
 }
-
 .repair-form label {
   display: block;
   font-weight: 750;
@@ -187,6 +187,14 @@ body .nav,
 body .dropdown .menu {
   background: #fff !important;
   background-image: none !important;
+}
+
+body .dropdown .menu {
+  visibility: hidden;
+}
+
+body .dropdown.open .menu {
+  visibility: visible;
 }
 
 body .navlinks > a:not(.cta),
@@ -1284,97 +1292,85 @@ body .mobilebtn {
 <!-- EIGENSTÄNDIGE NAVIGATION -->
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".mobilebtn");
+  const navigation = document.querySelector(".navlinks");
+  const dropdowns = [...document.querySelectorAll(".dropdown")];
 
-document.addEventListener(
-  "DOMContentLoaded",
-  function () {
+  function setMobileMenu(open) {
+    if (!menuButton || !navigation) return;
 
+    ["mobileopen", "open", "active"].forEach(function (className) {
+      navigation.classList.toggle(className, open);
+    });
 
-    const menuButton =
-      document.querySelector(".mobilebtn");
-
-
-    const navigation =
-      document.querySelector(".navlinks");
-
-
-
-
-    if (menuButton && navigation) {
-
-
-      menuButton.addEventListener(
-        "click",
-        function () {
-
-
-          const open =
-            menuButton.getAttribute(
-              "aria-expanded"
-            ) !== "true";
-
-
-
-          menuButton.setAttribute(
-            "aria-expanded",
-            String(open)
-          );
-
-
-
-          navigation.classList.toggle(
-            "open",
-            open
-          );
-
-
-
-          navigation.classList.toggle(
-            "active",
-            open
-          );
-
-
-        }
-      );
-
-
-    }
-
-
-
-
-    document
-      .querySelectorAll(".dropdown .dropbtn")
-      .forEach(function (button) {
-
-
-        button.addEventListener(
-          "click",
-          function () {
-
-
-            button.parentElement.classList.toggle(
-              "open"
-            );
-
-
-
-            button.parentElement.classList.toggle(
-              "active"
-            );
-
-
-          }
-        );
-
-
-      });
-
-
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute(
+      "aria-label",
+      open ? "Menü schliessen" : "Menü öffnen"
+    );
   }
-);
 
+  function setDropdown(dropdown, open) {
+    dropdown.classList.toggle("open", open);
+    dropdown.classList.toggle("active", open);
+    dropdown.querySelector(".dropbtn")
+      ?.setAttribute("aria-expanded", String(open));
+  }
+
+  if (menuButton && navigation) {
+    navigation.id = navigation.id || "hauptnavigation";
+    menuButton.setAttribute("aria-controls", navigation.id);
+    setMobileMenu(false);
+
+    menuButton.addEventListener("click", function () {
+      setMobileMenu(!navigation.classList.contains("mobileopen"));
+    });
+  }
+
+  dropdowns.forEach(function (dropdown, index) {
+    const button = dropdown.querySelector(".dropbtn");
+    const menu = dropdown.querySelector(".menu");
+
+    if (!button || !menu) return;
+
+    menu.id = menu.id || `untermenue-${index + 1}`;
+    button.setAttribute("aria-controls", menu.id);
+    setDropdown(dropdown, false);
+
+    button.addEventListener("click", function () {
+      setDropdown(dropdown, !dropdown.classList.contains("open"));
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    dropdowns.forEach(function (dropdown) {
+      if (!dropdown.contains(event.target)) {
+        setDropdown(dropdown, false);
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+
+    const activeDropdown = dropdowns.find(function (dropdown) {
+      return dropdown.classList.contains("open") &&
+        dropdown.contains(document.activeElement);
+    });
+
+    dropdowns.forEach(function (dropdown) {
+      setDropdown(dropdown, false);
+    });
+
+    if (activeDropdown) {
+      activeDropdown.querySelector(".dropbtn")?.focus();
+    } else if (navigation?.classList.contains("mobileopen")) {
+      setMobileMenu(false);
+      menuButton?.focus();
+    }
+  });
+});
 </script>
 
 
