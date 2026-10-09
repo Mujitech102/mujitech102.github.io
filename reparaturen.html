@@ -27,7 +27,7 @@
   <meta property="og:site_name" content="Mujitech">
 
   <meta property="og:title"
-        content="Handy-, iPhone- & Laptop-Reparatur | Mujitech">
+      content="Handy Reparatur St. Gallen | iPhone & Laptop | Mujitech">
 
   <meta property="og:description"
         content="Smartphone-, Tablet- und Computer-Reparaturen in Abtwil bei St. Gallen. Persönlicher Service nach Termin und schweizweite Einsendung.">
@@ -379,11 +379,15 @@
       -webkit-text-fill-color: #111 !important;
     }
 
-    body .dropdown .menu {
+        body .dropdown .menu {
       border: 1px solid #ddd !important;
       box-shadow: 0 12px 30px rgba(0,0,0,.08);
+      visibility: hidden;
     }
 
+    body .dropdown.open .menu {
+      visibility: visible;
+    }
     body .dropdown .menu a:hover {
       background: #f2f2f2 !important;
     }
@@ -1289,6 +1293,90 @@
 <!-- BESTEHENDE WEBSITE-FUNKTIONEN -->
 
 <script src="assets/app.js?v=20261003-1" defer></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileButton = document.querySelector('.mobilebtn');
+  const navigation = document.querySelector('.navlinks');
+  const dropdowns = [...document.querySelectorAll('.dropdown')];
+
+  if (mobileButton && navigation) {
+    navigation.id = navigation.id || 'hauptnavigation';
+    mobileButton.setAttribute('aria-controls', navigation.id);
+  }
+
+  dropdowns.forEach((dropdown, index) => {
+    const button = dropdown.querySelector('.dropbtn');
+    const menu = dropdown.querySelector('.menu');
+
+    if (!button || !menu) return;
+
+    menu.id = menu.id || `untermenue-${index + 1}`;
+    button.setAttribute('aria-controls', menu.id);
+  });
+
+  function updateMenuState() {
+    if (mobileButton && navigation) {
+      const open = navigation.classList.contains('mobileopen');
+      mobileButton.setAttribute('aria-expanded', String(open));
+      mobileButton.setAttribute(
+        'aria-label',
+        open ? 'Menü schliessen' : 'Menü öffnen'
+      );
+    }
+
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.dropbtn');
+
+      if (button) {
+        button.setAttribute(
+          'aria-expanded',
+          String(dropdown.classList.contains('open'))
+        );
+      }
+    });
+  }
+
+  mobileButton?.addEventListener('click', updateMenuState);
+
+  dropdowns.forEach(dropdown => {
+    dropdown.querySelector('.dropbtn')
+      ?.addEventListener('click', updateMenuState);
+  });
+
+  document.addEventListener('click', updateMenuState);
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+
+    const activeDropdown = dropdowns.find(dropdown =>
+      dropdown.classList.contains('open') &&
+      dropdown.contains(document.activeElement)
+    );
+
+    if (activeDropdown) {
+      activeDropdown.classList.remove('open');
+      activeDropdown.querySelector('.dropbtn')?.focus();
+    } else {
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('open');
+      });
+
+      if (
+        mobileButton &&
+        navigation?.classList.contains('mobileopen')
+      ) {
+        navigation.classList.remove('mobileopen');
+        mobileButton.focus();
+      }
+    }
+
+    updateMenuState();
+  });
+
+  updateMenuState();
+});
+</script>
 
 <!-- BESTEHENDE STROMANIMATION -->
 
