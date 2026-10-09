@@ -63,3 +63,8 @@ body .service-banner__item small {color:#111!important;-webkit-text-fill-color:#
 body .service-banner__badge {background:#fff!important;border-color:#ddd!important;}
 body :is(.w-form,.w-card,.w-aside,.w-addon) :is(button,a.w-btn) {background-image:none!important;}
 body a:focus-visible,body button:focus-visible {outline:2px solid #111!important;outline-offset:3px;}
+
+/* Undurchsichtiger Hintergrund des mobilen Navigationsmenues */
+@media (max-width: 900px) {
+  body .topbar .navlinks { background: #fff !important; }
+}
