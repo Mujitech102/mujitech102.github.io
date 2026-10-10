@@ -1,44 +1,307 @@
 {
-"Pakete entdecken ↓":["Découvrir les offres ↓","Scopri le offerte ↓","Explore packages ↓"],
-"Unverbindlich anfragen":["Demander un devis sans engagement","Richiedi un preventivo senza impegno","Request a no-obligation quote"],
-"Das passende Website-Paket":["L’offre adaptée à votre site web","L’offerta adatta al tuo sito web","The right website package"],
-"einmalig":["paiement unique","una tantum","one-off"],
-"Dein professioneller Einstieg ins Internet.":["Votre présence professionnelle sur internet.","La tua presenza professionale online.","Your professional presence online."],
-"SEO-Grundeinstellungen":["Configuration SEO de base","Configurazione SEO di base","Basic SEO setup"],
-"Erweiterte SEO-Grundeinstellungen":["Configuration SEO de base avancée","Configurazione SEO di base avanzata","Extended basic SEO setup"],
-"1 Korrekturrunde":["1 série de corrections","1 ciclo di revisioni","1 revision round"],
-"2 Korrekturrunden":["2 séries de corrections","2 cicli di revisioni","2 revision rounds"],
-"3 Korrekturrunden":["3 séries de corrections","3 cicli di revisioni","3 revision rounds"],
-"Basic anfragen":["Demander l’offre Basic","Richiedi l’offerta Basic","Enquire about Basic"],
-"Business anfragen":["Demander l’offre Business","Richiedi l’offerta Business","Enquire about Business"],
-"Premium anfragen":["Demander l’offre Premium","Richiedi l’offerta Premium","Enquire about Premium"],
-"30 Tage Behebung technischer Umsetzungsfehler":["Correction des erreurs techniques pendant 30 jours","Correzione degli errori tecnici per 30 giorni","Technical implementation fixes for 30 days"],
-"30 Tage Behebung technischer Fehler":["Correction des erreurs techniques pendant 30 jours","Correzione degli errori tecnici per 30 giorni","Technical fixes for 30 days"],
-"Bevorzugte Besprechung *":["Mode de discussion souhaité *","Modalità di colloquio preferita *","Preferred discussion method *"],
-"Bevorzugte Erreichbarkeit":["Meilleur moment pour vous contacter","Orario preferito per essere contattato","Best time to contact you"],
-"z.B. werktags nach 16 Uhr":["Par exemple, en semaine après 16 h","Ad esempio, nei giorni feriali dopo le 16","For example, weekdays after 4 pm"],
-"Ich bin damit einverstanden, dass Mujitech meine Angaben zur Bearbeitung dieser Anfrage verarbeitet und mich dazu kontaktiert. Ich habe die":["J’accepte que Mujitech utilise mes données pour répondre à cette demande et me contacte à ce sujet. J’ai pris connaissance des","Acconsento al trattamento dei miei dati da parte di Mujitech per rispondere a questa richiesta e per contattarmi. Ho letto le","I agree that Mujitech may process my details to respond to this enquiry and contact me about it. I have read the"],
-"Datenschutzhinweise":["informations de confidentialité","informazioni sulla privacy","privacy information"],
-"zur Kenntnis genommen. *":[". *",". *",". *"],
-"Langsame Computer prüfen, unnötige Programme bereinigen, Systemeinstellungen kontrollieren und mögliche Verbesserungen besprechen.":["Nous examinons les ordinateurs lents, supprimons les programmes inutiles, vérifions les réglages et discutons des améliorations possibles.","Controlliamo i computer lenti, rimuoviamo i programmi inutili, verifichiamo le impostazioni e discutiamo possibili miglioramenti.","We inspect slow computers, remove unnecessary programs, check system settings and discuss possible improvements."],
-"Router, WLAN-Verbindungen und Endgeräte konfigurieren oder typische Verbindungsprobleme systematisch prüfen.":["Configuration du routeur, des connexions Wi-Fi et des appareils, ou diagnostic méthodique des problèmes de connexion.","Configurazione di router, connessioni Wi-Fi e dispositivi, oppure diagnosi sistematica dei problemi di connessione.","Router, Wi-Fi and device configuration, or a systematic check of connection problems."],
-"Daten von einem bisherigen Gerät auf ein neues Smartphone, Tablet, einen Laptop oder PC übertragen.":["Transfert de données de votre ancien appareil vers un nouveau smartphone, une tablette, un portable ou un PC.","Trasferimento dei dati dal vecchio dispositivo a un nuovo smartphone, tablet, portatile o PC.","Data transfer from your previous device to a new phone, tablet, laptop or PC."],
-"Neues Smartphone einrichten, E-Mail und Apps konfigurieren, Kontakte übertragen und die wichtigsten Einstellungen gemeinsam durchgehen. Zugangsdaten geben Sie selbst ein.":["Configuration d’un nouveau smartphone, des e-mails et applications, transfert des contacts et explication des principaux réglages. Vous saisissez vous-même vos identifiants.","Configurazione di un nuovo smartphone, e-mail e app, trasferimento dei contatti e spiegazione delle impostazioni principali. Inserisci personalmente le credenziali.","Set up a new smartphone, email and apps, transfer contacts and go through the key settings together. You enter your login details yourself."],
-"WENIG ÄNDERUNGEN":["PEU DE MODIFICATIONS","POCHE MODIFICHE","FEW CHANGES"],
-"Monatliche SEO-Grundkontrolle":["Vérification SEO de base chaque mois","Controllo SEO di base mensile","Monthly basic SEO check"],
-"3. Monatliche Betreuung":["3. Maintenance mensuelle","3. Manutenzione mensile","3. Monthly maintenance"],
-"Bevorzugte Kontaktaufnahme":["Mode de contact souhaité","Metodo di contatto preferito","Preferred contact method"],
-"Name / Firma *":["Nom / entreprise *","Nome / azienda *","Name / company *"],
-"Ihr Name oder Firmenname":["Votre nom ou celui de votre entreprise","Il tuo nome o il nome dell’azienda","Your name or company name"],
-"Gewünschter Service *":["Service souhaité *","Servizio desiderato *","Required service *"],
-"Mujitech unterstützt Unternehmen aus der Region St. Gallen bei alltäglichen Technikproblemen und der Einrichtung moderner IT-Lösungen.":["Mujitech accompagne les entreprises de la région de Saint-Gall dans leurs problèmes techniques quotidiens et la mise en place de solutions IT modernes.","Mujitech aiuta le aziende della regione di San Gallo a risolvere problemi tecnici quotidiani e a configurare soluzioni IT moderne.","Mujitech helps businesses in the St. Gallen region solve everyday technology problems and set up modern IT solutions."],
-"Produkt / Shop":["Produit / boutique","Prodotto / shop","Product / shop"],
-"Bilder":["Photos","Foto","Photos"],
-"Service kostenlos anfragen →":["Demander un service sans engagement →","Richiedi un servizio senza impegno →","Send a free service enquiry →"],
-"Professionell aufbereitet.":["Reconditionné professionnellement.","Ricondizionato professionalmente.","Professionally refurbished."],
-"Hochwertiges Soft-OLED Ersatzdisplay":["Écran de remplacement Soft-OLED de qualité","Schermo di ricambio Soft-OLED di qualità","Quality Soft-OLED replacement screen"],
-"12 Monate Garantie.":["Garantie de 12 mois.","Garanzia di 12 mesi.","12-month warranty."],
-"Gerätedetails":["Détails de l’appareil","Dettagli del dispositivo","Device details"],
-"Geprüft & funktionsfähig":["Contrôlé et fonctionnel","Controllato e funzionante","Tested and working"],
-"Fünf von fünf Sternen":["Cinq étoiles sur cinq","Cinque stelle su cinque","Five out of five stars"]
+  "Pakete entdecken ↓": [
+    "Découvrir les offres ↓",
+    "Scopri le offerte ↓",
+    "Explore packages ↓"
+  ],
+  "Unverbindlich anfragen": [
+    "Demander un devis sans engagement",
+    "Richiedi un preventivo senza impegno",
+    "Request a no-obligation quote"
+  ],
+  "Das passende Website-Paket": [
+    "L’offre adaptée à votre site web",
+    "L’offerta adatta al tuo sito web",
+    "The right website package"
+  ],
+  "einmalig": [
+    "paiement unique",
+    "una tantum",
+    "one-off"
+  ],
+  "Dein professioneller Einstieg ins Internet.": [
+    "Votre présence professionnelle sur internet.",
+    "La tua presenza professionale online.",
+    "Your professional presence online."
+  ],
+  "SEO-Grundeinstellungen": [
+    "Configuration SEO de base",
+    "Configurazione SEO di base",
+    "Basic SEO setup"
+  ],
+  "Erweiterte SEO-Grundeinstellungen": [
+    "Configuration SEO de base avancée",
+    "Configurazione SEO di base avanzata",
+    "Extended basic SEO setup"
+  ],
+  "1 Korrekturrunde": [
+    "1 série de corrections",
+    "1 ciclo di revisioni",
+    "1 revision round"
+  ],
+  "2 Korrekturrunden": [
+    "2 séries de corrections",
+    "2 cicli di revisioni",
+    "2 revision rounds"
+  ],
+  "3 Korrekturrunden": [
+    "3 séries de corrections",
+    "3 cicli di revisioni",
+    "3 revision rounds"
+  ],
+  "Basic anfragen": [
+    "Demander l’offre Basic",
+    "Richiedi l’offerta Basic",
+    "Enquire about Basic"
+  ],
+  "Business anfragen": [
+    "Demander l’offre Business",
+    "Richiedi l’offerta Business",
+    "Enquire about Business"
+  ],
+  "Premium anfragen": [
+    "Demander l’offre Premium",
+    "Richiedi l’offerta Premium",
+    "Enquire about Premium"
+  ],
+  "30 Tage Behebung technischer Umsetzungsfehler": [
+    "Correction des erreurs techniques pendant 30 jours",
+    "Correzione degli errori tecnici per 30 giorni",
+    "Technical implementation fixes for 30 days"
+  ],
+  "30 Tage Behebung technischer Fehler": [
+    "Correction des erreurs techniques pendant 30 jours",
+    "Correzione degli errori tecnici per 30 giorni",
+    "Technical fixes for 30 days"
+  ],
+  "Bevorzugte Besprechung *": [
+    "Mode de discussion souhaité *",
+    "Modalità di colloquio preferita *",
+    "Preferred discussion method *"
+  ],
+  "Bevorzugte Erreichbarkeit": [
+    "Meilleur moment pour vous contacter",
+    "Orario preferito per essere contattato",
+    "Best time to contact you"
+  ],
+  "z.B. werktags nach 16 Uhr": [
+    "Par exemple, en semaine après 16 h",
+    "Ad esempio, nei giorni feriali dopo le 16",
+    "For example, weekdays after 4 pm"
+  ],
+  "Ich bin damit einverstanden, dass Mujitech meine Angaben zur Bearbeitung dieser Anfrage verarbeitet und mich dazu kontaktiert. Ich habe die": [
+    "J’accepte que Mujitech utilise mes données pour répondre à cette demande et me contacte à ce sujet. J’ai pris connaissance des",
+    "Acconsento al trattamento dei miei dati da parte di Mujitech per rispondere a questa richiesta e per contattarmi. Ho letto le",
+    "I agree that Mujitech may process my details to respond to this enquiry and contact me about it. I have read the"
+  ],
+  "Datenschutzhinweise": [
+    "informations sur la confidentialité",
+    "informazioni sulla privacy",
+    "privacy information"
+  ],
+  "zur Kenntnis genommen. *": [
+    ". *",
+    ". *",
+    ". *"
+  ],
+  "Langsame Computer prüfen, unnötige Programme bereinigen, Systemeinstellungen kontrollieren und mögliche Verbesserungen besprechen.": [
+    "Nous examinons les ordinateurs lents, supprimons les programmes inutiles, vérifions les réglages et discutons des améliorations possibles.",
+    "Controlliamo i computer lenti, rimuoviamo i programmi inutili, verifichiamo le impostazioni e discutiamo possibili miglioramenti.",
+    "We inspect slow computers, remove unnecessary programs, check system settings and discuss possible improvements."
+  ],
+  "Router, WLAN-Verbindungen und Endgeräte konfigurieren oder typische Verbindungsprobleme systematisch prüfen.": [
+    "Configuration du routeur, des connexions Wi-Fi et des appareils, ou diagnostic méthodique des problèmes de connexion.",
+    "Configurazione di router, connessioni Wi-Fi e dispositivi, oppure diagnosi sistematica dei problemi di connessione.",
+    "Router, Wi-Fi and device configuration, or a systematic check of connection problems."
+  ],
+  "Daten von einem bisherigen Gerät auf ein neues Smartphone, Tablet, einen Laptop oder PC übertragen.": [
+    "Transfert de données de votre ancien appareil vers un nouveau smartphone, une tablette, un portable ou un PC.",
+    "Trasferimento dei dati dal vecchio dispositivo a un nuovo smartphone, tablet, portatile o PC.",
+    "Data transfer from your previous device to a new phone, tablet, laptop or PC."
+  ],
+  "Neues Smartphone einrichten, E-Mail und Apps konfigurieren, Kontakte übertragen und die wichtigsten Einstellungen gemeinsam durchgehen. Zugangsdaten geben Sie selbst ein.": [
+    "Configuration d’un nouveau smartphone, des e-mails et applications, transfert des contacts et explication des principaux réglages. Vous saisissez vous-même vos identifiants.",
+    "Configurazione di un nuovo smartphone, e-mail e app, trasferimento dei contatti e spiegazione delle impostazioni principali. Inserisci personalmente le credenziali.",
+    "Set up a new smartphone, email and apps, transfer contacts and go through the key settings together. You enter your login details yourself."
+  ],
+  "WENIG ÄNDERUNGEN": [
+    "PEU DE MODIFICATIONS",
+    "POCHE MODIFICHE",
+    "FEW CHANGES"
+  ],
+  "Monatliche SEO-Grundkontrolle": [
+    "Vérification SEO de base chaque mois",
+    "Controllo SEO di base mensile",
+    "Monthly basic SEO check"
+  ],
+  "3. Monatliche Betreuung": [
+    "3. Maintenance mensuelle",
+    "3. Manutenzione mensile",
+    "3. Monthly maintenance"
+  ],
+  "Bevorzugte Kontaktaufnahme": [
+    "Mode de contact souhaité",
+    "Metodo di contatto preferito",
+    "Preferred contact method"
+  ],
+  "Name / Firma *": [
+    "Nom / entreprise *",
+    "Nome / azienda *",
+    "Name / company *"
+  ],
+  "Ihr Name oder Firmenname": [
+    "Votre nom ou celui de votre entreprise",
+    "Il tuo nome o il nome dell’azienda",
+    "Your name or company name"
+  ],
+  "Gewünschter Service *": [
+    "Service souhaité *",
+    "Servizio desiderato *",
+    "Required service *"
+  ],
+  "Mujitech unterstützt Unternehmen aus der Region St. Gallen bei alltäglichen Technikproblemen und der Einrichtung moderner IT-Lösungen.": [
+    "Mujitech accompagne les entreprises de la région de Saint-Gall dans leurs problèmes techniques quotidiens et la mise en place de solutions IT modernes.",
+    "Mujitech aiuta le aziende della regione di San Gallo a risolvere problemi tecnici quotidiani e a configurare soluzioni IT moderne.",
+    "Mujitech helps businesses in the St. Gallen region solve everyday technology problems and set up modern IT solutions."
+  ],
+  "Produkt / Shop": [
+    "Produit / boutique",
+    "Prodotto / shop",
+    "Product / shop"
+  ],
+  "Bilder": [
+    "Photos",
+    "Foto",
+    "Photos"
+  ],
+  "Service kostenlos anfragen →": [
+    "Demander un service sans engagement →",
+    "Richiedi un servizio senza impegno →",
+    "Send a free service enquiry →"
+  ],
+  "Professionell aufbereitet.": [
+    "Reconditionné professionnellement.",
+    "Ricondizionato professionalmente.",
+    "Professionally refurbished."
+  ],
+  "Hochwertiges Soft-OLED Ersatzdisplay": [
+    "Écran de remplacement Soft-OLED de qualité",
+    "Schermo di ricambio Soft-OLED di qualità",
+    "Quality Soft-OLED replacement screen"
+  ],
+  "12 Monate Garantie.": [
+    "Garantie de 12 mois.",
+    "Garanzia di 12 mesi.",
+    "12-month warranty."
+  ],
+  "Gerätedetails": [
+    "Détails de l’appareil",
+    "Dettagli del dispositivo",
+    "Device details"
+  ],
+  "Geprüft & funktionsfähig": [
+    "Contrôlé et fonctionnel",
+    "Controllato e funzionante",
+    "Tested and working"
+  ],
+  "Fünf von fünf Sternen": [
+    "Cinq étoiles sur cinq",
+    "Cinque stelle su cinque",
+    "Five out of five stars"
+  ],
+  "Telefonnummer (optional)": [
+    "Téléphone (facultatif)",
+    "Telefono (facoltativo)",
+    "Phone number (optional)"
+  ],
+  "Deine Anfrage in wenigen Angaben": [
+    "Votre demande en quelques mots",
+    "La tua richiesta in pochi passaggi",
+    "Your enquiry in a few details"
+  ],
+  "Name, E-Mail und eine kurze Beschreibung genügen. Paket und Zusatzleistungen kannst du später gemeinsam mit uns auswählen.": [
+    "Votre nom, votre e-mail et une courte description suffisent. Nous pourrons choisir ensemble la formule et les options par la suite.",
+    "Bastano nome, e-mail e una breve descrizione. Potremo scegliere insieme il pacchetto e le opzioni in seguito.",
+    "Your name, email and a short description are enough. We can help you choose a package and any extras later."
+  ],
+  "Was möchtest du mit deiner Website erreichen? *": [
+    "Quel est l’objectif de votre site web ? *",
+    "Qual è l’obiettivo del tuo sito web? *",
+    "What would you like your website to achieve? *"
+  ],
+  "Paket und weitere Angaben ergänzen (optional)": [
+    "Ajouter une formule et des précisions (facultatif)",
+    "Aggiungi un pacchetto e altri dettagli (facoltativo)",
+    "Add a package and more details (optional)"
+  ],
+  "Website-Paket (optional)": [
+    "Formule du site web (facultatif)",
+    "Pacchetto sito web (facoltativo)",
+    "Website package (optional)"
+  ],
+  "Monatliche Betreuung (optional)": [
+    "Maintenance mensuelle (facultatif)",
+    "Manutenzione mensile (facoltativa)",
+    "Monthly maintenance (optional)"
+  ],
+  "Zusatzleistungen (optional)": [
+    "Options supplémentaires (facultatif)",
+    "Servizi aggiuntivi (facoltativi)",
+    "Additional services (optional)"
+  ],
+  "Die Anfrage ist unverbindlich und löst keine Bestellung aus. Das Formular wird über FormSubmit übermittelt. Bitte keine Passwörter oder vertraulichen Daten eingeben.": [
+    "La demande est sans engagement et ne constitue pas une commande. Le formulaire est transmis via FormSubmit. N’indiquez aucun mot de passe ni donnée confidentielle.",
+    "La richiesta non è vincolante e non costituisce un ordine. Il modulo viene inviato tramite FormSubmit. Non inserire password o dati riservati.",
+    "The enquiry is non-binding and does not place an order. The form is sent through FormSubmit. Do not enter passwords or confidential information."
+  ],
+  "Wir bestätigen die Reparaturmöglichkeit und die Versandadresse. Du bezahlst den Versand zu uns; Mujitech übernimmt den Rückversand nach der Reparatur.": [
+    "Nous confirmons la possibilité de réparation et l’adresse d’envoi. Vous payez l’envoi à notre atelier ; Mujitech prend en charge le retour après réparation.",
+    "Confermiamo la possibilità di riparazione e l’indirizzo. Paghi la spedizione al laboratorio; Mujitech paga il ritorno dopo la riparazione.",
+    "We confirm whether repair is possible and the shipping address. You pay shipping to our workshop; Mujitech pays return shipping after the repair."
+  ],
+  "Du wählst dein Website-Paket und deine gewünschten Extras.": [
+    "Vous décrivez votre projet. Le choix d’une formule et des options est facultatif.",
+    "Descrivi il progetto. La scelta del pacchetto e delle opzioni è facoltativa.",
+    "Describe your project. Choosing a package and extras is optional."
+  ],
+  "Du beschreibst dein Projekt. Paket und Extras sind optional.": [
+    "Vous décrivez votre projet. Le choix d’une formule et des options est facultatif.",
+    "Descrivi il progetto. La scelta del pacchetto e delle opzioni è facoltativa.",
+    "Describe your project. Choosing a package and extras is optional."
+  ],
+  "Name *": [
+    "Nom *",
+    "Nome *",
+    "Name *"
+  ],
+  "Ich habe die": [
+    "J’ai lu les",
+    "Ho letto le",
+    "I have read the"
+  ],
+  "Care Basic": [
+    "Maintenance Basic",
+    "Manutenzione Basic",
+    "Care Basic"
+  ],
+  "Care Business": [
+    "Maintenance Business",
+    "Manutenzione Business",
+    "Care Business"
+  ],
+  "Care Premium": [
+    "Maintenance Premium",
+    "Manutenzione Premium",
+    "Care Premium"
+  ],
+  "Alle Leistungen aus Care Basic": [
+    "Toutes les prestations de Maintenance Basic",
+    "Tutti i servizi di Manutenzione Basic",
+    "All Care Basic services"
+  ],
+  "Alle Leistungen aus Care Business": [
+    "Toutes les prestations de Maintenance Business",
+    "Tutti i servizi di Manutenzione Business",
+    "All Care Business services"
+  ]
 }
