@@ -110,3 +110,11 @@ body .review-translation-note { font-size:14px; color:#555; margin:0 0 24px; }
   *,*::before,*::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; }
   .m-reveal,.reveal { opacity:1 !important; transform:none !important; }
 }
+
+/* Icon-only contact shortcuts stay in the hero, clear of the consent banner. */
+.home-contact-tools { margin:22px 0; }
+.home-contact-buttons { display:flex; align-items:center; gap:14px; }
+body .home-contact-button { display:inline-flex; align-items:center; justify-content:center; flex:0 0 54px; width:54px; height:54px; min-height:54px; padding:0; border:1px solid #111; border-radius:50%; color:#111; background:#fff; box-shadow:0 3px 0 #555; overflow:hidden; }
+.home-contact-button svg { display:block; width:25px; height:25px; }
+.home-contact-button:focus-visible,.home-cookie-settings:focus-visible { outline:3px solid #555; outline-offset:5px; }
+.home-cookie-settings { margin-top:15px; padding:5px 0; font:inherit; font-size:13px; color:#555; border:0; background:transparent; text-decoration:underline; text-underline-offset:3px; cursor:pointer; min-height:32px; }
