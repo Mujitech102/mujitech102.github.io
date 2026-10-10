@@ -3,7 +3,7 @@ from html import escape,unescape
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,urlunsplit,parse_qsl,urlencode
 import re,json
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261010-2'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261010-3'
 LANGS={'de':'de-CH','en':'en','fr':'fr-CH','it':'it-CH'}
 NAMES={'de':'Deutsch','en':'English','fr':'Français','it':'Italiano'}
 legacy={'reparation-suisse.html':('fr','reparatur-schweiz.html'),'riparazione-svizzera.html':('it','reparatur-schweiz.html'),'repair-switzerland.html':('en','reparatur-schweiz.html'),'demande-reparation.html':('fr','reparaturanfrage.html'),'richiesta-riparazione.html':('it','reparaturanfrage.html'),'repair-request.html':('en','reparaturanfrage.html')}
@@ -256,6 +256,13 @@ def build(f,l,source=None):
  if f not in ['404.html','danke.html']:
   page={'@context':'https://schema.org','@type':'WebPage','@id':canonical(f,l)+'#webpage','url':canonical(f,l),'name':title,'description':description,'inLanguage':LANGS[l],'isPartOf':{'@id':DOMAIN+'/#website'},'about':{'@id':DOMAIN+'/#organization'}}
   meta+='<script type="application/ld+json">'+json.dumps(page,ensure_ascii=False)+'</script>'
+ if f=='index.html':
+  labels={'de':['Direkt kontaktieren','Über WhatsApp kontaktieren','Mujitech anrufen','E-Mail an Mujitech schreiben','Cookie-Einstellungen'],'fr':['Contact direct','Contacter sur WhatsApp','Appeler Mujitech','Envoyer un e-mail à Mujitech','Paramètres des cookies'],'it':['Contatto diretto','Contatta su WhatsApp','Chiama Mujitech','Scrivi un’e-mail a Mujitech','Impostazioni dei cookie'],'en':['Contact us directly','Contact us on WhatsApp','Call Mujitech','Email Mujitech','Cookie settings']}[l]
+  icons=[('<path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.5L3 20.5l1.3-4.8a8.5 8.5 0 1 1 16.2-4Z"/><path d="M8.1 7.7c.4-.4.8-.2 1 .3l.8 1.7c.2.4 0 .7-.5 1.1.7 1.5 1.8 2.6 3.3 3.3.4-.5.7-.7 1.1-.5l1.7.8c.5.2.7.6.3 1-.7.9-1.7 1-2.8.6-2.8-1-5.1-3.3-6.1-6.1-.4-1.1-.3-2.1.6-2.8Z"/>'),('<path d="M8.2 3.8 5.8 3a1.4 1.4 0 0 0-1.7.8c-2.3 5.2 5.9 13.4 11.1 16.1a3.6 3.6 0 0 0 4.4-.5l1.1-1.2a1.4 1.4 0 0 0-.3-2.1l-3.1-1.9a1.4 1.4 0 0 0-1.7.2L14 16c-2.6-1.4-4.6-3.4-6-6l1.5-1.6a1.4 1.4 0 0 0 .2-1.7L8.2 3.8Z"/>'),('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>')]
+  hrefs=['https://wa.me/41768444673','tel:+41768444673','mailto:info@mujitech.ch']
+  buttons=''.join(f'<a class="home-contact-button ui-action" href="{href}" aria-label="{escape(label,quote=True)}" title="{escape(label,quote=True)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{icon}</svg></a>' for href,label,icon in zip(hrefs,labels[1:4],icons))
+  contacts=f'<div class="home-contact-tools"><nav class="home-contact-buttons" aria-label="{labels[0]}">{buttons}</nav><button class="home-cookie-settings" type="button" data-consent-settings>{labels[4]}</button></div>'
+  data=data.replace('<div class="m-trust">',contacts+'<div class="m-trust">',1)
  # Load shared presentation last so inline legacy hover styles cannot override it.
  data=re.sub(r'<link[^>]*href="[^"\']*assets/enhancements.css[^"\']*"[^>]*>','',data)
  meta+=f'<link rel="stylesheet" href="/assets/enhancements.css?v={VERSION}">'

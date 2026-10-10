@@ -4,12 +4,12 @@
   const ID='G-C2WKE7YV33', KEY='mujitech-cookie-consent';
   const lang=(document.documentElement.lang||'de').slice(0,2);
   const copy={
-    de:['Datenschutz & Statistik','Mit Ihrer Zustimmung messen wir Seitenaufrufe, Kontaktklicks und Formularinteraktionen mit Google Analytics. Formularinhalte werden nicht an Analytics gesendet.','Datenschutzhinweise','Nur notwendige','Statistik erlauben'],
-    fr:['Confidentialité et statistiques','Avec votre accord, Google Analytics mesure les pages vues, clics de contact et interactions avec les formulaires. Le contenu des formulaires n’est pas transmis à Analytics.','Confidentialité','Uniquement nécessaires','Autoriser les statistiques'],
-    it:['Privacy e statistiche','Con il tuo consenso, Google Analytics misura pagine visitate, clic di contatto e interazioni con i moduli. I contenuti dei moduli non vengono inviati ad Analytics.','Privacy','Solo necessari','Consenti statistiche'],
-    en:['Privacy and statistics','With your consent, Google Analytics measures page views, contact clicks and form interactions. Form contents are not sent to Analytics.','Privacy information','Necessary only','Allow statistics']
+    de:['Cookies & Datenschutz','Mit Ihrer Zustimmung messen wir Seitenaufrufe, Kontaktklicks und Formularinteraktionen mit Google Analytics. Formularinhalte werden nicht an Analytics gesendet.','Datenschutzhinweise','Nur notwendige','Statistik erlauben'],
+    fr:['Cookies et confidentialité','Avec votre accord, Google Analytics mesure les pages vues, clics de contact et interactions avec les formulaires. Le contenu des formulaires n’est pas transmis à Analytics.','Confidentialité','Uniquement nécessaires','Autoriser les statistiques'],
+    it:['Cookie e privacy','Con il tuo consenso, Google Analytics misura pagine visitate, clic di contatto e interazioni con i moduli. I contenuti dei moduli non vengono inviati ad Analytics.','Privacy','Solo necessari','Consenti statistiche'],
+    en:['Cookies and privacy','With your consent, Google Analytics measures page views, contact clicks and form interactions. Form contents are not sent to Analytics.','Privacy information','Necessary only','Allow statistics']
   }[lang] || ['Privacy and statistics','Optional visitor statistics with Google Analytics.','Privacy information','Necessary only','Allow statistics'];
-  let allowed=false,loaded=false,banner;
+  let allowed=false,loaded=false,banner,settingsTrigger;
   const cleanURL=location.origin+location.pathname;
   const event=(name,params={})=>{
     if(allowed && window.gtag)window.gtag('event',name,{...params,page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
@@ -38,17 +38,17 @@
       domains.forEach(domain=>paths.forEach(path=>{document.cookie=name+'=; Max-Age=0; path='+path+(domain?'; domain='+domain:'')+'; SameSite=Lax';}));
     });
   }
-  function save(value){try{localStorage.setItem(KEY,value);}catch{} if(value==='all')activate();else revoke();banner.hidden=true;}
+  function save(value){try{localStorage.setItem(KEY,value);}catch{} if(value==='all')activate();else revoke();banner.hidden=true;if(settingsTrigger){settingsTrigger.focus();settingsTrigger=null;}}
   function ready(){
-    banner=document.createElement('section');banner.className='ch-privacy-banner';banner.setAttribute('role','dialog');banner.setAttribute('aria-label',copy[0]);
+    banner=document.createElement('section');banner.className='ch-privacy-banner';banner.setAttribute('role','dialog');banner.setAttribute('aria-label',copy[0]);banner.setAttribute('aria-describedby','cookie-description');
     const text=document.createElement('div');const strong=document.createElement('strong');strong.textContent=copy[0];text.append(strong);
-    const p=document.createElement('p');p.textContent=copy[1]+' ';const a=document.createElement('a');a.href=(lang==='de'?'/':'/'+lang+'/')+'rechtliches.html#datenschutz';a.textContent=copy[2];p.append(a);text.append(p);
+    const p=document.createElement('p');p.id='cookie-description';p.textContent=copy[1]+' ';const a=document.createElement('a');a.href=(lang==='de'?'/':'/'+lang+'/')+'rechtliches.html#datenschutz';a.textContent=copy[2];p.append(a);text.append(p);
     const actions=document.createElement('div');actions.className='ch-privacy-actions';
     [copy[3],copy[4]].forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>save(i?'all':'necessary'));actions.append(b);});
     banner.append(text,actions);document.body.append(banner);
     let saved;try{saved=localStorage.getItem(KEY);}catch{}
     banner.hidden=saved==='all'||saved==='necessary';if(saved==='all')activate();
-    document.querySelectorAll('[data-consent-settings]').forEach(b=>b.addEventListener('click',()=>{banner.hidden=false;actions.firstElementChild.focus();}));
+    document.querySelectorAll('[data-consent-settings]').forEach(b=>b.addEventListener('click',()=>{settingsTrigger=b;banner.hidden=false;actions.firstElementChild.focus();}));
     window.addEventListener('storage',e=>{if(e.key!==KEY)return;if(e.newValue==='all')activate();else revoke();banner.hidden=e.newValue==='all'||e.newValue==='necessary';});
     document.addEventListener('click',e=>{
       const a=e.target.closest('a[href]');if(!a)return;
