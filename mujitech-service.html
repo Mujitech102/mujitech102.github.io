@@ -64,7 +64,7 @@
 
     main { position: relative; z-index: 2; }
     .section { max-width: 1280px; margin: 0 auto; padding: 40px 18px; }
-    
+
     .box-bg { position: relative; background: rgba(25, 25, 30, 0.7); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-xl); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1); -webkit-transform: translateZ(0); transform: translateZ(0); }
     .box-bg.tilt-effect { will-change: transform; }
     .box-bg::before { content: ""; position: absolute; inset: -50%; background: linear-gradient(45deg, rgba(30, 111, 255, 0.03), rgba(37, 244, 238, 0.03), rgba(200, 168, 93, 0.02), transparent); background-size: 200% 200%; animation: animatedBackground 10s ease infinite; pointer-events: none; z-index: 0; }
@@ -198,6 +198,10 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
 #strom-canvas{display:none!important}
 </style>
 <link rel="stylesheet" href="assets/mono.css?v=20261003-2">
+<link rel="canonical" href="https://mujitech.ch/mujitech-service.html">
+<link rel="stylesheet" href="assets/enhancements.css?v=20261010-1">
+<script defer src="assets/insights.js?v=20261010-1"></script>
+<script defer src="assets/enhancements.js?v=20261010-1"></script>
 </head>
 <body>
   <div class="page-glow"></div>
@@ -206,7 +210,7 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
   <header>
     <div class="nav-wrap">
       <div class="brand">
-        <img src="logo.png" class="logo" alt="Mujitech Fachbetrieb" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
+        <img src="logo.webp" class="logo" alt="Mujitech Fachbetrieb" onerror="this.src='https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=100&q=80&fit=crop'; this.style.borderRadius='50%';" />
         <div class="brand-text">
           <div class="brand-title">Mujitech Abtwil</div>
           <div class="brand-sub">Werkstatt für Hardware-Montage</div>
@@ -369,16 +373,16 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
             <h2>Anfrage für Ersatzteil-Montage</h2>
             <p>Nennen Sie uns das genaue Modell und das betroffene Bauteil.</p>
           </div>
-          
+
           <form class="contact-form" action="https://formsubmit.co/info@mujitech.ch" method="POST">
             <input type="hidden" name="_subject" value="Anfrage für Hardware-Montage (Landingpage)">
             <input type="text" name="_honey" style="display:none">
-            
+
             <div class="form-group">
               <label for="name">Vor- & Nachname</label>
               <input type="text" id="name" name="name" required />
             </div>
-            
+
             <div class="form-group">
               <label for="email">E-Mail Adresse</label>
               <input type="email" id="email" name="email" required />
@@ -413,7 +417,7 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
 
       <div class="reviews-slider-container">
         <div class="reviews-slider-track">
-          
+
           <div class="review-card box-bg">
             <div class="review-header">
               <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
@@ -559,7 +563,8 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
         © Mujitech Schweiz – Werkstatt für Komponenten-Montage
       </div>
     </div>
-  </footer>
+  <div class="wrap site-utility"><a href="reparatur-schweiz.html">Schweizweiter Einsendeservice</a><a href="reparaturanfrage.html">DE / FR / IT / EN</a><button type="button" data-consent-settings>Cookie-Einstellungen</button></div>
+</footer>
 
   <div class="floating-contact">
     <a class="whatsapp-btn" href="https://wa.me/41767209832" target="_blank">
@@ -572,28 +577,9 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
     </a>
   </div>
 
-  <div class="cookie-banner" id="cookieBanner">
-    <p>Diese Website verwendet technisch notwendige Cookies, um die Funktion der Seite sicherzustellen.</p>
-    <div class="cookie-buttons">
-      <button class="btn-decline" onclick="handleCookies('declined')">Ablehnen</button>
-      <button class="btn-accept" onclick="handleCookies('accepted')">Akzeptieren</button>
-    </div>
-  </div>
+
 
   <script>
-    // --- COOKIE BANNER ---
-    function handleCookies(choice) {
-      const banner = document.getElementById("cookieBanner");
-      localStorage.setItem("mujitechCookies", choice);
-      banner.classList.remove("show");
-    }
-    window.addEventListener("load", function () {
-      const cookieStatus = localStorage.getItem("mujitechCookies");
-      if (!cookieStatus) {
-        setTimeout(() => { document.getElementById("cookieBanner").classList.add("show"); }, 1000);
-      }
-    });
-
     // --- SCROLL REVEAL ---
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -617,7 +603,7 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
         });
         card.addEventListener('mouseleave', () => {
           card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-          card.style.background = ''; 
+          card.style.background = '';
         });
       });
     }
@@ -637,7 +623,7 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
     initCanvasSize();
     window.addEventListener('resize', initCanvasSize);
     window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
-    window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; } }, {passive: true}); 
+    window.addEventListener('touchmove', (e) => { if(e.touches.length > 0) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; } }, {passive: true});
     window.addEventListener('touchend', () => { mouse.x = null; mouse.y = null; });
 
     class Particle {
@@ -665,7 +651,7 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
       draw() {
         ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fillStyle = this.color; ctx.shadowBlur = 10; ctx.shadowColor = this.color;
-        ctx.fill(); ctx.shadowBlur = 0; 
+        ctx.fill(); ctx.shadowBlur = 0;
       }
     }
 
