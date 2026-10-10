@@ -3,7 +3,8 @@ from html import escape,unescape
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,urlunsplit,parse_qsl,urlencode
 import re,json
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261010-3'
+from quality import apply_quality
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261010-4'
 LANGS={'de':'de-CH','en':'en','fr':'fr-CH','it':'it-CH'}
 NAMES={'de':'Deutsch','en':'English','fr':'Français','it':'Italiano'}
 legacy={'reparation-suisse.html':('fr','reparatur-schweiz.html'),'riparazione-svizzera.html':('it','reparatur-schweiz.html'),'repair-switzerland.html':('en','reparatur-schweiz.html'),'demande-reparation.html':('fr','reparaturanfrage.html'),'richiesta-riparazione.html':('it','reparaturanfrage.html'),'repair-request.html':('en','reparaturanfrage.html')}
@@ -128,7 +129,7 @@ def tag_change(tag,l):
    elif mk=='og:url':out=localurl(decoded,l)
   elif k=='value' and attrs.get('name')=='_next':out=localurl(decoded,l)
   elif k=='value' and attrs.get('type')=='submit':out=tr(decoded,l)
-  if k in ['src','href'] and ('assets/enhancements.' in out or 'assets/insights.js' in out or 'assets/app.js' in out):out=re.sub(r'\?v=.*$', '?v='+VERSION,out)
+  if k in ['src','href'] and ('assets/enhancements.' in out or 'assets/insights.js' in out or 'assets/app.js' in out or 'assets/mono-electric.js' in out):out=re.sub(r'\?v=.*$', '?v='+VERSION,out)
   return sp+k+eq+q+escape(out,quote=True)+q
  return ATTR.sub(repl,tag)
 
@@ -204,6 +205,7 @@ def build(f,l,source=None):
    out.append(prefix+escape(tr(part,l),quote=False)+suffix)
   else:out.append(part)
  data=''.join(out)
+ data=apply_quality(data,f,l,path_for,canonical)
  # Editorial H1 additions make each main service identifiable without keyword lists.
  if f=='index.html':
   headlines={'de':['Reparaturen.','Computerhilfe.','Webdesign.'],'fr':['Réparations.','Informatique.','Sites web.'],'it':['Riparazioni.','Assistenza PC.','Siti web.'],'en':['Repairs.','Computer help.','Web design.']}
@@ -225,7 +227,7 @@ def build(f,l,source=None):
   mid=re.search(r'<main\b[^>]*\bid=["\']([^"\']+)',data)[1]
   data=re.sub(r'(<body\b[^>]*>)',lambda m:m[1]+f'<a class="skip-link" href="#{mid}">{tr("Zum Inhalt",l)}</a>',data,count=1)
  # Add the current language to every form without altering backend field identifiers.
- data=re.sub(r'(<form\b[^>]*>)',lambda m:m[1]+f'<input type="hidden" name="Website-Sprache" value="{NAMES[l]}">',data)
+ data=re.sub(r'(<form\b[^>]*>)',lambda m:m[1]+f'<input type="hidden" name="Website-Sprache" value="{NAMES[l]}"><input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">',data)
  # Reply language defaults to the current language, when that selector exists.
  def reply(m):
   opts=re.sub(r'\sselected\b','',m[2]);opts=re.sub(r'(<option\b[^>]*value="'+l+r'")',r'\1 selected',opts)
