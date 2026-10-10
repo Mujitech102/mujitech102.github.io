@@ -1,0 +1,919 @@
+
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Kundenbewertungen &amp; Erfahrungen | Mujitech</title>
+<meta name="description" content="Erfahrungen mit Mujitech: Reparaturen, Technikservice und persönliche Betreuung in Abtwil bei St. Gallen. Kundenbewertungen ansehen.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://mujitech.ch/bewertungen.html">
+<link rel="icon" type="image/png" href="logo.webp">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Mujitech">
+<meta property="og:title" content="Kundenbewertungen &amp; Erfahrungen | Mujitech">
+<meta property="og:description" content="Erfahrungen mit Mujitech: Reparaturen, Technikservice und persönliche Betreuung in Abtwil bei St. Gallen. Kundenbewertungen ansehen.">
+<meta property="og:url" content="https://mujitech.ch/bewertungen.html">
+
+<link rel="stylesheet" href="assets/style.css?v=20261003">
+<link rel="stylesheet" href="assets/mono.css?v=20261003-7">
+
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebPage",
+ "name":"Kundenbewertungen und Erfahrungen mit Mujitech",
+ "description":"Kundenrückmeldungen zu Reparaturen und technischem Service.",
+ "url":"https://mujitech.ch/bewertungen.html",
+ "inLanguage":"de-CH",
+ "about":{
+  "@type":"Organization",
+  "name":"Mujitech",
+  "url":"https://mujitech.ch/"
+ }
+}
+</script>
+
+<style>
+/* ==========================================
+   MUJITECH BEWERTUNGEN – BLACK & WHITE
+========================================== */
+
+.review-page {
+  color:#111;
+}
+
+.review-page .review-container {
+  width:min(1150px,calc(100% - 40px));
+  margin-inline:auto;
+}
+
+.review-page .review-hero {
+  padding:75px 0 35px;
+}
+
+.review-page .review-eyebrow {
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:#111;
+}
+
+.review-page h1 {
+  max-width:850px;
+  margin:17px 0 23px;
+  color:#111;
+  font-size:clamp(40px,6vw,72px);
+  line-height:1.08;
+  letter-spacing:-.05em;
+}
+
+.review-page .review-lead {
+  max-width:750px;
+  color:#555;
+  font-size:18px;
+  line-height:1.75;
+}
+
+/* Bewertungsübersicht */
+
+.review-page .rating-summary {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:25px;
+  max-width:780px;
+  margin-top:36px;
+  padding:28px;
+  border:1px solid #ddd;
+  border-radius:23px;
+  background:rgba(255,255,255,.97);
+  box-shadow:0 12px 35px rgba(0,0,0,.045);
+}
+
+.review-page .rating-number {
+  font-size:46px;
+  font-weight:850;
+  line-height:1;
+  letter-spacing:-.05em;
+}
+
+.review-page .rating-stars {
+  color:#111;
+  font-size:22px;
+  letter-spacing:3px;
+}
+
+.review-page .rating-description {
+  color:#555;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.review-page .rating-description strong {
+  color:#111;
+}
+
+/* Bewertungskarten */
+
+.review-page .reviews-section {
+  padding:45px 0 85px;
+}
+
+.review-page .reviews-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  align-items:start;
+  gap:22px;
+}
+
+.review-page .review-card {
+  position:relative;
+  min-width:0;
+  padding:27px;
+  border:1px solid #ddd;
+  border-radius:23px;
+  background:rgba(255,255,255,.97);
+  box-shadow:
+    0 5px 10px rgba(0,0,0,.015),
+    0 18px 36px rgba(0,0,0,.035);
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+  transform-style:preserve-3d;
+}
+
+@media(hover:hover) {
+  .review-page .review-card:hover {
+    transform:perspective(1000px)
+              translateY(-7px)
+              rotateX(1.5deg);
+    border-color:#999;
+    box-shadow:
+      0 15px 20px rgba(0,0,0,.045),
+      0 30px 55px rgba(0,0,0,.085);
+  }
+}
+
+.review-page .review-card-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:14px;
+  margin-bottom:20px;
+}
+
+.review-page .review-person {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:0;
+}
+
+.review-page .review-avatar {
+  display:grid;
+  place-items:center;
+  width:48px;
+  height:48px;
+  flex:0 0 48px;
+  border:1px solid #111;
+  border-radius:50%;
+  background:#111;
+  color:#fff;
+  font-size:14px;
+  font-weight:850;
+}
+
+.review-page .review-name {
+  color:#111;
+  font-size:15px;
+  font-weight:850;
+  overflow-wrap:anywhere;
+}
+
+.review-page .review-source {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin-top:5px;
+  color:#666;
+  font-size:12px;
+}
+
+.review-page .review-source svg {
+  width:15px;
+  height:15px;
+}
+
+.review-page .review-card-stars {
+  flex-shrink:0;
+  color:#111;
+  font-size:15px;
+  letter-spacing:1px;
+}
+
+.review-page .review-text {
+  color:#444;
+  font-size:15px;
+  line-height:1.85;
+  white-space:pre-line;
+  overflow-wrap:anywhere;
+}
+
+.review-page .review-footer {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:22px;
+  padding-top:15px;
+  border-top:1px solid #eee;
+  color:#555;
+  font-size:12px;
+}
+
+.review-page .review-footer svg {
+  width:17px;
+  height:17px;
+  stroke:#111;
+  fill:none;
+  stroke-width:1.8;
+}
+
+/* Ausklappbare Rezensionen */
+
+.review-page .review-expand {
+  margin-top:17px;
+  border-top:1px solid #eee;
+}
+
+.review-page .review-expand summary {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding-top:17px;
+  color:#111;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+  list-style:none;
+}
+
+.review-page .review-expand summary::-webkit-details-marker {
+  display:none;
+}
+
+.review-page .review-arrow {
+  display:grid;
+  place-items:center;
+  width:29px;
+  height:29px;
+  border:1px solid #111;
+  border-radius:50%;
+  font-size:17px;
+  transition:transform .25s ease;
+}
+
+.review-page .review-expand[open] .review-arrow {
+  transform:rotate(180deg);
+}
+
+.review-page .review-full {
+  margin-top:18px;
+  color:#444;
+  font-size:14px;
+  line-height:1.85;
+  white-space:pre-line;
+}
+
+/* Kontaktbereich */
+
+.review-page .review-contact {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:25px;
+  margin-top:65px;
+  padding:35px;
+  border:1px solid #ddd;
+  border-radius:25px;
+  background:#fff;
+  box-shadow:0 15px 40px rgba(0,0,0,.04);
+}
+
+.review-page .review-contact h2 {
+  margin:12px 0;
+  color:#111;
+  font-size:clamp(27px,4vw,39px);
+}
+
+.review-page .review-contact p {
+  color:#555;
+}
+
+.review-page .review-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.review-page a.review-button,
+.review-page a.review-button:visited {
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:13px 20px !important;
+  border:1px solid #111 !important;
+  border-radius:12px;
+  background:#111 !important;
+  background-image:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  font-size:14px;
+  font-weight:800;
+  text-decoration:none !important;
+}
+
+.review-page a.review-button.secondary,
+.review-page a.review-button.secondary:visited {
+  background:#fff !important;
+  color:#111 !important;
+  -webkit-text-fill-color:#111 !important;
+}
+
+/* Navigation */
+
+body .topbar,
+body .nav,
+body .navlinks,
+body .dropdown .menu {
+  background:#fff !important;
+  background-image:none !important;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color:#111 !important;
+  -webkit-text-fill-color:#111 !important;
+}
+
+body .dropdown .menu {
+  border:1px solid #ddd !important;
+}
+
+body .dropdown .menu a:hover {
+  background:#f2f2f2 !important;
+}
+
+body .navlinks > a.cta {
+  background:#111 !important;
+  background-image:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+}
+
+body .mobilebtn {
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* Responsive */
+
+@media(max-width:800px) {
+  .review-page .reviews-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:550px) {
+  .review-page .review-hero {
+    padding:48px 0 20px;
+  }
+
+  .review-page .review-card {
+    padding:21px;
+  }
+
+  .review-page .review-card-top {
+    flex-wrap:wrap;
+  }
+
+  .review-page .review-contact {
+    padding:24px;
+  }
+
+  .review-page .review-buttons {
+    width:100%;
+    flex-direction:column;
+  }
+
+  .review-page .review-buttons a {
+    width:100%;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  .review-page .review-card,
+  .review-page .review-arrow {
+    transition:none;
+  }
+
+  .review-page .review-card:hover {
+    transform:none;
+  }
+}
+</style>
+<link rel="stylesheet" href="assets/enhancements.css?v=20261010-1">
+<script defer src="assets/insights.js?v=20261010-1"></script>
+<script defer src="assets/enhancements.js?v=20261010-1"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+<div class="wrap nav">
+
+<a class="brand" href="index.html" aria-label="Mujitech Startseite">
+<img src="logo.webp" alt="Mujitech Logo" class="site-logo">
+</a>
+
+<button class="mobilebtn"
+type="button"
+aria-label="Menü öffnen"
+aria-expanded="false">☰</button>
+
+<nav class="navlinks" aria-label="Hauptnavigation">
+
+<a href="reparaturen.html">Reparaturen</a>
+<a href="geraet-verkaufen.html">Gerät verkaufen</a>
+
+<div class="dropdown">
+<button class="dropbtn" type="button">Privatkunden ▾</button>
+<div class="menu">
+<a href="privatkunden.html#daten">Datenübertragung</a>
+<a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
+<a href="privatkunden.html#wlan">WLAN &amp; Internet-Hilfe</a>
+<a href="shop.html">Refurbished &amp; Zubehör</a>
+</div>
+</div>
+
+<div class="dropdown">
+<button class="dropbtn" type="button">Unternehmen ▾</button>
+<div class="menu">
+<a href="unternehmen.html">IT für KMU</a>
+<a href="unternehmen.html#support">IT-Support &amp; Betreuung</a>
+<a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
+<a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
+<a href="websites.html">Websites &amp; Wartung</a>
+<a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
+</div>
+</div>
+
+<a href="shop.html">Shop</a>
+<a href="bewertungen.html" aria-current="page">Bewertungen</a>
+<a href="kontakt.html">Kontakt</a>
+<a class="cta" href="anfrage.html">Anfrage starten</a>
+
+</nav>
+</div>
+</header>
+
+
+<main class="review-page">
+
+<section class="review-hero">
+<div class="review-container">
+
+<span class="review-eyebrow">Kundenstimmen</span>
+
+<h1>Erfahrungen mit Mujitech.</h1>
+
+<p class="review-lead">
+Lesen Sie, welche Erfahrungen unsere Kunden
+mit Smartphone-Reparaturen, Computer-Service
+und technischer Unterstützung gemacht haben.
+</p>
+
+<div class="rating-summary">
+
+<div>
+<div class="rating-number">5,0</div>
+<div class="rating-stars" aria-label="Fünf von fünf Sternen">
+★★★★★
+</div>
+</div>
+
+<div class="rating-description">
+<strong>Unsere veröffentlichten Kundenstimmen</strong><br>
+Bewertungen, die in unserer bisherigen
+Bewertungssammlung aufgeführt sind.
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<section class="reviews-section">
+<div class="review-container">
+
+<!-- Die Rezensionen werden aus den unten
+     aufgeführten Daten erzeugt. -->
+
+<div class="reviews-grid" id="reviews-grid"></div>
+
+
+<div class="review-contact">
+
+<div>
+<span class="review-eyebrow">Mujitech Service</span>
+<h2>Ihr Gerät braucht Hilfe?</h2>
+<p>
+Kontaktieren Sie uns für eine unverbindliche Anfrage.
+</p>
+</div>
+
+<div class="review-buttons">
+
+<a class="review-button" href="anfrage.html">
+Anfrage starten →
+</a>
+
+<a class="review-button secondary"
+href="https://wa.me/41768444673"
+target="_blank"
+rel="noopener noreferrer">
+WhatsApp
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+</main>
+
+
+<footer>
+<div class="wrap">
+<div class="footergrid">
+
+<div>
+<a class="brand" href="index.html">
+<img src="logo.webp" alt="Mujitech Logo" class="site-logo">
+</a>
+
+<p class="sectionlead" style="margin-top:14px">
+Technik, Reparatur und digitale Lösungen
+für Privatkunden und KMU in der Region St. Gallen.
+</p>
+
+<div class="badge">
+<b>Abtwil SG</b> · Kein öffentliches Ladenlokal ·
+Termine nach Vereinbarung
+</div>
+</div>
+
+<div>
+<h4>Privatkunden</h4>
+<a href="reparaturen.html">Reparaturen</a>
+<a href="geraet-verkaufen.html">Gerät verkaufen</a>
+<a href="privatkunden.html">Technik-Services</a>
+<a href="shop.html">Refurbished &amp; Zubehör</a>
+</div>
+
+<div>
+<h4>Unternehmen</h4>
+<a href="unternehmen.html">IT für KMU</a>
+<a href="websites.html">Websites</a>
+<a href="unternehmen.html#telekom">Telekom</a>
+<a href="unternehmen.html#cloud">Cloud &amp; E-Mail</a>
+</div>
+
+<div>
+<h4>Kontakt</h4>
+<a href="tel:+41768444673">076 844 46 73</a>
+<a href="mailto:info@mujitech.ch">info@mujitech.ch</a>
+<a href="https://wa.me/41768444673"
+target="_blank"
+rel="noopener noreferrer">WhatsApp</a>
+<a href="rechtliches.html">Impressum · AGB · Datenschutz</a>
+</div>
+
+</div>
+
+<div class="legal">
+<span>© 2026 Mujitech. Alle Rechte vorbehalten.</span>
+<span>UID: CHE-480.937.625</span>
+</div>
+
+</div>
+<div class="wrap site-utility"><a href="reparatur-schweiz.html">Schweizweiter Einsendeservice</a><a href="reparaturanfrage.html">DE / FR / IT / EN</a><button type="button" data-consent-settings>Cookie-Einstellungen</button></div>
+</footer>
+
+
+<script>
+/*
+  REZENSIONEN
+
+  Namen und Texte stammen aus deiner
+  bisherigen bewertungen.html.
+
+  Neue Rezensionen können später
+  in dieser Liste ergänzt werden.
+
+  Vor Veröffentlichung bitte Namen,
+  Rezensionen und Gesamtbewertung
+  mit Google abgleichen.
+*/
+
+const reviews = [
+
+{
+ name:"Samira Dörig",
+ initials:"SD",
+ rating:5,
+ text:"sehr schnelle und gute Reparatur! :)"
+},
+
+{
+ name:"Leonora Beauty Academy",
+ initials:"LB",
+ rating:5,
+ text:"",
+ noComment:true
+},
+
+{
+ name:"Gabi Sutter",
+ initials:"GS",
+ rating:5,
+ text:"Super arbeit!!"
+},
+
+{
+ name:"Patryk Basztabin",
+ initials:"PB",
+ rating:5,
+ text:"Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.",
+ full:`Sehr kompetente, schnelle und reibungslose Reparatur. Der Kontakt wurde unkompliziert aufgenommen, die Geräte wurden sogar selbst abgeholt.
+
+Zusätzlich hat der Techniker meinen Laptop gereinigt und kleinere, zukünftige Probleme direkt mit behoben. Dabei hatte ich jederzeit die Möglichkeit, alles wieder so zurückzubekommen, wie ich es wollte. Probleme wurden eigenständig erkannt und professionell gelöst – sehr kompetent und vorausschauend.
+
+Top-Qualität – diesen Service kann ich jedem empfehlen. Ich habe zuvor zwei bis drei andere Läden kontaktiert, leider ohne Erfolg. Hier hat alles wunderbar funktioniert.
+
+Ich bin wirklich froh, auf ihn gestoßen zu sein, da ich nun einen verlässlichen Ansprechpartner für alle zukünftigen Computerangelegenheiten habe. Kann ich jedem nur wärmstens empfehlen.`
+},
+
+{
+ name:"Irene Küng",
+ initials:"IK",
+ rating:5,
+ text:"Vielen Dank. War voll umfänglich zufrieden mit neuer Kamera und neuer Batterie. Hab sie schon weiter empfohlen. Gruss"
+},
+
+{
+ name:"Srish",
+ initials:"S",
+ rating:5,
+ text:"Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert.",
+ full:`Ich bin wirklich sehr zufrieden mit dem Service! Mein Handy hatte starke Akku-Probleme und der Bildschirm hat stark geflackert. Vor der Reparatur wurde mir ein Video geschickt, das den Zustand im Inneren gezeigt hat, und danach ein weiteres – der Unterschied war deutlich sichtbar. Alles sah viel sauberer und gepflegter aus.
+
+Die Probleme sind jetzt komplett behoben und das Handy funktioniert wieder einwandfrei. Besonders positiv fand ich, dass keine Kosten für die Problemdiagnose verlangt wurden, was heutzutage nicht selbstverständlich ist.
+
+Ich kann Mujitech definitiv weiterempfehlen`
+},
+
+{
+ name:"Alina Brüllhardt",
+ initials:"AB",
+ rating:5,
+ text:"Habe vor zwei Wochen einen PC + Gaming Monitor von Mujitech gekauft, und diese am selben Tag noch erhalten. Service war sehr freundlich und hilfsbereit, mir wurde beim Gerätetesten geholfen und alles funktioniert einwandfrei."
+},
+
+{
+ name:"C O",
+ initials:"CO",
+ rating:5,
+ text:"Sehr zufrieden mit der Reparatur meines iPhone-Displays. Der Inhaber ist extrem nett und freundlich und hat sich viel Mühe gegeben um alle Info zu geben - sogar mit einem Video vom Reparaturprozess! Gerne wieder und werde den Service jederzeit weiterempfehlen!"
+},
+
+{
+ name:"Natascha Biell",
+ initials:"NB",
+ rating:5,
+ text:"Super Service, schnell gut zuverlässig, Freundlich."
+},
+
+{
+ name:"Wei W",
+ initials:"WW",
+ rating:5,
+ text:"Nice place and good people"
+},
+
+{
+ name:"shehryaar ali",
+ initials:"SA",
+ rating:5,
+ text:"Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen und alles verständlich erklärt.",
+ full:`Ich hatte mehrmals technische Probleme mit meinem Handy und Laptop. Er hat jedes Mal sehr schnell geholfen, alles verständlich erklärt und die Probleme effizient gelöst.
+
+Die Zusammenarbeit war immer angenehm, er war erreichbar und zuverlässig, auch ausserhalb der normalen Arbeitszeiten.
+
+Ich kann ihn jedem weiterempfehlen, der jemanden sucht, der sich wirklich kümmert und die Arbeit sauber erledigt.`
+},
+
+{
+ name:"Dampflanzservice-Ademi",
+ initials:"DA",
+ rating:5,
+ text:"Ich habe den Display von meinem Iphone 11pro reparieren lassen. Super Beratung & herzlich empfangen. Top Arbeit!"
+}
+
+];
+
+
+/* Sichere Ausgabe der Rezensionen */
+
+const grid = document.getElementById("reviews-grid");
+
+const googleIcon = `
+<svg viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round"
+aria-hidden="true">
+<circle cx="12" cy="12" r="9"/>
+<path d="M16 8a6 6 0 1 0 1 7h-5v-4h9"/>
+</svg>`;
+
+const checkIcon = `
+<svg viewBox="0 0 24 24"
+aria-hidden="true">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+<path d="M9 12l2 2 4-4"/>
+</svg>`;
+
+function makeElement(tag,className,text) {
+ const element=document.createElement(tag);
+ if(className) element.className=className;
+ if(text!==undefined) element.textContent=text;
+ return element;
+}
+
+reviews.forEach(review=>{
+
+ const card=makeElement("article","review-card");
+
+ const top=makeElement("div","review-card-top");
+
+ const person=makeElement("div","review-person");
+
+ const avatar=makeElement(
+   "div",
+   "review-avatar",
+   review.initials
+ );
+
+ avatar.setAttribute("aria-hidden","true");
+
+ const info=makeElement("div");
+
+ info.appendChild(
+   makeElement("div","review-name",review.name)
+ );
+
+ const source=makeElement(
+   "div",
+   "review-source"
+ );
+
+ source.innerHTML=googleIcon;
+
+ source.appendChild(
+   document.createTextNode("Google-Rezension")
+ );
+
+ info.appendChild(source);
+
+ person.appendChild(avatar);
+ person.appendChild(info);
+
+ const stars=makeElement(
+   "div",
+   "review-card-stars",
+   "★".repeat(review.rating)
+ );
+
+ stars.setAttribute(
+   "aria-label",
+   review.rating+" von 5 Sternen"
+ );
+
+ top.appendChild(person);
+ top.appendChild(stars);
+
+ card.appendChild(top);
+
+ if(review.noComment) {
+
+   card.appendChild(
+     makeElement(
+       "p",
+       "review-text",
+       "5-Sterne-Bewertung ohne schriftlichen Kommentar."
+     )
+   );
+
+ } else {
+
+   card.appendChild(
+     makeElement(
+       "p",
+       "review-text",
+       review.text
+     )
+   );
+
+ }
+
+ if(review.full) {
+
+   const details=makeElement(
+     "details",
+     "review-expand"
+   );
+
+   const summary=document.createElement("summary");
+
+   summary.appendChild(
+     document.createTextNode(
+       "Vollständige Bewertung lesen"
+     )
+   );
+
+   summary.appendChild(
+     makeElement(
+       "span",
+       "review-arrow",
+       "⌄"
+     )
+   );
+
+   details.appendChild(summary);
+
+   details.appendChild(
+     makeElement(
+       "div",
+       "review-full",
+       review.full
+     )
+   );
+
+   card.appendChild(details);
+
+ }
+
+ const footer=makeElement(
+   "div",
+   "review-footer"
+ );
+
+ footer.innerHTML=checkIcon;
+
+ footer.appendChild(
+   document.createTextNode(
+     review.rating+"-Sterne-Bewertung"
+   )
+ );
+
+ card.appendChild(footer);
+
+ grid.appendChild(card);
+
+});
+</script>
+
+
+<!-- Bestehende Website-Funktionen -->
+<script src="assets/app.js?v=20261010-1"></script>
+
+<!-- Bestehende Hintergrundanimation -->
+<script defer src="assets/mono-electric.js?v=20261003-1"></script>
+
+</body>
+</html>

@@ -1,0 +1,2101 @@
+
+<!DOCTYPE html>
+<html lang="it-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Creazione siti web in Svizzera: offerte &amp; prezzi | Mujitech</title>
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+<meta name="author" content="Mujitech">
+
+
+<link rel="icon" href="../logo.webp" type="image/png">
+<link rel="stylesheet" href="../assets/style.css?v=20261003-websites">
+<link rel="stylesheet" href="../assets/mono.css?v=20261003-6">
+
+<meta property="og:type" content="website">
+
+<meta property="og:site_name" content="Mujitech">
+
+
+
+<meta property="og:image" content="https://mujitech.ch/logo.webp">
+
+<style>
+:root {
+  --w-bg:#fff;
+  --w-panel:#fff;
+  --w-line:#dedede;
+  --w-text:#111;
+  --w-muted:#555;
+  --w-accent:#111;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  background:#fff;
+  color:var(--w-text);
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,
+              "Segoe UI",sans-serif;
+  line-height:1.6;
+}
+
+*,*::before,*::after {
+  box-sizing:border-box;
+}
+
+a {
+  color:inherit;
+}
+
+.w-wrap {
+  width:min(1140px,calc(100% - 36px));
+  margin:auto;
+}
+
+/* HEADER */
+
+.w-header {
+  position:relative;
+  z-index:10;
+  background:#fff!important;
+  border-bottom:1px solid var(--w-line);
+}
+
+.w-nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:78px;
+}
+
+.w-logo {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  text-decoration:none;
+  font-size:21px;
+  font-weight:850;
+  letter-spacing:.04em;
+}
+
+.w-logo img {
+  width:45px;
+  height:45px;
+  object-fit:contain;
+}
+
+.w-logo span span {
+  color:#111;
+}
+
+.w-links {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:flex-end;
+  gap:15px;
+  font-size:13px;
+}
+
+.w-links a {
+  text-decoration:none;
+  color:#111!important;
+}
+
+.w-links a:hover {
+  text-decoration:underline;
+}
+
+.w-links .w-nav-cta {
+  background:#111!important;
+  color:#fff!important;
+  padding:11px 15px;
+  border-radius:10px;
+  font-weight:750;
+}
+
+/* HERO */
+
+.w-hero {
+  padding:75px 0 54px;
+  background:transparent;
+}
+
+.w-kicker {
+  font-size:12px;
+  letter-spacing:.15em;
+  color:#111;
+  font-weight:800;
+  text-transform:uppercase;
+}
+
+.w-hero h1 {
+  font-size:clamp(36px,5.5vw,63px);
+  line-height:1.1;
+  letter-spacing:-.045em;
+  margin:14px 0 20px;
+  max-width:850px;
+}
+
+.w-lead {
+  font-size:18px;
+  color:#555;
+  max-width:740px;
+}
+
+.w-actions {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:25px;
+}
+
+.w-btn {
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:49px;
+  padding:13px 20px!important;
+  background:#111!important;
+  background-image:none!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  border:1px solid #111!important;
+  border-radius:11px;
+  font:inherit;
+  font-size:14px;
+  font-weight:800;
+  text-decoration:none!important;
+  cursor:pointer;
+}
+
+.w-btn:hover {
+  background:#333!important;
+}
+
+.w-btn.secondary {
+  background:#fff!important;
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+}
+
+/* ABSCHNITTE */
+
+.w-section {
+  padding:56px 0;
+}
+
+.w-section h2 {
+  font-size:clamp(27px,4vw,38px);
+  letter-spacing:-.025em;
+  margin:8px 0;
+}
+
+.w-sub {
+  color:#555;
+  margin:0 0 27px;
+  max-width:770px;
+}
+
+.w-alt {
+  background:rgba(248,248,248,.7);
+  border-block:1px solid #eee;
+}
+
+/* PAKETE */
+
+.w-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+.w-card {
+  display:flex;
+  flex-direction:column;
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid #dedede!important;
+  border-radius:19px;
+  padding:25px;
+  box-shadow:0 10px 30px rgba(0,0,0,.035);
+  transition:transform .25s,box-shadow .25s;
+}
+
+.w-card.featured {
+  border:2px solid #111!important;
+}
+
+.w-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 18px 38px rgba(0,0,0,.08);
+}
+
+.w-tag {
+  min-height:21px;
+  font-size:12px;
+  letter-spacing:.05em;
+  font-weight:800;
+  color:#333;
+}
+
+.w-card h3 {
+  font-size:23px;
+  margin:7px 0 2px;
+  color:#111;
+}
+
+.w-price {
+  font-size:35px;
+  font-weight:850;
+  letter-spacing:-.04em;
+  margin:8px 0;
+  color:#111;
+}
+
+.w-price small {
+  font-size:14px;
+  color:#666;
+  font-weight:500;
+  letter-spacing:normal;
+}
+
+.w-card p {
+  color:#555;
+  font-size:14px;
+}
+
+.w-card ul {
+  list-style:none;
+  padding:0;
+  margin:15px 0 26px;
+  flex:1;
+}
+
+.w-card li {
+  padding:7px 0 7px 23px;
+  position:relative;
+  font-size:14px;
+}
+
+.w-card li::before {
+  content:"✓";
+  position:absolute;
+  left:0;
+  color:#111;
+  font-weight:800;
+}
+
+.w-card .w-btn {
+  width:100%;
+}
+
+.w-note {
+  margin-top:20px;
+  font-size:13px;
+  color:#666;
+  line-height:1.75;
+}
+
+/* ZUSATZLEISTUNGEN */
+
+.w-addons {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.w-addon {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:15px 17px;
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:12px;
+  font-size:14px;
+}
+
+.w-addon strong {
+  white-space:nowrap;
+  color:#111;
+}
+
+/* FORMULAR */
+
+.w-form-shell {
+  display:grid;
+  grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+  gap:30px;
+  align-items:start;
+}
+
+.w-aside {
+  background:#fff;
+  border:1px solid #ddd;
+  padding:25px;
+  border-radius:17px;
+}
+
+.w-aside p {
+  color:#555;
+}
+
+.w-aside a {
+  color:#111!important;
+}
+
+.w-form {
+  display:block!important;
+  background:#fff!important;
+  background-image:none!important;
+  border:1px solid #ddd!important;
+  border-radius:18px;
+  padding:26px;
+  box-shadow:0 12px 35px rgba(0,0,0,.04);
+}
+
+.w-form h3 {
+  margin:0 0 17px;
+  color:#111;
+}
+
+.w-fields {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:17px;
+}
+
+.w-field {
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  min-width:0;
+}
+
+.w-field.full {
+  grid-column:1/-1;
+}
+
+.w-field label {
+  font-size:13px;
+  font-weight:750;
+  color:#111;
+}
+
+.w-field input,
+.w-field select,
+.w-field textarea {
+  display:block;
+  width:100%;
+  min-width:0;
+  padding:12px 13px;
+  background:#fff!important;
+  color:#111!important;
+  -webkit-text-fill-color:#111;
+  border:1px solid #c9c9c9!important;
+  border-radius:9px;
+  font:inherit;
+  font-size:14px;
+}
+
+.w-field textarea {
+  resize:vertical;
+  min-height:150px;
+}
+
+.w-field input:focus,
+.w-field select:focus,
+.w-field textarea:focus {
+  outline:2px solid #111;
+  outline-offset:2px;
+}
+
+/* AUSWAHLKARTEN */
+
+.w-form fieldset.w-options {
+  display:block!important;
+  min-width:0!important;
+  border:1px solid #dedede!important;
+  border-radius:16px!important;
+  padding:18px!important;
+  margin:24px 0!important;
+  background:#fafafa!important;
+}
+
+.w-form fieldset.w-options legend {
+  float:none!important;
+  width:auto!important;
+  padding:0 9px!important;
+  color:#111!important;
+  font-size:17px!important;
+  font-weight:800!important;
+}
+
+.w-option-grid {
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;
+  margin:12px 0 0!important;
+}
+
+.w-form label.w-option {
+  position:relative!important;
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:13px!important;
+  width:100%!important;
+  min-width:0!important;
+  margin:0!important;
+  padding:16px!important;
+  background:#fff!important;
+  border:1px solid #ddd!important;
+  border-radius:12px!important;
+  cursor:pointer!important;
+  color:#111!important;
+  font-size:14px!important;
+  line-height:1.5!important;
+  text-align:left!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+}
+
+.w-form label.w-option:has(input:checked) {
+  border-color:#111!important;
+  background:#f2f2f2!important;
+  box-shadow:inset 0 0 0 1px #111!important;
+}
+
+.w-form label.w-option input[type="radio"],
+.w-form label.w-option input[type="checkbox"] {
+  appearance:auto!important;
+  -webkit-appearance:auto!important;
+  display:block!important;
+  position:static!important;
+  opacity:1!important;
+  visibility:visible!important;
+  flex:0 0 21px!important;
+  width:21px!important;
+  height:21px!important;
+  min-width:21px!important;
+  max-width:21px!important;
+  margin:2px 0 0!important;
+  padding:0!important;
+  accent-color:#111!important;
+  cursor:pointer!important;
+  transform:none!important;
+}
+
+.w-option-copy {
+  display:flex!important;
+  flex-direction:column!important;
+  gap:4px!important;
+  flex:1!important;
+  min-width:0!important;
+  color:#111!important;
+}
+
+.w-option-name {
+  font-size:15px!important;
+  font-weight:750!important;
+  color:#111!important;
+}
+
+.w-option-price {
+  font-size:14px!important;
+  font-weight:800!important;
+  color:#111!important;
+}
+
+.w-option-desc {
+  font-size:12px!important;
+  font-weight:400!important;
+  color:#666!important;
+  line-height:1.5!important;
+}
+
+.w-help {
+  color:#666;
+  font-size:12px;
+  line-height:1.7;
+  margin-top:9px;
+}
+
+.w-form .w-consent {
+  display:flex!important;
+  align-items:flex-start!important;
+  gap:12px!important;
+  margin:20px 0;
+  line-height:1.7;
+  cursor:pointer;
+}
+
+.w-form .w-consent input {
+  flex:0 0 20px!important;
+  width:20px!important;
+  height:20px!important;
+  min-width:20px!important;
+  margin:3px 0 0!important;
+  appearance:auto!important;
+  -webkit-appearance:auto!important;
+  accent-color:#111!important;
+  position:static!important;
+  opacity:1!important;
+}
+
+.w-form .w-consent a {
+  color:#111!important;
+  text-decoration:underline;
+}
+
+/* FOOTER */
+
+.w-footer {
+  border-top:1px solid #ddd;
+  padding:32px 0;
+  color:#555;
+  font-size:13px;
+  background:#fff;
+}
+
+.w-footer .w-wrap {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.w-footer a {
+  color:#111;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:920px) {
+  .w-nav {
+    align-items:flex-start;
+    padding:17px 0;
+    flex-direction:column;
+  }
+
+  .w-links {
+    justify-content:flex-start;
+  }
+
+  .w-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  .w-form-shell {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:690px) {
+  .w-option-grid {
+    grid-template-columns:1fr!important;
+  }
+
+  .w-form fieldset.w-options {
+    padding:14px!important;
+  }
+
+  .w-form label.w-option {
+    padding:14px!important;
+  }
+}
+
+@media(max-width:630px) {
+  .w-grid,
+  .w-addons,
+  .w-fields {
+    grid-template-columns:1fr;
+  }
+
+  .w-field.full {
+    grid-column:auto;
+  }
+
+  .w-hero {
+    padding:48px 0;
+  }
+
+  .w-section {
+    padding:40px 0;
+  }
+
+  .w-form {
+    padding:18px;
+  }
+
+  .w-links {
+    gap:12px;
+  }
+
+  .w-addon {
+    align-items:flex-start;
+    flex-direction:column;
+    gap:4px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior:auto;
+  }
+
+  .w-card {
+    transition:none;
+  }
+
+  .w-card:hover {
+    transform:none;
+  }
+}
+</style>
+
+
+<script defer src="../assets/insights.js?v=20261010-2"></script>
+<script defer src="../assets/enhancements.js?v=20261010-2"></script>
+<link rel="canonical" href="https://mujitech.ch/it/websites.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/websites.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/websites.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/websites.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/websites.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/websites.html"><meta name="description" content="Siti web per PMI da CHF 490: web design responsive, moduli di contatto e manutenzione opzionale. Descrivi il progetto e richiedi un preventivo personalizzato."><meta property="og:title" content="Creazione siti web in Svizzera: offerte &amp; prezzi | Mujitech"><meta property="og:description" content="Siti web per PMI da CHF 490: web design responsive, moduli di contatto e manutenzione opzionale. Descrivi il progetto e richiedi un preventivo personalizzato."><meta property="og:url" content="https://mujitech.ch/it/websites.html"><meta property="og:locale" content="it_CH"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://mujitech.ch/it/websites.html#webpage", "url": "https://mujitech.ch/it/websites.html", "name": "Creazione siti web in Svizzera: offerte & prezzi | Mujitech", "description": "Siti web per PMI da CHF 490: web design responsive, moduli di contatto e manutenzione opzionale. Descrivi il progetto e richiedi un preventivo personalizzato.", "inLanguage": "it-CH", "isPartOf": {"@id": "https://mujitech.ch/#website"}, "about": {"@id": "https://mujitech.ch/#organization"}}</script><link rel="stylesheet" href="/assets/enhancements.css?v=20261010-2"></head>
+
+<body><a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- HEADER -->
+
+<header class="w-header">
+  <div class="w-wrap w-nav">
+
+    <a class="w-logo" href="/it/" data-brand="true">
+      <img src="../logo.webp" alt="Logo Mujitech">
+      <span class="brand-wordmark">Mujitech</span>
+    </a>
+
+    <nav class="w-links" aria-label="Navigazione principale">
+      <a href="/it/">Pagina iniziale</a>
+      <a href="/it/reparaturen.html">Riparazioni</a>
+      <a href="/it/geraet-verkaufen.html">Vendi un dispositivo</a>
+      <a href="/it/privatkunden.html">Privati</a>
+      <a href="/it/unternehmen.html">Aziende</a>
+      <a href="/it/shop.html">Shop</a>
+      <a href="/it/bewertungen.html">Recensioni</a>
+      <a href="/it/kontakt.html">Contatti</a>
+      <a class="w-nav-cta" href="#anfrage">
+        Invia una richiesta
+      </a>
+    </nav>
+
+  </div>
+</header><nav class="language-bar" aria-label="Scegli la lingua"><div class="wrap"><span class="language-label">Scegli la lingua</span><div class="language-options"><a href="/websites.html" lang="de-CH" hreflang="de-CH">Deutsch</a><a href="/en/websites.html" lang="en" hreflang="en">English</a><a href="/fr/websites.html" lang="fr-CH" hreflang="fr-CH">Français</a><a href="/it/websites.html" lang="it-CH" hreflang="it-CH" aria-current="page">Italiano</a></div></div></nav>
+
+<main id="main">
+
+<!-- HERO -->
+
+<section class="w-hero">
+  <div class="w-wrap">
+
+    <div class="w-kicker">
+      MUJITECH · WEB DESIGN PER LE AZIENDE
+    </div>
+
+    <h1>
+      Il tuo sito web professionale.<br>
+      Creato in Svizzera. Chiaro. Accessibile.
+    </h1>
+
+    <p class="w-lead">
+      Da un sito web aziendale compatto a una presenza online individuale: scegli il tuo pacchetto, aggiungi le funzioni desiderate e ricevi un'offerta personalizzata da Mujitech.
+    </p>
+
+    <div class="w-actions">
+
+      <a class="w-btn" href="#pakete">
+        Scopri le offerte ↓
+      </a>
+
+      <a class="w-btn secondary" href="#anfrage">
+        Richiedi un preventivo senza impegno
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WEBSITE-PAKETE -->
+
+<section class="w-section" id="pakete">
+  <div class="w-wrap">
+
+    <div class="w-kicker">
+      Creazione una tantum
+    </div>
+
+    <h2>
+      L’offerta adatta al tuo sito web
+    </h2>
+
+    <p class="w-sub">
+      Prezzi iniziali trasparenti. Prima dell’inizio del progetto, discuteremo insieme le vostre esigenze e creeremo un’offerta vincolante.
+    </p>
+
+    <div class="w-grid">
+
+
+      <!-- BASIC -->
+
+      <article class="w-card">
+
+        <div class="w-tag">
+          PER LE PICCOLE IMPRESE
+        </div>
+
+        <h3>Sito web di base</h3>
+
+        <div class="w-price">
+          CHF 490.–
+          <small>una tantum</small>
+        </div>
+
+        <p>
+          La tua presenza professionale online.
+        </p>
+
+        <ul>
+          <li>Fino a 3 pagine</li>
+          <li>Design personalizzato con il tuo logo e i tuoi colori</li>
+          <li>Mobile ottimizzato per tutti i dispositivi</li>
+          <li>Contatto telefonico, email e WhatsApp</li>
+          <li>Configurazione SEO di base</li>
+          <li>Integrazione dei testi giuridici forniti</li>
+          <li>1 ciclo di revisioni</li>
+          <li>Pubblicazione e connessione al dominio</li>
+        </ul>
+
+        <a
+          class="w-btn w-pick"
+          href="#anfrage"
+          data-package="Basic"
+        >
+          Richiedi l’offerta Basic
+        </a>
+
+      </article>
+
+
+      <!-- BUSINESS -->
+
+      <article class="w-card featured">
+
+        <div class="w-tag">
+          POPOLARE · PER LE PMI IN CRESCITA
+        </div>
+
+        <h3>Sito Web aziendale</h3>
+
+        <div class="w-price">
+          CHF 990.–
+          <small>una tantum</small>
+        </div>
+
+        <p>
+          Più pagine e funzioni per il tuo business.
+        </p>
+
+        <ul>
+          <li>Tutti i servizi di base</li>
+          <li>Fino a 7 pagine</li>
+          <li>Modulo di contatto e richiesta</li>
+          <li>Galleria di immagini e recensioni dei clienti</li>
+          <li>Integrazione di Google Maps</li>
+          <li>Configurazione SEO di base avanzata</li>
+          <li>Integrazione di WhatsApp</li>
+          <li>2 cicli di revisioni</li>
+          <li>Breve introduzione al tuo sito web</li>
+        </ul>
+
+        <a
+          class="w-btn w-pick"
+          href="#anfrage"
+          data-package="Business"
+        >
+          Richiedi l’offerta Business
+        </a>
+
+      </article>
+
+
+      <!-- PREMIUM -->
+
+      <article class="w-card">
+
+        <div class="w-tag">
+          PER PROGETTI INDIVIDUALI
+        </div>
+
+        <h3>Sito Web Premium</h3>
+
+        <div class="w-price">
+          da CHF 1'790.–
+          <small>una tantum</small>
+        </div>
+
+        <p>
+          Siti web estesi con opzioni aggiuntive.
+        </p>
+
+        <ul>
+          <li>Tutti i servizi aziendali</li>
+          <li>Fino a 12 pagine</li>
+          <li>Layout espanso individualmente</li>
+          <li>Fino a 2 versioni linguistiche con traduzioni fornite</li>
+          <li>Moduli di richiesta avanzati</li>
+          <li>Integrazione prenotazione/calendario esterno</li>
+          <li>Configurazione SEO tecnica avanzata</li>
+          <li>3 cicli di revisioni</li>
+          <li>Correzione degli errori tecnici per 30 giorni</li>
+        </ul>
+
+        <a
+          class="w-btn w-pick"
+          href="#anfrage"
+          data-package="Premium"
+        >
+          Richiedi l’offerta Premium
+        </a>
+
+      </article>
+
+    </div>
+
+    <p class="w-note">
+      Tutti i prezzi in CHF. Non sono compresi dominio, hosting, servizi esterni a pagamento, traduzioni professionali e consulenza legale. Testi, immagini e testi legali sono generalmente forniti dal cliente. I servizi esatti e il prezzo finale verranno concordati per iscritto prima dell'inizio dell'ordine.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- MONATLICHE BETREUUNG -->
+
+<section class="w-section w-alt" id="betreuung">
+  <div class="w-wrap">
+
+    <div class="w-kicker">
+      FACOLTATIVO · MENSILE
+    </div>
+
+    <h2>
+      Il tuo sito web è in buone mani
+    </h2>
+
+    <p class="w-sub">
+      Vorresti prenderti cura della tua attività invece di apportare modifiche al sito web? Puoi selezionare i nostri pacchetti di assistenza direttamente al momento della richiesta.
+    </p>
+
+    <div class="w-grid">
+
+
+      <!-- CARE BASIC -->
+
+      <article class="w-card">
+
+        <div class="w-tag">
+          POCHE MODIFICHE
+        </div>
+
+        <h3>Cura di base</h3>
+
+        <div class="w-price">
+          CHF 29.–
+          <small>/mese</small>
+        </div>
+
+        <ul>
+          <li>Controllo funzionale mensile</li>
+          <li>Controllo di moduli e collegamenti</li>
+          <li>Controllo errori tecnici</li>
+          <li>Assistenza via e-mail</li>
+        </ul>
+
+        <a
+          class="w-btn secondary w-care-pick"
+          href="#anfrage"
+          data-care="Care Basic"
+        >
+          Richiedere supporto
+        </a>
+
+      </article>
+
+
+      <!-- CARE BUSINESS -->
+
+      <article class="w-card featured">
+
+        <div class="w-tag">
+          PER CURE REGOLARI
+        </div>
+
+        <h3>Affari di cura</h3>
+
+        <div class="w-price">
+          CHF 69.–
+          <small>/mese</small>
+        </div>
+
+        <ul>
+          <li>Tutti i servizi Care Basic</li>
+          <li>Fino a 30 minuti di modifiche di testo/immagine al mese</li>
+          <li>Backup mensile del codice del sito web</li>
+          <li>Elaborazione prioritaria delle richieste</li>
+        </ul>
+
+        <a
+          class="w-btn secondary w-care-pick"
+          href="#anfrage"
+          data-care="Care Business"
+        >
+          Richiedere supporto
+        </a>
+
+      </article>
+
+
+      <!-- CARE PREMIUM -->
+
+      <article class="w-card">
+
+        <div class="w-tag">
+          PER SITI ATTIVI
+        </div>
+
+        <h3>Assistenza Premium</h3>
+
+        <div class="w-price">
+          CHF 129.–
+          <small>/mese</small>
+        </div>
+
+        <ul>
+          <li>Tutti i servizi aziendali di assistenza</li>
+          <li>Totale fino a 90 minuti di modifiche ai contenuti al mese</li>
+          <li>Controllo SEO di base mensile</li>
+          <li>Ottimizzazione dei contenuti esistenti entro il budget temporale</li>
+          <li>Supporto tecnico prioritario</li>
+        </ul>
+
+        <a
+          class="w-btn secondary w-care-pick"
+          href="#anfrage"
+          data-care="Care Premium"
+        >
+          Richiedere supporto
+        </a>
+
+      </article>
+
+    </div>
+
+    <p class="w-note">
+      La cura è volontaria. Il tempo di modifica non utilizzato non viene trasferito. Nuove pagine, riprogettazioni, servizi a pagamento e importanti estensioni sono offerti separatamente. La durata del contratto e la risoluzione sono specificate nell'offerta.
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ZUSATZLEISTUNGEN -->
+
+<section class="w-section" id="extras">
+  <div class="w-wrap">
+
+    <div class="w-kicker">
+      ESPANDIBILE INDIVIDUALMENTE
+    </div>
+
+    <h2>
+      Funzioni aggiuntive
+    </h2>
+
+    <p class="w-sub">
+      Seleziona ciò di cui hai bisogno aggiuntivo nel modulo di richiesta. I servizi già compresi nel pacchetto selezionato non verranno fatturati due volte.
+    </p>
+
+    <div class="w-addons">
+
+      <div class="w-addon">
+        <span>Sottopagina aggiuntiva</span>
+        <strong>CHF 120.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Versione in lingua aggiuntiva</span>
+        <strong>da CHF 290.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Modulo di contatto/richiesta</span>
+        <strong>CHF 90.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Integra il sistema di prenotazione esterno</span>
+        <strong>da CHF 150.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Includi Google Maps</span>
+        <strong>CHF 40.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Integrazione di WhatsApp</span>
+        <strong>CHF 40.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Ulteriore ottimizzazione SEO di base</span>
+        <strong>da CHF 190.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Configurazione dominio/hosting</span>
+        <strong>CHF 80.–</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Modifiche successive al testo/immagine</span>
+        <strong>CHF 75.– / ora</strong>
+      </div>
+
+      <div class="w-addon">
+        <span>Negozio online individuale</span>
+        <strong>su richiesta</strong>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WEBSITE-ANFRAGE -->
+
+<section class="w-section w-alt" id="anfrage">
+  <div class="w-wrap">
+
+    <div class="w-kicker">
+      GRATUITO E SENZA IMPEGNO
+    </div>
+
+    <h2>
+      Raccontaci del tuo progetto
+    </h2>
+
+    <p class="w-sub">
+      Compila il modulo. Ti contatteremo e discuteremo i dettagli telefonicamente o insieme in una conversazione Zoom, se lo desideri.
+    </p>
+
+    <div class="w-form-shell">
+
+
+      <!-- ABLAUF -->
+
+      <aside class="w-aside">
+
+        <h3>
+          Ecco come funziona
+        </h3>
+
+        <p>
+          <strong>1.</strong>
+          Scegli il pacchetto del tuo sito web e gli extra che desideri.
+        </p>
+
+        <p>
+          <strong>2.</strong>
+          Descrivi il tuo progetto e lascia i tuoi dati di contatto.
+        </p>
+
+        <p>
+          <strong>3.</strong>
+          Discutiamo design, caratteristiche, programma e prezzo per telefono o Zoom.
+        </p>
+
+        <p>
+          <strong>4.</strong>
+          Riceverai un'offerta individuale. L'ordine inizia solo dopo il vostro esplicito consenso.
+        </p>
+
+        <p>
+          Preferisci scrivere direttamente?
+          <br>
+
+          <a
+            href="https://wa.me/41768444673"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp: +41 76 844 46 73
+          </a>
+
+          <br>
+
+          <a href="mailto:info@mujitech.ch">
+            info@mujitech.ch
+          </a>
+        </p>
+
+      </aside>
+
+
+      <!-- FORMULAR -->
+
+      <form
+        class="w-form"
+        id="websiteformular"
+        action="https://formsubmit.co/info@mujitech.ch"
+        method="POST"
+        accept-charset="UTF-8"
+      ><input type="hidden" name="Website-Sprache" value="Italiano">
+
+        <!--
+          Vereinfachte FormSubmit-Konfiguration.
+
+          Keine automatische Weiterleitung,
+          damit zunächst die tatsächliche
+          E-Mail-Zustellung getestet werden kann.
+        -->
+
+        <input
+          type="hidden"
+          name="_subject"
+          value="Neue Website-Anfrage über mujitech.ch"
+        >
+
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+
+
+        <!-- KONTAKTDATEN -->
+
+        <h3>
+          1. Dettagli di contatto
+        </h3>
+
+        <div class="w-fields">
+
+
+          <div class="w-field">
+
+            <label for="first">
+              Nome *
+            </label>
+
+            <input
+              id="first"
+              name="Vorname"
+              type="text"
+              autocomplete="given-name"
+              maxlength="80"
+              required
+            >
+
+          </div>
+
+
+          <div class="w-field">
+
+            <label for="last">
+              Cognome *
+            </label>
+
+            <input
+              id="last"
+              name="Nachname"
+              type="text"
+              autocomplete="family-name"
+              maxlength="80"
+              required
+            >
+
+          </div>
+
+
+          <div class="w-field full">
+
+            <label for="company">
+              Nome dell'azienda/progetto
+            </label>
+
+            <input
+              id="company"
+              name="Firma"
+              type="text"
+              autocomplete="organization"
+              maxlength="120"
+            >
+
+          </div>
+
+
+          <div class="w-field">
+
+            <label for="email">
+              E-mail *
+            </label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              maxlength="160"
+              required
+            >
+
+          </div>
+
+
+          <div class="w-field">
+
+            <label for="phone">
+              Telefono / WhatsApp *
+            </label>
+
+            <input
+              id="phone"
+              name="Telefon_WhatsApp"
+              type="tel"
+              autocomplete="tel"
+              maxlength="40"
+              required
+            >
+
+          </div>
+
+
+          <div class="w-field full">
+
+            <label for="existing">
+              Sito web esistente (se presente)
+            </label>
+
+            <input
+              id="existing"
+              name="Bestehende_Website"
+              type="url"
+              placeholder="https://..."
+              maxlength="250"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- WEBSITE-PAKET -->
+
+        <fieldset class="w-options">
+
+          <legend>
+            2. Pacchetto sito web *
+          </legend>
+
+          <div class="w-option-grid">
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Website_Paket"
+                value="Basic – CHF 490"
+                required
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Di base
+                </span>
+
+                <span class="w-option-price">
+                  CHF 490.– una tantum
+                </span>
+
+                <span class="w-option-desc">
+                  Fino a 3 pagine · Design reattivo · Opzioni di contatto · Nozioni di base SEO
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Website_Paket"
+                value="Business – CHF 990"
+                required
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Affari
+                </span>
+
+                <span class="w-option-price">
+                  CHF 990.– una tantum
+                </span>
+
+                <span class="w-option-desc">
+                  Fino a 7 pagine · Moduli · Galleria · Recensioni · SEO avanzato
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Website_Paket"
+                value="Premium – ab CHF 1790"
+                required
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Premio
+                </span>
+
+                <span class="w-option-price">
+                  da CHF 1'790.– una tantum
+                </span>
+
+                <span class="w-option-desc">
+                  Fino a 12 pagine · 2 lingue · funzioni estese · Correzione bug per 30 giorni
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Website_Paket"
+                value="Noch unsicher – Beratung gewünscht"
+                required
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Ho bisogno di un consiglio
+                </span>
+
+                <span class="w-option-price">
+                  Prezzo da concordare
+                </span>
+
+                <span class="w-option-desc">
+                  Insieme troveremo il pacchetto giusto.
+                </span>
+
+              </span>
+
+            </label>
+
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- BETREUUNG -->
+
+        <fieldset class="w-options">
+
+          <legend>
+            3. Manutenzione mensile
+          </legend>
+
+          <div class="w-option-grid">
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Betreuung"
+                value="Keine Betreuung"
+                checked
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Nessun supporto
+                </span>
+
+                <span class="w-option-price">
+                  CHF 0.–
+                </span>
+
+                <span class="w-option-desc">
+                  Nessun obbligo mensile
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Betreuung"
+                value="Care Basic – CHF 29 pro Monat"
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Cura di base
+                </span>
+
+                <span class="w-option-price">
+                  CHF 29.– / mese
+                </span>
+
+                <span class="w-option-desc">
+                  Controllo funzionale · Controllo di moduli e collegamenti · Supporto e-mail
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Betreuung"
+                value="Care Business – CHF 69 pro Monat"
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Affari di cura
+                </span>
+
+                <span class="w-option-price">
+                  CHF 69.– / mese
+                </span>
+
+                <span class="w-option-desc">
+                  Base + modifiche di 30 minuti · backup mensile del codice
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Betreuung"
+                value="Care Premium – CHF 129 pro Monat"
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Assistenza Premium
+                </span>
+
+                <span class="w-option-price">
+                  CHF 129.– / mese
+                </span>
+
+                <span class="w-option-desc">
+                  Business + 90 minuti di modifiche totali · Controllo SEO di base
+                </span>
+
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="radio"
+                name="Betreuung"
+                value="Beratung zur Betreuung erwünscht"
+              >
+
+              <span class="w-option-copy">
+
+                <span class="w-option-name">
+                  Discutere sulla cura
+                </span>
+
+                <span class="w-option-price">
+                  Su richiesta
+                </span>
+
+                <span class="w-option-desc">
+                  Ti consiglieremo sull'ambito appropriato.
+                </span>
+
+              </span>
+
+            </label>
+
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- ZUSATZLEISTUNGEN -->
+
+        <fieldset class="w-options">
+
+          <legend>
+            4. Servizi aggiuntivi desiderati
+          </legend>
+
+          <p class="w-help">
+            Selezione multipla possibile. I servizi già inclusi non verranno fatturati due volte.
+          </p>
+
+          <div class="w-option-grid">
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_zusaetzliche_Unterseite"
+                value="Ja – CHF 120 je Seite"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Sottopagina aggiuntiva
+                </span>
+                <span class="w-option-price">
+                  CHF 120.– / pagina
+                </span>
+                <span class="w-option-desc">
+                  Ulteriori contenuti oltre lo scopo del pacchetto
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_weitere_Sprache"
+                value="Ja – ab CHF 290"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Versione in lingua aggiuntiva
+                </span>
+                <span class="w-option-price">
+                  da CHF 290.–
+                </span>
+                <span class="w-option-desc">
+                  Vengono forniti i testi tradotti
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_Kontaktformular"
+                value="Ja – CHF 90"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Modulo di contatto/richiesta
+                </span>
+                <span class="w-option-price">
+                  CHF 90.–
+                </span>
+                <span class="w-option-desc">
+                  Se non già incluso nella confezione
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_Buchungssystem"
+                value="Ja – ab CHF 150"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Sistema di prenotazione esterno
+                </span>
+                <span class="w-option-price">
+                  da CHF 150.–
+                </span>
+                <span class="w-option-desc">
+                  Integrazione di un fornitore di terze parti esistente
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_Google_Maps"
+                value="Ja – CHF 40"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Mappe di Google
+                </span>
+                <span class="w-option-price">
+                  CHF 40.–
+                </span>
+                <span class="w-option-desc">
+                  Include la mappa della posizione
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_WhatsApp"
+                value="Ja – CHF 40"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Integrazione di WhatsApp
+                </span>
+                <span class="w-option-price">
+                  CHF 40.–
+                </span>
+                <span class="w-option-desc">
+                  Contatto diretto tramite WhatsApp
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_SEO"
+                value="Ja – ab CHF 190"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Ulteriore ottimizzazione SEO
+                </span>
+                <span class="w-option-price">
+                  da CHF 190.–
+                </span>
+                <span class="w-option-desc">
+                  Ulteriore ottimizzazione dei contenuti esistenti
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_Domain_Hosting"
+                value="Ja – CHF 80"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Configurazione del dominio/hosting
+                </span>
+                <span class="w-option-price">
+                  CHF 80.–
+                </span>
+                <span class="w-option-desc">
+                  Commissioni del fornitore esterno separatamente
+                </span>
+              </span>
+
+            </label>
+
+
+            <label class="w-option">
+
+              <input
+                type="checkbox"
+                name="Extra_Onlineshop"
+                value="Ja – Preis auf Anfrage"
+              >
+
+              <span class="w-option-copy">
+                <span class="w-option-name">
+                  Negozio online individuale
+                </span>
+                <span class="w-option-price">
+                  Prezzo su richiesta
+                </span>
+                <span class="w-option-desc">
+                  Definire insieme ambito e funzioni di pagamento
+                </span>
+              </span>
+
+            </label>
+
+
+          </div>
+
+        </fieldset>
+
+
+        <!-- PROJEKTBESCHREIBUNG -->
+
+        <h3>
+          5. Il tuo progetto
+        </h3>
+
+        <div class="w-fields">
+
+
+          <div class="w-field">
+
+            <label for="budget">
+              Budget totale approssimativo
+            </label>
+
+            <select
+              id="budget"
+              name="Budget"
+            >
+
+              <option value="Nicht angegeben">
+                Selezionare
+              </option>
+
+              <option>Fino a CHF 500</option>
+              <option>CHF 500–1'000</option>
+              <option>CHF 1'000–2'000</option>
+              <option>CHF 2'000–4'000</option>
+              <option>Oltre CHF 4'000</option>
+              <option>Ancora aperto</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="w-field">
+
+            <label for="timing">
+              Inizio desiderato
+            </label>
+
+            <select
+              id="timing"
+              name="Gewuenschter_Start"
+            >
+
+              <option value="Noch offen">
+                Selezionare
+              </option>
+
+              <option>Il più presto possibile</option>
+              <option>Entro 1 mese</option>
+              <option>Tra 1-3 mesi</option>
+              <option>Più tardi / flessibile</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="w-field full">
+
+            <label for="message">
+              Descrivi il tuo sito web e i tuoi desideri *
+            </label>
+
+            <textarea
+              id="message"
+              name="Projektbeschreibung"
+              minlength="15"
+              maxlength="5000"
+              placeholder="Cosa fa la tua azienda? Quali pagine, funzioni, colori o idee di design hai? Hai esempi di siti web che ti piacciono?"
+              required
+            ></textarea>
+
+          </div>
+
+
+          <div class="w-field">
+
+            <label for="meeting">
+              Modalità di colloquio preferita *
+            </label>
+
+            <select
+              id="meeting"
+              name="Besprechung"
+              required
+            >
+
+              <option value="" disabled selected>
+                Selezionare
+              </option>
+
+              <option>Telefono</option>
+              <option>Chiamata WhatsApp</option>
+              <option>Zoom videochiamata</option>
+              <option>Per ora via e-mail</option>
+
+            </select>
+
+          </div>
+
+
+          <div class="w-field">
+
+            <label for="reach">
+              Orario preferito per essere contattato
+            </label>
+
+            <input
+              id="reach"
+              name="Erreichbarkeit"
+              type="text"
+              maxlength="160"
+              placeholder="Ad esempio, nei giorni feriali dopo le 16"
+            >
+
+          </div>
+
+
+        </div>
+
+
+        <!-- DATENSCHUTZ -->
+
+        <label class="w-consent">
+
+          <input
+            type="checkbox"
+            name="Datenschutz_Einwilligung"
+            value="Ja"
+            required
+          >
+
+          <span>
+            Acconsento al trattamento dei miei dati da parte di Mujitech per rispondere a questa richiesta e per contattarmi. Ho letto le
+            <a
+              href="/it/rechtliches.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              informazioni sulla privacy
+            </a>
+            . *
+          </span>
+
+        </label>
+
+
+        <!-- ABSENDEN -->
+
+        <button
+          class="w-btn"
+          type="submit"
+          style="width:100%;"
+        >
+          Invia una richiesta gratuita →
+        </button>
+
+
+        <p class="w-help">
+          La richiesta non è vincolante e non dà luogo ad alcun ordine. Il modulo viene inviato tramite il servizio esterno FormSubmit. Si prega di non inserire password o informazioni riservate.
+        </p>
+
+
+      </form>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="w-footer">
+
+  <div class="w-wrap">
+
+    <span>
+      © 2026 Mujitech · Abtwil SG · Svizzera ·
+      <a href="mailto:info@mujitech.ch">
+        info@mujitech.ch
+      </a>
+    </span>
+
+    <span>
+      <a href="/it/rechtliches.html">
+        Protezione legale e dei dati
+      </a>
+      ·
+      <a href="/it/kontakt.html">
+        Contatti
+      </a>
+      ·
+      <a href="/it/">
+        Pagina iniziale
+      </a>
+    </span>
+
+  </div>
+
+<div class="wrap site-utility"><a href="/it/reparatur-schweiz.html">Riparazioni per posta in tutta la Svizzera</a><a href="/it/reparaturanfrage.html">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Impostazioni dei cookie</button></div>
+</footer>
+
+
+<!-- PAKET-VORAUSWAHL -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* Website-Paket vorauswählen */
+
+  document.querySelectorAll(".w-pick")
+    .forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        const selectedPackage =
+          this.getAttribute("data-package");
+
+        const inputs =
+          document.querySelectorAll(
+            'input[name="Website_Paket"]'
+          );
+
+        inputs.forEach(function (input) {
+
+          if (input.value.startsWith(selectedPackage)) {
+            input.checked = true;
+          }
+
+        });
+
+      });
+
+    });
+
+
+  /* Betreuungspaket vorauswählen */
+
+  document.querySelectorAll(".w-care-pick")
+    .forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        const selectedCare =
+          this.getAttribute("data-care");
+
+        const inputs =
+          document.querySelectorAll(
+            'input[name="Betreuung"]'
+          );
+
+        inputs.forEach(function (input) {
+
+          if (input.value.startsWith(selectedCare)) {
+            input.checked = true;
+          }
+
+        });
+
+      });
+
+    });
+
+});
+</script>
+
+
+<!-- HINTERGRUNDANIMATION -->
+
+<script
+  defer
+  src="../assets/mono-electric.js?v=20261003-1"
+></script>
+
+</body>
+</html>

@@ -1,0 +1,1786 @@
+
+<!doctype html>
+<html lang="fr-CH">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Contacter Mujitech : réparation, assistance PC &amp; sites web</title>
+
+
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="icon" href="../logo.webp" type="image/png">
+
+<link rel="stylesheet" href="../assets/style.css?v=20261003-12">
+<link rel="stylesheet" href="../assets/mono.css?v=20261003-12">
+
+<meta property="og:type" content="website">
+
+
+
+
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ContactPage", "name": "Contacter Mujitech", "url": "https://mujitech.ch/fr/kontakt.html", "description": "Interlocuteur pour les réparations, le service technique et les solutions informatiques à Abtwil et à Saint-Gall.", "mainEntity": {"@type": "LocalBusiness", "name": "Mujitech", "url": "https://mujitech.ch/fr/", "telephone": "+41768444673", "email": "info@mujitech.ch", "address": {"@type": "PostalAddress", "addressLocality": "Abtwil", "postalCode": "9030", "addressRegion": "SG", "addressCountry": "CH"}, "areaServed": [{"@type": "Place", "name": "Saint-Gall"}, {"@type": "Country", "name": "Suisse"}]}}</script>
+
+<style>
+
+/* GRUNDLAYOUT */
+
+.contact-page {
+  color: #111;
+  position: relative;
+  isolation: isolate;
+}
+
+.contact-page * {
+  box-sizing: border-box;
+}
+
+.contact-wrap {
+  width: min(1160px, calc(100% - 36px));
+  margin: auto;
+}
+
+.contact-page .eyebrow {
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #111;
+}
+
+
+/* HERO */
+
+.contact-hero {
+  padding: 68px 0 38px;
+}
+
+.contact-hero h1 {
+  font-size: clamp(39px, 5.6vw, 70px);
+  line-height: 1.06;
+  letter-spacing: -.055em;
+  max-width: 930px;
+  margin: 16px 0 20px;
+  color: #111;
+}
+
+.contact-hero p {
+  font-size: clamp(16px, 1.8vw, 19px);
+  line-height: 1.75;
+  max-width: 730px;
+  color: #555;
+  margin: 0;
+}
+
+.contact-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.contact-chip {
+  border: 1px solid #d9d9d9;
+  background: #fff;
+  border-radius: 99px;
+  padding: 9px 13px;
+  font-size: 12px;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-chip svg {
+  width: 16px;
+  height: 16px;
+}
+
+
+/* KONTAKTBEREICH */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, .85fr)
+    minmax(0, 1.15fr);
+  gap: 24px;
+  align-items: start;
+  padding: 24px 0 90px;
+}
+
+.contact-left {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-card,
+.contact-form-card {
+  background: rgba(255,255,255,.97) !important;
+  background-image: none !important;
+  border: 1px solid #dedede;
+  border-radius: 26px;
+  box-shadow: 0 12px 35px rgba(0,0,0,.045);
+  color: #111;
+  transition: transform .35s, box-shadow .35s;
+}
+
+.contact-card {
+  padding: 28px;
+}
+
+.contact-card h2,
+.contact-form-card h2 {
+  color: #111;
+  letter-spacing: -.035em;
+  line-height: 1.15;
+  margin: 12px 0;
+  font-size: clamp(23px, 2.5vw, 31px);
+}
+
+.contact-card p,
+.contact-form-card .form-intro {
+  color: #555;
+  line-height: 1.75;
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+
+/* ICONS */
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: 1px solid #111;
+  border-radius: 14px;
+  background: #111;
+  color: #fff;
+}
+
+.contact-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-method {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid #eee;
+  text-decoration: none !important;
+  color: #111 !important;
+}
+
+.contact-method .method-icon {
+  width: 39px;
+  height: 39px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: #fafafa;
+  color: #111;
+}
+
+.method-icon svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-method strong {
+  display: block;
+  color: #111;
+  font-size: 14px;
+}
+
+.contact-method small {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.contact-note {
+  font-size: 12px !important;
+  margin-top: 14px !important;
+}
+
+
+/* FORMULAR */
+
+.contact-form-card {
+  padding: clamp(23px, 3vw, 36px);
+  scroll-margin-top: 100px;
+}
+
+.contact-form-card .form-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.contact-form-card .form-heading h2 {
+  margin: 0;
+}
+
+.contact-form-card form {
+  display: block !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 24px 0 0 !important;
+}
+
+.contact-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 19px 15px;
+}
+
+.contact-field {
+  min-width: 0;
+}
+
+.contact-field.full {
+  grid-column: 1 / -1;
+}
+
+.contact-field label {
+  display: block;
+  color: #111;
+  font-size: 13px;
+  font-weight: 750;
+  margin: 0 0 9px;
+}
+
+.contact-field input:not([type=checkbox]),
+.contact-field select,
+.contact-field textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 51px;
+  border: 1px solid #c9c9c9 !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  background-image: none !important;
+  color: #111 !important;
+  -webkit-text-fill-color: #111;
+  font: inherit;
+  font-size: 14px;
+  padding: 13px 14px;
+  box-shadow: none !important;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.contact-field textarea {
+  min-height: 170px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.contact-field input:focus,
+.contact-field select:focus,
+.contact-field textarea:focus {
+  border-color: #111 !important;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.07) !important;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #777;
+  -webkit-text-fill-color: #777;
+}
+
+.contact-field select {
+  appearance: auto;
+  cursor: pointer;
+}
+
+.contact-field select option {
+  background: #fff;
+  color: #111;
+}
+
+
+/* DATENSCHUTZ */
+
+.contact-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  color: #333;
+  font-size: 12px;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.contact-privacy input {
+  width: 17px !important;
+  height: 17px !important;
+  flex: 0 0 17px;
+  margin: 2px 0 0 !important;
+  accent-color: #111;
+}
+
+.contact-privacy a {
+  color: #111 !important;
+  text-decoration: underline;
+}
+
+
+/* BUTTON */
+
+.contact-submit,
+.contact-submit:visited {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 54px;
+  background: #111 !important;
+  background-image: none !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border: 1px solid #111 !important;
+  border-radius: 12px !important;
+  font-weight: 850;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+}
+
+.contact-fineprint {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+/* UNTERER KONTAKTBEREICH */
+
+.contact-bottom {
+  padding: 0 0 85px;
+}
+
+.contact-next {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 23px;
+  padding: 25px 29px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.035);
+}
+
+.contact-next h2 {
+  font-size: clamp(22px, 3vw, 31px);
+  color: #111;
+  margin: 7px 0;
+}
+
+.contact-next p {
+  font-size: 14px;
+  color: #555;
+  margin: 0;
+}
+
+.contact-next a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #111 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 11px;
+  font-weight: 750;
+}
+
+
+/* NAVIGATION */
+
+body .topbar,
+body .nav,
+body .dropdown .menu {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color: #111 !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+body .dropdown .menu {
+  border: 1px solid #ddd !important;
+}
+
+body .dropdown .menu a:hover {
+  background: #f3f3f3 !important;
+}
+
+body .navlinks > a.cta {
+  background: #111 !important;
+  background-image: none !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+body .mobilebtn {
+  color: #111 !important;
+  background: #fff !important;
+}
+
+
+/* ANIMATIONEN */
+
+@media (hover:hover) {
+
+  .contact-card:hover,
+  .contact-form-card:hover {
+    transform:
+      perspective(1100px)
+      translateY(-4px)
+      rotateX(.6deg);
+
+    box-shadow:
+      0 22px 48px rgba(0,0,0,.09);
+  }
+
+  .contact-method:hover .method-icon {
+    background: #111;
+    color: #fff;
+  }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width:820px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form-card {
+    grid-row: 1;
+  }
+
+  .contact-hero {
+    padding: 46px 0 24px;
+  }
+
+}
+
+@media (max-width:540px) {
+
+  .contact-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    padding: 23px;
+  }
+
+  .contact-grid {
+    gap: 18px;
+    padding-bottom: 65px;
+  }
+
+  .contact-next {
+    padding: 23px;
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce) {
+
+  .contact-card,
+  .contact-form-card,
+  .contact-submit {
+    transition: none !important;
+  }
+
+  .contact-card:hover,
+  .contact-form-card:hover,
+  .contact-submit:hover {
+    transform: none !important;
+  }
+
+}
+
+</style>
+
+
+<script defer src="../assets/insights.js?v=20261010-2"></script>
+<script defer src="../assets/enhancements.js?v=20261010-2"></script>
+<link rel="canonical" href="https://mujitech.ch/fr/kontakt.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/kontakt.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/kontakt.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/kontakt.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/kontakt.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/kontakt.html"><meta name="description" content="Contactez Mujitech par téléphone, WhatsApp, e-mail ou formulaire : réparation, aide informatique, rachat d’appareils, IT et sites web. Abtwil SG sur rendez-vous."><meta property="og:title" content="Contacter Mujitech : réparation, assistance PC &amp; sites web"><meta property="og:description" content="Contactez Mujitech par téléphone, WhatsApp, e-mail ou formulaire : réparation, aide informatique, rachat d’appareils, IT et sites web. Abtwil SG sur rendez-vous."><meta property="og:url" content="https://mujitech.ch/fr/kontakt.html"><meta property="og:locale" content="fr_CH"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://mujitech.ch/fr/kontakt.html#webpage", "url": "https://mujitech.ch/fr/kontakt.html", "name": "Contacter Mujitech : réparation, assistance PC & sites web", "description": "Contactez Mujitech par téléphone, WhatsApp, e-mail ou formulaire : réparation, aide informatique, rachat d’appareils, IT et sites web. Abtwil SG sur rendez-vous.", "inLanguage": "fr-CH", "isPartOf": {"@id": "https://mujitech.ch/#website"}, "about": {"@id": "https://mujitech.ch/#organization"}}</script><link rel="stylesheet" href="/assets/enhancements.css?v=20261010-2"></head>
+
+
+<body><a class="skip-link" href="#main">Aller au contenu</a>
+
+
+<!-- SVG ICONS -->
+
+<svg
+  aria-hidden="true"
+  style="position:absolute;width:0;height:0;overflow:hidden"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <symbol id="i-phone" viewBox="0 0 24 24">
+    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.7 19.7 0 0 1-8.6-3.1 19.4 19.4 0 0 1-6-6A19.7 19.7 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7l.5 3a2 2 0 0 1-.6 1.8L7.1 10a16 16 0 0 0 6 6l1.5-1.9a2 2 0 0 1 1.8-.6l3 .5a2 2 0 0 1 1.6 1.9Z"/>
+  </symbol>
+
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <rect x="2" y="4" width="20" height="16" rx="2"/>
+    <path d="m2 7 10 7 10-7"/>
+  </symbol>
+
+  <symbol id="i-message" viewBox="0 0 24 24">
+    <path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 9 9 0 0 1-4-.9L3 21l1.9-5.5A8.5 8.5 0 1 1 21 11.5Z"/>
+    <path d="M9 9c1 3 3 5 6 6"/>
+  </symbol>
+
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
+    <circle cx="12" cy="10" r="2.5"/>
+  </symbol>
+
+  <symbol id="i-send" viewBox="0 0 24 24">
+    <path d="m22 2-7 20-4-9-9-4Z"/>
+    <path d="M22 2 11 13"/>
+  </symbol>
+
+  <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 6v6l4 2"/>
+  </symbol>
+
+</svg>
+
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+  <div class="wrap nav">
+
+    <a
+      class="brand"
+      href="/fr/"
+      aria-label="Accueil Mujitech"
+     data-brand="true">
+      <img
+        src="../logo.webp"
+        alt="Logo Mujitech"
+        class="site-logo"
+      ><span class="brand-wordmark">Mujitech</span>
+    </a>
+
+
+    <button
+      class="mobilebtn"
+      type="button"
+      aria-label="Ouvrir le menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+
+    <nav class="navlinks" aria-label="Navigation principale">
+
+      <a href="/fr/reparaturen.html">
+        Réparations
+      </a>
+
+      <a href="/fr/geraet-verkaufen.html">
+        Vendre un appareil
+      </a>
+
+
+      <div class="dropdown">
+
+        <button class="dropbtn" type="button">
+          Particuliers ▾
+        </button>
+
+        <div class="menu">
+
+          <a href="/fr/privatkunden.html#daten">
+            Transfert de données
+          </a><a href="/fr/privatkunden.html#handy-einrichtung">Configuration smartphone</a>
+
+          <a href="/fr/privatkunden.html#optimierung">
+            Optimisation PC et portable
+          </a>
+
+          <a href="/fr/privatkunden.html#wlan">
+            Aide Wi-Fi et internet
+          </a>
+
+          <a href="/fr/shop.html">
+            Appareils reconditionnés et accessoires
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="dropdown">
+
+        <button class="dropbtn" type="button">
+          Entreprises ▾
+        </button>
+
+        <div class="menu">
+
+          <a href="/fr/unternehmen.html">
+            Informatique pour PME
+          </a>
+
+          <a href="/fr/unternehmen.html#support">
+            Assistance et suivi informatique
+          </a>
+
+          <a href="/fr/unternehmen.html#hardware">
+            Achat de matériel
+          </a>
+
+          <a href="/fr/unternehmen.html#telekom">
+            Mise en relation télécom
+          </a>
+
+          <a href="/fr/websites.html">
+            Sites web et maintenance
+          </a>
+
+          <a href="/fr/unternehmen.html#cloud">
+            Microsoft 365/Google Workspace
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a href="/fr/shop.html">
+        Boutique
+      </a>
+
+      <a href="/fr/bewertungen.html">
+        Avis clients
+      </a>
+
+      <a href="/fr/kontakt.html" aria-current="page">
+        Contact
+      </a>
+
+      <a class="cta" href="/fr/anfrage.html">
+        Envoyer une demande
+      </a>
+
+    </nav>
+
+  </div>
+
+</header><nav class="language-bar" aria-label="Choisir la langue"><div class="wrap"><span class="language-label">Choisir la langue</span><div class="language-options"><a href="/kontakt.html" lang="de-CH" hreflang="de-CH">Deutsch</a><a href="/en/kontakt.html" lang="en" hreflang="en">English</a><a href="/fr/kontakt.html" lang="fr-CH" hreflang="fr-CH" aria-current="page">Français</a><a href="/it/kontakt.html" lang="it-CH" hreflang="it-CH">Italiano</a></div></div></nav>
+
+
+
+<!-- HAUPTINHALT -->
+
+<main id="main" class="contact-page">
+
+
+  <!-- BREADCRUMB -->
+
+  <div class="contact-wrap breadcrumb">
+
+    <a href="/fr/">Démarrer</a>
+    / Contacter
+
+  </div>
+
+
+
+  <!-- HERO -->
+
+  <section class="contact-hero">
+
+    <div class="contact-wrap">
+
+      <span class="eyebrow">
+        Contact · Mujitech Saint-Gall
+      </span>
+
+      <h1>
+        Problème ou projet technologique ? Nous sommes là pour vous.
+      </h1>
+
+      <p>
+        Qu'il s'agisse d'une réparation iPhone, d'un service ordinateur portable, d'un site internet ou d'un support informatique pour votre entreprise : décrivez votre demande et nous discuterons ensemble des prochaines étapes.
+      </p>
+
+
+      <div class="contact-chips">
+
+        <span class="contact-chip">
+
+          <svg viewBox="0 0 24 24">
+            <use href="#i-pin"/>
+          </svg>
+
+          Abtwil près de Saint-Gall
+
+        </span>
+
+
+        <span class="contact-chip">
+
+          <svg viewBox="0 0 24 24">
+            <use href="#i-clock"/>
+          </svg>
+
+          Remise personnelle sur rendez-vous
+
+        </span>
+
+
+        <span class="contact-chip">
+
+          <svg viewBox="0 0 24 24">
+            <use href="#i-send"/>
+          </svg>
+
+          Envoyez des réparations partout en Suisse
+
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- KONTAKT UND FORMULAR -->
+
+  <section>
+
+    <div class="contact-wrap contact-grid">
+
+
+      <!-- LINKE SPALTE -->
+
+      <div class="contact-left">
+
+
+        <article class="contact-card">
+
+          <span class="contact-icon">
+            <svg>
+              <use href="#i-message"/>
+            </svg>
+          </span>
+
+
+          <h2>
+            Parlez directement à Mujitech
+          </h2>
+
+
+          <p>
+            Choisissez votre méthode de contact préférée. Vous pouvez également utiliser le formulaire pour des demandes spécifiques.
+          </p>
+
+
+
+          <!-- TELEFON -->
+
+          <a
+            class="contact-method"
+            href="tel:+41768444673"
+          >
+
+            <span class="method-icon">
+              <svg>
+                <use href="#i-phone"/>
+              </svg>
+            </span>
+
+            <span>
+
+              <strong>
+                076 844 46 73
+              </strong>
+
+              <small>
+                Téléphone
+              </small>
+
+            </span>
+
+          </a>
+
+
+
+          <!-- EMAIL -->
+
+          <a
+            class="contact-method"
+            href="mailto:info@mujitech.ch"
+          >
+
+            <span class="method-icon">
+              <svg>
+                <use href="#i-mail"/>
+              </svg>
+            </span>
+
+            <span>
+
+              <strong>
+                info@mujitech.ch
+              </strong>
+
+              <small>
+                Courriel
+              </small>
+
+            </span>
+
+          </a>
+
+
+
+          <!-- WHATSAPP -->
+
+          <a
+            class="contact-method"
+            href="https://wa.me/41768444673"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="method-icon">
+              <svg>
+                <use href="#i-message"/>
+              </svg>
+            </span>
+
+            <span>
+
+              <strong>
+                Écrire sur WhatsApp
+              </strong>
+
+              <small>
+                Envoyer un message directement
+              </small>
+
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+
+        <!-- STANDORT -->
+
+        <article class="contact-card">
+
+
+          <span class="contact-icon">
+
+            <svg>
+              <use href="#i-pin"/>
+            </svg>
+
+          </span>
+
+
+          <h2>
+            Localisation et processus
+          </h2>
+
+
+          <p>
+
+            <strong>
+              Abtwil SG, 9030 Gaiserwald
+            </strong>
+
+            <br>
+
+            Région de Saint-Gall, Suisse
+
+          </p>
+
+
+          <p>
+            Nous n'avons pas de magasin public. Les remises d'appareils personnels s'effectuent uniquement sur rendez-vous. Vous pouvez envoyer les réparations convenues depuis n'importe où en Suisse.
+          </p>
+
+
+          <p class="contact-note">
+
+            <strong>
+              Société :
+            </strong>
+
+            Nous sommes heureux de discuter des demandes informatiques, des sites Web et d'autres projets techniques par téléphone ou en ligne sur rendez-vous.
+
+          </p>
+
+
+        </article>
+
+
+      </div>
+
+
+
+      <!-- RECHTE SPALTE: FORMULAR -->
+
+      <div class="contact-form-card" id="business">
+
+
+        <div class="form-heading">
+
+
+          <span class="contact-icon">
+
+            <svg>
+              <use href="#i-send"/>
+            </svg>
+
+          </span>
+
+
+          <div>
+
+            <span class="eyebrow">
+              Demande en ligne
+            </span>
+
+            <h2>
+              Comment pouvons-nous vous aider ?
+            </h2>
+
+          </div>
+
+
+        </div>
+
+
+
+        <p class="form-intro">
+
+          Sélectionnez le domaine approprié et décrivez votre demande. Les informations marquées * sont obligatoires.
+
+        </p>
+
+
+
+
+        <!-- FORMSUBMIT FORMULAR -->
+
+        <form
+          action="https://formsubmit.co/info@mujitech.ch"
+          method="POST"
+          accept-charset="UTF-8"
+          id="kontaktformular"
+        ><input type="hidden" name="Website-Sprache" value="Français">
+
+
+          <!-- FORMSUBMIT EINSTELLUNGEN -->
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Neue Kontaktanfrage über mujitech.ch"
+          >
+
+
+          <input
+            type="hidden"
+            name="_template"
+            value="table"
+          >
+
+
+          <!--
+          Zum Test keine automatische Weiterleitung.
+
+          FormSubmit zeigt nach dem Absenden
+          zunächst seine eigene Bestätigungsseite.
+          -->
+
+
+
+          <div class="contact-fields">
+
+
+
+            <!-- NAME -->
+
+            <div class="contact-field">
+
+              <label for="name">
+                Nom / entreprise *
+              </label>
+
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Votre nom ou celui de votre entreprise"
+                required
+                maxlength="120"
+              >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-field">
+
+              <label for="email">
+                E-mail *
+              </label>
+
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="name@beispiel.ch"
+                required
+                maxlength="150"
+              >
+
+            </div>
+
+
+
+            <!-- TELEFON -->
+
+            <div class="contact-field">
+
+              <label for="telefon">
+                Téléphone / WhatsApp
+              </label>
+
+
+              <input
+                id="telefon"
+                name="telefon"
+                type="tel"
+                autocomplete="tel"
+                placeholder="076 123 45 67"
+                maxlength="35"
+              >
+
+            </div>
+
+
+
+            <!-- ANFRAGEBEREICH -->
+
+            <div class="contact-field">
+
+              <label for="bereich">
+                Zone de consultation *
+              </label>
+
+
+              <select
+                id="bereich"
+                name="bereich"
+                required
+              >
+
+
+                <option
+                  value=""
+                  disabled
+                  selected
+                >
+                  Veuillez sélectionner
+                </option>
+
+
+
+                <optgroup label="Particuliers">
+
+
+                  <option value="Reparatur">
+                    Réparation smartphone, tablette ou PC
+                  </option>
+
+
+                  <option value="Privatkunden-Service">
+                    Service technologique pour clients privés
+                  </option>
+
+
+                  <option value="Geräteankauf">
+                    Vendre un appareil
+                  </option>
+
+
+                  <option value="Produktanfrage">
+                    Produit / boutique
+                  </option>
+
+
+                </optgroup>
+
+
+
+                <optgroup label="Entreprises">
+
+
+                  <option value="IT-Support KMU">
+                    Accompagnement informatique des PME
+                  </option>
+
+
+                  <option value="IT-Betreuung">
+                    Support informatique continu
+                  </option>
+
+
+                  <option value="Hardware-Beschaffung">
+                    Achat de matériel
+                  </option>
+
+
+                  <option value="Firmenhandys">
+                    Téléphones portables de l'entreprise
+                  </option>
+
+
+                  <option value="Telekom-Anfrage">
+                    Conseil en télécom
+                  </option>
+
+
+                  <option value="Website">
+                    Création &amp; maintenance de sites internet
+                  </option>
+
+
+                  <option value="Microsoft 365 / Google Workspace">
+                    Microsoft 365/Google Workspace
+                  </option>
+
+
+                </optgroup>
+
+
+
+                <option value="Sonstiges">
+                  Autre
+                </option>
+
+
+              </select>
+
+
+            </div>
+
+
+
+
+            <!-- NACHRICHT -->
+
+            <div class="contact-field full">
+
+
+              <label for="nachricht">
+                Votre message *
+              </label>
+
+
+              <textarea
+                id="nachricht"
+                name="nachricht"
+                required
+                minlength="10"
+                maxlength="5000"
+                placeholder="Quel dispositif ou projet concerne votre demande ? De quoi avez-vous besoin exactement ? Décrivez votre demande le plus précisément possible."
+              ></textarea>
+
+
+            </div>
+
+
+
+
+            <!-- DATENSCHUTZ -->
+
+            <div class="contact-field full">
+
+
+              <label
+                class="contact-privacy"
+                for="datenschutz"
+              >
+
+
+                <input
+                  id="datenschutz"
+                  name="datenschutz"
+                  type="checkbox"
+                  value="Zugestimmt"
+                  required
+                >
+
+
+                <span>
+
+                  J’ai lu la
+
+                  <a href="/fr/rechtliches.html">
+                    politique de confidentialité
+                  </a>
+
+                  et j'accepte le traitement de mes informations pour traiter cette demande. *
+
+                </span>
+
+
+              </label>
+
+
+            </div>
+
+
+
+
+            <!-- ABSENDEN -->
+
+            <div class="contact-field full">
+
+
+              <button
+                class="contact-submit"
+                type="submit"
+              >
+
+                Envoyer la demande
+
+                <span aria-hidden="true">
+                  →
+                </span>
+
+              </button>
+
+
+            </div>
+
+
+
+
+            <!-- HINWEIS -->
+
+            <div class="contact-field full">
+
+
+              <p class="contact-fineprint">
+
+                Après la soumission, FormSubmit affiche sa page de confirmation. Cela ne confirme pas automatiquement la livraison du courrier électronique. Si vous ne voyez pas de confirmation, veuillez nous contacter directement par e-mail ou WhatsApp. Merci de ne pas envoyer de mots de passe ou de données particulièrement sensibles via ce formulaire.
+
+              </p>
+
+
+            </div>
+
+
+
+          </div>
+
+
+        </form>
+
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+
+  <!-- WHATSAPP BEREICH -->
+
+  <section class="contact-bottom">
+
+
+    <div class="contact-wrap">
+
+
+      <div class="contact-next">
+
+
+        <div>
+
+
+          <span class="eyebrow">
+            Mujitech
+          </span>
+
+
+          <h2>
+            Vous préférez écrire directement ?
+          </h2>
+
+
+          <p>
+            Contactez-nous facilement via WhatsApp.
+          </p>
+
+
+        </div>
+
+
+
+        <a
+          href="https://wa.me/41768444673"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          Ouvrez WhatsApp →
+
+        </a>
+
+
+
+      </div>
+
+
+    </div>
+
+
+  </section>
+
+
+
+</main>
+
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+  <div class="wrap">
+
+
+    <div class="footergrid">
+
+
+
+      <!-- MUJITECH -->
+
+      <div>
+
+
+        <a class="brand" href="/fr/">
+
+          <img
+            src="../logo.webp"
+            alt="Logo Mujitech"
+            class="site-logo"
+          >
+
+        </a>
+
+
+
+        <p
+          class="sectionlead"
+          style="margin-top:14px"
+        >
+
+          Technique, réparation et solutions numériques pour les clients privés et les PME de la région de Saint-Gall – personnel et simple.
+
+        </p>
+
+
+
+        <div class="badge">
+
+          <b>
+            Abtwil SG
+          </b>
+
+          · Pas de magasin public · Rendez-vous sur rendez-vous
+
+        </div>
+
+
+
+      </div>
+
+
+
+
+      <!-- PRIVATKUNDEN -->
+
+      <div>
+
+
+        <h4>
+          Particuliers
+        </h4>
+
+
+        <a href="/fr/reparaturen.html">
+          Réparations
+        </a>
+
+
+        <a href="/fr/geraet-verkaufen.html">
+          Vendre un appareil
+        </a>
+
+
+        <a href="/fr/privatkunden.html">
+          Services techniques
+        </a>
+
+
+        <a href="/fr/shop.html">
+          Appareils reconditionnés et accessoires
+        </a>
+
+
+      </div>
+
+
+
+
+      <!-- UNTERNEHMEN -->
+
+      <div>
+
+
+        <h4>
+          Entreprises
+        </h4>
+
+
+        <a href="/fr/unternehmen.html">
+          Informatique pour PME
+        </a>
+
+
+        <a href="/fr/websites.html">
+          Sites Internet
+        </a>
+
+
+        <a href="/fr/unternehmen.html#telekom">
+          Télécom
+        </a>
+
+
+        <a href="/fr/unternehmen.html#cloud">
+          Cloud et e-mail
+        </a>
+
+
+      </div>
+
+
+
+
+      <!-- KONTAKT -->
+
+      <div>
+
+
+        <h4>
+          Contact
+        </h4>
+
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+
+        <a href="https://wa.me/41768444673">
+          WhatsApp
+        </a>
+
+
+        <a href="/fr/rechtliches.html">
+          Mentions légales · Conditions générales · Protection des données
+        </a>
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- RECHTLICHES -->
+
+    <div class="legal">
+
+
+      <span>
+        © 2026 Mujitech. Tous droits réservés.
+      </span>
+
+
+      <span>
+        IDE : CHE-480.937.625
+      </span>
+
+
+    </div>
+
+
+
+  </div>
+
+
+<div class="wrap site-utility"><a href="/fr/reparatur-schweiz.html">Réparation par envoi dans toute la Suisse</a><a href="/fr/reparaturanfrage.html">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Paramètres des cookies</button></div>
+</footer>
+
+
+
+
+<!-- EIGENSTÄNDIGE NAVIGATION -->
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    const button =
+      document.querySelector(".mobilebtn");
+
+
+    const nav =
+      document.querySelector(".navlinks");
+
+
+
+    if (button && nav) {
+
+
+      button.addEventListener(
+        "click",
+        function () {
+
+
+          const open =
+            button.getAttribute("aria-expanded") !== "true";
+
+
+          button.setAttribute(
+            "aria-expanded",
+            String(open)
+          );
+
+
+          nav.classList.toggle(
+            "open",
+            open
+          );
+
+
+          nav.classList.toggle(
+            "active",
+            open
+          );
+
+
+        }
+      );
+
+
+    }
+
+
+
+
+    document
+      .querySelectorAll(".dropdown .dropbtn")
+      .forEach(function (button) {
+
+
+        button.addEventListener(
+          "click",
+          function () {
+
+
+            button.parentElement.classList.toggle(
+              "open"
+            );
+
+
+            button.parentElement.classList.toggle(
+              "active"
+            );
+
+
+          }
+        );
+
+
+      });
+
+
+  }
+);
+
+</script>
+
+
+
+
+<!-- HINTERGRUNDANIMATION -->
+
+<script
+  defer
+  src="../assets/mono-electric.js?v=20261003-1"
+></script>
+
+
+
+
+<!-- ANFRAGEBEREICH AUTOMATISCH AUSWÄHLEN -->
+
+<script>
+
+(function () {
+
+
+  const value =
+    new URLSearchParams(
+      location.search
+    ).get("bereich");
+
+
+
+  if (!value) {
+    return;
+  }
+
+
+
+  const select =
+    document.getElementById("bereich");
+
+
+
+  if (!select) {
+    return;
+  }
+
+
+
+  const option =
+    Array.from(select.options).find(
+      function (o) {
+
+
+        return o.value.toLowerCase() ===
+          value.toLowerCase();
+
+
+      }
+    );
+
+
+
+  if (option) {
+
+    select.value = option.value;
+
+  }
+
+
+
+})();
+
+</script>
+
+
+
+</body>
+</html>

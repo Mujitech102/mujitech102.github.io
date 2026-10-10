@@ -1,0 +1,1037 @@
+
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>PC-Service, Datenübertragung &amp; WLAN-Hilfe | Mujitech</title>
+<meta name="description" content="Persönliche Technikhilfe in Abtwil bei St. Gallen: Datenübertragung, PC- und Laptop-Optimierung sowie Unterstützung bei WLAN und Internet.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Mujitech">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="canonical" href="https://mujitech.ch/privatkunden.html">
+<link rel="icon" type="image/png" href="logo.webp">
+<link rel="stylesheet" href="assets/style.css?v=20261003">
+<link rel="stylesheet" href="assets/mono.css?v=20261003-5">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Mujitech">
+<meta property="og:title" content="PC-Service, Datenübertragung &amp; WLAN-Hilfe | Mujitech">
+<meta property="og:description" content="Persönliche Technikhilfe in Abtwil bei St. Gallen: Datenübertragung, PC- und Laptop-Optimierung sowie Unterstützung bei WLAN und Internet.">
+<meta property="og:url" content="https://mujitech.ch/privatkunden.html">
+<meta property="og:image" content="https://mujitech.ch/logo.webp">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"Organization",
+      "@id":"https://mujitech.ch/#organization",
+      "name":"Mujitech",
+      "url":"https://mujitech.ch/",
+      "logo":"https://mujitech.ch/logo.webp",
+      "telephone":"+41768444673",
+      "email":"info@mujitech.ch",
+      "identifier":"CHE-480.937.625"
+    },
+    {
+      "@type":"Service",
+      "name":"Technik-Hilfe für Privatkunden",
+      "serviceType":[
+        "Datenübertragung",
+        "PC-Optimierung",
+        "Laptop-Optimierung",
+        "WLAN-Hilfe",
+        "Internet-Unterstützung"
+      ],
+      "provider":{
+        "@id":"https://mujitech.ch/#organization"
+      },
+      "areaServed":[
+        {"@type":"Place","name":"Abtwil SG"},
+        {"@type":"Place","name":"St. Gallen"}
+      ],
+      "url":"https://mujitech.ch/privatkunden.html"
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {
+          "@type":"ListItem",
+          "position":1,
+          "name":"Startseite",
+          "item":"https://mujitech.ch/"
+        },
+        {
+          "@type":"ListItem",
+          "position":2,
+          "name":"Privatkunden",
+          "item":"https://mujitech.ch/privatkunden.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+.private-page {
+  color:#111;
+}
+
+.private-page .service-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+
+.private-page .service-card {
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid #dedede!important;
+  border-radius:23px;
+  padding:28px;
+  scroll-margin-top:100px;
+}
+
+.private-page .service-card h3 {
+  color:#111!important;
+  margin:0 0 13px;
+}
+
+.private-page .service-card p {
+  color:#555!important;
+  line-height:1.75;
+}
+
+.private-page .service-icon {
+  width:58px;
+  height:58px;
+  display:grid;
+  place-items:center;
+  margin-bottom:22px;
+  background:#fff!important;
+  border:1px solid #dedede;
+  border-radius:15px;
+  color:#111!important;
+}
+
+.private-page .service-icon svg {
+  width:33px;
+  height:33px;
+  fill:none;
+  stroke:#111;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.private-page .private-btn,
+.private-page .private-btn:visited,
+.private-page button.private-btn {
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:14px 22px!important;
+  background:#111!important;
+  background-image:none!important;
+  border:1px solid #111!important;
+  border-radius:12px;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+  font:inherit;
+  font-size:15px;
+  font-weight:750;
+  text-decoration:none!important;
+  cursor:pointer;
+}
+
+.private-page .private-btn:hover {
+  background:#333!important;
+}
+
+.private-page .private-btn.secondary {
+  background:#fff!important;
+  border-color:#111!important;
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+}
+
+.private-page .private-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:24px;
+}
+
+.private-page .service-form {
+  background:rgba(255,255,255,.97)!important;
+  border:1px solid #dedede;
+  border-radius:24px;
+  padding:32px;
+}
+
+.private-page .service-form label {
+  display:block;
+  margin-bottom:9px;
+  color:#111!important;
+  font-weight:650;
+}
+
+.private-page .service-form input:not([type="hidden"]):not([type="checkbox"]),
+.private-page .service-form select,
+.private-page .service-form textarea {
+  display:block;
+  width:100%;
+  box-sizing:border-box;
+  background:#fff!important;
+  color:#111!important;
+  border:1px solid #ccc!important;
+  border-radius:11px;
+  padding:13px 14px;
+  font:inherit;
+}
+
+.private-page .service-form input:focus,
+.private-page .service-form select:focus,
+.private-page .service-form textarea:focus {
+  outline:2px solid #111;
+  outline-offset:2px;
+}
+
+.private-page .service-form textarea {
+  min-height:165px;
+  resize:vertical;
+}
+
+.private-page .form-field {
+  min-width:0;
+}
+
+.private-page .form-field-full {
+  margin-top:22px;
+}
+
+.private-page .privacy-row {
+  display:flex!important;
+  align-items:flex-start;
+  gap:12px;
+  line-height:1.7;
+  cursor:pointer;
+}
+
+.private-page .privacy-row input {
+  flex:0 0 19px;
+  width:19px!important;
+  height:19px;
+  margin:4px 0 0;
+  accent-color:#111;
+}
+
+.private-page .privacy-row a {
+  color:#111;
+  text-decoration:underline;
+}
+
+.private-page .private-info {
+  background:rgba(255,255,255,.97);
+  border:1px solid #dedede;
+  border-radius:23px;
+  padding:30px;
+}
+
+body .topbar,
+body .nav,
+body .dropdown .menu {
+  background:#fff!important;
+  background-image:none!important;
+}
+
+body .navlinks>a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color:#111!important;
+  -webkit-text-fill-color:#111!important;
+}
+
+body .navlinks>a.cta {
+  background:#111!important;
+  color:#fff!important;
+  -webkit-text-fill-color:#fff!important;
+}
+
+body .mobilebtn {
+  background:#fff!important;
+  color:#111!important;
+}
+
+@media(max-width:900px) {
+  .private-page .service-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:700px) {
+  .private-page .service-grid {
+    grid-template-columns:1fr;
+  }
+
+  .private-page .service-form {
+    padding:21px;
+  }
+
+  .private-page .service-card {
+    padding:23px;
+  }
+
+  .private-page .private-actions {
+    flex-direction:column;
+  }
+
+  .private-page .private-actions .private-btn {
+    width:100%;
+  }
+}
+</style>
+<link rel="stylesheet" href="assets/enhancements.css?v=20261010-1">
+<script defer src="assets/insights.js?v=20261010-1"></script>
+<script defer src="assets/enhancements.js?v=20261010-1"></script>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header class="topbar">
+  <div class="wrap nav">
+
+    <a class="brand" href="index.html" aria-label="Mujitech Startseite">
+      <img src="logo.webp" alt="Mujitech Logo" class="site-logo">
+    </a>
+
+    <button class="mobilebtn" type="button"
+            aria-label="Menü öffnen" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="navlinks" aria-label="Hauptnavigation">
+
+      <a href="reparaturen.html">Reparaturen</a>
+      <a href="geraet-verkaufen.html">Gerät verkaufen</a>
+
+      <div class="dropdown">
+        <button class="dropbtn" type="button">Privatkunden ▾</button>
+
+        <div class="menu">
+          <a href="privatkunden.html#daten">Datenübertragung</a>
+          <a href="privatkunden.html#optimierung">PC-/Laptop-Optimierung</a>
+          <a href="privatkunden.html#wlan">WLAN &amp; Internet-Hilfe</a>
+          <a href="shop.html">Refurbished &amp; Zubehör</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn" type="button">Unternehmen ▾</button>
+
+        <div class="menu">
+          <a href="unternehmen.html">IT für KMU</a>
+          <a href="unternehmen.html#support">IT-Support &amp; Betreuung</a>
+          <a href="unternehmen.html#hardware">Hardware-Beschaffung</a>
+          <a href="unternehmen.html#telekom">Telekom-Vermittlung</a>
+          <a href="websites.html">Websites &amp; Wartung</a>
+          <a href="unternehmen.html#cloud">Microsoft 365 / Google Workspace</a>
+        </div>
+      </div>
+
+      <a href="shop.html">Shop</a>
+      <a href="bewertungen.html">Bewertungen</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a class="cta" href="anfrage.html">Anfrage starten</a>
+
+    </nav>
+  </div>
+</header>
+
+<main class="private-page">
+
+  <!-- BREADCRUMB -->
+
+  <div class="wrap breadcrumb">
+    <a href="index.html">Start</a>
+    /
+    <span aria-current="page">Privatkunden</span>
+  </div>
+
+
+  <!-- HERO -->
+
+  <section class="pagehero">
+    <div class="wrap">
+
+      <div class="eyebrow">
+        Technik-Service für Privatkunden
+      </div>
+
+      <h1>
+        PC-Hilfe, Datenübertragung
+        und WLAN-Service in St. Gallen.
+      </h1>
+
+      <p class="lead">
+        Praktische Technik-Hilfe für Smartphone,
+        Tablet, Laptop und PC.
+        Mujitech unterstützt Sie bei
+        Datenübertragungen, langsamen Computern
+        sowie WLAN- und Internetproblemen.
+      </p>
+
+      <p class="sectionlead">
+        Persönlicher Service in Abtwil bei
+        St. Gallen nach Terminvereinbarung.
+      </p>
+
+      <div class="private-actions">
+        <a class="private-btn" href="#service-anfrage">
+          Service kostenlos anfragen →
+        </a>
+
+        <a class="private-btn secondary" href="#leistungen">
+          Leistungen ansehen
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- DIENSTLEISTUNGEN -->
+
+  <section id="leistungen">
+    <div class="wrap">
+
+      <div class="eyebrow">
+        Unsere Leistungen
+      </div>
+
+      <h2>
+        Technik-Unterstützung für den Alltag.
+      </h2>
+
+      <p class="sectionlead">
+        Wählen Sie den passenden Service
+        oder beschreiben Sie Ihr Anliegen
+        direkt über unser Anfrageformular.
+      </p>
+
+      <div class="service-grid" style="margin-top:30px;">
+
+        <!-- DATENÜBERTRAGUNG -->
+
+        <article class="service-card" id="daten">
+
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <rect x="5" y="9" width="15" height="25" rx="3"/>
+              <rect x="28" y="14" width="15" height="25" rx="3"/>
+              <path d="M21 18h9m-4-4 4 4-4 4"/>
+              <path d="M27 31h-9m4-4-4 4 4 4"/>
+            </svg>
+          </div>
+
+          <h3>Datenübertragung</h3>
+
+          <p>
+            Daten von einem bisherigen Gerät
+            auf ein neues Smartphone, Tablet,
+            einen Laptop oder PC übertragen.
+          </p>
+
+          <a class="private-btn" href="#service-anfrage"
+             data-service="Datenübertragung">
+            Jetzt anfragen →
+          </a>
+
+        </article>
+
+
+        <!-- OPTIMIERUNG -->
+
+        <article class="service-card" id="optimierung">
+
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <rect x="6" y="8" width="36" height="25" rx="3"/>
+              <path d="M2 39h44M18 33l-2 6m14-6 2 6"/>
+              <path d="M16 22l5 5 11-12"/>
+            </svg>
+          </div>
+
+          <h3>PC-/Laptop-Optimierung</h3>
+
+          <p>
+            Langsame Computer prüfen,
+            unnötige Programme bereinigen,
+            Systemeinstellungen kontrollieren
+            und mögliche Verbesserungen besprechen.
+          </p>
+
+          <a class="private-btn" href="#service-anfrage"
+             data-service="PC-/Laptop-Optimierung">
+            Jetzt anfragen →
+          </a>
+
+        </article>
+
+
+        <!-- WLAN -->
+
+        <article class="service-card" id="wlan">
+
+          <div class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M5 18c11-10 27-10 38 0"/>
+              <path d="M11 24c8-7 18-7 26 0"/>
+              <path d="M17 30c4-4 10-4 14 0"/>
+              <circle cx="24" cy="37" r="2"
+                      fill="#111" stroke="none"/>
+            </svg>
+          </div>
+
+          <h3>WLAN &amp; Internet-Hilfe</h3>
+
+          <p>
+            Router, WLAN-Verbindungen
+            und Endgeräte konfigurieren
+            oder typische Verbindungsprobleme
+            systematisch prüfen.
+          </p>
+
+          <a class="private-btn" href="#service-anfrage"
+             data-service="WLAN &amp; Internet-Hilfe">
+            Jetzt anfragen →
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- SERVICEANFRAGE -->
+
+  <section id="service-anfrage">
+    <div class="wrap">
+
+      <div class="eyebrow">
+        Service anfragen
+      </div>
+
+      <h2>
+        Beschreiben Sie Ihr Anliegen.
+      </h2>
+
+      <p class="sectionlead">
+        Teilen Sie uns mit, wobei Sie
+        Unterstützung benötigen.
+        Wir prüfen Ihre Anfrage und
+        melden uns anschliessend bei Ihnen.
+      </p>
+
+      <div class="service-form" style="margin-top:30px;">
+
+        <!-- Vereinfachte FormSubmit-Konfiguration -->
+
+        <form
+          id="privatkundenformular"
+          action="https://formsubmit.co/info@mujitech.ch"
+          method="POST"
+          accept-charset="UTF-8"
+        >
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Neue Privatkunden-Serviceanfrage über mujitech.ch"
+          >
+
+          <input
+            type="hidden"
+            name="_template"
+            value="table"
+          >
+
+
+          <div class="grid2">
+
+            <div class="form-field">
+              <label for="name">
+                Vor- und Nachname *
+              </label>
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Max Muster"
+                maxlength="120"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="email">
+                E-Mail *
+              </label>
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="max@beispiel.ch"
+                maxlength="150"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="telefon">
+                Telefon / WhatsApp *
+              </label>
+
+              <input
+                id="telefon"
+                name="telefon"
+                type="tel"
+                autocomplete="tel"
+                placeholder="079 123 45 67"
+                maxlength="35"
+                required
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="service">
+                Gewünschter Service *
+              </label>
+
+              <select
+                id="service"
+                name="service"
+                required
+              >
+                <option value="" disabled selected>
+                  Bitte auswählen
+                </option>
+
+                <option value="Datenübertragung">
+                  Datenübertragung
+                </option>
+
+                <option value="PC-/Laptop-Optimierung">
+                  PC-/Laptop-Optimierung
+                </option>
+
+                <option value="WLAN &amp; Internet-Hilfe">
+                  WLAN &amp; Internet-Hilfe
+                </option>
+
+                <option value="Sonstige Technik-Hilfe">
+                  Sonstige Technik-Hilfe
+                </option>
+              </select>
+            </div>
+
+
+            <div class="form-field">
+              <label for="geraet">
+                Gerät / Hersteller
+              </label>
+
+              <input
+                id="geraet"
+                name="geraet"
+                type="text"
+                placeholder="z.B. Lenovo Laptop, iPhone, Router"
+                maxlength="150"
+              >
+            </div>
+
+
+            <div class="form-field">
+              <label for="kontaktart">
+                Bevorzugte Kontaktaufnahme
+              </label>
+
+              <select
+                id="kontaktart"
+                name="kontaktart"
+              >
+                <option value="Telefon">Telefon</option>
+                <option value="WhatsApp">WhatsApp</option>
+                <option value="E-Mail">E-Mail</option>
+              </select>
+            </div>
+
+          </div>
+
+
+          <div class="form-field-full">
+
+            <label for="beschreibung">
+              Anliegen beschreiben *
+            </label>
+
+            <textarea
+              id="beschreibung"
+              name="beschreibung"
+              rows="7"
+              minlength="10"
+              maxlength="5000"
+              placeholder="Beschreiben Sie kurz, wobei Sie Unterstützung benötigen."
+              required
+            ></textarea>
+
+          </div>
+
+
+          <div class="form-field-full">
+
+            <label class="privacy-row" for="datenschutz">
+
+              <input
+                id="datenschutz"
+                type="checkbox"
+                name="datenschutz"
+                value="Zugestimmt"
+                required
+              >
+
+              <span>
+                Ich habe die
+                <a href="rechtliches.html">
+                  Datenschutzerklärung
+                </a>
+                gelesen und stimme der Verarbeitung
+                meiner Angaben zur Bearbeitung
+                meiner Anfrage zu. *
+              </span>
+
+            </label>
+
+          </div>
+
+
+          <div style="margin-top:27px;">
+
+            <button
+              class="private-btn"
+              type="submit"
+            >
+              Serviceanfrage absenden →
+            </button>
+
+          </div>
+
+
+          <p class="sectionlead" style="margin-top:19px;">
+            Die Anfrage ist unverbindlich.
+            Kostenpflichtige Arbeiten werden
+            erst nach Absprache und Ihrer
+            Zustimmung ausgeführt.
+          </p>
+
+          <p class="sectionlead">
+            Nach dem Absenden erscheint
+            die Bestätigungsseite von FormSubmit.
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- WEITERE LEISTUNGEN -->
+
+  <section>
+    <div class="wrap">
+
+      <div class="private-info">
+
+        <div class="eyebrow">
+          Weitere Dienstleistungen
+        </div>
+
+        <h2>
+          Reparieren oder verkaufen.
+        </h2>
+
+        <p class="sectionlead">
+          Neben unseren Technik-Services
+          bieten wir Reparaturen für
+          Smartphones, Tablets, Laptops
+          und PCs sowie den Ankauf
+          gebrauchter Geräte an.
+        </p>
+
+        <div class="private-actions">
+
+          <a class="private-btn" href="reparaturen.html">
+            Reparaturen ansehen →
+          </a>
+
+          <a class="private-btn secondary"
+             href="geraet-verkaufen.html">
+            Gerät verkaufen →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- KONTAKT -->
+
+  <section>
+    <div class="wrap">
+
+      <div class="private-info">
+
+        <div class="eyebrow">
+          Persönlicher Kontakt
+        </div>
+
+        <h2>
+          Fragen zu unserem Technik-Service?
+        </h2>
+
+        <p class="sectionlead">
+          Kontaktieren Sie uns direkt
+          oder senden Sie Ihre Anfrage
+          über das Formular.
+        </p>
+
+        <div class="private-actions">
+
+          <a class="private-btn" href="#service-anfrage">
+            Anfrage senden →
+          </a>
+
+          <a class="private-btn secondary"
+             href="tel:+41768444673">
+            076 844 46 73
+          </a>
+
+          <a class="private-btn secondary"
+             href="https://wa.me/41768444673">
+            WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="wrap">
+
+    <div class="footergrid">
+
+      <div>
+        <a class="brand" href="index.html">
+          <img
+            src="logo.webp"
+            alt="Mujitech Logo"
+            class="site-logo"
+          >
+        </a>
+
+        <p class="sectionlead" style="margin-top:14px;">
+          Technik, Reparatur und digitale Lösungen
+          für Privatkunden und KMU in der Region
+          St. Gallen – klar, persönlich und
+          ohne unnötigen Aufwand.
+        </p>
+
+        <div class="badge">
+          <span>●</span>
+          <b>Abtwil SG</b>
+          · kein öffentliches Ladenlokal
+          · Termine nach Vereinbarung
+        </div>
+      </div>
+
+
+      <div>
+        <h4>Privatkunden</h4>
+
+        <a href="reparaturen.html">
+          Reparaturen
+        </a>
+
+        <a href="geraet-verkaufen.html">
+          Gerät verkaufen
+        </a>
+
+        <a href="privatkunden.html">
+          Technik-Services
+        </a>
+
+        <a href="shop.html">
+          Refurbished &amp; Zubehör
+        </a>
+      </div>
+
+
+      <div>
+        <h4>Unternehmen</h4>
+
+        <a href="unternehmen.html">
+          IT für KMU
+        </a>
+
+        <a href="websites.html">
+          Websites
+        </a>
+
+        <a href="unternehmen.html#telekom">
+          Telekom
+        </a>
+
+        <a href="unternehmen.html#cloud">
+          Cloud &amp; E-Mail
+        </a>
+      </div>
+
+
+      <div>
+        <h4>Kontakt</h4>
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+        <a href="https://wa.me/41768444673">
+          WhatsApp
+        </a>
+
+        <a href="rechtliches.html">
+          Impressum · AGB · Datenschutz
+        </a>
+      </div>
+
+    </div>
+
+
+    <div class="legal">
+      <span>
+        © 2026 Mujitech. Alle Rechte vorbehalten.
+      </span>
+
+      <span>
+        UID: CHE-480.937.625
+      </span>
+    </div>
+
+  </div>
+<div class="wrap site-utility"><a href="reparatur-schweiz.html">Schweizweiter Einsendeservice</a><a href="reparaturanfrage.html">DE / FR / IT / EN</a><button type="button" data-consent-settings>Cookie-Einstellungen</button></div>
+</footer>
+
+
+<!-- NAVIGATION UND SERVICE-VORAUSWAHL -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuButton = document.querySelector(".mobilebtn");
+  const navigation = document.querySelector(".navlinks");
+
+  if (menuButton && navigation) {
+
+    menuButton.addEventListener("click", function () {
+
+      const open =
+        menuButton.getAttribute("aria-expanded") !== "true";
+
+      menuButton.setAttribute(
+        "aria-expanded",
+        String(open)
+      );
+
+      navigation.classList.toggle("open", open);
+      navigation.classList.toggle("active", open);
+
+    });
+
+  }
+
+
+  document.querySelectorAll(".dropdown .dropbtn")
+    .forEach(function (button) {
+
+      button.addEventListener("click", function () {
+
+        button.parentElement.classList.toggle("open");
+        button.parentElement.classList.toggle("active");
+
+      });
+
+    });
+
+
+  /* Dienstleistung beim Anklicken vorauswählen */
+
+  const serviceSelect = document.getElementById("service");
+
+  document.querySelectorAll("[data-service]")
+    .forEach(function (link) {
+
+      link.addEventListener("click", function () {
+
+        if (serviceSelect) {
+          serviceSelect.value =
+            link.getAttribute("data-service");
+        }
+
+      });
+
+    });
+
+});
+</script>
+
+
+<!-- HINTERGRUNDANIMATION -->
+
+<script
+  defer
+  src="assets/mono-electric.js?v=20261003-1"
+></script>
+
+</body>
+</html>

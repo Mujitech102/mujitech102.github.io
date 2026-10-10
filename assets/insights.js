@@ -42,7 +42,7 @@
   function ready(){
     banner=document.createElement('section');banner.className='ch-privacy-banner';banner.setAttribute('role','dialog');banner.setAttribute('aria-label',copy[0]);
     const text=document.createElement('div');const strong=document.createElement('strong');strong.textContent=copy[0];text.append(strong);
-    const p=document.createElement('p');p.textContent=copy[1]+' ';const a=document.createElement('a');a.href='rechtliches.html#datenschutz';a.textContent=copy[2]+' (DE)';p.append(a);text.append(p);
+    const p=document.createElement('p');p.textContent=copy[1]+' ';const a=document.createElement('a');a.href=(lang==='de'?'/':'/'+lang+'/')+'rechtliches.html#datenschutz';a.textContent=copy[2];p.append(a);text.append(p);
     const actions=document.createElement('div');actions.className='ch-privacy-actions';
     [copy[3],copy[4]].forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>save(i?'all':'necessary'));actions.append(b);});
     banner.append(text,actions);document.body.append(banner);
