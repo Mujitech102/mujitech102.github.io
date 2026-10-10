@@ -1,20 +1,13 @@
 (() => {
   'use strict';
   const ready = () => {
-    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
-    const fine = matchMedia('(hover: hover) and (pointer: fine)');
-    document.querySelectorAll('.panel,.card,.m-service-card,.m-final-card,.w-card,.trust-item').forEach(card => {
-      if (card.matches('form,aside') || card.querySelector('form')) return;
-      card.classList.add('ch-depth');
-      card.addEventListener('pointermove', e => {
-        if (reduced.matches || !fine.matches) return;
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--tilt-x', `${((e.clientY-r.top)/r.height-.5)*-5}deg`);
-        card.style.setProperty('--tilt-y', `${((e.clientX-r.left)/r.width-.5)*5}deg`);
-      }, {passive:true});
-      card.addEventListener('pointerleave', () => {
-        card.style.removeProperty('--tilt-x'); card.style.removeProperty('--tilt-y');
-      });
+    // A restrained lift replaces pointer-driven tilting; controls never rotate.
+    document.querySelectorAll('.panel,.card,.m-service-card,.m-final-card,.w-card,.trust-item,.service-card,.review-card,.product-card,.process-step').forEach(card => {
+      if (!card.matches('form,aside') && !card.querySelector('form')) card.classList.add('ch-depth');
+    });
+    document.querySelectorAll('.cta,.btn,.m-button,.w-btn,.private-btn,.repair-btn,.contact-btn,.hero-mini-btn,.w-nav-cta,.button,button[type=submit]').forEach(button => button.classList.add('ui-action'));
+    document.querySelectorAll('.language-options a').forEach(link => {
+      if (location.hash) link.href += location.hash;
     });
     // Keep existing navigation handlers; sync accessibility across variants.
     const nav=document.querySelector('.navlinks');
@@ -23,7 +16,10 @@
       if (nav && btn) {
         nav.id ||= 'hauptnavigation';
         btn.setAttribute('aria-controls',nav.id);
-        btn.setAttribute('aria-expanded',String(nav.classList.contains('mobileopen')));
+        const open=nav.classList.contains('mobileopen');
+        btn.setAttribute('aria-expanded',String(open));
+        const labels={de:['Menü öffnen','Menü schliessen'],en:['Open menu','Close menu'],fr:['Ouvrir le menu','Fermer le menu'],it:['Apri il menu','Chiudi il menu']};
+        btn.setAttribute('aria-label',(labels[(document.documentElement.lang||'de').slice(0,2)]||labels.en)[open?1:0]);
       }
       document.querySelectorAll('.dropdown').forEach(d=>d.querySelector('.dropbtn')?.setAttribute('aria-expanded',String(d.classList.contains('open'))));
     };

@@ -1,0 +1,1388 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Start request | Repair request – Mujitech St. Gallen</title>
+
+
+
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<link
+  rel="icon"
+  type="image/png"
+  href="../logo.webp?v=20260916-4"
+>
+
+<link
+  rel="stylesheet"
+  href="../assets/style.css?v=20260916-4"
+>
+
+<link
+  rel="stylesheet"
+  href="../assets/mono.css?v=20261003-2"
+>
+
+<meta property="og:type" content="website">
+
+
+
+
+
+<style>
+
+/* Formularfelder */
+
+.repair-form input:not([type="checkbox"]),
+.repair-form select,
+.repair-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: #fff !important;
+  color: #111 !important;
+  -webkit-text-fill-color: #111;
+  border: 1px solid #c9c9c9 !important;
+  border-radius: 12px !important;
+  padding: 13px 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.repair-form input:not([type="checkbox"]),
+.repair-form select {
+  min-height: 51px;
+}
+
+.repair-form textarea {
+  min-height: 170px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.repair-form input:focus,
+.repair-form select:focus,
+.repair-form textarea:focus {
+  outline: 2px solid #111;
+  outline-offset: 3px;
+  border-color: #111 !important;
+  box-shadow: 0 0 0 3px rgba(0,0,0,.07);
+}
+.repair-form label {
+  display: block;
+  font-weight: 750;
+  font-size: 13px;
+  margin-bottom: 9px;
+  color: #111;
+}
+
+.repair-form .form-group {
+  margin-top: 20px;
+}
+
+.repair-form .form-group:first-child {
+  margin-top: 0;
+}
+
+.repair-form .form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 20px 15px;
+}
+
+.repair-form .form-grid > div {
+  min-width: 0;
+}
+
+/* Datenschutz */
+
+.repair-form .privacy-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.repair-form .privacy-label input {
+  flex: 0 0 17px;
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  accent-color: #111;
+}
+
+.repair-form .privacy-label a {
+  color: #111;
+  text-decoration: underline;
+}
+
+/* Absenden */
+
+.repair-form .repair-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 49px;
+  padding: 13px 20px;
+  border: 1px solid #111 !important;
+  border-radius: 12px;
+  background: #111 !important;
+  background-image: none !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.repair-form .repair-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.16);
+}
+
+.repair-form .form-note {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+}
+
+/* Schwarz-weisse Icons der Auswahlkarten */
+
+.request-card .icon {
+  background: #fff !important;
+  background-image: none !important;
+  border: 1px solid #111 !important;
+  color: #111 !important;
+}
+
+.request-card .icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #111;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Karten */
+
+.request-card {
+  transition: transform .3s, box-shadow .3s;
+}
+
+@media (hover:hover) {
+  .request-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+  }
+}
+
+/* Navigation */
+
+body .topbar,
+body .nav,
+body .dropdown .menu {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+body .dropdown .menu {
+  visibility: hidden;
+}
+
+body .dropdown.open .menu {
+  visibility: visible;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color: #111 !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+body .navlinks > a.cta {
+  background: #111 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+body .mobilebtn {
+  color: #111 !important;
+  background: #fff !important;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+  .repair-form .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repair-form .repair-submit {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .request-card,
+  .repair-form .repair-submit {
+    transition: none;
+  }
+}
+
+</style>
+
+
+<script defer src="../assets/insights.js?v=20261010-2"></script>
+<script defer src="../assets/enhancements.js?v=20261010-2"></script>
+<link rel="canonical" href="https://mujitech.ch/en/anfrage.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/anfrage.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/anfrage.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/anfrage.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/anfrage.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/anfrage.html"><meta name="description" content="Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback."><meta property="og:title" content="Start request | Repair request – Mujitech St. Gallen"><meta property="og:description" content="Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback."><meta property="og:url" content="https://mujitech.ch/en/anfrage.html"><meta property="og:locale" content="en"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://mujitech.ch/en/anfrage.html#webpage", "url": "https://mujitech.ch/en/anfrage.html", "name": "Start request | Repair request – Mujitech St. Gallen", "description": "Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback.", "inLanguage": "en", "isPartOf": {"@id": "https://mujitech.ch/#website"}, "about": {"@id": "https://mujitech.ch/#organization"}}</script><link rel="stylesheet" href="/assets/enhancements.css?v=20261010-2"></head>
+
+
+<body><a class="skip-link" href="#main">Skip to content</a>
+
+
+<!-- HEADER -->
+
+<header class="topbar">
+
+  <div class="wrap nav">
+
+    <a
+      class="brand"
+      href="/en/"
+      aria-label="Mujitech home"
+     data-brand="true">
+      <img
+        src="../logo.webp"
+        alt="Mujitech logo"
+        class="site-logo"
+      ><span class="brand-wordmark">Mujitech</span>
+    </a>
+
+
+    <button
+      class="mobilebtn"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+
+    <nav
+      class="navlinks"
+      aria-label="Main navigation"
+    >
+
+      <a href="/en/reparaturen.html">
+        Repairs
+      </a>
+
+      <a href="/en/geraet-verkaufen.html">
+        Sell a device
+      </a>
+
+
+      <!-- PRIVATKUNDEN -->
+
+      <div class="dropdown">
+
+        <button
+          class="dropbtn"
+          type="button"
+        >
+          Personal services ▾
+        </button>
+
+        <div class="menu">
+
+          <a href="/en/privatkunden.html#daten">
+            Data transfer
+          </a><a href="/en/privatkunden.html#handy-einrichtung">Smartphone setup</a>
+
+          <a href="/en/privatkunden.html#optimierung">
+            PC and laptop optimisation
+          </a>
+
+          <a href="/en/privatkunden.html#wlan">
+            Wi-Fi and internet help
+          </a>
+
+          <a href="/en/shop.html">
+            Refurbished devices and accessories
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- UNTERNEHMEN -->
+
+      <div class="dropdown">
+
+        <button
+          class="dropbtn"
+          type="button"
+        >
+          Business ▾
+        </button>
+
+        <div class="menu">
+
+          <a href="/en/unternehmen.html">
+            IT for small businesses
+          </a>
+
+          <a href="/en/unternehmen.html#support">
+            IT support and maintenance
+          </a>
+
+          <a href="/en/unternehmen.html#hardware">
+            Hardware procurement
+          </a>
+
+          <a href="/en/unternehmen.html#telekom">
+            Telecom referrals
+          </a>
+
+          <a href="/en/websites.html">
+            Websites and maintenance
+          </a>
+
+          <a href="/en/unternehmen.html#cloud">
+            Microsoft 365 / Google Workspace
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <a href="/en/shop.html">
+        Shop
+      </a>
+
+      <a href="/en/bewertungen.html">
+        Reviews
+      </a>
+
+      <a href="/en/kontakt.html">
+        Contact
+      </a>
+
+      <a
+        class="cta"
+        href="/en/anfrage.html"
+        aria-current="page"
+      >
+        Start an enquiry
+      </a>
+
+    </nav>
+
+  </div>
+
+</header><nav class="language-bar" aria-label="Choose language"><div class="wrap"><span class="language-label">Choose language</span><div class="language-options"><a href="/anfrage.html" lang="de-CH" hreflang="de-CH">Deutsch</a><a href="/en/anfrage.html" lang="en" hreflang="en" aria-current="page">English</a><a href="/fr/anfrage.html" lang="fr-CH" hreflang="fr-CH">Français</a><a href="/it/anfrage.html" lang="it-CH" hreflang="it-CH">Italiano</a></div></div></nav>
+
+
+
+
+<!-- HAUPTINHALT -->
+
+<main id="main">
+
+
+  <!-- BREADCRUMB -->
+
+  <div class="wrap breadcrumb">
+
+    <a href="/en/">
+      Start
+    </a>
+
+    / request
+
+  </div>
+
+
+
+
+  <!-- HERO -->
+
+  <section class="pagehero">
+
+    <div class="wrap">
+
+      <div class="eyebrow">
+        Start an enquiry
+      </div>
+
+      <h1>
+        What is it about?
+      </h1>
+
+      <p class="lead">
+        Select your concern or send a repair request directly.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+
+  <!-- AUSWAHLKARTEN -->
+
+  <section>
+
+    <div class="wrap grid2">
+
+
+      <!-- REPARATUR -->
+
+      <a
+        class="card request-card"
+        href="#reparatur"
+      >
+
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M14.7 6.3a5 5 0 0 0-6.4 6.4l-5 5a2.1 2.1 0 0 0 3 3l5-5a5 5 0 0 0 6.4-6.4l-3 3-3-3 3-3Z"/>
+          </svg>
+        </div>
+
+        <h3>
+          I want to fix something
+        </h3>
+
+        <p>
+          Mobile phone, tablet, laptop or PC.
+        </p>
+
+        <span class="link">
+          Start repair →
+        </span>
+
+      </a>
+
+
+
+
+      <!-- GERÄT VERKAUFEN -->
+
+      <a
+        class="card request-card"
+        href="/en/geraet-verkaufen.html"
+      >
+
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="3" y="2" width="11" height="20" rx="2"/>
+            <path d="M7 5h3M8 19h1M16 12l5-5M16 7h5v5"/>
+          </svg>
+        </div>
+
+        <h3>
+          I would like to sell a device
+        </h3>
+
+        <p>
+          Record the device online and have it evaluated without obligation.
+        </p>
+
+        <span class="link">
+          Equipment purchase →
+        </span>
+
+      </a>
+
+
+
+
+      <!-- TECHNIK-HILFE -->
+
+      <a
+        class="card request-card"
+        href="/en/privatkunden.html"
+      >
+
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="4" y="3" width="16" height="12" rx="2"/>
+            <path d="m2 20 2-5h16l2 5H2ZM9 18h6"/>
+          </svg>
+        </div>
+
+        <h3>
+          I need technical help
+        </h3>
+
+        <p>
+          Data transfer, PC/laptop optimization or Wi-Fi.
+        </p>
+
+        <span class="link">
+          Private customers →
+        </span>
+
+      </a>
+
+
+
+
+      <!-- UNTERNEHMEN -->
+
+      <a
+        class="card request-card"
+        href="/en/unternehmen.html"
+      >
+
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 12a22 22 0 0 0 20 0M12 11v4"/>
+          </svg>
+        </div>
+
+        <h3>
+          I am a company
+        </h3>
+
+        <p>
+          IT, hardware, company cell phones, telecom, website or cloud.
+        </p>
+
+        <span class="link">
+          Business →
+        </span>
+
+      </a>
+
+
+    </div>
+
+  </section>
+
+
+
+
+  <!-- REPARATURFORMULAR -->
+
+  <section id="reparatur">
+
+    <div class="wrap">
+
+
+      <div class="eyebrow">
+        Repair request
+      </div>
+
+
+      <h2>
+        What can we fix for you?
+      </h2>
+
+
+      <p class="sectionlead">
+
+        Tell us the most important information about your device and the defect. We will check your request and then get back to you.
+
+      </p>
+
+
+
+
+      <div
+        class="panel"
+        style="margin-top:30px;"
+      >
+
+
+
+
+        <!--
+        FORMULAR
+
+        Dieselbe vereinfachte FormSubmit-Konfiguration
+        wie auf der funktionierenden Kontaktseite.
+
+        Keine automatische Weiterleitung.
+        Kein zusätzliches globales Formular-JavaScript.
+        -->
+
+
+
+        <form
+          class="repair-form"
+          id="reparaturformular"
+          action="https://formsubmit.co/info@mujitech.ch"
+          method="POST"
+          accept-charset="UTF-8"
+        ><input type="hidden" name="Website-Sprache" value="English">
+
+
+
+
+          <!-- FORMSUBMIT EINSTELLUNGEN -->
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Neue Reparaturanfrage über mujitech.ch"
+          >
+
+
+          <input
+            type="hidden"
+            name="_template"
+            value="table"
+          >
+
+
+
+
+          <!-- PERSÖNLICHE ANGABEN -->
+
+          <div class="form-grid">
+
+
+
+
+            <!-- NAME -->
+
+            <div>
+
+              <label for="name">
+                First and last name *
+              </label>
+
+
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                placeholder="Alex Smith"
+                maxlength="120"
+                required
+              >
+
+            </div>
+
+
+
+
+            <!-- EMAIL -->
+
+            <div>
+
+              <label for="email">
+                Email *
+              </label>
+
+
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                placeholder="max@beispiel.ch"
+                maxlength="150"
+                required
+              >
+
+            </div>
+
+
+
+
+            <!-- TELEFON -->
+
+            <div>
+
+              <label for="telefon">
+                Telephone number *
+              </label>
+
+
+              <input
+                id="telefon"
+                name="telefon"
+                type="tel"
+                autocomplete="tel"
+                placeholder="079 123 45 67"
+                maxlength="35"
+                required
+              >
+
+            </div>
+
+
+
+
+            <!-- GERÄTEART -->
+
+            <div>
+
+              <label for="geraet">
+                Device type *
+              </label>
+
+
+              <select
+                id="geraet"
+                name="geraet"
+                required
+              >
+
+
+                <option
+                  value=""
+                  disabled
+                  selected
+                >
+                  Please select
+                </option>
+
+
+                <option value="Smartphone">
+                  Smartphone / cell phone
+                </option>
+
+
+                <option value="Tablet">
+                  Tablet / iPad
+                </option>
+
+
+                <option value="Laptop">
+                  Laptop/notebook
+                </option>
+
+
+                <option value="PC">
+                  PC / Computer
+                </option>
+
+
+                <option value="Andere">
+                  Other device
+                </option>
+
+
+              </select>
+
+            </div>
+
+
+
+
+            <!-- HERSTELLER -->
+
+            <div>
+
+              <label for="hersteller">
+                Manufacturer
+              </label>
+
+
+              <input
+                id="hersteller"
+                name="hersteller"
+                type="text"
+                placeholder="e.g. Apple, Samsung, Lenovo"
+                maxlength="100"
+              >
+
+            </div>
+
+
+
+
+            <!-- MODELL -->
+
+            <div>
+
+              <label for="modell">
+                Exact model *
+              </label>
+
+
+              <input
+                id="modell"
+                name="modell"
+                type="text"
+                placeholder="e.g. iPhone 14 Pro"
+                maxlength="150"
+                required
+              >
+
+            </div>
+
+
+          </div>
+
+
+
+
+          <!-- DEFEKT -->
+
+          <div class="form-group">
+
+
+            <label for="defekt">
+              What is defective? *
+            </label>
+
+
+            <select
+              id="defekt"
+              name="defekt"
+              required
+            >
+
+
+              <option
+                value=""
+                disabled
+                selected
+              >
+                Please select
+              </option>
+
+
+              <option value="Display">
+                Display / glass
+              </option>
+
+
+              <option value="Akku">
+                Battery
+              </option>
+
+
+              <option value="Ladeanschluss">
+                Charging port
+              </option>
+
+
+              <option value="Kamera">
+                Camera
+              </option>
+
+
+              <option value="Startet nicht">
+                Device does not start
+              </option>
+
+
+              <option value="Software">
+                Software/System
+              </option>
+
+
+              <option value="Reinigung">
+                Cleaning / maintenance
+              </option>
+
+
+              <option value="Upgrade">
+                SSD / RAM / Hardware upgrade
+              </option>
+
+
+              <option value="Sonstiges">
+                Other
+              </option>
+
+
+            </select>
+
+
+          </div>
+
+
+
+
+          <!-- BESCHREIBUNG -->
+
+          <div class="form-group">
+
+
+            <label for="beschreibung">
+              Describe error/problem *
+            </label>
+
+
+            <textarea
+              id="beschreibung"
+              name="beschreibung"
+              rows="7"
+              minlength="10"
+              maxlength="5000"
+              placeholder="Describe as precisely as possible what is not working with the device."
+              required
+            ></textarea>
+
+
+          </div>
+
+
+
+
+          <!-- KONTAKTAUFNAHME -->
+
+          <div class="form-group">
+
+
+            <label for="kontaktart">
+              Preferred contact method
+            </label>
+
+
+            <select
+              id="kontaktart"
+              name="kontaktart"
+            >
+
+
+              <option value="Telefon">
+                Telephone
+              </option>
+
+
+              <option value="WhatsApp">
+                WhatsApp
+              </option>
+
+
+              <option value="E-Mail">
+                Email
+              </option>
+
+
+            </select>
+
+
+          </div>
+
+
+
+
+          <!-- DATENSCHUTZ -->
+
+          <div class="form-group">
+
+
+            <label
+              class="privacy-label"
+              for="datenschutz"
+            >
+
+
+              <input
+                id="datenschutz"
+                type="checkbox"
+                name="datenschutz"
+                value="Zugestimmt"
+                required
+              >
+
+
+              <span>
+
+                I have read the
+
+                <a href="/en/rechtliches.html">
+                  privacy policy
+                </a>
+
+                and consent to my details being processed to respond to the enquiry. *
+
+              </span>
+
+
+            </label>
+
+
+          </div>
+
+
+
+
+          <!-- ABSENDEN -->
+
+          <div
+            class="form-group"
+            style="margin-top:26px;"
+          >
+
+
+            <button
+              class="repair-submit"
+              type="submit"
+            >
+
+              Submit repair request
+
+            </button>
+
+
+          </div>
+
+
+
+
+          <!-- HINWEIS -->
+
+          <p class="form-note">
+
+            The request is non-binding. Repairs will only be carried out after consultation and approval. After submitting, the FormSubmit confirmation page appears. Please do not send passwords or particularly sensitive data via this form.
+
+          </p>
+
+
+
+
+        </form>
+
+
+
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+</main>
+
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+
+  <div class="wrap">
+
+
+    <div class="footergrid">
+
+
+
+
+      <!-- MUJITECH -->
+
+      <div>
+
+
+        <a
+          class="brand"
+          href="/en/"
+        >
+
+
+          <img
+            src="../logo.webp"
+            alt="Mujitech logo"
+            class="site-logo"
+          >
+
+
+        </a>
+
+
+
+
+        <p
+          class="sectionlead"
+          style="margin-top:14px"
+        >
+
+          Technology, repairs and digital solutions for private customers and SMEs in the St. Gallen region - clear, personal and without unnecessary effort.
+
+        </p>
+
+
+
+
+        <div class="badge">
+
+
+          <span>●</span>
+
+
+          <b>
+            Abtwil SG
+          </b>
+
+
+          · no public shop · appointments by arrangement
+
+
+        </div>
+
+
+      </div>
+
+
+
+
+      <!-- PRIVATKUNDEN -->
+
+      <div>
+
+
+        <h4>
+          Personal services
+        </h4>
+
+
+        <a href="/en/reparaturen.html">
+          Repairs
+        </a>
+
+
+        <a href="/en/geraet-verkaufen.html">
+          Sell a device
+        </a>
+
+
+        <a href="/en/privatkunden.html">
+          Technology services
+        </a>
+
+
+        <a href="/en/shop.html">
+          Refurbished devices and accessories
+        </a>
+
+
+      </div>
+
+
+
+
+      <!-- UNTERNEHMEN -->
+
+      <div>
+
+
+        <h4>
+          Business
+        </h4>
+
+
+        <a href="/en/unternehmen.html">
+          IT for small businesses
+        </a>
+
+
+        <a href="/en/websites.html">
+          Websites
+        </a>
+
+
+        <a href="/en/unternehmen.html#telekom">
+          Telecom
+        </a>
+
+
+        <a href="/en/unternehmen.html#cloud">
+          Cloud and email
+        </a>
+
+
+      </div>
+
+
+
+
+      <!-- KONTAKT -->
+
+      <div>
+
+
+        <h4>
+          Contact
+        </h4>
+
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+
+        <a href="https://wa.me/41768444673">
+          WhatsApp
+        </a>
+
+
+        <a href="/en/rechtliches.html">
+          Imprint · Terms and Conditions · Data protection
+        </a>
+
+
+      </div>
+
+
+
+    </div>
+
+
+
+
+    <!-- RECHTLICHES -->
+
+    <div class="legal">
+
+
+      <span>
+        © 2026 Mujitech. All rights reserved.
+      </span>
+
+
+      <span>
+        UID: CHE-480.937.625
+      </span>
+
+
+    </div>
+
+
+
+  </div>
+
+
+<div class="wrap site-utility"><a href="/en/reparatur-schweiz.html">Mail-in repairs across Switzerland</a><a href="/en/reparaturanfrage.html">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Cookie settings</button></div>
+</footer>
+
+
+
+
+<!-- EIGENSTÄNDIGE NAVIGATION -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuButton = document.querySelector(".mobilebtn");
+  const navigation = document.querySelector(".navlinks");
+  const dropdowns = [...document.querySelectorAll(".dropdown")];
+
+  function setMobileMenu(open) {
+    if (!menuButton || !navigation) return;
+
+    ["mobileopen", "open", "active"].forEach(function (className) {
+      navigation.classList.toggle(className, open);
+    });
+
+    menuButton.setAttribute("aria-expanded", String(open));
+    menuButton.setAttribute(
+      "aria-label",
+      open ? "Close menu" : "Open menu"
+    );
+  }
+
+  function setDropdown(dropdown, open) {
+    dropdown.classList.toggle("open", open);
+    dropdown.classList.toggle("active", open);
+    dropdown.querySelector(".dropbtn")
+      ?.setAttribute("aria-expanded", String(open));
+  }
+
+  if (menuButton && navigation) {
+    navigation.id = navigation.id || "hauptnavigation";
+    menuButton.setAttribute("aria-controls", navigation.id);
+    setMobileMenu(false);
+
+    menuButton.addEventListener("click", function () {
+      setMobileMenu(!navigation.classList.contains("mobileopen"));
+    });
+  }
+
+  dropdowns.forEach(function (dropdown, index) {
+    const button = dropdown.querySelector(".dropbtn");
+    const menu = dropdown.querySelector(".menu");
+
+    if (!button || !menu) return;
+
+    menu.id = menu.id || `untermenue-${index + 1}`;
+    button.setAttribute("aria-controls", menu.id);
+    setDropdown(dropdown, false);
+
+    button.addEventListener("click", function () {
+      setDropdown(dropdown, !dropdown.classList.contains("open"));
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    dropdowns.forEach(function (dropdown) {
+      if (!dropdown.contains(event.target)) {
+        setDropdown(dropdown, false);
+      }
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+
+    const activeDropdown = dropdowns.find(function (dropdown) {
+      return dropdown.classList.contains("open") &&
+        dropdown.contains(document.activeElement);
+    });
+
+    dropdowns.forEach(function (dropdown) {
+      setDropdown(dropdown, false);
+    });
+
+    if (activeDropdown) {
+      activeDropdown.querySelector(".dropbtn")?.focus();
+    } else if (navigation?.classList.contains("mobileopen")) {
+      setMobileMenu(false);
+      menuButton?.focus();
+    }
+  });
+});
+</script>
+
+
+
+
+<!-- HINTERGRUNDANIMATION -->
+
+<script
+  defer
+  src="../assets/mono-electric.js?v=20261003-1"
+></script>
+
+
+
+</body>
+</html>

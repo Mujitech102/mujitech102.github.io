@@ -1,0 +1,42 @@
+{
+"index.html":{
+"de":["Handy-Reparatur, PC-Hilfe & Webdesign | Mujitech Schweiz","Mujitech: Handy- und iPhone-Reparatur, Computerhilfe, Geräteankauf, geprüfte iPhones und Webdesign. Abtwil SG nach Termin; Reparaturen per Post schweizweit."],
+"fr":["Réparation smartphone, assistance PC & sites web | Mujitech","Réparation iPhone par envoi dans toute la Suisse, dépannage informatique, rachat d’appareils, iPhones reconditionnés et création de sites web. Atelier à Abtwil SG."],
+"it":["Riparazioni smartphone, assistenza PC & siti web | Mujitech","Riparazioni iPhone per posta in tutta la Svizzera, assistenza computer, acquisto usato, iPhone ricondizionati e creazione siti web. Laboratorio ad Abtwil SG."],
+"en":["Phone repairs, computer help & web design | Mujitech Switzerland","Phone and iPhone repairs, computer help, device buyback, refurbished iPhones and web design. Workshop in Abtwil SG; mail-in repairs across Switzerland."]},
+"reparaturen.html":{
+"de":["Handy-, iPhone- & PC-Reparatur St. Gallen | Mujitech","Display defekt, Akku schwach oder Laptop kaputt? iPhone-, Handy-, Tablet- und PC-Reparatur in Abtwil bei St. Gallen. Einsendeservice für die ganze Schweiz."],
+"fr":["Réparation iPhone, smartphone & ordinateur en Suisse | Mujitech","Écran cassé, batterie faible ou ordinateur en panne ? Réparation iPhone, smartphone, tablette et PC à Abtwil SG, par envoi depuis la Suisse romande et toute la Suisse."],
+"it":["Riparazione iPhone, smartphone & PC in Svizzera | Mujitech","Schermo rotto, batteria debole o portatile guasto? Riparazioni iPhone, smartphone, tablet e PC ad Abtwil SG, per posta dal Ticino e da tutta la Svizzera."],
+"en":["iPhone, phone, laptop & PC repairs in Switzerland | Mujitech","Broken screen, weak battery or faulty laptop? iPhone, phone, tablet and computer repairs in Abtwil SG. Mail-in repair service across Switzerland."]},
+"privatkunden.html":{
+"de":["Computerhilfe, Handy-Einrichtung & WLAN St. Gallen | Mujitech","PC-Hilfe bei langsamen Computern, Handy-Einrichtung, Datenübertragung und WLAN-Problemen. Persönlicher Technik-Service in Abtwil bei St. Gallen nach Termin."],
+"fr":["Dépannage informatique & configuration smartphone | Mujitech","Ordinateur lent, transfert de données, configuration smartphone ou problème Wi-Fi : assistance informatique personnalisée à Abtwil près de Saint-Gall, sur rendez-vous."],
+"it":["Assistenza computer, configurazione smartphone & Wi-Fi | Mujitech","Computer lento, trasferimento dati, configurazione smartphone o problemi Wi-Fi: assistenza informatica personale ad Abtwil vicino a San Gallo, su appuntamento."],
+"en":["Computer help, phone setup & Wi-Fi support | Mujitech","Help with slow computers, smartphone setup, data transfer and Wi-Fi problems. Personal technology support in Abtwil near St. Gallen, by appointment."]},
+"websites.html":{
+"de":["Website erstellen lassen Schweiz: Webdesign & Preise | Mujitech","Firmenwebsite erstellen lassen: Webdesign für KMU ab CHF 490, mobile Darstellung, Anfrageformulare und optionale Website-Wartung. Persönliche Offerte von Mujitech."],
+"fr":["Création de sites web en Suisse : offres & tarifs | Mujitech","Création de sites internet pour PME dès CHF 490 : design responsive, formulaires et maintenance en option. Présentez votre projet et demandez un devis personnalisé."],
+"it":["Creazione siti web in Svizzera: offerte & prezzi | Mujitech","Siti web per PMI da CHF 490: web design responsive, moduli di contatto e manutenzione opzionale. Descrivi il progetto e richiedi un preventivo personalizzato."],
+"en":["Web design in Switzerland: website packages & prices | Mujitech","Business websites from CHF 490: responsive web design, enquiry forms and optional website maintenance. Tell Mujitech about your project for a personal quote."]},
+"shop.html":{
+"de":["Gebrauchte & geprüfte iPhones kaufen Schweiz | Mujitech","Geprüfte, aufbereitete iPhones mit transparenten Geräteangaben kaufen. 12 Monate Mujitech Garantie auf die Technik und kostenloser Versand in der Schweiz."],
+"fr":["Acheter un iPhone d’occasion contrôlé en Suisse | Mujitech","Découvrez nos iPhones d’occasion et reconditionnés avec détails transparents. Garantie Mujitech de 12 mois sur le matériel et livraison gratuite en Suisse."],
+"it":["Acquistare iPhone usati e ricondizionati in Svizzera | Mujitech","Scopri iPhone usati e ricondizionati con informazioni trasparenti. Garanzia Mujitech di 12 mesi sull’hardware e spedizione gratuita in Svizzera."],
+"en":["Buy tested used & refurbished iPhones in Switzerland | Mujitech","Explore tested used and refurbished iPhones with clear device details. 12-month Mujitech hardware warranty and free shipping within Switzerland."]},
+"geraet-verkaufen.html":{
+"de":["iPhone, Laptop & Elektronik verkaufen Schweiz | Mujitech","Smartphone, iPhone, Tablet, MacBook, Laptop oder PC verkaufen: Gerät und Zustand online erfassen und unverbindliche Ankaufseinschätzung bei Mujitech anfragen."],
+"fr":["Vendre iPhone, ordinateur & appareils en Suisse | Mujitech","Vendez votre smartphone, iPhone, tablette, MacBook, portable ou PC. Décrivez l’appareil et son état en ligne pour demander une estimation de rachat sans engagement."],
+"it":["Vendere iPhone, computer & dispositivi in Svizzera | Mujitech","Vendi smartphone, iPhone, tablet, MacBook, portatile o PC. Descrivi online il dispositivo e le condizioni per richiedere una valutazione d’acquisto senza impegno."],
+"en":["Sell your iPhone, laptop & devices in Switzerland | Mujitech","Sell a phone, iPhone, tablet, MacBook, laptop or PC. Describe your device and condition online to request a no-obligation buyback valuation from Mujitech."]},
+"unternehmen.html":{
+"de":["IT-Support für KMU St. Gallen: Hardware & Cloud | Mujitech","IT-Support und IT-Betreuung für KMU, Hardware-Beschaffung, Firmenhandys, Telekom-Beratung sowie Microsoft 365 und Google Workspace. Mujitech in Abtwil SG."],
+"fr":["Assistance IT pour PME : matériel & cloud | Mujitech","Assistance et suivi informatique pour PME, achat de matériel, téléphones professionnels, conseils télécom, Microsoft 365 et Google Workspace. Mujitech à Abtwil SG."],
+"it":["Supporto IT per PMI: hardware & cloud | Mujitech","Supporto e assistenza IT per PMI, acquisto hardware, telefoni aziendali, consulenza telecom, Microsoft 365 e Google Workspace. Mujitech ad Abtwil SG."],
+"en":["Small business IT support: hardware & cloud | Mujitech","IT support and maintenance for small businesses, hardware procurement, business phone setup, telecom advice, Microsoft 365 and Google Workspace. Abtwil SG."]},
+"kontakt.html":{
+"de":["Kontakt Mujitech: Reparatur, Computerhilfe & Webdesign","Kontaktieren Sie Mujitech per Telefon, WhatsApp, E-Mail oder Formular. Reparaturen, PC-Hilfe, Geräteankauf, IT und Websites. Persönliche Übergabe in Abtwil nach Termin."],
+"fr":["Contacter Mujitech : réparation, assistance PC & sites web","Contactez Mujitech par téléphone, WhatsApp, e-mail ou formulaire : réparation, aide informatique, rachat d’appareils, IT et sites web. Abtwil SG sur rendez-vous."],
+"it":["Contatta Mujitech: riparazioni, assistenza PC & siti web","Contatta Mujitech per telefono, WhatsApp, e-mail o modulo: riparazioni, assistenza computer, acquisto usato, IT e siti web. Abtwil SG su appuntamento."],
+"en":["Contact Mujitech: repairs, computer help & web design","Contact Mujitech by phone, WhatsApp, email or form for repairs, computer help, device buyback, IT and websites. Device handovers in Abtwil SG by appointment."]}
+}
