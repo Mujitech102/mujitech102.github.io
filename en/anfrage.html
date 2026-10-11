@@ -248,9 +248,9 @@ body .mobilebtn {
 </style>
 
 
-<script defer src="../assets/insights.js?v=20261010-4"></script>
-<script defer src="../assets/enhancements.js?v=20261010-4"></script>
-<link rel="canonical" href="https://mujitech.ch/en/anfrage.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/anfrage.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/anfrage.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/anfrage.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/anfrage.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/anfrage.html"><meta name="description" content="Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback."><meta property="og:title" content="Start request | Repair request – Mujitech St. Gallen"><meta property="og:description" content="Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback."><meta property="og:url" content="https://mujitech.ch/en/anfrage.html"><meta property="og:locale" content="en"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://mujitech.ch/en/anfrage.html#webpage", "url": "https://mujitech.ch/en/anfrage.html", "name": "Start request | Repair request – Mujitech St. Gallen", "description": "Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback.", "inLanguage": "en", "isPartOf": {"@id": "https://mujitech.ch/#website"}, "about": {"@id": "https://mujitech.ch/#organization"}}</script><link rel="stylesheet" href="/assets/enhancements.css?v=20261010-4"></head>
+<script defer src="../assets/insights.js?v=20261011-1"></script>
+<script defer src="../assets/enhancements.js?v=20261011-1"></script>
+<link rel="canonical" href="https://mujitech.ch/en/anfrage.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/anfrage.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/anfrage.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/anfrage.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/anfrage.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/anfrage.html"><meta name="description" content="Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback."><meta property="og:title" content="Start request | Repair request – Mujitech St. Gallen"><meta property="og:description" content="Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback."><meta property="og:url" content="https://mujitech.ch/en/anfrage.html"><meta property="og:locale" content="en"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "@id": "https://mujitech.ch/en/anfrage.html#webpage", "url": "https://mujitech.ch/en/anfrage.html", "name": "Start request | Repair request – Mujitech St. Gallen", "description": "Repair request for cell phones, tablets, laptops and PCs at Mujitech in St. Gallen and Abtwil. Describe your device and receive personal feedback.", "inLanguage": "en", "isPartOf": {"@id": "https://mujitech.ch/#website"}, "about": {"@id": "https://mujitech.ch/#organization"}}</script><link rel="stylesheet" href="/assets/enhancements.css?v=20261011-1"></head>
 
 
 <body><a class="skip-link" href="#main">Skip to content</a>
@@ -440,7 +440,7 @@ body .mobilebtn {
 
       <p class="lead">
         Select your concern or send a repair request directly.
-      </p>
+      </p><p><a class="cta" href="#reparatur">Enquire about a repair directly</a></p>
 
     </div>
 
@@ -552,7 +552,7 @@ body .mobilebtn {
 
       <a
         class="card request-card"
-        href="/en/unternehmen.html"
+        href="/en/kontakt.html#business"
       >
 
         <div class="icon" aria-hidden="true">
@@ -601,11 +601,7 @@ body .mobilebtn {
       </h2>
 
 
-      <p class="sectionlead">
-
-        Tell us the most important information about your device and the defect. We will check your request and then get back to you.
-
-      </p>
+      <p class="sectionlead">Your name, email and a short description are enough. You can add device details later.</p>
 
 
 
@@ -630,126 +626,43 @@ body .mobilebtn {
 
 
 
-        <form
-          class="repair-form"
-          id="reparaturformular"
-          action="https://formsubmit.co/info@mujitech.ch"
-          method="POST"
-          accept-charset="UTF-8"
-        ><input type="hidden" name="Website-Sprache" value="English"><input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-
-
-
-          <!-- FORMSUBMIT EINSTELLUNGEN -->
-
-          <input
+        <form class="repair-form" id="reparaturformular" action="https://formsubmit.co/info@mujitech.ch" method="POST" accept-charset="UTF-8"><input type="hidden" name="Website-Sprache" value="English"><input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+<input
             type="hidden"
             name="_subject"
             value="Neue Reparaturanfrage über mujitech.ch"
-          >
-
-
-          <input
+          ><input
             type="hidden"
             name="_template"
             value="table"
-          >
+          ><input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+<div class="form-grid"><div><label for="name">Name *</label><input id="name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+<div><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="150" required></div></div>
+<div class="form-group"><label for="modell">Device / model (optional)</label><input id="modell" name="modell" type="text" maxlength="150" placeholder="e.g. iPhone 13 or Lenovo laptop"></div>
+<div class="form-group"><label for="beschreibung">What is not working? *</label><textarea id="beschreibung" name="beschreibung" rows="4" maxlength="5000" placeholder="Briefly describe the problem. It is fine if you do not know the model." required></textarea></div>
+<details class="quality-form-options enquiry-details"><summary>Add more details (optional)</summary><div class="form-grid">
+<div><label for="telefon">Phone number</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" maxlength="35" aria-describedby="contact-phone-note"></div>
+<div><label for="kontaktart">Preferred contact method</label><select id="kontaktart" name="kontaktart"><option value="E-Mail">
+                Email
+              </option>
+
+
+              <option value="Telefon">
+                Telephone
+              </option>
+
+
+              <option value="WhatsApp">
+                WhatsApp
+              </option>
 
 
 
 
-          <!-- PERSÖNLICHE ANGABEN -->
 
-          <div class="form-grid">
-
-
-
-
-            <!-- NAME -->
-
-            <div>
-
-              <label for="name">
-                First and last name *
-              </label>
-
-
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                placeholder="Alex Smith"
-                maxlength="120"
-                required
-              >
-
-            </div>
-
-
-
-
-            <!-- EMAIL -->
-
-            <div>
-
-              <label for="email">
-                Email *
-              </label>
-
-
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                placeholder="max@beispiel.ch"
-                maxlength="150"
-                required
-              >
-
-            </div>
-
-
-
-
-            <!-- TELEFON -->
-
-            <div>
-
-              <label for="telefon">Phone number (optional)</label>
-
-
-              <input
-                id="telefon"
-                name="telefon"
-                type="tel"
-                autocomplete="tel"
-                placeholder="079 123 45 67"
-                maxlength="35"
-
-              >
-
-            </div>
-
-
-
-
-            <!-- GERÄTEART -->
-
-            <div>
-
-              <label for="geraet">
-                Device type *
-              </label>
-
-
-              <select
-                id="geraet"
-                name="geraet"
-                required
-              >
+            </select></div>
+<div><label for="geraet">Device type</label><select id="geraet" name="geraet">
 
 
                 <option
@@ -786,76 +699,8 @@ body .mobilebtn {
                 </option>
 
 
-              </select>
-
-            </div>
-
-
-
-
-            <!-- HERSTELLER -->
-
-            <div>
-
-              <label for="hersteller">
-                Manufacturer
-              </label>
-
-
-              <input
-                id="hersteller"
-                name="hersteller"
-                type="text"
-                placeholder="e.g. Apple, Samsung, Lenovo"
-                maxlength="100"
-              >
-
-            </div>
-
-
-
-
-            <!-- MODELL -->
-
-            <div>
-
-              <label for="modell">
-                Exact model *
-              </label>
-
-
-              <input
-                id="modell"
-                name="modell"
-                type="text"
-                placeholder="e.g. iPhone 14 Pro"
-                maxlength="150"
-                required
-              >
-
-            </div>
-
-
-          </div>
-
-
-
-
-          <!-- DEFEKT -->
-
-          <div class="form-group">
-
-
-            <label for="defekt">
-              What is defective? *
-            </label>
-
-
-            <select
-              id="defekt"
-              name="defekt"
-              required
-            >
+              </select></div>
+<div><label for="defekt">Fault category</label><select id="defekt" name="defekt">
 
 
               <option
@@ -912,155 +757,11 @@ body .mobilebtn {
               </option>
 
 
-            </select>
-
-
-          </div>
-
-
-
-
-          <!-- BESCHREIBUNG -->
-
-          <div class="form-group">
-
-
-            <label for="beschreibung">
-              Describe error/problem *
-            </label>
-
-
-            <textarea
-              id="beschreibung"
-              name="beschreibung"
-              rows="7"
-              minlength="10"
-              maxlength="5000"
-              placeholder="Describe as precisely as possible what is not working with the device."
-              required
-            ></textarea>
-
-
-          </div>
-
-
-
-
-          <!-- KONTAKTAUFNAHME -->
-
-          <div class="form-group">
-
-
-            <label for="kontaktart">
-              Preferred contact method
-            </label>
-
-
-            <select
-              id="kontaktart"
-              name="kontaktart"
-            >
-
-
-              <option value="Telefon">
-                Telephone
-              </option>
-
-
-              <option value="WhatsApp">
-                WhatsApp
-              </option>
-
-
-              <option value="E-Mail">
-                Email
-              </option>
-
-
-            </select>
-
-
-          </div>
-
-
-
-
-          <!-- DATENSCHUTZ -->
-
-          <div class="form-group">
-
-
-            <label
-              class="privacy-label"
-              for="datenschutz"
-            >
-
-
-              <input
-                id="datenschutz"
-                type="checkbox"
-                name="datenschutz"
-                value="Zugestimmt"
-                required
-              >
-
-
-              <span>
-
-                I have read the
-
-                <a href="/en/rechtliches.html">
-                  privacy policy
-                </a>
-
-                and consent to my details being processed to respond to the enquiry. *
-
-              </span>
-
-
-            </label>
-
-
-          </div>
-
-
-
-
-          <!-- ABSENDEN -->
-
-          <div
-            class="form-group"
-            style="margin-top:26px;"
-          >
-
-
-            <button
-              class="repair-submit"
-              type="submit"
-            >
-
-              Submit repair request
-
-            </button>
-
-
-          </div>
-
-
-
-
-          <!-- HINWEIS -->
-
-          <p class="form-note">
-
-            The request is non-binding. Repairs will only be carried out after consultation and approval. After submitting, the FormSubmit confirmation page appears. Please do not send passwords or particularly sensitive data via this form.
-
-          </p>
-
-
-
-
-        </form>
+            </select></div>
+<div><label for="hersteller">Manufacturer</label><input id="hersteller" name="hersteller" type="text" maxlength="100"></div></div>
+<p id="contact-phone-note" class="form-note contact-phone-note" hidden></p></details>
+<div class="form-group"><label class="privacy-label" for="datenschutz"><input id="datenschutz" name="datenschutz" type="checkbox" value="Zugestimmt" required><span>I have read the privacy information and agree to the processing of my details to handle this enquiry. <a href="/en/rechtliches.html#datenschutz">Privacy information</a> *</span></label></div>
+<div class="form-group"><button class="repair-submit" type="submit">Send a non-binding enquiry</button></div><p class="form-note">This enquiry does not place a repair order. We agree the costs and work with you first. FormSubmit handles submission; its confirmation does not prove email delivery. Please do not send passwords or sensitive data.</p></form>
 
 
 
@@ -1280,7 +981,7 @@ body .mobilebtn {
   </div>
 
 
-<div class="wrap site-utility"><a href="/en/reparatur-schweiz.html">Mail-in repairs across Switzerland</a><a href="/en/reparaturanfrage.html">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Cookie settings</button></div>
+<div class="wrap site-utility"><p class="business-hours">Available daily 08:00–20:00 · Device handover by appointment only</p><a href="/en/reparatur-schweiz.html">Mail-in repairs across Switzerland</a><a href="/en/reparaturanfrage.html">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Cookie settings</button></div>
 </footer>
 
 
@@ -1377,7 +1078,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script
   defer
-  src="../assets/mono-electric.js?v=20261010-4"
+  src="../assets/mono-electric.js?v=20261011-1"
 ></script>
 
 

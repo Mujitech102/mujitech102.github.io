@@ -38,3 +38,25 @@
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready); else ready();
 })();
+
+/* Match the preferred reply channel to an actual contact number. */
+(() => {
+  const lang=(document.documentElement.lang||'de').slice(0,2);
+  const copy={de:'Für einen Rückruf oder eine WhatsApp-Antwort brauchen wir deine Telefonnummer. Alternativ wähle E-Mail.',en:'We need your phone number for a call or WhatsApp reply. Alternatively, choose email.',fr:'Pour un appel ou une réponse WhatsApp, indiquez votre numéro. Vous pouvez aussi choisir e-mail.',it:'Per una chiamata o una risposta WhatsApp serve il tuo numero. In alternativa scegli e-mail.'};
+  const ready=()=>{
+    document.querySelectorAll('form').forEach(form=>{
+      const channel=form.querySelector('[name="kontaktart"]');
+      const phone=form.querySelector('input[type="tel"]');
+      if(!channel||!phone)return;
+      let note=form.querySelector('.contact-phone-note');
+      if(!note){note=document.createElement('p');note.className='form-note contact-phone-note';note.id='contact-phone-note';channel.after(note);phone.setAttribute('aria-describedby',note.id);}
+      note.textContent=copy[lang]||copy.en;
+      const sync=()=>{const needsPhone=channel.value==='Telefon'||channel.value==='WhatsApp';phone.required=needsPhone;note.hidden=!needsPhone;phone.setAttribute('aria-required',String(needsPhone));};
+      channel.addEventListener('change',sync);window.addEventListener('pageshow',sync);sync();
+      phone.addEventListener('invalid',()=>{const details=phone.closest('details');if(details)details.open=true;});
+    });
+    const area=document.querySelector('select[name="bereich"]');
+    if(area&&location.hash==='#business'&&!area.value)area.value='IT-Support KMU';
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();

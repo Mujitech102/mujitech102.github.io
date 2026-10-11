@@ -138,3 +138,14 @@ body .home-contact-button { display:inline-flex; align-items:center; justify-con
 body .m-service-copy small { color:#555 !important; }
 body .m-footer-legal { color:#555 !important; }
 body .m-footer-column h3 { font-size:14px; font-weight:750; margin:0 0 14px; line-height:1.3; }
+
+/* Wrapped navigation must contribute to header height. */
+body .topbar .wrap.nav { height:auto; padding-block:8px; }
+body .topbar .brand { height:auto; overflow:visible; }
+@media(max-width:900px) { body .topbar .navlinks { top:100%; } }
+.enquiry-intro { color:#444; font-size:16px; line-height:1.65; margin:0 0 20px; }
+.enquiry-details select,.enquiry-details input { margin-bottom:8px; }
+body .google-review-link { padding:0 20px; text-align:center; }
+.google-review-link a { text-decoration:underline; text-underline-offset:4px; }
+.business-hours { font-size:14px; line-height:1.5; color:#444; margin:0; }
+.contact-phone-note { margin-top:12px; }

@@ -4,7 +4,8 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit,urlunsplit,parse_qsl,urlencode
 import re,json
 from quality import apply_quality
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261010-4'
+from marketing import apply_marketing
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261011-1'
 LANGS={'de':'de-CH','en':'en','fr':'fr-CH','it':'it-CH'}
 NAMES={'de':'Deutsch','en':'English','fr':'Français','it':'Italiano'}
 legacy={'reparation-suisse.html':('fr','reparatur-schweiz.html'),'riparazione-svizzera.html':('it','reparatur-schweiz.html'),'repair-switzerland.html':('en','reparatur-schweiz.html'),'demande-reparation.html':('fr','reparaturanfrage.html'),'richiesta-riparazione.html':('it','reparaturanfrage.html'),'repair-request.html':('en','reparaturanfrage.html')}
@@ -206,6 +207,7 @@ def build(f,l,source=None):
   else:out.append(part)
  data=''.join(out)
  data=apply_quality(data,f,l,path_for,canonical)
+ data=apply_marketing(data,f,l,path_for)
  # Editorial H1 additions make each main service identifiable without keyword lists.
  if f=='index.html':
   headlines={'de':['Reparaturen.','Computerhilfe.','Webdesign.'],'fr':['Réparations.','Informatique.','Sites web.'],'it':['Riparazioni.','Assistenza PC.','Siti web.'],'en':['Repairs.','Computer help.','Web design.']}
@@ -270,6 +272,8 @@ def build(f,l,source=None):
  meta+=f'<link rel="stylesheet" href="/assets/enhancements.css?v={VERSION}">'
  data=data.replace('</head>',meta+'</head>',1)
  if f=='404.html':data=data.replace('src="assets/enhancements.js','src="/assets/enhancements.js').replace('src="../assets/enhancements.js','src="/assets/enhancements.js')
+ hours={'de':'Erreichbar täglich 08:00–20:00 Uhr · Geräteübergabe nur nach Termin','en':'Available daily 08:00–20:00 · Device handover by appointment only','fr':'Joignable tous les jours de 08:00 à 20:00 · Remise des appareils sur rendez-vous uniquement','it':'Reperibile ogni giorno 08:00–20:00 · Consegna dispositivi solo su appuntamento'}[l]
+ data=data.replace('<div class="wrap site-utility">','<div class="wrap site-utility"><p class="business-hours">'+escape(hours)+'</p>',1)
  data=re.sub(r'\n[ \t]+\n','\n\n',data)
  return data
 
