@@ -5,7 +5,7 @@ from urllib.parse import urlsplit,urlunsplit,parse_qsl,urlencode
 import re,json
 from quality import apply_quality
 from marketing import apply_marketing
-ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261011-1'
+ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'_localization/source';DOMAIN='https://mujitech.ch';VERSION='20261011-2'
 LANGS={'de':'de-CH','en':'en','fr':'fr-CH','it':'it-CH'}
 NAMES={'de':'Deutsch','en':'English','fr':'Français','it':'Italiano'}
 legacy={'reparation-suisse.html':('fr','reparatur-schweiz.html'),'riparazione-svizzera.html':('it','reparatur-schweiz.html'),'repair-switzerland.html':('en','reparatur-schweiz.html'),'demande-reparation.html':('fr','reparaturanfrage.html'),'richiesta-riparazione.html':('it','reparaturanfrage.html'),'repair-request.html':('en','reparaturanfrage.html')}

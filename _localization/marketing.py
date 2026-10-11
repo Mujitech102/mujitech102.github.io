@@ -1,5 +1,6 @@
 """Short first-contact forms and traceable review links, without new promises."""
 import re
+from urllib.parse import quote
 from html import escape
 COPY={
 'de':dict(intro='Name, E-Mail und eine kurze Beschreibung genügen. Gerätedetails kannst du auch später ergänzen.',name='Name',email='E-Mail',model='Gerät / Modell (optional)',modelhint='z. B. iPhone 13 oder Lenovo Laptop',problem='Was funktioniert nicht?',hint='Beschreibe kurz dein Problem. Wenn du das Modell nicht kennst, ist das kein Hindernis.',details='Weitere Angaben ergänzen (optional)',phone='Telefonnummer',category='Geräteart',fault='Defektkategorie',brand='Hersteller',contact='Bevorzugte Kontaktaufnahme',consent='Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage zu.',privacy='Datenschutzhinweise',send='Unverbindliche Anfrage senden',note='Die Anfrage löst noch keinen Reparaturauftrag aus. Kosten und Arbeiten werden zuerst mit dir abgestimmt. Die Übermittlung erfolgt über FormSubmit; dessen Bestätigung belegt nicht den E-Mail-Eingang. Bitte keine Passwörter oder sensiblen Daten senden.',quick='Reparatur direkt anfragen',google='Bewertungen auf Google ansehen'),
@@ -56,4 +57,20 @@ def apply_marketing(data,f,l,path_for):
  if f=='websites.html':
   # Remove the duplicated request-description step while preserving the existing offer flow.
   if l=='de':data=data.replace('2. Du beschreibst dein Projekt und hinterlässt deine Kontaktdaten.','2. Du hinterlässt deine Kontaktdaten, damit wir deine Anfrage beantworten können.')
+ # Make each business offer actionable without asking customers to choose again.
+ if f=='unternehmen.html':
+  areas=['IT-Support KMU','IT-Betreuung','Hardware-Beschaffung','Firmenhandys','Telekom-Anfrage','Microsoft 365 / Google Workspace']
+  labels={'de':'Diese Leistung anfragen','en':'Enquire about this service','fr':'Demander cette prestation','it':'Richiedi questo servizio'}
+  count=[0]
+  def business_link(m):
+   i=count[0];count[0]+=1
+   if i>=len(areas):return m[0]
+   url=path_for('kontakt.html',l)+'?service='+quote(areas[i],safe='')+'#business'
+   return m[0].replace('</article>','<p><a class="business-btn secondary" href="'+escape(url,quote=True)+'">'+labels[l]+' →</a></p></article>')
+  data=re.sub(r'<article\b[^>]*class="business-card".*?</article>',business_link,data,flags=re.S)
+  assert count[0]==6
+ # Every enquiry has a direct alternative before the external submission step.
+ direct={'de':('Lieber direkt Kontakt aufnehmen?','E-Mail schreiben','WhatsApp öffnen','Anrufen','Name und Anliegen genügen. Bitte keine Passwörter senden.'),'en':('Prefer to contact us directly?','Send an email','Open WhatsApp','Call','Your name and enquiry are enough. Please do not send passwords.'),'fr':('Vous préférez nous contacter directement ?','Envoyer un e-mail','Ouvrir WhatsApp','Appeler','Votre nom et votre demande suffisent. N’envoyez pas de mots de passe.'),'it':('Preferisci contattarci direttamente?','Scrivi un’e-mail','Apri WhatsApp','Chiama','Bastano nome e richiesta. Non inviare password.')}[l]
+ fallback='<aside class="enquiry-alternatives" aria-label="'+escape(direct[0],quote=True)+'"><strong>'+escape(direct[0])+'</strong><p>'+escape(direct[4])+'</p><div class="enquiry-actions"><a href="mailto:info@mujitech.ch">'+direct[1]+'</a><a href="https://wa.me/41768444673" target="_blank" rel="noopener noreferrer">'+direct[2]+'</a><a href="tel:+41768444673">'+direct[3]+'</a></div></aside>'
+ data=re.sub(r'(<form\b[^>]*action="https://formsubmit.co/info@mujitech.ch"[^>]*>)(.*?)(</form>)',lambda m:m[1]+fallback+m[2]+m[3],data,flags=re.S)
  return data

@@ -7,6 +7,9 @@
     });
     document.querySelectorAll('.cta,.btn,.m-button,.w-btn,.private-btn,.repair-btn,.contact-btn,.hero-mini-btn,.w-nav-cta,.button,button[type=submit]').forEach(button => button.classList.add('ui-action'));
     document.querySelectorAll('.language-options a').forEach(link => {
+      const requested=new URLSearchParams(location.search).get('service');
+      const services=['IT-Support KMU','IT-Betreuung','Hardware-Beschaffung','Firmenhandys','Telekom-Anfrage','Microsoft 365 / Google Workspace'];
+      if(services.includes(requested)){const target=new URL(link.href,location.href);target.searchParams.set('service',requested);link.href=target.href;}
       if (location.hash) link.href += location.hash;
     });
     const lang=(document.documentElement.lang||'de').slice(0,2);
@@ -56,7 +59,9 @@
       phone.addEventListener('invalid',()=>{const details=phone.closest('details');if(details)details.open=true;});
     });
     const area=document.querySelector('select[name="bereich"]');
-    if(area&&location.hash==='#business'&&!area.value)area.value='IT-Support KMU';
+    const requested=new URLSearchParams(location.search).get('service');
+    if(area&&requested&&Array.from(area.options).some(option=>option.value===requested))area.value=requested;
+    else if(area&&location.hash==='#business'&&!area.value)area.value='IT-Support KMU';
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();
