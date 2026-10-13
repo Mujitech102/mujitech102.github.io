@@ -8,6 +8,6 @@
     const selected = button.dataset.filter;
     buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
     cards.forEach(card => { card.hidden = selected !== 'all' && card.dataset.tier !== selected; });
-    if (budget) budget.hidden = selected !== 'all' && selected !== 'budget';
+    if (budget) budget.hidden = cards.some(card => card.dataset.tier === 'budget') || (selected !== 'all' && selected !== 'budget');
   }));
 })();
