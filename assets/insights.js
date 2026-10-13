@@ -22,6 +22,14 @@
   const event=(name,params={})=>{
     if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:serviceArea,page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
   };
+  function productItem(){
+    let product;
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(script=>{try{const obj=JSON.parse(script.textContent);const found=(obj['@graph']||[obj]).find(n=>n['@type']==='Product');if(found)product=found;}catch{}});
+    if(!product)return null;
+    const info=document.querySelector('[data-product-sku]');
+    const price=Number(product.offers?.price||info?.dataset.productPrice);
+    return {item_id:product.sku||product['@id']||location.pathname,item_name:product.name,item_brand:product.brand?.name||product.manufacturer?.name||'Mujitech',item_category:serviceArea==='gaming_pc'?'Gaming PCs':'Smartphones',...(Number.isFinite(price)?{price}: {})};
+  }
   function referrer(){try {const u=new URL(document.referrer);return u.origin+u.pathname;}catch{return '';}}
   function activate(){
     allowed=true;window['ga-disable-'+ID]=false;
@@ -34,6 +42,7 @@
     window.gtag('config',ID,{...safeCampaign,send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false,page_location:cleanURL,page_referrer:referrer()});
     const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.append(s);
     event('page_view');
+    const item=productItem();if(item)event('view_item',{currency:'CHF',value:item.price,items:[item]});
   }
   function revoke(){
     allowed=false;window['ga-disable-'+ID]=true;
@@ -62,9 +71,10 @@
       const a=e.target.closest('a[href]');if(!a)return;
       const href=a.getAttribute('href');
       const channel=href.startsWith('tel:')?'phone':href.startsWith('mailto:')?'email':/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(href)?'whatsapp':null;
-      if(channel){event('contact_click',{contact_channel:channel});return;}
+      if(channel){const item=productItem();event('contact_click',{contact_channel:channel,...(item?{currency:'CHF',value:item.price,items:[item]}:{})});return;}
       let u;try{u=new URL(href,location.href);}catch{return;}
-      if(u.origin===location.origin && /anfrage|demande|richiesta|request/.test(u.pathname))event('enquiry_open',{target_page:u.pathname});
+      const card=a.closest('.gaming-card[data-product-sku]');if(card&&u.origin===location.origin)event('select_item',{item_list_id:'gaming-pcs',items:[{item_id:card.dataset.productSku,item_name:card.querySelector('h3')?.textContent.trim(),item_category:'Gaming PCs',price:Number(card.dataset.price)}]});
+      if(u.origin===location.origin && (/anfrage|demande|richiesta|request/.test(u.pathname)||u.hash==='#anfrage'))event('enquiry_open',{target_page:u.pathname});
     });
     document.querySelectorAll('form').forEach((form,index)=>{
       const id=form.id||'form-'+index;let started=false;
