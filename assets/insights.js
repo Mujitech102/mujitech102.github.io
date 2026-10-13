@@ -14,11 +14,11 @@
   // Preserve only approved public campaign labels; never arbitrary URL values.
   const campaignParams=new URLSearchParams(location.search);
   const safeCampaign={};
-  const labels={utm_source:['google','instagram','tiktok','tutti','ricardo','local','partner'],utm_medium:['cpc','organic','social','referral','print'],utm_campaign:['local-repairs','local-it','kmu','repair-cases','google-profile','baseline']};
+  const labels={utm_source:['google','instagram','tiktok','tutti','ricardo','local','partner'],utm_medium:['cpc','organic','social','referral','print'],utm_campaign:['local-repairs','local-it','kmu','repair-cases','google-profile','baseline','gaming-pcs']};
   const fields={utm_source:'campaign_source',utm_medium:'campaign_medium',utm_campaign:'campaign_name'};
   Object.entries(labels).forEach(([key,values])=>{const value=campaignParams.get(key);if(values.includes(value))safeCampaign[fields[key]]=value;});
   const pageName=location.pathname.split('/').filter(Boolean).pop()||'index.html';
-  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||'general';
+  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':'general');
   const event=(name,params={})=>{
     if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:serviceArea,page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
   };
