@@ -158,3 +158,14 @@ body .google-review-link { padding:0 20px; text-align:center; }
 
 /* Category anchors remain visible below the sticky navigation. */
 #smartphones{scroll-margin-top:180px}.shop-category-title{margin:30px 0 24px}.shop-dropdown .menu a{display:block;min-height:44px}.shop-dropdown .dropbtn{white-space:nowrap}
+
+/* Icon-only contacts: fixed side rail on desktop, compact bottom rail on phones. */
+.fixed-contact-actions{position:fixed;right:max(14px,env(safe-area-inset-right));top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:10px;padding:8px;background:rgba(255,255,255,.96);border:1px solid #dedede;border-radius:18px;box-shadow:0 5px 24px rgba(0,0,0,.13)}
+.fixed-contact-actions .fixed-contact-button{display:flex;align-items:center;justify-content:center;width:48px;height:48px;min-width:48px;flex:none;border:1px solid #111;border-radius:12px;background:#111;color:#fff;text-decoration:none;box-sizing:border-box;transition:background .15s}
+.fixed-contact-actions .fixed-contact-button.whatsapp{background:#25d366;border-color:#25d366;color:#fff}
+.fixed-contact-actions .fixed-contact-button:hover{background:#333}
+.fixed-contact-actions .fixed-contact-button.whatsapp:hover{background:#128c7e}
+.fixed-contact-actions .fixed-contact-button:focus-visible{outline:3px solid #2463a5;outline-offset:3px}
+.fixed-contact-actions svg{display:block;width:24px;height:24px;flex:none}
+@media(max-width:700px){.fixed-contact-actions{top:auto;bottom:max(12px,env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right));transform:none;flex-direction:row;gap:8px;padding:6px;border-radius:16px}body:has(.fixed-contact-actions){padding-bottom:90px}}
+@media print{.fixed-contact-actions{display:none}}
