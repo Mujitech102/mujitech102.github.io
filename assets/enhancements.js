@@ -22,6 +22,21 @@
     document.querySelectorAll('.w-pick,.w-care-pick').forEach(link=>link.addEventListener('click',()=>{
       const options=document.getElementById('website-options');if(options)options.open=true;
     }));
+    // Shop categories are reachable from every shared header.
+    const shopCopy={de:['Shop','Alle Produkte','Gaming-PCs'],en:['Shop','All products','Gaming PCs'],fr:['Boutique','Tous les produits','PC gaming'],it:['Shop','Tutti i prodotti','PC gaming']};
+    const copy=shopCopy[lang]||shopCopy.de;
+    document.querySelectorAll('.navlinks > a').forEach(link=>{
+      if(!new URL(link.href,location.href).pathname.endsWith('/shop.html'))return;
+      const base=new URL(link.href,location.href);
+      const group=document.createElement('div');group.className='dropdown shop-dropdown';
+      const button=document.createElement('button');button.className='dropbtn';button.type='button';button.textContent=copy[0]+' ▾';button.setAttribute('aria-expanded','false');
+      const menu=document.createElement('div');menu.className='menu';
+      const targets=[[base.pathname,copy[1]],[base.pathname+'#smartphones','iPhones'],[base.pathname.replace('shop.html','gaming-pcs.html'),copy[2]]];
+      targets.forEach(([href,label])=>{const a=document.createElement('a');a.href=href;a.textContent=label;menu.append(a);});
+      group.append(button,menu);link.replaceWith(group);
+      button.addEventListener('click',event=>{event.stopPropagation();const open=!group.classList.contains('open');document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));group.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));});
+      group.addEventListener('keydown',event=>{if(event.key==='Escape'){group.classList.remove('open');button.setAttribute('aria-expanded','false');button.focus();}});
+    });
     // Keep existing navigation handlers; sync accessibility across variants.
     const nav=document.querySelector('.navlinks');
     const btn=document.querySelector('.mobilebtn');
