@@ -88,28 +88,46 @@
       if(/daten|backup|datensicherung|recovery|recuper|donnees|data loss/.test(q))return 'data';
       if(/langsam|slow|lent|lento|optimier|ssd|ram/.test(q))return 'computer';
       if(/firma|unternehmen|kmu|business|company|pme|aziend|microsoft|workspace|it.support/.test(q))return 'business';
-      if(/display|bildschirm|screen|ecran|schermo|touch|glas/.test(q))return 'screen';
+      if(/display|bildschirm|screen|ecran|schermo|touch|glas|oled|\blcd\b/.test(q))return 'screen';
       if(/akku|battery|batterie|batteria/.test(q))return 'battery';
       if(/repar|repair|defekt|kaputt|broken|guasto|iphone|samsung|tablet|laptop|notebook|smartphone/.test(q))return 'repair';
       return null;
     };
     const priceCopy=({de:{ask:'Welche Reparatur brauchst du für',intro:'Die Preise für',choose:'Bitte nenne dein genaues Modell (z. B. iPhone 15 Pro) und die Reparaturart (z. B. Display oder Akku).',unknown:'Für diese Reparatur ist kein passender Preis hinterlegt. Bitte frage Andrit persönlich.',link:'Zur Preisliste',request:'Auf Anfrage',note:'Preis gilt für die genannte Teilevariante. Verfügbarkeit und Eignung werden vor Auftragserteilung bestätigt; weitere Defekte und Versand werden separat vereinbart.'},en:{ask:'Which repair do you need for',intro:'Repair prices for',choose:'Please specify the exact model (e.g. iPhone 15 Pro) and repair (e.g. screen or battery).',unknown:'No matching price is listed for this repair. Please ask Andrit.',link:'See price list',request:'On request',note:'Price applies to the specified part variant. Availability and suitability are confirmed before an order; other faults and shipping are agreed separately.'},fr:{ask:'Quelle réparation souhaitez-vous pour',intro:'Prix pour',choose:'Précisez le modèle exact (p. ex. iPhone 15 Pro) et la réparation (écran ou batterie).',unknown:'Aucun prix correspondant à cette réparation. Contactez Andrit.',link:'Voir les tarifs',request:'Sur demande',note:'Prix pour la variante indiquée. Disponibilité et compatibilité confirmées avant commande ; autres pannes et envoi convenus séparément.'},it:{ask:'Quale riparazione ti serve per',intro:'Prezzi per',choose:'Indica il modello esatto (es. iPhone 15 Pro) e la riparazione (schermo o batteria).',unknown:'Nessun prezzo corrispondente a questa riparazione. Contatta Andrit.',link:'Vedi i prezzi',request:'Su richiesta',note:'Prezzo per la variante indicata. Disponibilità e compatibilità confermate prima dell’ordine; altri guasti e spedizione concordati separatamente.'}})[lang]||{};
+    const storageData={"iPhone 18 Pro Max":"256 GB, 512 GB, 1 TB, 2 TB","iPhone 18 Pro":"256 GB, 512 GB, 1 TB, 2 TB","iPhone 17e":"256 GB, 512 GB","iPhone 17 Pro Max":"256 GB, 512 GB, 1 TB, 2 TB","iPhone 17 Pro":"256 GB, 512 GB, 1 TB","iPhone 17":"256 GB, 512 GB","iPhone Air":"256 GB, 512 GB, 1 TB","iPhone 16e":"128 GB, 256 GB, 512 GB","iPhone 16 Pro Max":"256 GB, 512 GB, 1 TB","iPhone 16 Pro":"128 GB, 256 GB, 512 GB, 1 TB","iPhone 16 Plus":"128 GB, 256 GB, 512 GB","iPhone 16":"128 GB, 256 GB, 512 GB","iPhone 15 Pro Max":"256 GB, 512 GB, 1 TB","iPhone 15 Pro":"128 GB, 256 GB, 512 GB, 1 TB","iPhone 15 Plus":"128 GB, 256 GB, 512 GB","iPhone 15":"128 GB, 256 GB, 512 GB","iPhone 14 Pro Max":"128 GB, 256 GB, 512 GB, 1 TB","iPhone 14 Pro":"128 GB, 256 GB, 512 GB, 1 TB","iPhone 14 Plus":"128 GB, 256 GB, 512 GB","iPhone 14":"128 GB, 256 GB, 512 GB","iPhone SE (3rd generation)":"64 GB, 128 GB, 256 GB","iPhone 13 Pro Max":"128 GB, 256 GB, 512 GB, 1 TB","iPhone 13 Pro":"128 GB, 256 GB, 512 GB, 1 TB","iPhone 13":"128 GB, 256 GB, 512 GB","iPhone 13 mini":"128 GB, 256 GB, 512 GB","iPhone 12 Pro Max":"128, 256, 512 GB","iPhone 12 Pro":"128, 256, 512 GB","iPhone 12":"64, 128, 256 GB","iPhone 12 mini":"64, 128, 256 GB","iPhone SE (2nd generation)":"64, 128, 256 GB","iPhone 11 Pro":"64, 256, 512 GB","iPhone 11 Pro Max":"64, 256, 512 GB","iPhone 11":"64, 128, 256 GB","iPhone XS":"64, 256, 512 GB","iPhone XS Max":"64, 256, 512 GB","iPhone XR":"64, 128, 256 GB","iPhone X":"64, 256 GB","iPhone 8":"64, 128, 256 GB","iPhone 8 Plus":"64, 128, 256 GB","iPhone 7":"32, 128, 256 GB","iPhone 7 Plus":"32, 128, 256 GB","iPhone SE (1st generation)":"16, 32, 64, 128 GB","iPhone 6s":"16, 32, 64, 128 GB","iPhone 6s Plus":"16, 32, 64, 128 GB","iPhone 6":"16, 32, 64, 128 GB","iPhone 6 Plus":"16, 64, 128 GB","iPhone 5s":"16, 32, 64 GB","iPhone 5c":"8, 16, 32 GB","iPhone 5":"16, 32, 64 GB","iPhone 4s":"8, 16, 32, 64 GB","iPhone 4":"8, 16, 32 GB","iPhone 3GS":"8, 16, 32 GB","iPhone 3G":"8, 16 GB","iPhone":"4, 8, 16 GB"};
+    const storageAnswer=question=>{
+      const q=normalize(question);if(!/speicherkapazit|speichergross|storage|capacity|capacite|capacita|wieviel.*speicher|wie viel.*speicher|wie.*gb|how.*gb|combien.*go|quanti.*gb/.test(q))return false;
+      const clean=s=>normalize(s).replace(/[^a-z0-9]+/g,' ').trim();const padded=' '+clean(question)+' ';
+      const names=Object.keys(storageData).sort((a,b)=>b.length-a.length);let model=names.find(name=>padded.includes(' '+clean(name)+' '));let inferred=false;
+      if(!model&&!/xiaomi|samsung|galaxy|pixel|oppo|oneplus|huawei|surface|ipad/.test(q)){model=names.filter(name=>/^iPhone \d/.test(name)).find(name=>padded.includes(' '+clean(name.replace(/^iPhone /,''))+' '));inferred=!!model;}
+      if(!model){add(({de:'Bitte nenne das genaue Gerät und den Hersteller. Nicht jedes Modell hat dieselben Speichergrößen.',en:'Please specify the exact device and manufacturer. Storage options vary by model.',fr:'Précisez le modèle exact et le fabricant. Les capacités varient selon le modèle.',it:'Indica il modello esatto e il produttore. Le capacità variano in base al modello.'})[lang],false,null,true);return true;}
+      const copy=({de:[inferred?'Wenn du das ':'Das ',' meinst: ',' ist erhältlich mit ','. Welche Variante dein eigenes Gerät hat, kann ich aus der Modellbezeichnung allein nicht erkennen. Für einen Reparaturpreis nenne bitte auch die Reparaturart.','Herstellerangaben bei Apple'],en:[inferred?'If you mean the ':'The ',': ',' is available with ','. I cannot identify your device’s specific capacity from the model name alone. For repair pricing, please specify the repair.','Apple manufacturer specifications'],fr:[inferred?'Si vous parlez de l’':'L’',': ',' est disponible avec ','. Le nom du modèle ne permet pas de connaître la capacité de votre appareil. Pour un prix, précisez aussi la réparation.','Informations du fabricant Apple'],it:[inferred?'Se intendi l’':'L’',': ',' è disponibile con ','. Non posso identificare la capacità del tuo dispositivo dal solo modello. Per il prezzo, indica anche la riparazione.','Specifiche del produttore Apple']})[lang];
+      add(copy[0]+model+(inferred?copy[1]:copy[2])+(inferred?({de:'verfügbar mit ',en:'available with ',fr:'disponible avec ',it:'disponibile con '})[lang]:'')+storageData[model]+copy[3]);
+      const a=el('a','mujibot-route',copy[4]+' →');a.href='https://support.apple.com/'+({de:'de-ch',en:'en-us',fr:'fr-ch',it:'it-ch'})[lang]+'/108044';a.target='_blank';a.rel='noopener noreferrer';log.lastChild.append(a);previousModel=model;return true;
+    };
+    const displayGuide=()=>({
+      de:'LCD: preiswerte Bildschirmtechnik; als Ersatz für OLED können Farben und Kontrast schwächer sein.\nSoft-OLED: OLED-Ersatz mit flexiblem Panel und kräftigem Kontrast, aber kein Originalteil des Geräteherstellers.\nOriginal: Herstellerdisplay – Service Pack ist neu, Pulled ist aus einem Gerät ausgebaut.\nPremium: Die genaue Displaytechnik wird für dein Modell vor dem Auftrag bestätigt.',
+      en:'LCD: economical screen technology; when replacing OLED, colours and contrast may be weaker.\nSoft OLED: an OLED replacement with a flexible panel and strong contrast, but not an original device-maker part.\nOriginal: a manufacturer display – Service Pack is new; Pulled is removed from a device.\nPremium: the exact screen technology is confirmed for your model before the order.',
+      fr:'LCD : technologie économique ; en remplacement d’un OLED, les couleurs et le contraste peuvent être moins bons.\nSoft-OLED : écran OLED de remplacement à dalle flexible et contraste élevé, sans être une pièce originale du fabricant.\nOriginal : écran du fabricant – Service Pack neuf, Pulled retiré d’un appareil.\nPremium : la technologie exacte est confirmée pour votre modèle avant commande.',
+      it:'LCD: tecnologia economica; sostituendo un OLED, colori e contrasto possono essere inferiori.\nSoft-OLED: ricambio OLED con pannello flessibile e contrasto elevato, ma non originale del produttore.\nOriginale: display del produttore – Service Pack nuovo, Pulled rimosso da un dispositivo.\nPremium: la tecnologia esatta viene confermata per il tuo modello prima dell’ordine.'
+    })[lang];
+    const repairChoices=()=>{const box=el('div','mujibot-contact');[[( {de:'Display',en:'Screen',fr:'Écran',it:'Schermo'})[lang],'screen'],[({de:'Akku',en:'Battery',fr:'Batterie',it:'Batteria'})[lang],'battery']].forEach(([label,topic])=>{const b=el('button','',label);b.type='button';b.addEventListener('click',()=>reply(topic,label));box.append(b);});log.lastChild.append(box);log.scrollTop=log.scrollHeight;};
     const priceAnswer=(question,topic)=>{
       if(['danger','sensitive','callback','warranty','website','sell','shop'].includes(topic)||!window.MujiPriceBook)return false;
       const clean=value=>normalize(value).replace(/\+/g,' plus ').replace(/[^a-z0-9]+/g,' ').trim();const q=' '+clean(question)+' ';
       const models=[...new Set(window.MujiPriceBook.rows.map(r=>r[0]))].sort((a,b)=>b.length-a.length);
-      const model=models.find(value=>q.includes(' '+clean(value)+' '));
+      let model=models.find(value=>q.includes(' '+clean(value)+' '));if(!model&&!/xiaomi|samsung|galaxy|pixel|oppo|oneplus|huawei|surface|ipad/.test(normalize(question)))model=models.filter(value=>/^iPhone \d/.test(value)).find(value=>q.includes(' '+clean(value.replace(/^iPhone /,''))+' '));
       const requested=/preis|kost|price|cost|combien|prix|quanto|how much/.test(normalize(question));
-      const repairWords=/display|screen|ecran|schermo|glas|vetro|vitre|akku|battery|batterie|batteria|lade|charging|charge|ricarica|kamera|camera|fotocamera|linse|lens|lentille|back|ruck|retro|arriere|speaker|lautsprecher|haut.parleur|altoparlante|mikro|micro|tastatur|keyboard|clavier|tastiera|usb/.test(normalize(question));
+      const repairWords=/display|screen|ecran|schermo|oled|\blcd\b|glas|vetro|vitre|akku|battery|batterie|batteria|lade|charging|charge|ricarica|kamera|camera|fotocamera|linse|lens|lentille|back|ruck|retro|arriere|speaker|lautsprecher|haut.parleur|altoparlante|mikro|micro|tastatur|keyboard|clavier|tastiera|usb/.test(normalize(question));
       if(!model&&!(previousModel&&repairWords)){if(requested&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(normalize(question))){add(priceCopy.choose,false,null,true);return true;}return false;}
       if(!model&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(normalize(question))){add(priceCopy.choose,false,null,true);return true;}
       const chosen=model||previousModel;previousModel=chosen;
-      if(!repairWords){add(priceCopy.ask+' '+chosen+'?');return true;}
+      if(!repairWords){add(priceCopy.ask+' '+chosen+'?');repairChoices();return true;}
       const nq=normalize(question);let pattern=null;
       if(/linse|lens|lentille/.test(nq))pattern=/kameralinse/i;
       else if(/frontkamera|front camera|camera avant|fotocamera frontale/.test(nq))pattern=/frontkamera/i;
       else if(/ruck|back glass|back cover|retro|arriere/.test(nq))pattern=/rückglas|rückseite|gehäuse/i;
-      else if(/display|screen|ecran|schermo|glas|vetro|vitre/.test(nq))pattern=/display|lcd|bildanzeige|^glas/i;
+      else if(/display|screen|ecran|schermo|oled|\blcd\b|glas|vetro|vitre/.test(nq))pattern=/display|lcd|bildanzeige|^glas/i;
       else if(/akku|battery|batterie|batteria/.test(nq))pattern=/akku/i;
       else if(/lade|charging|charge|ricarica|usb/.test(nq))pattern=/ladeanschluss|usb-c/i;
       else if(/kamera|camera|fotocamera/.test(nq))pattern=/kamera/i;
@@ -118,14 +136,18 @@
       else if(/tastatur|keyboard|clavier|tastiera/.test(nq))pattern=/tastatur/i;
       let rows=window.MujiPriceBook.rows.filter(r=>r[0]===chosen&&pattern&&pattern.test(r[1]));
       if(/premium/.test(nq))rows=rows.filter(r=>/premium/i.test(r[1]));else if(/pulled/.test(nq))rows=rows.filter(r=>/pulled/i.test(r[1]));else if(/service pack/.test(nq))rows=rows.filter(r=>/service pack/i.test(r[1]));
+      const isDisplay=rows.some(r=>/display|lcd|bildanzeige/i.test(r[1]));
       if(!rows.length){add(priceCopy.unknown,false,null,true);return true;}
+      if(isDisplay)add(displayGuide());
       track('mujibot_price_view');
       add(priceCopy.intro+' '+chosen+':\n'+rows.map(r=>(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])+': '+(r[2]===null?priceCopy.request:'CHF '+r[2])).join('\n')+'\n\n'+priceCopy.note,false,null,true);
       const a=el('a','mujibot-route',priceCopy.link+' →');a.href=base+'preise.html?model='+encodeURIComponent(chosen);log.lastChild.append(a);return true;
     };
     const reply = (topic, question) => {
       add(question,true);
+      if(!['danger','sensitive'].includes(topic)&&storageAnswer(question))return;
       if(priceAnswer(question,topic))return;
+      if(topic==='screen')add(displayGuide());
       if(topic==='hello')add(t.intro);
       else if(topic==='callback'){
         add(cb.intro);const box=el('form','mujibot-callback');const fields={};
