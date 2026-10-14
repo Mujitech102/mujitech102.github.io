@@ -134,3 +134,13 @@
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready); else ready();
 })();
+
+// Shared MujiBot loader for every content page.
+(() => {
+  if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {
+    const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261014-2';document.head.append(style);
+  }
+  if (!document.querySelector('script[src*="/assets/mujibot.js"]')) {
+    const script=document.createElement('script');script.src='/assets/mujibot.js?v=20261014-2';script.defer=true;document.head.append(script);
+  }
+})();
