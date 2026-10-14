@@ -64,8 +64,8 @@
     let previousTopic=null;let previousModel=null;
     const add = (text,user=false,topic=null,contacts=false) => {
       const message=el('div','mujibot-message '+(user?'mujibot-user':'mujibot-answer'));message.append(el('p','',text));
-      if(topic&&destinations[topic]){const a=el('a','mujibot-route',t.link+' →');a.href=base+destinations[topic];message.append(a);}
-      if(contacts){const links=el('div','mujibot-contact');[['WhatsApp','https://wa.me/41768444673'],[t.phone,'tel:+41768444673'],[t.email,'mailto:info@mujitech.ch']].forEach(([label,href])=>{const a=el('a','',label);a.href=href;if(label==='WhatsApp'){a.target='_blank';a.rel='noopener noreferrer';}links.append(a);});message.append(links);}
+      if(topic==='contact'&&destinations[topic]){const a=el('a','mujibot-route',t.link+' →');a.href=base+destinations[topic];message.append(a);}
+      if(contacts&&previousTopic==='contact'){const links=el('div','mujibot-contact');[['WhatsApp','https://wa.me/41768444673'],[t.phone,'tel:+41768444673'],[t.email,'mailto:info@mujitech.ch']].forEach(([label,href])=>{const a=el('a','',label);a.href=href;if(label==='WhatsApp'){a.target='_blank';a.rel='noopener noreferrer';}links.append(a);});message.append(links);}
       log.append(message);while(log.children.length>40)log.firstChild.remove();log.scrollTop=log.scrollHeight;
     };
     const normalize = s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ß/g,'ss');
@@ -114,34 +114,52 @@
     const repairChoices=()=>{const box=el('div','mujibot-contact');[[( {de:'Display',en:'Screen',fr:'Écran',it:'Schermo'})[lang],'screen'],[({de:'Akku',en:'Battery',fr:'Batterie',it:'Batteria'})[lang],'battery']].forEach(([label,topic])=>{const b=el('button','',label);b.type='button';b.addEventListener('click',()=>reply(topic,label));box.append(b);});log.lastChild.append(box);log.scrollTop=log.scrollHeight;};
     const priceAnswer=(question,topic)=>{
       if(['danger','sensitive','callback','warranty','website','sell','shop'].includes(topic)||!window.MujiPriceBook)return false;
-      const clean=value=>normalize(value).replace(/\+/g,' plus ').replace(/[^a-z0-9]+/g,' ').trim();const q=' '+clean(question)+' ';
+      const clean=value=>normalize(value).replace(/\+/g,' plus ').replace(/[^a-z0-9]+/g,' ').trim();
+      const q=normalize(question).replace(/\+/g,' plus ');
       const models=[...new Set(window.MujiPriceBook.rows.map(r=>r[0]))].sort((a,b)=>b.length-a.length);
-      let model=models.find(value=>q.includes(' '+clean(value)+' '));if(!model&&!/xiaomi|samsung|galaxy|pixel|oppo|oneplus|huawei|surface|ipad/.test(normalize(question)))model=models.filter(value=>/^iPhone \d/.test(value)).find(value=>q.includes(' '+clean(value.replace(/^iPhone /,''))+' '));
-      const requested=/preis|kost|price|cost|combien|prix|quanto|how much/.test(normalize(question));
-      const repairWords=/display|screen|ecran|schermo|oled|\blcd\b|glas|vetro|vitre|akku|battery|batterie|batteria|lade|charging|charge|ricarica|kamera|camera|fotocamera|linse|lens|lentille|back|ruck|retro|arriere|speaker|lautsprecher|haut.parleur|altoparlante|mikro|micro|tastatur|keyboard|clavier|tastiera|usb/.test(normalize(question));
-      if(!model&&!(previousModel&&repairWords)){if(requested&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(normalize(question))){add(priceCopy.choose,false,null,true);return true;}return false;}
-      if(!model&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(normalize(question))){add(priceCopy.choose,false,null,true);return true;}
-      const chosen=model||previousModel;previousModel=chosen;
-      if(!repairWords){add(priceCopy.ask+' '+chosen+'?');repairChoices();return true;}
-      const nq=normalize(question);let pattern=null;
-      if(/linse|lens|lentille/.test(nq))pattern=/kameralinse/i;
-      else if(/frontkamera|front camera|camera avant|fotocamera frontale/.test(nq))pattern=/frontkamera/i;
-      else if(/ruck|back glass|back cover|retro|arriere/.test(nq))pattern=/rückglas|rückseite|gehäuse/i;
-      else if(/display|screen|ecran|schermo|oled|\blcd\b|glas|vetro|vitre/.test(nq))pattern=/display|lcd|bildanzeige|^glas/i;
-      else if(/akku|battery|batterie|batteria/.test(nq))pattern=/akku/i;
-      else if(/lade|charging|charge|ricarica|usb/.test(nq))pattern=/ladeanschluss|usb-c/i;
-      else if(/kamera|camera|fotocamera/.test(nq))pattern=/kamera/i;
-      else if(/speaker|lautsprecher|haut.parleur|altoparlante/.test(nq))pattern=/lautsprecher|ohrmuschel/i;
-      else if(/mikro|micro/.test(nq))pattern=/mikrofon/i;
-      else if(/tastatur|keyboard|clavier|tastiera/.test(nq))pattern=/tastatur/i;
-      let rows=window.MujiPriceBook.rows.filter(r=>r[0]===chosen&&pattern&&pattern.test(r[1]));
-      if(/premium/.test(nq))rows=rows.filter(r=>/premium/i.test(r[1]));else if(/pulled/.test(nq))rows=rows.filter(r=>/pulled/i.test(r[1]));else if(/service pack/.test(nq))rows=rows.filter(r=>/service pack/i.test(r[1]));
-      const isDisplay=rows.some(r=>/display|lcd|bildanzeige/i.test(r[1]));
-      if(!rows.length){add(priceCopy.unknown,false,null,true);return true;}
-      if(isDisplay)add(displayGuide());
-      track('mujibot_price_view');
-      add(priceCopy.intro+' '+chosen+':\n'+rows.map(r=>(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])+': '+(r[2]===null?priceCopy.request:'CHF '+r[2])).join('\n')+'\n\n'+priceCopy.note,false,null,true);
-      const a=el('a','mujibot-route',priceCopy.link+' →');a.href=base+'preise.html?model='+encodeURIComponent(chosen);log.lastChild.append(a);return true;
+      const mentions=[];
+      const scan=(name,alias)=>{
+        const tokens=clean(alias).split(' ');const pattern=new RegExp('(?<![a-z0-9])'+tokens.join('[^a-z0-9]+')+'(?![a-z0-9])','g');
+        for(const match of q.matchAll(pattern)){const start=match.index,end=start+match[0].length;if(!mentions.some(m=>start<m.end&&end>m.start))mentions.push({model:name,start,end});}
+      };
+      models.forEach(name=>scan(name,name));
+      if(!/xiaomi|samsung|galaxy|pixel|oppo|oneplus|huawei|surface|ipad/.test(q))models.filter(n=>/^iPhone \d/.test(n)).forEach(name=>scan(name,name.replace(/^iPhone /,'')));
+      mentions.sort((a,b)=>a.start-b.start);
+      const categories=[
+        ['lens',/linse|lens|lentille/,/kameralinse/i],
+        ['front',/frontkamera|front camera|camera avant|fotocamera frontale/,/frontkamera/i],
+        ['back',/ruckglas|ruckseite|back glass|back cover|retro|arriere|gehause/,/rückglas|rückseite|gehäuse/i],
+        ['screen',/display|bildschirm|screen|ecran|schermo|oled|\blcd\b|(?<!back )glas|vetro|vitre/,/display|lcd|bildanzeige|^glas/i],
+        ['battery',/akku|battery|batterie|batteria/,/akku/i],
+        ['charging',/lade|charging|charge|ricarica|usb/,/ladeanschluss|usb-c/i],
+        ['camera',/kamera|camera|fotocamera/,/^(kamera|hauptkamera|frontkamera)/i],
+        ['speaker',/speaker|lautsprecher|haut.parleur|altoparlante/,/lautsprecher|ohrmuschel/i],
+        ['micro',/mikro|micro/,/mikrofon/i],
+        ['keyboard',/tastatur|keyboard|clavier|tastiera/,/tastatur/i]
+      ];
+      const repairs=text=>{let found=categories.filter(c=>c[1].test(text));if(found.some(c=>['lens','front'].includes(c[0])))found=found.filter(c=>c[0]!=='camera');if(found.some(c=>c[0]==='back')&&!/display|screen|ecran|schermo|oled|lcd/.test(text))found=found.filter(c=>c[0]!=='screen');return found;};
+      const globalRepairs=repairs(q);
+      if(!mentions.length&&previousModel&&globalRepairs.length&&!/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(q))mentions.push({model:previousModel,start:0,end:0});
+      if(!mentions.length){if(/preis|kost|price|cost|combien|prix|quanto|how much/.test(q)&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(q)){add(priceCopy.choose);return true;}return false;}
+      const output=[];
+      mentions.forEach((mention,index)=>{
+        const tail=q.slice(mention.end,mentions[index+1]?.start??q.length).split(/[,;.!?]/)[0];
+        const before=q.slice(mentions[index-1]?.end??0,mention.start).split(/[,;.!?]/).pop();
+        const leadingRepairs=repairs(q.slice(0,mentions[0].start));
+        let wanted=leadingRepairs.length?repairs(before):repairs(tail);if(!wanted.length)wanted=leadingRepairs.length?repairs(tail):repairs(before);if(!wanted.length)wanted=globalRepairs;
+        if(!wanted.length){output.push(priceCopy.ask+' '+mention.model+'?');return;}
+        const qualifier=normalize(tail+' '+before);
+        const matched=window.MujiPriceBook.rows.filter(r=>r[0]===mention.model&&wanted.some(c=>c[2].test(r[1])));
+        let rows=matched;
+        if(/soft.?oled/.test(qualifier))rows=matched.filter(r=>/soft.?oled|premium/i.test(r[1]));
+        else if(/pulled/.test(qualifier))rows=matched.filter(r=>/pulled/i.test(r[1]));
+        else if(/service pack/.test(qualifier))rows=matched.filter(r=>/service pack/i.test(r[1]));
+        const lines=rows.map(r=>(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])+': '+(r[2]===null?priceCopy.request:'CHF '+Number(r[2]).toFixed(2)));
+        wanted.filter(c=>!rows.some(r=>c[2].test(r[1]))).forEach(c=>{const labels={de:{lens:'Kameralinse',front:'Frontkamera',back:'Rückseite',screen:'Display',battery:'Akku',charging:'Ladeanschluss',camera:'Kamera',speaker:'Lautsprecher',micro:'Mikrofon',keyboard:'Tastatur'},en:{lens:'Camera lens',front:'Front camera',back:'Back cover',screen:'Screen',battery:'Battery',charging:'Charging port',camera:'Camera',speaker:'Speaker',micro:'Microphone',keyboard:'Keyboard'},fr:{lens:'Lentille',front:'Caméra avant',back:'Dos',screen:'Écran',battery:'Batterie',charging:'Port de charge',camera:'Caméra',speaker:'Haut-parleur',micro:'Microphone',keyboard:'Clavier'},it:{lens:'Lente',front:'Fotocamera frontale',back:'Retro',screen:'Schermo',battery:'Batteria',charging:'Porta di ricarica',camera:'Fotocamera',speaker:'Altoparlante',micro:'Microfono',keyboard:'Tastiera'}};lines.push(labels[lang][c[0]]+': '+priceCopy.request);});
+        output.push(mention.model+':\n'+[...new Set(lines)].join('\n'));
+      });
+      previousModel=mentions.length===1?mentions[0].model:null;
+      track('mujibot_price_view');add([...new Set(output)].join('\n\n'));return true;
     };
     const reply = (topic, question) => {
       add(question,true);
@@ -157,7 +175,8 @@
         fields.to.addEventListener('input',()=>fields.to.setCustomValidity(''));box.addEventListener('submit',e=>{e.preventDefault();compose('email');});wa.addEventListener('click',()=>compose('wa'));log.lastChild.append(box);log.scrollTop=log.scrollHeight;
       }
       else if(topic==='sensitive')add(t.sensitive,false,null,true);
-      else if(!topic||topic==='contact')add(t.fallback,false,null,true);
+      else if(topic==='contact'){previousTopic='contact';add(t.fallback,false,null,true);previousTopic=null;}
+      else if(!topic)add(({de:'Bitte nenne dein Modell und deine Frage etwas genauer.',en:'Please specify your model and question.',fr:'Précisez votre modèle et votre question.',it:'Indica il modello e la domanda.'})[lang]);
       else {add(knowledge[topic],false,topic,['danger','data','appointment','price'].includes(topic));previousTopic=topic;}
     };
     const setOpen = open=>{panel.hidden=!open;launch.setAttribute('aria-expanded',String(open));if(open){track('mujibot_open');input.focus({preventScroll:true});}else launch.focus({preventScroll:true});};
@@ -169,3 +188,4 @@
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
+
