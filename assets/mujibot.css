@@ -18,3 +18,5 @@ body .mujibot .mujibot-header{background:#111!important;color:#fff!important}
 .mujibot-callback{display:grid;gap:8px;padding:0;margin:12px 0 0}.mujibot-callback label{display:grid;gap:3px;font-size:12px}.mujibot-callback input{min-width:0;width:100%;padding:8px;border:1px solid #bbb;border-radius:8px;color:#111;background:#fff;font-size:16px}.mujibot-callback button{padding:9px;border:1px solid #bbb;border-radius:8px;background:#fff;color:#111;cursor:pointer}
 
 @media(max-height:650px){.mujibot-log{min-height:40px}.mujibot-header{padding:8px}.mujibot-note{display:none}.mujibot-language{margin:4px 14px}.mujibot-topics{padding:5px 10px}.mujibot-topics button{min-height:28px;padding:4px 7px}.mujibot-privacy{font-size:9px!important}}
+
+.mujibot-answer p{white-space:pre-line}
