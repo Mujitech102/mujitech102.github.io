@@ -141,25 +141,42 @@
       const globalRepairs=repairs(q);
       if(!mentions.length&&previousModel&&globalRepairs.length&&!/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(q))mentions.push({model:previousModel,start:0,end:0});
       if(!mentions.length){if(/preis|kost|price|cost|combien|prix|quanto|how much/.test(q)&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(q)){add(priceCopy.choose);return true;}return false;}
-      const output=[];
+      const output=[];let totalCents=0,pricedItems=0,requestedItems=0,needsChoice=false,needsQuote=false;
+      const sumCopy=({de:{total:"Gesamtpreis",partial:"Zwischensumme der eindeutig bepreisten Reparaturen",choose:"Für den Gesamtpreis bitte noch die gewünschte Teilevariante auswählen.",quote:"Reparaturen auf Anfrage sind noch nicht enthalten.",unit:"Die Summe gilt jeweils für ein Gerät pro Nennung, sofern keine Anzahl angegeben ist."},en:{total:"Total price",partial:"Subtotal for repairs with an unambiguous price",choose:"Please choose the part variant before I calculate the full total.",quote:"Repairs on request are not included yet.",unit:"The total uses one device per mention unless a quantity is specified."},fr:{total:"Prix total",partial:"Sous-total des réparations au prix déterminé",choose:"Choisissez la variante de pièce pour calculer le total complet.",quote:"Les réparations sur demande ne sont pas encore incluses.",unit:"Le total compte un appareil par mention, sauf quantité précisée."},it:{total:"Prezzo totale",partial:"Subtotale delle riparazioni con prezzo definito",choose:"Scegli la variante del ricambio per calcolare il totale completo.",quote:"Le riparazioni su richiesta non sono ancora incluse.",unit:"Il totale considera un dispositivo per ogni menzione, salvo quantità indicata."}})[lang];
       mentions.forEach((mention,index)=>{
         const tail=q.slice(mention.end,mentions[index+1]?.start??q.length).split(/[,;.!?]/)[0];
         const before=q.slice(mentions[index-1]?.end??0,mention.start).split(/[,;.!?]/).pop();
         const leadingRepairs=repairs(q.slice(0,mentions[0].start));
         let wanted=leadingRepairs.length?repairs(before):repairs(tail);if(!wanted.length)wanted=leadingRepairs.length?repairs(tail):repairs(before);if(!wanted.length)wanted=globalRepairs;
-        if(!wanted.length){output.push(priceCopy.ask+' '+mention.model+'?');return;}
-        const qualifier=normalize(tail+' '+before);
+        if(!wanted.length){output.push(priceCopy.ask+' '+mention.model+'?');needsChoice=true;requestedItems++;return;}
+        const countMatch=q.slice(0,mention.start).match(/(?:^|[^a-z0-9])(\d{1,2})\s*(?:x\s*)?$/);const quantity=countMatch?Math.max(1,Number(countMatch[1])):1;
+        requestedItems+=wanted.length*quantity;
+        const qualifier=normalize(leadingRepairs.length?before:tail);
         const matched=window.MujiPriceBook.rows.filter(r=>r[0]===mention.model&&wanted.some(c=>c[2].test(r[1])));
         let rows=matched;
-        if(/soft.?oled/.test(qualifier))rows=matched.filter(r=>/soft.?oled|premium/i.test(r[1]));
-        else if(/pulled/.test(qualifier))rows=matched.filter(r=>/pulled/i.test(r[1]));
-        else if(/service pack/.test(qualifier))rows=matched.filter(r=>/service pack/i.test(r[1]));
+        if(/soft.?oled/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/soft.?oled|premium/i.test(r[1]));
+        else if(/pulled/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/pulled/i.test(r[1]));
+        else if(/service pack/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/service pack/i.test(r[1]));
+        const counted=new Set();
+        wanted.forEach(category=>{
+          const options=rows.filter(r=>category[2].test(r[1]));
+          if(options.length===1&&options[0][2]!==null){const row=options[0];const key=row[1];if(!counted.has(key)){counted.add(key);totalCents+=Math.round(Number(row[2])*100)*quantity;pricedItems+=quantity;}}
+          else if(options.length>1){needsChoice=true;if(options.some(r=>r[2]===null))needsQuote=true;}
+          else needsQuote=true;
+        });
         const lines=rows.map(r=>(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])+': '+(r[2]===null?priceCopy.request:'CHF '+Number(r[2]).toFixed(2)));
         wanted.filter(c=>!rows.some(r=>c[2].test(r[1]))).forEach(c=>{const labels={de:{lens:'Kameralinse',front:'Frontkamera',back:'Rückseite',screen:'Display',battery:'Akku',charging:'Ladeanschluss',camera:'Kamera',speaker:'Lautsprecher',micro:'Mikrofon',keyboard:'Tastatur'},en:{lens:'Camera lens',front:'Front camera',back:'Back cover',screen:'Screen',battery:'Battery',charging:'Charging port',camera:'Camera',speaker:'Speaker',micro:'Microphone',keyboard:'Keyboard'},fr:{lens:'Lentille',front:'Caméra avant',back:'Dos',screen:'Écran',battery:'Batterie',charging:'Port de charge',camera:'Caméra',speaker:'Haut-parleur',micro:'Microphone',keyboard:'Clavier'},it:{lens:'Lente',front:'Fotocamera frontale',back:'Retro',screen:'Schermo',battery:'Batteria',charging:'Porta di ricarica',camera:'Fotocamera',speaker:'Altoparlante',micro:'Microfono',keyboard:'Tastiera'}};lines.push(labels[lang][c[0]]+': '+priceCopy.request);});
-        output.push(mention.model+':\n'+[...new Set(lines)].join('\n'));
+        output.push((quantity>1?quantity+' × ':'')+mention.model+':\n'+[...new Set(lines)].join('\n'));
       });
       previousModel=mentions.length===1?mentions[0].model:null;
-      track('mujibot_price_view');add([...new Set(output)].join('\n\n'));return true;
+      const sections=[...new Set(output)];
+      if(requestedItems>1){
+        if(pricedItems)sections.push((needsChoice||needsQuote?sumCopy.partial:sumCopy.total)+': CHF '+(totalCents/100).toFixed(2));
+        if(needsChoice)sections.push(sumCopy.choose);
+        if(needsQuote)sections.push(sumCopy.quote);
+        if(pricedItems)sections.push(sumCopy.unit);
+      }
+      track('mujibot_price_view');add(sections.join('\n\n'));return true;
     };
     const reply = (topic, question) => {
       add(question,true);
@@ -188,4 +205,5 @@
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
+
 
