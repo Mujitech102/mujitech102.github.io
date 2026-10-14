@@ -147,3 +147,16 @@
   const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261014-1');
   data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261014-2')).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261014-4')).catch(()=>{});
 })();
+
+/* Keep only the site's main header fixed; never MujiBot's header. */
+(() => {
+ const ready=()=>{
+  const header=document.body.querySelector(':scope > header');
+  if(!header||header.classList.contains('muji-fixed-site-header'))return;
+  const css=document.createElement('link');css.rel='stylesheet';css.href='/assets/fixed-header.css?v=20261014-1';document.head.append(css);
+  const spacer=document.createElement('div');spacer.className='muji-header-spacer';spacer.setAttribute('aria-hidden','true');header.before(spacer);header.classList.add('muji-fixed-site-header');
+  const sync=()=>document.documentElement.style.setProperty('--muji-header-height',Math.ceil(header.getBoundingClientRect().height)+'px');
+  css.addEventListener('load',sync);sync();if(window.ResizeObserver)new ResizeObserver(sync).observe(header);else window.addEventListener('resize',sync);
+ };
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
