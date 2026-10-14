@@ -145,7 +145,7 @@
   if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261014-3';document.head.append(style);}
   const load=src=>new Promise((resolve,reject)=>{if(document.querySelector('script[src*="'+src.split('?')[0]+'"]')){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.append(script);});
   const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261014-1');
-  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261014-2')).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261014-4')).catch(()=>{});
+  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261014-2')).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261014-5')).catch(()=>{});
 })();
 
 /* Keep only the site's main header fixed; never MujiBot's header. */
