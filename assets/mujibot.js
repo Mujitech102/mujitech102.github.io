@@ -41,7 +41,7 @@
     };
     const knowledge = answers[lang] || answers.de;
     const cb=({de:{button:'Rückruf anfragen',intro:'Wähle dein Wunschdatum und eine Uhrzeit oder ein Zeitfenster. Sende die Anfrage mit deiner Rückrufnummer. Der Termin ist erst nach persönlicher Bestätigung vereinbart.',date:'Wunschdatum',from:'Uhrzeit / von',to:'Bis (optional)',phone:'Rückrufnummer',send:'Anfrage per E-Mail',wa:'Anfrage per WhatsApp',subject:'Rückrufanfrage'},en:{button:'Request a callback',intro:'Choose a preferred date and time or time window. Include your callback number. The appointment requires personal confirmation.',date:'Preferred date',from:'Time / from',to:'Until (optional)',phone:'Callback number',send:'Request by email',wa:'Request via WhatsApp',subject:'Callback request'},fr:{button:'Demander un rappel',intro:'Choisissez une date et une heure ou un créneau. Indiquez votre numéro. Le rendez-vous nécessite une confirmation personnelle.',date:'Date souhaitée',from:'Heure / dès',to:'Jusqu’à (facultatif)',phone:'Numéro de rappel',send:'Demander par e-mail',wa:'Demander via WhatsApp',subject:'Demande de rappel'},it:{button:'Richiedi una chiamata',intro:'Scegli una data e un orario o una fascia oraria. Indica il tuo numero. L’appuntamento richiede conferma personale.',date:'Data desiderata',from:'Ora / dalle',to:'Alle (facoltativo)',phone:'Numero da richiamare',send:'Richiedi via e-mail',wa:'Richiedi via WhatsApp',subject:'Richiesta di chiamata'}})[lang]||{};
-    const destinations = {repair:'anfrage.html#reparatur',screen:'anfrage.html?problem=display#reparatur',battery:'anfrage.html?problem=battery#reparatur',price:'anfrage.html#reparatur',shipping:'reparatur-schweiz.html',appointment:'kontakt.html',warranty:'reparaturen.html',wifi:'privatkunden.html?service=WLAN%20%26%20Internet-Hilfe#service-anfrage',computer:'privatkunden.html#optimierung',business:'kontakt.html#business',website:'websites.html',sell:'geraet-verkaufen.html',shop:'shop.html',danger:'kontakt.html',data:'privatkunden.html#daten'};
+    const destinations = {repair:'anfrage.html#reparatur',screen:'anfrage.html?problem=display#reparatur',battery:'anfrage.html?problem=battery#reparatur',price:'preise.html',shipping:'reparatur-schweiz.html',appointment:'kontakt.html',warranty:'reparaturen.html',wifi:'privatkunden.html?service=WLAN%20%26%20Internet-Hilfe#service-anfrage',computer:'privatkunden.html#optimierung',business:'kontakt.html#business',website:'websites.html',sell:'geraet-verkaufen.html',shop:'shop.html',danger:'kontakt.html',data:'privatkunden.html#daten'};
     const robot = '<svg viewBox="0 0 64 64" fill="none" aria-hidden="true" focusable="false"><path d="M32 9v7" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="7" r="4" fill="currentColor"/><rect x="12" y="17" width="40" height="31" rx="12" fill="white" stroke="currentColor" stroke-width="3"/><path d="M7 27v11m50-11v11M23 49v7m18-7v7" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><rect x="21" y="27" width="7" height="8" rx="3.5" fill="currentColor"/><rect x="36" y="27" width="7" height="8" rx="3.5" fill="currentColor"/><path d="M25 40c4 3 10 3 14 0" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>';
     const el = (tag, cls, text) => { const n=document.createElement(tag); if(cls)n.className=cls;if(text)n.textContent=text;return n; };
     const root=el('div','mujibot');
@@ -60,7 +60,7 @@
     const send=el('button','',t.send);send.type='submit';form.append(input,send);
     const privacy=el('p','mujibot-privacy',t.privacy);const reset=el('button','mujibot-reset',t.reset);reset.type='button';
     panel.append(header,language,note,log,quick,form,privacy,reset);root.append(launch,panel);document.body.append(root);
-    let previousTopic=null;
+    let previousTopic=null;let previousModel=null;
     const add = (text,user=false,topic=null,contacts=false) => {
       const message=el('div','mujibot-message '+(user?'mujibot-user':'mujibot-answer'));message.append(el('p','',text));
       if(topic&&destinations[topic]){const a=el('a','mujibot-route',t.link+' →');a.href=base+destinations[topic];message.append(a);}
@@ -92,8 +92,38 @@
       if(/repar|repair|defekt|kaputt|broken|guasto|iphone|samsung|tablet|laptop|notebook|smartphone/.test(q))return 'repair';
       return null;
     };
+    const priceCopy=({de:{ask:'Welche Reparatur brauchst du für',intro:'Die Preise für',choose:'Bitte nenne dein genaues Modell (z. B. iPhone 15 Pro) und die Reparaturart (z. B. Display oder Akku).',unknown:'Für diese Reparatur ist kein passender Preis hinterlegt. Bitte frage Andrit persönlich.',link:'Zur Preisliste',request:'Auf Anfrage',note:'Preis gilt für die genannte Teilevariante. Verfügbarkeit und Eignung werden vor Auftragserteilung bestätigt; weitere Defekte und Versand werden separat vereinbart.'},en:{ask:'Which repair do you need for',intro:'Repair prices for',choose:'Please specify the exact model (e.g. iPhone 15 Pro) and repair (e.g. screen or battery).',unknown:'No matching price is listed for this repair. Please ask Andrit.',link:'See price list',request:'On request',note:'Price applies to the specified part variant. Availability and suitability are confirmed before an order; other faults and shipping are agreed separately.'},fr:{ask:'Quelle réparation souhaitez-vous pour',intro:'Prix pour',choose:'Précisez le modèle exact (p. ex. iPhone 15 Pro) et la réparation (écran ou batterie).',unknown:'Aucun prix correspondant à cette réparation. Contactez Andrit.',link:'Voir les tarifs',request:'Sur demande',note:'Prix pour la variante indiquée. Disponibilité et compatibilité confirmées avant commande ; autres pannes et envoi convenus séparément.'},it:{ask:'Quale riparazione ti serve per',intro:'Prezzi per',choose:'Indica il modello esatto (es. iPhone 15 Pro) e la riparazione (schermo o batteria).',unknown:'Nessun prezzo corrispondente a questa riparazione. Contatta Andrit.',link:'Vedi i prezzi',request:'Su richiesta',note:'Prezzo per la variante indicata. Disponibilità e compatibilità confermate prima dell’ordine; altri guasti e spedizione concordati separatamente.'}})[lang]||{};
+    const priceAnswer=(question,topic)=>{
+      if(['danger','sensitive','callback','warranty','website','sell','shop'].includes(topic)||!window.MujiPriceBook)return false;
+      const clean=value=>normalize(value).replace(/\+/g,' plus ').replace(/[^a-z0-9]+/g,' ').trim();const q=' '+clean(question)+' ';
+      const models=[...new Set(window.MujiPriceBook.rows.map(r=>r[0]))].sort((a,b)=>b.length-a.length);
+      const model=models.find(value=>q.includes(' '+clean(value)+' '));
+      const requested=/preis|kost|price|cost|combien|prix|quanto|how much/.test(normalize(question));
+      const repairWords=/display|screen|ecran|schermo|glas|vetro|vitre|akku|battery|batterie|batteria|lade|charging|charge|ricarica|kamera|camera|fotocamera|linse|lens|lentille|back|ruck|retro|arriere|speaker|lautsprecher|haut.parleur|altoparlante|mikro|micro|tastatur|keyboard|clavier|tastiera|usb/.test(normalize(question));
+      if(!model&&!(previousModel&&repairWords)){if(requested&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(normalize(question))){add(priceCopy.choose,false,null,true);return true;}return false;}
+      if(!model&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(normalize(question))){add(priceCopy.choose,false,null,true);return true;}
+      const chosen=model||previousModel;previousModel=chosen;
+      if(!repairWords){add(priceCopy.ask+' '+chosen+'?');return true;}
+      const nq=normalize(question);let pattern=null;
+      if(/linse|lens|lentille/.test(nq))pattern=/kameralinse/i;
+      else if(/frontkamera|front camera|camera avant|fotocamera frontale/.test(nq))pattern=/frontkamera/i;
+      else if(/ruck|back glass|back cover|retro|arriere/.test(nq))pattern=/rückglas|rückseite|gehäuse/i;
+      else if(/display|screen|ecran|schermo|glas|vetro|vitre/.test(nq))pattern=/display|lcd|bildanzeige|^glas/i;
+      else if(/akku|battery|batterie|batteria/.test(nq))pattern=/akku/i;
+      else if(/lade|charging|charge|ricarica|usb/.test(nq))pattern=/ladeanschluss|usb-c/i;
+      else if(/kamera|camera|fotocamera/.test(nq))pattern=/kamera/i;
+      else if(/speaker|lautsprecher|haut.parleur|altoparlante/.test(nq))pattern=/lautsprecher|ohrmuschel/i;
+      else if(/mikro|micro/.test(nq))pattern=/mikrofon/i;
+      else if(/tastatur|keyboard|clavier|tastiera/.test(nq))pattern=/tastatur/i;
+      let rows=window.MujiPriceBook.rows.filter(r=>r[0]===chosen&&pattern&&pattern.test(r[1]));
+      if(/premium/.test(nq))rows=rows.filter(r=>/premium/i.test(r[1]));else if(/pulled/.test(nq))rows=rows.filter(r=>/pulled/i.test(r[1]));else if(/service pack/.test(nq))rows=rows.filter(r=>/service pack/i.test(r[1]));
+      if(!rows.length){add(priceCopy.unknown,false,null,true);return true;}
+      add(priceCopy.intro+' '+chosen+':\n'+rows.map(r=>(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])+': '+(r[2]===null?priceCopy.request:'CHF '+r[2])).join('\n')+'\n\n'+priceCopy.note,false,null,true);
+      const a=el('a','mujibot-route',priceCopy.link+' →');a.href=base+'preise.html?model='+encodeURIComponent(chosen);log.lastChild.append(a);return true;
+    };
     const reply = (topic, question) => {
       add(question,true);
+      if(priceAnswer(question,topic))return;
       if(topic==='hello')add(t.intro);
       else if(topic==='callback'){
         add(cb.intro);const box=el('form','mujibot-callback');const fields={};
@@ -110,7 +140,7 @@
     launch.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));
     panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();setOpen(false);}});
     form.addEventListener('submit',event=>{event.preventDefault();const value=input.value.trim();if(!value)return;input.value='';reply(detect(value),value);input.focus({preventScroll:true});});
-    reset.addEventListener('click',()=>{log.replaceChildren();previousTopic=null;input.value='';add(t.intro);input.focus({preventScroll:true});});
+    reset.addEventListener('click',()=>{log.replaceChildren();previousTopic=null;previousModel=null;input.value='';add(t.intro);input.focus({preventScroll:true});});
     add(t.intro);
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
