@@ -135,12 +135,15 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready); else ready();
 })();
 
-// Shared MujiBot loader for every content page.
+// Shared MujiBot and repair-price loader for every content page.
 (() => {
-  if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {
-    const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261014-2';document.head.append(style);
-  }
-  if (!document.querySelector('script[src*="/assets/mujibot.js"]')) {
-    const script=document.createElement('script');script.src='/assets/mujibot.js?v=20261014-2';script.defer=true;document.head.append(script);
-  }
+  const lang=(document.documentElement.lang||'de').slice(0,2);
+  const base=lang==='de'?'/':'/'+lang+'/';
+  const ready=()=>{document.querySelectorAll('.navlinks,.w-links').forEach(nav=>{if(nav.querySelector('a[href$="preise.html"]'))return;const link=document.createElement('a');link.href=base+'preise.html';link.textContent=({de:'Preisliste',en:'Repair prices',fr:'Tarifs',it:'Prezzi'})[lang]||'Preisliste';const cta=nav.querySelector('.cta,.w-nav-cta');if(cta)cta.before(link);else nav.append(link);});
+    const params=new URLSearchParams(location.search);const model=params.get('model'),repair=params.get('repair');if(!model||!repair)return;document.querySelectorAll('form').forEach(form=>{const field=form.querySelector('textarea[name="beschreibung"]');if(field&&!field.value){field.value=model+' – '+repair;}const device=form.querySelector('input[name="modell"],input[name="model"]');if(device&&!device.value)device.value=model;});};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+  if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261014-3';document.head.append(style);}
+  const load=src=>new Promise((resolve,reject)=>{if(document.querySelector('script[src*="'+src.split('?')[0]+'"]')){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.append(script);});
+  const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261014-1');
+  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261014-1')).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261014-3')).catch(()=>{});
 })();
