@@ -18,7 +18,7 @@
   const fields={utm_source:'campaign_source',utm_medium:'campaign_medium',utm_campaign:'campaign_name'};
   Object.entries(labels).forEach(([key,values])=>{const value=campaignParams.get(key);if(values.includes(value))safeCampaign[fields[key]]=value;});
   const pageName=location.pathname.split('/').filter(Boolean).pop()||'index.html';
-  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':'general');
+  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':'general');
   const event=(name,params={})=>{
     if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:serviceArea,page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
   };
@@ -57,7 +57,7 @@
   }
   function save(value){try{localStorage.setItem(KEY,value);}catch{} if(value==='all')activate();else revoke();banner.hidden=true;if(settingsTrigger){settingsTrigger.focus();settingsTrigger=null;}}
   function ready(){
-    banner=document.createElement('section');banner.className='ch-privacy-banner';banner.setAttribute('role','dialog');banner.setAttribute('aria-label',copy[0]);banner.setAttribute('aria-describedby','cookie-description');
+    banner=document.createElement('section');banner.className='ch-privacy-banner';banner.style.zIndex='1000';banner.setAttribute('role','dialog');banner.setAttribute('aria-label',copy[0]);banner.setAttribute('aria-describedby','cookie-description');
     const text=document.createElement('div');const strong=document.createElement('strong');strong.textContent=copy[0];text.append(strong);
     const p=document.createElement('p');p.id='cookie-description';p.textContent=copy[1]+' ';const a=document.createElement('a');a.href=(lang==='de'?'/':'/'+lang+'/')+'rechtliches.html#datenschutz';a.textContent=copy[2];p.append(a);text.append(p);
     const actions=document.createElement('div');actions.className='ch-privacy-actions';
@@ -76,12 +76,13 @@
       const card=a.closest('.gaming-card[data-product-sku]');if(card&&u.origin===location.origin)event('select_item',{item_list_id:'gaming-pcs',items:[{item_id:card.dataset.productSku,item_name:card.querySelector('h3')?.textContent.trim(),item_category:'Gaming PCs',price:Number(card.dataset.price)}]});
       if(u.origin===location.origin && (/anfrage|demande|richiesta|request/.test(u.pathname)||u.hash==='#anfrage'))event('enquiry_open',{target_page:u.pathname});
     });
-    document.querySelectorAll('form').forEach((form,index)=>{
-      const id=form.id||'form-'+index;let started=false;
-      form.addEventListener('focusin',()=>{if(!allowed||started)return;started=true;event('form_start',{form_id:id});});
-      // This is an attempt, never presented as a delivered lead.
-      form.addEventListener('submit',()=>{event('form_submit_attempt',{form_id:id});});
-    });
+    // Delegation also covers forms added by MujiBot after page load.
+    const startedForms=new WeakSet();
+    const formID=form=>form.classList.contains('mujibot-callback')?'mujibot-callback':form.classList.contains('mujibot-form')?'mujibot-question':form.id||'website-form';
+    document.addEventListener('focusin',e=>{const form=e.target.closest('form');if(!form||!allowed||startedForms.has(form))return;startedForms.add(form);event('form_start',{form_id:formID(form)});});
+    document.addEventListener('submit',e=>{const form=e.target;if(!form.matches('form')||form.closest('.mujibot'))return;event('form_submit_attempt',{form_id:formID(form)});});
+    // Only fixed action labels are accepted. No chat or callback field contents.
+    document.addEventListener('mujitech-action',e=>{const detail=e.detail||{};if(!['mujibot_open','mujibot_price_view','callback_request_open','repair_price_view'].includes(detail.type))return;const params={};if(['email','whatsapp'].includes(detail.channel))params.contact_channel=detail.channel;if(detail.type==='callback_request_open')params.form_id='mujibot-callback';event(detail.type,params);});
     const seen=new Set();let pending=false;
     window.addEventListener('scroll',()=>{
       if(!allowed||pending)return;pending=true;
