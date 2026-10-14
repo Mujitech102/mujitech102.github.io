@@ -1,0 +1,7 @@
+body > header.muji-fixed-site-header{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:810!important;width:auto!important;max-width:none!important;margin:0!important;background:#fff!important;border-bottom:1px solid #ddd;box-shadow:0 2px 12px #0000000a}
+body > .muji-header-spacer{height:var(--muji-header-height,80px);flex:none;pointer-events:none}
+html{scroll-padding-top:calc(var(--muji-header-height,80px) + 18px)}
+body > header.price-header.muji-fixed-site-header{padding-inline:max(20px,calc((100vw - 1100px)/2 + 20px))}
+.skip-link:focus{z-index:1100!important}
+@media(max-width:700px){body > header.muji-fixed-site-header{overflow:visible}body > header.muji-fixed-site-header .navlinks.mobileopen{max-height:calc(100dvh - var(--muji-header-height,64px) - 88px);overflow-y:auto;overscroll-behavior:contain}}
+@media print{body > header.muji-fixed-site-header{position:static!important;box-shadow:none!important}body > .muji-header-spacer{display:none}}
