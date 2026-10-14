@@ -21,7 +21,7 @@ patch={
 'gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung der Anfrage zu. *':['et j’accepte le traitement de mes données pour répondre à la demande. *','e acconsento al trattamento dei miei dati per rispondere alla richiesta. *','and consent to my details being processed to respond to the enquiry. *'],
 'Datenschutzerklärung':['politique de confidentialité','sulla privacy','privacy policy'],
 'Handy-Einrichtung':['Configuration smartphone','Configurazione smartphone','Smartphone setup'],
-'PC-Hilfe, Datenübertragung und WLAN-Service in St. Gallen.':['Assistance informatique, configuration smartphone et Wi-Fi à Saint-Gall.','Assistenza computer, configurazione smartphone e Wi-Fi a San Gallo.','Computer help, smartphone setup and Wi-Fi support in St. Gallen.'],
+'Computerhilfe, Handy-Einrichtung und Datenübertragung in St. Gallen.':['Assistance informatique, configuration smartphone et transfert de données à Saint-Gall.','Assistenza computer, configurazione smartphone e trasferimento dati a San Gallo.','Computer help, smartphone setup and data transfer in St. Gallen.'],
 'Deine neue Website.':['Votre site internet professionnel.','Il tuo sito web professionale.','Your professional business website.'],
 'Professionell. Klar. Bezahlbar.':['Créé en Suisse. Clair. Accessible.','Creato in Svizzera. Chiaro. Accessibile.','Built in Switzerland. Clear. Affordable.'],
 'Gebraucht · professionell aufbereitet':['D’occasion · reconditionné professionnellement','Usato · ricondizionato professionalmente','Used · professionally refurbished'],
@@ -213,7 +213,6 @@ def build(f,l,source=None):
   headlines={'de':['Reparaturen.','Computerhilfe.','Webdesign.'],'fr':['Réparations.','Informatique.','Sites web.'],'it':['Riparazioni.','Assistenza PC.','Siti web.'],'en':['Repairs.','Computer help.','Web design.']}
   a,b,c=headlines[l]
   data=re.sub(r'<h1>.*?</h1>',f'<h1>{a}<span>{b}</span><span class="m-outline">{c}</span></h1>',data,count=1,flags=re.S)
- if f=='privatkunden.html' and l=='de':data=data.replace('PC-Hilfe, Datenübertragung und WLAN-Service in St. Gallen.','Computerhilfe, Handy-Einrichtung und WLAN-Service in St. Gallen.')
  # Logo and company name together, preserving the existing header structure.
  def brand(m):
   header=m[0]
