@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  const track=(type,channel)=>document.dispatchEvent(new CustomEvent('mujitech-action',{detail:{type,channel}}));
   const start = (selectedLanguage) => {
     if (document.querySelector('.mujibot')) return;
     const lang = typeof selectedLanguage === 'string' ? selectedLanguage : (document.documentElement.lang || 'de').slice(0, 2);
@@ -118,6 +119,7 @@
       let rows=window.MujiPriceBook.rows.filter(r=>r[0]===chosen&&pattern&&pattern.test(r[1]));
       if(/premium/.test(nq))rows=rows.filter(r=>/premium/i.test(r[1]));else if(/pulled/.test(nq))rows=rows.filter(r=>/pulled/i.test(r[1]));else if(/service pack/.test(nq))rows=rows.filter(r=>/service pack/i.test(r[1]));
       if(!rows.length){add(priceCopy.unknown,false,null,true);return true;}
+      track('mujibot_price_view');
       add(priceCopy.intro+' '+chosen+':\n'+rows.map(r=>(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])+': '+(r[2]===null?priceCopy.request:'CHF '+r[2])).join('\n')+'\n\n'+priceCopy.note,false,null,true);
       const a=el('a','mujibot-route',priceCopy.link+' →');a.href=base+'preise.html?model='+encodeURIComponent(chosen);log.lastChild.append(a);return true;
     };
@@ -129,14 +131,14 @@
         add(cb.intro);const box=el('form','mujibot-callback');const fields={};
         [['date','date',true],['from','time',true],['to','time',false],['phone','tel',true]].forEach(([key,type,required])=>{const label=el('label','',cb[key]);const field=el('input');field.type=type;field.required=required;field.setAttribute('aria-label',cb[key]);if(key==='date'){const now=new Date();field.min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-');}if(key==='phone'){field.maxLength=40;field.autocomplete='tel';}fields[key]=field;label.append(field);box.append(label);});
         const email=el('button','',cb.send);email.type='submit';const wa=el('button','',cb.wa);wa.type='button';box.append(email,wa);
-        const compose=channel=>{if(!box.reportValidity())return;if(fields.to.value&&fields.to.value<=fields.from.value){fields.to.setCustomValidity(cb.to+' > '+cb.from);fields.to.reportValidity();return;}fields.to.setCustomValidity('');const body=cb.subject+'\n'+cb.date+': '+fields.date.value+'\n'+cb.from+': '+fields.from.value+(fields.to.value?' – '+fields.to.value:'')+'\n'+cb.phone+': '+fields.phone.value;const a=el('a');a.href=channel==='wa'?'https://wa.me/41768444673?text='+encodeURIComponent(body):'mailto:info@mujitech.ch?subject='+encodeURIComponent(cb.subject)+'&body='+encodeURIComponent(body);if(channel==='wa'){a.target='_blank';a.rel='noopener noreferrer';}a.click();};
+        const compose=channel=>{if(!box.reportValidity())return;if(fields.to.value&&fields.to.value<=fields.from.value){fields.to.setCustomValidity(cb.to+' > '+cb.from);fields.to.reportValidity();return;}fields.to.setCustomValidity('');const body=cb.subject+'\n'+cb.date+': '+fields.date.value+'\n'+cb.from+': '+fields.from.value+(fields.to.value?' – '+fields.to.value:'')+'\n'+cb.phone+': '+fields.phone.value;track('callback_request_open',channel==='wa'?'whatsapp':'email');const a=el('a');a.href=channel==='wa'?'https://wa.me/41768444673?text='+encodeURIComponent(body):'mailto:info@mujitech.ch?subject='+encodeURIComponent(cb.subject)+'&body='+encodeURIComponent(body);if(channel==='wa'){a.target='_blank';a.rel='noopener noreferrer';}a.click();};
         fields.to.addEventListener('input',()=>fields.to.setCustomValidity(''));box.addEventListener('submit',e=>{e.preventDefault();compose('email');});wa.addEventListener('click',()=>compose('wa'));log.lastChild.append(box);log.scrollTop=log.scrollHeight;
       }
       else if(topic==='sensitive')add(t.sensitive,false,null,true);
       else if(!topic||topic==='contact')add(t.fallback,false,null,true);
       else {add(knowledge[topic],false,topic,['danger','data','appointment','price'].includes(topic));previousTopic=topic;}
     };
-    const setOpen = open=>{panel.hidden=!open;launch.setAttribute('aria-expanded',String(open));if(open)input.focus({preventScroll:true});else launch.focus({preventScroll:true});};
+    const setOpen = open=>{panel.hidden=!open;launch.setAttribute('aria-expanded',String(open));if(open){track('mujibot_open');input.focus({preventScroll:true});}else launch.focus({preventScroll:true});};
     launch.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));
     panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();setOpen(false);}});
     form.addEventListener('submit',event=>{event.preventDefault();const value=input.value.trim();if(!value)return;input.value='';reply(detect(value),value);input.focus({preventScroll:true});});
