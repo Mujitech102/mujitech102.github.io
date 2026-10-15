@@ -21,14 +21,15 @@ for lang,c in COPY.items():
  s=re.sub(r'<title>.*?</title>','<title>'+escape(c['title'])+'</title>',s,flags=re.S)
  s=re.sub(r'(<meta property="og:title" content=")[^"]*',lambda m:m[1]+escape(c['title'],quote=True),s)
  s=re.sub(r'(<h1\b[^>]*>).*?(</h1>)',lambda m:m[1]+c['h1']+m[2],s,count=1,flags=re.S)
+ s=re.sub(r'(<script type="application/ld\+json">)(.*?)(</script>)',lambda m:m[1]+json.dumps(dict(json.loads(m[2]),name=c['title']),ensure_ascii=False,separators=(',',':'))+m[3] if json.loads(m[2]).get('@type')=='WebPage' else m[0],s,flags=re.S)
  write(prefix+'index.html',s)
  p=ROOT/prefix/'reparaturen.html';s=p.read_text()
  s=re.sub(r'(<h1\b[^>]*>).*?(</h1>)',lambda m:m[1]+escape(c['repair_h1'])+m[2],s,count=1,flags=re.S)
- block='<section class="quality-section" id="pc-support-wegweiser"><div class="quality-wrap"><h2>'+escape(c['pc_h2'])+'</h2><p>'+escape(c['pc_text'])+'</p><p><a class="cta" href="'+b+'anfrage.html#reparatur">'+escape(c['repair_link'])+' →</a></p><p><a href="'+b+'privatkunden.html">'+escape(c['help_link'])+' →</a></p></div></section>'
+ block='<section class="quality-section" id="pc-support-wegweiser"><div class="wrap"><h2>'+escape(c['pc_h2'])+'</h2><p>'+escape(c['pc_text'])+'</p><p><a class="cta" href="'+b+'anfrage.html#reparatur">'+escape(c['repair_link'])+' →</a></p><p><a href="'+b+'privatkunden.html">'+escape(c['help_link'])+' →</a></p></div></section>'
  s=re.sub(r'<!-- SEARCH PC START -->.*?<!-- SEARCH PC END -->','',s,flags=re.S).replace('</main>','<!-- SEARCH PC START -->'+block+'<!-- SEARCH PC END --></main>',1)
  write(prefix+'reparaturen.html',s)
  p=ROOT/prefix/'privatkunden.html';s=p.read_text()
- block='<section class="quality-section" id="computerhilfe-fragen"><div class="quality-wrap"><h2>'+escape(c['help_h2'])+'</h2>'+''.join('<h3>'+escape(q)+'</h3><p>'+escape(a)+'</p>' for q,a in c['questions'])+'<p><a href="'+b+'reparaturen.html#pc-support-wegweiser">'+escape(c['repair_link'])+' →</a></p></div></section>'
+ block='<section class="quality-section" id="computerhilfe-fragen"><div class="wrap"><h2>'+escape(c['help_h2'])+'</h2>'+''.join('<h3>'+escape(q)+'</h3><p>'+escape(a)+'</p>' for q,a in c['questions'])+'<p><a href="'+b+'reparaturen.html#pc-support-wegweiser">'+escape(c['repair_link'])+' →</a></p></div></section>'
  s=re.sub(r'<!-- SEARCH HELP START -->.*?<!-- SEARCH HELP END -->','',s,flags=re.S).replace('</main>','<!-- SEARCH HELP START -->'+block+'<!-- SEARCH HELP END --></main>',1)
  write(prefix+'privatkunden.html',s)
 # Only former service/category URLs with an equivalent current destination.
