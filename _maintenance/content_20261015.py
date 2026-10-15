@@ -18,7 +18,7 @@ COPY={
 'computer_title':'Gaming-PCs & Computer kaufen Schweiz | Mujitech',
 'computer_description':'Gaming-PCs und individuelle Computer von Mujitech: Konfigurationen, transparente Richtpreise, Zusammenbau und 36 Monate Hardwaregarantie. Schweizweiter Versand.',
 'form_note':'Nach dem Absenden folgt die Bestätigung auf der nächsten Seite. Falls die Übermittlung nicht klappt, erreichst du uns direkt per E-Mail, WhatsApp oder Telefon. Deine Anfrage ist unverbindlich.',
-'comparison_note':'Garantie im Vergleich: Das verlinkte Avlano-Angebot nennt 36 Monate Bring-In-Garantie. Mujitech gewährt 36 Monate Garantie auf die Gerätetechnik. Garantieabwicklung, Rückgabebedingungen und einzelne Komponenten können abweichen; Details bestätigen wir vor dem Kauf.',
+'comparison_note':'Mujitech gewährt 36 Monate Garantie auf die Gerätetechnik dieses Gaming-PCs. Für das Vergleichsgerät gelten die Bedingungen des verlinkten Angebots. Einzelne Komponenten, Garantieabwicklung und Rückgabebedingungen können abweichen; Details bestätigen wir vor dem Kauf.',
 'lead_title':'Anfrage übermittelt', 'lead_text':'Danke für deine Anfrage. Wir prüfen dein Anliegen und melden uns über die angegebenen Kontaktdaten. Wenn du weitere Informationen ergänzen möchtest, kontaktiere uns direkt.',
 },
 'en':{
@@ -38,7 +38,7 @@ COPY={
 'computer_title':'Gaming PCs & computers Switzerland | Mujitech',
 'computer_description':'Gaming PCs and custom computers from Mujitech: configurations, clear guide prices, assembly and a 36-month hardware warranty. Delivery throughout Switzerland.',
 'form_note':'After submitting, check the confirmation on the next page. If submission fails, contact us directly by email, WhatsApp or phone. Your enquiry is non-binding.',
-'comparison_note':'Warranty comparison: The linked Avlano offer lists a 36-month bring-in warranty. Mujitech provides a 36-month warranty on the device hardware. Claims handling, returns and individual components may differ; we confirm the details before purchase.',
+'comparison_note':'Mujitech provides a 36-month warranty on this gaming PC’s hardware. The comparison device is subject to the terms of its linked offer. Individual components, claims handling and returns may differ; we confirm the details before purchase.',
 'lead_title':'Enquiry submitted', 'lead_text':'Thank you for your enquiry. We will review your request and reply using the contact details you provided. Contact us directly if you would like to add anything.',
 },
 'fr':{
@@ -58,7 +58,7 @@ COPY={
 'computer_title':'PC gaming & ordinateurs en Suisse | Mujitech',
 'computer_description':'PC gaming et ordinateurs sur mesure Mujitech : configurations, prix indicatifs clairs, montage et garantie matérielle de 36 mois. Livraison dans toute la Suisse.',
 'form_note':'Après l’envoi, vérifiez la confirmation sur la page suivante. En cas de problème, contactez-nous par e-mail, WhatsApp ou téléphone. Votre demande est sans engagement.',
-'comparison_note':'Garantie comparée : l’offre Avlano liée annonce 36 mois de garantie avec retour au point de service. Mujitech offre 36 mois de garantie sur le matériel de l’appareil. La prise en charge, les retours et certains composants peuvent différer ; les détails sont confirmés avant l’achat.',
+'comparison_note':'Mujitech offre 36 mois de garantie sur le matériel de ce PC gaming. L’appareil de comparaison est soumis aux conditions de l’offre liée. Certains composants, la prise en charge et les retours peuvent différer ; les détails sont confirmés avant l’achat.',
 'lead_title':'Demande transmise', 'lead_text':'Merci pour votre demande. Nous allons l’examiner et vous répondre aux coordonnées indiquées. Contactez-nous directement si vous souhaitez ajouter des précisions.',
 },
 'it':{
@@ -78,7 +78,7 @@ COPY={
 'computer_title':'PC gaming e computer in Svizzera | Mujitech',
 'computer_description':'PC gaming e computer personalizzati Mujitech: configurazioni, prezzi indicativi chiari, assemblaggio e garanzia hardware di 36 mesi. Spedizione in tutta la Svizzera.',
 'form_note':'Dopo l’invio, verifica la conferma nella pagina successiva. In caso di problemi, contattaci per e-mail, WhatsApp o telefono. La richiesta è senza impegno.',
-'comparison_note':'Confronto della garanzia: l’offerta Avlano collegata indica 36 mesi di garanzia con riconsegna al centro di assistenza. Mujitech offre 36 mesi di garanzia sull’hardware del dispositivo. Gestione della garanzia, resi e singoli componenti possono differire; confermiamo i dettagli prima dell’acquisto.',
+'comparison_note':'Mujitech offre 36 mesi di garanzia sull’hardware di questo PC gaming. Per il dispositivo di confronto valgono le condizioni dell’offerta collegata. Singoli componenti, gestione della garanzia e resi possono differire; confermiamo i dettagli prima dell’acquisto.',
 'lead_title':'Richiesta trasmessa', 'lead_text':'Grazie per la richiesta. La esamineremo e ti risponderemo usando i recapiti indicati. Contattaci direttamente se desideri aggiungere informazioni.',
 }}
 LANGS={'de':'de-CH','en':'en','fr':'fr-CH','it':'it-CH'}
