@@ -8,7 +8,7 @@ from collections import Counter
 import json,re,subprocess,sys,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 NODE='/Users/andritmuji/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node'
-errors=[];pages={};formcount=0
+errors=[];pages={};formcount=0;redirects={}
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.ids=[];self.tags=[];self.scripts=[];self.script=None;self.forms=[];self.form=None;self.text=[]
  def handle_starttag(self,t,a):
@@ -34,6 +34,15 @@ def target(p,u):
 files=sorted(p for p in ROOT.rglob('*.html') if not any(x.startswith('_') for x in p.relative_to(ROOT).parts))
 for p in files:
  s=p.read_text();c=Page();c.feed(s);pages[p.resolve()]=c;rel=p.relative_to(ROOT)
+ refresh=[a.get('content','') for t,a in c.tags if t=='meta' and a.get('http-equiv','').lower()=='refresh']
+ if refresh:
+  match=re.fullmatch(r'0;\s*url=(https://mujitech\.ch/[^?#]+)',refresh[0])
+  canon=[a.get('href') for t,a in c.tags if t=='link' and a.get('rel')=='canonical']
+  if len(refresh)!=1 or not match or canon!=[match[1]]:errors.append(f'{rel}: invalid permanent redirect')
+  else:
+   dest=target(p,match[1]);redirects[p.resolve()]=dest
+   if not dest or not dest.exists() or dest==p.resolve():errors.append(f'{rel}: invalid redirect destination')
+  continue
  for tag in ['html','h1','title']:
   if sum(t==tag for t,a in c.tags)!=1:errors.append(f'{rel}: expected one {tag}')
  if len(c.ids)!=len(set(c.ids)):errors.append(f'{rel}: duplicate IDs')
@@ -64,6 +73,9 @@ for p in files:
   if not any(a.get('type')=='email' and 'required' in a for a in fields):errors.append(f'{rel}: required email missing')
  for js in ROOT.glob('assets/*.js'):pass
 for p,c in pages.items():
+ if p in redirects:
+  if redirects[p] in redirects:errors.append(f'{p.relative_to(ROOT)}: redirect chain')
+  continue
  rel=p.relative_to(ROOT);canon=[a['href'] for t,a in c.tags if t=='link' and a.get('rel')=='canonical'];alts=[a for t,a in c.tags if t=='link' and a.get('rel')=='alternate'];
  if len(canon)!=1 or len(alts)!=5:errors.append(f'{rel}: canonical/alternates count');continue
  for a in alts:
@@ -94,5 +106,6 @@ sitemap=ET.parse(ROOT/'sitemap.xml');ns={'s':'http://www.sitemaps.org/schemas/si
 if len(urls)!=len(set(urls)):errors.append('Sitemap duplicate URLs')
 for u in urls:
  if target(ROOT/'index.html',u) not in pages:errors.append('Sitemap target missing: '+u)
+ if target(ROOT/'index.html',u) in redirects:errors.append('Sitemap contains redirect: '+u)
 summary={'pages':len(pages),'sitemap_urls':len(urls),'forms':formcount,'repair_rows':len(book['rows']),'confirmed_prices':sum(r[2] is not None for r in book['rows']),'new_prices':len(provenance['changes']),'errors':errors}
 print(json.dumps(summary,ensure_ascii=False,indent=2));sys.exit(bool(errors))
