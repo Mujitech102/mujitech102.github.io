@@ -303,5 +303,15 @@
     "Toutes les prestations de Maintenance Business",
     "Tutti i servizi di Manutenzione Business",
     "All Care Business services"
+  ],
+  "Die normale Fehlerdiagnose ist kostenlos. Ein schriftlicher Diagnosebericht, eine Zustandsbeurteilung oder eine Reparaturkostenbestätigung für deine Versicherung ist kostenpflichtig. Den Preis dafür vereinbaren wir vor der Erstellung mit dir.": [
+    "Le diagnostic habituel de la panne est gratuit. Un rapport écrit de diagnostic, une évaluation de l’état de l’appareil ou une attestation des frais de réparation pour votre assurance est payant. Nous convenons du prix avec vous avant de préparer le document.",
+    "La normale diagnosi del guasto è gratuita. Un rapporto diagnostico scritto, una valutazione dello stato del dispositivo o un’attestazione dei costi di riparazione per la tua assicurazione è a pagamento. Concordiamo il prezzo prima di preparare il documento.",
+    "A standard fault diagnosis is free. A written diagnostic report, condition assessment or repair-cost statement for your insurer is chargeable. We agree the fee with you before preparing the document."
+  ],
+  "Du bezahlst den Versand zu Mujitech. Den Rückversand nach der Reparatur übernimmt Mujitech. Bitte sende dein Gerät erst ein, nachdem wir die Versandadresse bestätigt haben.": [
+    "Vous payez l’envoi à Mujitech. Mujitech prend en charge le retour après la réparation. Attendez la confirmation de l’adresse avant d’envoyer votre appareil.",
+    "Paghi la spedizione a Mujitech. Mujitech paga la spedizione di ritorno dopo la riparazione. Attendi la conferma dell’indirizzo prima di spedire il dispositivo.",
+    "You pay for shipping to Mujitech. Mujitech pays return shipping after the repair. Please wait until we confirm the shipping address before sending your device."
   ]
 }

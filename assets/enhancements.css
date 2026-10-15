@@ -169,3 +169,8 @@ body .google-review-link { padding:0 20px; text-align:center; }
 .fixed-contact-actions svg{display:block;width:24px;height:24px;flex:none}
 @media(max-width:700px){.fixed-contact-actions{top:auto;bottom:max(12px,env(safe-area-inset-bottom));right:max(12px,env(safe-area-inset-right));transform:none;flex-direction:row;gap:8px;padding:6px;border-radius:16px}body:has(.fixed-contact-actions){padding-bottom:90px}}
 @media print{.fixed-contact-actions{display:none}}
+
+/* Keep informational notes readable in the monochrome theme. */
+body .note{color:#333!important;background:#f5f5f5!important;border-color:#d6d6d6!important}
+body .footergrid h2{font-size:13px;line-height:1.3;margin:0 0 7px;font-weight:700}
+body .request-card h2,body .steps .step h2{font-size:22px;line-height:1.2;letter-spacing:-.025em;margin:0 0 10px}
