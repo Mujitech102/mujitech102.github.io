@@ -141,7 +141,7 @@
       const globalRepairs=repairs(q);
       if(!mentions.length&&previousModel&&globalRepairs.length&&!/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(q))mentions.push({model:previousModel,start:0,end:0});
       if(!mentions.length){if(/preis|kost|price|cost|combien|prix|quanto|how much/.test(q)&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(q)){add(priceCopy.choose);return true;}return false;}
-      const output=[];let totalCents=0,pricedItems=0,requestedItems=0,needsChoice=false,needsQuote=false;
+      const output=[];const guideLinks=new Map();let totalCents=0,pricedItems=0,requestedItems=0,needsChoice=false,needsQuote=false;
       const sumCopy=({de:{total:"Gesamtpreis",partial:"Zwischensumme der eindeutig bepreisten Reparaturen",choose:"Für den Gesamtpreis bitte noch die gewünschte Teilevariante auswählen.",quote:"Reparaturen auf Anfrage sind noch nicht enthalten.",unit:"Die Summe gilt jeweils für ein Gerät pro Nennung, sofern keine Anzahl angegeben ist."},en:{total:"Total price",partial:"Subtotal for repairs with an unambiguous price",choose:"Please choose the part variant before I calculate the full total.",quote:"Repairs on request are not included yet.",unit:"The total uses one device per mention unless a quantity is specified."},fr:{total:"Prix total",partial:"Sous-total des réparations au prix déterminé",choose:"Choisissez la variante de pièce pour calculer le total complet.",quote:"Les réparations sur demande ne sont pas encore incluses.",unit:"Le total compte un appareil par mention, sauf quantité précisée."},it:{total:"Prezzo totale",partial:"Subtotale delle riparazioni con prezzo definito",choose:"Scegli la variante del ricambio per calcolare il totale completo.",quote:"Le riparazioni su richiesta non sono ancora incluse.",unit:"Il totale considera un dispositivo per ogni menzione, salvo quantità indicata."}})[lang];
       mentions.forEach((mention,index)=>{
         const tail=q.slice(mention.end,mentions[index+1]?.start??q.length).split(/[,;.!?]/)[0];
@@ -169,6 +169,7 @@
         if(/soft.?oled/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/soft.?oled|premium/i.test(r[1]));
         else if(/pulled/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/pulled/i.test(r[1]));
         else if(/service pack/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/service pack/i.test(r[1]));
+        rows.forEach(row=>{const guide=window.MujiRepairGuide?.(row[0],row[1],lang);if(guide&&!guideLinks.has(guide.path))guideLinks.set(guide.path,{...guide,model:row[0]});});
         const counted=new Set();
         wanted.forEach(category=>{
           const options=rows.filter(r=>category[2].test(r[1]));
@@ -188,7 +189,7 @@
         if(needsQuote)sections.push(sumCopy.quote);
         if(pricedItems)sections.push(sumCopy.unit);
       }
-      track('mujibot_price_view');add(sections.join('\n\n'));return true;
+      track('mujibot_price_view');add(sections.join('\n\n'));[...guideLinks.values()].slice(0,3).forEach(guide=>{const a=el('a','mujibot-route',guide.label+' →');a.href=guide.path+'?model='+encodeURIComponent(guide.model);log.lastChild.append(a);});return true;
     };
     const reply = (topic, question) => {
       add(question,true);
@@ -213,10 +214,13 @@
     panel.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();setOpen(false);}});
     form.addEventListener('submit',event=>{event.preventDefault();const value=input.value.trim();if(!value)return;input.value='';reply(detect(value),value);input.focus({preventScroll:true});});
     reset.addEventListener('click',()=>{log.replaceChildren();previousTopic=null;previousModel=null;input.value='';add(t.intro);input.focus({preventScroll:true});});
+    window.MujiBotAsk=question=>{if(typeof question!=='string'||!question.trim())return;setOpen(true);reply(detect(question),question.slice(0,400));};
+    document.dispatchEvent(new Event('mujibot-ready'));
     add(t.intro);
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
+
 
 
 
