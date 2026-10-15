@@ -18,7 +18,9 @@
   const fields={utm_source:'campaign_source',utm_medium:'campaign_medium',utm_campaign:'campaign_name'};
   Object.entries(labels).forEach(([key,values])=>{const value=campaignParams.get(key);if(values.includes(value))safeCampaign[fields[key]]=value;});
   const pageName=location.pathname.split('/').filter(Boolean).pop()||'index.html';
-  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':'general');
+  const repairPath=/(?:iphone-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|samsung-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|reparation-(?:ecran|connecteur-charge)|remplacement-batterie|riparazione-(?:display|connettore-ricarica)|sostituzione-batteria|reparaturpreise-|repair-prices-|tarifs-reparation-|prezzi-riparazione-)/.test(pageName);
+  const confirmationArea=pageName==='danke.html'&&['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(new URLSearchParams(location.search).get('form'))?new URLSearchParams(location.search).get('form'):null;
+  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||confirmationArea||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
   const event=(name,params={})=>{
     if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:serviceArea,page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
   };
@@ -31,9 +33,22 @@
     return {item_id:product.sku||product['@id']||location.pathname,item_name:product.name,item_brand:product.brand?.name||product.manufacturer?.name||'Mujitech',item_category:serviceArea==='gaming_pc'?'Gaming PCs':'Smartphones',...(Number.isFinite(price)?{price}: {})};
   }
   function referrer(){try {const u=new URL(document.referrer);return u.origin+u.pathname;}catch{return '';}}
+  let confirmationRecorded=false;
+  function confirmation(){
+    if(confirmationRecorded || pageName!=='danke.html')return;
+    const kind=new URLSearchParams(location.search).get('form');
+    if(!['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(kind))return;
+    try {
+      const pending=JSON.parse(sessionStorage.getItem('mujitech-pending-enquiry')||'null');
+      if(!pending || pending.kind!==kind || !Number.isFinite(pending.time) || Date.now()-pending.time<0 || Date.now()-pending.time>30*60*1000)return;
+      event('form_confirmation_view',{form_id:kind,confirmation_type:'provider_redirect'});
+      confirmationRecorded=true;
+      sessionStorage.removeItem('mujitech-pending-enquiry');
+    }catch{}
+  }
   function activate(){
     allowed=true;window['ga-disable-'+ID]=false;
-    if(loaded){window.gtag('consent','update',{analytics_storage:'granted'});return;}
+    if(loaded){window.gtag('consent','update',{analytics_storage:'granted'});confirmation();return;}
     loaded=true;window.dataLayer=window.dataLayer||[];
     window.gtag=function(){window.dataLayer.push(arguments);};
     window.gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
@@ -42,10 +57,12 @@
     window.gtag('config',ID,{...safeCampaign,send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false,page_location:cleanURL,page_referrer:referrer()});
     const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.append(s);
     event('page_view');
+    confirmation();
     const item=productItem();if(item)event('view_item',{currency:'CHF',value:item.price,items:[item]});
   }
   function revoke(){
     allowed=false;window['ga-disable-'+ID]=true;
+    try{sessionStorage.removeItem('mujitech-pending-enquiry');}catch{}
     if(window.gtag)window.gtag('consent','update',{analytics_storage:'denied'});
     const domains=[location.hostname,'.'+location.hostname,'.mujitech.ch',''];
     const paths=['/'];

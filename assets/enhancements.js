@@ -142,10 +142,10 @@
   const ready=()=>{document.querySelectorAll('.navlinks,.w-links').forEach(nav=>{if(nav.querySelector('a[href$="preise.html"]'))return;const link=document.createElement('a');link.href=base+'preise.html';link.textContent=({de:'Preisliste',en:'Repair prices',fr:'Tarifs',it:'Prezzi'})[lang]||'Preisliste';const cta=nav.querySelector('.cta,.w-nav-cta');if(cta)cta.before(link);else nav.append(link);});
     const params=new URLSearchParams(location.search);const model=params.get('model'),repair=params.get('repair');if(!model||!repair)return;document.querySelectorAll('form').forEach(form=>{const field=form.querySelector('textarea[name="beschreibung"]');if(field&&!field.value){field.value=model+' – '+repair;}const device=form.querySelector('input[name="modell"],input[name="model"]');if(device&&!device.value)device.value=model;});};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
-  if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261014-3';document.head.append(style);}
+  if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261015-quality-19';document.head.append(style);}
   const load=src=>new Promise((resolve,reject)=>{if(document.querySelector('script[src*="'+src.split('?')[0]+'"]')){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.append(script);});
-  const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261015-direct-prices-11');
-  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261014-2')).catch(()=>{}).then(()=>load('/assets/repair-guides.js?v=20261015-guides-12')).then(()=>load('/assets/mujibot.js?v=20261015-guides-12')).catch(()=>{});
+  const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261015-quality-19');
+  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261015-quality-19')).catch(()=>{}).then(()=>{document.dispatchEvent(new Event('mujitech-prices-ready'));return load('/assets/repair-guides.js?v=20261015-quality-19');}).then(()=>load('/assets/mujibot.js?v=20261015-quality-19')).catch(()=>{});
 })();
 
 /* Keep only the site's main header fixed; never MujiBot's header. */
@@ -162,3 +162,94 @@
 })();
 
 
+
+/* Preserve repair context across languages and recover safely after a submission. */
+(() => {
+  'use strict';
+  const supported = ['repair','gaming_pc','webdesign','device_purchase','private_support','contact'];
+  const pendingKey = 'mujitech-pending-enquiry';
+  const applyContext = () => {
+    const params = new URLSearchParams(location.search);
+    const model = params.get('model');
+    const repair = params.get('repair');
+    const safe = value => value && value.length <= 180 && !/[\u0000-\u001f]/.test(value);
+    document.querySelectorAll('.language-options a,.price-language a,.ch-languages a').forEach(link => {
+      const url = new URL(link.href, location.href);
+      if (url.origin !== location.origin) return;
+      if (supported.includes(params.get('form'))) url.searchParams.set('form',params.get('form'));
+      if (safe(model)) url.searchParams.set('model', model);
+      if (safe(repair)) url.searchParams.set('repair', repair);
+      if (location.hash) url.hash = location.hash;
+      link.href = url.href;
+    });
+    if (!safe(model)) return;
+    document.querySelectorAll('form').forEach(form => {
+      const device = form.querySelector('input[name="modell"],input[name="model"],input[name="Geraet_Modell"]');
+      if (device && !device.value) device.value = model;
+      const description = form.querySelector('textarea[name="beschreibung"],textarea[name="Fehlerbeschreibung"]');
+      if (!description || !safe(repair)) return;
+      const original = model + ' – ' + repair;
+      const lang = (document.documentElement.lang || 'de').slice(0,2);
+      const translated = model + ' – ' + (window.MujiRepairLabel ? window.MujiRepairLabel(repair,lang) : repair);
+      if (!description.value || description.value === original) description.value = translated;
+    });
+  };
+  const ready = () => {
+    applyContext();
+    document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach(form => {
+      const button = form.querySelector('[type="submit"]');
+      let recovery;
+      const reset = () => { if (button) {button.disabled = false; button.removeAttribute('aria-busy');} clearTimeout(recovery); };
+      form.addEventListener('invalid',event => {
+        const field = event.target;
+        let details = field.closest('details');
+        while(details) {details.open = true; details = details.parentElement.closest('details');}
+      },true);
+      form.addEventListener('submit',event => {
+        // This event only fires after native field validation. Do not claim email receipt.
+        queueMicrotask(() => {
+          if (event.defaultPrevented) return;
+          const kind = form.querySelector('[name="Anfragebereich"]')?.value;
+          try {
+            if (supported.includes(kind) && localStorage.getItem('mujitech-cookie-consent') === 'all') {
+              sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now()}));
+            }
+          } catch {}
+          if (button) {button.disabled = true; button.setAttribute('aria-busy','true');}
+          recovery = setTimeout(reset,15000);
+        });
+      });
+      window.addEventListener('pageshow',reset);
+    });
+    const openTarget = () => {
+      let id;
+      try {id = decodeURIComponent(location.hash.slice(1));} catch {return;}
+      const target = id ? document.getElementById(id) : null;
+      if (target?.matches('details.catalog-model')) target.open = true;
+    };
+    openTarget(); window.addEventListener('hashchange',openTarget);
+  };
+  document.addEventListener('mujitech-prices-ready',applyContext);
+  window.addEventListener('load',applyContext,{once:true});
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded',ready); else ready();
+})();
+
+/* Prevent oversized image uploads before the form provider rejects the request. */
+(() => {
+  'use strict';
+  const ready=()=>{
+    const form=document.querySelector('#ankaufsformular');if(!form)return;
+    const inputs=[...form.querySelectorAll('input[type="file"]')];
+    const lang=(document.documentElement.lang||'de').slice(0,2);
+    const text={de:['Bitte wähle insgesamt höchstens 10 MB an Bildern aus. Du kannst die Bilder auch später per WhatsApp oder E-Mail senden.','Bitte wähle ein Bild im Format JPEG, PNG, WebP, HEIC oder HEIF.'],en:['Please select no more than 10 MB of photos in total. You can also send photos later by WhatsApp or email.','Please choose a JPEG, PNG, WebP, HEIC or HEIF image.'],fr:['Choisissez au maximum 10 Mo de photos au total. Vous pouvez aussi les envoyer plus tard par WhatsApp ou e-mail.','Choisissez une image JPEG, PNG, WebP, HEIC ou HEIF.'],it:['Scegli al massimo 10 MB di foto in totale. Puoi inviarle anche in seguito via WhatsApp o e-mail.','Scegli un’immagine JPEG, PNG, WebP, HEIC o HEIF.']}[lang]||[];
+    const validate=()=>{
+      inputs.forEach(input=>input.setCustomValidity(''));
+      let size=0,last;
+      inputs.forEach(input=>{for(const file of input.files){size+=file.size;last=input;if(!/\.(?:jpe?g|png|webp|heic|heif)$/i.test(file.name))input.setCustomValidity(text[1]);}});
+      if(size>10000000&&last)last.setCustomValidity(text[0]);
+    };
+    inputs.forEach(input=>input.addEventListener('change',validate));
+    window.addEventListener('pageshow',validate);
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
