@@ -148,6 +148,18 @@
         const before=q.slice(mentions[index-1]?.end??0,mention.start).split(/[,;.!?]/).pop();
         const leadingRepairs=repairs(q.slice(0,mentions[0].start));
         let wanted=leadingRepairs.length?repairs(before):repairs(tail);if(!wanted.length)wanted=leadingRepairs.length?repairs(tail):repairs(before);if(!wanted.length)wanted=globalRepairs;
+        // Match precise repair names in the same language as the price selector.
+        const exactRepairRows=text=>{
+          const normalized=' '+clean(text)+' ',found=[];
+          const candidates=window.MujiPriceBook.rows.filter(r=>r[0]===mention.model).map(r=>({row:r,label:clean(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])})).sort((a,b)=>b.label.length-a.label.length);
+          for(const item of candidates){let from=0,pos;while((pos=normalized.indexOf(' '+item.label+' ',from))!==-1){const end=pos+item.label.length+2;if(!found.some(x=>pos<x.end-1&&end-1>x.start))found.push({row:item.row,start:pos,end});from=pos+1;}}
+          return [...new Set(found.map(x=>x.row))];
+        };
+        const exactTail=q.slice(mention.end,mentions[index+1]?.start??q.length);
+        const exactBefore=q.slice(mentions[index-1]?.end??0,mention.start);
+        const exactRows=exactRepairRows(exactTail);
+        if(!exactRows.length&&leadingRepairs.length)exactRows.push(...exactRepairRows(exactBefore));
+        if(exactRows.length)wanted=exactRows.map(r=>['exact',null,new RegExp('^'+r[1].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$','i')]).concat(wanted.filter(c=>!exactRows.some(r=>c[2].test(r[1]))));
         if(!wanted.length){output.push(priceCopy.ask+' '+mention.model+'?');needsChoice=true;requestedItems++;return;}
         const countMatch=q.slice(0,mention.start).match(/(?:^|[^a-z0-9])(\d{1,2})\s*(?:x\s*)?$/);const quantity=countMatch?Math.max(1,Number(countMatch[1])):1;
         requestedItems+=wanted.length*quantity;
@@ -205,5 +217,6 @@
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start);else start();
 })();
+
 
 
