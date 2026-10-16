@@ -1,0 +1,31 @@
+.workshop-story{padding:64px 0;background:#f5f6f7;color:#111}
+.workshop-inner{width:min(1180px,calc(100% - 40px));margin:0 auto}
+.workshop-kicker{font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px;color:#555}
+.workshop-story h2{font-size:clamp(28px,3.5vw,44px);line-height:1.12;letter-spacing:-.04em;margin:0 0 16px;max-width:760px}
+.workshop-intro{font-size:17px;line-height:1.65;max-width:760px;margin:0 0 28px;color:#454545}
+.workshop-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:920px}
+.workshop-card{margin:0;border:1px solid #e1e3e5;border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 8px 24px #00000007}
+.workshop-card img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;display:block}
+.workshop-card figcaption{padding:20px;line-height:1.55;color:#555;font-size:14px}
+.workshop-card strong{display:block;color:#111;font-size:18px;line-height:1.3;margin:0 0 7px}
+.workshop-more{display:inline-block;color:#111;font-size:14px;font-weight:700;text-decoration:underline;text-underline-offset:4px;margin-top:24px}
+.insurance-box{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;border:1px solid #dedede;border-radius:20px;padding:28px;background:#fafafa;color:#111;margin:28px 0}
+.insurance-box h2{font-size:clamp(24px,3vw,32px);line-height:1.2;letter-spacing:-.025em;margin:0 0 12px}
+.insurance-box p{font-size:15px;line-height:1.65;margin:10px 0;max-width:740px;color:#444}
+.insurance-price{font-size:clamp(32px,4vw,46px);line-height:1;letter-spacing:-.04em;font-weight:800;white-space:nowrap;display:block;margin-bottom:10px;color:#111}
+.insurance-price-label{font-size:13px;line-height:1.4;color:#555}
+.insurance-box a{display:inline-block;font-size:14px;font-weight:700;color:#fff;background:#111;border-radius:12px;padding:13px 18px;text-decoration:none;margin-top:8px}
+.insurance-box a:focus-visible,.workshop-more:focus-visible{outline:3px solid #3e6fd5;outline-offset:4px}
+.insurance-comparison{margin:28px 0;color:#111}
+.insurance-comparison>h2{font-size:clamp(25px,3vw,34px);line-height:1.2;letter-spacing:-.025em;margin:0 0 20px}
+.insurance-compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.insurance-option{padding:28px;border:1px solid #dedede;border-radius:20px;background:#fafafa}
+.insurance-option h3{font-size:21px;line-height:1.25;margin:16px 0 12px}
+.insurance-option p,.insurance-fineprint{font-size:15px;line-height:1.65;color:#444}
+.insurance-option-paid{background:#f1f3f5;border-color:#cfd3d7}
+.insurance-option a{display:inline-block;color:#fff;background:#111;border-radius:12px;padding:13px 18px;text-decoration:none;font-size:14px;font-weight:700;margin-top:8px}
+.insurance-option a:focus-visible{outline:3px solid #3e6fd5;outline-offset:4px}
+.insurance-fineprint{margin-top:18px;font-size:13px}
+@media(max-width:700px){.workshop-story{padding:38px 0}.workshop-grid{grid-template-columns:1fr;gap:20px}.workshop-inner{width:calc(100% - 32px)}.workshop-card img{aspect-ratio:4/3;object-position:center 48%}.workshop-card figcaption{padding:18px}.insurance-box{flex-direction:column-reverse;padding:22px;gap:14px}.insurance-price{font-size:38px}.insurance-box p{font-size:14px}}
+@media(prefers-reduced-motion:no-preference){.workshop-card{transition:transform .25s ease,box-shadow .25s ease}.workshop-card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #0000000d}}
+@media(max-width:700px){.insurance-compare-grid{grid-template-columns:1fr}.insurance-option{padding:22px}}
