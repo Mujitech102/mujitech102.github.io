@@ -2,7 +2,7 @@
 COPY={
 'de':{
 'diagnosis_title':'Kostenlose Diagnose. Klare Kosten vor der Reparatur.',
-'diagnosis':'Die normale Fehlerdiagnose ist kostenlos. Ein schriftlicher Diagnosebericht, eine Zustandsbeurteilung oder eine Reparaturkostenbestätigung für deine Versicherung ist kostenpflichtig. Den Preis dafür vereinbaren wir vor der Erstellung mit dir.',
+'diagnosis':'Wir prüfen, welcher Defekt vorliegt, und besprechen mit dir die mögliche Reparatur und die voraussichtlichen Kosten. Diese Einschätzung ist kostenlos. Ein schriftlicher Bericht für die Versicherung ist dabei nicht enthalten. Nur wenn du einen schriftlichen Nachweis für deine Versicherung möchtest: Für CHF 49 erstellen wir auf Wunsch einen Bericht mit Zustands- und Schadenbeschreibung, Fotos und Reparaturkostenschätzung. Die normale Diagnose bleibt kostenlos. Aufwendige zusätzliche Untersuchungen nur nach vorheriger Offerte und deiner Zustimmung. Bitte kläre vorab mit deiner Versicherung, ob sie den Bericht akzeptiert und die Kosten übernimmt.',
 'shipping_title':'Hinversand und kostenloser Rückversand',
 'shipping':'Du bezahlst den Versand zu Mujitech. Den Rückversand nach der Reparatur übernimmt Mujitech. Bitte sende dein Gerät erst ein, nachdem wir die Versandadresse bestätigt haben.',
 'price_terms':'Die angegebenen Reparaturpreise umfassen das Ersatzteil der genannten Variante und die Arbeitsleistung für diese Reparatur. Verfügbarkeit und Eignung bestätigen wir vor dem Auftrag. Zusätzliche Defekte und weitere Leistungen bearbeiten wir nur nach deiner Freigabe.',
@@ -23,7 +23,7 @@ COPY={
 },
 'en':{
 'diagnosis_title':'Free diagnosis. Agree repair costs first.',
-'diagnosis':'A standard fault diagnosis is free. A written diagnostic report, condition assessment or repair-cost statement for your insurer is chargeable. We agree the fee with you before preparing the document.',
+'diagnosis':'We check the fault and discuss the possible repair and estimated cost with you. This assessment is free. It does not include a written report for your insurer. Only if you want written documentation for your insurer: on request, we prepare a report with a condition and damage description, photos and a repair-cost estimate for CHF 49. Standard diagnosis remains free. Complex additional investigations require a prior quotation and your approval. Please check with your insurer beforehand whether it accepts the report and covers the fee.',
 'shipping_title':'Shipping to us and free return delivery',
 'shipping':'You pay for shipping to Mujitech. Mujitech pays return shipping after the repair. Please wait until we confirm the shipping address before sending your device.',
 'price_terms':'The listed repair price includes the specified replacement part and the labour for that repair. We confirm part availability and suitability before the order. We only address additional faults or provide further services with your approval.',
@@ -43,7 +43,7 @@ COPY={
 },
 'fr':{
 'diagnosis_title':'Diagnostic gratuit. Coût convenu avant réparation.',
-'diagnosis':'Le diagnostic habituel de la panne est gratuit. Un rapport écrit de diagnostic, une évaluation de l’état de l’appareil ou une attestation des frais de réparation pour votre assurance est payant. Nous convenons du prix avec vous avant de préparer le document.',
+'diagnosis':'Nous examinons la panne et discutons avec vous de la réparation possible et de son coût estimé. Cette évaluation est gratuite. Elle ne comprend pas de rapport écrit pour votre assurance. Uniquement si vous souhaitez un justificatif écrit pour votre assurance : sur demande, nous préparons pour CHF 49 un rapport décrivant l’état et les dommages, avec photos et estimation des frais de réparation. Le diagnostic habituel reste gratuit. Toute investigation supplémentaire complexe nécessite un devis préalable et votre accord. Vérifiez au préalable auprès de votre assurance si elle accepte le rapport et prend en charge son coût.',
 'shipping_title':'Envoi à votre charge et retour gratuit',
 'shipping':'Vous payez l’envoi à Mujitech. Mujitech prend en charge le retour après la réparation. Attendez la confirmation de l’adresse avant d’envoyer votre appareil.',
 'price_terms':'Le prix indiqué comprend la pièce de remplacement de la variante choisie et la main-d’œuvre pour cette réparation. Nous confirmons la disponibilité et la compatibilité avant la commande. Les pannes supplémentaires et autres prestations nécessitent votre accord.',
@@ -63,7 +63,7 @@ COPY={
 },
 'it':{
 'diagnosis_title':'Diagnosi gratuita. Costi concordati prima della riparazione.',
-'diagnosis':'La normale diagnosi del guasto è gratuita. Un rapporto diagnostico scritto, una valutazione dello stato del dispositivo o un’attestazione dei costi di riparazione per la tua assicurazione è a pagamento. Concordiamo il prezzo prima di preparare il documento.',
+'diagnosis':'Verifichiamo il guasto e discutiamo con te la possibile riparazione e il costo stimato. Questa valutazione è gratuita. Non comprende una relazione scritta per l’assicurazione. Solo se desideri una documentazione scritta per la tua assicurazione: su richiesta prepariamo per CHF 49 una relazione con descrizione dello stato e dei danni, foto e stima dei costi di riparazione. La normale diagnosi rimane gratuita. Eventuali indagini aggiuntive complesse richiedono un preventivo e il tuo consenso. Verifica prima con la tua assicurazione se accetta la relazione e ne copre il costo.',
 'shipping_title':'Spedizione a tuo carico e ritorno gratuito',
 'shipping':'Paghi la spedizione a Mujitech. Mujitech paga la spedizione di ritorno dopo la riparazione. Attendi la conferma dell’indirizzo prima di spedire il dispositivo.',
 'price_terms':'Il prezzo indicato comprende il ricambio della variante scelta e la manodopera per quella riparazione. Confermiamo disponibilità e compatibilità prima dell’ordine. Guasti aggiuntivi e altre prestazioni richiedono il tuo consenso.',
