@@ -31,6 +31,7 @@ Visibility measurement and enquiry improvements, 18 October 2026:
 - Contact form events use the selected service category, including after a recent matching provider return. Only the fixed categories in `assets/insights.js` are accepted. Changing the selection after first focus is handled at submission.
 - The desired purchase price is optional in device-buyback forms in all four languages. Device condition, ownership and privacy requirements remain in place.
 - The Fractal Pop Air image is served as a lossless WebP at the same dimensions. The original PNG remains available for old links.
+- MujiBot Wi-Fi enquiries use the existing private-customer contact category. The removed "WLAN & Internet-Hilfe" form option is no longer linked. The validator checks all 72 localized bot destinations, anchors and requested service values against their actual target pages.
 
 Validation from the repository root:
 
