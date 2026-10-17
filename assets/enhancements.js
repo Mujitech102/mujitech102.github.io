@@ -212,7 +212,9 @@
           const kind = form.querySelector('[name="Anfragebereich"]')?.value;
           try {
             if (supported.includes(kind) && localStorage.getItem('mujitech-cookie-consent') === 'all') {
-              sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now()}));
+              const area = window.MujiEnquiryArea?.(form);
+              const knownAreas = ['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general'];
+              sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now(),...(knownAreas.includes(area)?{area}: {})}));
             }
           } catch {}
           if (button) {button.disabled = true; button.setAttribute('aria-busy','true');}

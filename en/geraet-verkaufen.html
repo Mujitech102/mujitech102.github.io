@@ -335,7 +335,7 @@ body .mobilebtn {
 
 
         <div class="field">
-          <label for="wunschpreis">Desired price CHF *</label>
+          <label for="wunschpreis">Desired price CHF (optional)</label>
           <input
             id="wunschpreis"
             name="wunschpreis"
@@ -344,8 +344,9 @@ body .mobilebtn {
             step="1"
             inputmode="numeric"
             placeholder="e.g. 350"
-            required
+            aria-describedby="wunschpreis-hint"
           >
+          <p id="wunschpreis-hint" class="form-hint">Not sure what your device is worth? Leave this field empty. We will provide an initial estimate.</p>
         </div>
 
 

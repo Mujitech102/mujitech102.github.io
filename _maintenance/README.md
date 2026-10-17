@@ -18,9 +18,25 @@ Manufacturer price pages and the static price sections are generated from the sa
 
 Form endpoints remain the established FormSubmit address. CAPTCHA protection remains enabled. Each form has one honeypot, a language field, category, subject and localized return page. Three optional photo fields use the provider's documented aggregate 10 MB limit.
 
-Measurement requires statistics consent. `form_submit_attempt` counts an attempted submit. `form_confirmation_view` records a provider return only when the same tab has a recent matching submission marker. The event does not prove inbox delivery or a paid order. Markers contain only a fixed form category and time, never contact or form contents. They are stored only after statistics consent. GA4 administration/key-event settings require access to the Analytics account and are not changed by this code.
+Measurement requires statistics consent. `form_submit_attempt` counts an attempted submit. `form_confirmation_view` records a provider return only when the same tab has a recent matching submission marker. The event does not prove inbox delivery or a paid order. Markers contain only a fixed form category, an approved service category and time, never contact or form contents. They are stored only after statistics consent. GA4 administration/key-event settings require access to the Analytics account and are not changed by this code.
 
 The underscore directories are excluded from the GitHub Pages site. Do not place customer enquiries, credentials or personal data in source control.
 
 
 Approved 16 October 2026: only two repair-photo subjects (damaged back glass and iPhone secured in clamps); no workspace photos or portraits. Free diagnosis is distinct from the optional CHF 49 written insurance report, with damage/condition description, photos and repair-cost estimate. Additional complex investigations require prior quotation and approval. Apply workshop_preview_20261016.py after older content generators. Bot diagnosis/report and repair-gallery replies use the same four languages.
+
+
+Visibility measurement and enquiry improvements, 18 October 2026:
+
+- Contact form events use the selected service category, including after a recent matching provider return. Only the fixed categories in `assets/insights.js` are accepted. Changing the selection after first focus is handled at submission.
+- The desired purchase price is optional in device-buyback forms in all four languages. Device condition, ownership and privacy requirements remain in place.
+- The Fractal Pop Air image is served as a lossless WebP at the same dimensions. The original PNG remains available for old links.
+
+Validation from the repository root:
+
+```sh
+python3 _maintenance/validate.py
+node _maintenance/test_measurement.js
+```
+
+After release, check a business contact enquiry and one device-buyback form in the browser, including consent rejection and withdrawal. A successful test submission must be distinguished from a genuine customer lead. Confirm the new image URL returns HTTP 200. Google Analytics custom dimensions and key-event administration are separate account settings.
