@@ -7,12 +7,15 @@
     });
     document.querySelectorAll('.cta,.btn,.m-button,.w-btn,.private-btn,.repair-btn,.contact-btn,.hero-mini-btn,.w-nav-cta,.button,button[type=submit]').forEach(button => button.classList.add('ui-action'));
     document.querySelectorAll('.language-options a').forEach(link => {
+      const target=new URL(link.href,location.href);
+      if(target.origin!==location.origin)return;
       const requested=new URLSearchParams(location.search).get('service');
-      const services=['IT-Support KMU','IT-Betreuung','Hardware-Beschaffung','Firmenhandys','Telekom-Anfrage','Microsoft 365 / Google Workspace'];
-      if(services.includes(requested)){const target=new URL(link.href,location.href);target.searchParams.set('service',requested);link.href=target.href;}
+      const services=['Reparatur','Privatkunden-Service','Geräteankauf','Produktanfrage','IT-Support KMU','IT-Betreuung','Hardware-Beschaffung','Firmenhandys','Telekom-Anfrage','Website','Microsoft 365 / Google Workspace','Sonstiges','Datenübertragung','PC-/Laptop-Optimierung','Handy-Einrichtung','Sonstige Technik-Hilfe'];
+      if(services.includes(requested))target.searchParams.set('service',requested);
       const problem = new URLSearchParams(location.search).get('problem');
-      if (['display','battery','computer'].includes(problem)) { const target = new URL(link.href,location.href); target.searchParams.set('problem',problem); link.href=target.href; }
-      if (location.hash) link.href += location.hash;
+      if (['display','battery','computer'].includes(problem))target.searchParams.set('problem',problem);
+      if (location.hash)target.hash=location.hash;
+      link.href=target.href;
     });
     const lang=(document.documentElement.lang||'de').slice(0,2);
     const submitCopy={de:'Weiter zur Übermittlung. Bitte die Bestätigung auf der nächsten Seite prüfen. Falls es nicht klappt, kontaktiere uns per E-Mail oder WhatsApp.',fr:'Poursuite de l’envoi. Vérifiez la confirmation sur la page suivante. En cas de problème, contactez-nous par e-mail ou WhatsApp.',it:'Passaggio all’invio. Verifica la conferma nella pagina successiva. In caso di problemi, contattaci via e-mail o WhatsApp.',en:'Continuing to submission. Check the confirmation on the next page. If it fails, contact us by email or WhatsApp.'};
