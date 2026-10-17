@@ -14,15 +14,22 @@
   // Preserve only approved public campaign labels; never arbitrary URL values.
   const campaignParams=new URLSearchParams(location.search);
   const safeCampaign={};
-  const labels={utm_source:['google','instagram','tiktok','tutti','ricardo','local','partner'],utm_medium:['cpc','organic','social','referral','print'],utm_campaign:['local-repairs','local-it','kmu','repair-cases','google-profile','baseline','gaming-pcs']};
+  const labels={utm_source:['google','bing','instagram','facebook','tiktok','tutti','ricardo','local','search','partner'],utm_medium:['cpc','organic','social','referral','print'],utm_campaign:['local-repairs','local-it','kmu','repair-cases','google-profile','baseline','gaming-pcs','webdesign','device-buyback','iphone-sales','private-support']};
   const fields={utm_source:'campaign_source',utm_medium:'campaign_medium',utm_campaign:'campaign_name'};
   Object.entries(labels).forEach(([key,values])=>{const value=campaignParams.get(key);if(values.includes(value))safeCampaign[fields[key]]=value;});
   const pageName=location.pathname.split('/').filter(Boolean).pop()||'index.html';
   const repairPath=/(?:iphone-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|samsung-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|reparation-(?:ecran|connecteur-charge)|remplacement-batterie|riparazione-(?:display|connettore-ricarica)|sostituzione-batteria|reparaturpreise-|repair-prices-|tarifs-reparation-|prezzi-riparazione-)/.test(pageName);
   const confirmationArea=pageName==='danke.html'&&['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(new URLSearchParams(location.search).get('form'))?new URLSearchParams(location.search).get('form'):null;
-  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop'})[pageName]||confirmationArea||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
+  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||confirmationArea||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
+  const areas=new Set(['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general']);
+  // Only fixed option values become analytics categories; never send free-form input.
+  const contactAreas={'Reparatur':'repair','Privatkunden-Service':'private_support','Geräteankauf':'device_purchase','Produktanfrage':'shop','IT-Support KMU':'business_it','IT-Betreuung':'business_it','Hardware-Beschaffung':'business_it','Firmenhandys':'business_it','Telekom-Anfrage':'business_it','Website':'webdesign','Microsoft 365 / Google Workspace':'business_it','Sonstiges':'contact'};
+  const categoryFor=value=>Object.prototype.hasOwnProperty.call(contactAreas,value)?contactAreas[value]:null;
+  const pageArea=()=>pageName==='kontakt.html'?(categoryFor(document.querySelector('select[name="bereich"]')?.value)||categoryFor(campaignParams.get('service'))||(location.hash==='#business'?'business_it':'contact')):serviceArea;
+  const enquiryArea=form=>categoryFor(form?.querySelector?.('select[name="bereich"]')?.value)||pageArea();
+  window.MujiEnquiryArea=enquiryArea;
   const event=(name,params={})=>{
-    if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:serviceArea,page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
+    if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
   };
   function productItem(){
     let product;
@@ -41,7 +48,7 @@
     try {
       const pending=JSON.parse(sessionStorage.getItem('mujitech-pending-enquiry')||'null');
       if(!pending || pending.kind!==kind || !Number.isFinite(pending.time) || Date.now()-pending.time<0 || Date.now()-pending.time>30*60*1000)return;
-      event('form_confirmation_view',{form_id:kind,confirmation_type:'provider_redirect'});
+      event('form_confirmation_view',{form_id:kind,confirmation_type:'provider_redirect',service_area:areas.has(pending.area)?pending.area:serviceArea});
       confirmationRecorded=true;
       sessionStorage.removeItem('mujitech-pending-enquiry');
     }catch{}
@@ -96,8 +103,8 @@
     // Delegation also covers forms added by MujiBot after page load.
     const startedForms=new WeakSet();
     const formID=form=>form.classList.contains('mujibot-callback')?'mujibot-callback':form.classList.contains('mujibot-form')?'mujibot-question':form.id||'website-form';
-    document.addEventListener('focusin',e=>{const form=e.target.closest('form');if(!form||!allowed||startedForms.has(form))return;startedForms.add(form);event('form_start',{form_id:formID(form)});});
-    document.addEventListener('submit',e=>{const form=e.target;if(!form.matches('form')||form.closest('.mujibot'))return;event('form_submit_attempt',{form_id:formID(form)});});
+    document.addEventListener('focusin',e=>{const form=e.target.closest('form');if(!form||!allowed||startedForms.has(form))return;startedForms.add(form);event('form_start',{form_id:formID(form),service_area:enquiryArea(form)});});
+    document.addEventListener('submit',e=>{const form=e.target;if(e.defaultPrevented||!form.matches('form')||form.closest('.mujibot'))return;event('form_submit_attempt',{form_id:formID(form),service_area:enquiryArea(form)});});
     // Only fixed action labels are accepted. No chat or callback field contents.
     document.addEventListener('mujitech-action',e=>{const detail=e.detail||{};if(!['mujibot_open','mujibot_price_view','callback_request_open','repair_price_view'].includes(detail.type))return;const params={};if(['email','whatsapp'].includes(detail.channel))params.contact_channel=detail.channel;if(detail.type==='callback_request_open')params.form_id='mujibot-callback';event(detail.type,params);});
     const seen=new Set();let pending=false;
