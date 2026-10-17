@@ -32,12 +32,14 @@ Visibility measurement and enquiry improvements, 18 October 2026:
 - The desired purchase price is optional in device-buyback forms in all four languages. Device condition, ownership and privacy requirements remain in place.
 - The Fractal Pop Air image is served as a lossless WebP at the same dimensions. The original PNG remains available for old links.
 - MujiBot Wi-Fi enquiries use the existing private-customer contact category. The removed "WLAN & Internet-Hilfe" form option is no longer linked. The validator checks all 72 localized bot destinations, anchors and requested service values against their actual target pages.
+- Language links preserve all 16 supported contact/private-service query values. Unrecognized query values and external links are excluded; user-entered form contents are never appended. The regression test derives options from the four published language versions and checks 256 destinations.
 
 Validation from the repository root:
 
 ```sh
 python3 _maintenance/validate.py
 node _maintenance/test_measurement.js
+node _maintenance/test_language_context.js
 ```
 
 After release, check a business contact enquiry and one device-buyback form in the browser, including consent rejection and withdrawal. A successful test submission must be distinguished from a genuine customer lead. Confirm the new image URL returns HTTP 200. Google Analytics custom dimensions and key-event administration are separate account settings.
