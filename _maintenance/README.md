@@ -33,6 +33,7 @@ Visibility measurement and enquiry improvements, 18 October 2026:
 - The Fractal Pop Air image is served as a lossless WebP at the same dimensions. The original PNG remains available for old links.
 - MujiBot Wi-Fi enquiries use the existing private-customer contact category. The removed "WLAN & Internet-Hilfe" form option is no longer linked. The validator checks all 72 localized bot destinations, anchors and requested service values against their actual target pages.
 - Language links preserve all 16 supported contact/private-service query values. Unrecognized query values and external links are excluded; user-entered form contents are never appended. The regression test derives options from the four published language versions and checks 256 destinations.
+- Contact forms show optional guidance for the selected service in DE/EN/FR/IT. Guidance is associated with the message field and updates without replacing entered text or adding required fields. Website-package FAQs summarize the existing domain, hosting, content and optional-care conditions before the enquiry form; prices and package scope are unchanged.
 
 Validation from the repository root:
 
@@ -40,6 +41,7 @@ Validation from the repository root:
 python3 _maintenance/validate.py
 node _maintenance/test_measurement.js
 node _maintenance/test_language_context.js
+node _maintenance/test_enquiry_guidance.js
 ```
 
 After release, check a business contact enquiry and one device-buyback form in the browser, including consent rejection and withdrawal. A successful test submission must be distinguished from a genuine customer lead. Confirm the new image URL returns HTTP 200. Google Analytics custom dimensions and key-event administration are separate account settings.

@@ -258,3 +258,24 @@
   };
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();
+
+/* Optional enquiry guidance follows the selected service; never edits entered text. */
+(() => {
+  'use strict';
+  const ready=()=>{
+    const form=document.querySelector('#kontaktformular');if(!form)return;
+    const area=form.querySelector('[name="bereich"]'),note=form.querySelector('#enquiry-guidance');if(!area||!note)return;
+    const lang=(document.documentElement.lang||'de').slice(0,2);
+    const copy={
+      de:{general:'Freiwillige Details helfen bei der ersten Einschätzung.',repair:'Hilfreich sind Gerätemodell, genauer Fehler und seit wann er auftritt.',private:'Hilfreich sind dein bisheriges und gegebenenfalls neues Gerät sowie die gewünschte Unterstützung oder Datenübertragung.',buyback:'Hilfreich sind Modell, Speicher, Zustand, bekannte Mängel und vorhandenes Zubehör.',product:'Nenne das gewünschte Produkt oder Modell. Beim Gaming-PC helfen Spiele, Bildschirmauflösung und dein Budget.',business:'Hilfreich sind die Anzahl betroffener Geräte oder Personen, vorhandene Systeme und das gewünschte Ziel.',web:'Hilfreich sind deine Branche, das Ziel der Website, gewünschte Funktionen und ein bestehender Link, falls vorhanden.',privacy:'Bitte keine Passwörter, PINs oder vertraulichen Unterlagen senden.'},
+      en:{general:'Optional details help us assess your enquiry.',repair:'Helpful details include the device model, the exact fault and when it started.',private:'Helpful details include your current and, if relevant, new device, and the support or data transfer you need.',buyback:'Helpful details include the model, storage, condition, known faults and included accessories.',product:'Tell us which product or model you want. For a gaming PC, include your games, screen resolution and budget.',business:'Helpful details include the number of affected devices or people, existing systems and what you want to achieve.',web:'Helpful details include your industry, website goals, required features and an existing website link, if any.',privacy:'Please do not send passwords, PINs or confidential documents.'},
+      fr:{general:'Les précisions facultatives facilitent une première évaluation.',repair:'Indiquez, si possible, le modèle de l’appareil, la panne exacte et depuis quand elle se produit.',private:'Précisez votre appareil actuel, le nouvel appareil le cas échéant et l’aide ou le transfert de données souhaité.',buyback:'Le modèle, le stockage, l’état, les défauts connus et les accessoires disponibles sont utiles.',product:'Précisez le produit ou le modèle souhaité. Pour un PC gaming, indiquez vos jeux, la résolution de l’écran et votre budget.',business:'Le nombre d’appareils ou de personnes concernés, les systèmes existants et l’objectif souhaité sont utiles.',web:'Précisez votre secteur, l’objectif du site, les fonctions souhaitées et le lien du site actuel, le cas échéant.',privacy:'N’envoyez pas de mots de passe, de codes PIN ni de documents confidentiels.'},
+      it:{general:'I dettagli facoltativi aiutano nella prima valutazione.',repair:'Sono utili il modello del dispositivo, il guasto preciso e da quando si verifica.',private:'Indica il dispositivo attuale, quello nuovo se presente e l’assistenza o il trasferimento di dati desiderato.',buyback:'Sono utili modello, memoria, condizioni, difetti noti e accessori disponibili.',product:'Indica il prodotto o il modello desiderato. Per un PC gaming sono utili giochi, risoluzione dello schermo e budget.',business:'Sono utili il numero di dispositivi o persone interessati, i sistemi esistenti e l’obiettivo desiderato.',web:'Sono utili il tuo settore, l’obiettivo del sito, le funzioni desiderate e il link del sito attuale, se presente.',privacy:'Non inviare password, PIN o documenti riservati.'}
+    };
+    const groups={repair:['Reparatur'],private:['Privatkunden-Service'],buyback:['Geräteankauf'],product:['Produktanfrage'],business:['IT-Support KMU','IT-Betreuung','Hardware-Beschaffung','Firmenhandys','Telekom-Anfrage','Microsoft 365 / Google Workspace'],web:['Website']};
+    const text=copy[lang]||copy.en;
+    const sync=()=>{const key=Object.keys(groups).find(key=>groups[key].includes(area.value))||'general';note.textContent=text[key]+' '+text.privacy;};
+    area.addEventListener('change',sync);window.addEventListener('pageshow',sync);sync();
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
+})();
