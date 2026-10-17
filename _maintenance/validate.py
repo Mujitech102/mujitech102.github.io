@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from html import unescape
-from urllib.parse import urlsplit,unquote
+from urllib.parse import urlsplit,unquote,parse_qs
 from decimal import Decimal
 from collections import Counter
 import json,re,subprocess,sys,xml.etree.ElementTree as ET
@@ -10,16 +10,19 @@ ROOT=Path(__file__).resolve().parents[1]
 NODE='/Users/andritmuji/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node'
 errors=[];pages={};formcount=0;redirects={}
 class Page(HTMLParser):
- def __init__(self):super().__init__();self.ids=[];self.tags=[];self.scripts=[];self.script=None;self.forms=[];self.form=None;self.text=[]
+ def __init__(self):super().__init__();self.ids=[];self.tags=[];self.scripts=[];self.script=None;self.forms=[];self.form=None;self.text=[];self.select=None;self.choices={}
  def handle_starttag(self,t,a):
   a=dict(a);self.tags.append((t,a))
   if 'id' in a:self.ids.append(a['id'])
   if t=='script':self.script=[a,'']
   if t=='form':self.form={'attrs':a,'fields':[]}
+  if t=='select':self.select=a.get('name');self.choices.setdefault(self.select,[])
+  if t=='option' and self.select:self.choices[self.select].append(a.get('value',''))
   if self.form is not None and t in ['input','select','textarea','button']:self.form['fields'].append((t,a))
  def handle_endtag(self,t):
   if t=='script' and self.script:self.scripts.append(self.script);self.script=None
   if t=='form' and self.form:self.forms.append(self.form);self.form=None
+  if t=='select':self.select=None
  def handle_data(self,d):
   if self.script:self.script[1]+=d
   else:self.text.append(d)
@@ -85,6 +88,19 @@ for p,c in pages.items():
  for t,a in c.tags:
   u=a.get('href','');sp=urlsplit(u);dest=target(p,u)
   if sp.fragment and dest in pages and unquote(sp.fragment) not in pages[dest].ids:errors.append(f'{rel}: broken anchor {u}')
+# MujiBot builds these links dynamically, so the ordinary HTML crawl cannot see them.
+bot=(ROOT/'assets/mujibot.js').read_text()
+route_match=re.search(r'const destinations = \{([^\n]+)\};',bot)
+bot_routes=re.findall(r"(\w+):'([^']*)'",route_match[1]) if route_match else []
+if not bot_routes:errors.append('MujiBot: no destination map found')
+for language in ['','en','fr','it']:
+ for topic,url in bot_routes:
+  dest=target(ROOT/language/'index.html',url);sp=urlsplit(url)
+  if dest not in pages:errors.append(f'MujiBot {language or "de"}/{topic}: missing {url}');continue
+  page=pages[dest]
+  if sp.fragment and unquote(sp.fragment) not in page.ids:errors.append(f'MujiBot {language or "de"}/{topic}: broken anchor {url}')
+  service=parse_qs(sp.query).get('service',[None])[0]
+  if service and service not in page.choices.get('service',[])+page.choices.get('bereich',[]):errors.append(f'MujiBot {language or "de"}/{topic}: unsupported service {service}')
 for js in ROOT.glob('assets/*.js'):
  r=subprocess.run([NODE,'--check',str(js)],capture_output=True,text=True)
  if r.returncode:errors.append(f'{js.name}: JavaScript syntax {r.stderr[:100]}')
@@ -107,5 +123,5 @@ if len(urls)!=len(set(urls)):errors.append('Sitemap duplicate URLs')
 for u in urls:
  if target(ROOT/'index.html',u) not in pages:errors.append('Sitemap target missing: '+u)
  if target(ROOT/'index.html',u) in redirects:errors.append('Sitemap contains redirect: '+u)
-summary={'pages':len(pages),'sitemap_urls':len(urls),'forms':formcount,'repair_rows':len(book['rows']),'confirmed_prices':sum(r[2] is not None for r in book['rows']),'new_prices':len(provenance['changes']),'errors':errors}
+summary={'pages':len(pages),'sitemap_urls':len(urls),'forms':formcount,'bot_routes_checked':len(bot_routes)*4,'repair_rows':len(book['rows']),'confirmed_prices':sum(r[2] is not None for r in book['rows']),'new_prices':len(provenance['changes']),'errors':errors}
 print(json.dumps(summary,ensure_ascii=False,indent=2));sys.exit(bool(errors))
