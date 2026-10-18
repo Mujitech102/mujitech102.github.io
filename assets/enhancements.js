@@ -214,7 +214,7 @@
           if (event.defaultPrevented) return;
           const kind = form.querySelector('[name="Anfragebereich"]')?.value;
           try {
-            if (supported.includes(kind) && localStorage.getItem('mujitech-cookie-consent') === 'all') {
+            if (supported.includes(kind) && ['all','measurement'].includes(localStorage.getItem('mujitech-cookie-consent'))) {
               const area = window.MujiEnquiryArea?.(form);
               const knownAreas = ['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general'];
               sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now(),...(knownAreas.includes(area)?{area}: {})}));
