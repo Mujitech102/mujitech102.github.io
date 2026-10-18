@@ -4,13 +4,23 @@
   const ID='G-C2WKE7YV33', KEY='mujitech-cookie-consent';
   const lang=(document.documentElement.lang||'de').slice(0,2);
   const copy={
-    de:['Cookies & Datenschutz','Mit Ihrer Zustimmung messen wir Seitenaufrufe, Kontaktklicks und Formularinteraktionen mit Google Analytics. Formularinhalte werden nicht an Analytics gesendet.','Datenschutzhinweise','Nur notwendige','Statistik erlauben'],
-    fr:['Cookies et confidentialité','Avec votre accord, Google Analytics mesure les pages vues, clics de contact et interactions avec les formulaires. Le contenu des formulaires n’est pas transmis à Analytics.','Confidentialité','Uniquement nécessaires','Autoriser les statistiques'],
-    it:['Cookie e privacy','Con il tuo consenso, Google Analytics misura pagine visitate, clic di contatto e interazioni con i moduli. I contenuti dei moduli non vengono inviati ad Analytics.','Privacy','Solo necessari','Consenti statistiche'],
-    en:['Cookies and privacy','With your consent, Google Analytics measures page views, contact clicks and form interactions. Form contents are not sent to Analytics.','Privacy information','Necessary only','Allow statistics']
-  }[lang] || ['Privacy and statistics','Optional visitor statistics with Google Analytics.','Privacy information','Necessary only','Allow statistics'];
-  let allowed=false,loaded=false,banner,settingsTrigger;
+    de:['Cookies & Datenschutz','Statistik misst Seitenaufrufe, Kontaktklicks und Formularinteraktionen mit Google Analytics. Optional verknüpft Anzeigenmessung mit Google Ads einen Anzeigenklick mit einer späteren Anfrage. Keine personalisierte Werbung; keine Formularinhalte an Analytics.','Datenschutzhinweise','Nur notwendige','Nur Statistik erlauben','Statistik + Anzeigenmessung'],
+    fr:['Cookies et confidentialité','Les statistiques mesurent les pages vues, clics de contact et interactions avec Google Analytics. La mesure facultative des annonces avec Google Ads relie un clic publicitaire à une demande ultérieure. Aucune publicité personnalisée ni contenu des formulaires dans Analytics.','Confidentialité','Uniquement nécessaires','Statistiques uniquement','Statistiques + mesure des annonces'],
+    it:['Cookie e privacy','Le statistiche misurano pagine visitate, clic di contatto e interazioni con Google Analytics. La misurazione facoltativa con Google Ads collega un clic pubblicitario a una richiesta successiva. Nessuna pubblicità personalizzata; nessun contenuto dei moduli ad Analytics.','Privacy','Solo necessari','Solo statistiche','Statistiche + misurazione annunci'],
+    en:['Cookies and privacy','Statistics measure page views, contact clicks and form interactions with Google Analytics. Optional ad measurement with Google Ads links an ad click to a later enquiry. No personalised advertising; no form contents sent to Analytics.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement']
+  }[lang] || ['Privacy and statistics','Optional Google Analytics statistics and separate Google Ads measurement. No personalised advertising.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement'];
+  let allowed=false,adsAllowed=false,loaded=false,banner,settingsTrigger;
   const cleanURL=location.origin+location.pathname;
+  // Only an explicit, separate ad-measurement choice allows standard click identifiers.
+  const measuredURL=()=>{
+    if(!adsAllowed)return cleanURL;
+    const query=new URLSearchParams();
+    ['gclid','gbraid','wbraid'].forEach(key=>{
+      const values=campaignParams.getAll(key);
+      if(values.length===1 && /^[A-Za-z0-9_-]{20,512}$/.test(values[0]))query.set(key,values[0]);
+    });
+    return cleanURL+(query.size?'?'+query.toString():'');
+  };
   // Preserve only approved public campaign labels; never arbitrary URL values.
   const campaignParams=new URLSearchParams(location.search);
   const safeCampaign={};
@@ -29,7 +39,7 @@
   const enquiryArea=form=>categoryFor(form?.querySelector?.('select[name="bereich"]')?.value)||pageArea();
   window.MujiEnquiryArea=enquiryArea;
   const event=(name,params={})=>{
-    if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:cleanURL,page_referrer:referrer(),page_title:document.title});
+    if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
   };
   function productItem(){
     let product;
@@ -53,44 +63,55 @@
       sessionStorage.removeItem('mujitech-pending-enquiry');
     }catch{}
   }
-  function activate(){
+  function activate(withAds=false){
+    const hadAds=adsAllowed;adsAllowed=withAds;
     allowed=true;window['ga-disable-'+ID]=false;
-    if(loaded){window.gtag('consent','update',{analytics_storage:'granted'});confirmation();return;}
+    const consent={analytics_storage:'granted',ad_storage:adsAllowed?'granted':'denied',ad_user_data:adsAllowed?'granted':'denied',ad_personalization:'denied'};
+    const config={...safeCampaign,send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false,page_location:measuredURL(),page_referrer:referrer()};
+    if(loaded){
+      window.gtag('consent','update',consent);
+      if(hadAds&&!adsAllowed)clearCookies(/^_gcl_|^_gac_/);
+      window.gtag('config',ID,config);confirmation();return;
+    }
     loaded=true;window.dataLayer=window.dataLayer||[];
     window.gtag=function(){window.dataLayer.push(arguments);};
-    window.gtag('consent','default',{analytics_storage:'granted',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+    window.gtag('consent','default',consent);
     window.gtag('js',new Date());
     // Automatic form/link collection is disabled in the stream too; no field values or destination query strings.
-    window.gtag('config',ID,{...safeCampaign,send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false,page_location:cleanURL,page_referrer:referrer()});
+    window.gtag('config',ID,config);
     const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.append(s);
     event('page_view');
     confirmation();
     const item=productItem();if(item)event('view_item',{currency:'CHF',value:item.price,items:[item]});
   }
   function revoke(){
-    allowed=false;window['ga-disable-'+ID]=true;
+    allowed=false;adsAllowed=false;window['ga-disable-'+ID]=true;
     try{sessionStorage.removeItem('mujitech-pending-enquiry');}catch{}
-    if(window.gtag)window.gtag('consent','update',{analytics_storage:'denied'});
+    if(window.gtag)window.gtag('consent','update',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
+    clearCookies(/^_ga(?:_|$)|^_gid$|^_gat|^_gcl_|^_gac_/);
+  }
+  function clearCookies(pattern){
     const domains=[location.hostname,'.'+location.hostname,'.mujitech.ch',''];
     const paths=['/'];
     location.pathname.split('/').slice(1,-1).forEach((part,i,arr)=>paths.push('/'+arr.slice(0,i+1).join('/')));
     document.cookie.split(';').forEach(c=>{
-      const name=c.split('=')[0].trim();if(!/^_ga(?:_|$)|^_gid$|^_gat/.test(name))return;
+      const name=c.split('=')[0].trim();if(!pattern.test(name))return;
       domains.forEach(domain=>paths.forEach(path=>{document.cookie=name+'=; Max-Age=0; path='+path+(domain?'; domain='+domain:'')+'; SameSite=Lax';}));
     });
   }
-  function save(value){try{localStorage.setItem(KEY,value);}catch{} if(value==='all')activate();else revoke();banner.hidden=true;if(settingsTrigger){settingsTrigger.focus();settingsTrigger=null;}}
+  function applyChoice(value){if(value==='all'||value==='measurement')activate(value==='measurement');else revoke();}
+  function save(value){try{localStorage.setItem(KEY,value);}catch{} applyChoice(value);banner.hidden=true;if(settingsTrigger){settingsTrigger.focus();settingsTrigger=null;}}
   function ready(){
     banner=document.createElement('section');banner.className='ch-privacy-banner';banner.style.zIndex='1000';banner.setAttribute('role','dialog');banner.setAttribute('aria-label',copy[0]);banner.setAttribute('aria-describedby','cookie-description');
     const text=document.createElement('div');const strong=document.createElement('strong');strong.textContent=copy[0];text.append(strong);
     const p=document.createElement('p');p.id='cookie-description';p.textContent=copy[1]+' ';const a=document.createElement('a');a.href=(lang==='de'?'/':'/'+lang+'/')+'rechtliches.html#datenschutz';a.textContent=copy[2];p.append(a);text.append(p);
     const actions=document.createElement('div');actions.className='ch-privacy-actions';
-    [copy[3],copy[4]].forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>save(i?'all':'necessary'));actions.append(b);});
+    [copy[3],copy[4],copy[5]].forEach((label,i)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.addEventListener('click',()=>save(['necessary','all','measurement'][i]));actions.append(b);});
     banner.append(text,actions);document.body.append(banner);
     let saved;try{saved=localStorage.getItem(KEY);}catch{}
-    banner.hidden=saved==='all'||saved==='necessary';if(saved==='all')activate();
+    banner.hidden=['all','measurement','necessary'].includes(saved);if(saved==='all'||saved==='measurement')applyChoice(saved);
     document.querySelectorAll('[data-consent-settings]').forEach(b=>b.addEventListener('click',()=>{settingsTrigger=b;banner.hidden=false;actions.firstElementChild.focus();}));
-    window.addEventListener('storage',e=>{if(e.key!==KEY)return;if(e.newValue==='all')activate();else revoke();banner.hidden=e.newValue==='all'||e.newValue==='necessary';});
+    window.addEventListener('storage',e=>{if(e.key!==KEY)return;applyChoice(e.newValue);banner.hidden=['all','measurement','necessary'].includes(e.newValue);});
     document.addEventListener('click',e=>{
       const a=e.target.closest('a[href]');if(!a)return;
       const href=a.getAttribute('href');
