@@ -108,9 +108,11 @@ for js in ROOT.glob('assets/*.js'):
 s=(ROOT/'assets/repair-prices-data.js').read_text();book=json.loads(s[s.index('{'):].rstrip(';\n'));lookup={(r[0],r[1]):r[2] for r in book['rows']}
 if len(lookup)!=len(book['rows']):errors.append('Duplicate model/part prices')
 provenance=json.loads((ROOT/'_maintenance/price-provenance-2026-10-15.json').read_text())
-for r in provenance['changes']:
- expected=(Decimal(r['reference_chf'])*Decimal('0.80')).quantize(Decimal('0.01'))
- if Decimal(str(lookup[(r['model'],r['repair'])]))!=expected:errors.append(f'Incorrect 20% calculation: {r["model"]} {r["repair"]}')
+approved=json.loads((ROOT/'_maintenance/approved-repair-prices.json').read_text())
+expected={(r[0],r[1]):r[2] for r in approved['rows']}
+for key,price in lookup.items():
+ if price!=expected.get(key):errors.append('Unapproved price: '+str(key))
+ if price is not None and (price<=0 or price%5):errors.append('Invalid CHF 5 rounding: '+str(key))
 # Warranty promise changes apply to PCs, not the separate 24-month iPhone offers.
 for p in files:
  s=p.read_text()

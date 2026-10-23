@@ -56,9 +56,10 @@ if 'if(exactLabels[value]?.[lang])' not in script:
  script=script.replace("if(!dictionaries[lang])return value;", "if(exactLabels[value]?.[lang])return exactLabels[value][lang];if(!dictionaries[lang])return value;")
 (ROOT/'assets/repair-prices.js').write_text(script)
 provenance=json.loads((ROOT/'_maintenance/price-provenance-2026-10-15.json').read_text())
-imports={(r['model'],r['repair']):float(r['price_chf']) for r in provenance['changes']}
+approved=json.loads((ROOT/'_maintenance/approved-repair-prices.json').read_text())
+imports={(r[0],r[1]):r[2] for r in approved['rows']}
 for row in rows:
- if row[2] is None and (row[0],row[1]) in imports:row[2]=imports[(row[0],row[1])]
+ row[2]=imports.get((row[0],row[1]))
 book['updated']='2026-10-15'
 (ROOT/'assets/repair-prices-data.js').write_text('window.MujiPriceBook='+json.dumps(book,ensure_ascii=False,separators=(',',':'))+';\n')
 BRANDS={
