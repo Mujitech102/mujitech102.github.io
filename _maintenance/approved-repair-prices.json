@@ -1,0 +1,1205 @@
+{
+  "rule": "Only approved model/quality pairs. Customer prices in CHF 5 steps. Unconfirmed costs remain on request. Internal costs are not stored in this public repository.",
+  "rows": [
+    [
+      "Google Pixel 8A",
+      "Display",
+      160
+    ],
+    [
+      "Google Pixel 7A",
+      "Display",
+      155
+    ],
+    [
+      "Google Pixel 6A",
+      "Display",
+      140
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Display Original, Service Pack",
+      420
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Display Original, Pulled",
+      375
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Display Premium",
+      280
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Akku Original, Service Pack",
+      140
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Hauptkamera",
+      145
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Kameralinse",
+      95
+    ],
+    [
+      "iPhone 17 Pro Max",
+      "Ladeanschluss",
+      170
+    ],
+    [
+      "iPhone 17 Pro",
+      "Display Original, Service Pack",
+      460
+    ],
+    [
+      "iPhone 17 Pro",
+      "Display Original, Pulled",
+      355
+    ],
+    [
+      "iPhone 17 Pro",
+      "Display Premium",
+      255
+    ],
+    [
+      "iPhone 17 Pro",
+      "Akku Original, Service Pack",
+      150
+    ],
+    [
+      "iPhone 17 Pro",
+      "Hauptkamera",
+      145
+    ],
+    [
+      "iPhone 17 Pro",
+      "Kameralinse",
+      95
+    ],
+    [
+      "iPhone 17 Pro",
+      "Ladeanschluss",
+      170
+    ],
+    [
+      "iPhone 17 Air",
+      "Display Original, Service Pack",
+      375
+    ],
+    [
+      "iPhone 17 Air",
+      "Display Original, Pulled",
+      355
+    ],
+    [
+      "iPhone 17 Air",
+      "Display Premium",
+      260
+    ],
+    [
+      "iPhone 17 Air",
+      "Akku Original, Service Pack",
+      140
+    ],
+    [
+      "iPhone 17 Air",
+      "Hauptkamera",
+      150
+    ],
+    [
+      "iPhone 17 Air",
+      "Kameralinse",
+      90
+    ],
+    [
+      "iPhone 17 Air",
+      "Ladeanschluss",
+      135
+    ],
+    [
+      "iPhone 17",
+      "Display Original, Service Pack",
+      375
+    ],
+    [
+      "iPhone 17",
+      "Display Original, Pulled",
+      280
+    ],
+    [
+      "iPhone 17",
+      "Display Premium",
+      185
+    ],
+    [
+      "iPhone 17",
+      "Akku Original, Service Pack",
+      135
+    ],
+    [
+      "iPhone 17",
+      "Hauptkamera",
+      145
+    ],
+    [
+      "iPhone 17",
+      "Kameralinse",
+      90
+    ],
+    [
+      "iPhone 17",
+      "Ladeanschluss",
+      165
+    ],
+    [
+      "iPhone 17e",
+      "Display Premium",
+      140
+    ],
+    [
+      "iPhone 16",
+      "Display Original, Service Pack",
+      340
+    ],
+    [
+      "iPhone 16",
+      "Display Original, Pulled",
+      215
+    ],
+    [
+      "iPhone 16",
+      "Display Premium",
+      140
+    ],
+    [
+      "iPhone 16",
+      "Hauptkamera",
+      120
+    ],
+    [
+      "iPhone 16",
+      "Ladeanschluss",
+      120
+    ],
+    [
+      "iPhone 15 Pro Max",
+      "Display Original, Service Pack",
+      385
+    ],
+    [
+      "iPhone 15 Pro Max",
+      "Display Premium",
+      185
+    ],
+    [
+      "iPhone 15 Pro Max",
+      "Kameralinse",
+      75
+    ],
+    [
+      "iPhone 15 Pro Max",
+      "Hauptkamera",
+      135
+    ],
+    [
+      "iPhone 15 Pro Max",
+      "Ladeanschluss",
+      110
+    ],
+    [
+      "iPhone 15 Pro",
+      "Display Original, Service Pack",
+      350
+    ],
+    [
+      "iPhone 15 Pro",
+      "Display Original, Pulled",
+      275
+    ],
+    [
+      "iPhone 15 Pro",
+      "Display Premium",
+      180
+    ],
+    [
+      "iPhone 15 Pro",
+      "Kameralinse",
+      75
+    ],
+    [
+      "iPhone 15 Pro",
+      "Hauptkamera",
+      130
+    ],
+    [
+      "iPhone 15 Pro",
+      "Ladeanschluss",
+      110
+    ],
+    [
+      "iPhone 15 Plus",
+      "Display Premium",
+      155
+    ],
+    [
+      "iPhone 15 Plus",
+      "Kameralinse",
+      75
+    ],
+    [
+      "iPhone 15 Plus",
+      "Hauptkamera",
+      105
+    ],
+    [
+      "iPhone 15 Plus",
+      "Ladeanschluss",
+      110
+    ],
+    [
+      "iPhone 15",
+      "Display Original, Service Pack",
+      320
+    ],
+    [
+      "iPhone 15",
+      "Display Original, Pulled",
+      210
+    ],
+    [
+      "iPhone 15",
+      "Display Premium",
+      155
+    ],
+    [
+      "iPhone 15",
+      "Kameralinse",
+      75
+    ],
+    [
+      "iPhone 15",
+      "Hauptkamera",
+      100
+    ],
+    [
+      "iPhone 15",
+      "Ladeanschluss",
+      110
+    ],
+    [
+      "iPhone 14 Pro Max",
+      "Display Original, Pulled",
+      235
+    ],
+    [
+      "iPhone 14 Pro Max",
+      "Display Premium",
+      140
+    ],
+    [
+      "iPhone 14 Pro Max",
+      "Kameralinse",
+      75
+    ],
+    [
+      "iPhone 14 Pro Max",
+      "Hauptkamera",
+      115
+    ],
+    [
+      "iPhone 14 Pro Max",
+      "Ladeanschluss",
+      105
+    ],
+    [
+      "iPhone 14 Pro",
+      "Display Original, Pulled",
+      205
+    ],
+    [
+      "iPhone 14 Pro",
+      "Display Premium",
+      140
+    ],
+    [
+      "iPhone 14 Pro",
+      "Kameralinse",
+      75
+    ],
+    [
+      "iPhone 14 Pro",
+      "Hauptkamera",
+      115
+    ],
+    [
+      "iPhone 14 Pro",
+      "Ladeanschluss",
+      105
+    ],
+    [
+      "iPhone 14 Plus",
+      "Kameralinse",
+      70
+    ],
+    [
+      "iPhone 14 Plus",
+      "Hauptkamera",
+      115
+    ],
+    [
+      "iPhone 14 Plus",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "iPhone 14 Plus",
+      "Lautsprecher oben",
+      95
+    ],
+    [
+      "iPhone 14 Plus",
+      "Lautsprecher unten",
+      75
+    ],
+    [
+      "iPhone 14",
+      "Kameralinse",
+      70
+    ],
+    [
+      "iPhone 14",
+      "Hauptkamera",
+      100
+    ],
+    [
+      "iPhone 14",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "iPhone 14",
+      "Lautsprecher oben",
+      95
+    ],
+    [
+      "iPhone 13 Pro Max",
+      "Kameralinse",
+      65
+    ],
+    [
+      "iPhone 13 Pro Max",
+      "Hauptkamera",
+      145
+    ],
+    [
+      "iPhone 13 Pro Max",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "iPhone 13 Pro",
+      "Kameralinse",
+      65
+    ],
+    [
+      "iPhone 13 Pro",
+      "Hauptkamera",
+      125
+    ],
+    [
+      "iPhone 13 Pro",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "iPhone 13",
+      "Kameralinse",
+      65
+    ],
+    [
+      "iPhone 13",
+      "Hauptkamera",
+      80
+    ],
+    [
+      "iPhone 13",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "iPhone 13 Mini",
+      "Kameralinse",
+      80
+    ],
+    [
+      "iPhone 13 Mini",
+      "Hauptkamera",
+      95
+    ],
+    [
+      "iPhone 13 Mini",
+      "Ladeanschluss",
+      110
+    ],
+    [
+      "iPhone 12 Pro Max",
+      "Kameralinse",
+      60
+    ],
+    [
+      "iPhone 12 Pro Max",
+      "Hauptkamera",
+      105
+    ],
+    [
+      "iPhone 12 Pro Max",
+      "Ladeanschluss",
+      90
+    ],
+    [
+      "iPhone 12 Pro Max",
+      "Lautsprecher oben",
+      85
+    ],
+    [
+      "iPhone 12",
+      "Kameralinse",
+      60
+    ],
+    [
+      "iPhone 12 Pro",
+      "Kameralinse",
+      60
+    ],
+    [
+      "iPhone 12",
+      "Hauptkamera",
+      100
+    ],
+    [
+      "iPhone 12 Pro",
+      "Hauptkamera",
+      100
+    ],
+    [
+      "iPhone 12",
+      "Ladeanschluss",
+      90
+    ],
+    [
+      "iPhone 12 Pro",
+      "Ladeanschluss",
+      90
+    ],
+    [
+      "iPhone 12",
+      "Lautsprecher oben",
+      80
+    ],
+    [
+      "iPhone 12 Pro",
+      "Lautsprecher oben",
+      80
+    ],
+    [
+      "iPhone 12 Mini",
+      "Kameralinse",
+      60
+    ],
+    [
+      "iPhone 12 Mini",
+      "Hauptkamera",
+      85
+    ],
+    [
+      "iPhone 12 Mini",
+      "Ladeanschluss",
+      85
+    ],
+    [
+      "iPhone 12 Mini",
+      "Lautsprecher oben",
+      80
+    ],
+    [
+      "iPhone 11 Pro",
+      "Display Original",
+      115
+    ],
+    [
+      "iPhone 11",
+      "Display Original",
+      100
+    ],
+    [
+      "iPhone 11",
+      "Hauptkamera",
+      100
+    ],
+    [
+      "iPhone 11",
+      "Ladeanschluss",
+      75
+    ],
+    [
+      "iPhone X",
+      "Kameralinse (Rückseite)",
+      60
+    ],
+    [
+      "iPhone X",
+      "Hauptkamera",
+      95
+    ],
+    [
+      "iPhone 8",
+      "Display / LCD",
+      95
+    ],
+    [
+      "iPad Pro 12.9 (6th Gen) 2022",
+      "Akku",
+      180
+    ],
+    [
+      "iPad Pro 12.9 (5th Gen) 2021",
+      "Akku",
+      180
+    ],
+    [
+      "iPad Pro 12.9 (4th Gen) 2020",
+      "Akku",
+      175
+    ],
+    [
+      "iPad Pro 12.9 (3rd Gen) 2018",
+      "Akku",
+      175
+    ],
+    [
+      "iPad Pro 11 (4th Gen) 2022",
+      "Akku",
+      155
+    ],
+    [
+      "iPad Pro 11 (3rd Gen) 2021",
+      "Akku",
+      155
+    ],
+    [
+      "iPad Pro 11 (2nd Gen) 2020",
+      "Akku",
+      155
+    ],
+    [
+      "iPad Air 13 M3 (2025)",
+      "Display Original, Pulled",
+      300
+    ],
+    [
+      "iPad Air 13 M2 (2024)",
+      "Display",
+      485
+    ],
+    [
+      "iPad Air 5 (2022)",
+      "Akku",
+      140
+    ],
+    [
+      "iPad Air 4 (2020)",
+      "Akku",
+      155
+    ],
+    [
+      "iPad Air 3 (2019)",
+      "Akku",
+      140
+    ],
+    [
+      "iPad A16 (2025)",
+      "Display / Glas Original, Pulled",
+      155
+    ],
+    [
+      "iPad A16 (2025)",
+      "Akku",
+      180
+    ],
+    [
+      "iPad 10 (2022) 10.9",
+      "Display",
+      140
+    ],
+    [
+      "iPad 10 (2022) 10.9",
+      "Akku",
+      115
+    ],
+    [
+      "iPad 7 (2019) 10.2",
+      "Display",
+      135
+    ],
+    [
+      "iPad 5 (2017)",
+      "Akku",
+      110
+    ],
+    [
+      "iPad 3 / 4",
+      "LCD (Bildanzeige)",
+      115
+    ],
+    [
+      "iPad Mini A17 Pro (2024)",
+      "Display Original, Pulled",
+      315
+    ],
+    [
+      "iPad Mini A17 Pro (2024)",
+      "Akku",
+      180
+    ],
+    [
+      "iPad Mini 6 (2021)",
+      "Display / LCD",
+      275
+    ],
+    [
+      "iPad Mini 6 (2021)",
+      "Akku",
+      155
+    ],
+    [
+      "Galaxy S26 Ultra",
+      "Display",
+      280
+    ],
+    [
+      "Galaxy S26 Ultra",
+      "Akku",
+      110
+    ],
+    [
+      "Galaxy S26 Ultra",
+      "Ladeanschluss",
+      105
+    ],
+    [
+      "Galaxy S26 Plus",
+      "Display",
+      235
+    ],
+    [
+      "Galaxy S26 Plus",
+      "Akku",
+      110
+    ],
+    [
+      "Galaxy S26 Plus",
+      "Ladeanschluss",
+      100
+    ],
+    [
+      "Galaxy S26",
+      "Display",
+      200
+    ],
+    [
+      "Galaxy S26",
+      "Akku",
+      110
+    ],
+    [
+      "Galaxy S26",
+      "Ladeanschluss",
+      100
+    ],
+    [
+      "Galaxy S25 Ultra",
+      "Display",
+      250
+    ],
+    [
+      "Galaxy S25 Ultra",
+      "Akku",
+      100
+    ],
+    [
+      "Galaxy S25 Ultra",
+      "Kamera 50MP (Ultra Wide)",
+      105
+    ],
+    [
+      "Galaxy S25 Ultra",
+      "Kamera 10MP (Tele)",
+      100
+    ],
+    [
+      "Galaxy S25 Ultra",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "Galaxy S25 Plus",
+      "Display",
+      205
+    ],
+    [
+      "Galaxy S25 Plus",
+      "Akku",
+      100
+    ],
+    [
+      "Galaxy S25 Plus",
+      "Frontkamera 12MP",
+      105
+    ],
+    [
+      "Galaxy S25 Plus",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "Galaxy S25",
+      "Display",
+      185
+    ],
+    [
+      "Galaxy S25",
+      "Akku",
+      100
+    ],
+    [
+      "Galaxy S25",
+      "Frontkamera 12MP",
+      100
+    ],
+    [
+      "Galaxy S25",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "Galaxy S25",
+      "Lautsprecher",
+      95
+    ],
+    [
+      "Galaxy S24 Ultra",
+      "Display",
+      240
+    ],
+    [
+      "Galaxy S24 Ultra",
+      "Akku",
+      95
+    ],
+    [
+      "Galaxy S24 Ultra",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "Galaxy S24 Plus",
+      "Display",
+      210
+    ],
+    [
+      "Galaxy S24 Plus",
+      "Akku",
+      95
+    ],
+    [
+      "Galaxy S24",
+      "Display",
+      190
+    ],
+    [
+      "Galaxy S24",
+      "Akku",
+      95
+    ],
+    [
+      "Galaxy S24",
+      "Kamera 50MP (Wide)",
+      115
+    ],
+    [
+      "Galaxy S24",
+      "Kamera 10MP (Tele)",
+      95
+    ],
+    [
+      "Galaxy S24",
+      "Kamera 12MP (Ultra Wide)",
+      95
+    ],
+    [
+      "Galaxy S24",
+      "Ladeanschluss",
+      95
+    ],
+    [
+      "Galaxy S23 Ultra",
+      "Akku",
+      95
+    ],
+    [
+      "Galaxy S23 Ultra",
+      "Ladeanschluss",
+      85
+    ],
+    [
+      "Galaxy S23 Plus",
+      "Display",
+      180
+    ],
+    [
+      "Galaxy S23 Plus",
+      "Akku",
+      90
+    ],
+    [
+      "Galaxy S23 Plus",
+      "Ladeanschluss",
+      85
+    ],
+    [
+      "Galaxy S23",
+      "Display",
+      185
+    ],
+    [
+      "Galaxy S23",
+      "Akku",
+      90
+    ],
+    [
+      "Galaxy S23",
+      "Ladeanschluss",
+      90
+    ],
+    [
+      "Galaxy S22 Ultra",
+      "Display (inkl. Mittelrahmen)",
+      240
+    ],
+    [
+      "Galaxy S22 Ultra",
+      "Akku",
+      85
+    ],
+    [
+      "Galaxy S22 Ultra",
+      "Ladeanschluss",
+      80
+    ],
+    [
+      "Galaxy S22 Plus",
+      "Display / Bildanzeige (inkl. Mittelrahmen)",
+      200
+    ],
+    [
+      "Galaxy S22 Plus",
+      "Akku",
+      85
+    ],
+    [
+      "Galaxy S22 Plus",
+      "Ladeanschluss",
+      80
+    ],
+    [
+      "Galaxy S22",
+      "Display / Bildanzeige (inkl. Mittelrahmen)",
+      195
+    ],
+    [
+      "Galaxy S22",
+      "Akku",
+      85
+    ],
+    [
+      "Galaxy S21 Ultra",
+      "Display / LCD (inkl. Mittelrahmen)",
+      255
+    ],
+    [
+      "Galaxy S21 Ultra",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy S21 Plus",
+      "Display / LCD (inkl. Mittelrahmen)",
+      195
+    ],
+    [
+      "Galaxy S21 Plus",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy S21",
+      "Display / LCD (inkl. Mittelrahmen)",
+      175
+    ],
+    [
+      "Galaxy S21",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy S10 Plus",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy S10",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy S9 Plus",
+      "Display / LCD (inkl. Mittelrahmen)",
+      190
+    ],
+    [
+      "Galaxy S9 Plus",
+      "Kameralinse (Rückseite)",
+      70
+    ],
+    [
+      "Galaxy S9",
+      "Kameralinse (Rückseite)",
+      70
+    ],
+    [
+      "Galaxy A57",
+      "Display / LCD",
+      155
+    ],
+    [
+      "Galaxy A56",
+      "Display / LCD",
+      150
+    ],
+    [
+      "Galaxy A56",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy A55",
+      "Display / LCD",
+      150
+    ],
+    [
+      "Galaxy A54 5G",
+      "Display / LCD",
+      150
+    ],
+    [
+      "Galaxy A53 5G",
+      "Display / LCD",
+      140
+    ],
+    [
+      "Galaxy A51",
+      "Display / LCD",
+      115
+    ],
+    [
+      "Galaxy A51",
+      "Akku",
+      65
+    ],
+    [
+      "Galaxy A50",
+      "Display / LCD",
+      115
+    ],
+    [
+      "Galaxy A41",
+      "Akku",
+      60
+    ],
+    [
+      "Galaxy A36",
+      "Display / LCD",
+      150
+    ],
+    [
+      "Galaxy A36",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy A35",
+      "Display / LCD",
+      135
+    ],
+    [
+      "Galaxy A35",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy A33 5G",
+      "Display / LCD",
+      115
+    ],
+    [
+      "Galaxy A33 5G",
+      "Akku",
+      75
+    ],
+    [
+      "Galaxy A32 5G",
+      "Display / LCD",
+      110
+    ],
+    [
+      "Galaxy A30s",
+      "Display / LCD",
+      110
+    ],
+    [
+      "Galaxy Z Fold 5",
+      "Akku (Sub)",
+      75
+    ],
+    [
+      "iPhone 16 Pro Max",
+      "Display Original, Service Pack",
+      390
+    ],
+    [
+      "iPhone 16 Pro Max",
+      "Display Premium",
+      245
+    ],
+    [
+      "iPhone 16 Pro Max",
+      "Hauptkamera",
+      125
+    ],
+    [
+      "iPhone 16 Pro Max",
+      "Kameralinse",
+      85
+    ],
+    [
+      "iPhone 16 Pro Max",
+      "Ladeanschluss",
+      115
+    ],
+    [
+      "iPhone 16 Pro",
+      "Display Original, Service Pack",
+      355
+    ],
+    [
+      "iPhone 16 Pro",
+      "Display Premium",
+      170
+    ],
+    [
+      "iPhone 16 Pro",
+      "Hauptkamera",
+      135
+    ],
+    [
+      "iPhone 16 Pro",
+      "Kameralinse",
+      85
+    ],
+    [
+      "iPhone 16 Pro",
+      "Ladeanschluss",
+      115
+    ],
+    [
+      "iPhone 16 Plus",
+      "Display Premium",
+      195
+    ],
+    [
+      "iPhone 16 Plus",
+      "Hauptkamera",
+      120
+    ],
+    [
+      "iPhone 16 Plus",
+      "Kameralinse",
+      85
+    ],
+    [
+      "iPhone 16 Plus",
+      "Ladeanschluss",
+      120
+    ],
+    [
+      "iPhone 16e",
+      "Display Original, Pulled",
+      235
+    ],
+    [
+      "iPhone 16e",
+      "Display Premium",
+      140
+    ],
+    [
+      "iPhone 16e",
+      "Hauptkamera",
+      115
+    ],
+    [
+      "iPhone 16e",
+      "Kameralinse",
+      80
+    ],
+    [
+      "iPhone 16e",
+      "Ladeanschluss",
+      135
+    ],
+    [
+      "Galaxy Tab S9",
+      "Display",
+      240
+    ],
+    [
+      "Galaxy Tab S9 FE",
+      "Display",
+      175
+    ],
+    [
+      "Galaxy Tab S9 Ultra",
+      "Display",
+      355
+    ],
+    [
+      "Galaxy Tab S9+",
+      "Display",
+      290
+    ],
+    [
+      "Galaxy Tab A9",
+      "Display",
+      135
+    ],
+    [
+      "Galaxy Tab A9+",
+      "Display",
+      135
+    ]
+  ]
+}

@@ -10,7 +10,7 @@ python3 _maintenance/validate.py
 node _maintenance/test_measurement.js
 ```
 
-The update script preserves all existing non-null repair prices and fills only missing entries listed in `price-provenance-2026-10-15.json`. Prices are an exact model/part-quality match to the public i-Restore list retrieved on 15 October 2026, multiplied by 0.80 and rounded to CHF 0.01. Unmatched or unpriced reference entries remain on request. No third-party repair-duration or warranty promise is imported.
+The approved public price allowlist is `approved-repair-prices.json`. Only those model/quality pairs may have fixed prices, in CHF 5 increments. The historic competitor-only imports in `price-provenance-2026-10-15.json` must not be restored: they do not establish purchase cost coverage. Internal supplier cost evidence stays outside this public repository. Unconfirmed pairs remain on request. No third-party repair-duration or warranty promise is imported.
 
 `content_20261015.py` contains reviewed German, English, French and Italian service terms. The standard diagnosis is free. A standard written insurance report costs CHF 49; complex additional investigations require a prior quotation and approval. The customer pays outbound shipping; Mujitech pays return delivery after repair. Gaming PCs have 36 months of hardware warranty; the existing iPhone offers and 6-month repair warranty remain separate.
 
@@ -45,3 +45,5 @@ node _maintenance/test_enquiry_guidance.js
 ```
 
 After release, check a business contact enquiry and one device-buyback form in the browser, including consent rejection and withdrawal. A successful test submission must be distinguished from a genuine customer lead. Confirm the new image URL returns HTTP 200. Google Analytics custom dimensions and key-event administration are separate account settings.
+
+23 October 2026: price picker precedes the optional diagnosis/report block; shared quality explanations are next to quotes and in MujiBot; Google Ads replies link to the localized offer on websites.html#google-ads. Preserve these changes when using older generators. Prices are based on the recorded supplier cost audit, not a new supplier quotation. Referral commission is internal and does not reduce the public price.
