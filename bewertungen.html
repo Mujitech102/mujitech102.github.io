@@ -450,10 +450,7 @@ Lesen Sie, welche Erfahrungen unsere Kunden mit Smartphone-Reparaturen, Computer
 </div>
 </div>
 
-<div class="rating-description">
-<strong>Unsere veröffentlichten Kundenstimmen</strong><br>
-Bewertungen, die in unserer bisherigen Bewertungssammlung aufgeführt sind.
-</div>
+<div class="rating-description"><strong>15 Google-Rezensionen · 5,0 von 5 Sternen</strong><br>Stand: 26.10.2026. Auswahl der veröffentlichten Google-Rezensionen; keine automatische Aktualisierung. <a href="https://www.google.com/maps/place/Mujitech+%7C+Handy,+PC+%26+Laptop+Reparaturen/data=!4m2!3m1!1s0x0:0x397a5d917d61caeb" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></div>
 
 </div>
 
@@ -574,6 +571,9 @@ rel="noopener noreferrer">WhatsApp</a>
 */
 
 const reviews = [
+{"name": "Jolanda Huber", "initials": "JH", "rating": 5, "text": "Sehr freundliche Kommunikation und schnelle Bearbeitung und Lösung des Problems."},
+{"name": "sndj bejd", "initials": "sb", "rating": 5, "text": "Sehr zuverlässiger, freundlicher Service und eine schnelle, professionelle Laptop-Reparatur. Absolut empfehlenswert – jederzeit gerne wieder! Vielen Dank!!!"},
+{"name": "Erjon Selishta", "initials": "ES", "rating": 5, "text": "Hab bei Mujitech einen Pc gekauft und bin sehr zufrieden mit ihm, es war billig und läuft gut …", "excerpt": true},
 
 {
  name:"Samira Dörig",
@@ -763,6 +763,7 @@ reviews.forEach(review=>{
  top.appendChild(stars);
 
  card.appendChild(top);
+ if(review.excerpt) card.appendChild(makeElement("p","review-source","Auszug aus einer Google-Rezension"));
 
  if(review.noComment) {
 

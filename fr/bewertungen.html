@@ -450,10 +450,7 @@ Découvrez les expériences de nos clients en matière de réparation de smartph
 </div>
 </div>
 
-<div class="rating-description">
-<strong>Nos témoignages clients publiés</strong><br>
-Avis répertoriés dans notre précédente collection d'avis.
-</div>
+<div class="rating-description"><strong>15 avis Google · 5,0 sur 5 étoiles</strong><br>État au 26.10.2026. Sélection des avis Google publiés ; aucune mise à jour automatique. <a href="https://www.google.com/maps/place/Mujitech+%7C+Handy,+PC+%26+Laptop+Reparaturen/data=!4m2!3m1!1s0x0:0x397a5d917d61caeb" target="_blank" rel="noopener noreferrer">Google Maps ↗</a></div>
 
 </div>
 
@@ -574,6 +571,9 @@ rel="noopener noreferrer">WhatsApp</a>
 */
 
 const reviews = [
+{"name": "Jolanda Huber", "initials": "JH", "rating": 5, "text": "Communication très aimable et prise en charge et résolution rapides du problème."},
+{"name": "sndj bejd", "initials": "sb", "rating": 5, "text": "Service très fiable et aimable, et réparation de mon ordinateur portable rapide et professionnelle. À recommander absolument – je reviendrai avec plaisir ! Merci beaucoup !!!"},
+{"name": "Erjon Selishta", "initials": "ES", "rating": 5, "text": "J’ai acheté un PC chez Mujitech et j’en suis très satisfait, il était bon marché et fonctionne bien …", "excerpt": true},
 
 {
  name:"Samira Dörig",
@@ -763,6 +763,7 @@ reviews.forEach(review=>{
  top.appendChild(stars);
 
  card.appendChild(top);
+ if(review.excerpt) card.appendChild(makeElement("p","review-source","Extrait d’un avis Google"));
 
  if(review.noComment) {
 
