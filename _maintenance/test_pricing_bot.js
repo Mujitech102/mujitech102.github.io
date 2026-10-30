@@ -26,5 +26,21 @@ for(const lang of ['de','en','fr','it']){
  const multiple=answer('2 x iPhone 15 Pro '+part+' und iPhone 14 Pro '+part);assert.ok(multiple.includes('CHF 755.00'),multiple);
  const quote=answer('iPhone 12 Pro Display Original, Pulled');assert.ok(!/CHF/.test(quote),quote);
  const soft=answer('iPhone 17 Display Soft OLED');assert.ok(!/CHF/.test(soft),soft);
+ // A comma inside a valid display label must not hide the second repair.
+ const batteryLabel=ctx.window.MujiRepairLabel('Akku Original, Service Pack',lang);
+ const conjunction=({de:'und',en:'and',fr:'et',it:'e'})[lang];
+ const combined=answer('iPhone 15 '+part+' '+conjunction+' '+batteryLabel);
+ assert.ok(combined.includes(batteryLabel),combined);
+ const premiumLabel=ctx.window.MujiRepairLabel('Display Premium',lang);
+ const alternatives=answer('iPhone 15 '+part+' '+conjunction+' '+premiumLabel);
+ assert.ok(alternatives.includes('CHF 210.00')&&alternatives.includes('CHF 155.00'),alternatives);
+ assert.ok(!alternatives.includes('CHF 365.00')&&!alternatives.includes('undefined'),alternatives);
+ const sharedLabels=answer('iPhone 15 Display Original, Pulled or Display Premium');
+ assert.ok(sharedLabels.includes('CHF 210.00')&&sharedLabels.includes('CHF 155.00')&&!sharedLabels.includes('CHF 365.00'),sharedLabels);
+ const either=answer('iPhone 15 '+part+' '+({de:'oder',en:'or',fr:'ou',it:'oppure'})[lang]+' iPhone 14 Pro '+part);
+ assert.ok(!either.includes('CHF 415.00'),either);
+ for(const q of ['iPhone 15 '+part+' '+conjunction+' Samsung Galaxy S100 Display','iPhone 15 Pro Mini Display','iPhone 15 '+part+' '+conjunction+' iPhone 18 Pro Display']){
+  const unclear=answer(q);assert.ok(unclear.length>30&&!unclear.includes('CHF'),unclear);
+ }
 }
-console.log('PASS: '+checked+' model/quality/price answers in four languages, shared quality text, Ads routing, totals, quantities, unknown costs and unconfirmed OLED technology.');
+console.log('PASS: '+checked+' model/quality/price answers in four languages; comma-separated repairs, alternative parts, unresolved models, quality text, Ads routing, totals, quantities and unknown costs.');
