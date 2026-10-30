@@ -129,11 +129,20 @@
       const mentions=[];
       const scan=(name,alias)=>{
         const tokens=clean(alias).split(' ');const pattern=new RegExp('(?<![a-z0-9])'+tokens.join('[^a-z0-9]+')+'(?![a-z0-9])','g');
-        for(const match of q.matchAll(pattern)){const start=match.index,end=start+match[0].length;if(!mentions.some(m=>start<m.end&&end>m.start))mentions.push({model:name,start,end});}
+        for(const match of q.matchAll(pattern)){const start=match.index,end=start+match[0].length;
+          // A known model must not absorb an unrecognised model suffix.
+          if(/^\s+(?:pro|max|mini|plus|ultra|lite|fe)\b/.test(q.slice(end)))continue;
+          if(!mentions.some(m=>start<m.end&&end>m.start))mentions.push({model:name,start,end});}
       };
       models.forEach(name=>scan(name,name));
       if(!/xiaomi|samsung|galaxy|pixel|oppo|oneplus|huawei|surface|ipad/.test(q))models.filter(n=>/^iPhone \d/.test(n)).forEach(name=>scan(name,name.replace(/^iPhone /,'')));
       mentions.sort((a,b)=>a.start-b.start);
+      const deviceReferences=[...q.matchAll(/\b(?:iphone|ipad|(?:samsung\s+)?galaxy|samsung|(?:google\s+)?pixel|xiaomi|redmi|poco|huawei|oppo|oneplus|(?:sony\s+)?xperia|(?:microsoft\s+)?surface|macbook)\b/g)];
+      const unresolved=deviceReferences.filter(ref=>!mentions.some(m=>ref.index>=m.start&&ref.index<m.end));
+      if(unresolved.length){
+        const clarification=({de:'Mindestens eine Modellangabe ist nicht eindeutig in unserer Preisliste zugeordnet. Bitte nenne für jedes Gerät die genaue Modellbezeichnung und die gewünschte Reparatur. Ich berechne erst danach einen Preis; nicht aufgeführte Modelle klären wir auf Anfrage.',en:'At least one device model could not be matched unambiguously to our price list. Please give the exact model and repair for each device before I calculate a price. Models not listed are assessed on request.',fr:'Au moins un modèle ne correspond pas clairement à notre liste de prix. Indiquez le modèle exact et la réparation pour chaque appareil avant le calcul du prix. Les modèles non répertoriés sont examinés sur demande.',it:'Almeno un modello non è identificabile con certezza nel nostro listino. Indica il modello esatto e la riparazione per ogni dispositivo prima del calcolo del prezzo. I modelli non elencati vengono valutati su richiesta.'})[lang];
+        previousModel=null;add(clarification,false,'price',true);return true;
+      }
       const categories=[
         ['lens',/linse|lens|lentille/,/kameralinse/i],
         ['front',/frontkamera|front camera|camera avant|fotocamera frontale/,/frontkamera/i],
@@ -150,17 +159,19 @@
       const globalRepairs=repairs(q);
       if(!mentions.length&&previousModel&&globalRepairs.length&&!/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia|macbook/.test(q))mentions.push({model:previousModel,start:0,end:0});
       if(!mentions.length){if(/preis|kost|price|cost|combien|prix|quanto|how much/.test(q)&&/iphone|ipad|pixel|galaxy|samsung|surface|xiaomi|huawei|oppo|oneplus|xperia/.test(q)){add(priceCopy.choose);return true;}return false;}
-      const output=[];const guideLinks=new Map();let totalCents=0,pricedItems=0,requestedItems=0,needsChoice=false,needsQuote=false;
+      const output=[];const guideLinks=new Map();let totalCents=0,pricedItems=0,requestedItems=0,needsChoice=false,needsQuote=false,alternativeParts=false;
       const sumCopy=({de:{total:"Gesamtpreis",partial:"Zwischensumme der eindeutig bepreisten Reparaturen",choose:"Für den Gesamtpreis bitte noch die gewünschte Teilevariante auswählen.",quote:"Reparaturen auf Anfrage sind noch nicht enthalten.",unit:"Die Summe gilt jeweils für ein Gerät pro Nennung, sofern keine Anzahl angegeben ist."},en:{total:"Total price",partial:"Subtotal for repairs with an unambiguous price",choose:"Please choose the part variant before I calculate the full total.",quote:"Repairs on request are not included yet.",unit:"The total uses one device per mention unless a quantity is specified."},fr:{total:"Prix total",partial:"Sous-total des réparations au prix déterminé",choose:"Choisissez la variante de pièce pour calculer le total complet.",quote:"Les réparations sur demande ne sont pas encore incluses.",unit:"Le total compte un appareil par mention, sauf quantité précisée."},it:{total:"Prezzo totale",partial:"Subtotale delle riparazioni con prezzo definito",choose:"Scegli la variante del ricambio per calcolare il totale completo.",quote:"Le riparazioni su richiesta non sono ancora incluse.",unit:"Il totale considera un dispositivo per ogni menzione, salvo quantità indicata."}})[lang];
       mentions.forEach((mention,index)=>{
-        const tail=q.slice(mention.end,mentions[index+1]?.start??q.length).split(/[,;.!?]/)[0];
-        const before=q.slice(mentions[index-1]?.end??0,mention.start).split(/[,;.!?]/).pop();
+        // Commas are part of valid repair labels ("Original, Pulled") and may
+        // separate additional repairs for the same device.
+        const tail=q.slice(mention.end,mentions[index+1]?.start??q.length);
+        const before=q.slice(mentions[index-1]?.end??0,mention.start);
         const leadingRepairs=repairs(q.slice(0,mentions[0].start));
         let wanted=leadingRepairs.length?repairs(before):repairs(tail);if(!wanted.length)wanted=leadingRepairs.length?repairs(tail):repairs(before);if(!wanted.length)wanted=globalRepairs;
         // Match precise repair names in the same language as the price selector.
         const exactRepairRows=text=>{
           const normalized=' '+clean(text)+' ',found=[];
-          const candidates=window.MujiPriceBook.rows.filter(r=>r[0]===mention.model).map(r=>({row:r,label:clean(window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1])})).sort((a,b)=>b.label.length-a.label.length);
+          const candidates=window.MujiPriceBook.rows.filter(r=>r[0]===mention.model).flatMap(r=>[...new Set([r[1],window.MujiRepairLabel?window.MujiRepairLabel(r[1],lang):r[1]])].map(label=>({row:r,label:clean(label)}))).sort((a,b)=>b.label.length-a.label.length);
           for(const item of candidates){let from=0,pos;while((pos=normalized.indexOf(' '+item.label+' ',from))!==-1){const end=pos+item.label.length+2;if(!found.some(x=>pos<x.end-1&&end-1>x.start))found.push({row:item.row,start:pos,end});from=pos+1;}}
           return [...new Set(found.map(x=>x.row))];
         };
@@ -169,15 +180,16 @@
         const exactRows=exactRepairRows(exactTail);
         if(!exactRows.length&&leadingRepairs.length)exactRows.push(...exactRepairRows(exactBefore));
         if(exactRows.length)wanted=exactRows.map(r=>['exact',null,new RegExp('^'+r[1].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'$','i')]).concat(wanted.filter(c=>!exactRows.some(r=>c[2].test(r[1]))));
+        if(categories.some(c=>exactRows.filter(r=>c[2].test(r[1])).length>1))alternativeParts=true;
         if(!wanted.length){output.push(priceCopy.ask+' '+mention.model+'?');needsChoice=true;requestedItems++;return;}
         const countMatch=q.slice(0,mention.start).match(/(?:^|[^a-z0-9])(\d{1,2})\s*(?:x\s*)?$/);const quantity=countMatch?Math.max(1,Number(countMatch[1])):1;
         requestedItems+=wanted.length*quantity;
         const qualifier=normalize(leadingRepairs.length?before:tail);
         const matched=window.MujiPriceBook.rows.filter(r=>r[0]===mention.model&&wanted.some(c=>c[2].test(r[1])));
         let rows=matched;
-        if(/soft.?oled/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/soft.?oled/i.test(r[1]));
-        else if(/pulled/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/pulled/i.test(r[1]));
-        else if(/service pack/.test(qualifier))rows=matched.filter(r=>!/display|lcd|bildanzeige/i.test(r[1])||/service pack/i.test(r[1]));
+        if(/soft.?oled/.test(qualifier))rows=matched.filter(r=>exactRows.includes(r)||!/display|lcd|bildanzeige/i.test(r[1])||/soft.?oled/i.test(r[1]));
+        else if(/pulled/.test(qualifier))rows=matched.filter(r=>exactRows.includes(r)||!/display|lcd|bildanzeige/i.test(r[1])||/pulled/i.test(r[1]));
+        else if(/service pack/.test(qualifier))rows=matched.filter(r=>exactRows.includes(r)||!/display|lcd|bildanzeige/i.test(r[1])||/service pack/i.test(r[1]));
         rows.forEach(row=>{const guide=window.MujiRepairGuide?.(row[0],row[1],lang);if(guide&&!guideLinks.has(guide.path))guideLinks.set(guide.path,{...guide,model:row[0]});});
         const counted=new Set();
         wanted.forEach(category=>{
@@ -192,7 +204,10 @@
       });
       previousModel=mentions.length===1?mentions[0].model:null;
       const sections=[...new Set(output)];
-      if(requestedItems>1){
+      if(/\b(?:oder|or|ou|oppure)\b/.test(q))alternativeParts=true;
+      if(alternativeParts){
+        sections.push(({de:'Diese Angaben enthalten alternative Reparaturen oder mehrere Varianten für dasselbe Bauteil. Die Einzelpreise sind keine kombinierbare Gesamtsumme. Bitte wähle die gewünschte Variante je Gerät.',en:'These details include alternative repairs or multiple options for the same part. The individual prices cannot be combined into a total. Please choose the option required for each device.',fr:'Ces indications comprennent des réparations alternatives ou plusieurs variantes pour la même pièce. Les prix individuels ne peuvent pas être additionnés. Choisissez la variante souhaitée pour chaque appareil.',it:'Queste indicazioni comprendono riparazioni alternative o più varianti dello stesso componente. I prezzi singoli non possono essere sommati. Scegli la variante desiderata per ogni dispositivo.'})[lang]);
+      }else if(requestedItems>1){
         if(pricedItems)sections.push((needsChoice||needsQuote?sumCopy.partial:sumCopy.total)+': CHF '+(totalCents/100).toFixed(2));
         if(needsChoice)sections.push(sumCopy.choose);
         if(needsQuote)sections.push(sumCopy.quote);
