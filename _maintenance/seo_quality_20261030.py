@@ -49,3 +49,18 @@ for language, data in COPY.items():
    text,count=re.subn(pattern,'<a class="panel" href="'+destination+'"><h3>'+heading+'</h3><p>'+description+'</p></a>',text)
    assert count==1,(name,heading,count)
   path.write_text(text)
+
+# Refresh the reviewed form script on all four website-package forms.
+for prefix in ['', 'en/', 'fr/', 'it/']:
+ path=ROOT/(prefix+'websites.html')
+ text=path.read_text()
+ text=re.sub(r'(/assets/polish\.js\?v=)[^"\s]+',r'\g<1>20261030-review-1',text)
+ copy={
+  'en/':{'Basic + 30 minutes changes · monthly code backup':'Basic + up to 30 minutes of updates · monthly code backup'},
+  'fr/':{'Basique + modifications de 30 minutes · sauvegarde mensuelle du code':'Prestations Basic + jusqu’à 30 minutes de modifications · sauvegarde mensuelle du code',"S'il n'est pas déjà inclus dans le package":'Si la fonction n’est pas déjà comprise dans la formule'},
+  'it/':{'Fino a 3 pagine · Design reattivo · Opzioni di contatto · Nozioni di base SEO':'Fino a 3 pagine · Design responsive · Opzioni di contatto · Impostazioni SEO di base','Base + modifiche di 30 minuti · backup mensile del codice':'Servizi Basic + fino a 30 minuti di modifiche · backup mensile del codice','Se non già incluso nella confezione':'Se non è già incluso nel pacchetto'}
+ }
+ for before,after in copy.get(prefix,{}).items():
+  assert before in text or after in text,(path,before)
+  text=text.replace(before,after)
+ path.write_text(text)
