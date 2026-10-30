@@ -44,11 +44,14 @@
     event.preventDefault();event.stopImmediatePropagation();
     summary.replaceChildren();
     Array.from(form.elements).forEach(field=>{
-     if(!field.name||field.disabled||['hidden','submit','button','checkbox','radio'].includes(field.type))return;
-     let value=field.type==='file'?Array.from(field.files||[]).map(f=>f.name).join(', '):field.tagName==='SELECT'?field.selectedOptions[0]?.textContent:field.value;
+     if(!field.name||field.disabled||['hidden','submit','button'].includes(field.type))return;
+     const choice=field.type==='checkbox'||field.type==='radio';
+     if(choice&&!field.checked)return;
+     const label=field.labels?.[0];
+     let value=choice?(label?.textContent?.trim().replace(/\s+/g,' ')||field.value):field.type==='file'?Array.from(field.files||[]).map(f=>f.name).join(', '):field.tagName==='SELECT'?field.selectedOptions[0]?.textContent:field.value;
      if(!value?.trim())return;
-     const label=field.labels?.[0];let caption=label?.textContent?.trim().replace(/\s+/g,' ')||t.fallback;
-     if(label?.contains(field))caption=Array.from(label.childNodes).filter(n=>n.nodeType===3).map(n=>n.textContent.trim()).join(' ')||t.fallback;
+     let caption=choice?(field.closest('fieldset')?.querySelector('legend')?.textContent?.trim().replace(/\s+/g,' ')||t.fallback):(label?.textContent?.trim().replace(/\s+/g,' ')||t.fallback);
+     if(!choice&&label?.contains(field))caption=Array.from(label.childNodes).filter(n=>n.nodeType===3).map(n=>n.textContent.trim()).join(' ')||t.fallback;
      const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=field.type==='file'?t.files:caption;dd.textContent=value.trim();summary.append(dt,dd);
     });
     review.hidden=false;submit.hidden=true;title.focus();review.scrollIntoView({block:'start',behavior:'auto'});

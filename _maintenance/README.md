@@ -1,5 +1,7 @@
 # Approved website updates — 15 October 2026
 
+30 October 2026 form review: show checked package, care and extra options using visible localized labels and fieldset legends. Unchecked, disabled and hidden fields stay excluded. The review stage must never send by itself; run `node _maintenance/test_form_review.js` when changing it. `seo_quality_20261030.py` also preserves the four website pages' reviewed script version.
+
 The current HTML files are the deployed source of truth for the newer catalogue, repair guides and gaming products. The older `_localization/build.py` only generates the original page families. Do not use it alone to replace the current deployment.
 
 Run from the repository root after content edits:
