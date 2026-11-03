@@ -17,39 +17,6 @@
       if (location.hash)target.hash=location.hash;
       link.href=target.href;
     });
-    const lang=(document.documentElement.lang||'de').slice(0,2);
-    const directContact = {
-      de: ['Direkt Kontakt aufnehmen', 'E-Mail schreiben', 'Anrufen'],
-      en: ['Contact us directly', 'Send an email', 'Call'],
-      fr: ['Nous contacter directement', 'Envoyer un e-mail', 'Appeler'],
-      it: ['Contattaci direttamente', 'Invia un’e-mail', 'Chiama']
-    }[lang] || ['Contact us directly', 'Send an email', 'Call'];
-    const submitCopy={de:'Weiter zur Übermittlung. Bitte die Bestätigung auf der nächsten Seite prüfen. Falls es nicht klappt, kontaktiere uns per E-Mail oder WhatsApp.',fr:'Poursuite de l’envoi. Vérifiez la confirmation sur la page suivante. En cas de problème, contactez-nous par e-mail ou WhatsApp.',it:'Passaggio all’invio. Verifica la conferma nella pagina successiva. In caso di problemi, contattaci via e-mail o WhatsApp.',en:'Continuing to submission. Check the confirmation on the next page. If it fails, contact us by email or WhatsApp.'};
-    document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach(form=>{
-      const email = 'mailto:info@mujitech.ch';
-      const phone = 'tel:+41768444673';
-      if (!form.querySelector('a[href="' + email + '"]') ||
-          !form.querySelector('a[href="' + phone + '"]')) {
-        const contact = document.createElement('aside');
-        contact.className = 'enquiry-alternatives';
-        contact.setAttribute('aria-label', directContact[0]);
-        const title = document.createElement('strong');
-        title.textContent = directContact[0];
-        const actions = document.createElement('div');
-        actions.className = 'enquiry-actions';
-        [[email, directContact[1]], [phone, directContact[2]]].forEach(([href, label]) => {
-          const link = document.createElement('a');
-          link.href = href;
-          link.textContent = label;
-          actions.append(link);
-        });
-        contact.append(title, actions);
-        form.prepend(contact);
-      }
-      const status=document.createElement('p');status.className='form-progress';status.hidden=true;status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent=submitCopy[lang]||submitCopy.en;form.append(status);
-      form.addEventListener('submit',()=>{status.hidden=false;});
-      window.addEventListener('pageshow',()=>{status.hidden=true;});
-    });
     document.querySelectorAll('.w-pick,.w-care-pick').forEach(link=>link.addEventListener('click',()=>{
       const options=document.getElementById('website-options');if(options)options.open=true;
     }));
@@ -196,14 +163,6 @@
 (() => {
   'use strict';
   const supported = ['repair','gaming_pc','webdesign','device_purchase','private_support','contact'];
-  const pendingKey = 'mujitech-pending-enquiry';
-  const isTest = () => window.MujiMeasurementIsTest?.() === true;
-  const reference = () => {
-    if(window.crypto?.randomUUID)return 'MJ-'+window.crypto.randomUUID();
-    if(!window.crypto?.getRandomValues)return '';
-    const bytes=window.crypto.getRandomValues(new Uint8Array(16));
-    return 'MJ-'+Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
-  };
   const applyContext = () => {
     const params = new URLSearchParams(location.search);
     const model = params.get('model');
@@ -232,46 +191,6 @@
   };
   const ready = () => {
     applyContext();
-    document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach(form => {
-      const button = form.querySelector('[type="submit"]');
-      // Operational receipt reference, sent only with the form; never an Analytics parameter.
-      const hidden = (name,value) => {
-        let field=form.querySelector('[name="'+name+'"]');
-        if(!field){field=document.createElement('input');field.type='hidden';field.name=name;form.append(field);}
-        field.value=value;
-      };
-      const ref=reference();
-      if(ref)hidden('Anfrage_Referenz',ref);
-      hidden('Messmodus',isTest()?'test':'production');
-      const next=form.querySelector('[name="_next"]');
-      if(isTest()&&next){
-        try{const url=new URL(next.value,location.href);if(url.origin===location.origin){url.searchParams.set('muji_test','1');next.value=url.href;}}catch{}
-      }
-      let recovery;
-      const reset = () => { if (button) {button.disabled = false; button.removeAttribute('aria-busy');} clearTimeout(recovery); };
-      form.addEventListener('invalid',event => {
-        const field = event.target;
-        let details = field.closest('details');
-        while(details) {details.open = true; details = details.parentElement.closest('details');}
-      },true);
-      form.addEventListener('submit',event => {
-        // This event only fires after native field validation. Do not claim email receipt.
-        queueMicrotask(() => {
-          if (event.defaultPrevented) return;
-          const kind = form.querySelector('[name="Anfragebereich"]')?.value;
-          try {
-            if (supported.includes(kind) && ['all','measurement'].includes(localStorage.getItem('mujitech-cookie-consent'))) {
-              const area = window.MujiEnquiryArea?.(form);
-              const knownAreas = ['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general'];
-              sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now(),test:isTest(),...(knownAreas.includes(area)?{area}: {})}));
-            }
-          } catch {}
-          if (button) {button.disabled = true; button.setAttribute('aria-busy','true');}
-          recovery = setTimeout(reset,15000);
-        });
-      });
-      window.addEventListener('pageshow',reset);
-    });
     const openTarget = () => {
       let id;
       try {id = decodeURIComponent(location.hash.slice(1));} catch {return;}

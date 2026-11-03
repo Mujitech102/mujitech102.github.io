@@ -65,15 +65,7 @@ for p in files:
    if check.returncode:errors.append(f'{rel}: inline JavaScript syntax {check.stderr[:100]}')
  for form in c.forms:
   formcount+=1;a=form['attrs'];fields=[a for t,a in form['fields']]
-  if a.get('action')!='https://formsubmit.co/info@mujitech.ch' or a.get('method','').upper()!='POST':errors.append(f'{rel}: form destination/method')
-  names=Counter(a.get('name') for a in fields)
-  for name in ['_honey','_subject','_next','Website-Sprache','Anfragebereich']:
-   if names[name]!=1:errors.append(f'{rel}: {name} count {names[name]}')
-  if any(a.get('name')=='_captcha' and a.get('value')=='false' for a in fields):errors.append(f'{rel}: captcha disabled')
-  nexturl=next(a.get('value','') for a in fields if a.get('name')=='_next')
-  if not nexturl.startswith('https://mujitech.ch/') or 'danke.html?form=' not in nexturl:errors.append(f'{rel}: unsafe thank-you URL')
-  if target(p,nexturl) is None or not target(p,nexturl).exists():errors.append(f'{rel}: missing thank-you page')
-  if not any(a.get('type')=='email' and 'required' in a for a in fields):errors.append(f'{rel}: required email missing')
+  if a.get('action'):errors.append(f'{rel}: external enquiry forms are disabled')
  for js in ROOT.glob('assets/*.js'):pass
 for p,c in pages.items():
  if p in redirects:

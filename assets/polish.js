@@ -3,10 +3,10 @@
  'use strict';
  const lang=(document.documentElement.lang||'de').slice(0,2);
  const translations={
- de:{contact:'Kontakt',close:'Schliessen',review:'Anfrage prüfen',title:'Deine Anfrage im Überblick',edit:'Angaben bearbeiten',send:'Weiter zur sicheren Übermittlung',note:'Im nächsten Schritt öffnet sich die Sicherheitsprüfung von FormSubmit. Bitte schliesse sie ab. Erst die anschliessende Bestätigung bestätigt die Übermittlung. Bei Problemen kannst du hierher zurückkehren oder uns per E-Mail kontaktieren.',files:'Anhänge',empty:'Keine zusätzlichen Angaben',fallback:'Angabe',privacy:'Keine Passwörter oder vertraulichen Daten mitsenden.'},
- en:{contact:'Contact',close:'Close',review:'Review enquiry',title:'Your enquiry at a glance',edit:'Edit details',send:'Continue to secure submission',note:'The next step opens FormSubmit’s security check. Please complete it. Your enquiry has been submitted only when the following confirmation appears. If anything goes wrong, return here or contact us by email.',files:'Attachments',empty:'No additional details',fallback:'Details',privacy:'Do not include passwords or confidential information.'},
- fr:{contact:'Contact',close:'Fermer',review:'Vérifier la demande',title:'Votre demande en bref',edit:'Modifier les informations',send:'Continuer vers l’envoi sécurisé',note:'La prochaine étape ouvre la vérification de sécurité de FormSubmit. Veuillez la terminer. Seule la confirmation qui suit confirme la transmission. En cas de problème, revenez ici ou contactez-nous par e-mail.',files:'Pièces jointes',empty:'Aucune information supplémentaire',fallback:'Information',privacy:'N’indiquez aucun mot de passe ni donnée confidentielle.'},
- it:{contact:'Contatti',close:'Chiudi',review:'Controlla la richiesta',title:'La tua richiesta in breve',edit:'Modifica i dati',send:'Continua con l’invio sicuro',note:'Il prossimo passaggio apre il controllo di sicurezza di FormSubmit. Completalo per proseguire. Solo la conferma successiva attesta la trasmissione. In caso di problemi, torna qui oppure contattaci via e-mail.',files:'Allegati',empty:'Nessun dettaglio aggiuntivo',fallback:'Informazione',privacy:'Non includere password o dati riservati.'}}
+ de:{contact:'Kontakt',close:'Schliessen'},
+ en:{contact:'Contact',close:'Close'},
+ fr:{contact:'Contact',close:'Fermer'},
+ it:{contact:'Contatti',close:'Chiudi'}}
  const t=translations[lang]||translations.en;
  function ready(){
   const toggle=document.querySelector('.muji-menu-toggle'),nav=document.querySelector('.muji-site-nav');
@@ -22,78 +22,7 @@
    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&dock.classList.contains('muji-contact-open')){set(false);button.focus();}});
    document.addEventListener('click',e=>{if(!dock.contains(e.target))set(false);});
   }
-  document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach((form,index)=>{
-   const submit=form.querySelector('[type="submit"]');if(!submit)return;
-   if(form.id==='reparaturformular'){
-    const messages={
-     de:['Bitte fülle dieses Pflichtfeld aus.','Bitte bestätige dieses Pflichtfeld.','Bitte gib eine gültige E-Mail-Adresse ein.'],
-     en:['Please fill in this required field.','Please tick this required box.','Please enter a valid email address.'],
-     fr:['Veuillez remplir ce champ obligatoire.','Veuillez cocher cette case obligatoire.','Veuillez saisir une adresse e-mail valide.'],
-     it:['Compila questo campo obbligatorio.','Seleziona questa casella obbligatoria.','Inserisci un indirizzo e-mail valido.']
-    }[lang]||[];
-    const localizedFields=new WeakMap();
-    form.addEventListener('invalid',event=>{
-     const field=event.target;
-     if(field.validity.customError)return;
-     const message=field.validity.valueMissing?messages[field.type==='checkbox'?1:0]:
-      field.type==='email'&&field.validity.typeMismatch?messages[2]:null;
-     if(!message)return;
-     field.setCustomValidity(message);
-     const hint=document.createElement('small');
-     hint.id='muji-repair-error-'+field.name;
-     hint.textContent=message;
-     const previousDescription=field.getAttribute('aria-describedby');
-     field.setAttribute('aria-describedby',[previousDescription,hint.id].filter(Boolean).join(' '));
-     (field.closest('label')||field).after(hint);
-     localizedFields.set(field,{hint,previousDescription});
-    },true);
-    const clearMessage=event=>{
-     const field=event.target;
-     const error=localizedFields.get(field);
-     if(!error)return;
-     localizedFields.delete(field);
-     error.hint.remove();
-     if(error.previousDescription===null)field.removeAttribute('aria-describedby');
-     else field.setAttribute('aria-describedby',error.previousDescription);
-     field.setCustomValidity('');
-    };
-    form.addEventListener('input',clearMessage);
-    form.addEventListener('change',clearMessage);
-   }
-   submit.textContent=t.review+' →';
-   const review=document.createElement('section');review.className='form-review';review.hidden=true;review.setAttribute('aria-labelledby','muji-review-title-'+index);
-   const title=document.createElement('h3');title.id='muji-review-title-'+index;title.tabIndex=-1;title.textContent=t.title;
-   const summary=document.createElement('dl'),note=document.createElement('p');note.textContent=t.note;
-   const privacy=document.createElement('p');privacy.textContent=t.privacy;
-   const actions=document.createElement('div');actions.className='form-review-actions';
-   const edit=document.createElement('button');edit.type='button';edit.dataset.edit='';edit.textContent=t.edit;
-   const send=document.createElement('button');send.type='button';send.textContent=t.send+' →';
-   actions.append(edit,send);review.append(title,summary,note,privacy,actions);form.append(review);
-   let approved=false;
-   function cancel(){approved=false;review.hidden=true;submit.hidden=false;send.disabled=false;const status=form.querySelector('.form-progress');if(status)status.hidden=true;}
-   edit.addEventListener('click',()=>{cancel();submit.focus();});
-   form.addEventListener('input',cancel);form.addEventListener('change',cancel);
-   send.addEventListener('click',()=>{if(!form.reportValidity())return;approved=true;form.requestSubmit(submit);});
-   // Capture stops the old progress/analytics handlers until the visitor approves the summary.
-   form.addEventListener('submit',event=>{
-    if(approved){approved=false;queueMicrotask(()=>{send.disabled=!event.defaultPrevented;});return;}
-    event.preventDefault();event.stopImmediatePropagation();
-    summary.replaceChildren();
-    Array.from(form.elements).forEach(field=>{
-     if(!field.name||field.disabled||['hidden','submit','button'].includes(field.type))return;
-     const choice=field.type==='checkbox'||field.type==='radio';
-     if(choice&&!field.checked)return;
-     const label=field.labels?.[0];
-     let value=choice?(label?.textContent?.trim().replace(/\s+/g,' ')||field.value):field.type==='file'?Array.from(field.files||[]).map(f=>f.name).join(', '):field.tagName==='SELECT'?field.selectedOptions[0]?.textContent:field.value;
-     if(!value?.trim())return;
-     let caption=choice?(field.closest('fieldset')?.querySelector('legend')?.textContent?.trim().replace(/\s+/g,' ')||t.fallback):(label?.textContent?.trim().replace(/\s+/g,' ')||t.fallback);
-     if(!choice&&label?.contains(field))caption=Array.from(label.childNodes).filter(n=>n.nodeType===3).map(n=>n.textContent.trim()).join(' ')||t.fallback;
-     const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=field.type==='file'?t.files:caption;dd.textContent=value.trim();summary.append(dt,dd);
-    });
-    review.hidden=false;submit.hidden=true;title.focus();review.scrollIntoView({block:'start',behavior:'auto'});
-   },true);
-   window.addEventListener('pageshow',cancel);
-  });
+
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();

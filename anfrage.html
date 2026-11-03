@@ -487,42 +487,12 @@ body .mobilebtn {
 
 
 
-        <!--
-        FORMULAR
 
-        Dieselbe vereinfachte FormSubmit-Konfiguration
-        wie auf der funktionierenden Kontaktseite.
-
-        Keine automatische Weiterleitung.
-        Kein zusätzliches globales Formular-JavaScript.
-        -->
 
 
 
         <div class="enquiry-alternatives" id="repair-direct-contact"><div class="enquiry-actions"><a href="mailto:info@mujitech.ch">E-Mail schreiben</a><a href="tel:+41768444673">Anrufen</a></div></div>
-        <template id="repair-form-paused">
-        <form class="repair-form" id="reparaturformular" action="https://formsubmit.co/info@mujitech.ch" method="POST" accept-charset="UTF-8"><input class="form-trap" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="_next" value="https://mujitech.ch/danke.html?form=repair"><input type="hidden" name="Anfragebereich" value="repair"><input type="hidden" name="Website-Sprache" value="Deutsch"><aside class="enquiry-alternatives" aria-label="Lieber direkt Kontakt aufnehmen?"><strong>Lieber direkt Kontakt aufnehmen?</strong><p>Name und Anliegen genügen. Bitte keine Passwörter senden.</p><div class="enquiry-actions"><a href="mailto:info@mujitech.ch">E-Mail schreiben</a><a href="https://wa.me/41768444673" target="_blank" rel="noopener noreferrer">WhatsApp öffnen</a><a href="tel:+41768444673">Anrufen</a></div></aside>
-<input
-            type="hidden"
-            name="_subject"
-            value="Neue Reparaturanfrage über mujitech.ch"
-          ><input
-            type="hidden"
-            name="_template"
-            value="table"
-          >
-
-<p id="repair-progress" aria-live="polite" hidden></p>
-<fieldset data-repair-step><legend tabindex="-1">Welches Gerät möchtest du reparieren lassen?</legend><div class="repair-choices"><label><input type="radio" name="geraet" value="Smartphone" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2ZM11 19h2"/></svg></span><span>Smartphone</span></label><label><input type="radio" name="geraet" value="Tablet" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h14v20H5zM11 19h2"/></svg></span><span>Tablet</span></label><label><input type="radio" name="geraet" value="Laptop / Notebook" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H4zM4 16l-2 4h20l-2-4"/></svg></span><span>Laptop / Notebook</span></label><label><input type="radio" name="geraet" value="Computer / PC" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v13H2zM12 16v5m-5 0h10"/></svg></span><span>Computer / PC</span></label><label><input type="radio" name="geraet" value="Anderes Gerät" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l9-4 9 4v12l-9 4-9-4zM3 6l9 4 9-4m-9 4v12"/></svg></span><span>Anderes Gerät</span></label><label><input type="radio" name="geraet" value="Weiss ich noch nicht" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8a3 3 0 1 1 4 3c-1 .5-1 1-1 2m0 4h.01"/></svg></span><span>Weiss ich noch nicht</span></label></div></fieldset><fieldset data-repair-step><legend tabindex="-1">Was funktioniert nicht?</legend><div class="repair-choices"><label><input type="radio" name="defekt" required value="Display / Bildschirm" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h20v14H2zM8 22h8m-4-4v4m1-18-4 6 5 2-3 6"/></svg></span><span>Display / Bildschirm</span></label><label><input type="radio" name="defekt" required value="Akku / Laden" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h18v10H2zM22 10v4m-11-5-3 4h5l-2 3"/></svg></span><span>Akku / Laden</span></label><label><input type="radio" name="defekt" required value="Startet nicht" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10m5-7a8 8 0 1 1-10 0"/></svg></span><span>Startet nicht</span></label><label><input type="radio" name="defekt" required value="Langsam / Software" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18a9 9 0 1 1 18 0ZM12 14l4-5"/></svg></span><span>Langsam / Software</span></label><label><input type="radio" name="defekt" required value="Kamera / Ton / Anschluss" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h4l2-3h6l2 3h4v14H3zM15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/></svg></span><span>Kamera / Ton / Anschluss</span></label><label><input type="radio" name="defekt" required value="Wasser- oder Sturzschaden" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 4-7 8-7 13a7 7 0 0 0 14 0c0-5-5-9-7-13z"/></svg></span><span>Wasser- oder Sturzschaden</span></label><label><input type="radio" name="defekt" required value="Anderes Problem / unklar" ><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8a3 3 0 1 1 4 3c-1 .5-1 1-1 2m0 4h.01"/></svg></span><span>Anderes Problem / unklar</span></label><label><input type="radio" name="defekt" value="Mehrere Probleme" required><span class="repair-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></span><span>Mehrere Probleme</span></label></div></fieldset><fieldset data-repair-step><legend tabindex="-1">Wie erreichen wir dich?</legend>
-<div class="form-grid">
-<div><label for="name">Name *</label><input id="name" name="name" autocomplete="name" maxlength="120" required></div>
-<div><label for="telefon">Telefonnummer (optional)</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" maxlength="35"></div>
-<div><label for="email">E-Mail *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="150" required></div>
-</div>
-<div class="form-group"><label for="beschreibung">Notiz (optional)</label><textarea id="beschreibung" name="beschreibung" rows="4" maxlength="5000" placeholder="Zum Beispiel das genaue Modell oder weitere Defekte. Bitte keine Passwörter eingeben."></textarea></div>
-<div class="form-group"><label class="privacy-label" for="datenschutz"><input id="datenschutz" name="datenschutz" type="checkbox" value="Zugestimmt" required><span>Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung dieser Anfrage zu. <a href="/rechtliches.html#datenschutz">Datenschutzhinweise</a> *</span></label></div>
-<div class="form-group"><button class="repair-submit" type="submit">Unverbindliche Anfrage senden</button></div><p class="form-note">Die Anfrage löst noch keinen Reparaturauftrag aus. Kosten und Arbeiten werden zuerst mit dir abgestimmt. Die Übermittlung erfolgt über FormSubmit; dessen Bestätigung belegt nicht den E-Mail-Eingang. Bitte keine Passwörter oder sensiblen Daten senden.</p></fieldset><div class="repair-step-nav" hidden><button type="button" data-repair-back>Zurück</button><p role="alert" data-repair-error></p></div></form>
-        </template>
+        <span id="reparaturformular"></span>
 
 
 
@@ -842,53 +812,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<script>
-(() => {
-  const form = document.querySelector('#reparaturformular');
-  const steps = [...form.querySelectorAll('[data-repair-step]')];
-  const nav = form.querySelector('.repair-step-nav');
-  const progress = form.querySelector('#repair-progress');
-  const back = nav.querySelector('[data-repair-back]');
-  const error = nav.querySelector('[data-repair-error]');
-  let current = 0;
-
-  function showStep(index, focus = true) {
-    current = index;
-    steps.forEach((step, position) => { step.hidden = position !== current; });
-    back.hidden = current === 0;
-    progress.textContent = 'Schritt ' + (current + 1) + ' von ' + steps.length;
-    error.textContent = '';
-    if (focus) steps[current].querySelector('legend').focus();
-  }
-
-  function advance() {
-    const selected = steps[current].querySelector('input:checked');
-    if (!selected) {
-      error.textContent = 'Bitte wähle mindestens eine Option aus.';
-      steps[current].querySelector('input').focus();
-      return;
-    }
-    showStep(current + 1);
-  }
-
-  function selectAndAdvance(event) {
-    if (current < steps.length - 1 &&
-        steps[current].contains(event.target) &&
-        event.target.matches('input[type="radio"]:checked')) {
-      advance();
-    }
-  }
-  form.addEventListener('click', selectAndAdvance);
-  form.addEventListener('change', selectAndAdvance);
-  back.addEventListener('click', () => showStep(current - 1));
-  form.addEventListener('submit', event => {
-    if (current < steps.length - 1) {
-      event.preventDefault();
-      advance();
-    }
-  });
-  nav.hidden = progress.hidden = false;
-  showStep(0, false);
-})();
-</script></body>
+</body>
 </html>
