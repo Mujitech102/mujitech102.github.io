@@ -24,6 +24,42 @@
   }
   document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach((form,index)=>{
    const submit=form.querySelector('[type="submit"]');if(!submit)return;
+   if(form.id==='reparaturformular'){
+    const messages={
+     de:['Bitte fülle dieses Pflichtfeld aus.','Bitte bestätige dieses Pflichtfeld.','Bitte gib eine gültige E-Mail-Adresse ein.'],
+     en:['Please fill in this required field.','Please tick this required box.','Please enter a valid email address.'],
+     fr:['Veuillez remplir ce champ obligatoire.','Veuillez cocher cette case obligatoire.','Veuillez saisir une adresse e-mail valide.'],
+     it:['Compila questo campo obbligatorio.','Seleziona questa casella obbligatoria.','Inserisci un indirizzo e-mail valido.']
+    }[lang]||[];
+    const localizedFields=new WeakMap();
+    form.addEventListener('invalid',event=>{
+     const field=event.target;
+     if(field.validity.customError)return;
+     const message=field.validity.valueMissing?messages[field.type==='checkbox'?1:0]:
+      field.type==='email'&&field.validity.typeMismatch?messages[2]:null;
+     if(!message)return;
+     field.setCustomValidity(message);
+     const hint=document.createElement('small');
+     hint.id='muji-repair-error-'+field.name;
+     hint.textContent=message;
+     const previousDescription=field.getAttribute('aria-describedby');
+     field.setAttribute('aria-describedby',[previousDescription,hint.id].filter(Boolean).join(' '));
+     (field.closest('label')||field).after(hint);
+     localizedFields.set(field,{hint,previousDescription});
+    },true);
+    const clearMessage=event=>{
+     const field=event.target;
+     const error=localizedFields.get(field);
+     if(!error)return;
+     localizedFields.delete(field);
+     error.hint.remove();
+     if(error.previousDescription===null)field.removeAttribute('aria-describedby');
+     else field.setAttribute('aria-describedby',error.previousDescription);
+     field.setCustomValidity('');
+    };
+    form.addEventListener('input',clearMessage);
+    form.addEventListener('change',clearMessage);
+   }
    submit.textContent=t.review+' →';
    const review=document.createElement('section');review.className='form-review';review.hidden=true;review.setAttribute('aria-labelledby','muji-review-title-'+index);
    const title=document.createElement('h3');title.id='muji-review-title-'+index;title.tabIndex=-1;title.textContent=t.title;
