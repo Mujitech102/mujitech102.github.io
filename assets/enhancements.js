@@ -171,6 +171,13 @@
   'use strict';
   const supported = ['repair','gaming_pc','webdesign','device_purchase','private_support','contact'];
   const pendingKey = 'mujitech-pending-enquiry';
+  const isTest = () => window.MujiMeasurementIsTest?.() === true;
+  const reference = () => {
+    if(window.crypto?.randomUUID)return 'MJ-'+window.crypto.randomUUID();
+    if(!window.crypto?.getRandomValues)return '';
+    const bytes=window.crypto.getRandomValues(new Uint8Array(16));
+    return 'MJ-'+Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');
+  };
   const applyContext = () => {
     const params = new URLSearchParams(location.search);
     const model = params.get('model');
@@ -201,6 +208,19 @@
     applyContext();
     document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach(form => {
       const button = form.querySelector('[type="submit"]');
+      // Operational receipt reference, sent only with the form; never an Analytics parameter.
+      const hidden = (name,value) => {
+        let field=form.querySelector('[name="'+name+'"]');
+        if(!field){field=document.createElement('input');field.type='hidden';field.name=name;form.append(field);}
+        field.value=value;
+      };
+      const ref=reference();
+      if(ref)hidden('Anfrage_Referenz',ref);
+      hidden('Messmodus',isTest()?'test':'production');
+      const next=form.querySelector('[name="_next"]');
+      if(isTest()&&next){
+        try{const url=new URL(next.value,location.href);if(url.origin===location.origin){url.searchParams.set('muji_test','1');next.value=url.href;}}catch{}
+      }
       let recovery;
       const reset = () => { if (button) {button.disabled = false; button.removeAttribute('aria-busy');} clearTimeout(recovery); };
       form.addEventListener('invalid',event => {
@@ -217,7 +237,7 @@
             if (supported.includes(kind) && ['all','measurement'].includes(localStorage.getItem('mujitech-cookie-consent'))) {
               const area = window.MujiEnquiryArea?.(form);
               const knownAreas = ['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general'];
-              sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now(),...(knownAreas.includes(area)?{area}: {})}));
+              sessionStorage.setItem(pendingKey,JSON.stringify({kind,time:Date.now(),test:isTest(),...(knownAreas.includes(area)?{area}: {})}));
             }
           } catch {}
           if (button) {button.disabled = true; button.setAttribute('aria-busy','true');}

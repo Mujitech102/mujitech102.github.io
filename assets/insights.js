@@ -2,6 +2,19 @@
 (() => {
   'use strict';
   const ID='G-C2WKE7YV33', KEY='mujitech-cookie-consent';
+  // QA stays in this tab, including a provider return. Never load production tags in QA.
+  const testKey='mujitech-measurement-test', testParam='muji_test';
+  const testChoice=new URLSearchParams(location.search).get(testParam);
+  let testMode=['localhost','127.0.0.1','[::1]','::1'].includes(location.hostname)||location.protocol==='file:'||testChoice==='1';
+  try {
+    if(testChoice==='0'){
+      sessionStorage.removeItem(testKey);
+      sessionStorage.removeItem('mujitech-pending-enquiry');
+    }else if(testChoice==='1')sessionStorage.setItem(testKey,'1');
+    testMode=testMode||sessionStorage.getItem(testKey)==='1';
+  }catch{}
+  window.MujiMeasurementIsTest=()=>testMode;
+  if(testMode)window['ga-disable-'+ID]=true;
   const lang=(document.documentElement.lang||'de').slice(0,2);
   const copy={
     de:['Cookies & Datenschutz','Statistik misst Seitenaufrufe, Kontaktklicks und Formularinteraktionen mit Google Analytics. Optional verknüpft Anzeigenmessung mit Google Ads einen Anzeigenklick mit einer späteren Anfrage. Keine personalisierte Werbung; keine Formularinhalte an Analytics.','Datenschutzhinweise','Nur notwendige','Nur Statistik erlauben','Statistik + Anzeigenmessung'],
@@ -30,7 +43,13 @@
   const pageName=location.pathname.split('/').filter(Boolean).pop()||'index.html';
   const repairPath=/(?:iphone-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|samsung-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|reparation-(?:ecran|connecteur-charge)|remplacement-batterie|riparazione-(?:display|connettore-ricarica)|sostituzione-batteria|reparaturpreise-|repair-prices-|tarifs-reparation-|prezzi-riparazione-)/.test(pageName);
   const confirmationArea=pageName==='danke.html'&&['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(new URLSearchParams(location.search).get('form'))?new URLSearchParams(location.search).get('form'):null;
-  const serviceArea=({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||confirmationArea||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
+  const pcAreas={
+    'laptop-computer-reparatur.html':'repair','laptop-computer-repair.html':'repair',
+    'reparation-ordinateur-portable.html':'repair','riparazione-computer-portatili.html':'repair',
+    'computer-langsam-hilfe.html':'private_support','slow-computer-help.html':'private_support',
+    'ordinateur-lent-assistance.html':'private_support','computer-lento-assistenza.html':'private_support'
+  };
+  const serviceArea=pcAreas[pageName]||({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||confirmationArea||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
   const areas=new Set(['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general']);
   // Only fixed option values become analytics categories; never send free-form input.
   const contactAreas={'Reparatur':'repair','Privatkunden-Service':'private_support','Geräteankauf':'device_purchase','Produktanfrage':'shop','IT-Support KMU':'business_it','IT-Betreuung':'business_it','Hardware-Beschaffung':'business_it','Firmenhandys':'business_it','Telekom-Anfrage':'business_it','Website':'webdesign','Microsoft 365 / Google Workspace':'business_it','Sonstiges':'contact'};
@@ -38,8 +57,9 @@
   const pageArea=()=>pageName==='kontakt.html'?(categoryFor(document.querySelector('select[name="bereich"]')?.value)||categoryFor(campaignParams.get('service'))||(location.hash==='#business'?'business_it':'contact')):serviceArea;
   const enquiryArea=form=>categoryFor(form?.querySelector?.('select[name="bereich"]')?.value)||pageArea();
   window.MujiEnquiryArea=enquiryArea;
+  const stages={contact_click:'contact_click',enquiry_open:'enquiry_open',form_start:'form_start',form_submit_attempt:'submit_attempt',form_confirmation_view:'provider_confirmation'};
   const event=(name,params={})=>{
-    if(allowed && window.gtag)window.gtag('event',name,{...params,service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
+    if(!testMode && allowed && window.gtag)window.gtag('event',name,{...params,...(stages[name]?{funnel_stage:stages[name],lead_verified:0}:{}),service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
   };
   function productItem(){
     let product;
@@ -57,6 +77,7 @@
     if(!['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(kind))return;
     try {
       const pending=JSON.parse(sessionStorage.getItem('mujitech-pending-enquiry')||'null');
+      if(pending?.test===true){sessionStorage.removeItem('mujitech-pending-enquiry');return;}
       if(!pending || pending.kind!==kind || !Number.isFinite(pending.time) || Date.now()-pending.time<0 || Date.now()-pending.time>30*60*1000)return;
       event('form_confirmation_view',{form_id:kind,confirmation_type:'provider_redirect',service_area:areas.has(pending.area)?pending.area:serviceArea});
       confirmationRecorded=true;
@@ -64,6 +85,7 @@
     }catch{}
   }
   function activate(withAds=false){
+    if(testMode)return;
     const hadAds=adsAllowed;adsAllowed=withAds;
     allowed=true;window['ga-disable-'+ID]=false;
     const consent={analytics_storage:'granted',ad_storage:adsAllowed?'granted':'denied',ad_user_data:adsAllowed?'granted':'denied',ad_personalization:'denied'};
@@ -118,6 +140,10 @@
       const channel=href.startsWith('tel:')?'phone':href.startsWith('mailto:')?'email':/^https:\/\/(wa\.me|api\.whatsapp\.com)\//.test(href)?'whatsapp':null;
       if(channel){const item=productItem();event('contact_click',{contact_channel:channel,...(item?{currency:'CHF',value:item.price,items:[item]}:{})});return;}
       let u;try{u=new URL(href,location.href);}catch{return;}
+      // Preserve QA even if sessionStorage is unavailable. External links stay untouched.
+      if(testMode && u.origin===location.origin && ['http:','https:'].includes(u.protocol)){
+        u.searchParams.set(testParam,'1');a.setAttribute('href',u.href);
+      }
       const card=a.closest('.gaming-card[data-product-sku]');if(card&&u.origin===location.origin)event('select_item',{item_list_id:'gaming-pcs',items:[{item_id:card.dataset.productSku,item_name:card.querySelector('h3')?.textContent.trim(),item_category:'Gaming PCs',price:Number(card.dataset.price)}]});
       if(u.origin===location.origin && (/anfrage|demande|richiesta|request/.test(u.pathname)||u.hash==='#anfrage'))event('enquiry_open',{target_page:u.pathname});
     });

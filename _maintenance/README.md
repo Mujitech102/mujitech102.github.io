@@ -1,5 +1,24 @@
 # Approved website updates — 15 October 2026
 
+## Measurement proposal — 3 November 2026 (requires release approval)
+
+- `assets/polish.js` and the four repair enquiry pages are unchanged from the published validation release `c51cd235b179b33d0d3a476347122a7418c547a7`. This change uses `insights.js` and `enhancements.js`; no HTML, form endpoint, price, consent choice or GA4 account setting is changed.
+- Start a manual QA journey with `?muji_test=1`. This tab keeps QA mode across same-origin navigation, language switches and FormSubmit return. Localhost/loopback previews are always QA. No production Google tag or Analytics events are loaded in QA, even with saved statistics/Ads consent. End a production-domain QA session explicitly with `?muji_test=0`; this also clears an old pending enquiry marker. The query flag is a testing convenience, not an authentication or delivery proof.
+- Contact clicks, enquiry opens, form starts, submit attempts and provider confirmations retain their existing event names. They add a fixed `funnel_stage` and `lead_verified: 0`. A provider confirmation remains a technical intermediate; this code never emits a received/qualified-lead or purchase event. Existing GA4 key-event configuration is unchanged; do not report its total as verified leads.
+- The eight PC/laptop pages are assigned consistently: hardware repair to `repair`, slow-computer help to `private_support`, in DE/EN/FR/IT.
+- Each form draft receives an opaque random `Anfrage_Referenz` and a fixed `Messmodus` (`test` or `production`). These two fields travel only in the submitted form to the existing recipient. Neither reference nor message/contact data is sent to Analytics. A retry of the same form draft retains its reference so duplicate receipt exports can be detected.
+- Browser/provider confirmation cannot prove inbox delivery. After checking the real inbox, export the original received email as `.eml` into a **private directory outside this public repository**, record its reference and mode in a private ledger, and record qualification/order decisions separately. A displayed success page or a synthetic local fixture must never be entered as a real receipt.
+
+Private ledger shape (create outside this repository; start with an empty `entries` array):
+
+```json
+{"schema_version":1,"entries":[{"reference":"MJ-<reference from received form>","mode":"production","language":"de","received_email":"original-message.eml","inbox_verified_at":"2026-11-03T21:00:00+01:00","qualification":"unreviewed"}]}
+```
+
+Allowed qualification values: `unreviewed`, `qualified`, `not_qualified`, `spam`. A confirmed order additionally requires `"order":{"confirmed_at":"<timestamp with timezone>","evidence_file":"<private order evidence>"}` and a qualified enquiry. Run `python3 _maintenance/enquiry_receipts.py /private/path/ledger.json`. The offline tool checks matching reference/mode in the exported email, the recipient and Message-ID, duplicate entries, and separate order evidence. It returns receipt/test/qualified/order counts plus evidence hashes, never mail bodies or contact details. It does **not** authenticate a sender, read a mailbox, prove that a supplied export is genuine, or decide whether an enquiry is qualified; the recorded inbox check and business decision remain required. Test receipts/orders never enter production counts. An empty ledger means no evidence has been entered, not that the business received no enquiries.
+
+Checks: `node _maintenance/test_measurement.js`, `python3 _maintenance/test_enquiry_receipts.py`, `node _maintenance/test_form_review.js`, `python3 _maintenance/validate.py`. Local browser checks must use the isolated mock submission receiver and a `form-action 'self'` policy; never submit fixtures to FormSubmit. Before later release verification, reload the affected scripts after the existing 600-second browser cache expires or coordinate a shared asset-version update with the other website changes. No release or account changes are performed by these tests.
+
 30 October 2026 form review: show checked package, care and extra options using visible localized labels and fieldset legends. Unchecked, disabled and hidden fields stay excluded. The review stage must never send by itself; run `node _maintenance/test_form_review.js` when changing it. `seo_quality_20261030.py` also preserves the four website pages' reviewed script version.
 
 The current HTML files are the deployed source of truth for the newer catalogue, repair guides and gaming products. The older `_localization/build.py` only generates the original page families. Do not use it alone to replace the current deployment.
@@ -20,7 +39,7 @@ Manufacturer price pages and the static price sections are generated from the sa
 
 Form endpoints remain the established FormSubmit address. CAPTCHA protection remains enabled. Each form has one honeypot, a language field, category, subject and localized return page. Three optional photo fields use the provider's documented aggregate 10 MB limit.
 
-Measurement requires statistics consent. `form_submit_attempt` counts an attempted submit. `form_confirmation_view` records a provider return only when the same tab has a recent matching submission marker. The event does not prove inbox delivery or a paid order. Markers contain only a fixed form category, an approved service category and time, never contact or form contents. They are stored only after statistics consent. GA4 administration/key-event settings require access to the Analytics account and are not changed by this code.
+Measurement requires statistics consent. `form_submit_attempt` counts an attempted submit. `form_confirmation_view` records a provider return only when the same tab has a recent matching submission marker. The event does not prove inbox delivery or a paid order. Markers contain only a fixed form category, an approved service category, time and a QA flag, never contact or form contents. They are stored only after statistics consent. GA4 administration/key-event settings require access to the Analytics account and are not changed by this code.
 
 The underscore directories are excluded from the GitHub Pages site. Do not place customer enquiries, credentials or personal data in source control.
 

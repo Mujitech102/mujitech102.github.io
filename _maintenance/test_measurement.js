@@ -8,7 +8,7 @@ function storage(initial={}){
  const data=new Map(Object.entries(initial));
  return {getItem:key=>data.get(key)??null,setItem:(key,value)=>data.set(key,String(value)),removeItem:key=>data.delete(key),data};
 }
-function fixture({consent,pathname='/fr/reparation-ecran-iphone.html',search='?email=PRIVATE_EMAIL&utm_source=google&utm_medium=organic&utm_campaign=local-repairs',hash='',pending,selectedArea,lang='fr-CH',cookies={}}={}){
+function fixture({consent,pathname='/fr/reparation-ecran-iphone.html',search='?email=PRIVATE_EMAIL&utm_source=google&utm_medium=organic&utm_campaign=local-repairs',hash='',pending,selectedArea,lang='fr-CH',cookies={},hostname='mujitech.ch',protocol='https:',session={},blockedStorage=false}={}){
  const listeners={},windowListeners={},scripts=[],banners=[],cookieWrites=[];
  const cookieJar=new Map(Object.entries(cookies));
  class Element{
@@ -23,8 +23,10 @@ function fixture({consent,pathname='/fr/reparation-ecran-iphone.html',search='?e
  const document={title:'Repair page',documentElement:{lang,scrollHeight:2000},referrer:'https://example.test/path?secret=PRIVATE_REFERRER#private',readyState:'complete',createElement:tag=>new Element(tag),head:{append:el=>scripts.push(el)},body:{append:el=>banners.push(el)},querySelectorAll:()=>[],querySelector:selector=>selector==='select[name="bereich"]'?areaSelect:null,addEventListener:(k,cb)=>{listeners[k]=cb;}};
  Object.defineProperty(document,'cookie',{get:()=>[...cookieJar].map(([k,v])=>k+'='+v).join('; '),set:value=>{cookieWrites.push(value);const [k,v]=value.split(';')[0].split('=');if(value.includes('Max-Age=0'))cookieJar.delete(k);else cookieJar.set(k,v);}});
  const localStorage=storage(consent?{'mujitech-cookie-consent':consent}:{});
- const sessionStorage=storage(pending?{'mujitech-pending-enquiry':JSON.stringify(pending)}:{});
- const context={document,location:{origin:'https://mujitech.ch',hostname:'mujitech.ch',pathname,search,hash},URL,URLSearchParams,Date,Number,JSON,Set,WeakSet,localStorage,sessionStorage,innerHeight:800,scrollY:0,requestAnimationFrame:fn=>fn(),addEventListener:(k,cb)=>{windowListeners[k]=cb;}};
+ const sessionStorage=storage({...session,...(pending?{'mujitech-pending-enquiry':JSON.stringify(pending)}:{})});
+ if(blockedStorage)for(const key of ['getItem','setItem','removeItem'])sessionStorage[key]=()=>{throw new Error('storage blocked');};
+ const origin=protocol+'//'+hostname;
+ const context={document,location:{origin,hostname,protocol,href:origin+pathname+search+hash,pathname,search,hash},crypto:require('node:crypto').webcrypto,Uint8Array,URL,URLSearchParams,Date,Number,JSON,Set,WeakSet,localStorage,sessionStorage,innerHeight:800,scrollY:0,requestAnimationFrame:fn=>fn(),addEventListener:(k,cb)=>{windowListeners[k]=cb;}};
  context.window=context;vm.runInNewContext(source,context);
  const events=()=>Array.from(context.dataLayer||[]).filter(x=>x[0]==='event').map(x=>({name:x[1],params:x[2]}));
  return {context,document,listeners,windowListeners,scripts,banners,events,localStorage,sessionStorage,areaSelect,cookieWrites,cookieJar};
@@ -131,23 +133,78 @@ const enhancementSource=fs.readFileSync(path.join(__dirname,'../assets/enhanceme
 const markerAt=enhancementSource.indexOf("  const supported = ['repair'");
 const markerStart=enhancementSource.lastIndexOf('(() => {',markerAt);
 const markerSource=enhancementSource.slice(markerStart,enhancementSource.indexOf('})();',markerAt)+5);
+function bindForm(f,kind='contact',next='https://mujitech.ch/danke.html?form=contact'){
+ const handlers={},button={setAttribute(){},removeAttribute(){},disabled:false};
+ const fields=new Map([['Anfragebereich',{value:kind}],['_next',{value:next}]]);
+ const actualForm={querySelector:s=>s==='[type="submit"]'?button:fields.get(s.match(/^\[name="([^"]+)"\]$/)?.[1])||null,append:field=>fields.set(field.name,field),addEventListener:(name,cb)=>{handlers[name]=cb;}};
+ f.document.querySelectorAll=s=>s.startsWith('form[action=')?[actualForm]:[];
+ f.document.getElementById=()=>null;
+ Object.assign(f.context,{queueMicrotask:fn=>fn(),setTimeout:()=>1,clearTimeout:()=>{}});
+ vm.runInNewContext(markerSource,f.context);
+ return {handlers,fields,button};
+}
 for(const consent of ['necessary','all','measurement']){
  for(const cancelled of [false,true]){
   f=fixture({consent,pathname:'/kontakt.html',selectedArea:'IT-Support KMU'});
-  const handlers={},button={setAttribute(){},removeAttribute(){},disabled:false};
-  const actualForm={querySelector:s=>s==='[type="submit"]'?button:s==='[name="Anfragebereich"]'?{value:'contact'}:null,addEventListener:(name,cb)=>{handlers[name]=cb;}};
-  f.document.querySelectorAll=s=>s.startsWith('form[action=')?[actualForm]:[];
-  f.document.getElementById=()=>null;
-  Object.assign(f.context,{queueMicrotask:fn=>fn(),setTimeout:()=>1,clearTimeout:()=>{}});
-  vm.runInNewContext(markerSource,f.context);
+  const {handlers,fields}=bindForm(f);
+  assert.match(fields.get('Anfrage_Referenz').value,/^MJ-[a-f0-9-]{32,36}$/);
+  assert.equal(fields.get('Messmodus').value,'production');
   handlers.submit({defaultPrevented:cancelled});
   const marker=JSON.parse(f.sessionStorage.getItem('mujitech-pending-enquiry')||'null');
   assert.equal(Boolean(marker),consent!=='necessary'&&!cancelled);
-  if(marker){assert.equal(marker.area,'business_it');assert.equal(marker.kind,'contact');
+  if(marker){assert.equal(marker.area,'business_it');assert.equal(marker.kind,'contact');assert.equal(marker.test,false);
    const returnPage=fixture({consent,pathname:'/danke.html',search:'?form=contact',pending:marker});
    assert.equal(returnPage.events().filter(e=>e.name==='form_confirmation_view').length,1);
    assert.equal(returnPage.events().find(e=>e.name==='form_confirmation_view').params.service_area,'business_it');
   }
  }
 }
+// Every QA path suppresses tag loading and all production events, even with saved consent.
+for(const lang of ['de-CH','en','fr-CH','it-CH']){
+ const prefix=lang==='de-CH'?'':'/'+lang.slice(0,2);
+ for(const consent of [undefined,'necessary','all','measurement']){
+  f=fixture({consent,lang,pathname:prefix+'/anfrage.html',search:'?muji_test=1'});
+  assert.equal(f.context.MujiMeasurementIsTest(),true);
+  const {handlers,fields}=bindForm(f,'repair','https://mujitech.ch'+prefix+'/danke.html?form=repair');
+  assert.equal(fields.get('Messmodus').value,'test');
+  assert.equal(new URL(fields.get('_next').value).searchParams.get('muji_test'),'1');
+  const id=fields.get('Anfrage_Referenz').value;
+  handlers.submit({defaultPrevented:true});
+  assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
+  handlers.submit({defaultPrevented:false});
+  const pending=JSON.parse(f.sessionStorage.getItem('mujitech-pending-enquiry')||'null');
+  if(pending)assert.equal(pending.test,true);
+  f.listeners.submit({target:form});
+  f.listeners.click({target:{closest:()=>({getAttribute:()=> 'mailto:info@mujitech.ch'})}});
+  assert.equal(f.scripts.length,0);assert.equal(f.events().length,0);
+  assert.ok(!JSON.stringify(f.context.dataLayer||[]).includes(id));
+  const returnPage=fixture({consent,lang,pathname:prefix+'/danke.html',search:'?form=repair&muji_test=1',pending});
+  assert.equal(returnPage.scripts.length,0);assert.equal(returnPage.events().length,0);
+ }
+ f=fixture({consent:'all',lang,pathname:prefix+'/danke.html',search:'?form=repair',pending:{kind:'repair',time:Date.now(),test:true}});
+ assert.equal(f.events().filter(e=>e.name==='form_confirmation_view').length,0);
+ assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
+ f=fixture({consent:'all',lang,pathname:prefix+'/danke.html',search:'?form=repair',pending:{kind:'repair',time:Date.now(),test:false}});
+ const confirmation=f.events().find(e=>e.name==='form_confirmation_view');
+ assert.equal(confirmation.params.funnel_stage,'provider_confirmation');assert.equal(confirmation.params.lead_verified,0);
+ assert.ok(f.events().every(e=>!['generate_lead','purchase','enquiry_received'].includes(e.name)));
+}
+for(const hostname of ['localhost','127.0.0.1','[::1]']){
+ f=fixture({consent:'measurement',hostname,search:'?muji_test=0'});
+ assert.equal(f.scripts.length,0);assert.equal(f.events().length,0);
+}
+f=fixture({consent:'all',session:{'mujitech-measurement-test':'1'},search:''});assert.equal(f.scripts.length,0);
+f=fixture({consent:'all',session:{'mujitech-measurement-test':'1'},search:'?muji_test=0',pending:{kind:'repair',time:Date.now(),test:true}});
+assert.equal(f.context.MujiMeasurementIsTest(),false);assert.equal(f.scripts.length,1);assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
+f=fixture({consent:'all',search:'?muji_test=1',blockedStorage:true});
+const internal={href:'https://mujitech.ch/it/anfrage.html?model=iPhone+15#reparatur',getAttribute(){return this.href;},setAttribute(k,v){this.href=v;},closest:()=>null};
+f.listeners.click({target:{closest:()=>internal}});
+assert.equal(new URL(internal.href).searchParams.get('muji_test'),'1');assert.equal(new URL(internal.href).searchParams.get('model'),'iPhone 15');assert.equal(new URL(internal.href).hash,'#reparatur');assert.equal(f.scripts.length,0);
+const external={...internal,href:'https://example.test/help'};f.listeners.click({target:{closest:()=>external}});assert.equal(external.href,'https://example.test/help');
+for(const [pathname,area] of Object.entries({'/laptop-computer-reparatur.html':'repair','/en/laptop-computer-repair.html':'repair','/fr/reparation-ordinateur-portable.html':'repair','/it/riparazione-computer-portatili.html':'repair','/computer-langsam-hilfe.html':'private_support','/en/slow-computer-help.html':'private_support','/fr/ordinateur-lent-assistance.html':'private_support','/it/computer-lento-assistenza.html':'private_support'})){
+ f=fixture({consent:'all',pathname,search:''});f.listeners.click({target:{closest:()=>({getAttribute:()=> 'tel:+41768444673'})}});
+ assert.ok(f.events().every(e=>e.params.service_area===area));
+ assert.equal(f.events().at(-1).params.funnel_stage,'contact_click');assert.equal(f.events().at(-1).params.lead_verified,0);
+}
+console.log('PASS: QA suppression and provider-return isolation in DE/EN/FR/IT; no production tag on local hosts; explicit reset; blocked-storage link fallback; eight PC categories; receipt references excluded from Analytics; funnel events remain unverified intermediates.');
 console.log('PASS: three consent choices in four languages; legacy choices never grant ads; valid click IDs only after separate choice; withdrawal and cookie cleanup; actual form-marker round trip; original measurement/category/privacy/deduplication regressions.');
