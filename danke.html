@@ -14,4 +14,13 @@
 <div class="actions" style="justify-content:center;"><a class="cta" href="/">Zur Startseite</a><a class="cta secondary" href="/kontakt.html">Kontakt</a></div>
 </div></div></section></main>
 <script src="assets/app.js?v=20261011-2"></script><script defer src="assets/mono-electric.js?v=20261011-2"></script>
-</body></html>
+<script>
+if (new URLSearchParams(location.search).get('form') === 'repair') {
+  const heading = document.querySelector('h1');
+  const confirmation = document.createElement('p');
+  confirmation.setAttribute('role', 'status');
+  confirmation.style.cssText = 'background:#edf8ef;color:#14532d;border:1px solid #75a880;border-radius:10px;padding:1rem;font-weight:700';
+  confirmation.textContent = 'Deine Nachricht wurde gesendet. Wir melden uns schnellstmöglich bei dir.';
+  heading.after(confirmation);
+}
+</script></body></html>
