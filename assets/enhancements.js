@@ -18,8 +18,34 @@
       link.href=target.href;
     });
     const lang=(document.documentElement.lang||'de').slice(0,2);
+    const directContact = {
+      de: ['Direkt Kontakt aufnehmen', 'E-Mail schreiben', 'Anrufen'],
+      en: ['Contact us directly', 'Send an email', 'Call'],
+      fr: ['Nous contacter directement', 'Envoyer un e-mail', 'Appeler'],
+      it: ['Contattaci direttamente', 'Invia un’e-mail', 'Chiama']
+    }[lang] || ['Contact us directly', 'Send an email', 'Call'];
     const submitCopy={de:'Weiter zur Übermittlung. Bitte die Bestätigung auf der nächsten Seite prüfen. Falls es nicht klappt, kontaktiere uns per E-Mail oder WhatsApp.',fr:'Poursuite de l’envoi. Vérifiez la confirmation sur la page suivante. En cas de problème, contactez-nous par e-mail ou WhatsApp.',it:'Passaggio all’invio. Verifica la conferma nella pagina successiva. In caso di problemi, contattaci via e-mail o WhatsApp.',en:'Continuing to submission. Check the confirmation on the next page. If it fails, contact us by email or WhatsApp.'};
     document.querySelectorAll('form[action="https://formsubmit.co/info@mujitech.ch"]').forEach(form=>{
+      const email = 'mailto:info@mujitech.ch';
+      const phone = 'tel:+41768444673';
+      if (!form.querySelector('a[href="' + email + '"]') ||
+          !form.querySelector('a[href="' + phone + '"]')) {
+        const contact = document.createElement('aside');
+        contact.className = 'enquiry-alternatives';
+        contact.setAttribute('aria-label', directContact[0]);
+        const title = document.createElement('strong');
+        title.textContent = directContact[0];
+        const actions = document.createElement('div');
+        actions.className = 'enquiry-actions';
+        [[email, directContact[1]], [phone, directContact[2]]].forEach(([href, label]) => {
+          const link = document.createElement('a');
+          link.href = href;
+          link.textContent = label;
+          actions.append(link);
+        });
+        contact.append(title, actions);
+        form.prepend(contact);
+      }
       const status=document.createElement('p');status.className='form-progress';status.hidden=true;status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.textContent=submitCopy[lang]||submitCopy.en;form.append(status);
       form.addEventListener('submit',()=>{status.hidden=false;});
       window.addEventListener('pageshow',()=>{status.hidden=true;});
