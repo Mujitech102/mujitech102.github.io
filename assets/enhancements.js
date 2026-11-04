@@ -1,6 +1,7 @@
 (() => {
   'use strict';
   const ready = () => {
+    const lang = (document.documentElement.lang || 'de').slice(0, 2);
     // A restrained lift replaces pointer-driven tilting; controls never rotate.
     document.querySelectorAll('.panel,.card,.m-service-card,.m-final-card,.w-card,.trust-item,.service-card,.review-card,.product-card,.process-step').forEach(card => {
       if (!card.matches('form,aside') && !card.querySelector('form')) card.classList.add('ch-depth');
