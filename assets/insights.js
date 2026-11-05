@@ -137,7 +137,7 @@
         u.searchParams.set(testParam,'1');a.setAttribute('href',u.href);
       }
       const card=a.closest('.gaming-card[data-product-sku]');if(card&&u.origin===location.origin)event('select_item',{item_list_id:'gaming-pcs',items:[{item_id:card.dataset.productSku,item_name:card.querySelector('h3')?.textContent.trim(),item_category:'Gaming PCs',price:Number(card.dataset.price)}]});
-      if(u.origin===location.origin && (/anfrage|demande|richiesta|request/.test(u.pathname)||u.hash==='#anfrage'))event('enquiry_open',{target_page:u.pathname});
+      if(u.origin===location.origin && (/anfrage|demande|richiesta|request|assistent/.test(u.pathname)||u.hash==='#anfrage'))event('enquiry_open',{target_page:u.pathname});
     });
     // Only fixed action labels are accepted. No chat or callback field contents.
     document.addEventListener('mujitech-action',e=>{const detail=e.detail||{};if(!['mujibot_open','mujibot_price_view','callback_request_open','repair_price_view'].includes(detail.type))return;const params={};if(['email','whatsapp'].includes(detail.channel))params.contact_channel=detail.channel;if(detail.type==='callback_request_open')params.form_id='mujibot-callback';event(detail.type,params);});
