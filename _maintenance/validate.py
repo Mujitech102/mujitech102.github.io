@@ -9,6 +9,8 @@ import json,re,subprocess,sys,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 NODE='/Users/andritmuji/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node'
 errors=[];pages={};formcount=0;redirects={}
+# Reject the retired provider token/domain without rejecting Tally.FormSubmitted.
+retired_provider=re.compile(r'\bformsubmit\b',re.I)
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.ids=[];self.tags=[];self.scripts=[];self.script=None;self.forms=[];self.form=None;self.text=[];self.select=None;self.choices={}
  def handle_starttag(self,t,a):
@@ -37,7 +39,7 @@ def target(p,u):
 files=sorted(p for p in ROOT.rglob('*.html') if not any(x.startswith('_') for x in p.relative_to(ROOT).parts))
 for p in files:
  s=p.read_text();
- if 'formsubmit' in s.lower():errors.append(f'{p.relative_to(ROOT)}: retired provider reference')
+ if retired_provider.search(s):errors.append(f'{p.relative_to(ROOT)}: retired provider reference')
  c=Page();c.feed(s);pages[p.resolve()]=c;rel=p.relative_to(ROOT)
  refresh=[a.get('content','') for t,a in c.tags if t=='meta' and a.get('http-equiv','').lower()=='refresh']
  if refresh:
@@ -117,7 +119,7 @@ for p in files:
 sitemap=ET.parse(ROOT/'sitemap.xml');ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'};urls=[x.text for x in sitemap.findall('.//s:loc',ns)]
 if len(urls)!=len(set(urls)):errors.append('Sitemap duplicate URLs')
 for js in ROOT.glob('assets/*.js'):
- if 'formsubmit' in js.read_text().lower():errors.append(f'{js.name}: retired provider reference')
+ if retired_provider.search(js.read_text()):errors.append(f'{js.name}: retired provider reference')
 for u in urls:
  c=pages.get(target(ROOT/'index.html',u))
  if c:
