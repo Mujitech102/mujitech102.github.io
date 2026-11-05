@@ -108,7 +108,7 @@ approved=json.loads((ROOT/'_maintenance/approved-repair-prices.json').read_text(
 expected={(r[0],r[1]):r[2] for r in approved['rows']}
 for key,price in lookup.items():
  if price!=expected.get(key):errors.append('Unapproved price: '+str(key))
- if price is not None and (price<=0 or price%5):errors.append('Invalid CHF 5 rounding: '+str(key))
+ if price is not None and (price<=0 or abs(price*100-round(price*100))>0.00001):errors.append('Invalid CHF cent rounding: '+str(key))
 # Warranty promise changes apply to PCs, not the separate 24-month iPhone offers.
 for p in files:
  s=p.read_text()
