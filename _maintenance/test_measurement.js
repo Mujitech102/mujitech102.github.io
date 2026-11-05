@@ -31,60 +31,13 @@ function fixture({consent,pathname='/fr/reparation-ecran-iphone.html',search='?e
  const events=()=>Array.from(context.dataLayer||[]).filter(x=>x[0]==='event').map(x=>({name:x[1],params:x[2]}));
  return {context,document,listeners,windowListeners,scripts,banners,events,localStorage,sessionStorage,areaSelect,cookieWrites,cookieJar};
 }
-let f=fixture();assert.equal(f.scripts.length,0);assert.equal(f.events().length,0);
-f=fixture({consent:'necessary'});assert.equal(f.scripts.length,0);assert.equal(f.events().length,0);
-f=fixture({consent:'all'});assert.equal(f.scripts.length,1);assert.equal(f.events()[0].name,'page_view');assert.equal(f.events()[0].params.service_area,'repair');assert.equal(f.events()[0].params.page_location,'https://mujitech.ch/fr/reparation-ecran-iphone.html');assert.equal(f.events()[0].params.page_referrer,'https://example.test/path');
-const form={id:'repair-enquiry',classList:{contains:()=>false},matches:s=>s==='form',closest:()=>null};
-f.listeners.focusin({target:{closest:()=>form,value:'PRIVATE_NAME'}});
-f.listeners.submit({target:form});
-f.listeners.click({target:{closest:()=>({getAttribute:()=> 'mailto:info@mujitech.ch?body=PRIVATE_MESSAGE'})}});
-assert.deepEqual(f.events().map(x=>x.name),['page_view','form_start','form_submit_attempt','contact_click']);
-assert.ok(!JSON.stringify(f.context.dataLayer).includes('PRIVATE_'));
-const good={kind:'repair',time:Date.now()};
-f=fixture({consent:'all',pathname:'/fr/danke.html',search:'?form=repair&email=PRIVATE_EMAIL',pending:good});
-assert.equal(f.events().filter(x=>x.name==='form_confirmation_view').length,1);assert.equal(f.events().find(x=>x.name==='form_confirmation_view').params.service_area,'repair');assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
-f.windowListeners.storage({key:'mujitech-cookie-consent',newValue:'all'});assert.equal(f.events().filter(x=>x.name==='form_confirmation_view').length,1);
-for(const pending of [undefined,{kind:'gaming_pc',time:Date.now()},{kind:'repair',time:Date.now()-31*60*1000},{kind:'repair',time:Date.now()+60000}]){
- f=fixture({consent:'all',pathname:'/danke.html',search:'?form=repair',pending});assert.equal(f.events().filter(x=>x.name==='form_confirmation_view').length,0);
+
+function click(f, href) {
+ f.listeners.click({target:{closest:()=>({getAttribute:()=>href})}});
 }
-f=fixture({consent:'all'});f.windowListeners.storage({key:'mujitech-cookie-consent',newValue:'necessary'});const count=f.events().length;f.listeners.submit({target:form});assert.equal(f.events().length,count);assert.equal(f.context['ga-disable-G-C2WKE7YV33'],true);
-// A contact page represents several services; categorise the actual choice at submission.
-const choices={'Reparatur':'repair','Privatkunden-Service':'private_support','Geräteankauf':'device_purchase','Produktanfrage':'shop','IT-Support KMU':'business_it','IT-Betreuung':'business_it','Hardware-Beschaffung':'business_it','Firmenhandys':'business_it','Telekom-Anfrage':'business_it','Website':'webdesign','Microsoft 365 / Google Workspace':'business_it','Sonstiges':'contact'};
-for(const prefix of ['','/en','/fr','/it']){
- const html=fs.readFileSync(path.join(__dirname,'..',prefix.slice(1),'kontakt.html'),'utf8');
- const select=html.match(/<select\b[^>]*name="bereich"[^>]*>([\s\S]*?)<\/select>/);
- assert.ok(select,'contact area selector exists in '+prefix);
- const actualChoices=Array.from(select[1].matchAll(/<option\b[^>]*value="([^"]+)"/g),match=>match[1]);
- assert.deepEqual(actualChoices.sort(),Object.keys(choices).sort(),'all published options are categorised in '+prefix);
- for(const [choice,expected] of Object.entries(choices)){
-  f=fixture({consent:'all',pathname:prefix+'/kontakt.html',selectedArea:''});
-  const contactForm={...form,id:'contact-form',querySelector:selector=>selector==='select[name="bereich"]'?f.areaSelect:null};
-  f.listeners.focusin({target:{closest:()=>contactForm}});
-  f.areaSelect.value=choice;
-  f.listeners.submit({target:contactForm});
-  assert.equal(f.events().at(-1).params.service_area,expected);
-  assert.equal(f.context.MujiEnquiryArea(contactForm),expected);
- }
- f=fixture({consent:'all',pathname:prefix+'/iphones.html'});
- assert.equal(f.events()[0].params.service_area,'shop');
-}
-for(const selectedArea of ['PRIVATE_EMAIL','__proto__','constructor']){
- f=fixture({consent:'all',pathname:'/kontakt.html',selectedArea,search:'?service=PRIVATE_QUERY'});
- assert.equal(f.events()[0].params.service_area,'contact');
- assert.ok(!JSON.stringify(f.context.dataLayer).includes('PRIVATE_'));
-}
-f=fixture({consent:'all',pathname:'/kontakt.html',search:'?service=IT-Support%20KMU'});
-assert.equal(f.events()[0].params.service_area,'business_it');
-f=fixture({consent:'all',pathname:'/kontakt.html',hash:'#business',search:''});
-assert.equal(f.events()[0].params.service_area,'business_it');
-for(const [area,expected] of [['business_it','business_it'],['webdesign','webdesign'],['PRIVATE_AREA','contact'],[undefined,'contact']]){
- f=fixture({consent:'all',pathname:'/danke.html',search:'?form=contact',pending:{kind:'contact',area,time:Date.now()}});
- const event=f.events().find(x=>x.name==='form_confirmation_view');
- assert.equal(event.params.service_area,expected);
- assert.ok(!JSON.stringify(f.context.dataLayer).includes('PRIVATE_'));
-}
-f=fixture({consent:'all'});f.listeners.submit({target:form,defaultPrevented:true});
-assert.equal(f.events().filter(x=>x.name==='form_submit_attempt').length,0);
+let f=fixture();
+assert.equal(f.scripts.length,0);
+assert.equal(f.events().length,0);
 for(const campaign of ['webdesign','device-buyback','iphone-sales','private-support']){
  f=fixture({consent:'all',search:'?utm_source=google&utm_medium=organic&utm_campaign='+campaign});
  assert.equal(Array.from(f.context.dataLayer).find(x=>x[0]==='config')[2].campaign_name,campaign);
@@ -119,92 +72,82 @@ f=fixture({consent:'measurement',search:'?gclid='+clickID,cookies:{_ga:'keep-for
 f.windowListeners.storage({key:'mujitech-cookie-consent',newValue:'all'});
 assert.equal(consentCommands(f).at(-1)[2].ad_user_data,'denied');
 assert.equal(f.cookieJar.has('_gcl_aw'),false);assert.equal(f.cookieJar.has('_gac_test'),false);assert.equal(f.cookieJar.has('_ga'),true);
-f.listeners.submit({target:form});assert.equal(f.events().at(-1).params.page_location,'https://mujitech.ch/fr/reparation-ecran-iphone.html');
+click(f, 'mailto:info@mujitech.ch');assert.equal(f.events().at(-1).params.page_location,'https://mujitech.ch/fr/reparation-ecran-iphone.html');
 f.windowListeners.storage({key:'mujitech-cookie-consent',newValue:'necessary'});
 assert.equal(f.cookieJar.has('_ga'),false);assert.equal(f.cookieJar.get('unrelated'),'keep');
 assert.equal(consentCommands(f).at(-1)[2].ad_storage,'denied');
-const stopped=f.events().length;f.listeners.submit({target:form});assert.equal(f.events().length,stopped);
+const stopped=f.events().length;click(f, 'mailto:info@mujitech.ch');assert.equal(f.events().length,stopped);
 f=fixture({consent:'all',search:'?gclid='+clickID});
 f.windowListeners.storage({key:'mujitech-cookie-consent',newValue:'measurement'});
 assert.equal(f.scripts.length,1);assert.equal(f.events().filter(e=>e.name==='page_view').length,1);
 assert.equal(consentCommands(f).at(-1)[2].ad_user_data,'granted');
-// Exercise the actual form-return-marker code with both affirmative choices.
-const enhancementSource=fs.readFileSync(path.join(__dirname,'../assets/enhancements.js'),'utf8');
-const markerAt=enhancementSource.indexOf("  const supported = ['repair'");
-const markerStart=enhancementSource.lastIndexOf('(() => {',markerAt);
-const markerSource=enhancementSource.slice(markerStart,enhancementSource.indexOf('})();',markerAt)+5);
-function bindForm(f,kind='contact',next='https://mujitech.ch/danke.html?form=contact'){
- const handlers={},button={setAttribute(){},removeAttribute(){},disabled:false};
- const fields=new Map([['Anfragebereich',{value:kind}],['_next',{value:next}]]);
- const actualForm={querySelector:s=>s==='[type="submit"]'?button:fields.get(s.match(/^\[name="([^"]+)"\]$/)?.[1])||null,append:field=>fields.set(field.name,field),addEventListener:(name,cb)=>{handlers[name]=cb;}};
- f.document.querySelectorAll=s=>s.startsWith('form[action=')?[actualForm]:[];
- f.document.getElementById=()=>null;
- Object.assign(f.context,{queueMicrotask:fn=>fn(),setTimeout:()=>1,clearTimeout:()=>{}});
- vm.runInNewContext(markerSource,f.context);
- return {handlers,fields,button};
-}
-for(const consent of ['necessary','all','measurement']){
- for(const cancelled of [false,true]){
-  f=fixture({consent,pathname:'/kontakt.html',selectedArea:'IT-Support KMU'});
-  const {handlers,fields}=bindForm(f);
-  assert.match(fields.get('Anfrage_Referenz').value,/^MJ-[a-f0-9-]{32,36}$/);
-  assert.equal(fields.get('Messmodus').value,'production');
-  handlers.submit({defaultPrevented:cancelled});
-  const marker=JSON.parse(f.sessionStorage.getItem('mujitech-pending-enquiry')||'null');
-  assert.equal(Boolean(marker),consent!=='necessary'&&!cancelled);
-  if(marker){assert.equal(marker.area,'business_it');assert.equal(marker.kind,'contact');assert.equal(marker.test,false);
-   const returnPage=fixture({consent,pathname:'/danke.html',search:'?form=contact',pending:marker});
-   assert.equal(returnPage.events().filter(e=>e.name==='form_confirmation_view').length,1);
-   assert.equal(returnPage.events().find(e=>e.name==='form_confirmation_view').params.service_area,'business_it');
+
+// Direct contact clicks are intermediate actions, gated by statistics consent.
+const areas={
+ 'anfrage.html':'repair','reparaturanfrage.html':'repair','mujitech-service.html':'repair',
+ 'repair-request.html':'repair','demande-reparation.html':'repair','richiesta-riparazione.html':'repair',
+ 'repair-switzerland.html':'repair','reparation-suisse.html':'repair','riparazione-svizzera.html':'repair',
+ 'laptop-computer-reparatur.html':'repair','laptop-computer-repair.html':'repair',
+ 'reparation-ordinateur-portable.html':'repair','riparazione-computer-portatili.html':'repair',
+ 'computer-langsam-hilfe.html':'private_support','slow-computer-help.html':'private_support',
+ 'ordinateur-lent-assistance.html':'private_support','computer-lento-assistenza.html':'private_support',
+ 'onlineshop-erstellen.html':'webdesign','online-store-development.html':'webdesign',
+ 'creation-boutique-en-ligne.html':'webdesign','creazione-ecommerce.html':'webdesign',
+ 'websites.html':'webdesign','unternehmen.html':'business_it','geraet-verkaufen.html':'device_purchase',
+ 'gaming-pcs.html':'gaming_pc','iphones.html':'shop','kontakt.html':'contact'
+};
+let cases=0;
+for(const [language,prefix] of [['de-CH',''],['en','en/'],['fr-CH','fr/'],['it-CH','it/']]){
+ for(const [name,area] of Object.entries(areas)){
+  if(!fs.existsSync(path.join(__dirname,'..',prefix,name)))continue;
+  for(const consent of ['necessary','all','measurement']){
+   f=fixture({lang:language,pathname:'/'+prefix+name,search:'',consent});
+   click(f,'mailto:info@mujitech.ch?body=PRIVATE_MESSAGE');
+   click(f,'tel:+41768444673');
+   if(consent==='necessary'){assert.equal(f.events().length,0);continue;}
+   const events=f.events().filter(e=>e.name==='contact_click');
+   assert.equal(events.length,2);
+   assert.deepEqual(events.map(e=>e.params.contact_channel),['email','phone']);
+   for(const event of events){
+    assert.equal(event.params.service_area,area,prefix+name);
+    assert.equal(event.params.funnel_stage,'contact_click');
+    assert.equal(event.params.lead_verified,0);
+   }
+   assert.ok(!JSON.stringify(f.context.dataLayer).includes('PRIVATE_'));
+   cases++;
   }
  }
-}
-// Every QA path suppresses tag loading and all production events, even with saved consent.
-for(const lang of ['de-CH','en','fr-CH','it-CH']){
- const prefix=lang==='de-CH'?'':'/'+lang.slice(0,2);
  for(const consent of [undefined,'necessary','all','measurement']){
-  f=fixture({consent,lang,pathname:prefix+'/anfrage.html',search:'?muji_test=1'});
-  assert.equal(f.context.MujiMeasurementIsTest(),true);
-  const {handlers,fields}=bindForm(f,'repair','https://mujitech.ch'+prefix+'/danke.html?form=repair');
-  assert.equal(fields.get('Messmodus').value,'test');
-  assert.equal(new URL(fields.get('_next').value).searchParams.get('muji_test'),'1');
-  const id=fields.get('Anfrage_Referenz').value;
-  handlers.submit({defaultPrevented:true});
-  assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
-  handlers.submit({defaultPrevented:false});
-  const pending=JSON.parse(f.sessionStorage.getItem('mujitech-pending-enquiry')||'null');
-  if(pending)assert.equal(pending.test,true);
-  f.listeners.submit({target:form});
-  f.listeners.click({target:{closest:()=>({getAttribute:()=> 'mailto:info@mujitech.ch'})}});
+  f=fixture({lang:language,pathname:'/'+prefix+'anfrage.html',search:'?muji_test=1',consent});
+  click(f,'mailto:info@mujitech.ch');click(f,'tel:+41768444673');
   assert.equal(f.scripts.length,0);assert.equal(f.events().length,0);
-  assert.ok(!JSON.stringify(f.context.dataLayer||[]).includes(id));
-  const returnPage=fixture({consent,lang,pathname:prefix+'/danke.html',search:'?form=repair&muji_test=1',pending});
-  assert.equal(returnPage.scripts.length,0);assert.equal(returnPage.events().length,0);
+  f=fixture({lang:language,pathname:'/'+prefix+'danke.html',search:'?form=repair',consent,pending:{kind:'repair',time:Date.now()}});
+  assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
+  assert.ok(f.events().every(e=>!['form_confirmation_view','generate_lead','purchase'].includes(e.name)));
+  assert.equal(f.listeners.submit,undefined);
+  assert.equal(f.listeners.focusin,undefined);
  }
- f=fixture({consent:'all',lang,pathname:prefix+'/danke.html',search:'?form=repair',pending:{kind:'repair',time:Date.now(),test:true}});
- assert.equal(f.events().filter(e=>e.name==='form_confirmation_view').length,0);
- assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
- f=fixture({consent:'all',lang,pathname:prefix+'/danke.html',search:'?form=repair',pending:{kind:'repair',time:Date.now(),test:false}});
- const confirmation=f.events().find(e=>e.name==='form_confirmation_view');
- assert.equal(confirmation.params.funnel_stage,'provider_confirmation');assert.equal(confirmation.params.lead_verified,0);
- assert.ok(f.events().every(e=>!['generate_lead','purchase','enquiry_received'].includes(e.name)));
 }
 for(const hostname of ['localhost','127.0.0.1','[::1]']){
  f=fixture({consent:'measurement',hostname,search:'?muji_test=0'});
  assert.equal(f.scripts.length,0);assert.equal(f.events().length,0);
 }
-f=fixture({consent:'all',session:{'mujitech-measurement-test':'1'},search:''});assert.equal(f.scripts.length,0);
-f=fixture({consent:'all',session:{'mujitech-measurement-test':'1'},search:'?muji_test=0',pending:{kind:'repair',time:Date.now(),test:true}});
-assert.equal(f.context.MujiMeasurementIsTest(),false);assert.equal(f.scripts.length,1);assert.equal(f.sessionStorage.getItem('mujitech-pending-enquiry'),null);
+f=fixture({consent:'all',session:{'mujitech-measurement-test':'1'},search:''});
+assert.equal(f.scripts.length,0);
+f=fixture({consent:'all',session:{'mujitech-measurement-test':'1'},search:'?muji_test=0'});
+assert.equal(f.context.MujiMeasurementIsTest(),false);assert.equal(f.scripts.length,1);
+for(const [service,area] of [['Website','webdesign'],['IT-Support KMU','business_it'],['PRIVATE_EMAIL','contact']]){
+ f=fixture({consent:'all',pathname:'/kontakt.html',search:'?service='+encodeURIComponent(service)});
+ click(f,'mailto:info@mujitech.ch');
+ assert.equal(f.events().at(-1).params.service_area,area);
+ assert.ok(!JSON.stringify(f.context.dataLayer).includes('PRIVATE_'));
+}
 f=fixture({consent:'all',search:'?muji_test=1',blockedStorage:true});
 const internal={href:'https://mujitech.ch/it/anfrage.html?model=iPhone+15#reparatur',getAttribute(){return this.href;},setAttribute(k,v){this.href=v;},closest:()=>null};
 f.listeners.click({target:{closest:()=>internal}});
-assert.equal(new URL(internal.href).searchParams.get('muji_test'),'1');assert.equal(new URL(internal.href).searchParams.get('model'),'iPhone 15');assert.equal(new URL(internal.href).hash,'#reparatur');assert.equal(f.scripts.length,0);
-const external={...internal,href:'https://example.test/help'};f.listeners.click({target:{closest:()=>external}});assert.equal(external.href,'https://example.test/help');
-for(const [pathname,area] of Object.entries({'/laptop-computer-reparatur.html':'repair','/en/laptop-computer-repair.html':'repair','/fr/reparation-ordinateur-portable.html':'repair','/it/riparazione-computer-portatili.html':'repair','/computer-langsam-hilfe.html':'private_support','/en/slow-computer-help.html':'private_support','/fr/ordinateur-lent-assistance.html':'private_support','/it/computer-lento-assistenza.html':'private_support'})){
- f=fixture({consent:'all',pathname,search:''});f.listeners.click({target:{closest:()=>({getAttribute:()=> 'tel:+41768444673'})}});
- assert.ok(f.events().every(e=>e.params.service_area===area));
- assert.equal(f.events().at(-1).params.funnel_stage,'contact_click');assert.equal(f.events().at(-1).params.lead_verified,0);
-}
-console.log('PASS: QA suppression and provider-return isolation in DE/EN/FR/IT; no production tag on local hosts; explicit reset; blocked-storage link fallback; eight PC categories; receipt references excluded from Analytics; funnel events remain unverified intermediates.');
-console.log('PASS: three consent choices in four languages; legacy choices never grant ads; valid click IDs only after separate choice; withdrawal and cookie cleanup; actual form-marker round trip; original measurement/category/privacy/deduplication regressions.');
+assert.equal(new URL(internal.href).searchParams.get('muji_test'),'1');
+assert.equal(new URL(internal.href).searchParams.get('model'),'iPhone 15');
+const external={...internal,href:'https://example.test/help'};
+f.listeners.click({target:{closest:()=>external}});
+assert.equal(external.href,'https://example.test/help');
+console.log('PASS: '+cases+' consent/page/language contact cases; four-language QA exclusion; no legacy form confirmations; category, consent withdrawal, campaign and privacy regressions.');

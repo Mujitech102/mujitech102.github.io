@@ -17,10 +17,10 @@
   if(testMode)window['ga-disable-'+ID]=true;
   const lang=(document.documentElement.lang||'de').slice(0,2);
   const copy={
-    de:['Cookies & Datenschutz','Statistik misst Seitenaufrufe, Kontaktklicks und Formularinteraktionen mit Google Analytics. Optional verknüpft Anzeigenmessung mit Google Ads einen Anzeigenklick mit einer späteren Anfrage. Keine personalisierte Werbung; keine Formularinhalte an Analytics.','Datenschutzhinweise','Nur notwendige','Nur Statistik erlauben','Statistik + Anzeigenmessung'],
-    fr:['Cookies et confidentialité','Les statistiques mesurent les pages vues, clics de contact et interactions avec Google Analytics. La mesure facultative des annonces avec Google Ads relie un clic publicitaire à une demande ultérieure. Aucune publicité personnalisée ni contenu des formulaires dans Analytics.','Confidentialité','Uniquement nécessaires','Statistiques uniquement','Statistiques + mesure des annonces'],
-    it:['Cookie e privacy','Le statistiche misurano pagine visitate, clic di contatto e interazioni con Google Analytics. La misurazione facoltativa con Google Ads collega un clic pubblicitario a una richiesta successiva. Nessuna pubblicità personalizzata; nessun contenuto dei moduli ad Analytics.','Privacy','Solo necessari','Solo statistiche','Statistiche + misurazione annunci'],
-    en:['Cookies and privacy','Statistics measure page views, contact clicks and form interactions with Google Analytics. Optional ad measurement with Google Ads links an ad click to a later enquiry. No personalised advertising; no form contents sent to Analytics.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement']
+    de:['Cookies & Datenschutz','Statistik misst Seitenaufrufe, Kontaktklicks und die Nutzung der Gerätepreisabfrage mit Google Analytics. Optional verknüpft Anzeigenmessung mit Google Ads einen Anzeigenklick mit einer späteren Anfrage. Keine personalisierte Werbung; keine Formularinhalte an Analytics.','Datenschutzhinweise','Nur notwendige','Nur Statistik erlauben','Statistik + Anzeigenmessung'],
+    fr:['Cookies et confidentialité','Les statistiques mesurent les pages vues, clics de contact et recherche de prix des appareils avec Google Analytics. La mesure facultative des annonces avec Google Ads relie un clic publicitaire à une demande ultérieure. Aucune publicité personnalisée ni contenu des formulaires dans Analytics.','Confidentialité','Uniquement nécessaires','Statistiques uniquement','Statistiques + mesure des annonces'],
+    it:['Cookie e privacy','Le statistiche misurano pagine visitate, clic di contatto e ricerca dei prezzi dei dispositivi con Google Analytics. La misurazione facoltativa con Google Ads collega un clic pubblicitario a una richiesta successiva. Nessuna pubblicità personalizzata; nessun contenuto dei moduli ad Analytics.','Privacy','Solo necessari','Solo statistiche','Statistiche + misurazione annunci'],
+    en:['Cookies and privacy','Statistics measure page views, contact clicks and device price lookups with Google Analytics. Optional ad measurement with Google Ads links an ad click to a later enquiry. No personalised advertising; no form contents sent to Analytics.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement']
   }[lang] || ['Privacy and statistics','Optional Google Analytics statistics and separate Google Ads measurement. No personalised advertising.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement'];
   let allowed=false,adsAllowed=false,loaded=false,banner,settingsTrigger;
   const cleanURL=location.origin+location.pathname;
@@ -42,14 +42,18 @@
   Object.entries(labels).forEach(([key,values])=>{const value=campaignParams.get(key);if(values.includes(value))safeCampaign[fields[key]]=value;});
   const pageName=location.pathname.split('/').filter(Boolean).pop()||'index.html';
   const repairPath=/(?:iphone-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|samsung-(?:screen-repair|battery-replacement|charging-port-repair|display-reparatur|akku-wechseln|ladeanschluss-reparatur)|reparation-(?:ecran|connecteur-charge)|remplacement-batterie|riparazione-(?:display|connettore-ricarica)|sostituzione-batteria|reparaturpreise-|repair-prices-|tarifs-reparation-|prezzi-riparazione-)/.test(pageName);
-  const confirmationArea=pageName==='danke.html'&&['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(new URLSearchParams(location.search).get('form'))?new URLSearchParams(location.search).get('form'):null;
   const pcAreas={
     'laptop-computer-reparatur.html':'repair','laptop-computer-repair.html':'repair',
     'reparation-ordinateur-portable.html':'repair','riparazione-computer-portatili.html':'repair',
     'computer-langsam-hilfe.html':'private_support','slow-computer-help.html':'private_support',
     'ordinateur-lent-assistance.html':'private_support','computer-lento-assistenza.html':'private_support'
   };
-  const serviceArea=pcAreas[pageName]||({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||confirmationArea||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
+  const otherAreas={
+    'mujitech-service.html':'repair','repair-request.html':'repair','demande-reparation.html':'repair','richiesta-riparazione.html':'repair',
+    'repair-switzerland.html':'repair','reparation-suisse.html':'repair','riparazione-svizzera.html':'repair',
+    'onlineshop-erstellen.html':'webdesign','online-store-development.html':'webdesign','creation-boutique-en-ligne.html':'webdesign','creazione-ecommerce.html':'webdesign'
+  };
+  const serviceArea=pcAreas[pageName]||otherAreas[pageName]||({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
   const areas=new Set(['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general']);
   // Only fixed option values become analytics categories; never send free-form input.
   const contactAreas={'Reparatur':'repair','Privatkunden-Service':'private_support','Geräteankauf':'device_purchase','Produktanfrage':'shop','IT-Support KMU':'business_it','IT-Betreuung':'business_it','Hardware-Beschaffung':'business_it','Firmenhandys':'business_it','Telekom-Anfrage':'business_it','Website':'webdesign','Microsoft 365 / Google Workspace':'business_it','Sonstiges':'contact'};
@@ -57,7 +61,7 @@
   const pageArea=()=>pageName==='kontakt.html'?(categoryFor(document.querySelector('select[name="bereich"]')?.value)||categoryFor(campaignParams.get('service'))||(location.hash==='#business'?'business_it':'contact')):serviceArea;
   const enquiryArea=form=>categoryFor(form?.querySelector?.('select[name="bereich"]')?.value)||pageArea();
   window.MujiEnquiryArea=enquiryArea;
-  const stages={contact_click:'contact_click',enquiry_open:'enquiry_open',form_start:'form_start',form_submit_attempt:'submit_attempt',form_confirmation_view:'provider_confirmation'};
+  const stages={contact_click:'contact_click',enquiry_open:'enquiry_open'};
   const event=(name,params={})=>{
     if(!testMode && allowed && window.gtag)window.gtag('event',name,{...params,...(stages[name]?{funnel_stage:stages[name],lead_verified:0}:{}),service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
   };
@@ -70,20 +74,8 @@
     return {item_id:product.sku||product['@id']||location.pathname,item_name:product.name,item_brand:product.brand?.name||product.manufacturer?.name||'Mujitech',item_category:serviceArea==='gaming_pc'?'Gaming PCs':'Smartphones',...(Number.isFinite(price)?{price}: {})};
   }
   function referrer(){try {const u=new URL(document.referrer);return u.origin+u.pathname;}catch{return '';}}
-  let confirmationRecorded=false;
-  function confirmation(){
-    if(confirmationRecorded || pageName!=='danke.html')return;
-    const kind=new URLSearchParams(location.search).get('form');
-    if(!['repair','gaming_pc','webdesign','device_purchase','private_support','contact'].includes(kind))return;
-    try {
-      const pending=JSON.parse(sessionStorage.getItem('mujitech-pending-enquiry')||'null');
-      if(pending?.test===true){sessionStorage.removeItem('mujitech-pending-enquiry');return;}
-      if(!pending || pending.kind!==kind || !Number.isFinite(pending.time) || Date.now()-pending.time<0 || Date.now()-pending.time>30*60*1000)return;
-      event('form_confirmation_view',{form_id:kind,confirmation_type:'provider_redirect',service_area:areas.has(pending.area)?pending.area:serviceArea});
-      confirmationRecorded=true;
-      sessionStorage.removeItem('mujitech-pending-enquiry');
-    }catch{}
-  }
+  // Clear markers left by the removed submission flow.
+  try{sessionStorage.removeItem('mujitech-pending-enquiry');}catch{}
   function activate(withAds=false){
     if(testMode)return;
     const hadAds=adsAllowed;adsAllowed=withAds;
@@ -93,7 +85,7 @@
     if(loaded){
       window.gtag('consent','update',consent);
       if(hadAds&&!adsAllowed)clearCookies(/^_gcl_|^_gac_/);
-      window.gtag('config',ID,config);confirmation();return;
+      window.gtag('config',ID,config);return;
     }
     loaded=true;window.dataLayer=window.dataLayer||[];
     window.gtag=function(){window.dataLayer.push(arguments);};
@@ -103,7 +95,7 @@
     window.gtag('config',ID,config);
     const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.append(s);
     event('page_view');
-    confirmation();
+
     const item=productItem();if(item)event('view_item',{currency:'CHF',value:item.price,items:[item]});
   }
   function revoke(){
@@ -147,11 +139,6 @@
       const card=a.closest('.gaming-card[data-product-sku]');if(card&&u.origin===location.origin)event('select_item',{item_list_id:'gaming-pcs',items:[{item_id:card.dataset.productSku,item_name:card.querySelector('h3')?.textContent.trim(),item_category:'Gaming PCs',price:Number(card.dataset.price)}]});
       if(u.origin===location.origin && (/anfrage|demande|richiesta|request/.test(u.pathname)||u.hash==='#anfrage'))event('enquiry_open',{target_page:u.pathname});
     });
-    // Delegation also covers forms added by MujiBot after page load.
-    const startedForms=new WeakSet();
-    const formID=form=>form.classList.contains('mujibot-callback')?'mujibot-callback':form.classList.contains('mujibot-form')?'mujibot-question':form.id||'website-form';
-    document.addEventListener('focusin',e=>{const form=e.target.closest('form');if(!form||!allowed||startedForms.has(form))return;startedForms.add(form);event('form_start',{form_id:formID(form),service_area:enquiryArea(form)});});
-    document.addEventListener('submit',e=>{const form=e.target;if(e.defaultPrevented||!form.matches('form')||form.closest('.mujibot'))return;event('form_submit_attempt',{form_id:formID(form),service_area:enquiryArea(form)});});
     // Only fixed action labels are accepted. No chat or callback field contents.
     document.addEventListener('mujitech-action',e=>{const detail=e.detail||{};if(!['mujibot_open','mujibot_price_view','callback_request_open','repair_price_view'].includes(detail.type))return;const params={};if(['email','whatsapp'].includes(detail.channel))params.contact_channel=detail.channel;if(detail.type==='callback_request_open')params.form_id='mujibot-callback';event(detail.type,params);});
     const seen=new Set();let pending=false;

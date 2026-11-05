@@ -36,7 +36,9 @@ def target(p,u):
  return path.resolve()
 files=sorted(p for p in ROOT.rglob('*.html') if not any(x.startswith('_') for x in p.relative_to(ROOT).parts))
 for p in files:
- s=p.read_text();c=Page();c.feed(s);pages[p.resolve()]=c;rel=p.relative_to(ROOT)
+ s=p.read_text();
+ if 'formsubmit' in s.lower():errors.append(f'{p.relative_to(ROOT)}: retired provider reference')
+ c=Page();c.feed(s);pages[p.resolve()]=c;rel=p.relative_to(ROOT)
  refresh=[a.get('content','') for t,a in c.tags if t=='meta' and a.get('http-equiv','').lower()=='refresh']
  if refresh:
   match=re.fullmatch(r'0;\s*url=(https://mujitech\.ch/[^?#]+)',refresh[0])
@@ -66,7 +68,7 @@ for p in files:
  for form in c.forms:
   formcount+=1;a=form['attrs'];fields=[a for t,a in form['fields']]
   if a.get('action'):errors.append(f'{rel}: external enquiry forms are disabled')
- for js in ROOT.glob('assets/*.js'):pass
+
 for p,c in pages.items():
  if p in redirects:
   if redirects[p] in redirects:errors.append(f'{p.relative_to(ROOT)}: redirect chain')
@@ -114,7 +116,14 @@ for p in files:
   if re.search(r'36 (?:Monate|months|mois|mesi)|36-month',s):errors.append('iPhone warranty incorrectly changed')
 sitemap=ET.parse(ROOT/'sitemap.xml');ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'};urls=[x.text for x in sitemap.findall('.//s:loc',ns)]
 if len(urls)!=len(set(urls)):errors.append('Sitemap duplicate URLs')
+for js in ROOT.glob('assets/*.js'):
+ if 'formsubmit' in js.read_text().lower():errors.append(f'{js.name}: retired provider reference')
 for u in urls:
+ c=pages.get(target(ROOT/'index.html',u))
+ if c:
+  robots=' '.join(a.get('content','') for t,a in c.tags if t=='meta' and a.get('name','').lower()=='robots').lower()
+  if 'noindex' in robots:errors.append('Sitemap target blocked: '+u)
+  if not any(t=='link' and a.get('rel')=='canonical' and a.get('href')==u for t,a in c.tags):errors.append('Sitemap canonical mismatch: '+u)
  if target(ROOT/'index.html',u) not in pages:errors.append('Sitemap target missing: '+u)
  if target(ROOT/'index.html',u) in redirects:errors.append('Sitemap contains redirect: '+u)
 summary={'pages':len(pages),'sitemap_urls':len(urls),'forms':formcount,'bot_routes_checked':len(bot_routes)*4,'repair_rows':len(book['rows']),'confirmed_prices':sum(r[2] is not None for r in book['rows']),'new_prices':len(provenance['changes']),'errors':errors}
