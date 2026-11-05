@@ -64,7 +64,7 @@ function mountTallyContact(){
  if(active){
   const local=['localhost','127.0.0.1'].includes(location.hostname)||q.get('muji_test')==='1';
   const bar=document.querySelector('#previewLabel');bar.hidden=!local;
-  if(local)bar.textContent={de:'Lokaler Versandtest · Nicht veröffentlicht',en:'Local sending test · Not published',fr:'Test d’envoi local · Non publié',it:'Test di invio locale · Non pubblicato'}[lang];
+  if(local)bar.textContent={de:'Testmodus · Testanfrage',en:'Test mode · Test enquiry',fr:'Mode test · Demande de test',it:'Modalità test · Richiesta di prova'}[lang];
   document.title=w().page+' · Mujitech';
  }
  if(!visible)return;
