@@ -1,5 +1,7 @@
 # Approved website updates — 15 October 2026
 
+6 November 2026 repair-page update: the current twelve laptop/PC, Samsung screen and Samsung battery HTML pages in DE/EN/FR/IT preserve the reviewed source. Keep their cost sections immediately after the introduction, direct repair-enquiry links, model/price-on-request guidance, aligned metadata and French vous wording. Older content generators predate this layout and must not overwrite it. No price data, enquiry scripts, URLs or sitemap entries changed. `test_language_context.js` and `test_enquiry_guidance.js` still expect retired inline contact forms and already fail on baseline d308351a; use the current validator and verify the assistant enquiry flow in the browser.
+
 ## Current contact flow — 5 November 2026
 
 The published site uses direct email and telephone links. Removed submission forms must stay removed when running older generators. Keep customer contact data out of Analytics. Measure consented contact clicks as intermediate actions with the fixed service category and channel. Legacy thank-you URLs remain noindex contact pages and never emit a submission confirmation. Old session markers are cleared.
