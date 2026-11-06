@@ -1,0 +1,472 @@
+
+<!DOCTYPE html>
+<html lang="fr-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>HP Victus 15L d’occasion · RTX 4060 | Mujitech</title>
+
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="icon" type="image/png" href="../logo.webp">
+
+<meta property="og:type" content="website">
+
+<meta property="og:site_name" content="Mujitech">
+
+
+
+
+
+<link rel="stylesheet" href="../assets/style.css?v=20261003">
+<link rel="stylesheet" href="../assets/mono.css?v=20261003-6">
+
+
+
+<style>
+/* MUJITECH SHOP – SCHWARZ & WEISS */
+
+.shop-page {
+  color:#111;
+}
+
+.shop-page .shop-container {
+  width:min(1120px,calc(100% - 40px));
+  margin-inline:auto;
+}
+
+.shop-page .shop-section {
+  padding:50px 0 80px;
+}
+
+.shop-page .shop-label {
+  display:block;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  color:#111;
+  margin-bottom:16px;
+}
+
+.shop-page h1 {
+  font-size:clamp(36px,5vw,60px);
+  line-height:1.12;
+  letter-spacing:-.045em;
+  color:#111;
+  margin-bottom:20px;
+}
+
+.shop-page .shop-intro {
+  max-width:740px;
+  color:#555;
+  font-size:17px;
+  line-height:1.75;
+}
+
+.shop-page .shop-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:26px;
+  margin-top:42px;
+  align-items:stretch;
+}
+
+/* Einheitliche Produktkarten */
+
+.shop-page .shop-product {
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  background:#fff !important;
+  border:1px solid #dedede;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 32px rgba(0,0,0,.035);
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.shop-page .shop-product:hover {
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(0,0,0,.075);
+}
+
+/* Beide Bilder besitzen denselben Bildbereich */
+
+.shop-page .shop-image {
+  height:330px;
+  padding:24px;
+  box-sizing:border-box;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#fff !important;
+  border-bottom:1px solid #eee;
+  overflow:hidden;
+}
+
+.shop-page .shop-image img {
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:330px;
+  max-height:275px;
+  object-fit:contain;
+  transform:scale(var(--device-scale,1));
+  transform-origin:center;
+}
+
+/*
+  Individuelle Bildskalierung.
+  Falls die Originalbilder unterschiedlich
+  viel Leerraum enthalten, diese Werte
+  nach dem Veröffentlichen feinjustieren.
+*/
+
+.shop-page .device-17 {
+  --device-scale:1;
+}
+
+.shop-page .device-14 {
+  --device-scale:1;
+}
+
+/* Produktinformationen */
+
+.shop-page .shop-content {
+  display:flex;
+  flex-direction:column;
+  flex:1;
+  padding:28px;
+}
+
+.shop-page .shop-status {
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  align-self:flex-start;
+  padding:7px 11px;
+  margin-bottom:17px;
+  border:1px solid #dedede;
+  border-radius:30px;
+  color:#111;
+  background:#fff;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.8px;
+  text-transform:uppercase;
+}
+
+.shop-page .shop-status::before {
+  content:"";
+  width:7px;
+  height:7px;
+  background:#111;
+  border-radius:50%;
+}
+
+.shop-page .shop-content h2,
+.shop-page .shop-content h3 {
+  font-size:clamp(23px,2.6vw,30px);
+  line-height:1.2;
+  letter-spacing:-.025em;
+  color:#111;
+  margin:0 0 10px;
+}
+
+.shop-page .shop-variant {
+  color:#555;
+  font-size:15px;
+  margin:0 0 18px;
+}
+
+.shop-page .shop-price {
+  color:#111;
+  font-size:clamp(27px,3vw,35px);
+  font-weight:850;
+  letter-spacing:-.035em;
+  margin-bottom:14px;
+}
+
+.shop-page .shop-description {
+  color:#555;
+  font-size:14px;
+  line-height:1.75;
+  margin:0 0 24px;
+}
+
+/* Einheitliche technische Merkmale */
+
+.shop-page .shop-specs {
+  list-style:none;
+  margin:0 0 27px;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+
+.shop-page .shop-specs li {
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  color:#333;
+  font-size:14px;
+  line-height:1.5;
+}
+
+.shop-page .shop-specs svg {
+  flex-shrink:0;
+  width:20px;
+  height:20px;
+  stroke:#111 !important;
+  fill:none;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.shop-page .shop-specs strong {
+  display:block;
+  color:#111;
+  font-weight:750;
+}
+
+/* Buttons */
+
+.shop-page .shop-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:auto;
+}
+
+.shop-page a.shop-btn,
+.shop-page a.shop-btn:visited {
+  display:inline-flex !important;
+  justify-content:center;
+  align-items:center;
+  min-height:49px;
+  padding:12px 18px !important;
+  border:1px solid #111 !important;
+  border-radius:12px;
+  background:#111 !important;
+  background-image:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  text-decoration:none !important;
+  font-size:14px;
+  font-weight:750;
+  box-shadow:none !important;
+}
+
+.shop-page a.shop-btn:hover {
+  background:#333 !important;
+}
+
+.shop-page a.shop-btn.secondary,
+.shop-page a.shop-btn.secondary:visited {
+  background:#fff !important;
+  color:#111 !important;
+  -webkit-text-fill-color:#111 !important;
+}
+
+.shop-page a.shop-btn.secondary:hover {
+  background:#eee !important;
+}
+
+/* Hinweise */
+
+.shop-page .shop-note {
+  margin-top:32px;
+  padding:25px;
+  border:1px solid #dedede;
+  border-radius:18px;
+  background:rgba(255,255,255,.97);
+  color:#555;
+  line-height:1.75;
+}
+
+.shop-page .shop-note strong {
+  color:#111;
+}
+
+.shop-page .shop-note a {
+  color:#111;
+  text-decoration:underline;
+}
+
+/* Navigation */
+
+body .topbar,
+body .nav,
+body .navlinks,
+body .dropdown .menu {
+  background:#fff !important;
+  background-image:none !important;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color:#111 !important;
+  -webkit-text-fill-color:#111 !important;
+}
+
+body .dropdown .menu {
+  border:1px solid #ddd !important;
+}
+
+body .dropdown .menu a:hover {
+  background:#f2f2f2 !important;
+}
+
+body .navlinks > a.cta,
+body .navlinks > a.cta:visited {
+  background:#111 !important;
+  background-image:none !important;
+  color:#fff !important;
+  -webkit-text-fill-color:#fff !important;
+  border:1px solid #111 !important;
+}
+
+body .mobilebtn {
+  background:#fff !important;
+  color:#111 !important;
+}
+
+/* Tablet und Smartphone */
+
+@media(max-width:750px) {
+  .shop-page .shop-grid {
+    grid-template-columns:1fr;
+    max-width:530px;
+    margin-inline:auto;
+    margin-top:35px;
+  }
+
+  .shop-page .shop-section {
+    padding:35px 0 60px;
+  }
+}
+
+@media(max-width:420px) {
+  .shop-page .shop-image {
+    height:280px;
+  }
+
+  .shop-page .shop-image img {
+    max-height:225px;
+  }
+
+  .shop-page .shop-content {
+    padding:22px;
+  }
+
+  .shop-page .shop-actions {
+    flex-direction:column;
+  }
+
+  .shop-page .shop-actions a {
+    width:100%;
+  }
+}
+</style>
+
+<script defer src="../assets/insights.js?v=20261105-wizard-1"></script>
+<script defer src="../assets/enhancements.js?v=20261104-layout-1"></script>
+<meta property="og:locale" content="fr_CH"><link rel="stylesheet" href="/assets/enhancements.css?v=20261015-quality-19"><link rel="stylesheet" href="/assets/gaming.css?v=20261013-5"><link rel="stylesheet" href="/assets/polish.css?v=20261106-mobile-nav"><script defer src="/assets/polish.js?v=20261104-layout-1"></script><link rel="stylesheet" href="/assets/service-search.css?v=20261025-1"><link rel="canonical" href="https://mujitech.ch/fr/hp-victus-15l-rtx-4060.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/hp-victus-15l-rtx-4060.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/hp-victus-15l-rtx-4060.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/hp-victus-15l-rtx-4060.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/hp-victus-15l-rtx-4060.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/hp-victus-15l-rtx-4060.html"><meta name="description" content="PC gaming blanc avec Core i5-14400F, RTX 4060, 16 Go de RAM et Windows 11 Home. CHF 920, garantie Mujitech de 12 mois."><meta property="og:title" content="HP Victus 15L d’occasion · RTX 4060"><meta property="og:description" content="PC gaming blanc avec Core i5-14400F, RTX 4060, 16 Go de RAM et Windows 11 Home. CHF 920, garantie Mujitech de 12 mois."><meta property="og:url" content="https://mujitech.ch/fr/hp-victus-15l-rtx-4060.html"><meta property="og:image" content="https://mujitech.ch/assets/hp-victus-15l-weiss.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","@id":"https://mujitech.ch/fr/hp-victus-15l-rtx-4060.html#product","name":"HP Victus 15L d’occasion · RTX 4060","brand":{"@type":"Brand","name":"HP"},"model":"Victus 15L","description":"PC gaming blanc avec Core i5-14400F, RTX 4060, 16 Go de RAM et Windows 11 Home. CHF 920, garantie Mujitech de 12 mois.","image":["https://mujitech.ch/assets/hp-victus-15l-weiss.jpg"],"offers":{"@type":"Offer","price":"920.00","priceCurrency":"CHF","itemCondition":"https://schema.org/UsedCondition","url":"https://mujitech.ch/fr/hp-victus-15l-rtx-4060.html","seller":{"@type":"Organization","name":"Mujitech"}}}</script></head>
+
+<body><a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- NAVIGATION -->
+
+<header class="muji-unified-header"><div class="muji-nav-shell"><a class="muji-brand" href="/fr/"><img src="/assets/logo-header.webp?v=20261015-quality-16" alt=""><span>Mujitech</span></a><button class="muji-menu-toggle" type="button" aria-expanded="false" aria-controls="muji-site-nav">☰ Menu</button><nav id="muji-site-nav" class="muji-site-nav" aria-label="Menu"><a href="/fr/" class="">Accueil</a><a href="/fr/reparaturen.html" class="">Réparations</a><a href="/fr/privatkunden.html" class="">Particuliers</a><a href="/fr/unternehmen.html" class="">Entreprises</a><a href="/fr/websites.html" class="">Création de sites web</a><details class="muji-shop-menu"><summary>Boutique</summary><div><a href="/fr/shop.html" class="" aria-current="page">Boutique</a><a href="/fr/iphones.html" class="">iPhones</a><a href="/fr/gaming-pcs.html" class="">PC gaming</a><a href="/fr/geraet-verkaufen.html" class="">Vendre un appareil</a></div></details><a href="/fr/preise.html" class="">Tarifs</a><a href="/fr/kontakt.html" class="">Contact</a><details class="muji-shop-menu muji-repair-menu"><summary>Demande de réparation</summary><div><a href="/fr/#ablauf">Déroulement de la réparation</a><a href="/assistent/?service=product&amp;lang=fr&amp;return=%2Ffr%2Fshop.html">Demander une réparation</a></div></details><a href="/assistent/?service=product&amp;lang=fr&amp;return=%2Ffr%2Fshop.html" class="muji-nav-action">Envoyer une demande</a></nav></div></header><nav class="language-bar" aria-label="Choisir la langue"><div class="wrap"><span class="language-label">Choisir la langue</span><div class="language-options"><a href="/hp-victus-15l-rtx-4060.html" lang="de-CH" hreflang="de-CH">Deutsch</a><a href="/en/hp-victus-15l-rtx-4060.html" lang="en" hreflang="en">English</a><a href="/fr/hp-victus-15l-rtx-4060.html" lang="fr-CH" hreflang="fr-CH" aria-current="page">Français</a><a href="/it/hp-victus-15l-rtx-4060.html" lang="it-CH" hreflang="it-CH">Italiano</a></div></div></nav>
+
+
+<main id="main" class="shop-page"><div class="wrap breadcrumb"><a href="/fr/shop.html">Boutique</a> / HP Victus 15L</div><section class="shop-section"><div class="shop-container"><h1>HP Victus 15L d’occasion · RTX 4060</h1><div class="shop-grid"><article id="hp-victus-15l" class="shop-product">
+<div class="shop-image"><img src="/assets/hp-victus-15l-weiss.jpg" alt="HP Victus 15L blanc" width="575" height="768" fetchpriority="high"></div>
+<div class="shop-content">
+
+<p>D’occasion · Blanc</p>
+<p class="shop-price">CHF 920.–</p>
+<ul>
+<li>Intel Core i5-14400F</li>
+<li>NVIDIA GeForce RTX 4060 · 8 GB</li>
+<li>16 GB RAM · 3200 MT/s</li>
+<li>Environ 1 To de stockage</li>
+<li>Windows 11 Home</li>
+</ul>
+<p>Traces d’usure sur le boîtier. Retrait à Saint-Gall.</p>
+<p><strong>Garantie matérielle Mujitech de 12 mois</strong></p>
+<div class="shop-actions"><a class="shop-btn" href="https://wa.me/41768444673?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20le%20HP%20Victus%2015L%20d%E2%80%99occasion.">WhatsApp</a></div>
+</div>
+</article></div></div></section></main>
+
+
+<!-- FOOTER -->
+
+<footer>
+<div class="wrap">
+<div class="footergrid">
+
+<div>
+<a class="brand" href="/fr/">
+<img src="../logo.webp"
+alt="Logo Mujitech"
+class="site-logo"
+loading="lazy">
+</a>
+
+<p class="sectionlead" style="margin-top:14px">
+Technologie, réparation et solutions numériques pour les particuliers et les PME de la région de Saint-Gall.
+</p>
+
+<div class="badge">
+<b>Abtwil SG</b> · Pas de magasin public · Remise uniquement sur rendez-vous
+</div>
+</div>
+
+<div>
+<h2>Particuliers</h2>
+<a href="/fr/reparaturen.html">Réparations</a>
+<a href="/fr/geraet-verkaufen.html">Vendre un appareil</a>
+<a href="/fr/privatkunden.html">Services techniques</a>
+<a href="/fr/shop.html">Appareils reconditionnés et accessoires</a>
+</div>
+
+<div>
+<h2>Entreprises</h2>
+<a href="/fr/unternehmen.html">Informatique pour PME</a>
+<a href="/fr/websites.html">Sites Internet</a>
+
+<a href="/fr/unternehmen.html#cloud">Cloud et e-mail</a>
+</div>
+
+<div>
+<h2>Contact</h2>
+<a href="tel:+41768444673">076 844 46 73</a>
+<a href="mailto:info@mujitech.ch">info@mujitech.ch</a>
+<a href="https://wa.me/41768444673"
+target="_blank"
+rel="noopener noreferrer">WhatsApp</a>
+<a href="/fr/rechtliches.html">Mentions légales · Conditions générales · Protection des données</a>
+</div>
+
+</div>
+
+<div class="legal">
+<span>© 2026 Mujitech. Tous droits réservés.</span>
+<span>IDE : CHE-480.937.625</span>
+</div>
+
+</div>
+<div class="wrap site-utility"><p class="business-hours">Joignable tous les jours de 08:00 à 20:00 · Remise des appareils sur rendez-vous uniquement</p><a href="/fr/reparatur-schweiz.html">Réparation par envoi dans toute la Suisse</a><a href="/assistent/?service=repair&amp;lang=fr&amp;return=%2Ffr%2Fshop.html">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Paramètres des cookies</button></div>
+</footer>
+
+<script src="../assets/app.js?v=20261011-2"></script>
+<script defer src="../assets/mono-electric.js?v=20261011-2"></script>
+
+</body>
+</html>
