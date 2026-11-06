@@ -133,3 +133,10 @@ body > header.muji-unified-header { z-index: 1000; }
   }
 }
 
+
+/* Keep the main navigation collapsed on small screens until requested. */
+@media (max-width: 1060px) {
+  .muji-unified-header .muji-menu-toggle { display: block; }
+  .muji-unified-header .muji-site-nav { display: none; max-height: calc(100dvh - 150px); overflow: auto; }
+  .muji-unified-header .muji-site-nav.muji-nav-open { display: grid; }
+}
