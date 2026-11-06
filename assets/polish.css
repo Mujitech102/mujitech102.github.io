@@ -140,3 +140,22 @@ body > header.muji-unified-header { z-index: 1000; }
   .muji-unified-header .muji-site-nav { display: none; max-height: calc(100dvh - 150px); overflow: auto; }
   .muji-unified-header .muji-site-nav.muji-nav-open { display: grid; }
 }
+
+@media (max-width: 600px) {
+  .muji-unified-header .muji-site-nav > a,
+  .muji-unified-header .muji-shop-menu > summary {
+    min-height: 44px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .muji-unified-header .muji-shop-menu > div > a {
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .muji-unified-header .muji-site-nav.muji-nav-open {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
