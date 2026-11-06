@@ -36,3 +36,100 @@ body .ch-privacy-banner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);max-he
 .ch-privacy-banner>div,.ch-privacy-actions{min-width:0}
 .ch-privacy-actions button{flex:1 1 150px;white-space:normal}
 @media(max-width:1000px){body .ch-privacy-banner{grid-template-columns:1fr}}
+
+/* Approved navigation and workshop gallery */
+
+#werkstatt-einblicke .workshop-grid {
+  max-width: 920px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+#werkstatt-einblicke .workshop-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+#werkstatt-einblicke .workshop-card figcaption { padding: 10px 12px; font-size: .85rem; }
+#werkstatt-einblicke .workshop-card figcaption strong { font-size: .95rem; }
+@media (max-width: 620px) {
+  #werkstatt-einblicke .workshop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+}
+
+body > header.muji-unified-header { z-index: 1000; }
+.muji-unified-header .muji-menu-toggle { display: none; }
+.muji-unified-header .muji-site-nav { display: flex; }
+.muji-unified-header .muji-shop-menu > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+}
+.muji-shop-menu > summary::-webkit-details-marker { display: none; }
+.muji-shop-menu > summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.muji-shop-menu[open] > summary::after { transform: rotate(225deg); }
+.muji-unified-header .muji-shop-menu > div { top: 100%; gap: 2px; padding: 6px; }
+.muji-unified-header .muji-repair-menu > div { left: auto; right: 0; min-width: 210px; }
+.muji-unified-header .muji-shop-menu > div > a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 9px;
+  border-radius: 6px;
+}
+.muji-shop-menu > div > a:hover,
+.muji-shop-menu > div > a:focus-visible { background: #f4f4f4; }
+@media (min-width: 1061px) and (max-width: 1150px) {
+  .muji-unified-header .muji-nav-shell { flex-wrap: nowrap; gap: 16px; }
+  .muji-unified-header .muji-site-nav {
+    flex: 1;
+    width: auto;
+    gap: 9px;
+    padding: 0;
+    max-height: none;
+    overflow: visible;
+  }
+  .muji-unified-header .muji-site-nav > a,
+  .muji-unified-header .muji-shop-menu > summary { display: inline-flex; align-items: center; white-space: nowrap; padding-inline: 2px; }
+  .muji-unified-header .muji-shop-menu > div {
+    position: absolute;
+    margin: 0;
+    min-width: 180px;
+    box-shadow: 0 8px 24px #0001;
+  }
+  .muji-unified-header .muji-repair-menu > div { min-width: 210px; }
+}
+@media (max-width: 1060px) {
+  .muji-unified-header .muji-nav-shell { padding-top: 8px; }
+  .muji-unified-header .muji-site-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 2px 12px;
+    padding: 8px 0 12px;
+    max-height: none;
+    overflow: visible;
+  }
+  .muji-unified-header .muji-site-nav > a,
+  .muji-unified-header .muji-shop-menu > summary {
+    display: flex;
+    align-items: center;
+    padding: 6px 8px;
+  }
+  .muji-unified-header .muji-shop-menu > div { margin: 0 0 4px; }
+  .muji-unified-header .muji-repair-menu { grid-column: 1 / -1; }
+  .muji-unified-header .muji-repair-menu > div { min-width: 0; }
+  .muji-unified-header .muji-site-nav > .muji-nav-action {
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin: 4px 0 0;
+  }
+}
+
