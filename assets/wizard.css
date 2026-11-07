@@ -5,3 +5,11 @@
 .tally-embed{display:block;border:0;min-height:650px;max-width:100%;background:white}#tallyContextNotice{font-size:14px;line-height:1.6;padding-bottom:20px}#tallySummary{min-width:0}
 
 @media(max-width:780px){#tallySummary{order:-1}}
+
+/* Confirmed submission only. The provider iframe and its branding remain intact. */
+#tallyStatus.is-confirmed{display:flex;align-items:flex-start;gap:12px;margin:0;padding:17px 18px;border:1px solid #b8d9c3;border-radius:10px;background:#edf8f0;color:#185c37;font-size:15px;line-height:1.55;overflow-wrap:anywhere}
+.tally-confirmation-icon{display:grid;place-items:center;flex:0 0 24px;width:24px;height:24px;margin-top:1px;border:1.5px solid currentColor;border-radius:50%;font-size:16px;font-weight:700;line-height:1}
+#tallyContact .tally-confirmed{display:flex;flex-direction:column;gap:16px;padding:0;border:0;background:transparent}
+.tally-confirmed #tallyStatus{order:-1}
+.tally-confirmed .tally-embed{min-height:0}
+@media(max-width:430px){#tallyStatus.is-confirmed{padding:16px;gap:10px;font-size:14px}.tally-confirmation-icon{flex-basis:22px;width:22px;height:22px;font-size:15px}}

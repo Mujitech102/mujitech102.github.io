@@ -52,7 +52,7 @@ const visibleRepair=value=>window.MujiRepairLabel?window.MujiRepairLabel(value,l
 function editSummary(target){
  if(['model','message'].includes(target)&&tallyActive()){
   const frame=[...document.querySelectorAll('#tallyForms iframe')].find(el=>!el.parentElement.hidden);
-  if(frame)document.querySelector('#tallyStatus').textContent=correctionCopy[lang].help;
+  if(frame)setTallyStatus(correctionCopy[lang].help);
   const notice=document.querySelector('#tallyContextNotice');
   const focusTarget=frame||(!notice?.hidden?document.querySelector('#tallyContextRestart'):document.querySelector('.site-foot a'));
   focusTarget?.scrollIntoView({block:'center',behavior:'smooth'});
@@ -81,6 +81,25 @@ function input(key,label,type,autocomplete,required=false,full=false){const t=w(
 function choose(key){if(state.step==='service'){if(state.service!==key){state.detail='';state.issues=[];state.repair='';state.offer='';}state.service=key;state.step=key==='other'?'contact':'detail';}else if(state.step==='detail'){state.detail=key;state.step=state.service==='repair'?'issues':'contact';}else if(state.step==='issues'){state.issues=state.issues.includes(key)?state.issues.filter(x=>x!==key):[...state.issues,key];const b=app.querySelector(`[data-choice="${key}"]`);b.setAttribute('aria-pressed',String(state.issues.includes(key)));b.querySelector('.mark').textContent=state.issues.includes(key)?'✓':'';app.querySelector('#selectionError').textContent='';return;}render();}
 function updateWebsiteBack(){const home=lang==='de'?'/':'/'+lang+'/';let target=q.get('return')||home;if(!/^\/(?:en\/|fr\/|it\/)?(?:[a-z0-9-]+\.html)?$/.test(target))target=home;const b=document.querySelector('#websiteBack');b.href=target;b.textContent={de:'← Zurück zur Website',en:'← Back to the website',fr:'← Retour au site',it:'← Torna al sito'}[lang];document.querySelector('.brand').href=home;}
 
+// Confirmation belongs to the exact frame that Tally confirmed, not a language
+// or a later form restarted with the same context. No answer fields are stored.
+const confirmedTallyFrames=new WeakSet();
+function visibleTallyFrame(){
+ const section=document.querySelector('#tallyContact');
+ if(state.step!=='contact'||section.classList.contains('hidden'))return null;
+ return [...document.querySelectorAll('#tallyForms iframe')].find(frame=>!frame.parentElement.hidden)||null;
+}
+function setTallyStatus(text,confirmed=false){
+ const status=document.querySelector('#tallyStatus');
+ status.classList.toggle('is-confirmed',confirmed);
+ status.closest('.form-panel').classList.toggle('tally-confirmed',confirmed);
+ status.replaceChildren();
+ if(confirmed){
+  const icon=document.createElement('span');icon.className='tally-confirmation-icon';icon.setAttribute('aria-hidden','true');icon.textContent='✓';status.append(icon);
+ }
+ const message=document.createElement('span');message.textContent=text;status.append(message);
+}
+
 function mountTallyContact(){
  const bridge=window.MujiTallyBridge,section=document.querySelector('#tallyContact');
  const ready=bridge?.enabled();
@@ -97,7 +116,7 @@ function mountTallyContact(){
  // Stable section is outside #app: Back never destroys a filled Tally frame.
  app.querySelector('#inquiry')?.closest('.contact-layout')?.remove();
  document.querySelector('#tallySummary').innerHTML=summaryHTML();
- if(!ready){document.querySelector('#tallyStatus').textContent={de:'Das Kontaktformular ist gerade nicht verfügbar. Bitte kontaktiere uns per E-Mail oder Telefon.',en:'The contact form is currently unavailable. Please contact us by email or phone.',fr:'Le formulaire est indisponible. Contactez-nous par e-mail ou téléphone.',it:'Il modulo non è disponibile. Contattaci per e-mail o telefono.'}[lang];return;}
+ if(!ready){setTallyStatus({de:'Das Kontaktformular ist gerade nicht verfügbar. Bitte kontaktiere uns per E-Mail oder Telefon.',en:'The contact form is currently unavailable. Please contact us by email or phone.',fr:'Le formulaire est indisponible. Contactez-nous par e-mail ou téléphone.',it:'Il modulo non è disponibile. Contattaci per e-mail o telefono.'}[lang]);return;}
  const catalog=window.MujiInquiryCatalog||{},repairs=catalog.repairs||{};
  const device=Object.hasOwn(repairs,state.model)?state.model:'';
  const repair=device&&repairs[device].includes(state.repair)?state.repair:'';
@@ -113,8 +132,15 @@ function mountTallyContact(){
  }[lang];
  document.querySelector('#tallyContextText').textContent=texts.changed;
  document.querySelector('#tallyContextRestart').textContent=texts.restart;
- document.querySelector('#tallyStatus').textContent='';
- bridge.show({lang,context,title:w().contactTitle,onSubmitted:()=>{document.querySelector('#tallyStatus').textContent=texts.sent;},onUnavailable:()=>{document.querySelector('#tallyStatus').textContent=texts.failed;}});
+ setTallyStatus('');
+ bridge.show({lang,context,title:w().contactTitle,onSubmitted:frame=>{
+  confirmedTallyFrames.add(frame);
+  if(visibleTallyFrame()===frame)setTallyStatus(texts.sent,true);
+ },onUnavailable:frame=>{
+  if(visibleTallyFrame()===frame)setTallyStatus(texts.failed);
+ }});
+ const frame=visibleTallyFrame();
+ if(frame&&confirmedTallyFrames.has(frame))setTallyStatus(texts.sent,true);
 }
 
 function bind(){updateWebsiteBack();app.querySelector('#back')?.addEventListener('click',()=>{const a=order();state.step=a[a.indexOf(state.step)-1];render();});app.querySelectorAll('[data-choice]').forEach(b=>b.addEventListener('click',()=>choose(b.dataset.choice)));app.querySelector('#next')?.addEventListener('click',()=>{if(!state.issues.length&&!state.repair){app.querySelector('#selectionError').textContent=w().select;app.querySelector('[data-choice]')?.focus();return;}state.step='contact';render();});app.querySelector('#clearRepair')?.addEventListener('click',()=>{state.repair='';render(false);});document.querySelectorAll('#main [data-edit]').forEach(b=>b.addEventListener('click',()=>editSummary(b.dataset.edit)));document.querySelector('#copy')?.addEventListener('click',copy);app.querySelector('#editAgain')?.addEventListener('click',()=>{state.success=false;state.step='contact';render();});app.querySelectorAll('input:not(#website),textarea:not(#copyBuffer)').forEach(el=>{el.addEventListener('input',()=>{state[el.id]=el.type==='checkbox'?el.checked:el.value;const err=app.querySelector(`#${el.id}Error`);if(err){err.textContent='';el.removeAttribute('aria-invalid');}if(['model','message'].includes(el.id))refreshSummary();});});app.querySelector('#inquiry')?.addEventListener('submit',submit);}

@@ -38,7 +38,7 @@
    for(const [key,value] of Object.entries({alignLeft:'1',hideTitle:'1',transparentBackground:'1',dynamicHeight:'1',...data}))url.searchParams.set(key,value);
    iframe.dataset.tallySrc=url.href;iframe.loading='lazy';iframe.width='100%';iframe.height='780';iframe.title=title;iframe.className='tally-embed';iframe.setAttribute('frameborder','0');
    wrapper.append(iframe);host.append(wrapper);entry={wrapper,iframe,signature,formId,onSubmitted,onUnavailable};cache.set(lang,entry);
-   load().then(()=>window.Tally.loadEmbeds()).catch(()=>onUnavailable());
+   load().then(()=>window.Tally.loadEmbeds()).catch(()=>entry.onUnavailable(iframe));
   }
   entry.onSubmitted=onSubmitted;entry.onUnavailable=onUnavailable;entry.wrapper.hidden=false;
   return true;
@@ -51,7 +51,7 @@
   if(message?.event!=='Tally.FormSubmitted'||message.payload?.formId!==entry.formId||typeof message.payload?.id!=='string'||!message.payload.id)return;
   const key=entry.formId+':'+message.payload.id;if(submitted.has(key))return;submitted.add(key);
   // Deliberately ignore payload.fields (contains personal information).
-  entry.onSubmitted();
+  entry.onSubmitted(entry.iframe);
  });
  window.MujiTallyBridge=Object.freeze({enabled,show});
 })();

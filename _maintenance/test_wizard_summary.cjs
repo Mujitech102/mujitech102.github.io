@@ -26,7 +26,11 @@ function element(extra={}){
  return {focused:0,scrolled:0,listeners:{},focus(){this.focused++;},scrollIntoView(){this.scrolled++;},addEventListener(type,fn){this.listeners[type]=fn;},...extra};
 }
 function fixture(lang,{active=true,frame=true,notice=false,field=false}={}){
- const counters={bridge:0,network:0,history:0},status={textContent:'Existing provider notice'};
+ const counters={bridge:0,network:0,history:0};
+ const panel={classList:{toggle(){}}};
+ const status={children:[],initialText:'Existing provider notice',classList:{toggle(){}},
+  get textContent(){return this.children.length?this.children.map(child=>child.textContent).join(''):this.initialText;},
+  replaceChildren(){this.children=[];this.initialText='';},append(child){this.children.push(child);},closest(){return panel;}};
  // A cached earlier-language frame precedes the current frame: focusing it
  // would fail the assertion below and risks confusing keyboard users.
  const hiddenFrame=element({parentElement:{hidden:true},contentWindow:{draft:'PREVIOUS_LANGUAGE_DRAFT'}});
@@ -41,7 +45,7 @@ function fixture(lang,{active=true,frame=true,notice=false,field=false}={}){
    return {'#app':app,'#tallyStatus':status,'#tallyContextNotice':{hidden:!notice},'#tallyContextRestart':restart,'.site-foot a':direct,'#websiteBack':websiteBack,'.brand':brand}[selector]??null;
   },
   querySelectorAll(selector){if(selector==='#tallyForms iframe')return frames;if(selector==='#main [data-edit]')return buttons;if(selector==='[data-lang]')return [];throw Error('Unexpected selector '+selector);},
-  createElement(){return {innerHTML:'',querySelector(selector){assert.equal(selector,'.summary-list');return list;}};}
+  createElement(tag){if(tag==='span')return {textContent:'',setAttribute(){}};return {innerHTML:'',querySelector(selector){assert.equal(selector,'.summary-list');return list;}};}
  };
  const href='https://'+(active?'mujitech.ch':'localhost')+'/assistent/?lang='+lang;
  const context={document,location:new URL(href),URL,URLSearchParams,Object,console,testRenders:[],
