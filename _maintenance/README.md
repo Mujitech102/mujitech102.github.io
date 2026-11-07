@@ -1,3 +1,13 @@
+## Current release — 7 November 2026
+
+The current enquiry path is `/assistent/` with the existing four-language Tally transport. Direct email and telephone remain alternatives. Keep FormSubmit removed; the older generator instructions below are historical and must not reconstruct retired forms or prices. Public HTML is the reviewed source of truth.
+
+This release corrects the repair-submenu route independently from each page's product/web enquiry CTA. Tally model/product correction buttons explain how to add a correction to the existing Message field; they never reload the form or discard entered contact details. Visible repair labels reuse the reviewed `MujiRepairLabel` translator while original catalogue keys remain unchanged. The existing HP Victus offer gains a non-binding Tally product enquiry; prices, warranty and collection terms remain the individual offer's terms.
+
+Reviewed content replaces repetitive blocks on repair, mail-in, website, ecommerce and gaming pages; used-iPhone category advice is added once. The mixed gaming category identifies new builds and used individual offers. Historic mail-in aliases retain their canonical targets and remain outside the sitemap. Do not restore the deliberately removed iPhone 12 listing.
+
+Before publishing run `python3 _maintenance/validate.py`, `node _maintenance/test_measurement.js`, `node _maintenance/test_pricing_bot.js`, and `node _maintenance/test_wizard_summary.cjs`. The last test is network-free and covers correction controls in all four languages; browser verification is still required. The two retired inline-form tests described below remain baseline test debt. No additional real form submissions were made in this release; the four separate daily delivery checks were completed earlier.
+
 # Approved website updates — 15 October 2026
 
 6 November 2026 repair-page update: the current twelve laptop/PC, Samsung screen and Samsung battery HTML pages in DE/EN/FR/IT preserve the reviewed source. Keep their cost sections immediately after the introduction, direct repair-enquiry links, model/price-on-request guidance, aligned metadata and French vous wording. Older content generators predate this layout and must not overwrite it. No price data, enquiry scripts, URLs or sitemap entries changed. `test_language_context.js` and `test_enquiry_guidance.js` still expect retired inline contact forms and already fail on baseline d308351a; use the current validator and verify the assistant enquiry flow in the browser.
