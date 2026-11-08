@@ -1,3 +1,17 @@
+## Swiss visibility and navigation consistency — 8 November 2026
+
+The four home and contact pages explicitly reuse the existing Organization, business and WebSite identities. Entity URLs stay at the domain root; localized WebPage URLs and language annotations remain unchanged. ContactPage and WebPage describe the same page, with the existing page description and business identifier. Postal code 9030 is reused from the existing contact pages. No new location, public walk-in address, hours, reviews or service promise was added.
+
+The existing contact blocks on the four contact and four webdesign pages include the current language/context-aware assistant link alongside email and phone. Contact introductions describe those same choices. The contact-location block also records the user-confirmed personal device collection by prior arrangement, with a travel surcharge agreed beforehand. No fixed fee or travel area is promised. No transport or submission code changes.
+
+The shared price/bot quality formatter treats the generic catalogue headings `Display / LCD` (including parenthetical screen/frame labels) as unspecified technology, requiring confirmation for the model. Explicit LCD, Soft OLED, Premium and original-part qualities retain their explanations. The same correction is applied to the matching visible static catalogue notes so the explanation agrees before and after JavaScript. Catalogue keys, prices and enquiry parameters are unchanged. The pricing test covers ambiguous headings and explicit qualities.
+
+Twelve existing laptop/PC and Samsung screen/battery pages link to the existing localized mail-in preparation anchor. Eight Samsung pages add a short model-number help disclosure and optional, supported Maintenance mode guidance with the existing backup requirement. Titles, prices and service scope are unchanged.
+
+The contact navigation action retains white text even when the page-current selector applies; otherwise the existing current-page rule makes its text black on its black background.
+
+The shared navigation collapses at 1280px. The conflicting 1061–1150px desktop override was removed to keep long French labels clear of the logo. The brand must not shrink. Check all four languages at 390, 1060, 1100, 1150, 1280 and 1281px, including menu keyboard use and enquiry links. Run the four required checks below. Keep robots.txt, measurement, assistant/Tally and green success files unchanged; no extra real submissions on 8 November.
+
 ## Targeted international rollback — 8 November 2026
 
 The three DE/AT/LI webdesign offers and their dedicated stylesheet were removed after explicit user instruction. The existing four-language Swiss website and shop pages use their previous Swiss-focused introduction, five reciprocal language annotations and original Service area. The sitemap contains 232 URLs. Removed country URLs intentionally return the existing GitHub Pages 404 response; no replacement landing page or soft redirect was added.

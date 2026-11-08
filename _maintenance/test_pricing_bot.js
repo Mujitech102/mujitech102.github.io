@@ -7,6 +7,18 @@ for(const lang of ['de','en','fr','it']){
  const ctx={window:{},lang,previousModel:null,previousTopic:null,normalize:s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/ß/g,'ss'),track:()=>{},add:s=>messages.push(s)};
  vm.createContext(ctx);vm.runInContext(read('assets/repair-prices-data.js'),ctx);
  vm.runInContext(labels.slice(0,labels.indexOf('const start=()=>{'))+'})();',ctx);
+ // A generic catalogue heading does not establish the replacement panel technology.
+ for(const part of ['Display / LCD','Display / LCD (Hauptbildschirm)','Display / LCD (Sub-Display)','Display / LCD (inkl. Mittelrahmen)']){
+  const explanation=ctx.window.MujiRepairQuality(part,lang);
+  assert.ok(explanation.length>30,lang+' missing variant confirmation');
+  assert.doesNotMatch(explanation,/LCD|OLED/i,lang+' generic heading asserted a panel technology');
+  assert.match(explanation,({de:/vor dem Auftrag/,en:/before the repair/,fr:/avant la réparation/,it:/prima della riparazione/})[lang]);
+ }
+ for(const quality of ['Original','Service Pack','Soft OLED','Premium','Pulled'])
+  assert.equal(ctx.window.MujiRepairQuality('Display / LCD ('+quality+')',lang),ctx.window.MujiRepairQuality('Display '+quality,lang));
+ assert.match(ctx.window.MujiRepairQuality('Display LCD',lang),/LCD/);
+ assert.match(ctx.window.MujiRepairQuality('Display Soft OLED',lang),/OLED/);
+ assert.notEqual(ctx.window.MujiRepairQuality('Display Original, Service Pack',lang),'');
  vm.runInContext(bot.slice(bot.indexOf('    const detect ='),bot.indexOf('    const storageData=')).replace('const detect =','globalThis.detect ='),ctx);
  vm.runInContext(bot.slice(bot.indexOf('    const storageData='),bot.indexOf('    const displayGuide=')).replace('const storageAnswer=','globalThis.storageAnswer='),ctx);
  assert.equal(ctx.storageAnswer('Combien coûte Google Ads ?'),false);assert.equal(ctx.storageAnswer('Combien coûte Google Pixel 10 ?'),false);
