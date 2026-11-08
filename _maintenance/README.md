@@ -1,3 +1,13 @@
+## Targeted additions — 8 November 2026
+
+The existing home photograph remains unchanged at its PNG URL. Three responsive WebP variants reuse the same image with explicit dimensions and the existing localized alternative text. No generated replacement, new photograph or rights claim is introduced.
+
+Each existing webdesign language page has one compact, explicitly labelled Mujitech own-project example, with a localized current desktop/mobile screenshot board of the public homepage service overview. Browser chrome, QA controls and the photograph are excluded from the published crops. No client reference, historical before-state or performance outcome is claimed. Contact pages add the legal-notice-confirmed name Andrit Muji.
+
+Care-package guidance now describes the actual existing buttons and message field. The assistant accepts only published compatible web offers and clears a package when the website subtype changes. A device/model and an offer remain separate labelled summary rows. The loaded Tally draft protection and explicit restart remain unchanged. The assistant script URL version is updated.
+
+Before release run the four checks below plus `node _maintenance/test_web_offer_context.cjs` (72 offline cases; no network/submissions). Browser-check the real Back handler, same/different website subtype and language return with the correct cached provider frame. No additional real submissions: the four 8 November daily tests are already complete. Preserve prices, products, warranties, privacy, consent, transport, green success, the Swiss focus and all other optimisations. The image lab measured resource bytes/fetch time only; LCP entries were unavailable and no Core Web Vitals improvement is asserted.
+
 ## Swiss visibility and navigation consistency — 8 November 2026
 
 The four home and contact pages explicitly reuse the existing Organization, business and WebSite identities. Entity URLs stay at the domain root; localized WebPage URLs and language annotations remain unchanged. ContactPage and WebPage describe the same page, with the existing page description and business identifier. Postal code 9030 is reused from the existing contact pages. No new location, public walk-in address, hours, reviews or service promise was added.
