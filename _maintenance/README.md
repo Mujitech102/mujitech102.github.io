@@ -1,3 +1,9 @@
+## International webdesign variants — 8 November 2026
+
+Three German regional variants extend the existing webdesign offer to Germany, Austria and Liechtenstein. Keep the seven-page webdesign cluster's eight exact reciprocal hreflang mappings in HTML and sitemap; other language clusters keep their existing mappings. The new pages link to the central CHF packages and optional care instead of duplicating prices. They do not imply local branches abroad.
+
+The existing assistant and Tally transport are unchanged. Regional CTAs pass their own relative path through `return` to the existing `source_page` context. This records the entry page, not the customer's actual country. Customers can give their country and existing website in the optional Tally message; the phone remains optional. Do not reuse the local preview's `website` honeypot as a visible input. Keep enquiry content out of analytics. Run the four required checks below and inspect desktop/mobile country links and assistant handoff without additional real submissions beyond the daily limit.
+
 ## Current release — 7 November 2026
 
 The current enquiry path is `/assistent/` with the existing four-language Tally transport. Direct email and telephone remain alternatives. Keep FormSubmit removed; the older generator instructions below are historical and must not reconstruct retired forms or prices. Public HTML is the reviewed source of truth.
