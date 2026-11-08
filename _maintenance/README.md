@@ -1,8 +1,8 @@
-## International webdesign variants — 8 November 2026
+## Targeted international rollback — 8 November 2026
 
-Three German regional variants extend the existing webdesign offer to Germany, Austria and Liechtenstein. Keep the seven-page webdesign cluster's eight exact reciprocal hreflang mappings in HTML and sitemap; other language clusters keep their existing mappings. The new pages link to the central CHF packages and optional care instead of duplicating prices. They do not imply local branches abroad.
+The three DE/AT/LI webdesign offers and their dedicated stylesheet were removed after explicit user instruction. The existing four-language Swiss website and shop pages use their previous Swiss-focused introduction, five reciprocal language annotations and original Service area. The sitemap contains 232 URLs. Removed country URLs intentionally return the existing GitHub Pages 404 response; no replacement landing page or soft redirect was added.
 
-The existing assistant and Tally transport are unchanged. Regional CTAs pass their own relative path through `return` to the existing `source_page` context. This records the entry page, not the customer's actual country. Customers can give their country and existing website in the optional Tally message; the phone remains optional. Do not reuse the local preview's `website` honeypot as a visible input. Keep enquiry content out of analytics. Run the four required checks below and inspect desktop/mobile country links and assistant handoff without additional real submissions beyond the daily limit.
+Keep all four current legal/privacy pages, including the verified provider details and accurate privacy additions. Keep the assistant, Tally bridge, green success confirmation, all prices/products and unrelated SEO work unchanged. Run the four required checks below, inspect desktop/mobile and four-language enquiry handoff without sending. No additional actual submissions: the four daily delivery checks for 8 November are already complete.
 
 ## Current release — 7 November 2026
 

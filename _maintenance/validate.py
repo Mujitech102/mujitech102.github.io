@@ -9,15 +9,6 @@ import json,re,subprocess,sys,xml.etree.ElementTree as ET
 ROOT=Path(__file__).resolve().parents[1]
 NODE='/Users/andritmuji/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node'
 errors=[];pages={};formcount=0;redirects={}
-# The regional webdesign pages are variants of the same service. Other language
-# families retain their five annotations; do not weaken their validation.
-WEBDESIGN_REGIONS={
- 'de-CH':'/websites.html','en':'/en/websites.html',
- 'fr-CH':'/fr/websites.html','it-CH':'/it/websites.html',
- 'de-DE':'/webdesign-deutschland.html','de-AT':'/webdesign-oesterreich.html',
- 'de-LI':'/webdesign-liechtenstein.html','x-default':'/websites.html',
-}
-WEBDESIGN_ALTERNATES={k:'https://mujitech.ch'+v for k,v in WEBDESIGN_REGIONS.items()}
 # Reject the retired provider token/domain without rejecting Tally.FormSubmitted.
 retired_provider=re.compile(r'\bformsubmit\b',re.I)
 class Page(HTMLParser):
@@ -85,15 +76,7 @@ for p,c in pages.items():
   if redirects[p] in redirects:errors.append(f'{p.relative_to(ROOT)}: redirect chain')
   continue
  rel=p.relative_to(ROOT);canon=[a['href'] for t,a in c.tags if t=='link' and a.get('rel')=='canonical'];alts=[a for t,a in c.tags if t=='link' and a.get('rel')=='alternate'];
- region_path='/'+rel.as_posix()
- regional=region_path in WEBDESIGN_REGIONS.values()
- if len(canon)!=1 or len(alts)!=(8 if regional else 5):errors.append(f'{rel}: canonical/alternates count');continue
- if regional:
-  annotations={a.get('hreflang'):a.get('href') for a in alts}
-  if annotations!=WEBDESIGN_ALTERNATES:errors.append(f'{rel}: incorrect webdesign region alternatives')
-  if canon!=['https://mujitech.ch'+region_path]:errors.append(f'{rel}: webdesign self canonical')
-  expected_lang=next(k for k,v in WEBDESIGN_REGIONS.items() if v==region_path)
-  if [a.get('lang') for t,a in c.tags if t=='html']!=[expected_lang]:errors.append(f'{rel}: incorrect regional HTML language')
+ if len(canon)!=1 or len(alts)!=5:errors.append(f'{rel}: canonical/alternates count');continue
  for a in alts:
   dest=target(p,a['href'])
   if dest not in pages:errors.append(f'{rel}: missing alternate {a["href"]}')
@@ -135,11 +118,6 @@ for p in files:
   if re.search(r'36 (?:Monate|months|mois|mesi)|36-month',s):errors.append('iPhone warranty incorrectly changed')
 sitemap=ET.parse(ROOT/'sitemap.xml');ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'};urls=[x.text for x in sitemap.findall('.//s:loc',ns)]
 if len(urls)!=len(set(urls)):errors.append('Sitemap duplicate URLs')
-for region_url in set(WEBDESIGN_ALTERNATES.values()):
- entry=next((x for x in sitemap.getroot() if x.find('s:loc',ns).text==region_url),None)
- if entry is None:errors.append('Sitemap missing webdesign variant: '+region_url);continue
- alternate_elements=entry.findall('{http://www.w3.org/1999/xhtml}link')
- if len(alternate_elements)!=8 or {x.get('hreflang'):x.get('href') for x in alternate_elements}!=WEBDESIGN_ALTERNATES:errors.append('Sitemap incorrect webdesign alternatives: '+region_url)
 for js in ROOT.glob('assets/*.js'):
  if retired_provider.search(js.read_text()):errors.append(f'{js.name}: retired provider reference')
 for u in urls:
