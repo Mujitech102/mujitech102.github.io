@@ -9,6 +9,10 @@
     const value=current.searchParams.get(key);
     if(value&&value.length<=500&&!/[\x00-\x1f\x7f]/.test(value))target.searchParams.set(key,value);
   }
+  // Keep canonical repair enquiry landing pages readable and indexable.
+  // Existing links with enquiry context still open the matching assistant step.
+  if(/^\/(?:en\/|fr\/|it\/)?reparaturanfrage\.html$/.test(current.pathname)&&!target.searchParams.size)return;
+  if(current.searchParams.get('muji_test')==='1')target.searchParams.set('muji_test','1');
   target.searchParams.set('lang',['de','en','fr','it'].includes(language)?language:'de');
   if(!target.searchParams.has('service')&&!target.searchParams.has('form'))target.searchParams.set('service','repair');
   location.replace(target.href);
