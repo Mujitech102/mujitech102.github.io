@@ -151,3 +151,20 @@ const external={...internal,href:'https://example.test/help'};
 f.listeners.click({target:{closest:()=>external}});
 assert.equal(external.href,'https://example.test/help');
 console.log('PASS: '+cases+' consent/page/language contact cases; four-language QA exclusion; no legacy form confirmations; category, consent withdrawal, campaign and privacy regressions.');
+
+for (const consent of ['all','necessary']) {
+ for (const search of ['?lang=fr&email=PRIVATE_EMAIL','?lang=fr&muji_test=1']) {
+  const assistant=fixture({pathname:'/assistent/',consent,search});
+  const measure=assistant.context.MujiMeasureEnquiry;
+  measure('start','repair','fr');
+  measure('start','repair','fr');
+  measure('submitted','repair','fr');
+  measure('unknown','repair','fr');
+  const recorded=assistant.events().filter(e=>e.name.startsWith('enquiry_'));
+  assert.deepEqual(recorded.map(e=>e.name),consent==='all'&&!search.includes('muji_test')
+    ? ['enquiry_start','enquiry_submitted'] : []);
+  assert.ok(recorded.every(e=>e.params.service_area==='repair'&&e.params.language==='fr'));
+  assert.ok(!JSON.stringify(assistant.context.dataLayer||[]).includes('PRIVATE_'));
+ }
+}
+console.log('PASS: assistant start deduplication, confirmed submission signal, consent and QA exclusion.');

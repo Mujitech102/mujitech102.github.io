@@ -25,7 +25,7 @@ const subAliases={'Datenübertragung':'transfer','PC-/Laptop-Optimierung':'optim
 state.detail=subAliases[raw]||'';
 if(state.service==='product'&&q.get('form')==='gaming_pc')state.detail='gaming';
 if(state.service==='product'&&q.get('kind')==='iphone')state.detail='iphone';
-if(state.service==='web'){if(Object.hasOwn(webOfferDetails,state.offer))state.detail=webOfferDetails[state.offer];else state.offer='';}
+if(state.service==='web'){if(Object.hasOwn(webOfferDetails,state.offer))state.detail=webOfferDetails[state.offer];else{state.offer='';if(q.get('kind')==='shop')state.detail='shop';}}
 if(!state.service&&(state.repair||q.get('problem')))state.service='repair';
 if(!state.service&&q.get('product'))state.service='product';
 if(['display','battery'].includes(q.get('problem')))state.issues=[q.get('problem')];
@@ -70,7 +70,7 @@ function summaryRows(){const t=w();return [[t.serviceLabel,serviceName(),'servic
 function summaryText(){const t=w();return [t.summary,...summaryRows().map(([k,v])=>`${k}: ${v}`),...(state.name?[`${t.name}: ${state.name}`]:[]),...(state.email?[`${t.email}: ${state.email}`]:[]),...(state.phone?[`${t.phone}: ${state.phone}`]:[]),t.promise].join('\n\n');}
 function summaryHTML(){const t=w();return `<aside class="summary-panel"><h2>${t.summary}</h2><dl class="summary-list">${summaryRows().map(([k,v,target])=>`<div class="summary-row"><dt>${k}<button class="edit" type="button" data-edit="${target}" aria-label="${summaryEditLabel(target)}: ${k}">${summaryEditLabel(target)}</button></dt><dd>${esc(v)}</dd></div>`).join('')}</dl><button class="secondary copy" type="button" id="copy">${t.copy} ↗</button><p class="status" id="copyStatus" role="status"></p><textarea id="copyBuffer" class="hidden" readonly aria-label="${t.copy}"></textarea></aside>`;}
 function card(key,title,description='',multi=false,selected=false){return `<button type="button" class="card" data-choice="${key}" aria-pressed="${selected}"${multi?' aria-describedby="multiHint"':''}>${icon(key)}<span class="${multi?'mark':'arrow'}" aria-hidden="true">${multi?(selected?'✓':''):'↗'}</span><span class="card-title">${title}</span>${description?`<span class="card-description">${description}</span>`:''}</button>`;}
-function render(focus=true){const t=w(),steps=order(),idx=steps.indexOf(state.step);document.documentElement.lang=lang==='de'?'de-CH':lang;document.title=`${t.page} · Mujitech · ${t.preview}`;document.querySelector('#previewLabel').textContent=t.preview;document.querySelector('.brand-sub').textContent=t.tagline;document.querySelector('#directLabel').textContent=t.direct;document.querySelector('#locationLabel').textContent=t.location;document.querySelector('.skip').textContent={de:'Zum Inhalt',en:'Skip to content',fr:'Aller au contenu',it:'Vai al contenuto'}[lang];document.querySelector('.languages').setAttribute('aria-label',{de:'Sprache wählen',en:'Choose language',fr:'Choisir la langue',it:'Scegli la lingua'}[lang]);document.querySelectorAll('[data-lang]').forEach(a=>{const u=new URL(location.href);u.searchParams.set('lang',a.dataset.lang);a.href=u.href;if(a.dataset.lang===lang)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+function render(focus=true){const t=w(),steps=order(),idx=steps.indexOf(state.step);document.documentElement.lang=lang==='de'?'de-CH':lang;const cookieSettings=document.querySelector('[data-consent-settings]');if(cookieSettings)cookieSettings.textContent={"de": "Cookie-Einstellungen", "en": "Cookie settings", "fr": "Paramètres des cookies", "it": "Impostazioni cookie"}[lang];document.title=`${t.page} · Mujitech · ${t.preview}`;document.querySelector('#previewLabel').textContent=t.preview;document.querySelector('.brand-sub').textContent=t.tagline;document.querySelector('#directLabel').textContent=t.direct;document.querySelector('#locationLabel').textContent=t.location;document.querySelector('.skip').textContent={de:'Zum Inhalt',en:'Skip to content',fr:'Aller au contenu',it:'Vai al contenuto'}[lang];document.querySelector('.languages').setAttribute('aria-label',{de:'Sprache wählen',en:'Choose language',fr:'Choisir la langue',it:'Scegli la lingua'}[lang]);document.querySelectorAll('[data-lang]').forEach(a=>{const u=new URL(location.href);u.searchParams.set('lang',a.dataset.lang);a.href=u.href;if(a.dataset.lang===lang)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
 let body='';
 if(state.success){body=`<div class="success"><div class="success-icon" aria-hidden="true">✓</div><h1 tabindex="-1">${t.checked}</h1><p class="intro">${t.noSend}</p>${summaryHTML()}<div class="actions"><button class="primary" id="editAgain">${t.editAgain} <span aria-hidden="true">↗</span></button></div></div>`;}
 else if(state.step==='service'){body=`<p class="eyebrow">${t.eyebrow}</p><h1 tabindex="-1">${t.title}</h1><p class="intro">${t.intro}</p><div class="cards">${serviceKeys.slice(0,6).map((k,i)=>card(k,t.serviceNames[i],t.serviceDescs[i],false,state.service===k)).join('')}</div><div class="other-row"><p class="hint">${t.auto}</p><button class="text-btn" data-choice="other">${t.other} ↗</button></div>`;}
@@ -86,6 +86,11 @@ function updateWebsiteBack(){const home=lang==='de'?'/':'/'+lang+'/';let target=
 // Confirmation belongs to the exact frame that Tally confirmed, not a language
 // or a later form restarted with the same context. No answer fields are stored.
 const confirmedTallyFrames=new WeakSet();
+function measureEnquiry(phase){
+ const service=state.service==='web'&&state.detail==='shop'?'shop':state.service;
+ window.MujiMeasureEnquiry?.(phase,service,lang);
+}
+document.addEventListener?.('DOMContentLoaded',()=>measureEnquiry('start'),{once:true});
 function visibleTallyFrame(){
  const section=document.querySelector('#tallyContact');
  if(state.step!=='contact'||section.classList.contains('hidden'))return null;
@@ -125,6 +130,7 @@ function mountTallyContact(){
  const product=catalog.products?.includes(state.model)?state.model:'';
  const offer=catalog.offers?.includes(state.offer)?state.offer:'';
  const source=q.get('return')||'';
+ const measurementService=state.service==='web'&&state.detail==='shop'?'shop':state.service;
  const context={language:lang,service:serviceName(),selection:detailName(),issues:state.issues.map(k=>w().issues[issueKeys.indexOf(k)]).join(' · '),device_context:device,repair_context:repair,product_context:product,offer_context:offer,source_page:/^\/(?:en\/|fr\/|it\/)?(?:[a-z0-9-]+\.html)?$/.test(source)?source:'',request_mode:['localhost','127.0.0.1'].includes(location.hostname)||q.get('muji_test')==='1'?'test':'production'};
  const texts={
   de:{changed:'Du hast deine Auswahl geändert. Um die neue Auswahl zu übermitteln, starte den Kontaktschritt neu. Bereits eingetragene Kontaktdaten müssten dann neu eingegeben werden.',restart:'Neue Auswahl übernehmen · Kontaktschritt neu starten',sent:'Danke. Deine Anfrage wurde übermittelt. Daraus entsteht noch kein Auftrag.',failed:'Das Kontaktformular konnte nicht geladen werden. Deine Auswahl bleibt erhalten. Versuche es nochmals oder kontaktiere uns per E-Mail oder Telefon.'},
@@ -136,7 +142,9 @@ function mountTallyContact(){
  document.querySelector('#tallyContextRestart').textContent=texts.restart;
  setTallyStatus('');
  bridge.show({lang,context,title:w().contactTitle,onSubmitted:frame=>{
+  if(confirmedTallyFrames.has(frame))return;
   confirmedTallyFrames.add(frame);
+  window.MujiMeasureEnquiry?.('submitted',measurementService,context.language);
   if(visibleTallyFrame()===frame)setTallyStatus(texts.sent,true);
  },onUnavailable:frame=>{
   if(visibleTallyFrame()===frame)setTallyStatus(texts.failed);

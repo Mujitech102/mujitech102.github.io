@@ -15,12 +15,14 @@
   }catch{}
   window.MujiMeasurementIsTest=()=>testMode;
   if(testMode)window['ga-disable-'+ID]=true;
-  const lang=(document.documentElement.lang||'de').slice(0,2);
+  const requestedLang=new URLSearchParams(location.search).get('lang');
+  const lang=location.pathname==='/assistent/' && ['de','en','fr','it'].includes(requestedLang)
+    ? requestedLang : (document.documentElement.lang||'de').slice(0,2);
   const copy={
-    de:['Cookies & Datenschutz','Statistik misst Seitenaufrufe, Kontaktklicks und die Nutzung der Gerätepreisabfrage mit Google Analytics. Optional verknüpft Anzeigenmessung mit Google Ads einen Anzeigenklick mit einer späteren Anfrage. Keine personalisierte Werbung; keine Formularinhalte an Analytics.','Datenschutzhinweise','Nur notwendige','Nur Statistik erlauben','Statistik + Anzeigenmessung'],
-    fr:['Cookies et confidentialité','Les statistiques mesurent les pages vues, clics de contact et recherche de prix des appareils avec Google Analytics. La mesure facultative des annonces avec Google Ads relie un clic publicitaire à une demande ultérieure. Aucune publicité personnalisée ni contenu des formulaires dans Analytics.','Confidentialité','Uniquement nécessaires','Statistiques uniquement','Statistiques + mesure des annonces'],
-    it:['Cookie e privacy','Le statistiche misurano pagine visitate, clic di contatto e ricerca dei prezzi dei dispositivi con Google Analytics. La misurazione facoltativa con Google Ads collega un clic pubblicitario a una richiesta successiva. Nessuna pubblicità personalizzata; nessun contenuto dei moduli ad Analytics.','Privacy','Solo necessari','Solo statistiche','Statistiche + misurazione annunci'],
-    en:['Cookies and privacy','Statistics measure page views, contact clicks and device price lookups with Google Analytics. Optional ad measurement with Google Ads links an ad click to a later enquiry. No personalised advertising; no form contents sent to Analytics.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement']
+    de:['Cookies & Datenschutz','Statistik misst Seitenaufrufe, Kontaktklicks, Anfragestarts, bestätigte Übermittlungen und die Nutzung der Gerätepreisabfrage mit Google Analytics. Optional verknüpft Anzeigenmessung mit Google Ads einen Anzeigenklick mit einer späteren Anfrage. Keine personalisierte Werbung; keine Formularinhalte an Analytics.','Datenschutzhinweise','Nur notwendige','Nur Statistik erlauben','Statistik + Anzeigenmessung'],
+    fr:['Cookies et confidentialité','Les statistiques mesurent les pages vues, les clics de contact, les débuts et envois confirmés de demandes, et la recherche de prix des appareils avec Google Analytics. La mesure facultative des annonces avec Google Ads relie un clic publicitaire à une demande ultérieure. Aucune publicité personnalisée ni contenu des formulaires dans Analytics.','Confidentialité','Uniquement nécessaires','Statistiques uniquement','Statistiques + mesure des annonces'],
+    it:['Cookie e privacy','Le statistiche misurano pagine visitate, clic di contatto, avvii e invii confermati delle richieste e ricerca dei prezzi dei dispositivi con Google Analytics. La misurazione facoltativa con Google Ads collega un clic pubblicitario a una richiesta successiva. Nessuna pubblicità personalizzata; nessun contenuto dei moduli ad Analytics.','Privacy','Solo necessari','Solo statistiche','Statistiche + misurazione annunci'],
+    en:['Cookies and privacy','Statistics measure page views, contact clicks, enquiry starts, confirmed submissions and device price lookups with Google Analytics. Optional ad measurement with Google Ads links an ad click to a later enquiry. No personalised advertising; no form contents sent to Analytics.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement']
   }[lang] || ['Privacy and statistics','Optional Google Analytics statistics and separate Google Ads measurement. No personalised advertising.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement'];
   let allowed=false,adsAllowed=false,loaded=false,banner,settingsTrigger;
   const cleanURL=location.origin+location.pathname;
@@ -64,6 +66,19 @@
   const stages={contact_click:'contact_click',enquiry_open:'enquiry_open'};
   const event=(name,params={})=>{
     if(!testMode && allowed && window.gtag)window.gtag('event',name,{...params,...(stages[name]?{funnel_stage:stages[name],lead_verified:0}:{}),service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
+  };
+  let assistantStarted=false;
+  window.MujiMeasureEnquiry=(phase,service,language)=>{
+    if(!/^\/assistent\/(?:index\.html)?$/.test(location.pathname) ||
+       !['de','en','fr','it'].includes(language) || !allowed || testMode)return;
+    const area={repair:'repair',web:'webdesign',shop:'shop',private:'private_support',business:'business_it',product:'shop',sell:'device_purchase'};
+    const params={service_area:Object.hasOwn(area,service)?area[service]:'general',language};
+    if(phase==='start'&&!assistantStarted){
+      assistantStarted=true;
+      event('enquiry_start',{...params,funnel_stage:'enquiry_start',lead_verified:0});
+    }else if(phase==='submitted'){
+      event('enquiry_submitted',{...params,funnel_stage:'enquiry_submitted'});
+    }
   };
   function productItem(){
     let product;

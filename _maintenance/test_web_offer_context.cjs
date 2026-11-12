@@ -13,6 +13,7 @@ let cases=0;
 function fixture(lang,params={}){
  const classes=()=>{const values=new Set();return {toggle(k,on){on?values.add(k):values.delete(k);},contains:k=>values.has(k)};};
  let removed=0;
+ const handlers={},measurement=[];
  function element(tag='div'){
   return {tag,hidden:false,children:[],dataset:{},listeners:{},classList:classes(),textContent:'',innerHTML:'',attributes:{},
    contentWindow:tag==='iframe'?{draft:'OFFLINE_DRAFT'}:undefined,
@@ -32,12 +33,13 @@ function fixture(lang,params={}){
  const context={URL,URLSearchParams,Object,console,location:url,
   history:{replaceState(a,b,next){context.location=new URL(next,context.location);}},
   document:{querySelector(q){return q==='#app'?app:q==='.brand'?brand:nodes[q]||null;},querySelectorAll(q){return q==='[data-lang]'?links:q==='#tallyForms iframe'?frames():[];},createElement:element},
-  window:{addEventListener(){},Tally:{loadEmbeds(){}}},
+  window:{addEventListener(name,fn){handlers[name]=fn;},Tally:{loadEmbeds(){}},
+   MujiMeasureEnquiry(...args){measurement.push(args);}},
   fetch(){throw Error('Network is forbidden');}}
  vm.createContext(context);
  for(const file of ['assets/inquiry-config.js','assets/inquiry-context-catalog.js','assets/tally-bridge.js'])vm.runInContext(read(file),context);
  vm.runInContext(instrumented,context);
- return {api:context.api,nodes,frames,links,removed:()=>removed};
+ return {api:context.api,nodes,frames,links,handlers,measurement,removed:()=>removed};
 }
 const offers={Basic:'new',Business:'new',Premium:'new','Care Basic':'care','Care Business':'care','Care Premium':'care','Google Ads':'unknown'};
 const headings={de:'Paket / Angebot',en:'Package / offer',fr:'Forfait / offre',it:'Pacchetto / offerta'};
@@ -65,6 +67,26 @@ for(const lang of ['de','en','fr','it']){
   const f=fixture(lang,{offer});assert.equal(f.api.state.offer,'');assert.ok(!f.api.summaryRows().some(row=>String(row[1]).includes(offer)));
   f.api.state.step='contact';f.api.mountTallyContact();assert.equal(new URL(f.frames()[0].dataset.tallySrc).searchParams.get('offer_context'),'');cases++;
  }
+ const shop=fixture(lang,{kind:'shop'});
+ assert.equal(shop.api.state.detail,'shop');
+ assert.equal(shop.api.state.step,'contact');
+ shop.api.mountTallyContact();
+ const frame=shop.frames()[0],formId=new URL(frame.dataset.tallySrc).pathname.split('/').pop();
+ const signal=(id,origin='https://tally.so',source=frame.contentWindow,reportedForm=formId)=>{
+  shop.handlers.message({origin,source,data:JSON.stringify({event:'Tally.FormSubmitted',payload:{
+   id,formId:reportedForm,fields:[{value:'PRIVATE_FIXTURE'}]
+  }})});
+ };
+ signal('wrong-origin','https://example.invalid');
+ signal('wrong-frame','https://tally.so',{});
+ signal('wrong-form','https://tally.so',frame.contentWindow,'invalid');
+ signal('');
+ assert.deepEqual(shop.measurement,[]);
+ signal('offline-fixture');
+ signal('offline-fixture');
+ signal('repeat-frame');
+ assert.deepEqual(shop.measurement,[['submitted','shop',lang]]);
+ cases++;
  const general=fixture(lang);assert.equal(general.api.state.offer,'');assert.equal(general.api.state.step,'detail');cases++;
  const service=fixture(lang,{offer:'Basic'});service.api.state.step='service';service.api.choose('repair');assert.equal(service.api.state.offer,'');cases++;
  const translated=fixture(lang,{offer:'Care Business'});translated.api.mountTallyContact();const first=translated.frames()[0];
