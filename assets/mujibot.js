@@ -95,8 +95,8 @@
       if(/versand|einsend|post|shipping|mail.in|envoi|envoyer|spediz|inviare/.test(q))return 'shipping';
       if(/preis|kost|teuer|price|cost|how much|combien|prix|quanto/.test(q)) { if(previousTopic==='ads'&&!/iphone|ipad|galaxy|samsung|pixel|display|akku|battery|screen|ecran|schermo|website|webseite|site web|sito/.test(q))return 'ads'; if(/website|webseite|webdesign|homepage|site web|sito|domain/.test(q)||previousTopic==='website')return 'website'; if(/gaming|shop|kaufen|buy|acheter|acquist/.test(q))return 'shop'; if(/ankauf|verkauf|sell|vendre|vendere/.test(q))return 'sell'; return 'price'; }
       if(/website|webseite|webdesign|homepage|site web|sito|domain/.test(q))return 'website';
+      if(/gaming|shop|kaufen|buy|acheter|acquist/.test(q)&&!/ankauf|an euch verkaufen|sell (my|you)|trade.in|vous vendre|vendervi/.test(q))return 'shop';
       if(/verkauf|ankauf|sell|trade.in|vendre|vendi|vendere/.test(q))return 'sell';
-      if(/gaming|shop|kaufen|buy|acheter|acquist/.test(q))return 'shop';
       if(/wlan|wifi|wi.fi|router|internet/.test(q))return 'wifi';
       if(/daten|backup|datensicherung|recovery|recuper|donnees|data loss/.test(q))return 'data';
       if(/langsam|slow|lent|lento|optimier|ssd|ram/.test(q))return 'computer';
