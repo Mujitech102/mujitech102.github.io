@@ -10,11 +10,18 @@
  const t=translations[lang]||translations.en;
  function ready(){
   const smartphones=lang==='it'?'Smartphone':'Smartphones';
-  for(const menu of document.querySelectorAll('.muji-shop-menu, .gaming-category-nav')){
+  for(const menu of document.querySelectorAll('.muji-shop-menu:not(.muji-repair-menu), .gaming-category-nav')){
    for(const link of menu.querySelectorAll('a')){
     const route=new URL(link.href,location.href).pathname;
-    if(!/\/(refurbished|gaming-pcs)\.html$/.test(route))link.remove();
+    if(!/\/(refurbished|gaming-pcs|software)\.html$/.test(route))link.remove();
     if(/\/refurbished\.html$/.test(route))link.textContent=smartphones;
+   }
+   const destination=menu.matches('.gaming-category-nav')?menu:menu.querySelector('summary + div');
+   if(destination&&!destination.querySelector('a[href$="/software.html"]')){
+    const link=document.createElement('a');
+    link.href=(lang==='de'?'/':'/'+lang+'/')+'software.html';
+    link.textContent=lang==='fr'?'Logiciels':'Software';
+    destination.append(link);
    }
   }
   const toggle=document.querySelector('.muji-menu-toggle'),nav=document.querySelector('.muji-site-nav');
