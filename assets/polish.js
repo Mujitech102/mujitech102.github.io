@@ -13,7 +13,7 @@
   for(const menu of document.querySelectorAll('.muji-shop-menu, .gaming-category-nav')){
    for(const link of menu.querySelectorAll('a')){
     const route=new URL(link.href,location.href).pathname;
-    if(/\/iphones\.html$/.test(route))link.remove();
+    if(!/\/(refurbished|gaming-pcs)\.html$/.test(route))link.remove();
     if(/\/refurbished\.html$/.test(route))link.textContent=smartphones;
    }
   }
