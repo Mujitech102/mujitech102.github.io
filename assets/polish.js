@@ -48,7 +48,7 @@
  if(!document.querySelector('.refurb-catalog'))return;
  const stylesheet=document.createElement('link');
  stylesheet.rel='stylesheet';
- stylesheet.href='/assets/mujibot.css?v=20261015-quality-19';
+ stylesheet.href='/assets/mujibot.css?v=20261117-iphone-1';
  document.head.append(stylesheet);
  const load=src=>new Promise(resolve=>{
   const script=document.createElement('script');
