@@ -1,0 +1,1952 @@
+[
+  {
+    "id": "apple-iphone-12-mini-64-gb-blau-nano-sim-esim-gut",
+    "model": "Apple iPhone 12 mini",
+    "image": "/assets/refurbished/bild-1.jpg",
+    "price": "118.80",
+    "storage": "64 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 118.80",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 118.80",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 118.80",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 118.80",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-12-64-gb-schwarz-nano-sim-esim-gut",
+    "model": "Apple iPhone 12",
+    "image": "/assets/refurbished/bild-2.jpg",
+    "price": "126.00",
+    "storage": "64 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 126.00",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 126.00",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 126.00",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 126.00",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-12-pro-128-gb-blau-nano-sim-esim-gut",
+    "model": "Apple iPhone 12 Pro",
+    "image": "/assets/refurbished/bild-3.jpg",
+    "price": "297.90",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 297.90",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 297.90",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 297.90",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 297.90",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-12-pro-max-128-gb-silber-nano-sim-esim-gut",
+    "model": "Apple iPhone 12 Pro Max",
+    "image": "/assets/refurbished/bild-4.jpg",
+    "price": "259.20",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Silber",
+        "priceText": "CHF 259.20",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Silver",
+        "priceText": "CHF 259.20",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Argent",
+        "priceText": "CHF 259.20",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Argento",
+        "priceText": "CHF 259.20",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-12-mini-256-gb-blau-nano-sim-esim-gut",
+    "model": "Apple iPhone 12 mini",
+    "image": "/assets/refurbished/bild-1.jpg",
+    "price": "135.00",
+    "storage": "256 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 135.00",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 135.00",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 135.00",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 135.00",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-12-mini-64-gb-weiss-nano-sim-esim-gut",
+    "model": "Apple iPhone 12 mini",
+    "image": "/assets/refurbished/bild-1.jpg",
+    "price": "126.00",
+    "storage": "64 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Weiss",
+        "priceText": "CHF 126.00",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "White",
+        "priceText": "CHF 126.00",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Blanc",
+        "priceText": "CHF 126.00",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Bianco",
+        "priceText": "CHF 126.00",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-12-mini-256-gb-weiss-nano-sim-esim-gut",
+    "model": "Apple iPhone 12 mini",
+    "image": "/assets/refurbished/bild-1.jpg",
+    "price": "146.70",
+    "storage": "256 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Weiss",
+        "priceText": "CHF 146.70",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "White",
+        "priceText": "CHF 146.70",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Blanc",
+        "priceText": "CHF 146.70",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Bianco",
+        "priceText": "CHF 146.70",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-13-mini-256-gb-grun-nano-sim-esim-gut",
+    "model": "Apple iPhone 13 mini",
+    "image": "/assets/refurbished/bild-5.jpg",
+    "price": "192.60",
+    "storage": "256 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Grün",
+        "priceText": "CHF 192.60",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Green",
+        "priceText": "CHF 192.60",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Vert",
+        "priceText": "CHF 192.60",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Verde",
+        "priceText": "CHF 192.60",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-13-128-gb-schwarz-nano-sim-esim-gut",
+    "model": "Apple iPhone 13",
+    "image": "/assets/refurbished/bild-6.jpg",
+    "price": "270.00",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 270.00",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 270.00",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 270.00",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 270.00",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-13-pro-128-gb-graphit-nano-sim-esim-gut",
+    "model": "Apple iPhone 13 Pro",
+    "image": "/assets/refurbished/bild-7.jpg",
+    "price": "278.10",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Graphit",
+        "priceText": "CHF 278.10",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Graphite",
+        "priceText": "CHF 278.10",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Graphite",
+        "priceText": "CHF 278.10",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Grafite",
+        "priceText": "CHF 278.10",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-13-pro-max-128-gb-graphit-nano-sim-esim-gut",
+    "model": "Apple iPhone 13 Pro Max",
+    "image": "/assets/refurbished/bild-8.jpg",
+    "price": "353.70",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Graphit",
+        "priceText": "CHF 353.70",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Graphite",
+        "priceText": "CHF 353.70",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Graphite",
+        "priceText": "CHF 353.70",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Grafite",
+        "priceText": "CHF 353.70",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-13-mini-128-gb-rot-nano-sim-esim-gut",
+    "model": "Apple iPhone 13 mini",
+    "image": "/assets/refurbished/bild-5.jpg",
+    "price": "294.30",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Rot",
+        "priceText": "CHF 294.30",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Rot",
+        "priceText": "CHF 294.30",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Rot",
+        "priceText": "CHF 294.30",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Rot",
+        "priceText": "CHF 294.30",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-14-128-gb-mitternacht-esim-gut",
+    "model": "Apple iPhone 14",
+    "image": "/assets/refurbished/bild-9.jpg",
+    "price": "215.10",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Mitternacht",
+        "priceText": "CHF 215.10",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Mitternacht",
+        "priceText": "CHF 215.10",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Mitternacht",
+        "priceText": "CHF 215.10",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Mitternacht",
+        "priceText": "CHF 215.10",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-14-plus-128-gb-schwarz-esim-gut",
+    "model": "Apple iPhone 14 Plus",
+    "image": "/assets/refurbished/bild-10.jpg",
+    "price": "261.00",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 261.00",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 261.00",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 261.00",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 261.00",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-14-pro-128-gb-schwarz-esim-gut",
+    "model": "Apple iPhone 14 Pro",
+    "image": "/assets/refurbished/bild-11.jpg",
+    "price": "368.10",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 368.10",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 368.10",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 368.10",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 368.10",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-14-128-gb-lila-esim-gut",
+    "model": "Apple iPhone 14",
+    "image": "/assets/refurbished/bild-9.jpg",
+    "price": "276.30",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 276.30",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 276.30",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 276.30",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 276.30",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-14-256-gb-lila-esim-gut",
+    "model": "Apple iPhone 14",
+    "image": "/assets/refurbished/bild-9.jpg",
+    "price": "266.40",
+    "storage": "256 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 266.40",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 266.40",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 266.40",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Lila",
+        "priceText": "CHF 266.40",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-15-128-gb-blau-esim-gut",
+    "model": "Apple iPhone 15",
+    "image": "/assets/refurbished/bild-13.jpg",
+    "price": "319.50",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 319.50",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 319.50",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 319.50",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 319.50",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-15-plus-variante-in-abklarung-gut",
+    "model": "Apple iPhone 15 Plus",
+    "image": "/assets/refurbished/bild-14.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-15-pro-128-gb-blau-esim-gut",
+    "model": "Apple iPhone 15 Pro",
+    "image": "/assets/refurbished/bild-15.jpg",
+    "price": "444.60",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 444.60",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 444.60",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 444.60",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 444.60",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-15-pro-max-256-gb-blau-esim-gut",
+    "model": "Apple iPhone 15 Pro Max",
+    "image": "/assets/refurbished/bild-16.jpg",
+    "price": "538.20",
+    "storage": "256 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 538.20",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 538.20",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 538.20",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 538.20",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-15-128-gb-pink-nano-sim-esim-gut",
+    "model": "Apple iPhone 15",
+    "image": "/assets/refurbished/bild-13.jpg",
+    "price": "353.70",
+    "storage": "128 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 353.70",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 353.70",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 353.70",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 353.70",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16e-128-gb-schwarz-esim-gut",
+    "model": "Apple iPhone 16e",
+    "image": "/assets/refurbished/bild-17.jpg",
+    "price": "310.50",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 310.50",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 310.50",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 310.50",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 310.50",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16-128-gb-pink-esim-gut",
+    "model": "Apple iPhone 16",
+    "image": "/assets/refurbished/bild-18.jpg",
+    "price": "485.10",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 485.10",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 485.10",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 485.10",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Pink",
+        "priceText": "CHF 485.10",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16-plus-variante-in-abklarung-gut",
+    "model": "Apple iPhone 16 Plus",
+    "image": "/assets/refurbished/bild-19.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16-pro-variante-in-abklarung-gut",
+    "model": "Apple iPhone 16 Pro",
+    "image": "/assets/refurbished/bild-20.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16-pro-max-256-gb-schwarz-esim-gut",
+    "model": "Apple iPhone 16 Pro Max",
+    "image": "/assets/refurbished/bild-21.jpg",
+    "price": "651.60",
+    "storage": "256 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 651.60",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 651.60",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 651.60",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 651.60",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16-pro-max-256-gb-weiss-esim-gut",
+    "model": "Apple iPhone 16 Pro Max",
+    "image": "/assets/refurbished/bild-21.jpg",
+    "price": "651.60",
+    "storage": "256 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Weiss",
+        "priceText": "CHF 651.60",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "White",
+        "priceText": "CHF 651.60",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Blanc",
+        "priceText": "CHF 651.60",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Bianco",
+        "priceText": "CHF 651.60",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16-pro-max-512-gb-schwarz-esim-gut",
+    "model": "Apple iPhone 16 Pro Max",
+    "image": "/assets/refurbished/bild-21.jpg",
+    "price": "672.30",
+    "storage": "512 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 672.30",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 672.30",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 672.30",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 672.30",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-16e-128-gb-weiss-esim-gut",
+    "model": "Apple iPhone 16e",
+    "image": "/assets/refurbished/bild-17.jpg",
+    "price": "313.20",
+    "storage": "128 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Weiss",
+        "priceText": "CHF 313.20",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "White",
+        "priceText": "CHF 313.20",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Blanc",
+        "priceText": "CHF 313.20",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Bianco",
+        "priceText": "CHF 313.20",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-17e-256-gb-schwarz-esim-gut",
+    "model": "Apple iPhone 17e",
+    "image": "/assets/refurbished/bild-22.jpg",
+    "price": "521.10",
+    "storage": "256 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 521.10",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 521.10",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 521.10",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 521.10",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-17-256-gb-schwarz-nano-sim-esim-gut",
+    "model": "Apple iPhone 17",
+    "image": "/assets/refurbished/bild-23.jpg",
+    "price": "694.80",
+    "storage": "256 GB",
+    "sim": "Nano-SIM + eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 694.80",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 694.80",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 694.80",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 694.80",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-air-256-gb-schwarz-esim-gut",
+    "model": "Apple iPhone Air",
+    "image": "/assets/refurbished/bild-24.jpg",
+    "price": "548.10",
+    "storage": "256 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 548.10",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 548.10",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 548.10",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 548.10",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-17-pro-variante-in-abklarung-gut",
+    "model": "Apple iPhone 17 Pro",
+    "image": "/assets/refurbished/bild-25.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-air-512-gb-blau-esim-gut",
+    "model": "Apple iPhone Air",
+    "image": "/assets/refurbished/bild-24.jpg",
+    "price": "694.80",
+    "storage": "512 GB",
+    "sim": "eSIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Blau",
+        "priceText": "CHF 694.80",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Blue",
+        "priceText": "CHF 694.80",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Bleu",
+        "priceText": "CHF 694.80",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Blu",
+        "priceText": "CHF 694.80",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-17e-256-gb-schwarz-dual-sim-gut",
+    "model": "Apple iPhone 17e",
+    "image": "/assets/refurbished/bild-22.jpg",
+    "price": "532.80",
+    "storage": "256 GB",
+    "sim": "Dual SIM",
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": null,
+        "color": "Schwarz",
+        "priceText": "CHF 532.80",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": null,
+        "color": "Black",
+        "priceText": "CHF 532.80",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": null,
+        "color": "Noir",
+        "priceText": "CHF 532.80",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": null,
+        "color": "Nero",
+        "priceText": "CHF 532.80",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-18-pro-variante-in-abklarung-gut",
+    "model": "Apple iPhone 18 Pro",
+    "image": "/assets/refurbished/bild-27.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-18-pro-max-variante-in-abklarung-gut",
+    "model": "Apple iPhone 18 Pro Max",
+    "image": "/assets/refurbished/bild-28.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  },
+  {
+    "id": "apple-iphone-duo-variante-in-abklarung-gut",
+    "model": "Apple iPhone Duo",
+    "image": "/assets/refurbished/bild-29.jpg",
+    "price": null,
+    "storage": null,
+    "sim": null,
+    "language": {
+      "de": {
+        "illustration": "Symbolbild",
+        "variant": "Variante in Abklärung",
+        "color": null,
+        "priceText": "Preis in Abklärung",
+        "condition": "Gut",
+        "battery": "Mindestens 85 %",
+        "warranty": "12 Monate Mujitech-Garantie",
+        "button": "Produkt ansehen"
+      },
+      "en": {
+        "illustration": "Illustrative image",
+        "variant": "Variant to be confirmed",
+        "color": null,
+        "priceText": "Price on request",
+        "condition": "Good",
+        "battery": "At least 85 %",
+        "warranty": "12-month Mujitech warranty",
+        "button": "View product"
+      },
+      "fr": {
+        "illustration": "Image indicative",
+        "variant": "Variante à confirmer",
+        "color": null,
+        "priceText": "Prix sur demande",
+        "condition": "Bon",
+        "battery": "Au moins 85 %",
+        "warranty": "Garantie Mujitech de 12 mois",
+        "button": "Voir le produit"
+      },
+      "it": {
+        "illustration": "Immagine indicativa",
+        "variant": "Variante da confermare",
+        "color": null,
+        "priceText": "Prezzo su richiesta",
+        "condition": "Buone",
+        "battery": "Almeno 85 %",
+        "warranty": "Garanzia Mujitech di 12 mesi",
+        "button": "Vedi prodotto"
+      }
+    }
+  }
+]
