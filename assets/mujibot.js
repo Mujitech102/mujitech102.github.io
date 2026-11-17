@@ -232,7 +232,8 @@
           const price=card?.querySelector('strong')?.textContent.trim();
           if(!name||!price){add(catalogue.missing,false,'pcwarranty',true);return;}
           const info=card.querySelector('.copy > p')?.textContent.trim()||'';
-          add([catalogue.item+' '+sku,name,info,price,catalogue.terms].filter(Boolean).join(' · '),false,'pcwarranty',true);
+          const warranty=card.querySelector('.pc-warranty')?.textContent?.trim();
+          add([catalogue.item+' '+sku,name,info,price,warranty,catalogue.terms].filter(Boolean).join(' · '),false,'pcwarranty',true);
         }).catch(()=>add(catalogue.error,false,'pcwarranty',true));
         return;
       }
