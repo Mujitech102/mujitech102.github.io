@@ -34,3 +34,23 @@
  }
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();
+
+/* Bring the service assistant to catalogue pages with their shared shop script. */
+(() => {
+ if(document.querySelector('script[src*="/assets/enhancements.js"],script[src^="assets/enhancements.js"],script[src^="../assets/enhancements.js"]'))return;
+ if(!document.querySelector('.refurb-catalog'))return;
+ const stylesheet=document.createElement('link');
+ stylesheet.rel='stylesheet';
+ stylesheet.href='/assets/mujibot.css?v=20261015-quality-19';
+ document.head.append(stylesheet);
+ const load=src=>new Promise(resolve=>{
+  const script=document.createElement('script');
+  script.src=src;
+  script.onload=script.onerror=resolve;
+  document.head.append(script);
+ });
+ load('/assets/repair-prices-data.js?v=20261023-usability-1')
+  .then(()=>load('/assets/repair-prices.js?v=20261023-usability-1'))
+  .then(()=>load('/assets/repair-guides.js?v=20261015-quality-19'))
+  .then(()=>load('/assets/mujibot.js?v=20261117-catalogue'));
+})();
