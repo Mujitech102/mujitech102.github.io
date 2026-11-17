@@ -52,5 +52,5 @@
  load('/assets/repair-prices-data.js?v=20261023-usability-1')
   .then(()=>load('/assets/repair-prices.js?v=20261023-usability-1'))
   .then(()=>load('/assets/repair-guides.js?v=20261015-quality-19'))
-  .then(()=>load('/assets/mujibot.js?v=20261117-catalogue'));
+  .then(()=>load('/assets/mujibot.js?v=20261117-catalogue-2'));
 })();
