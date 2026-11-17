@@ -222,7 +222,7 @@
     const reply = (topic, question) => {
       add(question,true);
       if(topic==='pcitem'){
-        const sku=question.match(/\\b560\\d{2}\\b/)[0];
+        const sku=question.match(/\b560\d{2}\b/)?.[0];
         const target=base+'gaming-pcs.html';
         const localCards=document.querySelector('.refurb-catalog article.shop-product');
         const page=location.pathname===target&&localCards?Promise.resolve(document):fetch(target).then(response=>{if(!response.ok)throw Error('Catalogue');return response.text();}).then(html=>new DOMParser().parseFromString(html,'text/html'));
