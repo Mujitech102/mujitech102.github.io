@@ -64,7 +64,7 @@ node _maintenance/test_measurement.js
 
 The approved public price allowlist is `approved-repair-prices.json`. Only those model/quality pairs may have fixed prices, in CHF 5 increments. The historic competitor-only imports in `price-provenance-2026-10-15.json` must not be restored: they do not establish purchase cost coverage. Internal supplier cost evidence stays outside this public repository. Unconfirmed pairs remain on request. No third-party repair-duration or warranty promise is imported.
 
-`content_20261015.py` contains reviewed German, English, French and Italian service terms. The standard diagnosis is free. A standard written insurance report costs CHF 49; complex additional investigations require a prior quotation and approval. The customer pays outbound shipping; Mujitech pays return delivery after repair. Gaming PCs have 36 months of hardware warranty; the existing iPhone offers and 6-month repair warranty remain separate.
+`content_20261015.py` contains reviewed German, English, French and Italian service terms. The standard diagnosis is free. A standard written insurance report costs CHF 49; complex additional investigations require a prior quotation and approval. The customer pays outbound shipping; Mujitech pays return delivery after repair. New gaming PCs have 24 months of hardware warranty; the existing iPhone offers and 6-month repair warranty remain separate.
 
 Manufacturer price pages and the static price sections are generated from the same price book used by the picker and MujiBot. The sitemap is rebuilt from all canonical, indexable HTML files, including newer product and guide pages.
 

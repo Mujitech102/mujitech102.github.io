@@ -109,10 +109,13 @@ expected={(r[0],r[1]):r[2] for r in approved['rows']}
 for key,price in lookup.items():
  if price!=expected.get(key):errors.append('Unapproved price: '+str(key))
  if price is not None and (price<=0 or abs(price*100-round(price*100))>0.00001):errors.append('Invalid CHF cent rounding: '+str(key))
-# Warranty promise changes apply to PCs, not the separate 24-month iPhone offers.
+# New gaming PCs carry a 24-month hardware warranty. iPhone offers are checked separately.
 for p in files:
  s=p.read_text()
- if p.name.startswith('gaming-pc') and re.search(r'24 (?:Monate|months|mois|mesi)|24-month',s):errors.append(f'{p.name}: old PC warranty')
+ if p.name=='gaming-pcs.html':
+  current_warranty=re.search(r'24 (?:Monate|months|mois|mesi)|24-month',s)
+  old_warranty=re.search(r'36 (?:Monate|months|mois|mesi)|36-month',s)
+  if not current_warranty or old_warranty:errors.append(f'{p.relative_to(ROOT)}: incorrect gaming PC warranty')
  if p.name=='iphone-17-pro-max.html' and '36' in re.sub(r'<script.*?</script>','',s,flags=re.S):
   # Numbers can occur in vector paths; only reject actual warranty copy.
   if re.search(r'36 (?:Monate|months|mois|mesi)|36-month',s):errors.append('iPhone warranty incorrectly changed')
