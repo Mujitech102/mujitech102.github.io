@@ -9,6 +9,14 @@
  it:{contact:'Contatti',close:'Chiudi'}}
  const t=translations[lang]||translations.en;
  function ready(){
+  const smartphones=lang==='it'?'Smartphone':'Smartphones';
+  for(const menu of document.querySelectorAll('.muji-shop-menu, .gaming-category-nav')){
+   for(const link of menu.querySelectorAll('a')){
+    const route=new URL(link.href,location.href).pathname;
+    if(/\/iphones\.html$/.test(route))link.remove();
+    if(/\/refurbished\.html$/.test(route))link.textContent=smartphones;
+   }
+  }
   const toggle=document.querySelector('.muji-menu-toggle'),nav=document.querySelector('.muji-site-nav');
   const closeNav=()=>{nav?.classList.remove('muji-nav-open');toggle?.setAttribute('aria-expanded','false');document.querySelectorAll('.muji-shop-menu[open]').forEach(menu=>menu.open=false);};
   toggle?.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';nav.classList.toggle('muji-nav-open',open);toggle.setAttribute('aria-expanded',String(open));});
