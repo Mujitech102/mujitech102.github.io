@@ -876,7 +876,7 @@ function renderRefurbishedSpecs(container, model) {
   const dimensions = values => values.map(decimal).join(' × ') + ' mm';
   const displays = specs.displays.map(([inches, width, height], index) => [
     specs.displays.length === 1 ? display : [inner, outer][index],
-    [decimal(inches) + '″ · Super Retina XDR OLED', width + ' × ' + height + ' px', specs.proMotion && index === 0 ? 'ProMotion · ' + refresh : ''].filter(Boolean).join(' · ')
+    [decimal(inches) + '″ · Super Retina XDR OLED', width + ' × ' + height + ' px', specs.proMotion ? 'ProMotion · ' + refresh : ''].filter(Boolean).join(' · ')
   ]);
   const rearCameras = [
     specs.main + ' MP ' + main,
