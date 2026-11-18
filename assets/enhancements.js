@@ -30,7 +30,7 @@
       const group=document.createElement('div');group.className='dropdown shop-dropdown';
       const button=document.createElement('button');button.className='dropbtn';button.type='button';button.textContent=copy[0]+' ▾';button.setAttribute('aria-expanded','false');
       const menu=document.createElement('div');menu.className='menu';
-      const targets=[[base.pathname,copy[1]],[base.pathname.replace('shop.html','iphones.html'),'iPhones'],[base.pathname.replace('shop.html','gaming-pcs.html'),copy[2]]];
+      const targets=[[base.pathname,copy[1]],[base.pathname.replace('shop.html','refurbished.html'),lang==='it'?'Smartphone':'Smartphones'],[base.pathname.replace('shop.html','gaming-pcs.html'),copy[2]],[base.pathname.replace('shop.html','software.html'),lang==='fr'?'Logiciels':'Software']];
       targets.forEach(([href,label])=>{const a=document.createElement('a');a.href=href;a.textContent=label;menu.append(a);});
       group.append(button,menu);link.replaceWith(group);
       button.addEventListener('click',event=>{event.stopImmediatePropagation();const open=!group.classList.contains('open');document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));group.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));});
@@ -142,7 +142,7 @@
   if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261117-iphone-1';document.head.append(style);}
   const load=src=>new Promise((resolve,reject)=>{if(document.querySelector('script[src*="'+src.split('?')[0]+'"]')){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.append(script);});
   const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261023-usability-1');
-  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261023-usability-1')).catch(()=>{}).then(()=>{document.dispatchEvent(new Event('mujitech-prices-ready'));return load('/assets/repair-guides.js?v=20261015-quality-19');}).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261117-software-1')).catch(()=>{});
+  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261023-usability-1')).catch(()=>{}).then(()=>{document.dispatchEvent(new Event('mujitech-prices-ready'));return load('/assets/repair-guides.js?v=20261015-quality-19');}).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261118-hours-nav')).catch(()=>{});
 })();
 
 /* Keep only the site's main header fixed; never MujiBot's header. */

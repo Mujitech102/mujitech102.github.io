@@ -13,7 +13,7 @@
   for(const menu of document.querySelectorAll('.muji-shop-menu:not(.muji-repair-menu), .gaming-category-nav')){
    for(const link of menu.querySelectorAll('a')){
     const route=new URL(link.href,location.href).pathname;
-    if(!/\/(refurbished|gaming-pcs|software)\.html$/.test(route))link.remove();
+    if(!/\/(shop|geraet-verkaufen|refurbished|gaming-pcs|software)\.html$/.test(route))link.remove();
     if(/\/refurbished\.html$/.test(route))link.textContent=smartphones;
    }
    const destination=menu.matches('.gaming-category-nav')?menu:menu.querySelector('summary + div');
@@ -59,5 +59,5 @@
  load('/assets/repair-prices-data.js?v=20261023-usability-1')
   .then(()=>load('/assets/repair-prices.js?v=20261023-usability-1'))
   .then(()=>load('/assets/repair-guides.js?v=20261015-quality-19'))
-  .then(()=>load('/assets/mujibot.js?v=20261117-software-1'));
+  .then(()=>load('/assets/mujibot.js?v=20261118-hours-nav'));
 })();
