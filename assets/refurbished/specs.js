@@ -861,10 +861,10 @@ function renderRefurbishedSpecs(container, model) {
   }
   const lang = document.documentElement.lang.slice(0, 2);
   const labels = {
-    de: ['Technische Daten des Modells','Herstellerangaben zum Modell. Die SIM-Angabe im Produktblock gilt für die angebotene Variante. Bei «Dual SIM» bestätigen wir die genaue Kombination auf Anfrage.','Display','Innendisplay','Aussendisplay','Leistung','Chip','Kameras','Vorne','Hinten','Hauptkamera','Ultraweitwinkel','Teleobjektiv','Verbindung','Mobilfunk','Anschluss und Laden','Anschluss','Kabellos','Entsperrung','Abmessungen und Gewicht','H × B × T','Gefaltet','Gewicht','bis 120 Hz'],
-    en: ['Model specifications','Manufacturer specifications for this model. The SIM information in the product summary describes the offered variant. For “Dual SIM”, please ask us to confirm the exact configuration.','Display','Inner display','Outer display','Performance','Chip','Cameras','Front','Rear','main','ultra wide','telephoto','Connectivity','Cellular','Port and charging','Port','Wireless','Unlocking','Size and weight','H × W × D','Folded','Weight','up to 120 Hz'],
-    fr: ['Fiche technique du modèle','Caractéristiques du modèle selon le fabricant. Les informations SIM du récapitulatif concernent la variante proposée. Pour « Dual SIM », nous confirmons la configuration exacte sur demande.','Écran','Écran intérieur','Écran extérieur','Performances','Puce','Appareils photo','Avant','Arrière','principal','ultra grand-angle','téléobjectif','Connectivité','Réseau mobile','Connecteur et recharge','Connecteur','Sans fil','Déverrouillage','Dimensions et poids','H × L × P','Plié','Poids','jusqu’à 120 Hz'],
-    it: ['Specifiche tecniche del modello','Caratteristiche del modello dichiarate dal produttore. Le informazioni SIM nel riepilogo riguardano la variante offerta. Per «Dual SIM» confermiamo su richiesta la configurazione esatta.','Display','Display interno','Display esterno','Prestazioni','Chip','Fotocamere','Anteriore','Posteriore','principale','ultra‑grandangolo','teleobiettivo','Connettività','Rete mobile','Connettore e ricarica','Connettore','Senza cavo','Sblocco','Dimensioni e peso','A × L × P','Chiuso','Peso','fino a 120 Hz']
+    de: ['Technische Daten des Modells','Herstellerangaben zum Modell. Die SIM-Angabe im Produktblock gilt für die angebotene Variante. Bei «Dual SIM» bestätigen wir die genaue Kombination auf Anfrage.','Display','Innendisplay','Aussendisplay','Leistung','Chip','Kameras','Vorne','Hinten','Hauptkamera','Ultraweit','Teleobjektiv','Verbindung','Mobilfunk','Anschluss und Laden','Anschluss','Kabellos','Entsperrung','Abmessungen und Gewicht','H × B × T','Gefaltet','Gewicht','bis 120 Hz'],
+    en: ['Model specifications','Manufacturer specifications for this model. The SIM information in the product summary describes the offered variant. For “Dual SIM”, please ask us to confirm the exact configuration.','Display','Inner display','Outer display','Performance','Chip','Cameras','Front','Rear','Main camera','Ultra wide','Telephoto','Connectivity','Cellular','Port and charging','Port','Wireless','Unlocking','Size and weight','H × W × D','Folded','Weight','up to 120 Hz'],
+    fr: ['Fiche technique du modèle','Caractéristiques du modèle selon le fabricant. Les informations SIM du récapitulatif concernent la variante proposée. Pour « Dual SIM », nous confirmons la configuration exacte sur demande.','Écran','Écran intérieur','Écran extérieur','Performances','Puce','Appareils photo','Avant','Arrière','Principal','Ultra grand-angle','Téléobjectif','Connectivité','Réseau mobile','Connecteur et recharge','Connecteur','Sans fil','Déverrouillage','Dimensions et poids','H × L × P','Plié','Poids','jusqu’à 120 Hz'],
+    it: ['Specifiche tecniche del modello','Caratteristiche del modello dichiarate dal produttore. Le informazioni SIM nel riepilogo riguardano la variante offerta. Per «Dual SIM» confermiamo su richiesta la configurazione esatta.','Display','Display interno','Display esterno','Prestazioni','Chip','Fotocamere','Anteriore','Posteriore','Principale','Ultra-grandangolo','Teleobiettivo','Connettività','Rete mobile','Connettore e ricarica','Connettore','Senza cavo','Sblocco','Dimensioni e peso','A × L × P','Chiuso','Peso','fino a 120 Hz']
   };
   const [heading,note,display,inner,outer,performance,chip,cameras,front,rear,main,ultra,tele,connectivity,mobile,charging,port,wireless,unlock,body,size,folded,weight,refresh] = labels[lang];
   const node = (tag, text) => {
@@ -873,33 +873,63 @@ function renderRefurbishedSpecs(container, model) {
     return item;
   };
   const decimal = value => lang === 'fr' || lang === 'it' ? value.replace('.', ',') : value;
-  const dimensions = values => values.map(decimal).join(' × ') + ' mm';
+  const nbsp = '\u00a0';
+  const units = (value, unit) => value + nbsp + unit;
+  const measure = value => {
+    const item = node('span', value);
+    item.className = 'spec-measurement';
+    return item;
+  };
+  const dimensions = values => {
+    const [first, second, last] = values.map(decimal);
+    const item = node('span');
+    item.append(first + ' × ' + second + ' × ', measure(units(last, 'mm')));
+    return item;
+  };
   const displays = specs.displays.map(([inches, width, height], index) => [
     specs.displays.length === 1 ? display : [inner, outer][index],
-    [decimal(inches) + '″ · Super Retina XDR OLED', width + ' × ' + height + ' px', specs.proMotion ? 'ProMotion · ' + refresh : ''].filter(Boolean).join(' · ')
+    [
+      node('span', decimal(inches) + '″ · Super Retina XDR OLED'),
+      measure(units(width + ' × ' + height, 'px')),
+      ...(specs.proMotion ? [node('span', 'ProMotion · ' + refresh.replace(' Hz', nbsp + 'Hz'))] : [])
+    ]
   ]);
-  const rearCameras = [
-    specs.main + ' MP ' + main,
-    specs.ultra ? specs.ultra + ' MP ' + ultra : '',
-    specs.tele ? specs.tele + ' MP ' + tele + (specs.zoom ? ' (' + specs.zoom + '×)' : '') : ''
-  ].filter(Boolean).join(' · ');
+  const cameraRows = [
+    [front, specs.front.replace(' MP', nbsp + 'MP')],
+    [main, units(specs.main, 'MP')],
+    ...(specs.ultra ? [[ultra, units(specs.ultra, 'MP')]] : []),
+    ...(specs.tele ? [[tele, units(specs.tele, 'MP') + (specs.zoom ? ' (' + specs.zoom + '×)' : '')]] : [])
+  ];
   const sections = [
-    [display, displays],
-    [performance, [[chip, specs.chip]]],
-    [cameras, [[front, specs.front], [rear, rearCameras]]],
-    [connectivity, [[mobile, '5G'], ['Wi‑Fi', specs.wifi], ['Bluetooth', specs.bluetooth]]],
-    [charging, [[port, specs.port], [wireless, specs.wireless.join(' · ')]]],
-    [unlock, [[unlock, specs.unlock]]],
-    [body, [[size, dimensions(specs.dimensions)], ...(specs.folded ? [[folded, dimensions(specs.folded)]] : []), [weight, specs.weight + ' g']]]
+    [
+      [display, displays],
+      [cameras, cameraRows],
+      [connectivity, [[mobile, '5G'], ['Wi‑Fi', specs.wifi], ['Bluetooth', specs.bluetooth]]]
+    ],
+    [
+      [performance, [[chip, specs.chip]]],
+      [charging, [[port, specs.port], [wireless, specs.wireless.join(' · ')]]],
+      [unlock, [[unlock, specs.unlock]]],
+      [body, [[size, dimensions(specs.dimensions)], ...(specs.folded ? [[folded, dimensions(specs.folded)]] : []), [weight, units(specs.weight, 'g')]]]
+    ]
   ];
   const grid = node('div');
   grid.className = 'model-specs';
-  for (const [title, rows] of sections) {
-    const section = node('section');
-    const list = node('dl');
-    for (const [label, value] of rows) list.append(node('dt', label), node('dd', value));
-    section.append(node('h4', title), list);
-    grid.append(section);
+  for (const column of sections) {
+    const stack = node('div');
+    stack.className = 'model-specs-column';
+    for (const [title, rows] of column) {
+      const section = node('section');
+      const list = node('dl');
+      for (const [label, value] of rows) {
+        const item = node('dd');
+        item.append(...(Array.isArray(value) ? value : [value]));
+        list.append(node('dt', label), item);
+      }
+      section.append(node('h4', title), list);
+      stack.append(section);
+    }
+    grid.append(stack);
   }
   container.replaceChildren(node('h3', heading), node('p', note), grid);
 }
