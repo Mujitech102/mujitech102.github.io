@@ -1,50 +1,50 @@
 {
-  "rule": "All repair combinations are available on request; no public fixed repair prices.",
+  "rule": "User-authorized Mujitech recommendations from the current native Numbers source, matched to existing exact model and repair/quality keys on 19 November 2026. Unmatched combinations remain on request.",
   "rows": [
     [
       "Google Pixel 10 Pro XL",
       "Display",
-      null
+      285.0
     ],
     [
       "Google Pixel 10 Pro XL",
       "Rückseite (Backcover)",
-      null
+      210.0
     ],
     [
       "Google Pixel 10 Pro XL",
       "Akku",
-      null
+      140.0
     ],
     [
       "Google Pixel 10 Pro",
       "Display",
-      null
+      225.0
     ],
     [
       "Google Pixel 10 Pro",
       "Rückseite (Backcover)",
-      null
+      210.0
     ],
     [
       "Google Pixel 10 Pro",
       "Akku",
-      null
+      140.0
     ],
     [
       "Google Pixel 10",
       "Display",
-      null
+      220.0
     ],
     [
       "Google Pixel 10",
       "Rückseite (Backcover)",
-      null
+      195.0
     ],
     [
       "Google Pixel 10",
       "Akku",
-      null
+      140.0
     ],
     [
       "Google Pixel 9 Pro Fold",
@@ -54,87 +54,87 @@
     [
       "Google Pixel 9 Pro Fold",
       "Sub-Display (aussen)",
-      null
+      205.0
     ],
     [
       "Google Pixel 9 Pro Fold",
       "Rückseite",
-      null
+      175.0
     ],
     [
       "Google Pixel 9 Pro Fold",
       "Akku (beide)",
-      null
+      215.0
     ],
     [
       "Google Pixel 9 Pro XL",
       "Display",
-      null
+      320.0
     ],
     [
       "Google Pixel 9 Pro XL",
       "Rückseite (Backcover)",
-      null
+      155.0
     ],
     [
       "Google Pixel 9 Pro XL",
       "Akku",
-      null
+      135.0
     ],
     [
       "Google Pixel 9 Pro",
       "Display",
-      null
+      180.0
     ],
     [
       "Google Pixel 9 Pro",
       "Rückseite (Backcover)",
-      null
+      155.0
     ],
     [
       "Google Pixel 9 Pro",
       "Akku",
-      null
+      135.0
     ],
     [
       "Google Pixel 9",
       "Display",
-      null
+      240.0
     ],
     [
       "Google Pixel 9",
       "Rückseite (Backcover)",
-      null
+      155.0
     ],
     [
       "Google Pixel 9",
       "Akku",
-      null
+      135.0
     ],
     [
       "Google Pixel 9A",
       "Display",
-      null
+      180.0
     ],
     [
       "Google Pixel 9A",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Google Pixel 9A",
       "Akku",
-      null
+      135.0
     ],
     [
       "Google Pixel 8 Pro",
       "Display Original, Service Pack",
-      null
+      310.0
     ],
     [
       "Google Pixel 8 Pro",
       "Display Premium",
-      null
+      165.0
     ],
     [
       "Google Pixel 8 Pro",
@@ -144,17 +144,17 @@
     [
       "Google Pixel 8 Pro",
       "Akku",
-      null
+      140.0
     ],
     [
       "Google Pixel 8",
       "Display Original, Service Pack",
-      null
+      220.0
     ],
     [
       "Google Pixel 8",
       "Display Premium",
-      null
+      150.0
     ],
     [
       "Google Pixel 8",
@@ -164,12 +164,12 @@
     [
       "Google Pixel 8",
       "Akku",
-      null
+      140.0
     ],
     [
       "Google Pixel 8A",
       "Display",
-      null
+      180.0
     ],
     [
       "Google Pixel 8A",
@@ -179,17 +179,17 @@
     [
       "Google Pixel 8A",
       "Akku",
-      null
+      130.0
     ],
     [
       "Google Pixel 7 Pro",
       "Display Original, Service Pack",
-      null
+      315.0
     ],
     [
       "Google Pixel 7 Pro",
       "Display Premium",
-      null
+      155.0
     ],
     [
       "Google Pixel 7 Pro",
@@ -199,12 +199,12 @@
     [
       "Google Pixel 7 Pro",
       "Akku",
-      null
+      150.0
     ],
     [
       "Google Pixel 7A",
       "Display",
-      null
+      175.0
     ],
     [
       "Google Pixel 7A",
@@ -214,17 +214,17 @@
     [
       "Google Pixel 7A",
       "Akku",
-      null
+      130.0
     ],
     [
       "Google Pixel 7",
       "Display Original, Service Pack",
-      null
+      200.0
     ],
     [
       "Google Pixel 7",
       "Display Premium",
-      null
+      140.0
     ],
     [
       "Google Pixel 7",
@@ -234,17 +234,17 @@
     [
       "Google Pixel 7",
       "Akku",
-      null
+      140.0
     ],
     [
       "Google Pixel 6 Pro",
       "Display Original, Service Pack",
-      null
+      265.0
     ],
     [
       "Google Pixel 6 Pro",
       "Display Premium",
-      null
+      140.0
     ],
     [
       "Google Pixel 6 Pro",
@@ -254,12 +254,12 @@
     [
       "Google Pixel 6 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Google Pixel 6A",
       "Display",
-      null
+      160.0
     ],
     [
       "Google Pixel 6A",
@@ -269,12 +269,12 @@
     [
       "Google Pixel 6A",
       "Akku",
-      null
+      125.0
     ],
     [
       "Google Pixel 6",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "Google Pixel 6",
@@ -284,12 +284,12 @@
     [
       "Google Pixel 6",
       "Akku",
-      null
+      125.0
     ],
     [
       "Google Pixel 5A 5G",
       "Display",
-      null
+      145.0
     ],
     [
       "Google Pixel 5A 5G",
@@ -299,7 +299,7 @@
     [
       "Google Pixel 5A 5G",
       "Akku",
-      null
+      115.0
     ],
     [
       "Google Pixel 5A 5G",
@@ -309,12 +309,12 @@
     [
       "Google Pixel 5",
       "Display Original, Service Pack",
-      null
+      245.0
     ],
     [
       "Google Pixel 5",
       "Display Premium",
-      null
+      195.0
     ],
     [
       "Google Pixel 5",
@@ -324,7 +324,7 @@
     [
       "Google Pixel 5",
       "Akku",
-      null
+      130.0
     ],
     [
       "Google Pixel 5",
@@ -334,7 +334,7 @@
     [
       "Google Pixel 4A 5G",
       "Display",
-      null
+      130.0
     ],
     [
       "Google Pixel 4A 5G",
@@ -344,7 +344,7 @@
     [
       "Google Pixel 4A 5G",
       "Akku",
-      null
+      100.0
     ],
     [
       "Google Pixel 4A 5G",
@@ -354,7 +354,7 @@
     [
       "Google Pixel 4A",
       "Display",
-      null
+      130.0
     ],
     [
       "Google Pixel 4A",
@@ -364,7 +364,7 @@
     [
       "Google Pixel 4A",
       "Akku",
-      null
+      100.0
     ],
     [
       "Google Pixel 4A",
@@ -374,7 +374,7 @@
     [
       "Google Pixel 4 XL",
       "Display",
-      null
+      155.0
     ],
     [
       "Google Pixel 4 XL",
@@ -384,7 +384,7 @@
     [
       "Google Pixel 4 XL",
       "Akku",
-      null
+      105.0
     ],
     [
       "Google Pixel 4 XL",
@@ -394,7 +394,7 @@
     [
       "Google Pixel 4",
       "Display",
-      null
+      125.0
     ],
     [
       "Google Pixel 4",
@@ -404,7 +404,7 @@
     [
       "Google Pixel 4",
       "Akku",
-      null
+      100.0
     ],
     [
       "Google Pixel 4",
@@ -414,217 +414,217 @@
     [
       "iPhone 17 Pro Max",
       "Display Original, Service Pack",
-      null
+      475.0
     ],
     [
       "iPhone 17 Pro Max",
       "Display Original, Pulled",
-      null
+      425.0
     ],
     [
       "iPhone 17 Pro Max",
       "Display Premium",
-      null
+      315.0
     ],
     [
       "iPhone 17 Pro Max",
       "Rückglas Original, Service Pack",
-      null
+      240.0
     ],
     [
       "iPhone 17 Pro Max",
       "Rückglas Original, Pulled",
-      null
+      195.0
     ],
     [
       "iPhone 17 Pro Max",
       "Aluminium Gehäuse Original, Pulled",
-      null
+      500.0
     ],
     [
       "iPhone 17 Pro Max",
       "Akku Original, Service Pack",
-      null
+      160.0
     ],
     [
       "iPhone 17 Pro Max",
       "Hauptkamera",
-      null
+      165.0
     ],
     [
       "iPhone 17 Pro Max",
       "Kameralinse",
-      null
+      105.0
     ],
     [
       "iPhone 17 Pro Max",
       "Ladeanschluss",
-      null
+      190.0
     ],
     [
       "iPhone 17 Pro Max",
       "Mikrofon",
-      null
+      190.0
     ],
     [
       "iPhone 17 Pro Max",
       "Lautsprecher oben",
-      null
+      130.0
     ],
     [
       "iPhone 17 Pro Max",
       "Lautsprecher unten",
-      null
+      110.0
     ],
     [
       "iPhone 17 Pro",
       "Display Original, Service Pack",
-      null
+      520.0
     ],
     [
       "iPhone 17 Pro",
       "Display Original, Pulled",
-      null
+      400.0
     ],
     [
       "iPhone 17 Pro",
       "Display Premium",
-      null
+      290.0
     ],
     [
       "iPhone 17 Pro",
       "Rückglas Original, Service Pack",
-      null
+      240.0
     ],
     [
       "iPhone 17 Pro",
       "Rückglas Original, Pulled",
-      null
+      175.0
     ],
     [
       "iPhone 17 Pro",
       "Aluminium Gehäuse Original, Pulled",
-      null
+      420.0
     ],
     [
       "iPhone 17 Pro",
       "Akku Original, Service Pack",
-      null
+      170.0
     ],
     [
       "iPhone 17 Pro",
       "Hauptkamera",
-      null
+      165.0
     ],
     [
       "iPhone 17 Pro",
       "Kameralinse",
-      null
+      105.0
     ],
     [
       "iPhone 17 Pro",
       "Ladeanschluss",
-      null
+      190.0
     ],
     [
       "iPhone 17 Pro",
       "Mikrofon",
-      null
+      190.0
     ],
     [
       "iPhone 17 Pro",
       "Lautsprecher oben",
-      null
+      130.0
     ],
     [
       "iPhone 17 Pro",
       "Lautsprecher unten",
-      null
+      115.0
     ],
     [
       "iPhone 17 Air",
       "Display Original, Service Pack",
-      null
+      425.0
     ],
     [
       "iPhone 17 Air",
       "Display Original, Pulled",
-      null
+      400.0
     ],
     [
       "iPhone 17 Air",
       "Display Premium",
-      null
+      295.0
     ],
     [
       "iPhone 17 Air",
       "Rückglas Original, Service Pack",
-      null
+      240.0
     ],
     [
       "iPhone 17 Air",
       "Rückglas Original, Pulled",
-      null
+      240.0
     ],
     [
       "iPhone 17 Air",
       "Akku Original, Service Pack",
-      null
+      160.0
     ],
     [
       "iPhone 17 Air",
       "Hauptkamera",
-      null
+      170.0
     ],
     [
       "iPhone 17 Air",
       "Kameralinse",
-      null
+      100.0
     ],
     [
       "iPhone 17 Air",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "iPhone 17 Air",
       "Mikrofon",
-      null
+      150.0
     ],
     [
       "iPhone 17 Air",
       "Lautsprecher oben",
-      null
+      130.0
     ],
     [
       "iPhone 17",
       "Display Original, Service Pack",
-      null
+      425.0
     ],
     [
       "iPhone 17",
       "Display Original, Pulled",
-      null
+      315.0
     ],
     [
       "iPhone 17",
       "Display Premium",
-      null
+      210.0
     ],
     [
       "iPhone 17",
       "Rückglas Original, Service Pack",
-      null
+      240.0
     ],
     [
       "iPhone 17",
       "Rückglas Original, Pulled",
-      null
+      175.0
     ],
     [
       "iPhone 17",
       "Akku Original, Service Pack",
-      null
+      150.0
     ],
     [
       "iPhone 17",
@@ -634,57 +634,57 @@
     [
       "iPhone 17",
       "Hauptkamera",
-      null
+      165.0
     ],
     [
       "iPhone 17",
       "Kameralinse",
-      null
+      100.0
     ],
     [
       "iPhone 17",
       "Ladeanschluss",
-      null
+      185.0
     ],
     [
       "iPhone 17",
       "Mikrofon",
-      null
+      185.0
     ],
     [
       "iPhone 17",
       "Lautsprecher oben",
-      null
+      140.0
     ],
     [
       "iPhone 17",
       "Lautsprecher unten",
-      null
+      105.0
     ],
     [
       "iPhone 17e",
       "Display Original, Service Pack",
-      null
+      375.0
     ],
     [
       "iPhone 17e",
       "Display Original, Pulled",
-      null
+      265.0
     ],
     [
       "iPhone 17e",
       "Display Premium",
-      null
+      160.0
     ],
     [
       "iPhone 17e",
       "Rückglas Original, Pulled",
-      null
+      175.0
     ],
     [
       "iPhone 17e",
       "Akku Original, Service Pack",
-      null
+      150.0
     ],
     [
       "iPhone 17e",
@@ -694,7 +694,7 @@
     [
       "iPhone 17e",
       "Hauptkamera",
-      null
+      135.0
     ],
     [
       "iPhone 17e",
@@ -704,47 +704,47 @@
     [
       "iPhone 17e",
       "Ladeanschluss",
-      null
+      145.0
     ],
     [
       "iPhone 17e",
       "Mikrofon",
-      null
+      145.0
     ],
     [
       "iPhone 17e",
       "Lautsprecher oben",
-      null
+      130.0
     ],
     [
       "iPhone 17e",
       "Lautsprecher unten",
-      null
+      105.0
     ],
     [
       "iPhone 16",
       "Display Original, Service Pack",
-      null
+      385.0
     ],
     [
       "iPhone 16",
       "Display Original, Pulled",
-      null
+      240.0
     ],
     [
       "iPhone 16",
       "Display Premium",
-      null
+      160.0
     ],
     [
       "iPhone 16",
       "Rückglas Original, Pulled",
-      null
+      170.0
     ],
     [
       "iPhone 16",
       "Akku Original, Service Pack",
-      null
+      140.0
     ],
     [
       "iPhone 16",
@@ -754,902 +754,902 @@
     [
       "iPhone 16",
       "Hauptkamera",
-      null
+      135.0
     ],
     [
       "iPhone 16",
       "Ladeanschluss",
-      null
+      135.0
     ],
     [
       "iPhone 16",
       "Mikrofon",
-      null
+      135.0
     ],
     [
       "iPhone 16",
       "Lautsprecher oben",
-      null
+      125.0
     ],
     [
       "iPhone 16",
       "Lautsprecher unten",
-      null
+      100.0
     ],
     [
       "iPhone 15 Pro Max",
       "Display Original, Service Pack",
-      null
+      435.0
     ],
     [
       "iPhone 15 Pro Max",
       "Display Original, Pulled",
-      null
+      315.0
     ],
     [
       "iPhone 15 Pro Max",
       "Display Premium",
-      null
+      210.0
     ],
     [
       "iPhone 15 Pro Max",
       "Rückglas Original, Pulled",
-      null
+      195.0
     ],
     [
       "iPhone 15 Pro Max",
       "Akku Original, Service Pack",
-      null
+      140.0
     ],
     [
       "iPhone 15 Pro Max",
       "Akku Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone 15 Pro Max",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "iPhone 15 Pro Max",
       "Hauptkamera",
-      null
+      150.0
     ],
     [
       "iPhone 15 Pro Max",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone 15 Pro Max",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone 15 Pro Max",
       "Lautsprecher oben",
-      null
+      110.0
     ],
     [
       "iPhone 15 Pro Max",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 15 Pro",
       "Display Original, Service Pack",
-      null
+      395.0
     ],
     [
       "iPhone 15 Pro",
       "Display Original, Pulled",
-      null
+      310.0
     ],
     [
       "iPhone 15 Pro",
       "Display Premium",
-      null
+      205.0
     ],
     [
       "iPhone 15 Pro",
       "Rückglas Original, Pulled",
-      null
+      195.0
     ],
     [
       "iPhone 15 Pro",
       "Akku Original, Service Pack",
-      null
+      140.0
     ],
     [
       "iPhone 15 Pro",
       "Akku Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone 15 Pro",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "iPhone 15 Pro",
       "Hauptkamera",
-      null
+      145.0
     ],
     [
       "iPhone 15 Pro",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone 15 Pro",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone 15 Pro",
       "Lautsprecher oben",
-      null
+      110.0
     ],
     [
       "iPhone 15 Pro",
       "Lautsprecher unten",
-      null
+      90.0
     ],
     [
       "iPhone 15 Plus",
       "Display Original, Service Pack",
-      null
+      485.0
     ],
     [
       "iPhone 15 Plus",
       "Display Original, Pulled",
-      null
+      280.0
     ],
     [
       "iPhone 15 Plus",
       "Display Premium",
-      null
+      175.0
     ],
     [
       "iPhone 15 Plus",
       "Rückglas Original, Pulled",
-      null
+      160.0
     ],
     [
       "iPhone 15 Plus",
       "Akku Original, Service Pack",
-      null
+      140.0
     ],
     [
       "iPhone 15 Plus",
       "Akku Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone 15 Plus",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "iPhone 15 Plus",
       "Hauptkamera",
-      null
+      120.0
     ],
     [
       "iPhone 15 Plus",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone 15 Plus",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone 15 Plus",
       "Lautsprecher oben",
-      null
+      115.0
     ],
     [
       "iPhone 15 Plus",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 15",
       "Display Original, Service Pack",
-      null
+      360.0
     ],
     [
       "iPhone 15",
       "Display Original, Pulled",
-      null
+      235.0
     ],
     [
       "iPhone 15",
       "Display Premium",
-      null
+      175.0
     ],
     [
       "iPhone 15",
       "Rückglas Original, Pulled",
-      null
+      165.0
     ],
     [
       "iPhone 15",
       "Akku Original, Service Pack",
-      null
+      140.0
     ],
     [
       "iPhone 15",
       "Akku Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone 15",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "iPhone 15",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 15",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone 15",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone 15",
       "Lautsprecher oben",
-      null
+      115.0
     ],
     [
       "iPhone 15",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 14 Pro Max",
       "Display Original, Pulled",
-      null
+      265.0
     ],
     [
       "iPhone 14 Pro Max",
       "Display Premium",
-      null
+      160.0
     ],
     [
       "iPhone 14 Pro Max",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      225.0
     ],
     [
       "iPhone 14 Pro Max",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 14 Pro Max",
       "Akku Original, Pulled",
-      null
+      105.0
     ],
     [
       "iPhone 14 Pro Max",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "iPhone 14 Pro Max",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "iPhone 14 Pro Max",
       "Ladeanschluss",
-      null
+      120.0
     ],
     [
       "iPhone 14 Pro Max",
       "Mikrofon",
-      null
+      120.0
     ],
     [
       "iPhone 14 Pro Max",
       "Lautsprecher oben",
-      null
+      110.0
     ],
     [
       "iPhone 14 Pro Max",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 14 Pro",
       "Display Original, Pulled",
-      null
+      230.0
     ],
     [
       "iPhone 14 Pro",
       "Display Premium",
-      null
+      160.0
     ],
     [
       "iPhone 14 Pro",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      220.0
     ],
     [
       "iPhone 14 Pro",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 14 Pro",
       "Akku Original, Pulled",
-      null
+      105.0
     ],
     [
       "iPhone 14 Pro",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "iPhone 14 Pro",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "iPhone 14 Pro",
       "Ladeanschluss",
-      null
+      120.0
     ],
     [
       "iPhone 14 Pro",
       "Mikrofon",
-      null
+      120.0
     ],
     [
       "iPhone 14 Pro",
       "Lautsprecher oben",
-      null
+      105.0
     ],
     [
       "iPhone 14 Pro",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 14 Plus",
       "Display Original, Pulled",
-      null
+      225.0
     ],
     [
       "iPhone 14 Plus",
       "Rückglas Original, Pulled",
-      null
+      150.0
     ],
     [
       "iPhone 14 Plus",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 14 Plus",
       "Akku Original, Pulled",
-      null
+      105.0
     ],
     [
       "iPhone 14 Plus",
       "Kameralinse",
-      null
+      80.0
     ],
     [
       "iPhone 14 Plus",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "iPhone 14 Plus",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "iPhone 14 Plus",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "iPhone 14 Plus",
       "Lautsprecher oben",
-      null
+      105.0
     ],
     [
       "iPhone 14 Plus",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 14",
       "Display Original, Pulled",
-      null
+      155.0
     ],
     [
       "iPhone 14",
       "Rückglas Original, Pulled",
-      null
+      150.0
     ],
     [
       "iPhone 14",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 14",
       "Akku Original, Pulled",
-      null
+      105.0
     ],
     [
       "iPhone 14",
       "Kameralinse",
-      null
+      80.0
     ],
     [
       "iPhone 14",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 14",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "iPhone 14",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "iPhone 14",
       "Lautsprecher oben",
-      null
+      105.0
     ],
     [
       "iPhone 14",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 13 Pro Max",
       "Display Original, Pulled",
-      null
+      175.0
     ],
     [
       "iPhone 13 Pro Max",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      195.0
     ],
     [
       "iPhone 13 Pro Max",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 13 Pro Max",
       "Akku Original, Pulled",
-      null
+      95.0
     ],
     [
       "iPhone 13 Pro Max",
       "Kameralinse",
-      null
+      75.0
     ],
     [
       "iPhone 13 Pro Max",
       "Hauptkamera",
-      null
+      165.0
     ],
     [
       "iPhone 13 Pro Max",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "iPhone 13 Pro Max",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "iPhone 13 Pro Max",
       "Lautsprecher oben",
-      null
+      95.0
     ],
     [
       "iPhone 13 Pro Max",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 13 Pro",
       "Display Original, Pulled",
-      null
+      185.0
     ],
     [
       "iPhone 13 Pro",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      195.0
     ],
     [
       "iPhone 13 Pro",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 13 Pro",
       "Akku Original, Pulled",
-      null
+      95.0
     ],
     [
       "iPhone 13 Pro",
       "Kameralinse",
-      null
+      75.0
     ],
     [
       "iPhone 13 Pro",
       "Hauptkamera",
-      null
+      140.0
     ],
     [
       "iPhone 13 Pro",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "iPhone 13 Pro",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "iPhone 13 Pro",
       "Lautsprecher oben",
-      null
+      100.0
     ],
     [
       "iPhone 13 Pro",
       "Lautsprecher unten",
-      null
+      80.0
     ],
     [
       "iPhone 13",
       "Display Original, Pulled",
-      null
+      145.0
     ],
     [
       "iPhone 13",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      160.0
     ],
     [
       "iPhone 13",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 13",
       "Akku Original, Pulled",
-      null
+      95.0
     ],
     [
       "iPhone 13",
       "Kameralinse",
-      null
+      75.0
     ],
     [
       "iPhone 13",
       "Hauptkamera",
-      null
+      90.0
     ],
     [
       "iPhone 13",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone 13",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone 13",
       "Lautsprecher oben",
-      null
+      95.0
     ],
     [
       "iPhone 13",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 13 Mini",
       "Display Original, Pulled",
-      null
+      195.0
     ],
     [
       "iPhone 13 Mini",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone 13 Mini",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      205.0
     ],
     [
       "iPhone 13 Mini",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 13 Mini",
       "Akku Original, Pulled",
-      null
+      110.0
     ],
     [
       "iPhone 13 Mini",
       "Kameralinse",
-      null
+      90.0
     ],
     [
       "iPhone 13 Mini",
       "Hauptkamera",
-      null
+      110.0
     ],
     [
       "iPhone 13 Mini",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone 13 Mini",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone 13 Mini",
       "Lautsprecher oben",
-      null
+      125.0
     ],
     [
       "iPhone 13 Mini",
       "Lautsprecher unten",
-      null
+      95.0
     ],
     [
       "iPhone 12 Pro Max",
       "Display Original, Pulled",
-      null
+      180.0
     ],
     [
       "iPhone 12 Pro Max",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone 12 Pro Max",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      175.0
     ],
     [
       "iPhone 12 Pro Max",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 12 Pro Max",
       "Akku Original, Pulled",
-      null
+      85.0
     ],
     [
       "iPhone 12 Pro Max",
       "Kameralinse",
-      null
+      70.0
     ],
     [
       "iPhone 12 Pro Max",
       "Hauptkamera",
-      null
+      120.0
     ],
     [
       "iPhone 12 Pro Max",
       "Ladeanschluss",
-      null
+      100.0
     ],
     [
       "iPhone 12 Pro Max",
       "Mikrofon",
-      null
+      100.0
     ],
     [
       "iPhone 12 Pro Max",
       "Lautsprecher oben",
-      null
+      95.0
     ],
     [
       "iPhone 12 Pro Max",
       "Lautsprecher unten",
-      null
+      75.0
     ],
     [
       "iPhone 12",
       "Display Original, Pulled",
-      null
+      130.0
     ],
     [
       "iPhone 12 Pro",
       "Display Original, Pulled",
-      null
+      130.0
     ],
     [
       "iPhone 12",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      160.0
     ],
     [
       "iPhone 12 Pro",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      160.0
     ],
     [
       "iPhone 12",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 12 Pro",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 12",
       "Akku Original, Pulled",
-      null
+      85.0
     ],
     [
       "iPhone 12 Pro",
       "Akku Original, Pulled",
-      null
+      85.0
     ],
     [
       "iPhone 12",
       "Kameralinse",
-      null
+      70.0
     ],
     [
       "iPhone 12 Pro",
       "Kameralinse",
-      null
+      70.0
     ],
     [
       "iPhone 12",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 12 Pro",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 12",
       "Ladeanschluss",
-      null
+      100.0
     ],
     [
       "iPhone 12",
       "Mikrofon",
-      null
+      100.0
     ],
     [
       "iPhone 12 Pro",
       "Ladeanschluss",
-      null
+      100.0
     ],
     [
       "iPhone 12 Pro",
       "Mikrofon",
-      null
+      100.0
     ],
     [
       "iPhone 12",
       "Lautsprecher unten",
-      null
+      75.0
     ],
     [
       "iPhone 12 Pro",
       "Lautsprecher unten",
-      null
+      75.0
     ],
     [
       "iPhone 12",
       "Lautsprecher oben",
-      null
+      90.0
     ],
     [
       "iPhone 12 Pro",
       "Lautsprecher oben",
-      null
+      90.0
     ],
     [
       "iPhone 12 Mini",
       "Display Original, Pulled",
-      null
+      135.0
     ],
     [
       "iPhone 12 Mini",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      155.0
     ],
     [
       "iPhone 12 Mini",
       "Akku Original, Service Pack",
-      null
+      130.0
     ],
     [
       "iPhone 12 Mini",
       "Akku Original, Pulled",
-      null
+      85.0
     ],
     [
       "iPhone 12 Mini",
       "Kameralinse",
-      null
+      70.0
     ],
     [
       "iPhone 12 Mini",
       "Hauptkamera",
-      null
+      95.0
     ],
     [
       "iPhone 12 Mini",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "iPhone 12 Mini",
       "Mikrofon",
-      null
+      95.0
     ],
     [
       "iPhone 12 Mini",
       "Lautsprecher oben",
-      null
+      90.0
     ],
     [
       "iPhone 12 Mini",
       "Lautsprecher unten",
-      null
+      75.0
     ],
     [
       "iPhone 11 Pro Max",
       "Display Original",
-      null
+      160.0
     ],
     [
       "iPhone 11 Pro Max",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone 11 Pro Max",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      160.0
     ],
     [
       "iPhone 11 Pro Max",
@@ -1659,62 +1659,62 @@
     [
       "iPhone 11 Pro Max",
       "Kameralinse (Rückseite)",
-      null
+      85.0
     ],
     [
       "iPhone 11 Pro Max",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "iPhone 11 Pro Max",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro Max",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro Max",
       "Lautsprecher oben (leise)",
-      null
+      70.0
     ],
     [
       "iPhone 11 Pro Max",
       "Lautsprecher oben (keine Funktion)",
-      null
+      85.0
     ],
     [
       "iPhone 11 Pro Max",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 11 Pro Max",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro Max",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro",
       "Display Original",
-      null
+      130.0
     ],
     [
       "iPhone 11 Pro",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone 11 Pro",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      160.0
     ],
     [
       "iPhone 11 Pro",
@@ -1724,57 +1724,57 @@
     [
       "iPhone 11 Pro",
       "Kameralinse (Rückseite)",
-      null
+      85.0
     ],
     [
       "iPhone 11 Pro",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "iPhone 11 Pro",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro",
       "Lautsprecher oben (leise)",
-      null
+      70.0
     ],
     [
       "iPhone 11 Pro",
       "Lautsprecher oben (keine Funktion)",
-      null
+      85.0
     ],
     [
       "iPhone 11 Pro",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 11 Pro",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone 11 Pro",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone 11",
       "Display Original",
-      null
+      115.0
     ],
     [
       "iPhone 11",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      125.0
     ],
     [
       "iPhone 11",
@@ -1784,62 +1784,62 @@
     [
       "iPhone 11",
       "Kameralinse (Rückseite)",
-      null
+      85.0
     ],
     [
       "iPhone 11",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 11",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "iPhone 11",
       "Mikrofon",
-      null
+      85.0
     ],
     [
       "iPhone 11",
       "Lautsprecher oben (leise)",
-      null
+      70.0
     ],
     [
       "iPhone 11",
       "Lautsprecher oben (keine Funktion)",
-      null
+      85.0
     ],
     [
       "iPhone 11",
       "Lautsprecher unten",
-      null
+      80.0
     ],
     [
       "iPhone 11",
       "Power Button (Einschaltknopf)",
-      null
+      85.0
     ],
     [
       "iPhone 11",
       "Laut / Leise Tasten",
-      null
+      85.0
     ],
     [
       "iPhone XS Max",
       "Display Original",
-      null
+      160.0
     ],
     [
       "iPhone XS Max",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone XS Max",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      125.0
     ],
     [
       "iPhone XS Max",
@@ -1849,62 +1849,62 @@
     [
       "iPhone XS Max",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone XS Max",
       "Hauptkamera",
-      null
+      125.0
     ],
     [
       "iPhone XS Max",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone XS Max",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone XS Max",
       "Lautsprecher oben (leise)",
-      null
+      85.0
     ],
     [
       "iPhone XS Max",
       "Lautsprecher oben (keine Funktion)",
-      null
+      105.0
     ],
     [
       "iPhone XS Max",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone XS Max",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone XS Max",
       "Power Button (Einschaltknopf)",
-      null
+      130.0
     ],
     [
       "iPhone XS",
       "Display Original",
-      null
+      130.0
     ],
     [
       "iPhone XS",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone XS",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      125.0
     ],
     [
       "iPhone XS",
@@ -1914,57 +1914,57 @@
     [
       "iPhone XS",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone XS",
       "Hauptkamera",
-      null
+      125.0
     ],
     [
       "iPhone XS",
       "Ladeanschluss",
-      null
+      125.0
     ],
     [
       "iPhone XS",
       "Mikrofon",
-      null
+      125.0
     ],
     [
       "iPhone XS",
       "Lautsprecher oben (leise)",
-      null
+      85.0
     ],
     [
       "iPhone XS",
       "Lautsprecher oben (keine Funktion)",
-      null
+      105.0
     ],
     [
       "iPhone XS",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone XS",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone XS",
       "Power Button (Einschaltknopf)",
-      null
+      125.0
     ],
     [
       "iPhone XR",
       "Display Original",
-      null
+      105.0
     ],
     [
       "iPhone XR",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone XR",
@@ -1974,67 +1974,67 @@
     [
       "iPhone XR",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone XR",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "iPhone XR",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone XR",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone XR",
       "Lautsprecher oben (leise)",
-      null
+      80.0
     ],
     [
       "iPhone XR",
       "Lautsprecher oben (keine Funktion)",
-      null
+      105.0
     ],
     [
       "iPhone XR",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone XR",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone XR",
       "Power Button (Einschaltknopf)",
-      null
+      125.0
     ],
     [
       "iPhone XR",
       "Laut / Leise Tasten",
-      null
+      125.0
     ],
     [
       "iPhone X",
       "Display Original",
-      null
+      125.0
     ],
     [
       "iPhone X",
       "Display Premium",
-      null
+      130.0
     ],
     [
       "iPhone X",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      125.0
     ],
     [
       "iPhone X",
@@ -2044,57 +2044,57 @@
     [
       "iPhone X",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone X",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "iPhone X",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone X",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone X",
       "Lautsprecher oben (leise)",
-      null
+      80.0
     ],
     [
       "iPhone X",
       "Lautsprecher oben (keine Funktion)",
-      null
+      105.0
     ],
     [
       "iPhone X",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone X",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone X",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone X",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Display / LCD",
-      null
+      60.0
     ],
     [
       "iPhone SE (1. Gen)",
@@ -2109,67 +2109,67 @@
     [
       "iPhone SE (1. Gen)",
       "Glas-Abdeckung hinten (inkl. Kameralinse)",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Hauptkamera",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Ladeanschluss",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Mikrofon",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Aux-Anschluss",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Lautsprecher oben",
-      null
+      35.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Lautsprecher unten",
-      null
+      35.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Home Button",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Power Button (Einschaltknopf)",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Laut / Leise Tasten",
-      null
+      40.0
     ],
     [
       "iPhone SE (1. Gen)",
       "Vibration",
-      null
+      35.0
     ],
     [
       "iPhone SE 2020",
       "Display / LCD",
-      null
+      105.0
     ],
     [
       "iPhone SE 2020",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone SE 2020",
@@ -2179,57 +2179,57 @@
     [
       "iPhone SE 2020",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone SE 2020",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone SE 2020",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone SE 2020",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone SE 2020",
       "Lautsprecher oben",
-      null
+      85.0
     ],
     [
       "iPhone SE 2020",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone SE 2020",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone SE 2020",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone SE 2020",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone SE 2022",
       "Display / LCD",
-      null
+      105.0
     ],
     [
       "iPhone SE 2022",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone SE 2022",
@@ -2239,57 +2239,57 @@
     [
       "iPhone SE 2022",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone SE 2022",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone SE 2022",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone SE 2022",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone SE 2022",
       "Lautsprecher oben",
-      null
+      85.0
     ],
     [
       "iPhone SE 2022",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone SE 2022",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone SE 2022",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone SE 2022",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone 8 Plus",
       "Display / LCD",
-      null
+      105.0
     ],
     [
       "iPhone 8 Plus",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone 8 Plus",
@@ -2299,57 +2299,57 @@
     [
       "iPhone 8 Plus",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone 8 Plus",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 8 Plus",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone 8 Plus",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone 8 Plus",
       "Lautsprecher oben",
-      null
+      85.0
     ],
     [
       "iPhone 8 Plus",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 8 Plus",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone 8 Plus",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone 8 Plus",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone 8",
       "Display / LCD",
-      null
+      105.0
     ],
     [
       "iPhone 8",
       "Gehäuse (Rückglas inkl. Metallrahmen) Original, Pulled",
-      null
+      115.0
     ],
     [
       "iPhone 8",
@@ -2359,52 +2359,52 @@
     [
       "iPhone 8",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone 8",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "iPhone 8",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "iPhone 8",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "iPhone 8",
       "Lautsprecher oben",
-      null
+      85.0
     ],
     [
       "iPhone 8",
       "Lautsprecher unten",
-      null
+      85.0
     ],
     [
       "iPhone 8",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone 8",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone 8",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone 7 Plus",
       "Display / LCD",
-      null
+      85.0
     ],
     [
       "iPhone 7 Plus",
@@ -2419,52 +2419,52 @@
     [
       "iPhone 7 Plus",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "iPhone 7 Plus",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "iPhone 7 Plus",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "iPhone 7 Plus",
       "Mikrofon",
-      null
+      85.0
     ],
     [
       "iPhone 7 Plus",
       "Lautsprecher oben",
-      null
+      70.0
     ],
     [
       "iPhone 7 Plus",
       "Lautsprecher unten",
-      null
+      70.0
     ],
     [
       "iPhone 7 Plus",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "iPhone 7 Plus",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "iPhone 7 Plus",
       "Vibration",
-      null
+      70.0
     ],
     [
       "iPhone 7",
       "Display / LCD",
-      null
+      85.0
     ],
     [
       "iPhone 7",
@@ -2479,57 +2479,57 @@
     [
       "iPhone 7",
       "Kameralinse (Rückseite)",
-      null
+      60.0
     ],
     [
       "iPhone 7",
       "Hauptkamera",
-      null
+      85.0
     ],
     [
       "iPhone 7",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "iPhone 7",
       "Mikrofon",
-      null
+      85.0
     ],
     [
       "iPhone 7",
       "Lautsprecher oben",
-      null
+      60.0
     ],
     [
       "iPhone 7",
       "Lautsprecher unten",
-      null
+      60.0
     ],
     [
       "iPhone 7",
       "Power Button (Einschaltknopf)",
-      null
+      85.0
     ],
     [
       "iPhone 7",
       "Laut / Leise Tasten",
-      null
+      85.0
     ],
     [
       "iPhone 7",
       "Vibration",
-      null
+      85.0
     ],
     [
       "iPhone 7",
       "Audio-Chip (Dauer ca. 1 Woche)",
-      null
+      160.0
     ],
     [
       "iPhone 6S Plus",
       "Display / LCD",
-      null
+      70.0
     ],
     [
       "iPhone 6S Plus",
@@ -2544,62 +2544,62 @@
     [
       "iPhone 6S Plus",
       "Kameralinse (Rückseite)",
-      null
+      40.0
     ],
     [
       "iPhone 6S Plus",
       "Hauptkamera",
-      null
+      50.0
     ],
     [
       "iPhone 6S Plus",
       "Ladeanschluss",
-      null
+      70.0
     ],
     [
       "iPhone 6S Plus",
       "Mikrofon",
-      null
+      70.0
     ],
     [
       "iPhone 6S Plus",
       "Aux-Anschluss",
-      null
+      70.0
     ],
     [
       "iPhone 6S Plus",
       "Lautsprecher oben",
-      null
+      40.0
     ],
     [
       "iPhone 6S Plus",
       "Lautsprecher unten",
-      null
+      50.0
     ],
     [
       "iPhone 6S Plus",
       "Home Button",
-      null
+      60.0
     ],
     [
       "iPhone 6S Plus",
       "Power Button (Einschaltknopf)",
-      null
+      70.0
     ],
     [
       "iPhone 6S Plus",
       "Laut / Leise Tasten",
-      null
+      70.0
     ],
     [
       "iPhone 6S Plus",
       "Vibration",
-      null
+      50.0
     ],
     [
       "iPhone 6 Plus",
       "Display / LCD",
-      null
+      70.0
     ],
     [
       "iPhone 6 Plus",
@@ -2614,62 +2614,62 @@
     [
       "iPhone 6 Plus",
       "Kameralinse (Rückseite)",
-      null
+      40.0
     ],
     [
       "iPhone 6 Plus",
       "Hauptkamera",
-      null
+      50.0
     ],
     [
       "iPhone 6 Plus",
       "Ladeanschluss",
-      null
+      70.0
     ],
     [
       "iPhone 6 Plus",
       "Mikrofon",
-      null
+      70.0
     ],
     [
       "iPhone 6 Plus",
       "Aux-Anschluss",
-      null
+      70.0
     ],
     [
       "iPhone 6 Plus",
       "Lautsprecher oben",
-      null
+      40.0
     ],
     [
       "iPhone 6 Plus",
       "Lautsprecher unten",
-      null
+      50.0
     ],
     [
       "iPhone 6 Plus",
       "Home Button",
-      null
+      60.0
     ],
     [
       "iPhone 6 Plus",
       "Power Button (Einschaltknopf)",
-      null
+      70.0
     ],
     [
       "iPhone 6 Plus",
       "Laut / Leise Tasten",
-      null
+      70.0
     ],
     [
       "iPhone 6 Plus",
       "Vibration",
-      null
+      50.0
     ],
     [
       "iPhone 6S",
       "Display / LCD",
-      null
+      70.0
     ],
     [
       "iPhone 6S",
@@ -2684,62 +2684,62 @@
     [
       "iPhone 6S",
       "Kameralinse (Rückseite)",
-      null
+      40.0
     ],
     [
       "iPhone 6S",
       "Hauptkamera",
-      null
+      50.0
     ],
     [
       "iPhone 6S",
       "Ladeanschluss",
-      null
+      60.0
     ],
     [
       "iPhone 6S",
       "Mikrofon",
-      null
+      60.0
     ],
     [
       "iPhone 6S",
       "Aux-Anschluss",
-      null
+      60.0
     ],
     [
       "iPhone 6S",
       "Lautsprecher oben",
-      null
+      40.0
     ],
     [
       "iPhone 6S",
       "Lautsprecher unten",
-      null
+      40.0
     ],
     [
       "iPhone 6S",
       "Home Button",
-      null
+      60.0
     ],
     [
       "iPhone 6S",
       "Power Button (Einschaltknopf)",
-      null
+      60.0
     ],
     [
       "iPhone 6S",
       "Laut / Leise Tasten",
-      null
+      60.0
     ],
     [
       "iPhone 6S",
       "Vibration",
-      null
+      40.0
     ],
     [
       "iPhone 6",
       "Display / LCD",
-      null
+      70.0
     ],
     [
       "iPhone 6",
@@ -2754,62 +2754,62 @@
     [
       "iPhone 6",
       "Kameralinse (Rückseite)",
-      null
+      40.0
     ],
     [
       "iPhone 6",
       "Hauptkamera",
-      null
+      50.0
     ],
     [
       "iPhone 6",
       "Ladeanschluss",
-      null
+      60.0
     ],
     [
       "iPhone 6",
       "Mikrofon",
-      null
+      60.0
     ],
     [
       "iPhone 6",
       "Aux-Anschluss",
-      null
+      60.0
     ],
     [
       "iPhone 6",
       "Lautsprecher oben",
-      null
+      40.0
     ],
     [
       "iPhone 6",
       "Lautsprecher unten",
-      null
+      40.0
     ],
     [
       "iPhone 6",
       "Home Button",
-      null
+      60.0
     ],
     [
       "iPhone 6",
       "Power Button (Einschaltknopf)",
-      null
+      60.0
     ],
     [
       "iPhone 6",
       "Laut / Leise Tasten",
-      null
+      60.0
     ],
     [
       "iPhone 6",
       "Vibration",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Display / LCD",
-      null
+      60.0
     ],
     [
       "iPhone 5S",
@@ -2824,62 +2824,62 @@
     [
       "iPhone 5S",
       "Glas-Abdeckung hinten (inkl. Kameralinse)",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Hauptkamera",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Ladeanschluss",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Mikrofon",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Aux-Anschluss",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Lautsprecher oben",
-      null
+      35.0
     ],
     [
       "iPhone 5S",
       "Lautsprecher unten",
-      null
+      35.0
     ],
     [
       "iPhone 5S",
       "Home Button",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Power Button (Einschaltknopf)",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Laut / Leise Tasten",
-      null
+      40.0
     ],
     [
       "iPhone 5S",
       "Vibration",
-      null
+      35.0
     ],
     [
       "iPhone 5C",
       "Display / LCD",
-      null
+      60.0
     ],
     [
       "iPhone 5C",
@@ -2894,2912 +2894,2912 @@
     [
       "iPhone 5C",
       "Glas-Abdeckung hinten (inkl. Kameralinse)",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Hauptkamera",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Ladeanschluss",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Mikrofon",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Aux-Anschluss",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Lautsprecher oben",
-      null
+      35.0
     ],
     [
       "iPhone 5C",
       "Lautsprecher unten",
-      null
+      35.0
     ],
     [
       "iPhone 5C",
       "Home Button",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Power Button (Einschaltknopf)",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Laut / Leise Tasten",
-      null
+      40.0
     ],
     [
       "iPhone 5C",
       "Vibration",
-      null
+      35.0
     ],
     [
       "iPad Pro 13 M4 (2024)",
       "Display Original, Service Pack",
-      null
+      625.0
     ],
     [
       "iPad Pro 13 M4 (2024)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Pro 13 M4 (2024)",
       "Ladeanschluss",
-      null
+      220.0
     ],
     [
       "iPad Pro 12.9 (6th Gen) 2022",
       "LCD / Display",
-      null
+      400.0
     ],
     [
       "iPad Pro 12.9 (6th Gen) 2022",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Pro 12.9 (6th Gen) 2022",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 12.9 (5th Gen) 2021",
       "LCD / Display",
-      null
+      400.0
     ],
     [
       "iPad Pro 12.9 (5th Gen) 2021",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Pro 12.9 (5th Gen) 2021",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 12.9 (4th Gen) 2020",
       "LCD / Display",
-      null
+      295.0
     ],
     [
       "iPad Pro 12.9 (4th Gen) 2020",
       "Akku",
-      null
+      195.0
     ],
     [
       "iPad Pro 12.9 (4th Gen) 2020",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 12.9 (3rd Gen) 2018",
       "LCD / Display",
-      null
+      265.0
     ],
     [
       "iPad Pro 12.9 (3rd Gen) 2018",
       "Akku",
-      null
+      195.0
     ],
     [
       "iPad Pro 12.9 (3rd Gen) 2018",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 12.9 (2nd Gen) 2017",
       "LCD / Display",
-      null
+      330.0
     ],
     [
       "iPad Pro 12.9 (2nd Gen) 2017",
       "Akku",
-      null
+      195.0
     ],
     [
       "iPad Pro 12.9 (2nd Gen) 2017",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 12.9 (1st Gen) 2015",
       "LCD / Display",
-      null
+      265.0
     ],
     [
       "iPad Pro 12.9 (1st Gen) 2015",
       "Akku",
-      null
+      195.0
     ],
     [
       "iPad Pro 12.9 (1st Gen) 2015",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 M4 (2024)",
       "Display Original, Service Pack",
-      null
+      625.0
     ],
     [
       "iPad Pro 11 M4 (2024)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Pro 11 M4 (2024)",
       "Ladeanschluss",
-      null
+      195.0
     ],
     [
       "iPad Pro 11 (4th Gen) 2022",
       "LCD / Display",
-      null
+      305.0
     ],
     [
       "iPad Pro 11 (4th Gen) 2022",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (4th Gen) 2022",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (3rd Gen) 2021",
       "LCD / Display",
-      null
+      305.0
     ],
     [
       "iPad Pro 11 (3rd Gen) 2021",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (3rd Gen) 2021",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (2nd Gen) 2020",
       "LCD / Display",
-      null
+      305.0
     ],
     [
       "iPad Pro 11 (2nd Gen) 2020",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (2nd Gen) 2020",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (1st Gen) 2018",
       "LCD / Display",
-      null
+      295.0
     ],
     [
       "iPad Pro 11 (1st Gen) 2018",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Pro 11 (1st Gen) 2018",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 10.5 (2017)",
       "LCD / Display",
-      null
+      260.0
     ],
     [
       "iPad Pro 10.5 (2017)",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Pro 10.5 (2017)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Pro 9.7 (2016)",
       "LCD / Display",
-      null
+      205.0
     ],
     [
       "iPad Pro 9.7 (2016)",
       "Akku",
-      null
+      160.0
     ],
     [
       "iPad Pro 9.7 (2016)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Air 13 M3 (2025)",
       "Display Original, Service Pack",
-      null
+      545.0
     ],
     [
       "iPad Air 13 M3 (2025)",
       "Display Original, Pulled",
-      null
+      340.0
     ],
     [
       "iPad Air 13 M3 (2025)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Air 11 M3 (2025)",
       "Display",
-      null
+      465.0
     ],
     [
       "iPad Air 11 M3 (2025)",
       "Display Original, Pulled",
-      null
+      385.0
     ],
     [
       "iPad Air 11 M3 (2025)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Air 13 M2 (2024)",
       "Display",
-      null
+      545.0
     ],
     [
       "iPad Air 13 M2 (2024)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Air 13 M2 (2024)",
       "Ladeanschluss",
-      null
+      220.0
     ],
     [
       "iPad Air 11 M2 (2024)",
       "Display Original, Service Pack",
-      null
+      430.0
     ],
     [
       "iPad Air 11 M2 (2024)",
       "Display Original, Pulled",
-      null
+      375.0
     ],
     [
       "iPad Air 11 M2 (2024)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Air 5 (2022)",
       "LCD / Display",
-      null
+      265.0
     ],
     [
       "iPad Air 5 (2022)",
       "Akku",
-      null
+      160.0
     ],
     [
       "iPad Air 5 (2022)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Air 4 (2020)",
       "LCD / Display",
-      null
+      265.0
     ],
     [
       "iPad Air 4 (2020)",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Air 4 (2020)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Air 3 (2019)",
       "LCD / Display",
-      null
+      230.0
     ],
     [
       "iPad Air 3 (2019)",
       "Akku",
-      null
+      160.0
     ],
     [
       "iPad Air 3 (2019)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Air 2 (2014)",
       "LCD / Display",
-      null
+      195.0
     ],
     [
       "iPad Air 2 (2014)",
       "Akku",
-      null
+      130.0
     ],
     [
       "iPad Air 2 (2014)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad Air (2013)",
       "Display / Touchscreen",
-      null
+      115.0
     ],
     [
       "iPad Air (2013)",
       "LCD (Bildanzeige)",
-      null
+      170.0
     ],
     [
       "iPad Air (2013)",
       "Akku",
-      null
+      115.0
     ],
     [
       "iPad Air (2013)",
       "Home Button",
-      null
+      85.0
     ],
     [
       "iPad A16 (2025)",
       "Display / Glas Original, Service Pack",
-      null
+      305.0
     ],
     [
       "iPad A16 (2025)",
       "Display / Glas Original, Pulled",
-      null
+      175.0
     ],
     [
       "iPad A16 (2025)",
       "Bildanzeige Original, Service Pack",
-      null
+      340.0
     ],
     [
       "iPad A16 (2025)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad 10 (2022) 10.9",
       "Display",
-      null
+      160.0
     ],
     [
       "iPad 10 (2022) 10.9",
       "Akku",
-      null
+      130.0
     ],
     [
       "iPad 10 (2022) 10.9",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad 9 (2021) 10.2",
       "Display",
-      null
+      150.0
     ],
     [
       "iPad 9 (2021) 10.2",
       "Akku",
-      null
+      125.0
     ],
     [
       "iPad 9 (2021) 10.2",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad 8 (2020) 10.2",
       "Display",
-      null
+      150.0
     ],
     [
       "iPad 8 (2020) 10.2",
       "Akku",
-      null
+      125.0
     ],
     [
       "iPad 8 (2020) 10.2",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad 7 (2019) 10.2",
       "Display",
-      null
+      150.0
     ],
     [
       "iPad 7 (2019) 10.2",
       "Akku",
-      null
+      125.0
     ],
     [
       "iPad 7 (2019) 10.2",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad 6 (2018) 9.7",
       "Display",
-      null
+      140.0
     ],
     [
       "iPad 6 (2018) 9.7",
       "Akku",
-      null
+      125.0
     ],
     [
       "iPad 6 (2018) 9.7",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad 5 (2017)",
       "Display",
-      null
+      125.0
     ],
     [
       "iPad 5 (2017)",
       "Akku",
-      null
+      125.0
     ],
     [
       "iPad 5 (2017)",
       "Ladeanschluss",
-      null
+      175.0
     ],
     [
       "iPad 3 / 4",
       "Display / Touchscreen",
-      null
+      105.0
     ],
     [
       "iPad 3 / 4",
       "LCD (Bildanzeige)",
-      null
+      130.0
     ],
     [
       "iPad 3 / 4",
       "Akku",
-      null
+      115.0
     ],
     [
       "iPad 3 / 4",
       "Home Button",
-      null
+      85.0
     ],
     [
       "iPad 2",
       "Display / Touchscreen",
-      null
+      85.0
     ],
     [
       "iPad 2",
       "LCD (Bildanzeige)",
-      null
+      125.0
     ],
     [
       "iPad 2",
       "Akku",
-      null
+      105.0
     ],
     [
       "iPad 2",
       "Home Button",
-      null
+      85.0
     ],
     [
       "iPad Mini A17 Pro (2024)",
       "Display Original, Service Pack",
-      null
+      375.0
     ],
     [
       "iPad Mini A17 Pro (2024)",
       "Display Original, Pulled",
-      null
+      355.0
     ],
     [
       "iPad Mini A17 Pro (2024)",
       "Akku",
-      null
+      205.0
     ],
     [
       "iPad Mini 6 (2021)",
       "Display / LCD",
-      null
+      310.0
     ],
     [
       "iPad Mini 6 (2021)",
       "Akku",
-      null
+      175.0
     ],
     [
       "iPad Mini 5 (2019)",
       "Display / LCD",
-      null
+      215.0
     ],
     [
       "iPad Mini 5 (2019)",
       "Akku",
-      null
+      130.0
     ],
     [
       "iPad Mini 4 (2015)",
       "Display / LCD",
-      null
+      215.0
     ],
     [
       "iPad Mini 4 (2015)",
       "Akku",
-      null
+      130.0
     ],
     [
       "iPad Mini 3 (2014)",
       "Display / Touchscreen",
-      null
+      125.0
     ],
     [
       "iPad Mini 3 (2014)",
       "LCD (Bildanzeige)",
-      null
+      150.0
     ],
     [
       "iPad Mini 3 (2014)",
       "Akku",
-      null
+      115.0
     ],
     [
       "iPad Mini 1 / 2",
       "Display / Touchscreen",
-      null
+      105.0
     ],
     [
       "iPad Mini 1 / 2",
       "LCD (Bildanzeige)",
-      null
+      130.0
     ],
     [
       "iPad Mini 1 / 2",
       "Akku",
-      null
+      105.0
     ],
     [
       "Galaxy S26 Ultra",
       "Display",
-      null
+      315.0
     ],
     [
       "Galaxy S26 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      120.0
     ],
     [
       "Galaxy S26 Ultra",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy S26 Ultra",
       "Kamera 200MP (Wide)",
-      null
+      175.0
     ],
     [
       "Galaxy S26 Ultra",
       "Kamera 50MP (Ultraweit)",
-      null
+      130.0
     ],
     [
       "Galaxy S26 Ultra",
       "Kamera 10MP (Tele 3x)",
-      null
+      130.0
     ],
     [
       "Galaxy S26 Ultra",
       "Kamera 50MP (Tele 5x)",
-      null
+      165.0
     ],
     [
       "Galaxy S26 Ultra",
       "Frontkamera",
-      null
+      125.0
     ],
     [
       "Galaxy S26 Ultra",
       "Ladeanschluss",
-      null
+      120.0
     ],
     [
       "Galaxy S26 Ultra",
       "Lautsprecher (oben)",
-      null
+      115.0
     ],
     [
       "Galaxy S26 Ultra",
       "Lautsprecher (unten)",
-      null
+      115.0
     ],
     [
       "Galaxy S26 Plus",
       "Display",
-      null
+      265.0
     ],
     [
       "Galaxy S26 Plus",
       "Rückseite (inkl. Kameralinse)",
-      null
+      110.0
     ],
     [
       "Galaxy S26 Plus",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy S26 Plus",
       "Kamera 50MP (Wide)",
-      null
+      160.0
     ],
     [
       "Galaxy S26 Plus",
       "Kamera 12MP (Ultraweit)",
-      null
+      120.0
     ],
     [
       "Galaxy S26 Plus",
       "Kamera 10MP (Tele)",
-      null
+      125.0
     ],
     [
       "Galaxy S26 Plus",
       "Frontkamera",
-      null
+      125.0
     ],
     [
       "Galaxy S26 Plus",
       "Ladeanschluss",
-      null
+      115.0
     ],
     [
       "Galaxy S26 Plus",
       "Lautsprecher (oben)",
-      null
+      110.0
     ],
     [
       "Galaxy S26 Plus",
       "Lautsprecher (unten)",
-      null
+      115.0
     ],
     [
       "Galaxy S26",
       "Display",
-      null
+      225.0
     ],
     [
       "Galaxy S26",
       "Rückseite (inkl. Kameralinse)",
-      null
+      110.0
     ],
     [
       "Galaxy S26",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy S26",
       "Kamera 50MP (Wide)",
-      null
+      150.0
     ],
     [
       "Galaxy S26",
       "Kamera 12MP (Ultraweit)",
-      null
+      120.0
     ],
     [
       "Galaxy S26",
       "Kamera 10MP (Tele)",
-      null
+      125.0
     ],
     [
       "Galaxy S26",
       "Frontkamera",
-      null
+      125.0
     ],
     [
       "Galaxy S26",
       "Ladeanschluss",
-      null
+      115.0
     ],
     [
       "Galaxy S26",
       "Lautsprecher (oben)",
-      null
+      110.0
     ],
     [
       "Galaxy S26",
       "Lautsprecher (unten)",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Ultra",
       "Display",
-      null
+      280.0
     ],
     [
       "Galaxy S25 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Ultra",
       "Akku",
-      null
+      115.0
     ],
     [
       "Galaxy S25 Ultra",
       "Kamera 200MP (Wide)",
-      null
+      155.0
     ],
     [
       "Galaxy S25 Ultra",
       "Kamera Periskop Tele",
-      null
+      155.0
     ],
     [
       "Galaxy S25 Ultra",
       "Kamera 50MP (Ultra Wide)",
-      null
+      120.0
     ],
     [
       "Galaxy S25 Ultra",
       "Kamera 10MP (Tele)",
-      null
+      115.0
     ],
     [
       "Galaxy S25 Ultra",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Ultra",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Ultra",
       "Sim-Kartenleser",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Ultra",
       "Frontkamera 12MP",
-      null
+      115.0
     ],
     [
       "Galaxy S25 Ultra",
       "Sonstige Kleinteile (Flexkabel, etc.)",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Plus",
       "Display",
-      null
+      230.0
     ],
     [
       "Galaxy S25 Plus",
       "Rückseite (inkl. Kameralinse)",
-      null
+      105.0
     ],
     [
       "Galaxy S25 Plus",
       "Akku",
-      null
+      115.0
     ],
     [
       "Galaxy S25 Plus",
       "Kamera 10MP (Tele)",
-      null
+      115.0
     ],
     [
       "Galaxy S25 Plus",
       "Kamera 50MP (Wide)",
-      null
+      135.0
     ],
     [
       "Galaxy S25 Plus",
       "Kamera 12MP (Ultra Wide)",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Plus",
       "Frontkamera 12MP",
-      null
+      120.0
     ],
     [
       "Galaxy S25 Plus",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Plus",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Plus",
       "Sim-Kartenleser",
-      null
+      110.0
     ],
     [
       "Galaxy S25 Plus",
       "Lautsprecher",
-      null
+      105.0
     ],
     [
       "Galaxy S25 Plus",
       "Sonstige Kleinteile (Flexkabel, etc.)",
-      null
+      105.0
     ],
     [
       "Galaxy S25",
       "Display",
-      null
+      210.0
     ],
     [
       "Galaxy S25",
       "Rückseite (inkl. Kameralinse)",
-      null
+      105.0
     ],
     [
       "Galaxy S25",
       "Akku",
-      null
+      115.0
     ],
     [
       "Galaxy S25",
       "Kamera 10MP (Tele)",
-      null
+      115.0
     ],
     [
       "Galaxy S25",
       "Kamera 50MP (Wide)",
-      null
+      135.0
     ],
     [
       "Galaxy S25",
       "Kamera 12MP (Ultra Wide)",
-      null
+      110.0
     ],
     [
       "Galaxy S25",
       "Frontkamera 12MP",
-      null
+      115.0
     ],
     [
       "Galaxy S25",
       "Ladeanschluss",
-      null
+      110.0
     ],
     [
       "Galaxy S25",
       "Mikrofon",
-      null
+      110.0
     ],
     [
       "Galaxy S25",
       "Sim-Kartenleser",
-      null
+      110.0
     ],
     [
       "Galaxy S25",
       "Lautsprecher",
-      null
+      105.0
     ],
     [
       "Galaxy S25",
       "Sonstige Kleinteile (Flexkabel, etc.)",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Ultra",
       "Display",
-      null
+      270.0
     ],
     [
       "Galaxy S24 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      95.0
     ],
     [
       "Galaxy S24 Ultra",
       "Akku",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Ultra",
       "Kamera (Wide)",
-      null
+      150.0
     ],
     [
       "Galaxy S24 Ultra",
       "Kamera Tele (3X)",
-      null
+      110.0
     ],
     [
       "Galaxy S24 Ultra",
       "Kamera 12MP (Ultra Wide)",
-      null
+      110.0
     ],
     [
       "Galaxy S24 Ultra",
       "Kamera Tele (5X)",
-      null
+      160.0
     ],
     [
       "Galaxy S24 Ultra",
       "Frontkamera 12MP",
-      null
+      110.0
     ],
     [
       "Galaxy S24 Ultra",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Ultra",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Ultra",
       "Sim-Kartenleser",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Ultra",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      100.0
     ],
     [
       "Galaxy S24 Plus",
       "Display",
-      null
+      235.0
     ],
     [
       "Galaxy S24 Plus",
       "Rückseite (inkl. Kameralinse)",
-      null
+      90.0
     ],
     [
       "Galaxy S24 Plus",
       "Akku",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Plus",
       "Kamera 50MP (Wide)",
-      null
+      130.0
     ],
     [
       "Galaxy S24 Plus",
       "Kamera 10MP (Tele)",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Plus",
       "Kamera 12MP (Ultra Wide)",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Plus",
       "Frontkamera 12MP",
-      null
+      110.0
     ],
     [
       "Galaxy S24 Plus",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Plus",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Plus",
       "Sim-Kartenleser",
-      null
+      105.0
     ],
     [
       "Galaxy S24 Plus",
       "Lautsprecher",
-      null
+      100.0
     ],
     [
       "Galaxy S24 Plus",
       "Sonstige Kleinteile (Flexkabel, etc.)",
-      null
+      100.0
     ],
     [
       "Galaxy S24",
       "Display",
-      null
+      215.0
     ],
     [
       "Galaxy S24",
       "Rückseite (inkl. Kameralinse)",
-      null
+      95.0
     ],
     [
       "Galaxy S24",
       "Akku",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Kamera 50MP (Wide)",
-      null
+      130.0
     ],
     [
       "Galaxy S24",
       "Kamera 10MP (Tele)",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Kamera 12MP (Ultra Wide)",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Frontkamera 12MP",
-      null
+      110.0
     ],
     [
       "Galaxy S24",
       "Ladeanschluss",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Mikrofon",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Sim-Kartenleser",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Lautsprecher",
-      null
+      105.0
     ],
     [
       "Galaxy S24",
       "Sonstige Kleinteile (Flexkabel, etc.)",
-      null
+      105.0
     ],
     [
       "Galaxy S23 Ultra",
       "Display",
-      null
+      270.0
     ],
     [
       "Galaxy S23 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Ultra",
       "Akku",
-      null
+      105.0
     ],
     [
       "Galaxy S23 Ultra",
       "Kamera (Wide)",
-      null
+      145.0
     ],
     [
       "Galaxy S23 Ultra",
       "Kamera Tele",
-      null
+      100.0
     ],
     [
       "Galaxy S23 Ultra",
       "Kamera 12MP (Ultra Wide)",
-      null
+      105.0
     ],
     [
       "Galaxy S23 Ultra",
       "Kamera Tele (10X)",
-      null
+      130.0
     ],
     [
       "Galaxy S23 Ultra",
       "Frontkamera 12MP",
-      null
+      105.0
     ],
     [
       "Galaxy S23 Ultra",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Ultra",
       "Mikrofon",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Ultra",
       "Sim-Kartenleser",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Ultra",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Plus",
       "Display",
-      null
+      205.0
     ],
     [
       "Galaxy S23 Plus",
       "Rückseite (inkl. Kameralinse)",
-      null
+      85.0
     ],
     [
       "Galaxy S23 Plus",
       "Akku",
-      null
+      100.0
     ],
     [
       "Galaxy S23 Plus",
       "Kamera 12MP (Weitwinkel)",
-      null
+      100.0
     ],
     [
       "Galaxy S23 Plus",
       "Kamera 50MP (Hauptkamera)",
-      null
+      130.0
     ],
     [
       "Galaxy S23 Plus",
       "Kamera 10MP (3x Zoom)",
-      null
+      100.0
     ],
     [
       "Galaxy S23 Plus",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S23 Plus",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Plus",
       "Mikrofon",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Plus",
       "Sim-Kartenleser",
-      null
+      95.0
     ],
     [
       "Galaxy S23 Plus",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      95.0
     ],
     [
       "Galaxy S23",
       "Display",
-      null
+      210.0
     ],
     [
       "Galaxy S23",
       "Rückseite (inkl. Kameralinse)",
-      null
+      85.0
     ],
     [
       "Galaxy S23",
       "Akku",
-      null
+      100.0
     ],
     [
       "Galaxy S23",
       "Kamera 12MP (Weitwinkel)",
-      null
+      100.0
     ],
     [
       "Galaxy S23",
       "Kamera 50MP (Hauptkamera)",
-      null
+      130.0
     ],
     [
       "Galaxy S23",
       "Kamera 10MP (3x Zoom)",
-      null
+      100.0
     ],
     [
       "Galaxy S23",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S23",
       "Ladeanschluss",
-      null
+      100.0
     ],
     [
       "Galaxy S23",
       "Mikrofon",
-      null
+      100.0
     ],
     [
       "Galaxy S23",
       "Sim-Kartenleser",
-      null
+      100.0
     ],
     [
       "Galaxy S23",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      95.0
     ],
     [
       "Galaxy S22 Ultra",
       "Display (inkl. Mittelrahmen)",
-      null
+      270.0
     ],
     [
       "Galaxy S22 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Ultra",
       "Akku",
-      null
+      95.0
     ],
     [
       "Galaxy S22 Ultra",
       "Kamera 108MP",
-      null
+      130.0
     ],
     [
       "Galaxy S22 Ultra",
       "Kamera 12MP",
-      null
+      100.0
     ],
     [
       "Galaxy S22 Ultra",
       "Kamera 12MP (Wide)",
-      null
+      95.0
     ],
     [
       "Galaxy S22 Ultra",
       "Frontkamera 40MP",
-      null
+      100.0
     ],
     [
       "Galaxy S22 Ultra",
       "Ladeanschluss",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Ultra",
       "Mikrofon",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Ultra",
       "Sim-Kartenleser",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Ultra",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S22 Plus",
       "Display / Bildanzeige (inkl. Mittelrahmen)",
-      null
+      225.0
     ],
     [
       "Galaxy S22 Plus",
       "Rückseite (inkl. Kameralinse)",
-      null
+      85.0
     ],
     [
       "Galaxy S22 Plus",
       "Akku",
-      null
+      95.0
     ],
     [
       "Galaxy S22 Plus",
       "Kamera 12MP (Ultra Wide)",
-      null
+      95.0
     ],
     [
       "Galaxy S22 Plus",
       "Hauptkamera (Wide)",
-      null
+      120.0
     ],
     [
       "Galaxy S22 Plus",
       "Kamera 10MP (Zoom)",
-      null
+      95.0
     ],
     [
       "Galaxy S22 Plus",
       "Frontkamera 10MP",
-      null
+      100.0
     ],
     [
       "Galaxy S22 Plus",
       "Ladeanschluss",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Plus",
       "Mikrofon",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Plus",
       "Sim-Kartenleser",
-      null
+      90.0
     ],
     [
       "Galaxy S22 Plus",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S22",
       "Display / Bildanzeige (inkl. Mittelrahmen)",
-      null
+      220.0
     ],
     [
       "Galaxy S22",
       "Rückseite (inkl. Kameralinse)",
-      null
+      85.0
     ],
     [
       "Galaxy S22",
       "Akku",
-      null
+      95.0
     ],
     [
       "Galaxy S22",
       "Kamera 12MP (Ultra Wide)",
-      null
+      95.0
     ],
     [
       "Galaxy S22",
       "Hauptkamera (Wide)",
-      null
+      120.0
     ],
     [
       "Galaxy S22",
       "Kamera 10MP (Zoom)",
-      null
+      95.0
     ],
     [
       "Galaxy S22",
       "Frontkamera 10MP",
-      null
+      100.0
     ],
     [
       "Galaxy S22",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy S22",
       "Mikrofon",
-      null
+      95.0
     ],
     [
       "Galaxy S22",
       "Sim-Kartenleser",
-      null
+      95.0
     ],
     [
       "Galaxy S22",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S21 FE",
       "Display / Bildanzeige (inkl. Mittelrahmen)",
-      null
+      170.0
     ],
     [
       "Galaxy S21 FE",
       "Rückseite (inkl. Kameralinse)",
-      null
+      75.0
     ],
     [
       "Galaxy S21 FE",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S21 FE",
       "Kamera 12MP (Weitwinkel)",
-      null
+      85.0
     ],
     [
       "Galaxy S21 FE",
       "Kamera 12MP (Hauptkamera)",
-      null
+      100.0
     ],
     [
       "Galaxy S21 FE",
       "Kamera 8MP (Zoom)",
-      null
+      85.0
     ],
     [
       "Galaxy S21 FE",
       "Frontkamera",
-      null
+      95.0
     ],
     [
       "Galaxy S21 FE",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      80.0
     ],
     [
       "Galaxy S21 Ultra",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      290.0
     ],
     [
       "Galaxy S21 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      85.0
     ],
     [
       "Galaxy S21 Ultra",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S21 Plus",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      220.0
     ],
     [
       "Galaxy S21 Plus",
       "Rückseite (inkl. Kameralinse)",
-      null
+      85.0
     ],
     [
       "Galaxy S21 Plus",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S21",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      200.0
     ],
     [
       "Galaxy S21",
       "Rückseite (inkl. Kameralinse)",
-      null
+      75.0
     ],
     [
       "Galaxy S21",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S20 FE 4G / 5G",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      145.0
     ],
     [
       "Galaxy S20 FE 4G / 5G",
       "Rückseite (inkl. Kameralinse)",
-      null
+      70.0
     ],
     [
       "Galaxy S20 FE 4G / 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S20 FE 4G / 5G",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      75.0
     ],
     [
       "Galaxy S20 Ultra",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      255.0
     ],
     [
       "Galaxy S20 Ultra",
       "Rückseite (inkl. Kameralinse)",
-      null
+      80.0
     ],
     [
       "Galaxy S20 Ultra",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S20 Ultra",
       "Ladeanschluss",
-      null
+      80.0
     ],
     [
       "Galaxy S20 Ultra",
       "Mikrofon",
-      null
+      80.0
     ],
     [
       "Galaxy S20 Ultra",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      75.0
     ],
     [
       "Galaxy S20 Plus 4G / 5G",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      230.0
     ],
     [
       "Galaxy S20 Plus 4G / 5G",
       "Rückseite (inkl. Kameralinse)",
-      null
+      80.0
     ],
     [
       "Galaxy S20 Plus 4G / 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S20 Plus 4G / 5G",
       "Ladeanschluss",
-      null
+      80.0
     ],
     [
       "Galaxy S20 Plus 4G / 5G",
       "Mikrofon",
-      null
+      80.0
     ],
     [
       "Galaxy S20 Plus 4G / 5G",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      75.0
     ],
     [
       "Galaxy S20 4G / 5G",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      225.0
     ],
     [
       "Galaxy S20 4G / 5G",
       "Rückseite (inkl. Kameralinse)",
-      null
+      80.0
     ],
     [
       "Galaxy S20 4G / 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S20 4G / 5G",
       "Ladeanschluss",
-      null
+      80.0
     ],
     [
       "Galaxy S20 4G / 5G",
       "Mikrofon",
-      null
+      80.0
     ],
     [
       "Galaxy S20 4G / 5G",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      70.0
     ],
     [
       "Galaxy S10 Plus",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      250.0
     ],
     [
       "Galaxy S10 Plus",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy S10 Plus",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S10 Plus",
       "Ladeanschluss / Mikrofon",
-      null
+      85.0
     ],
     [
       "Galaxy S10 Plus",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S10 5G",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      230.0
     ],
     [
       "Galaxy S10 5G",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy S10 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S10 5G",
       "Ladeanschluss / Mikrofon",
-      null
+      105.0
     ],
     [
       "Galaxy S10 5G",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S10",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      260.0
     ],
     [
       "Galaxy S10",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Galaxy S10",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S10",
       "Ladeanschluss / Mikrofon",
-      null
+      105.0
     ],
     [
       "Galaxy S10",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S10e",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      215.0
     ],
     [
       "Galaxy S10e",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy S10e",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S10e",
       "Ladeanschluss / Mikrofon",
-      null
+      105.0
     ],
     [
       "Galaxy S10e",
       "Sonstige Kleinteile (Flexkabel, Lautsprecher, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      215.0
     ],
     [
       "Galaxy S9 Plus",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy S9 Plus",
       "Akku",
-      null
+      80.0
     ],
     [
       "Galaxy S9 Plus",
       "Kameralinse (Rückseite)",
-      null
+      80.0
     ],
     [
       "Galaxy S9 Plus",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "Galaxy S9 Plus",
       "Frontkamera",
-      null
+      95.0
     ],
     [
       "Galaxy S9 Plus",
       "Ladeanschluss / Mikrofon",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Kopfhöreranschluss",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Power Button (Einschaltknopf)",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Laut / Leise Tasten",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Vibration",
-      null
+      85.0
     ],
     [
       "Galaxy S9 Plus",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S9",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      175.0
     ],
     [
       "Galaxy S9",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy S9",
       "Akku",
-      null
+      80.0
     ],
     [
       "Galaxy S9",
       "Kameralinse (Rückseite)",
-      null
+      80.0
     ],
     [
       "Galaxy S9",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "Galaxy S9",
       "Frontkamera",
-      null
+      95.0
     ],
     [
       "Galaxy S9",
       "Ladeanschluss / Mikrofon",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Kopfhöreranschluss",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Ohrmuschel",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Fingerabdruck Sensor",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Power Button (Einschaltknopf)",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Laut / Leise Tasten",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Vibration",
-      null
+      85.0
     ],
     [
       "Galaxy S9",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S8 Plus",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      195.0
     ],
     [
       "Galaxy S8 Plus",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy S8 Plus",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy S8 Plus",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "Galaxy S8 Plus",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S8 Plus",
       "Frontkamera",
-      null
+      85.0
     ],
     [
       "Galaxy S8 Plus",
       "Ladeanschluss / Mikrofon",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Kopfhöreranschluss",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Lautsprecher",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Ohrmuschel",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Fingerabdruck Sensor",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Power Button (Einschaltknopf)",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Laut / Leise Tasten",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Vibration",
-      null
+      80.0
     ],
     [
       "Galaxy S8 Plus",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S8",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      175.0
     ],
     [
       "Galaxy S8",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy S8",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy S8",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "Galaxy S8",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S8",
       "Frontkamera",
-      null
+      85.0
     ],
     [
       "Galaxy S8",
       "Ladeanschluss / Mikrofon",
-      null
+      80.0
     ],
     [
       "Galaxy S8",
       "Kopfhöreranschluss",
-      null
+      80.0
     ],
     [
       "Galaxy S8",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy S8",
       "Ohrmuschel",
-      null
+      85.0
     ],
     [
       "Galaxy S8",
       "Fingerabdruck Sensor",
-      null
+      80.0
     ],
     [
       "Galaxy S8",
       "Power Button (Einschaltknopf)",
-      null
+      80.0
     ],
     [
       "Galaxy S8",
       "Laut / Leise Tasten",
-      null
+      80.0
     ],
     [
       "Galaxy S8",
       "Vibration",
-      null
+      80.0
     ],
     [
       "Galaxy S8",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S7 Edge",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      175.0
     ],
     [
       "Galaxy S7 Edge",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S7 Edge",
       "Frontkamera",
-      null
+      85.0
     ],
     [
       "Galaxy S7 Edge",
       "Kopfhöreranschluss",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Lautsprecher",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Ohrmuschel",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Power Button (Einschaltknopf)",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Laut / Leise Tasten",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Vibration",
-      null
+      70.0
     ],
     [
       "Galaxy S7 Edge",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S7",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy S7",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Kameralinse (Rückseite)",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S7",
       "Frontkamera",
-      null
+      85.0
     ],
     [
       "Galaxy S7",
       "Kopfhöreranschluss",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Lautsprecher",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Ohrmuschel",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Power Button (Einschaltknopf)",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Laut / Leise Tasten",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Vibration",
-      null
+      70.0
     ],
     [
       "Galaxy S7",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Kameralinse (Rückseite)",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Ohrmuschel",
-      null
+      85.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Power Button (Einschaltknopf)",
-      null
+      105.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Laut / Leise Tasten",
-      null
+      105.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Vibration",
-      null
+      95.0
     ],
     [
       "Galaxy S6 Edge Plus",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S6 Edge",
       "Display / LCD (inkl. Mittelrahmen)",
-      null
+      130.0
     ],
     [
       "Galaxy S6 Edge",
       "Rückseite (Backcover)",
-      null
+      50.0
     ],
     [
       "Galaxy S6 Edge",
       "Akku",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Kameralinse (Rückseite)",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Hauptkamera",
-      null
+      85.0
     ],
     [
       "Galaxy S6 Edge",
       "Frontkamera",
-      null
+      70.0
     ],
     [
       "Galaxy S6 Edge",
       "Ladeanschluss / Mikrofon / Aux-Anschluss",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Lautsprecher",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Ohrmuschel",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Power Button (Einschaltknopf)",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Laut / Leise Tasten",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Vibration",
-      null
+      60.0
     ],
     [
       "Galaxy S6 Edge",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy S6",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy S6",
       "Rückseite (Backcover)",
-      null
+      50.0
     ],
     [
       "Galaxy S6",
       "Akku",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Kameralinse (Rückseite)",
-      null
+      50.0
     ],
     [
       "Galaxy S6",
       "Hauptkamera",
-      null
+      85.0
     ],
     [
       "Galaxy S6",
       "Frontkamera",
-      null
+      80.0
     ],
     [
       "Galaxy S6",
       "Ladeanschluss / Mikrofon / Aux-Anschluss",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Lautsprecher",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Ohrmuschel",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Power Button (Einschaltknopf)",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Laut / Leise Tasten",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Vibration",
-      null
+      60.0
     ],
     [
       "Galaxy S6",
       "Sim- und Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy A57",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Galaxy A57",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A57",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A57",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A56",
       "Display / LCD",
-      null
+      170.0
     ],
     [
       "Galaxy A56",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A56",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A56",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A55",
       "Display / LCD",
-      null
+      170.0
     ],
     [
       "Galaxy A55",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A55",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A55",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A54 5G",
       "Display / LCD",
-      null
+      170.0
     ],
     [
       "Galaxy A54 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A54 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A54 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A53 5G",
       "Display / LCD",
-      null
+      160.0
     ],
     [
       "Galaxy A53 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A53 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A53 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A52 / A52s",
       "Display / LCD",
-      null
+      150.0
     ],
     [
       "Galaxy A52 / A52s",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A52 / A52s",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A52 / A52s",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A51",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A51",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A51",
       "Akku",
-      null
+      75.0
     ],
     [
       "Galaxy A51",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A50",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A50",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A50",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A50",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A42 5G",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A42 5G",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A42 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A42 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A41",
       "Display / LCD",
-      null
+      115.0
     ],
     [
       "Galaxy A41",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A41",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A40",
       "Display / LCD",
-      null
+      115.0
     ],
     [
       "Galaxy A40",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A40",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A37",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Galaxy A37",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy A37",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A37",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A36",
       "Display / LCD",
-      null
+      170.0
     ],
     [
       "Galaxy A36",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy A36",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A36",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A35",
       "Display / LCD",
-      null
+      150.0
     ],
     [
       "Galaxy A35",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A35",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A35",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A34",
       "Display / LCD",
-      null
+      160.0
     ],
     [
       "Galaxy A34",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A34",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A34",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A33 5G",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A33 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A33 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A33 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A32 5G",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A32 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A32 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A32 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A32 4G",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A32 4G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A32 4G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A32 4G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A30s",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A30s",
       "Akku",
-      null
+      80.0
     ],
     [
       "Galaxy A25",
       "Display / LCD",
-      null
+      150.0
     ],
     [
       "Galaxy A25",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A25",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A25",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A17 4G / 5G",
       "Display / LCD",
-      null
+      140.0
     ],
     [
       "Galaxy A17 4G / 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A17 4G / 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A17 4G / 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A16 4G / 5G",
       "Display / LCD",
-      null
+      140.0
     ],
     [
       "Galaxy A16 4G / 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A16 4G / 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A16 4G / 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A15 4G / 5G",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A15 4G / 5G",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A15 4G / 5G",
       "Akku",
-      null
+      85.0
     ],
     [
       "Galaxy A15 4G / 5G",
       "Sonstige Kleinteile (Ladeanschluss, Flexkabel, etc.)",
-      null
+      85.0
     ],
     [
       "Galaxy A14 4G / 5G",
       "Display / LCD",
-      null
+      130.0
     ],
     [
       "Galaxy A14 4G / 5G",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A14 4G / 5G",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A13",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A13",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A13",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A8",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A8",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A8",
       "Akku",
-      null
+      80.0
     ],
     [
       "Galaxy A7",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A7",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A7",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A7 (2016)",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A7 (2016)",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A7 (2016)",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A6+",
       "Display / LCD",
-      null
+      115.0
     ],
     [
       "Galaxy A6+",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A6+",
@@ -5809,12 +5809,12 @@
     [
       "Galaxy A6",
       "Display / LCD",
-      null
+      115.0
     ],
     [
       "Galaxy A6",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Galaxy A6",
@@ -5824,992 +5824,992 @@
     [
       "Galaxy A5 (2017)",
       "Display / LCD",
-      null
+      125.0
     ],
     [
       "Galaxy A5 (2017)",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Galaxy A5 (2017)",
       "Akku",
-      null
+      70.0
     ],
     [
       "Galaxy A5 (2017)",
       "Kameralinse (Rückseite)",
-      null
+      60.0
     ],
     [
       "Galaxy A5 (2017)",
       "Hauptkamera",
-      null
+      85.0
     ],
     [
       "Galaxy A5 (2017)",
       "Frontkamera",
-      null
+      80.0
     ],
     [
       "Galaxy A5 (2017)",
       "Speicherkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy A5 (2017)",
       "Simkarten Halter",
-      null
+      20.0
     ],
     [
       "Galaxy Z Fold 7",
       "Display / LCD (Hauptbildschirm)",
-      null
+      835.0
     ],
     [
       "Galaxy Z Fold 7",
       "Display / LCD (Sub-Display)",
-      null
+      220.0
     ],
     [
       "Galaxy Z Fold 7",
       "Rückseite (Backcover)",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 7",
       "Akku (Hauptakku)",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 7",
       "Akku (Sub)",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 7",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 7",
       "Lautsprecher",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 7",
       "Kamera 12MP (Haupt / Weitwinkel)",
-      null
+      175.0
     ],
     [
       "Galaxy Z Fold 7",
       "Kamera 12MP (Teleobjektiv)",
-      null
+      130.0
     ],
     [
       "Galaxy Z Fold 7",
       "Frontkamera",
-      null
+      160.0
     ],
     [
       "Galaxy Z Fold 6",
       "Display / LCD (Hauptbildschirm)",
-      null
+      655.0
     ],
     [
       "Galaxy Z Fold 6",
       "Display / LCD (Sub-Display)",
-      null
+      220.0
     ],
     [
       "Galaxy Z Fold 6",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 6",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 6",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 6",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 6",
       "Lautsprecher",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 6",
       "Kamera 12MP (Haupt / Weitwinkel)",
-      null
+      160.0
     ],
     [
       "Galaxy Z Fold 6",
       "Kamera 12MP (Teleobjektiv)",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 6",
       "Frontkamera",
-      null
+      130.0
     ],
     [
       "Galaxy Z Fold 5",
       "Display / LCD (Hauptbildschirm)",
-      null
+      620.0
     ],
     [
       "Galaxy Z Fold 5",
       "Display / LCD (Sub-Display)",
-      null
+      215.0
     ],
     [
       "Galaxy Z Fold 5",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 5",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 5",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 5",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 5",
       "Lautsprecher",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 5",
       "Kamera 12MP (Haupt / Weitwinkel)",
-      null
+      160.0
     ],
     [
       "Galaxy Z Fold 5",
       "Kamera 12MP (Teleobjektiv)",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 5",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 4",
       "Display / LCD (Hauptbildschirm)",
-      null
+      620.0
     ],
     [
       "Galaxy Z Fold 4",
       "Display / LCD (Sub-Display)",
-      null
+      215.0
     ],
     [
       "Galaxy Z Fold 4",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 4",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 4",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 4",
       "Ladeanschluss",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 4",
       "Lautsprecher",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 4",
       "Kamera 12MP (Haupt / Weitwinkel)",
-      null
+      160.0
     ],
     [
       "Galaxy Z Fold 4",
       "Kamera 12MP (Teleobjektiv)",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 4",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Display / LCD (Hauptbildschirm)",
-      null
+      580.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Display / LCD (Sub-Display)",
-      null
+      230.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Akku (Sub)",
-      null
+      80.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Lautsprecher",
-      null
+      80.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Kamera 12MP (Haupt / Weitwinkel)",
-      null
+      150.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Kamera 12MP (Teleobjektiv)",
-      null
+      95.0
     ],
     [
       "Galaxy Z Fold 3 5G",
       "Frontkamera",
-      null
+      95.0
     ],
     [
       "Galaxy Z Flip 7",
       "Display / LCD",
-      null
+      445.0
     ],
     [
       "Galaxy Z Flip 7",
       "Rückseite oben (inkl. Kameralinse)",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 7",
       "Rückseite unten",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 7",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 7",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 7",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 7",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 7",
       "Kamera 12MP (Weitwinkel)",
-      null
+      115.0
     ],
     [
       "Galaxy Z Flip 7",
       "Kamera 12MP (Hauptkamera)",
-      null
+      125.0
     ],
     [
       "Galaxy Z Flip 7",
       "Zwei Kameras",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 7",
       "Frontkamera 10MP",
-      null
+      105.0
     ],
     [
       "Galaxy Z Flip 7",
       "Sim-Halter",
-      null
+      25.0
     ],
     [
       "Galaxy Z Flip 6",
       "Display / LCD",
-      null
+      410.0
     ],
     [
       "Galaxy Z Flip 6",
       "Rückseite oben (inkl. Kameralinse)",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 6",
       "Rückseite unten",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 6",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 6",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 6",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 6",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 6",
       "Kamera 12MP (Weitwinkel)",
-      null
+      115.0
     ],
     [
       "Galaxy Z Flip 6",
       "Kamera 12MP (Hauptkamera)",
-      null
+      125.0
     ],
     [
       "Galaxy Z Flip 6",
       "Zwei Kameras",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 6",
       "Frontkamera 10MP",
-      null
+      105.0
     ],
     [
       "Galaxy Z Flip 6",
       "Sim-Halter",
-      null
+      25.0
     ],
     [
       "Galaxy Z Flip 5",
       "Display / LCD",
-      null
+      400.0
     ],
     [
       "Galaxy Z Flip 5",
       "Rückseite oben (inkl. Kameralinse)",
-      null
+      150.0
     ],
     [
       "Galaxy Z Flip 5",
       "Rückseite unten",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 5",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 5",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 5",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 5",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 5",
       "Kamera 12MP (Weitwinkel)",
-      null
+      115.0
     ],
     [
       "Galaxy Z Flip 5",
       "Kamera 12MP (Hauptkamera)",
-      null
+      125.0
     ],
     [
       "Galaxy Z Flip 5",
       "Zwei Kameras",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 5",
       "Frontkamera 10MP",
-      null
+      105.0
     ],
     [
       "Galaxy Z Flip 5",
       "Sim-Halter",
-      null
+      25.0
     ],
     [
       "Galaxy Z Flip 4",
       "Display / LCD",
-      null
+      410.0
     ],
     [
       "Galaxy Z Flip 4",
       "Rückseite oben (inkl. Kameralinse)",
-      null
+      130.0
     ],
     [
       "Galaxy Z Flip 4",
       "Rückseite unten",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 4",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 4",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 4",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 4",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 4",
       "Kamera 12MP (Weitwinkel)",
-      null
+      115.0
     ],
     [
       "Galaxy Z Flip 4",
       "Kamera 12MP (Hauptkamera)",
-      null
+      125.0
     ],
     [
       "Galaxy Z Flip 4",
       "Zwei Kameras",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 4",
       "Frontkamera 10MP",
-      null
+      105.0
     ],
     [
       "Galaxy Z Flip 4",
       "Sim-Halter",
-      null
+      25.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Display / LCD",
-      null
+      385.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Rückseite oben (inkl. Kameralinse)",
-      null
+      125.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Rückseite unten",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Akku (Hauptakku)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Akku (Sub)",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Lautsprecher",
-      null
+      85.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Kamera 12MP (Weitwinkel)",
-      null
+      115.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Kamera 12MP (Hauptkamera)",
-      null
+      125.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Zwei Kameras",
-      null
+      160.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Frontkamera 10MP",
-      null
+      115.0
     ],
     [
       "Galaxy Z Flip 3 5G",
       "Sim-Halter",
-      null
+      25.0
     ],
     [
       "OnePlus 13R",
       "Display",
-      null
+      265.0
     ],
     [
       "OnePlus 13R",
       "Rückglas",
-      null
+      140.0
     ],
     [
       "OnePlus 13R",
       "Akku",
-      null
+      130.0
     ],
     [
       "OnePlus 13",
       "Display",
-      null
+      375.0
     ],
     [
       "OnePlus 13",
       "Rückglas",
-      null
+      175.0
     ],
     [
       "OnePlus 13",
       "Akku",
-      null
+      160.0
     ],
     [
       "OnePlus 12R",
       "Display",
-      null
+      275.0
     ],
     [
       "OnePlus 12R",
       "Rückglas",
-      null
+      170.0
     ],
     [
       "OnePlus 12R",
       "Akku",
-      null
+      150.0
     ],
     [
       "OnePlus 12",
       "Display",
-      null
+      375.0
     ],
     [
       "OnePlus 12",
       "Rückglas",
-      null
+      175.0
     ],
     [
       "OnePlus 12",
       "Akku",
-      null
+      150.0
     ],
     [
       "OnePlus 11",
       "Display / LCD",
-      null
+      385.0
     ],
     [
       "OnePlus 11",
       "Akku",
-      null
+      125.0
     ],
     [
       "OnePlus 10T",
       "Display / LCD",
-      null
+      310.0
     ],
     [
       "OnePlus 10T",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 10 Pro",
       "Display / LCD",
-      null
+      395.0
     ],
     [
       "OnePlus 10 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "OnePlus 9 Pro",
       "Display / LCD",
-      null
+      305.0
     ],
     [
       "OnePlus 9 Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 9",
       "Display / LCD",
-      null
+      305.0
     ],
     [
       "OnePlus 9",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 8T",
       "Display / LCD",
-      null
+      295.0
     ],
     [
       "OnePlus 8T",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 8 Pro",
       "Display / LCD",
-      null
+      355.0
     ],
     [
       "OnePlus 8 Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 8",
       "Display / LCD",
-      null
+      265.0
     ],
     [
       "OnePlus 8",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 7T Pro",
       "Display / LCD",
-      null
+      295.0
     ],
     [
       "OnePlus 7T Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 7T",
       "Display / LCD",
-      null
+      265.0
     ],
     [
       "OnePlus 7T",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 7 Pro",
       "Display / LCD",
-      null
+      295.0
     ],
     [
       "OnePlus 7 Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 7",
       "Display / LCD",
-      null
+      205.0
     ],
     [
       "OnePlus 7",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus 6T",
       "Display / LCD",
-      null
+      215.0
     ],
     [
       "OnePlus 6T",
       "Akku",
-      null
+      85.0
     ],
     [
       "OnePlus 6",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "OnePlus 6",
       "Akku",
-      null
+      85.0
     ],
     [
       "OnePlus Nord 3",
       "Display / LCD",
-      null
+      240.0
     ],
     [
       "OnePlus Nord 3",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord 2T 5G",
       "Display / LCD",
-      null
+      195.0
     ],
     [
       "OnePlus Nord 2T 5G",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord 2",
       "Display / LCD",
-      null
+      195.0
     ],
     [
       "OnePlus Nord 2",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "OnePlus Nord",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord CE 3 Lite",
       "Display / LCD",
-      null
+      195.0
     ],
     [
       "OnePlus Nord CE 3 Lite",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord CE 2 5G",
       "Display / LCD",
-      null
+      205.0
     ],
     [
       "OnePlus Nord CE 2 5G",
       "Akku",
-      null
+      105.0
     ],
     [
       "OnePlus Nord CE 2 Lite",
       "Display / LCD",
-      null
+      195.0
     ],
     [
       "OnePlus Nord CE 2 Lite",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord CE 5G",
       "Display / LCD",
-      null
+      170.0
     ],
     [
       "OnePlus Nord CE 5G",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord N100",
       "Display / LCD",
-      null
+      150.0
     ],
     [
       "OnePlus Nord N100",
       "Akku",
-      null
+      115.0
     ],
     [
       "OnePlus Nord N10",
       "Display / LCD",
-      null
+      150.0
     ],
     [
       "OnePlus Nord N10",
       "Akku",
-      null
+      115.0
     ],
     [
       "Xiaomi 12",
       "Display / LCD",
-      null
+      220.0
     ],
     [
       "Xiaomi 12",
       "Rückseite (Backcover)",
-      null
+      160.0
     ],
     [
       "Xiaomi 12",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 12",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Xiaomi 12 Lite",
       "Display / LCD",
-      null
+      220.0
     ],
     [
       "Xiaomi 12 Lite",
       "Rückseite (Backcover)",
-      null
+      160.0
     ],
     [
       "Xiaomi 12 Lite",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 12 Lite",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Xiaomi 12 Pro",
       "Display / LCD",
-      null
+      355.0
     ],
     [
       "Xiaomi 12 Pro",
       "Rückseite (Backcover)",
-      null
+      170.0
     ],
     [
       "Xiaomi 12 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 12 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Xiaomi 12X 5G",
       "Display / LCD",
-      null
+      220.0
     ],
     [
       "Xiaomi 12X 5G",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Xiaomi 12X 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 12X 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Xiaomi 12T",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Xiaomi 12T",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Xiaomi 12T",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 12T",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Xiaomi 12T Pro",
@@ -6824,17 +6824,17 @@
     [
       "Xiaomi 12T Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 12T Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Xiaomi 11X Pro",
       "Display / LCD",
-      null
+      215.0
     ],
     [
       "Xiaomi 11X Pro",
@@ -6844,12 +6844,12 @@
     [
       "Xiaomi 11X Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Xiaomi 11X Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 11 Ultra 5G",
@@ -6864,17 +6864,17 @@
     [
       "Mi 11 Ultra 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 11 Ultra 5G",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "Mi 11 5G",
       "Display / LCD",
-      null
+      355.0
     ],
     [
       "Mi 11 5G",
@@ -6884,57 +6884,57 @@
     [
       "Mi 11 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 11 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 11 Lite 5G",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Mi 11 Lite 5G",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Mi 11 Lite 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 11 Lite 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 11 Lite 4G",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Mi 11 Lite 4G",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Mi 11 Lite 4G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 11 Lite 4G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 10T / 10T Pro",
       "Display / LCD",
-      null
+      195.0
     ],
     [
       "Mi 10T / 10T Pro",
@@ -6944,17 +6944,17 @@
     [
       "Mi 10T / 10T Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 10T / 10T Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 10T Lite 5G",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Mi 10T Lite 5G",
@@ -6964,37 +6964,37 @@
     [
       "Mi 10T Lite 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 10T Lite 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 10 Pro",
       "Display / LCD",
-      null
+      240.0
     ],
     [
       "Mi 10 Pro",
       "Rückseite (Backcover)",
-      null
+      150.0
     ],
     [
       "Mi 10 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 10 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 10",
       "Display / LCD",
-      null
+      260.0
     ],
     [
       "Mi 10",
@@ -7004,17 +7004,17 @@
     [
       "Mi 10",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 10",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 9T",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Mi 9T",
@@ -7024,37 +7024,37 @@
     [
       "Mi 9T",
       "Akku",
-      null
+      125.0
     ],
     [
       "Mi 9T",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi 9",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Mi 9",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Mi 9",
       "Akku",
-      null
+      130.0
     ],
     [
       "Mi 9",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Mi Note 10 / Note 10 Pro",
       "Display / LCD",
-      null
+      220.0
     ],
     [
       "Mi Note 10 / Note 10 Pro",
@@ -7074,7 +7074,7 @@
     [
       "Redmi Note 11 Pro Plus 5G",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Redmi Note 11 Pro Plus 5G",
@@ -7084,112 +7084,112 @@
     [
       "Redmi Note 11 Pro Plus 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 11 Pro Plus 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 11 Pro 5G",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Redmi Note 11 Pro 5G",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 11 Pro 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 11 Pro 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 11S 5G",
       "Display / LCD",
-      null
+      265.0
     ],
     [
       "Redmi Note 11S 5G",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 11S 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 11S 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 11S",
       "Display / LCD",
-      null
+      265.0
     ],
     [
       "Redmi Note 11S",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 11S",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 11S",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 11",
       "Display / LCD",
-      null
+      205.0
     ],
     [
       "Redmi Note 11",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 11",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 11",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 10 Pro",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Redmi Note 10 Pro",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Redmi Note 10 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 10 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 10 5G",
@@ -7199,37 +7199,37 @@
     [
       "Redmi Note 10 5G",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Redmi Note 10 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 10 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 10S",
       "Display / LCD",
-      null
+      195.0
     ],
     [
       "Redmi Note 10S",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 10S",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 10S",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 10",
@@ -7239,62 +7239,62 @@
     [
       "Redmi Note 10",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Redmi Note 10",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 10",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 9 Pro",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Redmi Note 9 Pro",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 9 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 9 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi Note 9S",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Redmi Note 9S",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Redmi Note 9S",
       "Akku",
-      null
+      130.0
     ],
     [
       "Redmi Note 9S",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Redmi 9",
       "Display / LCD",
-      null
+      150.0
     ],
     [
       "Redmi 9",
@@ -7314,27 +7314,27 @@
     [
       "Poco X4 Pro",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Poco X4 Pro",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Poco X4 Pro",
       "Akku",
-      null
+      130.0
     ],
     [
       "Poco X4 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Poco X4 GT",
       "Display / LCD",
-      null
+      170.0
     ],
     [
       "Poco X4 GT",
@@ -7349,12 +7349,12 @@
     [
       "Poco X4 GT",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Poco X3 Pro",
       "Display / LCD",
-      null
+      160.0
     ],
     [
       "Poco X3 Pro",
@@ -7374,42 +7374,42 @@
     [
       "Poco X3 / X3 NFC",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Poco X3 / X3 NFC",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Poco X3 / X3 NFC",
       "Akku",
-      null
+      130.0
     ],
     [
       "Poco X3 / X3 NFC",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "Poco X3 GT",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Poco X3 GT",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Poco X3 GT",
       "Akku",
-      null
+      125.0
     ],
     [
       "Poco X3 GT",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Poco F3 5G",
@@ -7434,7 +7434,7 @@
     [
       "Poco F2 Pro",
       "Display / LCD",
-      null
+      205.0
     ],
     [
       "Poco F2 Pro",
@@ -7454,247 +7454,247 @@
     [
       "Oppo Find X5 Pro",
       "Display / LCD",
-      null
+      475.0
     ],
     [
       "Oppo Find X5 Pro",
       "Rückseite (Backcover)",
-      null
+      195.0
     ],
     [
       "Oppo Find X5 Pro",
       "Akku",
-      null
+      160.0
     ],
     [
       "Oppo Find X5 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo Find X5",
       "Display / LCD",
-      null
+      430.0
     ],
     [
       "Oppo Find X5",
       "Rückseite (Backcover)",
-      null
+      175.0
     ],
     [
       "Oppo Find X5",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo Find X5",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo Find X5 Lite",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Oppo Find X5 Lite",
       "Rückseite (Backcover)",
-      null
+      140.0
     ],
     [
       "Oppo Find X5 Lite",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo Find X5 Lite",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo Find X3 Pro",
       "Display / LCD",
-      null
+      475.0
     ],
     [
       "Oppo Find X3 Pro",
       "Rückseite (Backcover)",
-      null
+      205.0
     ],
     [
       "Oppo Find X3 Pro",
       "Akku",
-      null
+      160.0
     ],
     [
       "Oppo Find X3 Pro",
       "Ladeanschluss",
-      null
+      160.0
     ],
     [
       "Oppo Find X3 Neo",
       "Display / LCD",
-      null
+      430.0
     ],
     [
       "Oppo Find X3 Neo",
       "Rückseite (Backcover)",
-      null
+      175.0
     ],
     [
       "Oppo Find X3 Neo",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Find X3 Neo",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Find X3 Lite",
       "Display / LCD",
-      null
+      240.0
     ],
     [
       "Oppo Find X3 Lite",
       "Rückseite (Backcover)",
-      null
+      175.0
     ],
     [
       "Oppo Find X3 Lite",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Find X3 Lite",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Find X2 Pro",
       "Display / LCD",
-      null
+      445.0
     ],
     [
       "Oppo Find X2 Pro",
       "Rückseite (Backcover)",
-      null
+      195.0
     ],
     [
       "Oppo Find X2 Pro",
       "Akku",
-      null
+      160.0
     ],
     [
       "Oppo Find X2 Pro",
       "Ladeanschluss",
-      null
+      160.0
     ],
     [
       "Oppo Find X2 Neo",
       "Display / LCD",
-      null
+      320.0
     ],
     [
       "Oppo Find X2 Neo",
       "Rückseite (Backcover)",
-      null
+      170.0
     ],
     [
       "Oppo Find X2 Neo",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Find X2 Neo",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Find X2 Lite",
       "Display / LCD",
-      null
+      205.0
     ],
     [
       "Oppo Find X2 Lite",
       "Rückseite (Backcover)",
-      null
+      170.0
     ],
     [
       "Oppo Find X2 Lite",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo Find X2 Lite",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo Reno 8 Pro 5G",
       "Display / LCD",
-      null
+      375.0
     ],
     [
       "Oppo Reno 8 Pro 5G",
       "Rückseite (Backcover)",
-      null
+      195.0
     ],
     [
       "Oppo Reno 8 Pro 5G",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8 Pro 5G",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8 Lite",
       "Display / LCD",
-      null
+      260.0
     ],
     [
       "Oppo Reno 8 Lite",
       "Rückseite (Backcover)",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8 Lite",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8 Lite",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8 5G",
       "Display / LCD",
-      null
+      260.0
     ],
     [
       "Oppo Reno 8 5G",
       "Rückseite (Backcover)",
-      null
+      170.0
     ],
     [
       "Oppo Reno 8 5G",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8 5G",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8",
       "Display / LCD",
-      null
+      260.0
     ],
     [
       "Oppo Reno 8",
@@ -7704,37 +7704,37 @@
     [
       "Oppo Reno 8",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 8",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 7 5G",
       "Display / LCD",
-      null
+      260.0
     ],
     [
       "Oppo Reno 7 5G",
       "Rückseite (Backcover)",
-      null
+      170.0
     ],
     [
       "Oppo Reno 7 5G",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 7 5G",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 7",
       "Display / LCD",
-      null
+      260.0
     ],
     [
       "Oppo Reno 7",
@@ -7744,57 +7744,57 @@
     [
       "Oppo Reno 7",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 7",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 6 Pro 5G",
       "Display / LCD",
-      null
+      400.0
     ],
     [
       "Oppo Reno 6 Pro 5G",
       "Rückseite (Backcover)",
-      null
+      195.0
     ],
     [
       "Oppo Reno 6 Pro 5G",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 6 Pro 5G",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo Reno 6 5G",
       "Display / LCD",
-      null
+      250.0
     ],
     [
       "Oppo Reno 6 5G",
       "Rückseite (Backcover)",
-      null
+      195.0
     ],
     [
       "Oppo Reno 6 5G",
       "Akku",
-      null
+      150.0
     ],
     [
       "Oppo Reno 6 5G",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "Oppo A96",
       "Display / LCD",
-      null
+      220.0
     ],
     [
       "Oppo A96",
@@ -7804,32 +7804,32 @@
     [
       "Oppo A96",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo A96",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo A95 5G",
       "Display / LCD",
-      null
+      205.0
     ],
     [
       "Oppo A95 5G",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Oppo A95 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo A95 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo A94 5G",
@@ -7874,57 +7874,57 @@
     [
       "Oppo A72N / A73 5G",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Oppo A72N / A73 5G",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Oppo A72N / A73 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo A72N / A73 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Oppo A72 5G",
       "Display / LCD",
-      null
+      175.0
     ],
     [
       "Oppo A72 5G",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Oppo A72 5G",
       "Akku",
-      null
+      130.0
     ],
     [
       "Oppo A72 5G",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "Huawei P40 Pro",
       "Display",
-      null
+      355.0
     ],
     [
       "Huawei P40 Pro",
       "Rückseite (Backcover)",
-      null
+      140.0
     ],
     [
       "Huawei P40 Pro",
       "Akku",
-      null
+      115.0
     ],
     [
       "Huawei P40 Pro",
@@ -7934,17 +7934,17 @@
     [
       "Huawei P40",
       "Display",
-      null
+      285.0
     ],
     [
       "Huawei P40",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Huawei P40",
       "Akku",
-      null
+      115.0
     ],
     [
       "Huawei P40",
@@ -7954,522 +7954,522 @@
     [
       "Huawei P40 Lite E",
       "Display",
-      null
+      150.0
     ],
     [
       "Huawei P40 Lite E",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Huawei P40 Lite E",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei P40 Lite",
       "Display",
-      null
+      175.0
     ],
     [
       "Huawei P40 Lite",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Huawei P40 Lite",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei P30 Pro",
       "Display",
-      null
+      285.0
     ],
     [
       "Huawei P30 Pro",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Huawei P30 Pro",
       "Akku",
-      null
+      115.0
     ],
     [
       "Huawei P30 Pro",
       "Hauptkamera",
-      null
+      125.0
     ],
     [
       "Huawei P30",
       "Display",
-      null
+      265.0
     ],
     [
       "Huawei P30",
       "Rückseite (Backcover)",
-      null
+      105.0
     ],
     [
       "Huawei P30",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei P30",
       "Hauptkamera",
-      null
+      160.0
     ],
     [
       "Huawei P30 Lite",
       "Display",
-      null
+      170.0
     ],
     [
       "Huawei P30 Lite",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Huawei P30 Lite",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei P30 Lite",
       "Kameralinse",
-      null
+      70.0
     ],
     [
       "Huawei P20 Pro",
       "Display",
-      null
+      265.0
     ],
     [
       "Huawei P20 Pro",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Huawei P20 Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei P20 Pro",
       "Hauptkamera",
-      null
+      125.0
     ],
     [
       "Huawei P20 Pro",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Huawei P20",
       "Display",
-      null
+      195.0
     ],
     [
       "Huawei P20",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Huawei P20",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei P20",
       "Hauptkamera",
-      null
+      160.0
     ],
     [
       "Huawei P20",
       "Frontkamera",
-      null
+      105.0
     ],
     [
       "Huawei P20 Lite",
       "Display",
-      null
+      160.0
     ],
     [
       "Huawei P20 Lite",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Huawei P20 Lite",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei P20 Lite",
       "Hauptkamera",
-      null
+      115.0
     ],
     [
       "Huawei P20 Lite",
       "Frontkamera",
-      null
+      85.0
     ],
     [
       "Huawei P Smart Plus",
       "Display",
-      null
+      205.0
     ],
     [
       "Huawei P Smart Plus",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Huawei P Smart",
       "Display",
-      null
+      160.0
     ],
     [
       "Huawei P Smart",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Huawei P Smart",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei P Smart",
       "Hauptkamera",
-      null
+      105.0
     ],
     [
       "Huawei P Smart",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Huawei P10 Plus",
       "Display",
-      null
+      205.0
     ],
     [
       "Huawei P10 Plus",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Huawei P10 Plus",
       "Akku",
-      null
+      80.0
     ],
     [
       "Huawei P10 Plus",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "Huawei P10",
       "Display",
-      null
+      175.0
     ],
     [
       "Huawei P10",
       "Rückseite inkl. Kameralinse",
-      null
+      130.0
     ],
     [
       "Huawei P10",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei P10",
       "Hauptkamera",
-      null
+      85.0
     ],
     [
       "Huawei Mate 30 Pro",
       "Display",
-      null
+      355.0
     ],
     [
       "Huawei Mate 30 Pro",
       "Rückseite (Backcover)",
-      null
+      160.0
     ],
     [
       "Huawei Mate 30 Pro",
       "Akku",
-      null
+      125.0
     ],
     [
       "Huawei Mate 30 Pro",
       "Kameralinse",
-      null
+      85.0
     ],
     [
       "Huawei Mate 20 X",
       "Display",
-      null
+      340.0
     ],
     [
       "Huawei Mate 20 X",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Huawei Mate 20 X",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei Mate 20 Pro",
       "Display",
-      null
+      295.0
     ],
     [
       "Huawei Mate 20 Pro",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Huawei Mate 20 Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei Mate 20",
       "Display",
-      null
+      250.0
     ],
     [
       "Huawei Mate 20",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Huawei Mate 20",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei Mate 20 Lite",
       "Display",
-      null
+      170.0
     ],
     [
       "Huawei Mate 20 Lite",
       "Rückseite (Backcover)",
-      null
+      80.0
     ],
     [
       "Huawei Mate 20 Lite",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei Mate 20 Lite",
       "Ladeanschluss",
-      null
+      85.0
     ],
     [
       "Huawei Mate 10 Pro",
       "Display",
-      null
+      305.0
     ],
     [
       "Huawei Mate 10 Pro",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei Mate 10",
       "Display",
-      null
+      240.0
     ],
     [
       "Huawei Mate 10",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei Mate 10 Lite",
       "Display",
-      null
+      170.0
     ],
     [
       "Huawei Mate 10 Lite",
       "Akku",
-      null
+      105.0
     ],
     [
       "Huawei Mate 9 Pro",
       "Display",
-      null
+      285.0
     ],
     [
       "Huawei Mate 9 Pro",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei Mate 9",
       "Display",
-      null
+      215.0
     ],
     [
       "Huawei Mate 9",
       "Rückseite (Backcover)",
-      null
+      105.0
     ],
     [
       "Huawei Mate 9",
       "Akku",
-      null
+      85.0
     ],
     [
       "Huawei Mate 8",
       "Display",
-      null
+      160.0
     ],
     [
       "Huawei Mate 8",
       "Rückseite (Backcover)",
-      null
+      70.0
     ],
     [
       "Huawei Mate 8",
       "Akku",
-      null
+      80.0
     ],
     [
       "Huawei Honor View 20",
       "Display",
-      null
+      185.0
     ],
     [
       "Huawei Honor View 20",
       "Rückseite (Backcover)",
-      null
+      95.0
     ],
     [
       "Huawei Honor 20 Pro",
       "Display",
-      null
+      195.0
     ],
     [
       "Huawei Honor 20 Pro",
       "Rückseite (Backcover)",
-      null
+      105.0
     ],
     [
       "Huawei Honor 20 / Nova 5T",
       "Display",
-      null
+      195.0
     ],
     [
       "Huawei Honor 20 / Nova 5T",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Huawei Honor 20 Lite",
       "Display",
-      null
+      170.0
     ],
     [
       "Huawei Honor 20 Lite",
       "Rückseite (Backcover)",
-      null
+      85.0
     ],
     [
       "Huawei Honor 10",
       "Display",
-      null
+      205.0
     ],
     [
       "Huawei Honor View 10",
       "Display",
-      null
+      175.0
     ],
     [
       "Huawei Honor 9",
       "Display",
-      null
+      185.0
     ],
     [
       "Huawei Honor 8 Pro",
       "Display",
-      null
+      205.0
     ],
     [
       "Huawei Honor 8",
       "Display",
-      null
+      170.0
     ],
     [
       "Huawei Honor 8",
       "Rückseite (Backcover)",
-      null
+      60.0
     ],
     [
       "Huawei Honor 8",
       "Akku",
-      null
+      80.0
     ],
     [
       "Huawei Nova Plus",
       "Display",
-      null
+      160.0
     ],
     [
       "Huawei Nova",
       "Display",
-      null
+      160.0
     ],
     [
       "Huawei Nexus 6P",
       "Display",
-      null
+      230.0
     ],
     [
       "Huawei Nexus 6P",
       "Akku",
-      null
+      85.0
     ],
     [
       "iPhone 16 Pro Max",
       "Display Original, Service Pack",
-      null
+      440.0
     ],
     [
       "iPhone 16 Pro Max",
       "Display Original, Pulled",
-      null
+      385.0
     ],
     [
       "iPhone 16 Pro Max",
       "Display Premium",
-      null
+      275.0
     ],
     [
       "iPhone 16 Pro Max",
       "Rückglas Original, Service Pack",
-      null
+      285.0
     ],
     [
       "iPhone 16 Pro Max",
       "Rückglas Original, Pulled",
-      null
+      200.0
     ],
     [
       "iPhone 16 Pro Max",
       "Akku Original, Service Pack",
-      null
+      150.0
     ],
     [
       "iPhone 16 Pro Max",
@@ -8479,62 +8479,62 @@
     [
       "iPhone 16 Pro Max",
       "Hauptkamera",
-      null
+      140.0
     ],
     [
       "iPhone 16 Pro Max",
       "Kameralinse",
-      null
+      95.0
     ],
     [
       "iPhone 16 Pro Max",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "iPhone 16 Pro Max",
       "Mikrofon",
-      null
+      130.0
     ],
     [
       "iPhone 16 Pro Max",
       "Lautsprecher oben",
-      null
+      120.0
     ],
     [
       "iPhone 16 Pro Max",
       "Lautsprecher unten",
-      null
+      95.0
     ],
     [
       "iPhone 16 Pro",
       "Display Original, Service Pack",
-      null
+      400.0
     ],
     [
       "iPhone 16 Pro",
       "Display Original, Pulled",
-      null
+      300.0
     ],
     [
       "iPhone 16 Pro",
       "Display Premium",
-      null
+      190.0
     ],
     [
       "iPhone 16 Pro",
       "Rückglas Original, Service Pack",
-      null
+      275.0
     ],
     [
       "iPhone 16 Pro",
       "Rückglas Original, Pulled",
-      null
+      200.0
     ],
     [
       "iPhone 16 Pro",
       "Akku Original, Service Pack",
-      null
+      150.0
     ],
     [
       "iPhone 16 Pro",
@@ -8544,62 +8544,62 @@
     [
       "iPhone 16 Pro",
       "Hauptkamera",
-      null
+      155.0
     ],
     [
       "iPhone 16 Pro",
       "Kameralinse",
-      null
+      95.0
     ],
     [
       "iPhone 16 Pro",
       "Ladeanschluss",
-      null
+      130.0
     ],
     [
       "iPhone 16 Pro",
       "Mikrofon",
-      null
+      130.0
     ],
     [
       "iPhone 16 Pro",
       "Lautsprecher oben",
-      null
+      125.0
     ],
     [
       "iPhone 16 Pro",
       "Lautsprecher unten",
-      null
+      100.0
     ],
     [
       "iPhone 16 Plus",
       "Display Original, Service Pack",
-      null
+      445.0
     ],
     [
       "iPhone 16 Plus",
       "Display Original, Pulled",
-      null
+      325.0
     ],
     [
       "iPhone 16 Plus",
       "Display Premium",
-      null
+      220.0
     ],
     [
       "iPhone 16 Plus",
       "Rückglas Original, Service Pack",
-      null
+      265.0
     ],
     [
       "iPhone 16 Plus",
       "Rückglas Original, Pulled",
-      null
+      180.0
     ],
     [
       "iPhone 16 Plus",
       "Akku Original, Service Pack",
-      null
+      140.0
     ],
     [
       "iPhone 16 Plus",
@@ -8609,62 +8609,62 @@
     [
       "iPhone 16 Plus",
       "Hauptkamera",
-      null
+      135.0
     ],
     [
       "iPhone 16 Plus",
       "Kameralinse",
-      null
+      95.0
     ],
     [
       "iPhone 16 Plus",
       "Ladeanschluss",
-      null
+      135.0
     ],
     [
       "iPhone 16 Plus",
       "Mikrofon",
-      null
+      135.0
     ],
     [
       "iPhone 16 Plus",
       "Lautsprecher oben",
-      null
+      125.0
     ],
     [
       "iPhone 16 Plus",
       "Lautsprecher unten",
-      null
+      95.0
     ],
     [
       "iPhone 16e",
       "Display Original, Service Pack",
-      null
+      365.0
     ],
     [
       "iPhone 16e",
       "Display Original, Pulled",
-      null
+      265.0
     ],
     [
       "iPhone 16e",
       "Display Premium",
-      null
+      160.0
     ],
     [
       "iPhone 16e",
       "Rückglas Original, Service Pack",
-      null
+      265.0
     ],
     [
       "iPhone 16e",
       "Rückglas Original, Pulled",
-      null
+      170.0
     ],
     [
       "iPhone 16e",
       "Akku Original, Service Pack",
-      null
+      150.0
     ],
     [
       "iPhone 16e",
@@ -8674,797 +8674,797 @@
     [
       "iPhone 16e",
       "Hauptkamera",
-      null
+      130.0
     ],
     [
       "iPhone 16e",
       "Kameralinse",
-      null
+      90.0
     ],
     [
       "iPhone 16e",
       "Ladeanschluss",
-      null
+      150.0
     ],
     [
       "iPhone 16e",
       "Mikrofon",
-      null
+      150.0
     ],
     [
       "iPhone 16e",
       "Lautsprecher oben",
-      null
+      125.0
     ],
     [
       "iPhone 16e",
       "Lautsprecher unten",
-      null
+      95.0
     ],
     [
       "MacBook Air 15\" M5 (2026)",
       "Display",
-      null
+      670.0
     ],
     [
       "MacBook Air 15\" M5 (2026)",
       "Akku",
-      null
+      385.0
     ],
     [
       "MacBook Air 13\" M5 (2026)",
       "Display",
-      null
+      625.0
     ],
     [
       "MacBook Air 13\" M5 (2026)",
       "Akku",
-      null
+      355.0
     ],
     [
       "MacBook Air 15\" M4 (2025)",
       "Display",
-      null
+      670.0
     ],
     [
       "MacBook Air 15\" M4 (2025)",
       "Akku",
-      null
+      385.0
     ],
     [
       "MacBook Air 13\" M4 (2025)",
       "Display",
-      null
+      625.0
     ],
     [
       "MacBook Air 13\" M4 (2025)",
       "Akku",
-      null
+      355.0
     ],
     [
       "MacBook Air 15\" M3 (2024)",
       "Display",
-      null
+      670.0
     ],
     [
       "MacBook Air 15\" M3 (2024)",
       "Akku",
-      null
+      385.0
     ],
     [
       "MacBook Air 13\" M3 (2024)",
       "Display",
-      null
+      625.0
     ],
     [
       "MacBook Air 13\" M3 (2024)",
       "Akku",
-      null
+      355.0
     ],
     [
       "MacBook Air 15\" M2 (2023)",
       "Display",
-      null
+      670.0
     ],
     [
       "MacBook Air 15\" M2 (2023)",
       "Akku",
-      null
+      385.0
     ],
     [
       "MacBook Air 13\" M2 (2022)",
       "Display",
-      null
+      625.0
     ],
     [
       "MacBook Air 13\" M2 (2022)",
       "Akku",
-      null
+      340.0
     ],
     [
       "MacBook Air 13\" M1 (2020)",
       "Display",
-      null
+      535.0
     ],
     [
       "MacBook Air 13\" M1 (2020)",
       "Akku",
-      null
+      320.0
     ],
     [
       "MacBook Pro 16\" M5 Pro / M5 Max (2026)",
       "Display",
-      null
+      895.0
     ],
     [
       "MacBook Pro 16\" M5 Pro / M5 Max (2026)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M5 Pro / M5 Max (2026)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M5 Pro / M5 Max (2026)",
       "Akku",
-      null
+      430.0
     ],
     [
       "MacBook Pro 14\" M5 Pro / M5 Max (2026)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M5 (2025)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M5 (2025)",
       "Akku",
-      null
+      430.0
     ],
     [
       "MacBook Pro 14\" M5 (2025)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 16\" M4 Pro / M4 Max (2024)",
       "Display",
-      null
+      895.0
     ],
     [
       "MacBook Pro 16\" M4 Pro / M4 Max (2024)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M4 Pro / M4 Max (2024)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M4 Pro / M4 Max (2024)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M4 (2024)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M4 (2024)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 16\" M3 Pro / M3 Max (2023)",
       "Display",
-      null
+      895.0
     ],
     [
       "MacBook Pro 16\" M3 Pro / M3 Max (2023)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M3 Pro / M3 Max (2023)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M3 Pro / M3 Max (2023)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M3 (2023)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M3 (2023)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 16\" M2 Pro / M2 Max (2023)",
       "Display",
-      null
+      895.0
     ],
     [
       "MacBook Pro 16\" M2 Pro / M2 Max (2023)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M2 Pro / M2 Max (2023)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M2 Pro / M2 Max (2023)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Pro 14\" M1 Pro / M1 Max (2021)",
       "Display",
-      null
+      805.0
     ],
     [
       "MacBook Pro 14\" M1 Pro / M1 Max (2021)",
       "USB-C Anschluss",
-      null
+      195.0
     ],
     [
       "MacBook Neo (2026)",
       "Display",
-      null
+      445.0
     ],
     [
       "MacBook Neo (2026)",
       "Akku",
-      null
+      355.0
     ],
     [
       "MacBook Neo (2026)",
       "Tastatur",
-      null
+      330.0
     ],
     [
       "MacBook Neo (2026)",
       "Trackpad",
-      null
+      220.0
     ],
     [
       "MacBook Neo (2026)",
       "Touch ID",
-      null
+      220.0
     ],
     [
       "MacBook Neo (2026)",
       "Lautsprecher",
-      null
+      175.0
     ],
     [
       "MacBook Neo (2026)",
       "Gehäuseunterteil",
-      null
+      160.0
     ],
     [
       "Sony Xperia 1 VII",
       "Display",
-      null
+      440.0
     ],
     [
       "Sony Xperia 1 VII",
       "Rückseite (Backcover)",
-      null
+      155.0
     ],
     [
       "Sony Xperia 1 VII",
       "Akku",
-      null
+      150.0
     ],
     [
       "Sony Xperia 1 VI",
       "Display",
-      null
+      400.0
     ],
     [
       "Sony Xperia 1 VI",
       "Rückseite (Backcover)",
-      null
+      185.0
     ],
     [
       "Sony Xperia 1 VI",
       "Akku",
-      null
+      140.0
     ],
     [
       "Sony Xperia 1 V",
       "Display",
-      null
+      445.0
     ],
     [
       "Sony Xperia 1 V",
       "Rückseite (Backcover)",
-      null
+      175.0
     ],
     [
       "Sony Xperia 1 IV",
       "Display",
-      null
+      455.0
     ],
     [
       "Sony Xperia 1 IV",
       "Rückseite (Backcover)",
-      null
+      190.0
     ],
     [
       "Sony Xperia 1 IV",
       "Akku",
-      null
+      130.0
     ],
     [
       "Sony Xperia 1 III",
       "Display",
-      null
+      415.0
     ],
     [
       "Sony Xperia 1 III",
       "Rückseite (Backcover)",
-      null
+      135.0
     ],
     [
       "Sony Xperia 1 III",
       "Akku",
-      null
+      120.0
     ],
     [
       "Sony Xperia 1 II",
       "Display",
-      null
+      405.0
     ],
     [
       "Sony Xperia 1 II",
       "Rückseite (Backcover)",
-      null
+      120.0
     ],
     [
       "Sony Xperia 1",
       "Display",
-      null
+      395.0
     ],
     [
       "Sony Xperia 1",
       "Rückseite (Backcover)",
-      null
+      135.0
     ],
     [
       "Sony Xperia 5 V",
       "Display",
-      null
+      200.0
     ],
     [
       "Sony Xperia 5 V",
       "Rückseite (Backcover)",
-      null
+      170.0
     ],
     [
       "Sony Xperia 5 V",
       "Akku",
-      null
+      130.0
     ],
     [
       "Sony Xperia 5 IV",
       "Display",
-      null
+      365.0
     ],
     [
       "Sony Xperia 5 IV",
       "Rückseite (Backcover)",
-      null
+      135.0
     ],
     [
       "Sony Xperia 5 IV",
       "Akku",
-      null
+      130.0
     ],
     [
       "Sony Xperia 5 III",
       "Display",
-      null
+      340.0
     ],
     [
       "Sony Xperia 5 III",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Sony Xperia 5 III",
       "Akku",
-      null
+      120.0
     ],
     [
       "Sony Xperia 5 II",
       "Display",
-      null
+      345.0
     ],
     [
       "Sony Xperia 5 II",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Sony Xperia 5",
       "Display",
-      null
+      315.0
     ],
     [
       "Sony Xperia 5",
       "Rückseite (Backcover)",
-      null
+      105.0
     ],
     [
       "Sony Xperia 5",
       "Akku",
-      null
+      95.0
     ],
     [
       "Sony Xperia 10 VII",
       "Display",
-      null
+      195.0
     ],
     [
       "Sony Xperia 10 VII",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Sony Xperia 10 VI",
       "Display",
-      null
+      190.0
     ],
     [
       "Sony Xperia 10 VI",
       "Rückseite (Backcover)",
-      null
+      125.0
     ],
     [
       "Sony Xperia 10 VI",
       "Akku",
-      null
+      140.0
     ],
     [
       "Sony Xperia 10 V",
       "Display",
-      null
+      225.0
     ],
     [
       "Sony Xperia 10 V",
       "Rückseite (Backcover)",
-      null
+      120.0
     ],
     [
       "Sony Xperia 10 IV",
       "Display",
-      null
+      220.0
     ],
     [
       "Sony Xperia 10 IV",
       "Rückseite (Backcover)",
-      null
+      115.0
     ],
     [
       "Sony Xperia 10 IV",
       "Akku",
-      null
+      120.0
     ],
     [
       "Sony Xperia 10 III",
       "Display",
-      null
+      220.0
     ],
     [
       "Sony Xperia 10 III",
       "Rückseite (Backcover)",
-      null
+      110.0
     ],
     [
       "Sony Xperia 10 III",
       "Akku",
-      null
+      120.0
     ],
     [
       "Sony Xperia 10 II",
       "Rückseite (Backcover)",
-      null
+      110.0
     ],
     [
       "Sony Xperia 10 II",
       "Akku",
-      null
+      105.0
     ],
     [
       "Sony Xperia 10",
       "Display",
-      null
+      165.0
     ],
     [
       "Sony Xperia 10",
       "Rückseite (Backcover)",
-      null
+      120.0
     ],
     [
       "Sony Xperia 10",
       "Akku",
-      null
+      90.0
     ],
     [
       "Sony Xperia 10 Plus",
       "Rückseite (Backcover)",
-      null
+      130.0
     ],
     [
       "Galaxy Tab S11",
       "Display",
-      null
+      300.0
     ],
     [
       "Galaxy Tab S11",
       "Akku",
-      null
+      150.0
     ],
     [
       "Galaxy Tab S11 Ultra",
       "Display",
-      null
+      495.0
     ],
     [
       "Galaxy Tab S11 Ultra",
       "Akku",
-      null
+      160.0
     ],
     [
       "Galaxy Tab S10 FE",
       "Akku",
-      null
+      150.0
     ],
     [
       "Galaxy Tab S10 FE+",
       "Display",
-      null
+      265.0
     ],
     [
       "Galaxy Tab S10 FE+",
       "Akku",
-      null
+      150.0
     ],
     [
       "Galaxy Tab S10 Lite",
       "Display",
-      null
+      190.0
     ],
     [
       "Galaxy Tab S10 Lite",
       "Akku",
-      null
+      150.0
     ],
     [
       "Galaxy Tab S10 Ultra",
       "Akku",
-      null
+      145.0
     ],
     [
       "Galaxy Tab S10+",
       "Akku",
-      null
+      140.0
     ],
     [
       "Galaxy Tab S9",
       "Display",
-      null
+      270.0
     ],
     [
       "Galaxy Tab S9",
       "Akku",
-      null
+      130.0
     ],
     [
       "Galaxy Tab S9 FE",
       "Display",
-      null
+      200.0
     ],
     [
       "Galaxy Tab S9 FE",
       "Akku",
-      null
+      130.0
     ],
     [
       "Galaxy Tab S9 FE+",
       "Display",
-      null
+      220.0
     ],
     [
       "Galaxy Tab S9 Ultra",
       "Display",
-      null
+      400.0
     ],
     [
       "Galaxy Tab S9 Ultra",
       "Akku",
-      null
+      135.0
     ],
     [
       "Galaxy Tab S9+",
       "Display",
-      null
+      325.0
     ],
     [
       "Galaxy Tab S9+",
       "Akku",
-      null
+      130.0
     ],
     [
       "Galaxy Tab S8",
       "Display",
-      null
+      225.0
     ],
     [
       "Galaxy Tab S8",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy Tab S8 Ultra",
       "Display",
-      null
+      415.0
     ],
     [
       "Galaxy Tab S8 Ultra",
       "Akku",
-      null
+      130.0
     ],
     [
       "Galaxy Tab S8+",
       "Display",
-      null
+      325.0
     ],
     [
       "Galaxy Tab S8+",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy Tab S7 FE",
       "Akku",
-      null
+      120.0
     ],
     [
       "Galaxy Tab S7",
       "Akku",
-      null
+      105.0
     ],
     [
       "Galaxy Tab S7+",
       "Display",
-      null
+      310.0
     ],
     [
       "Galaxy Tab S7+",
       "Akku",
-      null
+      110.0
     ],
     [
       "Galaxy Tab A9",
       "Display",
-      null
+      155.0
     ],
     [
       "Galaxy Tab A9",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy Tab A9+",
       "Display",
-      null
+      155.0
     ],
     [
       "Galaxy Tab A9+",
       "Akku",
-      null
+      125.0
     ],
     [
       "Galaxy Tab A7 Lite",
       "Display",
-      null
+      165.0
     ],
     [
       "Surface Pro 11 (2024)",
       "Display",
-      null
+      625.0
     ],
     [
       "Surface Pro 11 (2024)",
       "Akku",
-      null
+      310.0
     ],
     [
       "Surface Pro 10 (2024)",
       "Display",
-      null
+      625.0
     ],
     [
       "Surface Pro 10 (2024)",
       "Akku",
-      null
+      310.0
     ],
     [
       "Surface Pro 9 (2022)",
       "Display",
-      null
+      625.0
     ],
     [
       "Surface Pro 9 (2022)",
       "Akku",
-      null
+      310.0
     ],
     [
       "Surface Pro 8 (2021)",
       "Display",
-      null
+      580.0
     ],
     [
       "Surface Pro 8 (2021)",
       "Akku",
-      null
+      295.0
     ],
     [
       "Surface Pro 7 Plus (2021)",
       "Display",
-      null
+      310.0
     ],
     [
       "Surface Pro 7 Plus (2021)",
       "Akku",
-      null
+      230.0
     ],
     [
       "Surface Pro 7 (2019)",
       "Display",
-      null
+      220.0
     ],
     [
       "Surface Pro 7 (2019)",
       "Akku",
-      null
+      215.0
     ],
     [
       "Surface Pro 6 (2018)",
       "Display",
-      null
+      220.0
     ],
     [
       "Surface Pro 6 (2018)",
       "Akku",
-      null
+      215.0
     ],
     [
       "Surface Pro 5 (2017)",
       "Display",
-      null
+      220.0
     ],
     [
       "Surface Pro 5 (2017)",
       "Akku",
-      null
+      215.0
     ]
   ]
 }

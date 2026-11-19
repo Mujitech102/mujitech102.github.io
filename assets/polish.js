@@ -56,8 +56,8 @@
   script.onload=script.onerror=resolve;
   document.head.append(script);
  });
- load('/assets/repair-prices-data.js?v=20261023-usability-1')
-  .then(()=>load('/assets/repair-prices.js?v=20261023-usability-1'))
-  .then(()=>load('/assets/repair-guides.js?v=20261015-quality-19'))
+ load('/assets/repair-prices-data.js?v=20261119-prices')
+  .then(()=>load('/assets/repair-prices.js?v=20261119-prices'))
+  .then(()=>load('/assets/repair-guides.js?v=20261119-prices'))
   .then(()=>load('/assets/mujibot.js?v=20261118-hours-nav'));
 })();
