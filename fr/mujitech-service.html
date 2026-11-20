@@ -207,6 +207,13 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
 .title,.section-head h2,.step-title,.service-card h3,.review-name,.footer-title,.trust-item strong{color:#111!important}
 .contact-intro,.step-desc,.service-card p,.service-card ul,.review-text,.footer-links a{color:#333!important}
 .floating-contact{display:none!important}
+
+.reviews-slider-container{overflow-x:auto;scroll-snap-type:x proximity}
+.reviews-slider-track{-webkit-animation:none;animation:none}
+.review-card{height:auto;min-height:320px;scroll-snap-align:start}
+#bewertungen .section-head p{color:#555!important}
+.review-meta{font-size:14px;line-height:1.5;color:#555}
+.review-card a{color:#222;text-decoration:underline}
 </style></head>
 <body><a class="skip-link" href="#main">Aller au contenu</a>
   <div class="page-glow"></div>
@@ -367,129 +374,7 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
       </div>
     </section>
 
-    <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;">
-      <div class="section-head">
-        <h2>Avis Google</h2>
-        <p>Les expériences de nos clients.</p>
-      </div>
-
-      <div class="reviews-slider-container">
-        <div class="reviews-slider-track">
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ab47bc, #8e44ad);">G</div>
-              <div class="review-user-info">
-                <div class="review-name">Gabi Sutter</div>
-              </div>
-              <svg class="google-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Excellent travail pour le remplacement des composants !</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #e91e63, #c2185b);">P</div>
-              <div class="review-user-info">
-                <div class="review-name">Patryk Basztabin</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Intervention compétente, rapide et sans problème. Contact simple… L’appareil a aussi été nettoyé. Excellente qualité à Abtwil !</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #5c6bc0, #3f51b5);">I</div>
-              <div class="review-user-info">
-                <div class="review-name">Irene Küng</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Merci. Entièrement satisfaite du remplacement de la caméra et de la batterie. J’ai déjà recommandé l’atelier.</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #455a64, #263238);">S</div>
-              <div class="review-user-info">
-                <div class="review-name">Srish</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Très satisfaite ! Mon appareil avait de gros problèmes de batterie. Remplacement rapide et soigné ; l’appareil semblait bien mieux entretenu.</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #fbc02d, #f57f17); color: #fff;">A</div>
-              <div class="review-user-info">
-                <div class="review-name">Alina Brüllhardt</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Service très professionnel et rapide. Tout fonctionne parfaitement.</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #78909c, #546e7a);">C</div>
-              <div class="review-user-info">
-                <div class="review-name">C O</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Très satisfait du remplacement de l’écran. Propriétaire extrêmement gentil et serviable, qui s’est donné beaucoup de peine. Je reviendrai !</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #d81b60, #ad1457);">N</div>
-              <div class="review-user-info">
-                <div class="review-name">Natascha Biell</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Excellent service, rapide, fiable et aimable.</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ff9800, #f57c00);">W</div>
-              <div class="review-user-info">
-                <div class="review-name">Wei W</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Bel endroit et bonnes personnes.</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #ff5722, #e64a19);">s</div>
-              <div class="review-user-info">
-                <div class="review-name">shehryaar ali</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">Plusieurs demandes techniques. Collaboration toujours agréable et travail soigné. Je recommande.</div>
-          </div>
-
-          <div class="review-card box-bg">
-            <div class="review-header">
-              <div class="review-avatar" style="background: linear-gradient(135deg, #d32f2f, #c62828);">D</div>
-              <div class="review-user-info">
-                <div class="review-name">Dampfglanzservice- Ademi</div>
-              </div>
-            </div>
-            <div class="review-rating-row"><div class="stars">★★★★★</div></div>
-            <div class="review-text">J’ai fait remplacer l’écran. Très bons conseils et accueil chaleureux. Excellent travail !</div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    <section class="section reveal" id="bewertungen" style="padding-left:0; padding-right:0; overflow:hidden;"><div class="section-head"><h2 id="verified-reviews-title">Avis Google</h2><p>Une sélection d’avis publiés sur Google.</p></div><div class="reviews-slider-container" tabindex="0" role="region" aria-labelledby="verified-reviews-title"><div class="reviews-slider-track"><div class="review-card box-bg"><div class="review-header"><div class="review-avatar" style="background:#333">G</div><div class="review-user-info"><div class="review-name">Gabi Sutter</div><div class="review-meta">Avis Google · traduction de l’allemand</div></div></div><div class="review-rating-row"><div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div></div><blockquote class="review-text" style="margin:0">Super travail !!</blockquote><p><a href="https://maps.app.goo.gl/JR4Y5Z5jgV7knVPQ9" target="_blank" rel="noopener noreferrer">Original sur Google Maps</a></p></div><div class="review-card box-bg"><div class="review-header"><div class="review-avatar" style="background:#333">N</div><div class="review-user-info"><div class="review-name">Natascha Biell</div><div class="review-meta">Avis Google · traduction de l’allemand</div></div></div><div class="review-rating-row"><div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div></div><blockquote class="review-text" style="margin:0">Super service, rapide, efficace, fiable et aimable.</blockquote><p><a href="https://maps.app.goo.gl/LhuPcbNee2SxhkZb7" target="_blank" rel="noopener noreferrer">Original sur Google Maps</a></p></div><div class="review-card box-bg"><div class="review-header"><div class="review-avatar" style="background:#333">W</div><div class="review-user-info"><div class="review-name">Wei W</div><div class="review-meta">Avis Google · traduction de l’anglais</div></div></div><div class="review-rating-row"><div class="stars" role="img" aria-label="5 étoiles sur 5">★★★★★</div></div><blockquote class="review-text" style="margin:0">Un endroit agréable et des gens bien</blockquote><p><a href="https://maps.app.goo.gl/Xm6sqiyDGUmDJA799" target="_blank" rel="noopener noreferrer">Original sur Google Maps</a></p></div></div></div></section>
 
   <!-- WORKSHOP GALLERY START --><section class="workshop-story" id="werkstatt-einblicke" aria-labelledby="workshop-title"><div class="workshop-inner"><p class="workshop-kicker">Un aperçu de Mujitech</p><h2 id="workshop-title">Les réparations en détail.</h2><p class="workshop-intro">Nos propres photos du quotidien : une vitre arrière endommagée et un iPhone en cours de réparation.</p><div class="workshop-grid"><figure class="workshop-card"><img src="/assets/workshop/iphone-rueckglas-beschaedigt-960.webp" srcset="/assets/workshop/iphone-rueckglas-beschaedigt-480.webp 480w, /assets/workshop/iphone-rueckglas-beschaedigt-960.webp 960w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:960px) calc((100vw - 64px)/2), 448px" width="960" height="1280" loading="lazy" decoding="async" alt="iPhone avec vitre arrière fissurée sur un tapis de réparation bleu"><figcaption><strong>Vitre arrière endommagée</strong>Un dommage documenté sur la vitre arrière d’un iPhone.</figcaption></figure><figure class="workshop-card"><img src="/assets/workshop/iphone-reparatur-halterung-960.webp" srcset="/assets/workshop/iphone-reparatur-halterung-480.webp 480w, /assets/workshop/iphone-reparatur-halterung-960.webp 960w" sizes="(max-width:700px) calc(100vw - 32px), (max-width:960px) calc((100vw - 64px)/2), 448px" width="960" height="1280" loading="lazy" decoding="async" alt="Face arrière d’un iPhone maintenue par des pinces sur l’établi"><figcaption><strong>Un aperçu de la réparation</strong>Un iPhone maintenu par des pinces au poste de réparation.</figcaption></figure></div><a class="workshop-more" href="/fr/preise.html#versicherungsbericht">Diagnostic gratuit · Rapport d’assurance CHF 49 →</a></div></section><!-- WORKSHOP GALLERY END --></main>
 
