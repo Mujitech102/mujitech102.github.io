@@ -92,7 +92,7 @@
         return /shop|kaufen|buy|acheter|acquist|iphone/.test(q)?'shop':'warranty';
       }
       if(/ruckruf|callback|call.back|rappel|richiam|chiamata/.test(q))return 'callback';
-      if(/zuri|zurich|rorschach|bodensee|lake constance|lac de constance|lago di costanza|abgabe|handover|drop.off|remise|consegna|termin|offnungs|erreichbar|adresse|standort|ladenlokal|abtwil|appointment|opening|hours|rendez|horair|orari|appuntament|negozio/.test(q))return 'appointment';
+      if(/zuri|zurich|rorschach|bodensee|lake constance|lac de constance|lago di costanza|abgabe|abgeben|deposer|depot|handover|drop.off|remise|consegna|termin|offnungs|erreichbar|adresse|standort|ladenlokal|abtwil|appointment|opening|hours|rendez|horair|orari|appuntament|negozio/.test(q))return 'appointment';
       if(/versand|einsend|post|shipping|mail.in|envoi|envoyer|spediz|inviare/.test(q))return 'shipping';
       if(/preis|kost|teuer|price|cost|how much|combien|prix|quanto/.test(q)) { if(previousTopic==='ads'&&!/iphone|ipad|galaxy|samsung|pixel|display|akku|battery|screen|ecran|schermo|website|webseite|site web|sito/.test(q))return 'ads'; if(/website|webseite|webdesign|homepage|site web|sito|domain/.test(q)||previousTopic==='website')return 'website'; if(/gaming|shop|kaufen|buy|acheter|acquist/.test(q))return 'shop'; if(/ankauf|verkauf|sell|vendre|vendere/.test(q))return 'sell'; return 'price'; }
       if(/website|webseite|webdesign|homepage|site web|sito|domain/.test(q))return 'website';
