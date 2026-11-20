@@ -541,26 +541,6 @@ body :is(.hero-mini-btn:nth-child(2)){background:#fff!important;color:#111!impor
     }, { threshold: 0.1 });
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
-    // --- 3D TILT EFFEKT ---
-    if (window.matchMedia("(hover: hover)").matches) {
-      const cards3D = document.querySelectorAll('.');
-      cards3D.forEach(card => {
-        card.addEventListener('mousemove', e => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -6;
-          const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 6;
-          card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-          card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(255,255,255,0.08), rgba(25, 25, 30, 0.7) 50%)`;
-        });
-        card.addEventListener('mouseleave', () => {
-          card.style.transform = `perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-          card.style.background = '';
-        });
-      });
-    }
-
     // --- CANVAS NETZWERK ---
     const canvas = document.getElementById('strom-canvas');
     const ctx = canvas.getContext('2d');
