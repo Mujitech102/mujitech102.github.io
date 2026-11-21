@@ -160,11 +160,33 @@ for (const consent of ['all','necessary']) {
   measure('start','repair','fr');
   measure('submitted','repair','fr');
   measure('unknown','repair','fr');
-  const recorded=assistant.events().filter(e=>e.name.startsWith('enquiry_'));
+  const recorded=assistant.events().filter(e=>e.name.startsWith('enquiry_')||e.name==='form_confirmation_view');
   assert.deepEqual(recorded.map(e=>e.name),consent==='all'&&!search.includes('muji_test')
-    ? ['enquiry_start','enquiry_submitted'] : []);
+    ? ['enquiry_start','form_confirmation_view'] : []);
   assert.ok(recorded.every(e=>e.params.service_area==='repair'&&e.params.language==='fr'));
   assert.ok(!JSON.stringify(assistant.context.dataLayer||[]).includes('PRIVATE_'));
  }
 }
 console.log('PASS: assistant start deduplication, confirmed submission signal, consent and QA exclusion.');
+
+// Ads destination is configured only after explicit ad-measurement consent.
+for(const choice of ['necessary','all','measurement']){
+ const x=fixture({consent:choice,pathname:'/refurbished.html'});
+ const commands=(x.context.dataLayer||[]).map(a=>Array.from(a));
+ assert.equal(commands.filter(a=>a[0]==='config'&&a[1]==='AW-17673223040').length,choice==='measurement'?1:0);
+ assert.ok(x.events().every(e=>e.params.send_to==='G-C2WKE7YV33'));
+ assert.ok(x.events().every(e=>!['form_confirmation_view','conversion','generate_lead','purchase'].includes(e.name)));
+ if(choice!=='necessary')assert.equal(x.events()[0].params.service_area,'shop');
+}
+console.log('PASS: consent-gated Ads destination, GA4-only event routing, sales category and no page-load lead.');
+
+for(const consent of ['all','measurement']){
+ const x=fixture({pathname:'/assistent/',consent,search:'?lang=de'});
+ for(const phase of ['copy','invalid','open','start'])x.context.MujiMeasureEnquiry(phase,'web','de');
+ assert.equal(x.events().filter(e=>e.name==='form_confirmation_view').length,0);
+ x.context.MujiMeasureEnquiry('submitted','web','de');
+ const success=x.events().filter(e=>e.name==='form_confirmation_view');
+ assert.equal(success.length,1);assert.equal(success[0].params.lead_verified,0);assert.equal(success[0].params.send_to,'G-C2WKE7YV33');
+ assert.equal(x.events().filter(e=>e.name==='conversion').length,0);
+}
+console.log('PASS: only confirmed callback phase emits imported success event; no native conversion or verified-lead claim.');

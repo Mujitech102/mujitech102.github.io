@@ -1,6 +1,7 @@
 /* Optional GA4 measurement: no tag/request before explicit statistics consent. */
 (() => {
   'use strict';
+  const ADS_ID='AW-17673223040';
   const ID='G-C2WKE7YV33', KEY='mujitech-cookie-consent';
   // QA stays in this tab, including a provider return. Never load production tags in QA.
   const testKey='mujitech-measurement-test', testParam='muji_test';
@@ -24,6 +25,7 @@
     it:['Cookie e privacy','Le statistiche misurano pagine visitate, clic di contatto, avvii e invii confermati delle richieste e ricerca dei prezzi dei dispositivi con Google Analytics. La misurazione facoltativa con Google Ads collega un clic pubblicitario a una richiesta successiva. Nessuna pubblicità personalizzata; nessun contenuto dei moduli ad Analytics.','Privacy','Solo necessari','Solo statistiche','Statistiche + misurazione annunci'],
     en:['Cookies and privacy','Statistics measure page views, contact clicks, enquiry starts, confirmed submissions and device price lookups with Google Analytics. Optional ad measurement with Google Ads links an ad click to a later enquiry. No personalised advertising; no form contents sent to Analytics.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement']
   }[lang] || ['Privacy and statistics','Optional Google Analytics statistics and separate Google Ads measurement. No personalised advertising.','Privacy information','Necessary only','Statistics only','Statistics + ad measurement'];
+  let adsConfigured=false;
   let allowed=false,adsAllowed=false,loaded=false,banner,settingsTrigger;
   const cleanURL=location.origin+location.pathname;
   // Only an explicit, separate ad-measurement choice allows standard click identifiers.
@@ -55,7 +57,7 @@
     'repair-switzerland.html':'repair','reparation-suisse.html':'repair','riparazione-svizzera.html':'repair',
     'onlineshop-erstellen.html':'webdesign','online-store-development.html':'webdesign','creation-boutique-en-ligne.html':'webdesign','creazione-ecommerce.html':'webdesign'
   };
-  const serviceArea=pcAreas[pageName]||otherAreas[pageName]||({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
+  const serviceArea=pcAreas[pageName]||otherAreas[pageName]||({'anfrage.html':'repair','reparaturanfrage.html':'repair','reparaturen.html':'repair','preise.html':'repair','reparatur-schweiz.html':'repair','geraet-verkaufen.html':'device_purchase','privatkunden.html':'private_support','unternehmen.html':'business_it','websites.html':'webdesign','shop.html':'shop','iphones.html':'shop','refurbished.html':'shop','iphone-14-pro-max.html':'shop','iphone-17-pro-max.html':'shop','kontakt.html':'contact'})[pageName]||(pageName.startsWith('gaming-pc')||pageName==='computer.html'?'gaming_pc':repairPath?'repair':'general');
   const areas=new Set(['repair','gaming_pc','webdesign','device_purchase','private_support','business_it','shop','contact','general']);
   // Only fixed option values become analytics categories; never send free-form input.
   const contactAreas={'Reparatur':'repair','Privatkunden-Service':'private_support','Geräteankauf':'device_purchase','Produktanfrage':'shop','IT-Support KMU':'business_it','IT-Betreuung':'business_it','Hardware-Beschaffung':'business_it','Firmenhandys':'business_it','Telekom-Anfrage':'business_it','Website':'webdesign','Microsoft 365 / Google Workspace':'business_it','Sonstiges':'contact'};
@@ -65,7 +67,7 @@
   window.MujiEnquiryArea=enquiryArea;
   const stages={contact_click:'contact_click',enquiry_open:'enquiry_open'};
   const event=(name,params={})=>{
-    if(!testMode && allowed && window.gtag)window.gtag('event',name,{...params,...(stages[name]?{funnel_stage:stages[name],lead_verified:0}:{}),service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
+    if(!testMode && allowed && window.gtag)window.gtag('event',name,{...params,send_to:ID,...(stages[name]?{funnel_stage:stages[name],lead_verified:0}:{}),service_area:areas.has(params.service_area)?params.service_area:pageArea(),page_location:measuredURL(),page_referrer:referrer(),page_title:document.title});
   };
   let assistantStarted=false;
   window.MujiMeasureEnquiry=(phase,service,language)=>{
@@ -77,7 +79,7 @@
       assistantStarted=true;
       event('enquiry_start',{...params,funnel_stage:'enquiry_start',lead_verified:0});
     }else if(phase==='submitted'){
-      event('enquiry_submitted',{...params,funnel_stage:'enquiry_submitted'});
+      event('form_confirmation_view',{...params,funnel_stage:'form_confirmation_view',lead_verified:0});
     }
   };
   function productItem(){
@@ -97,17 +99,18 @@
     allowed=true;window['ga-disable-'+ID]=false;
     const consent={analytics_storage:'granted',ad_storage:adsAllowed?'granted':'denied',ad_user_data:adsAllowed?'granted':'denied',ad_personalization:'denied'};
     const config={...safeCampaign,send_page_view:false,allow_google_signals:false,allow_ad_personalization_signals:false,page_location:measuredURL(),page_referrer:referrer()};
+    const configureAds=()=>{if(adsAllowed&&!adsConfigured){adsConfigured=true;window.gtag('config',ADS_ID,{send_page_view:false,allow_ad_personalization_signals:false});}};
     if(loaded){
       window.gtag('consent','update',consent);
       if(hadAds&&!adsAllowed)clearCookies(/^_gcl_|^_gac_/);
-      window.gtag('config',ID,config);return;
+      window.gtag('config',ID,config);configureAds();return;
     }
     loaded=true;window.dataLayer=window.dataLayer||[];
     window.gtag=function(){window.dataLayer.push(arguments);};
     window.gtag('consent','default',consent);
     window.gtag('js',new Date());
     // Automatic form/link collection is disabled in the stream too; no field values or destination query strings.
-    window.gtag('config',ID,config);
+    window.gtag('config',ID,config);configureAds();
     const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+ID;document.head.append(s);
     event('page_view');
 
