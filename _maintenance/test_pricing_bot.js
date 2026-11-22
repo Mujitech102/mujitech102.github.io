@@ -23,11 +23,13 @@ for(const lang of ['de','en','fr','it']){
  vm.runInContext(bot.slice(bot.indexOf('    const storageData='),bot.indexOf('    const displayGuide=')).replace('const storageAnswer=','globalThis.storageAnswer='),ctx);
  assert.equal(ctx.storageAnswer('Combien coûte Google Ads ?'),false);assert.equal(ctx.storageAnswer('Combien coûte Google Pixel 10 ?'),false);
  vm.runInContext(bot.slice(bot.indexOf('    const priceAnswer='),bot.indexOf('    const reply =')).replace('const priceAnswer=','globalThis.priceAnswer='),ctx);
- function answer(q,topic='price'){messages=[];ctx.previousModel=null;ctx.priceAnswer(q,topic);return messages.join('\n');}
+ let requestLinks=[];ctx.window.MujiRepairRequestLinks=items=>{requestLinks=items};
+ function answer(q,topic='price'){requestLinks=[];messages=[];ctx.previousModel=null;ctx.priceAnswer(q,topic);return messages.join('\n');}
  for(const row of ctx.window.MujiPriceBook.rows){
   const text=answer(row[0]+' '+ctx.window.MujiRepairLabel(row[1],lang));
   assert.ok(text.includes(row[0]),row[0]+' model missing');
   const expected=row[2]===null?({de:'Auf Anfrage',en:'On request',fr:'Sur demande',it:'Su richiesta'})[lang]:'CHF '+row[2].toFixed(2);
+  assert.ok(!/CHF\s*\d/.test(text),text);assert.ok(requestLinks.some(x=>x.model===row[0]&&x.repair===row[1]),'missing precise request context '+row[0]+' '+row[1]);
   assert.ok(text.includes(expected),lang+' '+row[0]+' '+row[1]+' expected '+expected+' got '+text);
   const quality=ctx.window.MujiRepairQuality(row[1],lang);if(quality)assert.ok(text.includes(quality));checked++;
  }
@@ -39,18 +41,18 @@ for(const lang of ['de','en','fr','it']){
  const total=answer('iPhone 15 Pro '+part+' und iPhone 14 Pro '+part);
  const price=(model,repair)=>ctx.window.MujiPriceBook.rows.find(row=>row[0]===model&&row[1]===repair)?.[2];
  const display15Pro=price('iPhone 15 Pro','Display Original, Pulled'),display14Pro=price('iPhone 14 Pro','Display Original, Pulled');
- assert.ok(total.includes('CHF '+(display15Pro+display14Pro).toFixed(2)),total);
+ assert.ok(total.includes(unknown)&&!total.includes('CHF'),total);
  const multiple=answer('2 x iPhone 15 Pro '+part+' und iPhone 14 Pro '+part);
- assert.ok(multiple.includes('CHF '+(2*display15Pro+display14Pro).toFixed(2)),multiple);
+ assert.ok(multiple.includes(unknown)&&!multiple.includes('CHF'),multiple);
  const quote=answer('iPhone 17 Akku Original, Pulled');assert.ok(!/CHF/.test(quote),quote);
  const soft=answer('iPhone 17 Display Soft OLED');assert.ok(!/CHF/.test(soft),soft);
  const batteryLabel=ctx.window.MujiRepairLabel('Akku Original, Service Pack',lang);
  const conjunction=({de:'und',en:'and',fr:'et',it:'e'})[lang];
  const combined=answer('iPhone 15 '+part+' '+conjunction+' '+batteryLabel);
- assert.ok(combined.includes(batteryLabel)&&combined.includes('CHF '+(price('iPhone 15','Display Original, Pulled')+price('iPhone 15','Akku Original, Service Pack')).toFixed(2)),combined);
+ assert.ok(combined.includes(batteryLabel)&&combined.includes(unknown)&&!combined.includes('CHF'),combined);
  const premiumLabel=ctx.window.MujiRepairLabel('Display Premium',lang);
  const alternatives=answer('iPhone 15 '+part+' '+conjunction+' '+premiumLabel);
- assert.ok(alternatives.includes('CHF ')&&!alternatives.includes('undefined'),alternatives);
+ assert.ok(alternatives.includes(unknown)&&!alternatives.includes('CHF')&&!alternatives.includes('undefined'),alternatives);
  assert.ok(!/Gesamtpreis:|Total price:|Prix total :|Prezzo totale:/.test(alternatives),alternatives);
  const either=answer('iPhone 15 '+part+' '+({de:'oder',en:'or',fr:'ou',it:'oppure'})[lang]+' iPhone 14 Pro '+part);
  assert.ok(!/Gesamtpreis:|Total price:|Prix total :|Prezzo totale:/.test(either),either);
@@ -58,4 +60,4 @@ for(const lang of ['de','en','fr','it']){
   const unclear=answer(q);assert.ok(unclear.length>30&&!unclear.includes('CHF'),unclear);
  }
 }
-console.log('PASS: '+checked+' model/quality/price answers in four languages; comma-separated repairs, alternative parts, unresolved models, quality text, Ads routing, totals, quantities and unknown costs.');
+console.log('PASS: '+checked+' model/quality/on-request answers in four languages; comma-separated repairs, alternative parts, unresolved models, quality text, Ads routing, no public amounts/totals, quantities and unknown costs.');

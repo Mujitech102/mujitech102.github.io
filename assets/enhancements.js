@@ -136,13 +136,13 @@
 (() => {
   const lang=(document.documentElement.lang||'de').slice(0,2);
   const base=lang==='de'?'/':'/'+lang+'/';
-  const ready=()=>{document.querySelectorAll('.navlinks,.w-links').forEach(nav=>{if(nav.querySelector('a[href$="preise.html"]'))return;const link=document.createElement('a');link.href=base+'preise.html';link.textContent=({de:'Preisliste',en:'Repair prices',fr:'Tarifs',it:'Prezzi'})[lang]||'Preisliste';const cta=nav.querySelector('.cta,.w-nav-cta');if(cta)cta.before(link);else nav.append(link);});
+  const ready=()=>{document.querySelectorAll('.navlinks,.w-links').forEach(nav=>{if(nav.querySelector('a[href$="preise.html"]'))return;const link=document.createElement('a');link.href=base+'preise.html';link.textContent=({de:'Reparaturpreise',en:'Repair prices',fr:'Tarifs de réparation',it:'Prezzi di riparazione'})[lang]||'Preisliste';const cta=nav.querySelector('.cta,.w-nav-cta');if(cta)cta.before(link);else nav.append(link);});
     const params=new URLSearchParams(location.search);const model=params.get('model'),repair=params.get('repair');if(!model||!repair)return;document.querySelectorAll('form').forEach(form=>{const field=form.querySelector('textarea[name="beschreibung"]');if(field&&!field.value){field.value=model+' – '+repair;}const device=form.querySelector('input[name="modell"],input[name="model"]');if(device&&!device.value)device.value=model;});};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
   if (!document.querySelector('link[href*="/assets/mujibot.css"]')) {const style=document.createElement('link');style.rel='stylesheet';style.href='/assets/mujibot.css?v=20261117-iphone-1';document.head.append(style);}
   const load=src=>new Promise((resolve,reject)=>{if(document.querySelector('script[src*="'+src.split('?')[0]+'"]')){resolve();return;}const script=document.createElement('script');script.src=src;script.onload=resolve;script.onerror=reject;document.head.append(script);});
-  const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261119-prices');
-  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261119-prices')).catch(()=>{}).then(()=>{document.dispatchEvent(new Event('mujitech-prices-ready'));return load('/assets/repair-guides.js?v=20261119-prices');}).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261120-dropoff')).catch(()=>{});
+  const data=window.MujiPriceBook?Promise.resolve():load('/assets/repair-prices-data.js?v=20261122-request-only');
+  data.then(()=>window.MujiRepairLabel?null:load('/assets/repair-prices.js?v=20261122-request-only')).catch(()=>{}).then(()=>{document.dispatchEvent(new Event('mujitech-prices-ready'));return load('/assets/repair-guides.js?v=20261122-request-only');}).catch(()=>{}).then(()=>load('/assets/mujibot.js?v=20261122-request-only')).catch(()=>{});
 })();
 
 /* Keep only the site's main header fixed; never MujiBot's header. */

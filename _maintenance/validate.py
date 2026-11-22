@@ -100,14 +100,16 @@ for language in ['','en','fr','it']:
 for js in ROOT.glob('assets/*.js'):
  r=subprocess.run([NODE,'--check',str(js)],capture_output=True,text=True)
  if r.returncode:errors.append(f'{js.name}: JavaScript syntax {r.stderr[:100]}')
-# Every previously confirmed price stays unchanged; all imported prices have exact provenance.
+# Public repair amounts are hidden by explicit user instruction; internal approved prices remain unchanged.
 s=(ROOT/'assets/repair-prices-data.js').read_text();book=json.loads(s[s.index('{'):].rstrip(';\n'));lookup={(r[0],r[1]):r[2] for r in book['rows']}
 if len(lookup)!=len(book['rows']):errors.append('Duplicate model/part prices')
 provenance=json.loads((ROOT/'_maintenance/price-provenance-2026-10-15.json').read_text())
 approved=json.loads((ROOT/'_maintenance/approved-repair-prices.json').read_text())
 expected={(r[0],r[1]):r[2] for r in approved['rows']}
+if set(lookup)!=set(expected):errors.append('Repair model/part catalogue changed unexpectedly')
 for key,price in lookup.items():
- if price!=expected.get(key):errors.append('Unapproved price: '+str(key))
+ if key not in expected:errors.append('Unknown repair model/part: '+str(key))
+ if price is not None:errors.append('Public repair price must be on request: '+str(key))
  if price is not None and (price<=0 or abs(price*100-round(price*100))>0.00001):errors.append('Invalid CHF cent rounding: '+str(key))
 # New gaming PCs carry a 24-month hardware warranty. iPhone offers are checked separately.
 for p in files:

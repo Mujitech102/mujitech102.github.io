@@ -1,3 +1,7 @@
+## Public repair pricing — 22 November 2026
+
+All public repair model/part prices must be on request. Preserve the internal approved-price ledger; do not republish its numbers through older generators. Public HTML, JavaScript, MujiBot and enquiry summaries must never restore numeric repair amounts. Shop sale prices and the separately labelled optional insurance-report fee are unchanged.
+
 ## Targeted additions — 8 November 2026
 
 The existing home photograph remains unchanged at its PNG URL. Three responsive WebP variants reuse the same image with explicit dimensions and the existing localized alternative text. No generated replacement, new photograph or rights claim is introduced.
