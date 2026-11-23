@@ -1,0 +1,10 @@
+/* Payment information only: no changes to navigation or page content. */
+body footer .muji-footer-payments{padding:24px 20px;margin:24px auto 0;border-top:1px solid #ddd;background:#fff;color:#171717;text-align:left;font:14px/1.5 Arial,Helvetica,sans-serif;width:100%;max-width:1280px;box-sizing:border-box}
+.muji-footer-payments__inner{max-width:1160px;margin:0 auto}
+body footer .muji-footer-payments h2{font:600 15px/1.5 Arial,Helvetica,sans-serif;margin:0 0 12px;color:inherit}
+body footer .muji-footer-payments ul{display:flex;flex-wrap:wrap;gap:12px 24px;list-style:none;padding:0;margin:0}
+body footer .muji-footer-payments li{display:flex;align-items:center;gap:9px;margin:0;padding:0;min-width:0;max-width:100%;font-weight:600;overflow-wrap:anywhere}
+body footer .muji-footer-payments svg{display:block;width:24px;height:24px;flex:0 0 24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+body footer .muji-footer-payments p{font:13px/1.5 Arial,Helvetica,sans-serif;margin:12px 0 0;color:#555}
+.muji-payment-language{display:none}html:lang(de) .muji-payment-language[lang=de],html:lang(en) .muji-payment-language[lang=en],html:lang(fr) .muji-payment-language[lang=fr],html:lang(it) .muji-payment-language[lang=it]{display:block}
+@media(max-width:480px){body footer .muji-footer-payments ul{gap:12px 18px}body footer .muji-footer-payments{padding:20px 16px}}
