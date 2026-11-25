@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="it-CH">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO -->
+<title>Riparazione di dispositivi per aziende | Mujitech</title>
+
+
+
+<meta name="robots"
+content="index, follow, max-image-preview:large">
+
+<meta name="author" content="Mujitech">
+
+
+
+<meta name="theme-color" content="#ffffff">
+
+<!-- Social Media -->
+
+
+
+
+
+
+
+
+<link rel="icon" type="image/png" href="../logo.webp">
+
+<!-- Bestehendes Design -->
+<link rel="stylesheet"
+href="../assets/style.css?v=20261003">
+
+<link rel="stylesheet"
+href="../assets/mono.css?v=20261003-5">
+
+<!-- Strukturierte SEO-Daten -->
+
+
+<style>
+
+/* =========================================
+   MUJITECH – UNTERNEHMEN
+   BLACK & WHITE
+========================================= */
+
+.business-page {
+  color: #111;
+}
+
+.business-page .business-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.business-page .business-section {
+  padding: 65px 0;
+}
+
+.business-page .business-label {
+  display: block;
+  margin-bottom: 15px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.business-page h1 {
+  max-width: 900px;
+  color: #111;
+  font-size: clamp(38px, 5vw, 65px);
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.business-page h2 {
+  color: #111;
+  font-size: clamp(30px, 3.5vw, 46px);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+}
+
+.business-page h3 {
+  color: #111;
+  font-size: 21px;
+  line-height: 1.35;
+}
+
+.business-page p {
+  color: #555;
+  line-height: 1.75;
+}
+
+.business-page .business-lead {
+  max-width: 780px;
+  margin: 20px 0 28px;
+  font-size: 18px;
+}
+
+/* Buttons */
+
+.business-page a.business-btn,
+.business-page a.business-btn:visited {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 49px;
+  padding: 13px 21px !important;
+
+  background: #111 !important;
+  background-image: none !important;
+
+  border: 1px solid #111 !important;
+  border-radius: 12px;
+
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+
+  font-size: 15px;
+  font-weight: 750;
+  text-decoration: none !important;
+
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+.business-page a.business-btn:hover {
+  background: #333 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.business-page a.business-btn.secondary,
+.business-page a.business-btn.secondary:visited {
+  background: #fff !important;
+  background-image: none !important;
+
+  border: 1px solid #111 !important;
+
+  color: #111 !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+.business-page a.business-btn.secondary:hover {
+  background: #eee !important;
+}
+
+.business-page .business-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* Dienstleistungskarten */
+
+.business-page .business-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 35px;
+}
+
+.business-page .business-card {
+  min-width: 0;
+  padding: 27px;
+
+  border: 1px solid #dedede;
+  border-radius: 22px;
+
+  background: rgba(255,255,255,.97);
+  box-shadow: 0 10px 28px rgba(0,0,0,.035);
+
+  scroll-margin-top: 110px;
+}
+
+.business-page .business-card h3 {
+  margin: 0 0 12px;
+}
+
+.business-page .business-card p {
+  margin: 0;
+}
+
+/* Einheitliche Schwarz-Weiss-Icons */
+
+.business-page .business-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 21px;
+
+  background: #fff !important;
+  background-image: none !important;
+
+  border: 1px solid #dedede;
+  border-radius: 15px;
+
+  color: #111 !important;
+  box-shadow: none !important;
+}
+
+.business-page .business-icon svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+
+  fill: none;
+  stroke: #111 !important;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Ablauf */
+
+.business-page .business-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 38px;
+}
+
+.business-page .business-panel {
+  padding: 32px;
+
+  border: 1px solid #dedede;
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.97);
+}
+
+.business-page .business-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.business-page .business-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 22px;
+
+  color: #444;
+  line-height: 1.6;
+}
+
+.business-page .business-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.business-page .business-number {
+  flex-shrink: 0;
+
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  background: #111;
+  color: #fff;
+
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Navigation */
+
+body .topbar,
+body .nav,
+body .navlinks,
+body .dropdown .menu {
+  background: #fff !important;
+  background-image: none !important;
+}
+
+body .navlinks > a:not(.cta),
+body .dropbtn,
+body .dropdown .menu a {
+  color: #111 !important;
+  -webkit-text-fill-color: #111 !important;
+}
+
+body .dropdown .menu {
+  border: 1px solid #dedede !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+body .dropdown .menu a:hover {
+  background: #f2f2f2 !important;
+}
+
+body .navlinks > a.cta,
+body .navlinks > a.cta:visited {
+  background: #111 !important;
+  background-image: none !important;
+
+  border: 1px solid #111 !important;
+
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+body .mobilebtn {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+/* Responsive */
+
+@media(max-width: 900px) {
+
+  .business-page .business-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-page .business-split {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media(max-width: 600px) {
+
+  .business-page .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-page .business-section {
+    padding: 43px 0;
+  }
+
+  .business-page .business-card,
+  .business-page .business-panel {
+    padding: 23px;
+  }
+
+  .business-page .business-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .business-page .business-actions a {
+    width: 100%;
+  }
+
+}
+
+</style>
+
+<script defer src="../assets/insights.js?v=20261105-wizard-1"></script>
+<script defer src="../assets/enhancements.js?v=20261122-request-only"></script>
+<link rel="stylesheet" href="/assets/enhancements.css?v=20261015-quality-19"><link rel="stylesheet" href="/assets/polish.css?v=20261106-mobile-nav"><script defer src="/assets/polish.js?v=20261122-request-only"></script><link rel="stylesheet" href="/assets/service-search.css?v=20261025-1"><link rel="stylesheet" href="/assets/transparency.css?v=20261119"><link rel="stylesheet" href="/assets/footer-payments.css?v=20261123-1"><meta name="description" content="Un telefono, tablet, portatile o PC aziendale è guasto? Inviate una richiesta con i dati disponibili sul dispositivo. Concordiamo personalmente con voi il passo successivo."><link rel="canonical" href="https://mujitech.ch/it/firmenreparaturen.html"><link rel="alternate" hreflang="de-CH" href="https://mujitech.ch/firmenreparaturen.html"><link rel="alternate" hreflang="en" href="https://mujitech.ch/en/firmenreparaturen.html"><link rel="alternate" hreflang="fr-CH" href="https://mujitech.ch/fr/firmenreparaturen.html"><link rel="alternate" hreflang="it-CH" href="https://mujitech.ch/it/firmenreparaturen.html"><link rel="alternate" hreflang="x-default" href="https://mujitech.ch/firmenreparaturen.html"><meta property="og:title" content="Riparazione di dispositivi per aziende | Mujitech"><meta property="og:description" content="Un telefono, tablet, portatile o PC aziendale è guasto? Inviate una richiesta con i dati disponibili sul dispositivo. Concordiamo personalmente con voi il passo successivo."><meta property="og:url" content="https://mujitech.ch/it/firmenreparaturen.html"></head>
+
+<body><a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- =========================================
+     NAVIGATION
+========================================= -->
+
+<header class="muji-unified-header"><div class="muji-nav-shell"><a class="muji-brand" href="/it/"><img src="/assets/logo-header.webp?v=20261015-quality-16" alt=""><span>Mujitech</span></a><button class="muji-menu-toggle" type="button" aria-expanded="false" aria-controls="muji-site-nav">☰ Menu</button><nav id="muji-site-nav" class="muji-site-nav" aria-label="Menu"><a href="/it/" class="">Home</a><a href="/it/reparaturen.html" class="">Riparazioni</a><a href="/it/privatkunden.html" class="">Privati</a><a href="/it/unternehmen.html" class="">Aziende</a><a href="/it/websites.html" class="">Siti web</a><details class="muji-shop-menu"><summary>Shop</summary><div><a href="/it/shop.html" class="">Shop</a><a href="/it/refurbished.html" class="">Smartphone</a><a href="/it/gaming-pcs.html" class="">PC gaming</a><a href="/it/geraet-verkaufen.html" class="">Vendi un dispositivo</a></div></details><a href="/it/preise.html" class="">Prezzi di riparazione</a><a href="/it/kontakt.html" class="">Contatti</a><details class="muji-shop-menu muji-repair-menu"><summary>Richiesta di riparazione</summary><div><a href="/it/#ablauf">Come funziona la riparazione</a><a href="/assistent/?service=repair&amp;offer=Riparazione+per+aziende&amp;lang=it&amp;return=%2Fit%2Ffirmenreparaturen.html">Richiedi una riparazione</a></div></details><a href="/assistent/?service=repair&amp;offer=Riparazione+per+aziende&amp;lang=it&amp;return=%2Fit%2Ffirmenreparaturen.html" class="muji-nav-action">Invia una richiesta</a></nav></div></header><nav class="language-bar" aria-label="Scegli la lingua"><div class="wrap"><span class="language-label">Scegli la lingua</span><div class="language-options" id="language-options"><a href="/firmenreparaturen.html" lang="de-CH" hreflang="de-CH">Deutsch</a><a href="/en/firmenreparaturen.html" lang="en" hreflang="en">English</a><a href="/fr/firmenreparaturen.html" lang="fr-CH" hreflang="fr-CH">Français</a><a href="/it/firmenreparaturen.html" lang="it-CH" hreflang="it-CH" aria-current="page">Italiano</a></div></div></nav>
+
+
+<main id="main" class="business-page"><div class="wrap breadcrumb"><a href="/it/unternehmen.html">Aziende</a> / <span aria-current="page">Riparazione di dispositivi per aziende</span></div><section class="business-section"><div class="business-container"><span class="business-label">Mujitech · Business</span><h1>Riparazione di dispositivi per aziende</h1><p class="business-lead">Un telefono, tablet, portatile o PC aziendale è guasto? Inviate una richiesta con i dati disponibili sul dispositivo. Concordiamo personalmente con voi il passo successivo.</p><div class="business-actions"><a class="business-btn" href="/assistent/?service=repair&amp;offer=Riparazione+per+aziende&amp;lang=it&amp;return=%2Fit%2Ffirmenreparaturen.html">Richiedere una riparazione aziendale</a><a class="business-btn secondary" href="tel:+41768444673">Chiamare</a></div></div></section><section class="business-section"><div class="business-container"><h2>Riparazioni per i vostri dispositivi aziendali</h2><div class="business-grid"><article class="business-card"><h3>Smartphone e telefoni aziendali</h3><p>Indicate il modello e il guasto. Esaminiamo il dispositivo e concordiamo con voi la possibile riparazione.</p></article><article class="business-card"><h3>Tablet e iPad</h3><p>Indicate il modello e il guasto. Esaminiamo il dispositivo e concordiamo con voi la possibile riparazione.</p></article><article class="business-card"><h3>Computer portatili</h3><p>Indicate il modello e il guasto. Esaminiamo il dispositivo e concordiamo con voi la possibile riparazione.</p></article><article class="business-card"><h3>PC desktop</h3><p>Indicate il modello e il guasto. Esaminiamo il dispositivo e concordiamo con voi la possibile riparazione.</p></article></div></div></section><section class="business-section"><div class="business-container"><h2>La vostra richiesta di riparazione</h2><ol><li>Descrivere il dispositivo e il guasto</li><li>Concordare la verifica e i passi successivi</li><li>Concordare il preventivo e l’appuntamento</li></ol><p>Interventi, ricambi, costi e tempi vengono confermati individualmente. Una richiesta non costituisce un ordine di riparazione. Consegna solo su appuntamento; spedizione previo accordo.</p><a class="business-btn" href="/assistent/?service=repair&amp;offer=Riparazione+per+aziende&amp;lang=it&amp;return=%2Fit%2Ffirmenreparaturen.html">Richiedere una riparazione aziendale</a><h2>Contatto diretto</h2><p><a href="mailto:info@mujitech.ch">info@mujitech.ch</a> · <a href="tel:+41768444673">+41 76 844 46 73</a></p><p>Questa offerta è rivolta alle aziende. Mujitech continua a offrire riparazioni per clienti privati nelle altre pagine del sito.</p></div></section></main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+  <div class="wrap">
+
+    <div class="footergrid">
+
+      <div>
+
+        <a class="brand"
+           href="/it/">
+
+          <img
+            src="../logo.webp"
+            alt="Logo Mujitech"
+            class="site-logo"
+            loading="lazy">
+
+        </a>
+
+        <p class="sectionlead"
+           style="margin-top:14px">
+
+          Tecnologia, riparazioni e soluzioni digitali per clienti privati e PMI della regione di San Gallo.
+
+        </p>
+
+        <div class="badge">
+
+          <span>●</span>
+
+          <b>Abtwil SG</b>
+
+          · Nessun negozio pubblico · Appuntamento previo accordo
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h2>
+          Privati
+        </h2>
+
+        <a href="/it/reparaturen.html">
+          Riparazioni
+        </a>
+
+        <a href="/it/geraet-verkaufen.html">
+          Vendi un dispositivo
+        </a>
+
+        <a href="/it/privatkunden.html">
+          Servizi tecnici
+        </a>
+
+        <a href="/it/shop.html">Panoramica dello shop</a>
+
+      </div>
+
+
+      <div>
+
+        <h2>
+          Aziende
+        </h2>
+
+        <a href="/it/unternehmen.html">
+          Informatica per PMI
+        </a>
+
+        <a href="/it/websites.html">
+          Siti web
+        </a>
+
+
+
+        <a href="/it/unternehmen.html#cloud">
+          Cloud ed e-mail
+        </a>
+
+      </div>
+
+
+      <div>
+
+        <h2>
+          Contatti
+        </h2>
+
+        <a href="tel:+41768444673">
+          076 844 46 73
+        </a>
+
+        <a href="mailto:info@mujitech.ch">
+          info@mujitech.ch
+        </a>
+
+        <a
+          href="https://wa.me/41768444673"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          WhatsApp
+
+        </a>
+
+        <a href="/it/rechtliches.html">
+          Colophon · Termini e Condizioni · Protezione dei dati
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="legal">
+
+      <span>
+        © 2026 Mujitech. Tutti i diritti riservati.
+      </span>
+
+      <span>
+        IDI: CHE-480.937.625
+      </span>
+
+    </div>
+
+  </div>
+
+<div class="wrap site-utility"><p class="business-hours">Raggiungibile ogni giorno 08:00–20:00 · Consegna su appuntamento · Ora svizzera</p><a href="/it/reparatur-schweiz.html">Riparazioni per posta in tutta la Svizzera</a><a href="#language-options">Deutsch / English / Français / Italiano</a><button type="button" data-consent-settings>Impostazioni dei cookie</button></div>
+<p class="manufacturer-notice">Mujitech è un fornitore indipendente di servizi di riparazione. I nomi dei marchi e dei modelli servono a descrivere i servizi offerti.</p><section class="muji-footer-payments" aria-label="Metodi di pagamento"><div class="muji-footer-payments__inner"><h2>Metodi di pagamento</h2><ul><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="3" width="6" height="6" rx="1"/><rect x="3" y="15" width="6" height="6" rx="1"/><path d="M15 15h3v3h3v3h-6v-3m6-6v3M12 3v6m0 3h-2m2 3v6M3 12h4m11 0h3"/></svg><span>TWINT</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m3 8 9-5 9 5H3Zm2 3v7m7-7v7m7-7v7M3 21h18M3 18h18"/></svg><span>Bonifico bancario</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M5 9h1m12 6h1"/></svg><span>Contanti</span></li></ul><p>Contanti: Alla consegna su appuntamento.</p></div></section></footer>
+
+
+<!-- Bestehende Website-Funktionen -->
+<script src="../assets/app.js?v=20261011-2"></script>
+
+<!-- Bestehende Stromanimation -->
+<script
+  defer
+  src="../assets/mono-electric.js?v=20261011-2">
+</script>
+
+</body>
+</html>
