@@ -10,7 +10,7 @@
     if(value&&value.length<=500&&!/[\x00-\x1f\x7f]/.test(value))target.searchParams.set(key,value);
   }
   const handover=current.searchParams.get('handover');
-  if(['abtwil','zurich','rorschach'].includes(handover))target.searchParams.set('handover',handover);
+  if(['st-gallen','abtwil','zurich','rorschach'].includes(handover))target.searchParams.set('handover',handover==='abtwil'?'st-gallen':handover);
   // Keep canonical repair enquiry landing pages readable and indexable.
   // Existing links with enquiry context still open the matching assistant step.
   if(/^\/(?:en\/|fr\/|it\/)?reparaturanfrage\.html$/.test(current.pathname)&&!target.searchParams.size)return;

@@ -1,3 +1,7 @@
+## Current address — 26 November 2026
+
+The user confirms the move is effective immediately: Oberzilstrasse 2B, 9016 St. Gallen, Switzerland. General marketing uses St. Gallen; Abtwil is only a served area. Handover remains by appointment, no public walk-in shop and no company sign. Preserve existing online contact times; no new opening hours. Current reviewed public files are authoritative: historical generators must not restore Moosstrasse/9030/Abtwil as the business address. Preserve page URLs, canonical/hreflang, prices-on-request and consent/Tally measurement. Legacy handover=abtwil resolves to the current St. Gallen handover; new links use handover=st-gallen.
+
 ## Public repair pricing — 22 November 2026
 
 All public repair model/part prices must be on request. Preserve the internal approved-price ledger; do not republish its numbers through older generators. Public HTML, JavaScript, MujiBot and enquiry summaries must never restore numeric repair amounts. Shop sale prices and the separately labelled optional insurance-report fee are unchanged.
