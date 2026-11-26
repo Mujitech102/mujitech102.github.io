@@ -59,5 +59,5 @@
  load('/assets/repair-prices-data.js?v=20261122-request-only')
   .then(()=>load('/assets/repair-prices.js?v=20261122-request-only'))
   .then(()=>load('/assets/repair-guides.js?v=20261122-request-only'))
-  .then(()=>load('/assets/mujibot.js?v=20261122-request-only'));
+  .then(()=>load('/assets/mujibot.js?v=20261126-st-gallen'));
 })();
