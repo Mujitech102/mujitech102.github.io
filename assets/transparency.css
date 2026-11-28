@@ -1,1 +1,7 @@
 .manufacturer-notice{max-width:1140px;margin:16px auto 0;padding:12px 20px;color:#444;background:#f7f7f6;border-top:1px solid #ddd;font-size:.85rem;line-height:1.5;overflow-wrap:break-word}.manufacturer-footer{padding:0 0 16px}.manufacturer-service p{line-height:1.6}.guide-start-price{font-weight:650}.guide-start-note{font-size:.9rem;color:#444}@media(max-width:390px){.manufacturer-notice{padding-inline:16px}}
+
+/* Keep supporting location/independence copy in the normal content column. */
+.quality-section.service-area,.quality-section.manufacturer-service{box-sizing:border-box;padding:24px 0;margin:0}
+.service-area>.quality-wrap,.manufacturer-service>.quality-wrap{width:min(calc(100% - 34px),var(--max,1180px));margin:0 auto;box-sizing:border-box}
+.service-area p,.manufacturer-service p{margin:0;line-height:1.6;overflow-wrap:break-word}
+.manufacturer-service h2{font-size:clamp(24px,3vw,32px);line-height:1.2;margin:0 0 12px}
